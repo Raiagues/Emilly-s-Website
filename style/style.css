@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 :root {
-  --main-color: #b74b4b;  
-  --secondary-color: #2ecc71;  
+  --main-color: #2f98c2;  
+  --secondary-color: #2ecc71; 
+  --background: black; 
 }
 
 *{
@@ -22,12 +23,12 @@ body{
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
-  background-color: black;
+  background-color: var(--background);
   color: white;
 }
 
 header{
-  margin-top: 20px;
+  margin-top: 0px;
   position: fixed;
   top: 0;
   left: 0;
@@ -38,7 +39,15 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--background);
   z-index: 100;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--main-color);
 }
 
 .logo{
@@ -67,22 +76,17 @@ nav a.active{
   color: var(--main-color);
   border-bottom: 3px solid var(--main-color);
 }
-
-
-
+ 
 @media(max-width:995px){
   nav{
     position: absolute;
     display: none;
-    top: 0;
-    right: 0;
+    top: 90%;
+    right: 5%;
     width: 40%;
-    border-left: 3px solid var(--main-color);
-    border-bottom: 3px solid var(--main-color);
-    border-bottom-left-radius: 2rem;
+    border: 3px solid var(--main-color);
     padding: 1rem solid;
     background-color: #161616;
-    border-top: 0.1rem solid rgba(0,0,0,0.1);
   }
 
   nav.active{
@@ -91,15 +95,12 @@ nav a.active{
 
   nav a{
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin: 3rem 1rem;
   }
-
-  nav a:hover,
-  nav a.active{
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border-bottom: 0.5rem solid var(--main-color);
+ 
+  .menu-icon {
+    display: block;
   }
 }
 
@@ -113,7 +114,7 @@ section{
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  background-color: black;
+  background-color: var(--background);
 }
 
 .home .home-content h1{
@@ -175,7 +176,7 @@ span{
 .btn{
   display: inline-block;
   padding: 1rem 2.8rem;
-  background-color: black;
+  background-color: var(--background);
   border-radius: 4rem;
   font-size: 1.6rem;
   color: var(--main-color);
@@ -240,3 +241,110 @@ span{
     margin: 3rem 1rem; 
   }
 }
+
+
+
+
+/* About Me */
+
+.heading {
+  font-size: 5rem;
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.about-me {
+  padding: 100px 15px;
+  background-color: var(--background);
+}
+
+.about-me h2 {
+  margin-bottom: 5rem;
+}
+
+.timeline-items {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.timeline-items::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background-color: var(--main-color);
+  left: calc(50% - 1px);
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  padding-left: calc(50% + 30px);
+  text-align: left;
+}
+
+.timeline-dot {
+  height: 21px;
+  width: 21px;
+  background-color: var(--main-color);
+  box-shadow: 0 0 25px var(--main-color),
+              0 0 50px var(--main-color);
+  position: absolute;
+  left: calc(50% - 8px);
+  border-radius: 50%;
+  top: 10px;
+}
+
+.timeline-date {
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  margin: 6px 0 10px;
+}
+
+.timeline-content {
+  background-color: var(--background);
+  border: 2px solid var(--main-color);
+  padding: 30px 50px;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px var(--main-color);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+.timeline-content h3 {
+  font-size: 14px;
+  color: white;
+  margin: 0 0 15px;
+  font-weight: 500;
+}
+
+.timeline-content p {
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+/* parei em 24:53 https://www.youtube.com/watch?v=UqHILyzcULE*/
