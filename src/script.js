@@ -16,3 +16,14 @@ menuIcon.addEventListener('click', function () {
     closeIcon.style.display = 'none';      
   }
 });
+
+function toggleText(button) {
+  var fullText = button.nextElementSibling;
+  if (fullText.style.display === "none") {
+    fullText.style.display = "block";
+    button.innerText = "Read Less";
+  } else {
+    fullText.style.display = "none";
+    button.innerText = "Read More";
+  }
+}
