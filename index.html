@@ -19,10 +19,10 @@
     
     <nav class="navbar" id="navbar">
       <a href="#" class="active">Home</a>
-      <a href="#" >About Me</a>
-      <a href="#" >Experience</a>
-      <a href="#" >Projects</a>
-      <a href="#" >Contact</a>
+      <a href="#about-me" >About Me</a>
+      <a href="#experience" >Experience</a>
+      <a href="#projects" >Projects</a>
+      <a href="#contact" >Contact</a>
     </nav>
   </header>
     
@@ -31,15 +31,14 @@
       <img src="img/me.png" alt="">
     </div>
     <div class="home-content">
-      <h1>Hi, It's <span>Emilly</span></h1>
-      <h3 class="typing-text">I'm an Aerospace Engineering and Embedded Systems student.</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid ipsum explicabo eos ducimus error commodi veritatis voluptates praesentium dolore quas voluptatem, excepturi, sint quia modi ut accusamus dicta culpa harum.</p>
-      
+      <h1>Hi, It's <span>Emilly</span></h1>    
+      <h3 class="typing-text">Aerospace Engineering and Embedded Systems Student</h3>
+      <p>Driven by a fascination with space and technology, I embarked on a journey that took me from Brazil to France, where I immersed myself in the world of embedded systems and space applications. I enjoy taking on challenges and am eager to find opportunities where I can apply my skills and contribute to pioneering projects that push the boundaries of technology.</p>  
       <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/emilly-raiane-/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/Raiagues"><i class="fa-brands fa-github"></i></a>
       </div>
-      <a href="#" class="btn">Download My CV</a>
+      <a href="doc/CV_RODRIGUES_Emilly.pdf" class="btn">Download My CV</a>
     </div>
   </section>
 
@@ -48,30 +47,42 @@
 
     <div class="timeline-items">
 
+
+
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">...</div>
+        <div class="timeline-date"></div>
         <div class="timeline-content">
-          <h3>My Past</h3>
-          <p>My passion for technology and space drove me to explore aerospace engineering and embedded systems. I aimed to create solutions that push the boundaries of what’s possible.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
-          <div class="full-text" style="display: none;">
-            <p>My journey with aerospace engineering and embedded systems doesn’t have a specific start date. I have always been passionate about technology and its endless possibilities. Space has also been a major fascination in my life; the idea of discovering the unknown and creating solutions to achieve the impossible has always captivated me.</p>
-            <p>Because of my passions, I’ve always watched YouTube videos from content creators and followed research on astrophysics and astronomy. Over the years, I realized that I didn’t just want to understand the mysteries of the universe, but also be a part of these discoveries by creating new technologies that help achieve what humanity once thought impossible.</p>
-          </div>
+            <h3>Where it Started</h3>
+            <div class="normal-text">
+              <p>Have you ever loved something so deeply that you couldn't even explain why?</p>
+              <p>Well… that's exactly how I feel about aerospace engineering.</p>              
+            </div>
+  
+            <div class="full-text" style="display: none;">
+                <p>I grew up in Brazil, in a challenging socioeconomic environment, living in peripheral areas where safety wasn't always a given. In a place where dreams sometimes felt limited by reality, I learned to find joy in whatever I had at home. Somehow, amidst the daily struggles, my fascination with aerospace engineering took root. Watching planes soar above, defying gravity and expectations, sparked something in me—a desire to explore, to understand, and to one day be part of that world.</p>
+            </div>
+
+            <div class="button-container">
+              <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
+            </div>
         </div>
-      </div>
+    </div>
     
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">2019</div>
         <div class="timeline-content">
           <h3>High School</h3>
-          <p>Overcame educational challenges from a low-resource background to excel in aerospace engineering entrance exams.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
+          <div class="normal-text">
+            <p>During high school, resources were often limited, and there were challenges with teacher availability, infrastructure, and financial support.</p>            
+          </div>
+
           <div class="full-text" style="display: none;">
-            <p>Coming from a challenging socioeconomic background had a significant impact on my education. I grew up in peripheral areas of Brazil and attended public schools throughout my childhood and youth, where resources were often limited, and there were challenges with teacher availability, infrastructure, and support. My family also lacked the financial means to provide individual educational materials for me.</p>
-            <p>Despite these difficulties, I remained motivated to pursue my dream. With the help of some teachers who provided me with educational materials, and the support of my family and friends, I studied on my own at home during all my free time to prepare for the highly competitive entrance exams for aerospace engineering college.</p>
+            <p>With the help of some teachers who provided me with educational materials, as well as the support of my family and friends, I studied on my own at home during all my free time to prepare for the highly competitive entrance exams for aerospace engineering college.</p>
+          </div>
+          <div class="button-container">
+            <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
           </div>
         </div>
       </div>
@@ -81,68 +92,17 @@
         <div class="timeline-date">2020</div>
         <div class="timeline-content">
           <h3>Aerospace Engineering</h3>
-          <p>Accepted into a highly competitive program, I faced and overcame significant challenges, including catching up on technical knowledge and dealing with a pandemic.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
-          <div class="full-text" style="display: none;">
-            <p>Getting accepted into the second most competitive degree program in Brazil was a big challenge, and being accepted was a very important moment in my life. But my difficulties didn’t end there; in fact, they got even tougher over the years.</p>
-            <p>During my first year of college, I spent a lot of time trying to catch up on technical knowledge compared to my classmates, due to my background. At the same time, I had to deal with the challenges of a pandemic that had just started.</p>
+          <div class="normal-text">
+            <p>Getting accepted into the second most competitive degree program in Brazil was a big challenge, but my difficulties didn’t end there; in fact, they got even tougher over the years.</p>
           </div>
-        </div>
-      </div>
-    
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2020</div>
-        <div class="timeline-content">
-          <h3>Carancho Aerodesign</h3>
-          <p>Gained hands-on experience with aerospace software and programming by working on a model airplane team.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
+
+
           <div class="full-text" style="display: none;">
-            <p>My first practical experience in the aerospace field was with a competitive model airplane team, where I worked for two years. In this project, I was responsible for the structural analysis of the models. I used several aerospace software tools like Ansys, SolidWorks, Femap, and XFLR5, as well as programming languages like C, Matlab, and Python for data analysis.</p>
-            <p>This was my first hands-on experience with programming applied to aerospace engineering, beyond the basic programming I had learned in my classes. This experience sparked my interest in working with programming in this field.</p>
+            <p>Being in an elite environment without coming from an elite background is a big challenge. My first few years were spent trying to catch up on the technical knowledge I lacked due to my basic educational background. At the same time, I had to face the challenges posed by the pandemic that had just begun.</p>
+            <p>Over the years, as I caught up to the technical level of my classmates, I also tried to bring people from similar backgrounds into these spaces. I founded and participated in several projects aimed at scientific outreach.</p>
           </div>
-        </div>
-      </div>
-    
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2021</div>
-        <div class="timeline-content">
-          <h3>Webservatory</h3>
-          <p>Contributed to a project providing online astronomical observations and promoting science education through a YouTube channel.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
-          <div class="full-text" style="display: none;">
-            <p>During my second year of college, I became more accustomed to the routine and its challenges. At that time, I started to feel uncomfortable not seeing people from similar backgrounds in more elite degree programs like mine. I also realized that it wasn’t because they didn’t want to be there, but mostly because they didn’t know about the opportunities available to them.</p>
-            <p>Due to these concerns, I began making efforts to help share science-related opportunities. Along with some professors and colleagues, I helped create the "Webservatory" project. The goal of this project was to provide online astronomical observations through a YouTube channel (available at this <a href="https://www.youtube.com/c/Webservat%C3%B3rio">link</a>). We invited professionals from various scientific fields to talk about their areas of expertise, and with the help of our physics professor, we were able to explain what we were observing and share interesting facts.</p>
-          </div>
-        </div>
-      </div>
-    
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2022</div>
-        <div class="timeline-content">
-          <h3>Internship in Machine Learning</h3>
-          <p>Developed algorithms for a virtual dressing room project, gaining expertise in Python and its frameworks.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
-          <div class="full-text" style="display: none;">
-            <p>Because of my interest in programming from previous projects, I told my professor from the Webservatory project that I wanted to work in this area. He invited me to join him for an internship.</p>
-            <p>The project involved developing a virtual dressing room for a clothing company. I worked for 8 months on developing and improving an algorithm that uses a trained network to segment images and automatically merge them with other pictures. This algorithm was important for taking clothes from the company’s catalog and fitting them onto a 3D model of the user's body.</p>
-            <p>This opportunity gave me a deep understanding of the Python language and its frameworks, including TensorFlow and PyTorch for deep learning, as well as OpenCV for computer vision.</p>
-          </div>
-        </div>
-      </div>
-    
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2022</div>
-        <div class="timeline-content">
-          <h3>Research Project in Satellite Control</h3>
-          <p>Developed Kalman Filter algorithms to improve satellite position estimation, gaining expertise in Matlab and Simulink.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
-          <div class="full-text" style="display: none;">
-            <p>My coursework in control systems sparked a deep interest in how physics, math, and programming intersect. This led me to seek practical experience in the field. I found a research opportunity on LinkedIn to develop Kalman Filter algorithms for reducing position estimation errors in satellites, and after applying, I was selected for the project.</p>
-            <p>This opportunity gave me a deep understanding of Matlab, Simulink, and the theoretical aspects of control systems. I worked on obtaining equations for linear and nonlinear motion models, developing programming functions for these models and the control system, integrating them, and applying the filter within the control system.</p>
+          <div class="button-container">
+            <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
           </div>
         </div>
       </div>
@@ -152,31 +112,22 @@
         <div class="timeline-date">2023</div>
         <div class="timeline-content">
           <h3>Double Degree in Embedded Systems</h3>
-          <p>Completed a double degree program abroad, enhancing my programming and problem-solving skills in a new field and language.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
+          <div class="normal-text">
+            <p>Thanks to my outstanding academic performance, I earned a government scholarship from Brazil to study in France for two years.</p>            
+          </div>
+
           <div class="full-text" style="display: none;">
-            <p>Since the beginning of college, I prepared to apply for a scholarship to study in France for two years. The application process considered my technical skills, my academic performance with grades around 90%, and my French language proficiency, which I studied intensively to achieve a B2 level on the proficiency exam, even though my practical language skills were still A1 level.</p>
-            <p>Studying abroad was challenging due to the new field of study and language barriers. Despite these challenges, the experience was highly valuable. I gained significant technical skills and personal growth from working in an international environment. The program enhanced my programming skills and problem-solving abilities, teaching me how to write and structure code effectively.</p>
+            <p>The adaptation process in France was quite challenging, especially due to the language barriers and the shift in specialization from aerospace engineering to embedded systems. Now that I have gained a solid understanding of embedded systems, I truly believe I am ready to launch my professional career.</p>
+          </div>
+
+          <div class="button-container">
+            <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
           </div>
         </div>
       </div>
-    
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2024</div>
-        <div class="timeline-content">
-          <h3>Internship in Satellite Firmware Development</h3>
-          <p>Developed firmware for a nanosatellite and tested it against radiation, enhancing skills in C programming and radiation analysis.</p>
-          <button class="btn-toggle" onclick="toggleText(this)">Read More</button>
-          <div class="full-text" style="display: none;">
-            <p>My interest in hardware and software integration led me to an internship where I worked on developing firmware for a nanosatellite, including testing it with radiation from a neutron particle accelerator.</p>
-            <p>During this internship, I developed communication protocols between the central processor and the satellite’s subsystems, which involved using C programming for writing drivers and interfaces. I also created automated bash scripts to simulate communication between the ground station and the satellite, showcasing my skills in software development and automation. Additionally, I gained hands-on experience in analyzing the effects of radiation on electronic components, which was crucial for understanding radiation effects in high-energy environments.</p>
-          </div>
-        </div>
+      
       </div>
-    
-    </div>
-  </section>
+    </section>
 
   <script src="src/script.js"></script>
 

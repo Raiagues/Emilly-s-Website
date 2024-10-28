@@ -18,12 +18,13 @@ menuIcon.addEventListener('click', function () {
 });
 
 function toggleText(button) {
-  var fullText = button.nextElementSibling;
-  if (fullText.style.display === "none") {
-    fullText.style.display = "block";
-    button.innerText = "Read Less";
+  var fullText = button.parentNode.previousElementSibling; 
+  
+  if (fullText.style.display === "none" || fullText.style.display === "") {
+      fullText.style.display = "block";  
+      button.innerText = "Read Less";   
   } else {
-    fullText.style.display = "none";
-    button.innerText = "Read More";
+      fullText.style.display = "none";  
+      button.innerText = "Read More";   
   }
 }
