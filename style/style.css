@@ -284,6 +284,11 @@ span{
   margin: 5rem 0;
 }
 
+.name {
+  font-size: 3rem;
+  margin: 5rem 0;
+}
+
 .about-me {
   padding: 100px 15px;
   background-color: var(--background);
@@ -404,7 +409,7 @@ span{
   margin-bottom: 4rem;
 }
 
-.projects-container {
+.projects-container, .experience-container {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   gap: 2.5rem;
@@ -414,7 +419,7 @@ span{
   margin-bottom: 2rem;
 }
 
-.projects-container .projects-box {
+.projects-container .projects-box, .experience-container .experience-box {
   position: relative;
   border-radius: 2rem;
   border: 1px solid var(--secondary-color);
@@ -424,11 +429,11 @@ span{
 
 
 
-.projects-box img {
+.projects-box img, .experience-box img {
   width: 100%;
 }
 
-.projects-box .projects-layer {
+.projects-box .projects-layer, .experience-box .experience-layer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -445,7 +450,7 @@ span{
   z-index: 2; 
 }
 
-.projects-box .overlay {
+.projects-box .overlay, .experience-box .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -457,7 +462,7 @@ span{
   z-index: 1;
 }
 
-.projects-box:hover .overlay {
+.projects-box:hover .overlay, .experience-box:hover .overlay {
   opacity: 1;
 }
 
@@ -465,18 +470,18 @@ span{
   z-index: 3;
 }
 
-.projects h4 {
+.projects h4, .experience h4 {
   font-size: 1.5rem;
   z-index: 3;
 }
 
-.projects-layer p {
+.projects-layer p, .experience-layer p{
   font-size: 1rem;
   margin: .3rem 0 1rem;
   z-index: 3;
 }
 
-.projects-layer a {
+.projects-layer a, .experience-layer a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -486,7 +491,7 @@ span{
 
 }
 
-.projects-layer a:hover {
+.projects-layer a:hover, .experience-layer a:hover {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -496,6 +501,11 @@ span{
   color: var(--main-color);
 }
 
+@media (max-width: 1500px) {
+  .projects-container, .experience-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
  
 @media (max-width: 1200px) {
   .projects-container {
@@ -504,7 +514,7 @@ span{
 }
 
 @media (max-width: 900px) {
-  .projects-container {
+  .projects-container, .experience-container   {
     grid-template-columns: 1fr;  
   }
 }

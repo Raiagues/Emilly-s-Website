@@ -129,25 +129,94 @@
       </div>
   </section>
 
+  <section class="experience" id="experience">
+    <h2 class="heading">My Professional Experiences</h2>
  
-  
+    
+    <div class="experience-container">
+      <div class="experience-box">
+          <img src="img/projects/background-projects.jpg" alt="">
+          <div class="experience-layer">
+              <div class="overlay"></div>
+              <h4>Satellite Firmware Development Intern</h4>
+              <p>Company: TIMA Laboratory</p>
+              <p>Local: Grenoble, France</p>
+              <p>Duration: May 2024 - Aug 2024 (3 months)</p>
+              <p>Key Words: C, I2C, UART, Bash, CMake</p>
+              <a href="pages/experience/experience_1.html" class="btn-projects">Read More</a>
+          </div>
+      </div>
+      <div class="experience-box">
+        <img src="img/projects/background-projects.jpg" alt="">
+        <div class="experience-layer">
+            <div class="overlay"></div>
+            <h4>Flight Control Researcher</h4>
+            <p>Company: Instituto Tecnológico de Aeronáutica (ITA)</p>
+            <p>Local: São Paulo, Brazil (remote)</p>
+            <p>Duration: Sep 2022 - Aug 2023 (1 year)</p>
+            <p>Key Words: Matlab, Simulink, Kalman Filter, Control Systems</p>
+            <a href="pages/experience/experience_2.html" class="btn-projects">Read More</a>
+        </div>
+      </div>
+      <div class="experience-box">
+        <img src="img/projects/background-projects.jpg" alt="">
+        <div class="experience-layer">
+            <div class="overlay"></div>
+            <h4>Machine Learning Intern</h4>
+            <p>Company: Dafiti Group</p>
+            <p>Local: São Paulo, Brazil (remote)</p>
+            <p>Duration: Feb 2022 - Sep 2022 (8 months)</p>
+            <p>Key Words: Python, Artificial Intelligence, Machine Learning</p>
+            <a href="pages/experience/experience_3.html" class="btn-projects">Read More</a>
+        </div>
+      </div>
+
+  </section>
+
   <section class="projects" id="projects">
     <h2 class="heading">My Projects</h2>
     <button id="toggleFilterBtn" class="btn btn-primary">Show Filters</button>
 
     <div class="filter-bar hidden" id="filterBar">  
-      <div class="filter-group">
-        <h4 class="filter-header">Development Boards</h4>
 
+      <div class="filter-group">
+        <h4 class="filter-header">Project Type</h4>
         <div class="filter-content">
           <label>
-            <input type="checkbox" value="Arduino" />
-            <span>Arduino</span>
+            <input type="checkbox" value="Technical-Project">
+            <span>Technical Project</span>
           </label>
           <label>
-              <input type="checkbox" value="Raspberry Pi" />
-              <span>Raspberry Pi</span>
+            <input type="checkbox" value="Outreach-Project">
+            <span>Outreach Project</span>
           </label>
+          <label>
+            <input type="checkbox" value="Personal-Project">
+            <span>Personal Project</span>
+          </label>
+          <label>
+            <input type="checkbox" value="University-Project">
+            <span>University Project</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Group-Project">
+            <span>Group Project</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Individual-Project">
+            <span>Individual Project</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Paired-Project">
+            <span>Paired Project</span>
+          </label>
+        </div>
+      </div>
+      
+
+      <div class="filter-group">
+        <h4 class="filter-header">Development Boards</h4>
+        <div class="filter-content">
           <label>
             <input type="checkbox" value="FPGA" />
             <span>FPGA</span>
@@ -164,9 +233,21 @@
             <input type="checkbox" value="ESP8266" />
             <span>ESP8266</span>
           </label>
+          <label>
+            <input type="checkbox" value="NXP FRDM-KL25Z" />
+            <span>NXP FRDM-KL25Z</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Arduino" />
+            <span>Arduino</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Raspberry Pi" />
+            <span>Raspberry Pi</span>
+          </label>
         </div>
       </div>
-      
+
       <div class="filter-group">
           <h4 class="filter-header">Programming Languages</h4>
           <div class="filter-content">
@@ -177,6 +258,22 @@
               <label>
                 <input type="checkbox" value="C++"> 
                 <span>C++</span>
+              </label>
+              <label>
+                <input type="checkbox" value="VHDL"> 
+                <span>VHDL</span>
+              </label>
+              <label>
+                <input type="checkbox" value="Verilog"> 
+                <span>Verilog</span>
+              </label>
+              <label>
+                <input type="checkbox" value="TCL"> 
+                <span>TCL</span>
+              </label>
+              <label>
+                <input type="checkbox" value="Java"> 
+                <span>Java</span>
               </label>
               <label>
                 <input type="checkbox" value="Python"> 
@@ -195,18 +292,26 @@
                 <span>Assembly</span>
               </label>
               <label>
-                <input type="checkbox" value="VHDL"> 
-                <span>VHDL</span>
+                <input type="checkbox" value="HTML"> 
+                <span>HTML</span>
               </label>
               <label>
-                <input type="checkbox" value="Verilog"> 
-                <span>Verilog</span>
+                <input type="checkbox" value="CSS"> 
+                <span>CSS</span>
+              </label>
+              <label>
+                <input type="checkbox" value="JavaScript"> 
+                <span>JavaScript</span>
+              </label>
+              <label>
+                <input type="checkbox" value="Bash"> 
+                <span>SQL</span>
               </label>
           </div>
       </div>
 
       <div class="filter-group">
-          <h4 class="filter-header">Protocols</h4>
+          <h4 class="filter-header">Protocols and Standards</h4>
           <div class="filter-content">
               <label>
                 <input type="checkbox" value="I2C"> 
@@ -215,6 +320,10 @@
               <label>
                 <input type="checkbox" value="UART"> 
                 <span>UART</span>
+              </label>
+              <label>
+                <input type="checkbox" value="SPI"> 
+                <span>SPI</span>
               </label>
               <label>
                 <input type="checkbox" value="TCP"> 
@@ -228,16 +337,129 @@
       </div>
 
       <div class="filter-group">
-          <h4 class="filter-header">Tools</h4>
-          <div class="filter-content">
-            <label>
-              <input type="checkbox" value="Simulink"> 
-              <span>Simulink</span>
-            </label>
-            <label>
-              <input type="checkbox" value="FreeRTOS"> 
-              <span>FreeRTOS</span>
-            </label>
+        <h4 class="filter-header">Softwares</h4>
+        <div class="filter-content">
+          <label>
+            <input type="checkbox" value="Simulink"> 
+            <span>Simulink</span>
+          </label>
+          <label>
+            <input type="checkbox" value="FreeRTOS"> 
+            <span>FreeRTOS</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Vivado"> 
+            <span>Vivado</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Xilinx"> 
+            <span>Xilinx</span>
+          </label>
+          <label>
+            <input type="checkbox" value="ModelSim"> 
+            <span>ModelSim</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Synopsys Design Vision"> 
+            <span>Synopsys Design Vision</span>
+          </label>
+          <label>
+              <input type="checkbox" value="SpyGlass"> 
+              <span>SpyGlass</span>
+          </label>
+          <label>
+            <input type="checkbox" value="SolidWorks"> 
+            <span>SolidWorks</span>
+          </label>
+          <label>
+              <input type="checkbox" value="Abaqus"> 
+              <span>Abaqus</span>
+          </label>
+          <label>
+              <input type="checkbox" value="Ansys"> 
+              <span>Ansys</span>
+          </label>
+          <label>
+              <input type="checkbox" value="Excel"> 
+              <span>Excel</span>
+          </label>
+          <label>
+            <input type="checkbox" value="XFLR5"> 
+            <span>XFLR5</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4 class="filter-header">Development Tools and Libraries
+        </h4>
+        <div class="filter-content">
+          <label>
+            <input type="checkbox" value="SystemC"> 
+            <span>SystemC</span>
+          </label>
+          <label>
+            <input type="checkbox" value="SystemC"> 
+            <span>SystemVerilog</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Verilator"> 
+            <span>Verilator</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Valgrind"> 
+            <span>Valgrind</span>
+          </label>
+          <label>
+            <input type="checkbox" value="GDB"> 
+            <span>GDB</span>
+          </label>
+          <label>
+            <input type="checkbox" value="GCC"> 
+            <span>GCC</span>
+          </label>
+          <label>
+            <input type="checkbox" value="OpenOCD"> 
+            <span>OpenOCD</span>
+          </label>
+          <label>
+            <input type="checkbox" value="QEMU"> 
+            <span>QEMU</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Matplotlib"> 
+            <span>Matplotlib</span>
+          </label>
+          <label>
+            <input type="checkbox" value="NumPy"> 
+            <span>NumPy</span>
+          </label>
+          <label>
+            <input type="checkbox" value="React"> 
+            <span>React</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Node"> 
+            <span>Node</span>
+          </label>
+          <label>
+            <input type="checkbox" value="SonarQube"> 
+            <span>SonarQube</span>
+          </label>
+          <label>
+            <input type="checkbox" value="PostgreSQL"> 
+            <span>PostgreSQL</span>
+          </label>
+          <label>
+              <input type="checkbox" value="Scalingo"> 
+              <span>Scalingo</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4 class="filter-header">Version Control and Documentation Tools</h4>
+        <div class="filter-content">
             <label>
               <input type="checkbox" value="CMake"> 
               <span>CMake</span>
@@ -255,227 +477,379 @@
               <span>SVN</span>
             </label>
             <label>
-              <input type="checkbox" value="Linux"> 
-              <span>Linux</span>
+              <input type="checkbox" value="Maven"> 
+              <span>Maven</span>
             </label>
             <label>
-              <input type="checkbox" value="Vivado"> 
-              <span>Vivado</span>
+              <input type="checkbox" value="Latex"> 
+              <span>Latex</span>
             </label>
-            <label>
-              <input type="checkbox" value="Xilinx"> 
-              <span>Xilinx</span>
-            </label>
-            <label>
-              <input type="checkbox" value="QEMU"> 
-              <span>QEMU</span>
-            </label>
-            SystemC
-             GCC, GDB, Vivado, Verilator
             
-            
+            <label>
+              <input type="checkbox" value="Javadoc"> 
+              <span>Javadoc</span>
+            </label>
+            <label>
+              <input type="checkbox" value="CI/CD"> 
+              <span>CI/CD</span>
+            </label>
           </div>
+      </div>
+
+      <div class="filter-group">
+        <h4 class="filter-header">Development Environments, SDKs, and IDEs</h4>
+        <div class="filter-content">          
+          <label>
+            <input type="checkbox" value="Arduino IDE"> 
+            <span>Arduino IDE</span>
+          </label>
+          <label>
+            <input type="checkbox" value="MCU Expresso"> 
+            <span>MCU Expresso</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Jupyter Notebook"> 
+            <span>Jupyter Notebook</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Visual Studio Code"> 
+            <span>Visual Studio Code</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Linux"> 
+            <span>Linux</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Windows"> 
+            <span>Windows</span>
+          </label>
+          <label>
+            <input type="checkbox" value="ARM Development Studio"> 
+            <span>ARM Development Studio</span>
+          </label>
+          <label>
+            <input type="checkbox" value="NXP MCUXpresso SDK"> 
+            <span>NXP MCUXpresso SDK</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Raspberry Pi SDK"> 
+            <span>Raspberry Pi SDK</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Arduino SDK"> 
+            <span>Arduino SDK</span>
+          </label>
+          <label>
+            <input type="checkbox" value="STM32Cube SDK"> 
+            <span>STM32Cube SDK</span>
+          </label>
+        </div>
       </div>
 
       <div class="filter-group">
         <h4 class="filter-header">Concepts</h4>
         <div class="filter-content">
           <label>
-            <input type="checkbox" value="Automatic Systems">
-            <span>Automatic Systems</span>
+            <input type="checkbox" value="RISC-V">
+            <span>RISC-V</span>
           </label>
           <label>
-            <input type="checkbox" value="Control Laws">
-            <span>Control Laws</span>
-          </label>
-          <label>
-            <input type="checkbox" value="Optimization Methods">
-            <span>Optimization Methods</span>
+            <input type="checkbox" value="Real-Time Control">
+            <span>Real-Time Control</span>
           </label>
           <label>
             <input type="checkbox" value="RTOS">
             <span>RTOS</span>
           </label>
           <label>
-            <input type="checkbox" value="Dynamic System Modeling">
-            <span>System Modeling</span>
+            <input type="checkbox" value="Data Bus Communication">
+            <span>Data Bus Communication</span>
           </label>
           <label>
-            <input type="checkbox" value="Space Mechanics">
-            <span>Space Mechanics</span>
+            <input type="checkbox" value="Data Structure">
+            <span>Data Structure</span>
           </label>
-           Kernel Design, Interrupt Handling, Process Management, FSM Design, Data Bus Communication, Microarchitecture Analysis, Validation, Low-Level Software
-           
+          <label>
+            <input type="checkbox" value="Sorting Algorithms">
+            <span>Sorting Algorithms</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Sequential Search">
+            <span>Sequential Search</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Software Engineering">
+            <span>Software Engineering</span>
+          </label>
         </div>
+      </div>
+      
 
+      <div class="filter-group">
+        <h4 class="filter-header">Techniques</h4>
+        <div class="filter-content">
+          <label>
+            <input type="checkbox" value="FSM Design">
+            <span>FSM Design</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Synthesis">
+            <span>Synthesis</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Prototyping">
+            <span>Prototyping</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Placement and Routing">
+            <span>Placement and Routing</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Testbench Verification">
+            <span>Testbench Verification</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Hardware Validation">
+            <span>Hardware Validation</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Fault Injection">
+            <span>Fault Injection</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Analog and Digital Filter Modeling">
+            <span>Analog and Digital Filter Modeling</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Filter Design">
+            <span>Filter Design</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Dynamic System Modeling">
+            <span>Dynamic System Modeling</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Kernel Design">
+            <span>Kernel Design</span>
+          </label>
+          <label>
+            <input type="checkbox" value="UML Modeling">
+            <span>UML Modeling</span>
+          </label>       
+        </div>
+      </div>
+      
+
+      <div class="filter-group">
+        <h4 class="filter-header">Analysis</h4>
+        <div class="filter-content">
+          <label>
+            <input type="checkbox" value="Microarchitecture Analysis">
+            <span>Microarchitecture</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Processor Architecture">
+            <span>Processor Architecture</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Fault Tolerance">
+            <span>Fault Tolerance</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Interrupt Handling">
+            <span>Interrupt Handling</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Process Management">
+            <span>Process Management</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Signal Processing">
+            <span>Signal Processing</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Transmission Chain Analysis">
+            <span>Transmission Chain</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Attack Prevention">
+            <span>Attack Prevention</span>
+          </label>
+          <label>
+            <input type="checkbox" value="Structural Analysis">
+            <span>Structural</span>
+          </label>
+          </div>
       </div>
       
 
     </div>
 
-    <div id="selectedFilters" class="mt-3"></div>
-    <button id="deselectAllBtn" class="btn btn-secondary">Deselect All</button>
-    
+    <div id="selectedFilters" class="mt-3">
+      <strong>No filters selected.</strong>
+    </div>
+    <button id="deselectAllBtn" class="btn btn-secondary hidden">Deselect All</button>
+
     <div class="projects-container">
-      <div class="projects-box hidden-not-selected" data-keywords="C, QEMU, Assembly, UART, GCC, GDB, RTOS, Kernel Design, Interrupt Handling, Process Management">
+      <div class="projects-box hidden-not-selected" data-keywords="Individual-Project, University-Project, Technical-Project, Git, C, QEMU, Assembly, UART, GCC, GDB, RTOS, Kernel Design, Interrupt Handling, Process Management, Valgrind, RISC-V, Processor Architecture">
           <img src="img/projects/background-projects.jpg" alt="">
           <div class="projects-layer">
               <div class="overlay"></div>
               <h4>Development of a Low-Level OS Kernel</h4>
-              <p>Skills Used: C, QEMU, Assembly, UART, GCC, GDB</p>
+              <p>Key Words: C, QEMU, Assembly, UART, GCC, GDB, Valgrind, RISC-V</p>
               <a href="pages/projects/project_1.html" class="btn-projects">Read More</a>
           </div>
       </div>
-      <div class="projects-box hidden-not-selected" data-keywords="C, Assembly, Verilog, GCC, GDB, Vivado, Verilator, Microarchitecture Analysis, Validation, Low-Level Software">
+      <div class="projects-box hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, Latex, Git, C, Assembly, Verilog, GCC, GDB, RISC-V, Vivado, FPGA, Verilator, Microarchitecture Analysis, Hardware Validation, Testbench Verification, Processor Architecture">
           <img src="img/projects/background-projects.jpg" alt="">
           <div class="projects-layer">
               <div class="overlay"></div>
               <h4>CVA6 Processor Upgrade</h4>
-              <p>Skills Used: C, Assembly, Verilog, GCC, GDB, Vivado, Verilator</p>
+              <p>Key Words: RISC-V, C, Assembly, FPGA, Verilog, GCC, GDB, Vivado, Verilator</p>
               <a href="pages/projects/project_2.html" class="btn-projects">Read More</a>
           </div>
       </div>
-      <div class="projects-box hidden-not-selected" data-keywords="C++, SystemC, MakeFile, Verilog, FSM Design, Data Bus Communication">
+      <div class="projects-box hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, C++, SystemC, Testbench Verification, Hardware Validation, MakeFile, Verilog, FSM Design, Data Bus Communication">
           <img src="img/projects/background-projects.jpg" alt="">
           <div class="projects-layer">
               <div class="overlay"></div>
               <h4>Image Filter Development on System on Chip</h4>
-              <p>Skills Used: C++, SystemC, MakeFile, Verilog</p>
+              <p>Key Words: C++, SystemC, MakeFile, Verilog</p>
               <a href="pages/projects/project_3.html" class="btn-projects">Read More</a>
           </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, Latex, VHDL, FPGA, TCL, Testbench Verification, Hardware Validation, ModelSim, Synopsys Design Vision, SpyGlass, Xilinx, Filter Design, Placement and Routing, Signal Processing, Testbench Verification">
           <img src="img/projects/background-projects.jpg" alt="">
           <div class="projects-layer">
               <div class="overlay"></div>
               <h4>FIR Filter</h4>
-              <p>Skills Used: Arduino, Git</p>
+              <p>Key Words: VHDL, FPGA, ModelSim, TCL, Synopsys Design Vision, SpyGlass, Xilinx</p>
               <a href="pages/projects/project_4.html" class="btn-projects">Read More</a>
           </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, Latex, TCL, ModelSim, Fault Injection, Fault Tolerance, Attack Prevention, Testbench Verification, Hardware Validation">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Fault Injection in Memory</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: TCL, ModelSim, Fault Injection, Fault Tolerance, Attack Prevention</p>
             <a href="pages/projects/project_5.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Individual-Project, University-Project, Technical-Project, Simulink, Matlab, System Modeling, LQR, Kalman Filter, Real-Time Control">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Real-Time Control System of a Magnetic Suspension</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Simulink, Matlab, Kalman Filter, Real-Time Control</p>
             <a href="pages/projects/project_6.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, Latex, NXP FRDM-KL25Z, C, FreeRTOS, MCU Expresso, Real-Time Control, System Modeling">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Real-Time Control System for Autonomous Vehicle</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: C, FreeRTOS, MCU Expresso, Real-Time Control</p>
             <a href="pages/projects/project_7.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, Latex, Analog and Digital Filter Modeling, Transmission Chain Analysis">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Radio Systems for IoT Devices</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Digital and Analog Filter Modeling, Transmission Chain Analysis</p>
             <a href="pages/projects/project_8.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Group-Project, University-Project, Technical-Project, Latex, Arduino IDE, Git, ESP32, ESP8266, C, UDP, Real-Time Control, FSM Design, Git">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Embedded Software for a CubeSat</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: ESP32, ESP8266, C, UDP, Real-Time Control, FSM Design</p>
             <a href="pages/projects/project_9.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, Latex, Matlab, Signal Processing, Analog and Digital Filter Modeling">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>2-PAM Digital Transmission Chain Simulation</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Matlab, Signal Processing, Analog and Digital Filter</p>
             <a href="pages/projects/project_10.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Group-Project, University-Project, Technical-Project, Latex, Java, Assembly, Git, Maven, Javadoc, Software Engineering, UML Modeling">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Java Compiler for a Subset of an Advanced Language</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Java, Assembly, Git, Maven, Javadoc, UML Modeling</p>
             <a href="pages/projects/project_11.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Paired-Project, University-Project, Technical-Project, Latex, C, Git, MakeFile, Valgrind, Sequential Search, Sorting Algorithms, Data Structure">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Spell Checker</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: C, Git, MakeFile, Valgrind, Sequential Search, Sorting Algorithms</p>
             <a href="pages/projects/project_12.html" class="btn-projects">Read More</a>
         </div>
       </div>    
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Group-Project, Personal-Project, Technical-Project, HTML, CSS, JavaScript, PostgreSQL, Scalingo, SonarQube, React, Node, Git, CI/CD">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Firstep Mobile Application</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: HTML, CSS, JavaScript, PostgreSQL, Scalingo, SonarQube, CI/CD</p>
             <a href="pages/projects/project_13.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Individual-Project, Personal-Project, Outreach-Project, Python, Jupyter Notebook, Matplotlib, NumPy">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Interactive Study Guides</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Python, Jupyter Notebook, Matplotlib, NumPy</p>
             <a href="pages/projects/project_14.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Group-Project, Personal-Project, Latex, Outreach-Project">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Low-Cost Educational Mini-Rocket Kit</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Outreach-Project</p>
             <a href="pages/projects/project_15.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Group-Project, Personal-Project, Technical-Project, Latex, Python, Matlab, C, SolidWorks, Abaqus, Ansys, Excel, XFLR5, Structural Analysis">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Aerodesign Competition Team</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Python, Matlab, C, SolidWorks, Abaqus, Ansys, Excel, XFLR5</p>
             <a href="pages/projects/project_16.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Group-Project, Personal-Project, Outreach-Project">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>EP Aero - Aerospace Engineering Leadership School</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Outreach-Project, HTML, CSS, JavaScript, PostgreSQL, Scalingo, SonarQube, CI/CD</p>
             <a href="pages/projects/project_17.html" class="btn-projects">Read More</a>
         </div>
       </div>
-      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Arduino, Git">
+      <div class="projects-box hidden-more3 hidden-not-selected" data-keywords="Group-Project, Personal-Project, Outreach-Project, HTML, CSS, JavaScript, PostgreSQL, Scalingo, SonarQube, React, Node, Git, CI/CD">
         <img src="img/projects/background-projects.jpg" alt="">
         <div class="projects-layer">
             <div class="overlay"></div>
             <h4>Webservatório - Online Astronomical Observations</h4>
-            <p>Skills Used: Arduino, Git</p>
+            <p>Key Words: Outreach-Project</p>
             <a href="pages/projects/project_18.html" class="btn-projects">Read More</a>
         </div>
       </div>

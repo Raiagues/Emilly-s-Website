@@ -194,3 +194,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleFilterBtn = document.getElementById('toggleFilterBtn');
+    const filterBar = document.getElementById('filterBar');
+    const deselectAllBtn = document.getElementById('deselectAllBtn');
+  
+    toggleFilterBtn.addEventListener('click', function () {
+
+        
+      if (!filterBar.classList.contains('hidden')) {
+        deselectAllBtn.classList.remove('hidden');
+      } else {
+        deselectAllBtn.classList.add('hidden');
+      }
+    });
+  });
+  
