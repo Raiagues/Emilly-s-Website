@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (hiddenProjects.length > 0) {
           hiddenProjects.forEach(project => {
               project.classList.remove('hidden-more3');
-              project.style.display = 'flex'; // Shows the project
+              project.style.display = 'grid'; // Shows the project
           });
 
           this.textContent = 'Show Less';
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const isMatch = selectedKeywords.length === 0 || selectedKeywords.some(keyword => keywords.includes(keyword));
 
           if (isMatch) {
-              project.style.display = 'flex'; // Shows the project if there's a match
+              project.style.display = 'grid'; // Shows the project if there's a match
               project.classList.remove('hidden-not-selected'); // Removes the hidden-not-selected class
               visibleCount++; // Counts visible projects
           } else {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // If there are more than 3 visible projects, apply hidden-more3
           if (visibleCount > 3) {
-              const visibleProjects = Array.from(projects).filter(p => p.style.display === 'flex');
+              const visibleProjects = Array.from(projects).filter(p => p.style.display === 'grid');
               visibleProjects.slice(3).forEach(project => {
                   project.classList.add('hidden-more3');
                   project.style.display = 'none'; // Hides those projects
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
       projects.forEach((project, index) => {
           if (index < 3) {
               project.classList.remove('hidden-more3'); // Removes the hidden-more3 class
-              project.style.display = 'flex'; // Shows the first 3 projects
+              project.style.display = 'grid'; // Shows the first 3 projects
           } else {
               project.classList.add('hidden-more3'); // Adds the hidden-more3 class
               project.style.display = 'none'; // Hides the others

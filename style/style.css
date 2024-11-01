@@ -408,7 +408,7 @@ span{
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   gap: 2.5rem;
-  display: flex;
+  display: grid;
   flex-wrap: wrap; 
   justify-content: center; 
   margin-bottom: 2rem;
@@ -419,7 +419,7 @@ span{
   border-radius: 2rem;
   border: 1px solid var(--secondary-color);
   overflow: hidden;
-  display: flex;
+  display: grid;
 }
 
 
@@ -497,13 +497,13 @@ span{
 }
 
  
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .projects-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .projects-container {
     grid-template-columns: 1fr;  
   }
@@ -592,7 +592,30 @@ span{
  
 .filter-bar {
   margin: 1rem 0 3rem 0;
+
+  display: grid;
+  gap: 1rem;
 }
+
+
+@media (min-width: 1200px) {
+  .filter-bar {
+    grid-template-columns: repeat(3, 1fr);  
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .filter-bar {
+    grid-template-columns: repeat(2, 1fr);  
+  }
+}
+
+@media (max-width: 899px) {
+  .filter-bar {
+    grid-template-columns: 1fr;  
+  }
+}
+
 
 .filter-header {
   cursor: pointer;
