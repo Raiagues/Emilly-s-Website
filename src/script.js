@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       projects.forEach(project => {
           const keywords = project.getAttribute('data-keywords').split(', ');
-          const isMatch = selectedKeywords.length === 0 || selectedKeywords.some(keyword => keywords.includes(keyword));
+          const isMatch = selectedKeywords.length === 0 || selectedKeywords.every(keyword => keywords.includes(keyword));
 
           if (isMatch) {
               project.style.display = 'grid'; // Shows the project if there's a match
@@ -172,8 +172,10 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
           // If there are filter selections, check the total selected
           const totalSelectedCount = Array.from(projects).filter(project => {
-              const keywords = project.getAttribute('data-keywords').split(', ');
-              return Array.from(filterGroups).some(checkbox => checkbox.checked && keywords.includes(checkbox.value));
+          const keywords = project.getAttribute('data-keywords').split(', ');
+            return Array.from(filterGroups)
+                .filter(checkbox => checkbox.checked)
+                .every(checkbox => keywords.includes(checkbox.value));
           }).length;
 
           // The button should be displayed if there are 4 or more selected projects
