@@ -28,6 +28,71 @@ function toggleText(button) {
       button.innerText = "Read More";   
   }
 }
+
+// Scroll-to-top button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// Active nav link highlighting based on scroll position
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+function highlightNavOnScroll() {
+  const scrollY = window.scrollY + 150;
+
+  sections.forEach(function (section) {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      navLinks.forEach(function (link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + sectionId) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+
+  if (window.scrollY < 100) {
+    navLinks.forEach(function (link) { link.classList.remove('active'); });
+    var homeLink = document.querySelector('nav a[href="#"]');
+    if (homeLink) homeLink.classList.add('active');
+  }
+}
+
+window.addEventListener('scroll', highlightNavOnScroll);
+
+// Fade-in on scroll using IntersectionObserver
+const fadeElements = document.querySelectorAll('.fade-in');
+
+if (fadeElements.length > 0) {
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeElements.forEach(function (el) {
+    observer.observe(el);
+  });
+}
 document.addEventListener('DOMContentLoaded', function() {
   const filterGroups = document.querySelectorAll('.filter-group input[type="checkbox"]');
   const projects = document.querySelectorAll('.projects-box');
