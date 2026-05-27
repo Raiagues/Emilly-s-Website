@@ -143,14 +143,13 @@ span{
 .home-img img{
   position: relative;
   width: 30vw;
-  box-shadow: 0 0 25px var(--main-color);
+  border-radius: 50%;
   cursor: pointer;
   transition: 0.4s ease;
 }
 
 .home-img img:hover{
   transform: scale(1.05);
-  box-shadow: 0 0 40px var(--main-color);
 }
 
 .social-icons a{
