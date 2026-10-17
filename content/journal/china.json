@@ -39,7 +39,7 @@
     "fr": "Le voyage en Chine offert avec le prix",
     "es": "El viaje a China que llegó con el premio"
   },
-  "technical_path": "recognition.html",
+  "technical_path": "journal/premio-na-pratica.html",
   "technical_label": {
     "en": "The award behind this trip",
     "pt": "O prêmio que me levou até lá",
@@ -325,10 +325,10 @@
     }
   ],
   "closing": {
-    "en": "There is a whole story behind the award and my application, which I want to tell separately. For now, these are the memories I wanted to keep here. I’ll add others as they come back to me.",
-    "pt": "Tem uma história inteira por trás do prêmio e da minha candidatura, que quero contar separadamente. Por enquanto, são essas as memórias que queria guardar aqui. Conforme for lembrando de outras coisas, vou acrescentando.",
-    "fr": "Il y a toute une histoire derrière le prix et ma candidature, que je veux raconter séparément. Pour l’instant, ce sont les souvenirs que je voulais garder ici. J’en ajouterai d’autres au fil du temps.",
-    "es": "Hay toda una historia detrás del premio y de mi candidatura que quiero contar por separado. Por ahora, estos son los recuerdos que quería guardar aquí. Iré añadiendo otros a medida que vuelvan."
+    "en": "These are the memories I wanted to keep here. I’ll add others as they come back to me. The story of how I applied for the award is now in another chapter of this journal.",
+    "pt": "São essas as memórias que queria guardar aqui. Conforme for lembrando de outras coisas, vou acrescentando. A história de como me inscrevi no prêmio agora está em outro capítulo deste diário.",
+    "fr": "Ce sont les souvenirs que je voulais garder ici. J’en ajouterai d’autres au fil du temps. L’histoire de ma candidature au prix se trouve maintenant dans un autre chapitre de ce journal.",
+    "es": "Estos son los recuerdos que quería guardar aquí. Iré añadiendo otros a medida que vuelvan. La historia de mi candidatura al premio está ahora en otro capítulo de este diario."
   },
   "photos": {
     "doha": {

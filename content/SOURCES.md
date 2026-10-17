@@ -15,7 +15,7 @@ Revisão em 17/10/2026. As traduções reorganizam os fatos para leitura em um p
 - [UFSM — Da UFSM ao espaço: Emilly Rodrigues vence prêmio de protagonismo universitário](https://www.ufsm.br/2025/11/19/aeroespacial-emilly-rodrigues): confirma premiação e cofundação da EP Aero.
 - [Fundação Estudar — Fellows 2025](https://www.estudarfora.org.br/fellows-fundacao-estudar-2025/): inclui Emilly Raiane Rodrigues na seleção.
 - [Exame — Aos 24, universitária cria solução inovadora para satélites e impacta escolas](https://exame.com/carreira/aos-24-universitaria-cria-solucao-inovadora-para-satelites-e-impacta-escolas/): fonte da seção de imprensa e do alcance coletivo da EP Aero, quase 3.000 estudantes até dezembro de 2025.
-- [Exame — Um olhar para o futuro](https://exame.com/revista-exame/um-olhar-para-o-futuro/): reportagem indicada pela usuária. Consultada para contexto da premiação. O site não reproduz trechos extensos ou fotografias da reportagem.
+- [Exame — Um olhar para o futuro](https://exame.com/revista-exame/um-olhar-para-o-futuro/): reportagem indicada pela usuária. Consultada para contexto da premiação. O site não reproduz trechos extensos nem importa fotografias da reportagem. O diário do prêmio inclui posteriormente uma foto da revista na banca fornecida pela própria autora.
 
 ## Divergências tratadas
 
@@ -128,3 +128,17 @@ A narrativa, as visitas e os detalhes pessoais vêm do relato de Emilly nesta co
 Cuidados de edição: as montanhas não foram identificadas como Andes, pois a autora estava em dúvida; o Nilo foi identificado conforme seu registro pessoal. Não foi atribuído nome ou estrela Michelin ao restaurante sem identificação suficiente. A foto com nome de arquivo `hospital army.jpeg` recebeu uma legenda geral sobre visita ao setor de saúde, sem identificar o prédio. A demonstração do carrinho é descrita como foi apresentada, sem afirmar qual sinal, sensor ou mecanismo controlava o movimento. A aula de negociação na Suzano é aprendizado, não experiência inventada de conduzir negociações. As possíveis parcerias continuam descritas como conversas, não acordos concluídos. A reflexão cultural é situada nos encontros da viagem, sem caracterizar todos os chineses da mesma forma.
 
 O texto está em primeira pessoa nos quatro idiomas e pode ser ampliado no JSON. As entidades foram cadastradas para conectar relatos futuros, especialmente `na-pratica`; não foram criadas páginas ou histórias fictícias sobre o processo do prêmio. O índice usa as datas da imersão, não as datas dos uploads das fotos.
+
+
+## Prêmio Na Prática — final e cerimônia de 2025
+
+A nova história em `premio-na-pratica.json` vem do relato de Emilly: oportunidade divulgada pela Fundação Estudar, candidatura nos últimos dois ou três dias, reflexão sobre a trajetória, despesas custeadas pelo Na Prática, recepção no aeroporto, quartos individuais no mesmo hotel, formação, mentorias, banca final no BTG Pactual, festa e amizades. A percepção de não estar competindo com os outros finalistas e o episódio de ser reconhecida no mercado são memórias pessoais, não afirmações extraídas de notícias.
+
+- [Na Prática — resultado, 03/11/2025](https://napratica.org.br/noticias/vencedores-premio-na-pratica): confirma a data da cerimônia e Emilly como vencedora da Região Sul. Essa é a data da entrada na linha do tempo; o período do relato é novembro de 2025, sem presumir datas de início e fim da hospedagem.
+- [Na Prática — finalistas, 24/10/2025](https://perfil.napratica.org.br/noticias/finalistas-premio-na-pratica): contexto da final presencial e formação. Não foram transformadas candidaturas iniciadas em candidaturas completas nem acrescentados números ao diário.
+- [EXAME — Um olhar para o futuro](https://exame.com/revista-exame/um-olhar-para-o-futuro/): reportagem ligada no capítulo final. A foto pessoal `capa da revista.jpeg` mostra a edição na banca; ela foi fornecida pela autora e não é uma imagem extraída do site da revista.
+- [UFSM — Da UFSM ao espaço, 19/11/2025](https://www.ufsm.br/2025/11/19/aeroespacial-emilly-rodrigues): matéria ligada no mesmo capítulo. Nenhum print novo da UFSM estava na pasta ao editar; não foi fabricado um. O link leva à matéria original.
+
+As 14 fotos foram inspecionadas e mantidas intactas, com legendas baseadas no relato e nos nomes dos arquivos. Gabi e Nara foram mantidas pelos nomes usados no álbum; não foram atribuídos cargos ou biografias a pessoas nas imagens. A referência ambígua da transcrição a ter voltado “do Brasil” e a palavra “aniversário” não viraram fatos novos. A vitória é regional, sem inventar o título de vencedora nacional.
+
+Conexões: `na-pratica` liga prêmio e China; `fundacao-estudar` liga prêmio e Estados Unidos; `naryane` reúne as histórias do prêmio e China. O fim do diário da China foi atualizado para deixar de anunciar o relato do prêmio como futuro. Os dois links permanecem disponíveis na mesma conquista. Textos, imagens e navegação estão nos quatro idiomas.

@@ -4,7 +4,7 @@ O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao
 
 ## Alterar uma história
 
-Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) ou **`content/journal/china.json`** (China) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) **`content/journal/china.json`** (China) ou **`content/journal/premio-na-pratica.json`** (prêmio Na Prática) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
 
 - `title`: título da história.
 - `subtitle`: resumo que aparece na página inicial.
@@ -82,7 +82,7 @@ No arquivo `entities.json`, cada entrada tem um identificador estável (por exem
 
 O site monta automaticamente a página **Pessoas e instituições** e as sugestões ao fim de cada história. Uma pessoa que aparece em apenas uma história continua acessível pelo índice; outras histórias só são sugeridas quando realmente compartilham um identificador. Não precisa cadastrar links manualmente. Ao renomear uma pessoa, mantenha o identificador para preservar os links.
 
-A viagem à China já está em `china.json`, conectada ao Prêmio Protagonismo Universitário e à entidade `na-pratica`. Quando escrever a história da candidatura ao prêmio, crie outro post, reutilize `na-pratica` em `entities` e o mesmo `related_award`. Assim os dois relatos ficam conectados e aparecem em Conquistas, sem precisar juntar os textos. Não há uma página vazia esperando essa história.
+A história da candidatura e da final está em `premio-na-pratica.json`; a viagem está em `china.json`. As duas usam `na-pratica` em `entities` e o mesmo `related_award`, por isso aparecem juntas em Conquistas e nas sugestões de leitura. A introdução da China aponta diretamente para o relato do prêmio. A entidade `fundacao-estudar` também conecta o prêmio à viagem aos Estados Unidos. Para acrescentar detalhes da seleção, edite os capítulos `inscricao`, `imersao` e `resultado` do relato do prêmio.
 
 ## E-mails e outros documentos
 
