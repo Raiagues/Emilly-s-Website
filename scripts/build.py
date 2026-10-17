@@ -18,6 +18,7 @@ EMAIL = D['EMAIL']
 ALL_PATHS = []
 J = runpy.run_path(str(ROOT / 'scripts/journal.py'))
 POSTS = J['load_posts'](ROOT)
+ENTITIES = J['load_entities'](ROOT, POSTS)
 JUI = json.loads((ROOT / 'content/journal/ui.json').read_text())
 UI['home'] = JUI['home']
 SECTIONS = [('home', 'index.html'), ('projects', 'projects.html'), ('experience', 'experience.html'),
@@ -60,8 +61,8 @@ def layout(path, lang, title, description, body, active='home'):
     structured = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': title, 'inLanguage': lang}
     if path == 'index.html':
         structured.update({'@type': 'ProfilePage', 'mainEntity': {'@type': 'Person', 'name': 'Emilly Raiane Rodrigues', 'sameAs': [D['LINKEDIN'], D['GITHUB']]}})
-    if path.startswith('journal/'):
-        post = next(post for post in POSTS if J['path'](post) == path)
+    post = next((post for post in POSTS if J['path'](post) == path), None)
+    if post:
         structured.update({'@type': 'BlogPosting', 'headline': title, 'datePublished': post['date'], 'author': {'@type': 'Person', 'name': 'Emilly Rodrigues'}, 'image': [SITE_URL + '/' + post['photos'][key]['file'] for key in post['cover']]})
     return f'''<!doctype html>
 <html lang="{lang}">
@@ -77,7 +78,7 @@ def layout(path, lang, title, description, body, active='home'):
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
   <script src="{asset('src/script.js')}" defer></script>
 {f'<script src="{asset("src/projects.js")}" defer></script>' if path == 'projects.html' else ''}
-{f'<script src="{asset("src/journal.js")}" defer></script>' if path.startswith('journal/') else ''}
+{f'<script src="{asset("src/journal.js")}" defer></script>' if post else ''}
 </head>
 <body id="top" data-page="{active}">
 <a class="skip-link" href="#main">{t('skip')}</a>
@@ -124,7 +125,7 @@ def home(lang):
 def journal(post, lang):
     path = J['path'](post)
     current = loc(path, lang)
-    body = J['story'](post, lang, current, lambda x: href(current, x, lang), JUI)
+    body = J['story'](post, lang, current, lambda x: href(current, x, lang), JUI, POSTS, ENTITIES)
     return layout(path, lang, J['text'](post['title'], lang), J['text'](post['subtitle'], lang), body)
 
 def projects(lang):
@@ -218,6 +219,10 @@ def main():
             write(loc(path, lang), render(lang))
         for post in POSTS:
             write(loc(J['path'](post), lang), journal(post, lang))
+        path = 'journal/connections.html'
+        current = loc(path, lang)
+        body = J['connections'](POSTS, ENTITIES, lang, lambda x: href(current, x, lang), JUI)
+        write(current, layout(path, lang, J['text'](JUI['connections'], lang), J['text'](JUI['connections_intro'], lang), body))
         for p in PROJECTS:
             write(loc(detail(p), lang), project(p, lang))
     for old in ['pages/projects/projects_exemple.html', 'pages/experience/experience_exemple.html']:

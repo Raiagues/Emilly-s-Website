@@ -1,0 +1,110 @@
+{
+  "veronica": {
+    "name": {
+      "en": "Verônica Allende Serra",
+      "pt": "Verônica Allende Serra",
+      "fr": "Verônica Allende Serra",
+      "es": "Verônica Allende Serra"
+    },
+    "kind": "person"
+  },
+  "fundacao-estudar": {
+    "name": {
+      "en": "Fundação Estudar",
+      "pt": "Fundação Estudar",
+      "fr": "Fundação Estudar",
+      "es": "Fundação Estudar"
+    },
+    "kind": "institution"
+  },
+  "life-academy": {
+    "name": {
+      "en": "Life Academy",
+      "pt": "Life Academy",
+      "fr": "Life Academy",
+      "es": "Life Academy"
+    },
+    "kind": "institution"
+  },
+  "visiona": {
+    "name": {
+      "en": "Visiona",
+      "pt": "Visiona",
+      "fr": "Visiona",
+      "es": "Visiona"
+    },
+    "kind": "institution"
+  },
+  "inpe": {
+    "name": {
+      "en": "INPE · LIT",
+      "pt": "INPE · LIT",
+      "fr": "INPE · LIT",
+      "es": "INPE · LIT"
+    },
+    "kind": "institution"
+  },
+  "cern": {
+    "name": {
+      "en": "CERN",
+      "pt": "CERN",
+      "fr": "CERN",
+      "es": "CERN"
+    },
+    "kind": "institution"
+  },
+  "danilo-miranda": {
+    "name": {
+      "en": "Danilo Miranda",
+      "pt": "Danilo Miranda",
+      "fr": "Danilo Miranda",
+      "es": "Danilo Miranda"
+    },
+    "kind": "person"
+  },
+  "thais-cardoso-franco": {
+    "name": {
+      "en": "Thais Cardoso Franco",
+      "pt": "Thais Cardoso Franco",
+      "fr": "Thais Cardoso Franco",
+      "es": "Thais Cardoso Franco"
+    },
+    "kind": "person"
+  },
+  "mariana-chaves": {
+    "name": {
+      "en": "Mariana Chaves",
+      "pt": "Mariana Chaves",
+      "fr": "Mariana Chaves",
+      "es": "Mariana Chaves"
+    },
+    "kind": "person"
+  },
+  "anderson-juliana": {
+    "name": {
+      "en": "Anderson & Juliana",
+      "pt": "Anderson e Juliana",
+      "fr": "Anderson et Juliana",
+      "es": "Anderson y Juliana"
+    },
+    "kind": "person"
+  },
+  "kerri-cahoy": {
+    "name": {
+      "en": "Kerri Cahoy",
+      "pt": "Kerri Cahoy",
+      "fr": "Kerri Cahoy",
+      "es": "Kerri Cahoy"
+    },
+    "kind": "person"
+  },
+  "marina-sirotsky": {
+    "name": {
+      "en": "Marina Sirotsky",
+      "pt": "Marina Sirotsky",
+      "fr": "Marina Sirotsky",
+      "es": "Marina Sirotsky"
+    },
+    "kind": "person"
+  }
+}

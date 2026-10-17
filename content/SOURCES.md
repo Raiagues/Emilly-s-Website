@@ -92,3 +92,26 @@ Contexto público conferido:
 - [INPE — Laboratório de Integração e Testes](https://www.gov.br/inpe/pt-br/area-conhecimento/montagem-integracao-e-testes): atribuições de montagem, integração e qualificação de sistemas espaciais. O laboratório foi identificado como LIT do INPE a partir do relato e do contexto das fotos. Não foi mantido o superlativo “maior câmara do hemisfério sul”, pois não houve confirmação primária suficiente para essa comparação específica. O texto preserva a impressão pessoal de Emilly sobre o porte da instalação.
 
 O interesse por engenharia de sistemas é descrito como descoberta e aprendizado durante o estágio, sem converter isso em cargo, certificação ou liderança de campanha de integração. A visita ao laboratório não é apresentada como responsabilidade pela operação de seus equipamentos.
+
+
+## South Summit, cronologia e conexões entre histórias
+
+O relato de Emilly fundamenta a mentoria, a preparação e os convites para os painéis, os imprevistos antes da participação de Danilo, as conversas, a hospedagem e o contato com um investidor que a apresentou a outros founders. Não foram atribuídas causas aos imprevistos nem inventados acordos, investimentos ou resultados comerciais. A autora confirmou a correção dos nomes transcritos: **Danilo Miranda, Thais Cardoso Franco, Verônica Allende Serra e Marina Sirotsky**. A informação sobre construção da Quasar com recursos próprios vem do relato, não de uma auditoria financeira. A menção à Life Academy vem da autora; sua história completa será adicionada quando fornecida.
+
+As dez fotos de `portifolio/south summit/` foram inspecionadas. A imagem `painel jorgito.jpeg` registra no próprio painel o título “Aerospace Innovation Shaping New Markets”, Emilly Rodrigues como moderadora e Jorgito Stocchero, da AEL Sistemas, como participante. Ela fundamenta esse segundo registro de mediação. Nomes e eventos incertos não foram atribuídos ao painel fotografado em `painel b55.jpeg`; a legenda é descritiva.
+
+Fontes de contexto:
+
+- [Governo do RS — South Summit Brazil 2026](https://sict.rs.gov.br/south-summit-brazil-2026-e-lancado-apostando-na-inovacao-centrada-nas-pessoas): datas, local e papel do governo estadual. Eduardo Leite é descrito pelo cargo de governador no período do evento, não como vereador.
+- [South Summit — perfil de Emilly Rodrigues](https://www.southsummit.io/e/brazil/speaker/9753d242-ed00-f111-8330-6045bd9548dc/emilly-rodrigues): perfil público localizado no índice de busca; acesso direto limitado. As fotos e o relato pessoal são a principal evidência da participação.
+- [AIAB — diretoria](https://www.aiab.org.br/diretoria.asp): trajetória de Danilo Miranda. O nome da empresa é Mac Jee, e o projeto é RATO-14X. O texto evita chamar genericamente o projeto de “primeiro foguete hipersônico brasileiro”.
+- [Mapa da Inovação ES — Thais Cardoso Franco](https://mapa.inovacao.es.gov.br/agente/2617/): formação e vínculo com a Quasar Space.
+- [Maromar — equipe](https://www.maromar.com.br/en/): atuação de Marina Sirotsky. A hospedagem foi confirmada por Emilly, não inferida da biografia.
+- [Oasis Ventures — Marcelo Lacerda](https://oasisventures.com.br/marcelo-lacerda/): trajetória ligada à criação do Terra. A identificação contextual também usa o primeiro nome e a empresa mencionados pela autora; não se baseia em reconhecimento facial.
+- [Child Mind Institute — Mariana Rodrigues Chaves](https://childmind.org/bio/mariana-rodrigues-chaves/): vínculo com Harvard. A bolsa integral e o Colégio Militar de Santa Maria vêm do relato da autora; resultados de busca secundários também os mencionam. Não foi acrescentado um ano de admissão, pois havia divergência entre resultados.
+
+Cronologia: Visiona começa em outubro de 2025 e vai até junho de 2026; CERN ocorre de julho a setembro de 2026, conforme `Emilly_Rodrigues_Resume.pdf`. South Summit: 25–27/03/2026. BSV: 06–08/04/2026. Brasil Project: 10–12/04/2026, já conferidos nas fontes do capítulo anterior. A ordem usa o início da experiência; os períodos podem se sobrepor. A data de publicação do diário não foi confundida com a data da experiência. BSV e Brasil Project permanecem num relato, com dois destinos próprios na linha do tempo.
+
+O print da aprovação para BSV confirma **27/02** e o evento de 6 a 8 de abril; 2026 decorre do contexto confirmado e do calendário do evento. Os prints do CERN preservam as datas de recusa e aprovação já documentadas. Com autorização explícita da autora, os três endereços de remetentes foram cobertos por retângulos opacos aplicados por código, sem regeneração das imagens. A comparação pixel a pixel confirmou que só as regiões cobertas mudaram. Apenas as cópias protegidas, sem metadados dos originais, entram no repositório e no pacote de publicação. Os testes também verificam que as tarjas estão gravadas nos PNGs servidos, e não apenas sobrepostas na página.
+
+As conexões entre histórias são cadastradas explicitamente por entidade; não se inferem relações pessoais, patrocínios ou presença em eventos. Visiona conecta o estágio ao relato do South Summit; Fundação Estudar está associada ao capítulo da viagem aos EUA. Nomes podem ser reutilizados em histórias futuras sem criar páginas vazias.

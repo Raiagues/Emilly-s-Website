@@ -3,10 +3,10 @@
   "published": true,
   "date": "2026-10-17",
   "period": {
-    "en": "Summer 2026",
-    "pt": "Verão de 2026",
-    "fr": "Été 2026",
-    "es": "Verano de 2026"
+    "en": "July–September 2026",
+    "pt": "Julho–setembro de 2026",
+    "fr": "Juillet–septembre 2026",
+    "es": "Julio–septiembre de 2026"
   },
   "title": {
     "en": "My summer at CERN",
@@ -207,6 +207,28 @@
         "fr": "Encore un repas ensemble.",
         "es": "Otra comida juntos."
       }
+    },
+    "email-rejection": {
+      "file": "portifolio/cern/recusa-cern-protegido.png",
+      "width": 1008,
+      "height": 432,
+      "caption": {
+        "en": "The rejection email, 2 April 2026. Sender address covered.",
+        "pt": "O e-mail de recusa, de 2 de abril de 2026. Endereço do remetente coberto.",
+        "fr": "L’e-mail de refus du 2 avril 2026. Adresse de l’expéditeur masquée.",
+        "es": "El correo de rechazo del 2 de abril de 2026. Dirección del remitente oculta."
+      }
+    },
+    "email-acceptance": {
+      "file": "portifolio/cern/aprovacao-cern-protegido.png",
+      "width": 1008,
+      "height": 345,
+      "caption": {
+        "en": "The acceptance email, 30 April 2026. Sender address covered.",
+        "pt": "O e-mail de aprovação, de 30 de abril de 2026. Endereço da remetente coberto.",
+        "fr": "L’e-mail d’admission du 30 avril 2026. Adresse de l’expéditrice masquée.",
+        "es": "El correo de aceptación del 30 de abril de 2026. Dirección de la remitente oculta."
+      }
     }
   },
   "sections": [
@@ -243,7 +265,10 @@
         },
         "subject": "Selection result of CERN openlab Summer Student Programme 2026",
         "excerpt": "The selection process has now concluded, and we regret to inform you that we are unable to offer you a place in the programme this summer."
-      }
+      },
+      "documents": [
+        "email-rejection"
+      ]
     },
     {
       "id": "acceptance",
@@ -286,6 +311,9 @@
       },
       "photos": [
         "globe"
+      ],
+      "documents": [
+        "email-acceptance"
       ]
     },
     {
@@ -426,5 +454,25 @@
     "fr": "CERN openlab",
     "es": "CERN openlab"
   },
-  "technical_path": "pages/experience/cern.html"
+  "technical_path": "pages/experience/cern.html",
+  "timeline": [
+    {
+      "date": "2026-07",
+      "label": {
+        "en": "Jul–Sep 2026",
+        "pt": "Jul–set 2026",
+        "fr": "Juil–sept 2026",
+        "es": "Jul–sep 2026"
+      },
+      "title": {
+        "en": "CERN openlab · Switzerland",
+        "pt": "CERN openlab · Suíça",
+        "fr": "CERN openlab · Suisse",
+        "es": "CERN openlab · Suiza"
+      }
+    }
+  ],
+  "entities": [
+    "cern"
+  ]
 }

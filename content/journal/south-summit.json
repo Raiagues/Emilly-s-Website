@@ -1,0 +1,387 @@
+{
+  "slug": "south-summit",
+  "published": true,
+  "date": "2026-10-17",
+  "series": {
+    "en": "South Summit · Porto Alegre",
+    "pt": "South Summit · Porto Alegre",
+    "fr": "South Summit · Porto Alegre",
+    "es": "South Summit · Porto Alegre"
+  },
+  "period": {
+    "en": "25–27 March 2026",
+    "pt": "25–27 de março de 2026",
+    "fr": "25–27 mars 2026",
+    "es": "25–27 de marzo de 2026"
+  },
+  "title": {
+    "en": "How a conversation became a panel",
+    "pt": "Como uma conversa virou um painel",
+    "fr": "Comment une conversation est devenue une table ronde",
+    "es": "Cómo una conversación se convirtió en un panel"
+  },
+  "subtitle": {
+    "en": "My mentor Verônica, the people I wanted to meet and the work that took me to the South Summit stage.",
+    "pt": "Minha mentora Verônica, as pessoas que eu queria conhecer e o trabalho até chegar ao palco do South Summit.",
+    "fr": "Ma mentore Verônica, les personnes que je voulais rencontrer et le travail qui m’a menée sur la scène du South Summit.",
+    "es": "Mi mentora Verônica, las personas que quería conocer y el trabajo que me llevó al escenario de South Summit."
+  },
+  "intro": {
+    "en": "It started with a conversation with Verônica, my mentor. I told her I wanted to get closer to people in the space industry, hear about their work and understand the paths they had taken. I wasn’t imagining that this conversation would lead to organising and moderating a panel.",
+    "pt": "Começou numa conversa com a Verônica, minha mentora. Eu falei que queria me aproximar de pessoas do setor espacial, ouvir sobre o trabalho delas e entender os caminhos que tinham percorrido. Eu não estava imaginando que aquela conversa ia virar a organização e a mediação de um painel.",
+    "fr": "Tout a commencé par une conversation avec Verônica, ma mentore. Je lui ai dit que je voulais me rapprocher de personnes du secteur spatial, découvrir leur travail et comprendre leurs parcours. Je n’imaginais pas que cette conversation allait m’amener à organiser et animer une table ronde.",
+    "es": "Todo empezó en una conversación con Verônica, mi mentora. Le dije que quería acercarme a personas del sector espacial, conocer su trabajo y entender sus trayectorias. No imaginaba que esa conversación terminaría llevándome a organizar y moderar un panel."
+  },
+  "cover": [
+    "palco",
+    "danilo",
+    "painel"
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-25",
+      "label": {
+        "en": "25–27 Mar 2026",
+        "pt": "25–27 mar 2026",
+        "fr": "25–27 mars 2026",
+        "es": "25–27 mar 2026"
+      },
+      "title": {
+        "en": "South Summit · Porto Alegre",
+        "pt": "South Summit · Porto Alegre",
+        "fr": "South Summit · Porto Alegre",
+        "es": "South Summit · Porto Alegre"
+      }
+    }
+  ],
+  "entities": [
+    "veronica",
+    "life-academy",
+    "visiona",
+    "danilo-miranda",
+    "thais-cardoso-franco",
+    "mariana-chaves",
+    "marina-sirotsky"
+  ],
+  "sections": [
+    {
+      "id": "mentoria",
+      "title": {
+        "en": "An idea from Verônica",
+        "pt": "Uma ideia da Verônica",
+        "fr": "Une idée de Verônica",
+        "es": "Una idea de Verônica"
+      },
+      "paragraphs": [
+        {
+          "en": "I met Verônica Allende Serra through Life Academy, and she has helped me in many parts of my journey. When I told her what I was looking for, she said she was on the South Summit board and would talk to the organisers about the possibility of me putting together a panel on the space sector.",
+          "pt": "Conheci a Verônica Allende Serra pela Life Academy, e ela me ajudou muito em vários momentos da minha trajetória. Quando contei o que estava buscando, ela disse que fazia parte do conselho do South Summit e que conversaria com os organizadores sobre a possibilidade de eu montar um painel sobre o setor espacial.",
+          "fr": "J’ai rencontré Verônica Allende Serra grâce à Life Academy, et elle m’a beaucoup aidée à différents moments de mon parcours. Quand je lui ai expliqué ce que je cherchais, elle m’a dit qu’elle faisait partie du conseil du South Summit et qu’elle parlerait aux organisateurs de la possibilité de me confier une table ronde sur le secteur spatial.",
+          "es": "Conocí a Verônica Allende Serra a través de Life Academy y me ha ayudado mucho en distintos momentos de mi trayectoria. Cuando le conté lo que buscaba, me dijo que formaba parte del consejo de South Summit y que hablaría con los organizadores sobre la posibilidad de que yo preparara un panel sobre el sector espacial."
+        },
+        {
+          "en": "The 2026 event took place from March 25 to 27 at Cais Mauá, in Porto Alegre. For me, the work started well before those three days.",
+          "pt": "O evento de 2026 aconteceu de 25 a 27 de março, no Cais Mauá, em Porto Alegre. Pra mim, o trabalho começou bem antes daqueles três dias.",
+          "fr": "L’événement de 2026 s’est tenu du 25 au 27 mars au Cais Mauá, à Porto Alegre. Pour moi, le travail avait commencé bien avant ces trois journées.",
+          "es": "El evento de 2026 se celebró del 25 al 27 de marzo en Cais Mauá, en Porto Alegre. Para mí, el trabajo empezó mucho antes de esos tres días."
+        }
+      ],
+      "photos": [
+        "veronica-mariana"
+      ],
+      "links": [
+        {
+          "url": "https://sict.rs.gov.br/south-summit-brazil-2026-e-lancado-apostando-na-inovacao-centrada-nas-pessoas",
+          "label": {
+            "en": "South Summit Brazil · 2026 edition",
+            "pt": "South Summit Brazil · edição de 2026",
+            "fr": "South Summit Brazil · édition 2026",
+            "es": "South Summit Brazil · edición de 2026"
+          }
+        }
+      ]
+    },
+    {
+      "id": "preparacao",
+      "title": {
+        "en": "Research, messages and invitations",
+        "pt": "Pesquisa, mensagens e convites",
+        "fr": "Recherches, messages et invitations",
+        "es": "Investigación, mensajes e invitaciones"
+      },
+      "paragraphs": [
+        {
+          "en": "I started researching the sector, mapping out people I wanted to invite and thinking about the conversation I wanted to bring to the stage. Then came the messages and the introductions. Some people couldn’t take part, but there were two guests I especially hoped would say yes.",
+          "pt": "Comecei estudando o setor, mapeando quem eu queria convidar e pensando na conversa que queria levar para o palco. Depois vieram as mensagens e os contatos. Algumas pessoas não puderam participar, mas tinha dois convidados que eu queria muito que aceitassem.",
+          "fr": "J’ai commencé par étudier le secteur, repérer les personnes que je souhaitais inviter et réfléchir à la conversation que je voulais proposer sur scène. Puis sont venus les messages et les prises de contact. Certaines personnes ne pouvaient pas participer, mais j’espérais particulièrement un oui de deux invités.",
+          "es": "Empecé estudiando el sector, identificando a las personas que quería invitar y pensando en la conversación que quería llevar al escenario. Después vinieron los mensajes y los contactos. Algunas personas no pudieron participar, pero había dos invitados que esperaba especialmente que dijeran que sí."
+        },
+        {
+          "en": "One was Danilo Miranda. His work included systems engineering and project management on VCUB1 at Visiona, followed by leadership of the RATO-14X hypersonic launch vehicle project at Mac Jee.",
+          "pt": "Um deles era o Danilo Miranda. Sua trajetória inclui engenharia de sistemas e gestão do projeto VCUB1 na Visiona, seguida pela liderança do projeto do veículo lançador hipersônico RATO-14X na Mac Jee.",
+          "fr": "L’un d’eux était Danilo Miranda. Son parcours comprend l’ingénierie système et la gestion du projet VCUB1 chez Visiona, puis la direction du projet de véhicule lanceur hypersonique RATO-14X chez Mac Jee.",
+          "es": "Uno era Danilo Miranda. Su trayectoria incluye ingeniería de sistemas y gestión del proyecto VCUB1 en Visiona, y después la dirección del proyecto del vehículo lanzador hipersónico RATO-14X en Mac Jee."
+        },
+        {
+          "en": "The other was Thais Cardoso Franco, co-founder and CEO of Quasar Space, with a master’s and doctorate from ITA. I admired her technical knowledge and the story of building her startup with her own resources. I really wanted to hear from her.",
+          "pt": "A outra era a Thais Cardoso Franco, cofundadora e CEO da Quasar Space, mestre e doutora pelo ITA. Eu admirava muito o conhecimento técnico dela e a história de construir a startup com recursos próprios. Queria muito poder ouvi-la.",
+          "fr": "L’autre était Thais Cardoso Franco, cofondatrice et CEO de Quasar Space, titulaire d’un master et d’un doctorat de l’ITA. J’admirais ses connaissances techniques et son parcours de création d’une startup avec ses propres ressources. Je voulais vraiment l’écouter.",
+          "es": "La otra era Thais Cardoso Franco, cofundadora y CEO de Quasar Space, con máster y doctorado por ITA. Admiraba mucho sus conocimientos técnicos y la historia de construir su startup con recursos propios. Tenía muchas ganas de escucharla."
+        }
+      ],
+      "photos": [
+        "danilo"
+      ],
+      "links": [
+        {
+          "url": "https://www.aiab.org.br/diretoria.asp",
+          "label": {
+            "en": "Danilo Miranda · professional background",
+            "pt": "Danilo Miranda · trajetória profissional",
+            "fr": "Danilo Miranda · parcours professionnel",
+            "es": "Danilo Miranda · trayectoria profesional"
+          }
+        },
+        {
+          "url": "https://mapa.inovacao.es.gov.br/agente/2617/",
+          "label": {
+            "en": "Thais Cardoso Franco · Quasar Space",
+            "pt": "Thais Cardoso Franco · Quasar Space",
+            "fr": "Thais Cardoso Franco · Quasar Space",
+            "es": "Thais Cardoso Franco · Quasar Space"
+          }
+        }
+      ]
+    },
+    {
+      "id": "palco",
+      "title": {
+        "en": "And then we were on stage",
+        "pt": "E aí a gente estava no palco",
+        "fr": "Et puis, nous étions sur scène",
+        "es": "Y de repente estábamos en el escenario"
+      },
+      "paragraphs": [
+        {
+          "en": "They both accepted. There were some last-minute complications and, for a while, Danilo’s participation was uncertain. In the end, it worked out. Getting to moderate that conversation after all the preparation was very special.",
+          "pt": "Os dois aceitaram. Teve imprevisto antes do evento e, por um momento, a participação do Danilo ficou incerta. No fim, deu tudo certo. Poder mediar aquela conversa depois de toda a preparação foi muito especial.",
+          "fr": "Ils ont tous les deux accepté. Il y a eu des imprévus avant l’événement et, pendant un moment, la participation de Danilo était incertaine. Finalement, tout s’est bien passé. Animer cette conversation après toute la préparation a été un moment très spécial.",
+          "es": "Los dos aceptaron. Hubo imprevistos antes del evento y, durante un momento, la participación de Danilo estuvo en duda. Al final salió todo bien. Moderar esa conversación después de toda la preparación fue muy especial."
+        },
+        {
+          "en": "My photos also capture the panel “Aerospace Innovation Shaping New Markets”, which I moderated with Jorgito Stocchero, from AEL Sistemas. Looking at those images brings back the feeling of being there, asking questions of people whose experience I wanted to learn from.",
+          "pt": "As fotos também guardam o painel “Aerospace Innovation Shaping New Markets”, que mediei com Jorgito Stocchero, da AEL Sistemas. Olhar esses registros me traz de volta a sensação de estar ali, fazendo perguntas para pessoas com quem eu queria aprender.",
+          "fr": "Mes photos gardent aussi une trace de la table ronde « Aerospace Innovation Shaping New Markets », que j’ai animée avec Jorgito Stocchero, d’AEL Sistemas. Ces images me rappellent ce que je ressentais en posant des questions à des personnes dont je voulais apprendre.",
+          "es": "Las fotos también guardan el panel «Aerospace Innovation Shaping New Markets», que moderé con Jorgito Stocchero, de AEL Sistemas. Mirarlas me devuelve la sensación de estar allí, haciendo preguntas a personas de las que quería aprender."
+        }
+      ],
+      "photos": [
+        "painel",
+        "palco",
+        "jorgito"
+      ],
+      "links": []
+    },
+    {
+      "id": "encontros",
+      "title": {
+        "en": "People I got to meet",
+        "pt": "As pessoas que encontrei",
+        "fr": "Les personnes rencontrées",
+        "es": "Las personas que conocí"
+      },
+      "paragraphs": [
+        {
+          "en": "One of the conversations I loved was with Mariana Chaves. She had studied at the military school in Santa Maria, the same city as my university, and had been accepted to Harvard with a full scholarship. That connection to Santa Maria made meeting her even more special to me.",
+          "pt": "Uma das conversas de que gostei muito foi com a Mariana Chaves. Ela estudou no Colégio Militar de Santa Maria, a mesma cidade da minha universidade, e foi aprovada em Harvard com bolsa integral. Essa conexão com Santa Maria deixou o encontro ainda mais especial pra mim.",
+          "fr": "L’une des conversations que j’ai beaucoup aimées était avec Mariana Chaves. Elle avait étudié au lycée militaire de Santa Maria, la ville de mon université, et avait été admise à Harvard avec une bourse complète. Ce lien avec Santa Maria rendait cette rencontre encore plus spéciale pour moi.",
+          "es": "Una de las conversaciones que más disfruté fue con Mariana Chaves. Estudió en el colegio militar de Santa Maria, la misma ciudad de mi universidad, y fue admitida en Harvard con una beca completa. Esa conexión con Santa Maria hizo que conocerla fuera todavía más especial para mí."
+        },
+        {
+          "en": "I also met Eduardo Leite, governor of Rio Grande do Sul at the time of the event, and Marcelo Lacerda, one of the co-founders of Terra. There were so many different paths and experiences in one place.",
+          "pt": "Também conheci Eduardo Leite, governador do Rio Grande do Sul na época do evento, e Marcelo Lacerda, um dos cofundadores do Terra. Eram muitas trajetórias e experiências diferentes no mesmo lugar.",
+          "fr": "J’ai aussi rencontré Eduardo Leite, gouverneur du Rio Grande do Sul au moment de l’événement, et Marcelo Lacerda, l’un des cofondateurs de Terra. Tant de parcours et d’expériences différents réunis au même endroit.",
+          "es": "También conocí a Eduardo Leite, gobernador de Rio Grande do Sul en la época del evento, y a Marcelo Lacerda, uno de los cofundadores de Terra. Había muchas trayectorias y experiencias diferentes reunidas en un mismo lugar."
+        },
+        {
+          "en": "And there was Jade Picon. We are the same age, and I had followed her since I was about twelve or thirteen. It felt as if I had watched her grow up while I was growing up too, even though we had never met. Hearing about her work as an entrepreneur in person was such a different experience.",
+          "pt": "E teve a Jade Picon. A gente tem a mesma idade, e eu acompanhava ela desde os meus doze ou treze anos. Era como se eu tivesse visto ela crescer enquanto eu também crescia, mesmo sem a gente nunca ter se conhecido. Ouvir pessoalmente sobre o lado empreendedor dela foi uma experiência muito diferente.",
+          "fr": "Et il y a eu Jade Picon. Nous avons le même âge, et je la suivais depuis mes douze ou treize ans. J’avais l’impression de l’avoir vue grandir pendant que je grandissais aussi, alors que nous ne nous étions jamais rencontrées. L’écouter parler de son parcours entrepreneurial en personne était une expérience vraiment différente.",
+          "es": "Y también estuvo Jade Picon. Tenemos la misma edad y la seguía desde mis doce o trece años. Sentía que la había visto crecer mientras yo también crecía, aunque nunca nos habíamos conocido. Escuchar en persona su historia como emprendedora fue una experiencia muy distinta."
+        }
+      ],
+      "photos": [
+        "eduardo",
+        "marcelo",
+        "jade"
+      ],
+      "links": [
+        {
+          "url": "https://oasisventures.com.br/marcelo-lacerda/",
+          "label": {
+            "en": "Marcelo Lacerda · entrepreneurial background",
+            "pt": "Marcelo Lacerda · trajetória empreendedora",
+            "fr": "Marcelo Lacerda · parcours entrepreneurial",
+            "es": "Marcelo Lacerda · trayectoria emprendedora"
+          }
+        }
+      ]
+    },
+    {
+      "id": "alem-do-evento",
+      "title": {
+        "en": "The conversations kept going",
+        "pt": "As conversas continuavam",
+        "fr": "Les conversations continuaient",
+        "es": "Las conversaciones seguían"
+      },
+      "paragraphs": [
+        {
+          "en": "Our host was Marina Sirotsky, a board member at Maromar Investimentos with experience in family governance at Grupo RBS. Staying at her home and spending time together outside the event are part of the memories I keep from those days.",
+          "pt": "Nossa anfitriã foi a Marina Sirotsky, conselheira da Maromar Investimentos, com atuação em governança familiar no Grupo RBS. Ficar na casa dela e conviver fora do evento também faz parte das lembranças que guardo daqueles dias.",
+          "fr": "Notre hôte était Marina Sirotsky, membre du conseil de Maromar Investimentos, avec une expérience de la gouvernance familiale au Grupo RBS. Le séjour chez elle et les moments partagés en dehors de l’événement font aussi partie des souvenirs que je garde de ces journées.",
+          "es": "Nuestra anfitriona fue Marina Sirotsky, consejera de Maromar Investimentos, con experiencia en gobernanza familiar en Grupo RBS. Alojarme en su casa y pasar tiempo juntos fuera del evento también forma parte de los recuerdos que guardo de aquellos días."
+        },
+        {
+          "en": "I met people from other countries, and an investor introduced me to other founders in the space sector. I had wanted to get closer to people in the industry, and that was happening through conversations, introductions and the work of bringing the panel together.",
+          "pt": "Conheci pessoas de outros países, e um investidor me apresentou a outros founders do setor espacial. Eu queria me aproximar de pessoas da área, e isso estava acontecendo por meio das conversas, das apresentações e do próprio trabalho de construir o painel.",
+          "fr": "J’ai rencontré des personnes d’autres pays, et un investisseur m’a présentée à d’autres fondateurs du secteur spatial. Je voulais me rapprocher des personnes de ce milieu, et cela se faisait au fil des conversations, des présentations et du travail pour préparer la table ronde.",
+          "es": "Conocí a personas de otros países y un inversor me presentó a otros founders del sector espacial. Quería acercarme a personas de la industria y eso estaba pasando a través de las conversaciones, las presentaciones y el propio trabajo de preparar el panel."
+        }
+      ],
+      "photos": [
+        "anfitria",
+        "b55"
+      ],
+      "links": [
+        {
+          "url": "https://www.maromar.com.br/en/",
+          "label": {
+            "en": "Marina Sirotsky · Maromar",
+            "pt": "Marina Sirotsky · Maromar",
+            "fr": "Marina Sirotsky · Maromar",
+            "es": "Marina Sirotsky · Maromar"
+          }
+        }
+      ]
+    }
+  ],
+  "closing": {
+    "en": "I think back to the conversation with Verônica that started it all. Her mentorship gave me an opportunity to do something I hadn’t imagined yet. And I got to learn by making it happen.",
+    "pt": "Volto muito àquela conversa com a Verônica que começou tudo. A mentoria dela me deu a oportunidade de fazer algo que eu ainda nem tinha imaginado. E eu pude aprender fazendo acontecer.",
+    "fr": "Je repense souvent à cette conversation avec Verônica, au début de tout. Son accompagnement m’a donné l’occasion de faire quelque chose que je n’avais pas encore imaginé. Et j’ai pu apprendre en le réalisant.",
+    "es": "Pienso mucho en aquella conversación con Verônica con la que empezó todo. Su mentoría me dio la oportunidad de hacer algo que todavía no había imaginado. Y pude aprender haciéndolo realidad."
+  },
+  "photos": {
+    "veronica-mariana": {
+      "file": "portifolio/south summit/veronica e mariana.jpeg",
+      "width": 1600,
+      "height": 1349,
+      "caption": {
+        "en": "With Verônica and Mariana during South Summit.",
+        "pt": "Com a Verônica e a Mariana durante o South Summit.",
+        "fr": "Avec Verônica et Mariana pendant le South Summit.",
+        "es": "Con Verônica y Mariana durante South Summit."
+      }
+    },
+    "danilo": {
+      "file": "portifolio/south summit/danilp.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "caption": {
+        "en": "With Danilo Miranda.",
+        "pt": "Com Danilo Miranda.",
+        "fr": "Avec Danilo Miranda.",
+        "es": "Con Danilo Miranda."
+      }
+    },
+    "painel": {
+      "file": "portifolio/south summit/painel thais e danilo.jpeg",
+      "width": 1280,
+      "height": 854,
+      "caption": {
+        "en": "Moderating the conversation with Thais Cardoso Franco and Danilo Miranda.",
+        "pt": "Mediando a conversa com Thais Cardoso Franco e Danilo Miranda.",
+        "fr": "Animation de la conversation avec Thais Cardoso Franco et Danilo Miranda.",
+        "es": "Moderando la conversación con Thais Cardoso Franco y Danilo Miranda."
+      }
+    },
+    "palco": {
+      "file": "portifolio/south summit/south summit.jpeg",
+      "width": 854,
+      "height": 1280,
+      "caption": {
+        "en": "On stage at South Summit Brazil.",
+        "pt": "No palco do South Summit Brazil.",
+        "fr": "Sur scène au South Summit Brazil.",
+        "es": "En el escenario de South Summit Brazil."
+      }
+    },
+    "jorgito": {
+      "file": "portifolio/south summit/painel jorgito.jpeg",
+      "width": 1600,
+      "height": 900,
+      "caption": {
+        "en": "“Aerospace Innovation Shaping New Markets”, with Jorgito Stocchero.",
+        "pt": "“Aerospace Innovation Shaping New Markets”, com Jorgito Stocchero.",
+        "fr": "« Aerospace Innovation Shaping New Markets », avec Jorgito Stocchero.",
+        "es": "«Aerospace Innovation Shaping New Markets», con Jorgito Stocchero."
+      }
+    },
+    "eduardo": {
+      "file": "portifolio/south summit/eduardo leite.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Meeting Eduardo Leite.",
+        "pt": "Encontro com Eduardo Leite.",
+        "fr": "Rencontre avec Eduardo Leite.",
+        "es": "Encuentro con Eduardo Leite."
+      }
+    },
+    "marcelo": {
+      "file": "portifolio/south summit/fundadorterra.jpeg",
+      "width": 1600,
+      "height": 1259,
+      "caption": {
+        "en": "A group photo with Marcelo Lacerda.",
+        "pt": "Um registro do grupo com Marcelo Lacerda.",
+        "fr": "Une photo de groupe avec Marcelo Lacerda.",
+        "es": "Una foto del grupo con Marcelo Lacerda."
+      }
+    },
+    "jade": {
+      "file": "portifolio/south summit/jade picon.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "caption": {
+        "en": "Meeting Jade Picon in person.",
+        "pt": "Conhecendo a Jade Picon pessoalmente.",
+        "fr": "Rencontrer Jade Picon en personne.",
+        "es": "Conociendo a Jade Picon en persona."
+      }
+    },
+    "anfitria": {
+      "file": "portifolio/south summit/anfitria mariana.jpeg",
+      "width": 1600,
+      "height": 1200,
+      "caption": {
+        "en": "With our host, Marina Sirotsky.",
+        "pt": "Com nossa anfitriã, Marina Sirotsky.",
+        "fr": "Avec notre hôte, Marina Sirotsky.",
+        "es": "Con nuestra anfitriona, Marina Sirotsky."
+      }
+    },
+    "b55": {
+      "file": "portifolio/south summit/painel b55.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Another panel during the event.",
+        "pt": "Outro painel durante o evento.",
+        "fr": "Une autre table ronde pendant l’événement.",
+        "es": "Otro panel durante el evento."
+      }
+    }
+  }
+}

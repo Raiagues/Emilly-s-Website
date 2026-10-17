@@ -9,10 +9,10 @@
     "es": "Fundação Estudar · diario de viaje"
   },
   "period": {
-    "en": "April 2026",
-    "pt": "Abril de 2026",
-    "fr": "Avril 2026",
-    "es": "Abril de 2026"
+    "en": "6–12 April 2026",
+    "pt": "6–12 de abril de 2026",
+    "fr": "6–12 avril 2026",
+    "es": "6–12 de abril de 2026"
   },
   "related_award": "Líderes Estudar",
   "award_link_label": {
@@ -55,10 +55,10 @@
       },
       "paragraphs": [
         {
-          "en": "I was one of the students selected to attend Brazil at Silicon Valley with funding from Fundação Estudar. When the news came, I had a little over a month to get my visa. I requested an emergency appointment and started trying to make everything happen in time. It was chaotic.",
-          "pt": "Fui uma das alunas selecionadas para participar do Brazil at Silicon Valley com o apoio financeiro da Fundação Estudar. Quando veio a notícia, eu tinha mais ou menos um mês e pouco pra conseguir o visto. Pedi um agendamento de emergência e começou a correria pra fazer tudo dar certo a tempo. Foi caótico.",
-          "fr": "J’ai fait partie des étudiantes sélectionnées pour participer à Brazil at Silicon Valley avec le soutien financier de Fundação Estudar. À l’annonce de la sélection, il me restait un peu plus d’un mois pour obtenir mon visa. J’ai demandé un rendez-vous en urgence, puis tout s’est enchaîné pour essayer d’être prête à temps. C’était chaotique.",
-          "es": "Fui una de las estudiantes seleccionadas para participar en Brazil at Silicon Valley con el apoyo económico de Fundação Estudar. Cuando llegó la noticia, tenía poco más de un mes para conseguir el visado. Pedí una cita de emergencia y empezó la carrera para tenerlo todo listo a tiempo. Fue caótico."
+          "en": "On February 27, 2026, I received the email confirming I had been selected to attend Brazil at Silicon Valley with funding from Fundação Estudar. I had a little over a month to get my visa. I requested an emergency appointment and started trying to make everything happen in time. It was chaotic.",
+          "pt": "Em 27 de fevereiro de 2026, recebi o e-mail confirmando minha seleção para participar do Brazil at Silicon Valley com o apoio financeiro da Fundação Estudar. Eu tinha pouco mais de um mês pra conseguir o visto. Pedi um agendamento de emergência e começou a correria pra fazer tudo dar certo a tempo. Foi caótico.",
+          "fr": "Le 27 février 2026, j’ai reçu l’e-mail confirmant ma sélection pour Brazil at Silicon Valley avec le soutien financier de Fundação Estudar. Il me restait un peu plus d’un mois pour obtenir mon visa. J’ai demandé un rendez-vous en urgence, puis tout s’est enchaîné pour être prête à temps. C’était chaotique.",
+          "es": "El 27 de febrero de 2026 recibí el correo que confirmaba mi selección para Brazil at Silicon Valley con el apoyo económico de Fundação Estudar. Tenía poco más de un mes para conseguir el visado. Pedí una cita de emergencia y empezó la carrera para tenerlo todo listo a tiempo. Fue caótico."
         },
         {
           "en": "In California, Anderson and his wife, Juliana, volunteers with Fundação Estudar, welcomed us into their home. Having people receive us like that made this first trip much more special.",
@@ -70,7 +70,10 @@
       "photos": [
         "almoco"
       ],
-      "links": []
+      "links": [],
+      "documents": [
+        "email-acceptance"
+      ]
     },
     {
       "id": "silicon-valley",
@@ -443,6 +446,56 @@
         "fr": "San Francisco la nuit.",
         "es": "San Francisco de noche."
       }
+    },
+    "email-acceptance": {
+      "file": "portifolio/bsv/aprovacao-bsv-protegido.png",
+      "width": 652,
+      "height": 438,
+      "caption": {
+        "en": "My Brazil at Silicon Valley acceptance email, 27 February 2026. Sender address covered.",
+        "pt": "Meu e-mail de aprovação para o Brazil at Silicon Valley, de 27 de fevereiro de 2026. Endereço do remetente coberto.",
+        "fr": "Mon e-mail d’admission à Brazil at Silicon Valley, le 27 février 2026. Adresse de l’expéditeur masquée.",
+        "es": "Mi correo de aceptación para Brazil at Silicon Valley, del 27 de febrero de 2026. Dirección del remitente oculta."
+      }
     }
-  }
+  },
+  "timeline": [
+    {
+      "date": "2026-04-06",
+      "label": {
+        "en": "6–8 Apr 2026",
+        "pt": "6–8 abr 2026",
+        "fr": "6–8 avr 2026",
+        "es": "6–8 abr 2026"
+      },
+      "title": {
+        "en": "Brazil at Silicon Valley · California",
+        "pt": "Brazil at Silicon Valley · Califórnia",
+        "fr": "Brazil at Silicon Valley · Californie",
+        "es": "Brazil at Silicon Valley · California"
+      },
+      "section": "silicon-valley"
+    },
+    {
+      "date": "2026-04-10",
+      "label": {
+        "en": "10–12 Apr 2026",
+        "pt": "10–12 abr 2026",
+        "fr": "10–12 avr 2026",
+        "es": "10–12 abr 2026"
+      },
+      "title": {
+        "en": "Brasil Project · Cambridge / Boston",
+        "pt": "Brasil Project · Cambridge / Boston",
+        "fr": "Brasil Project · Cambridge / Boston",
+        "es": "Brasil Project · Cambridge / Boston"
+      },
+      "section": "boston"
+    }
+  ],
+  "entities": [
+    "fundacao-estudar",
+    "anderson-juliana",
+    "kerri-cahoy"
+  ]
 }

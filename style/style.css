@@ -770,3 +770,42 @@ a:hover .row-open, .text-link:hover { text-decoration: underline; text-underline
 .project-list .tags { gap: 5px; }
 @media (max-width: 1000px) { .project-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .project-list { grid-template-columns: 1fr; gap: 30px; } }
+
+/* Chronology and connections use the same journal palette and typography. */
+.journal-timeline { margin: 0 0 25px; }
+.journal-timeline h3 { font: 400 27px var(--serif); margin-bottom: 22px; }
+.journal-timeline ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; list-style: none; padding: 0; margin: 0; }
+.journal-timeline li { border-top: 2px solid var(--line); padding-top: 14px; }
+.journal-timeline time { display: block; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.journal-timeline a { display: block; font-size: 15px; line-height: 1.6; padding: 4px 0; }
+.journal-timeline a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.journal-browse { margin-bottom: 35px; }
+.connection-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 30px; }
+.connection-tags .button { font-size: 14px; padding: 10px 16px; }
+.connections-page h1 { margin-top: 26px; }
+.connection-group { padding: 28px 0; border-top: 1px solid var(--line); }
+.connection-group h2 { font-size: 30px; margin-bottom: 15px; }
+.connection-group ul, .journal-connections ul { list-style: none; padding: 0; margin: 0; }
+.connection-group li { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; padding: 12px 0; }
+.connection-group li>span { color: var(--muted); font-size: 13px; }
+.connection-group a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.journal-connections { margin: 0 0 60px 245px; padding-top: 32px; border-top: 1px solid var(--line); }
+.journal-connections h2 { font-size: 30px; }
+.journal-connections h3 { font-size: 17px; margin: 26px 0 14px; }
+.journal-connections li { padding: 8px 0; }
+.journal-document { margin: 30px 0 18px; }
+.journal-document img { width: 100%; height: auto; background: white; }
+.journal-document figcaption { font-size: 12px; line-height: 1.7; color: var(--muted); margin-top: 12px; }
+.journal-transcript { margin: 16px 0 28px; }
+.journal-transcript summary { cursor: pointer; padding: 10px 0; font-size: 14px; }
+.journal-transcript .journal-letter { margin-top: 14px; }
+@media (max-width: 900px) {
+  .journal-timeline ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .journal-timeline ol { grid-template-columns: 1fr; gap: 15px; }
+  .journal-timeline li { border-top-width: 1px; }
+  .journal-timeline time { margin-bottom: 3px; }
+  .journal-connections { margin-left: 0; }
+  .connection-group li { grid-template-columns: 1fr; gap: 4px; }
+}

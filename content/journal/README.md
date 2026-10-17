@@ -4,7 +4,7 @@ O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao
 
 ## Alterar uma história
 
-Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos) ou **`content/journal/visiona.json`** (Visiona) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) ou **`content/journal/south-summit.json`** (South Summit) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
 
 - `title`: título da história.
 - `subtitle`: resumo que aparece na página inicial.
@@ -18,7 +18,10 @@ Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (via
 - `related_award`: nome exato de uma conquista para ligar aquela entrada na página Conquistas à história. Opcional; `award_link_label` define o texto do link nos quatro idiomas.
 - `technical_path`: endereço da página técnica relacionada. É opcional. A página técnica também passa a apontar para o diário. Sem relatório, o link aparece na introdução da história.
 - `technical_label` e `journal_link_label`: textos opcionais, nos quatro idiomas, para os links entre a história e a página técnica.
-- `date`: data de publicação, no formato `AAAA-MM-DD`; ordena as histórias na página inicial.
+- `date`: data de publicação, no formato `AAAA-MM-DD`, usada nos metadados.
+- `timeline`: acontecimentos da história; cada item tem `date` (`AAAA-MM` ou `AAAA-MM-DD`), `label` e `title` nos quatro idiomas e, opcionalmente, `section` para abrir diretamente um capítulo. A página inicial ordena esses acontecimentos e as histórias pela data da experiência, não pela publicação.
+- `entities`: identificadores das pessoas e instituições que aparecem no relato, cadastrados em `entities.json`.
+- `documents`: dentro de um capítulo, lista de imagens de documentos, referenciadas pelo mesmo catálogo `photos`. São mostradas inteiras e podem ser abertas em outra aba; não entram no contador da galeria de fotos.
 - `period`: o período da experiência, mostrado para quem lê. Pode ser diferente da data de publicação.
 
 Cada texto tem quatro versões: `en`, `pt`, `fr`, `es`. Edite o texto **entre as aspas**, preservando chaves e vírgulas. Se precisar usar aspas dentro do texto, prefira “aspas curvas” ou escreva `\"`.
@@ -65,13 +68,25 @@ As fotos fornecidas ficam intactas. Apenas as imagens e o relatório referenciad
 
 ## Escrever uma história nova
 
-Duplique `cern.json`, escolha outro nome para o arquivo e outro `slug` (letras minúsculas, números e hífens). Por exemplo, `minha-primeira-trilha` vira `journal/minha-primeira-trilha.html`. Atualize textos, data e fotos; remova `resource` e `technical_path` se não houver relatório ou projeto relacionado.
+Duplique uma história existente, escolha outro nome para o arquivo e outro `slug` (letras minúsculas, números e hífens; `connections` é reservado). Por exemplo, `minha-primeira-trilha` vira `journal/minha-primeira-trilha.html`. Atualize textos, data, `timeline`, `entities` e fotos; remova `resource` e `technical_path` se não houver relatório ou projeto relacionado.
 
 Comece com **`"published": false`**. O gerador ignora rascunhos. Quando terminar, mude para `true`: a história entra na página inicial e ganha páginas nos quatro idiomas. Use o mesmo `slug` depois de publicar para preservar o endereço.
 
 A história do CERN já inclui os capítulos sobre a preparação e a aprovação, escritos a partir do seu relato. Para uma nova história em rascunho, duplique esse arquivo e mantenha `published: false` enquanto escreve. O gerador exige os textos principais em inglês antes de publicar.
 
 Para retirar uma história do site, mude `published` para `false` e publique a alteração. O novo pacote deixa de incluir suas páginas e os arquivos exclusivos dela. Isso não apaga os arquivos nem o histórico do repositório GitHub.
+
+## Conectar histórias por pessoas ou instituições
+
+No arquivo `entities.json`, cada entrada tem um identificador estável (por exemplo, `veronica` ou `fundacao-estudar`), um `name` nos quatro idiomas e `kind` (`person` ou `institution`). Acrescente o identificador à lista `entities` de cada história em que aquela pessoa ou instituição aparece.
+
+O site monta automaticamente a página **Pessoas e instituições** e as sugestões ao fim de cada história. Uma pessoa que aparece em apenas uma história continua acessível pelo índice; outras histórias só são sugeridas quando realmente compartilham um identificador. Não precisa cadastrar links manualmente. Ao renomear uma pessoa, mantenha o identificador para preservar os links.
+
+## E-mails e outros documentos
+
+Os três prints de e-mail publicados usam arquivos `*-protegido.png`, com o endereço do remetente coberto permanentemente nos pixels da imagem. Os originais não foram enviados ao repositório. Para acrescentar outro print, oculte as informações pessoais no próprio arquivo antes do upload; cobrir com CSS não protege a imagem baixada.
+
+No CERN, o trecho transcrito do e-mail continua disponível em **Ler o trecho do e-mail**, abaixo do print. As datas de candidatura ficam no relato: a linha do tempo principal mostra os períodos das experiências. No caso dos Estados Unidos, BSV e Brasil Project têm entradas próprias que apontam para capítulos da mesma história.
 
 ## Conferir e publicar
 

@@ -9,10 +9,10 @@
     "es": "Visiona · de vuelta en Brasil"
   },
   "period": {
-    "en": "2025–2026",
-    "pt": "2025–2026",
-    "fr": "2025–2026",
-    "es": "2025–2026"
+    "en": "October 2025–June 2026",
+    "pt": "Outubro de 2025–junho de 2026",
+    "fr": "Octobre 2025–juin 2026",
+    "es": "Octubre de 2025–junio de 2026"
   },
   "title": {
     "en": "Visiona: seeing Brazil differently",
@@ -331,5 +331,26 @@
         "es": "Noche de juegos: un encuentro fuera del trabajo."
       }
     }
-  }
+  },
+  "timeline": [
+    {
+      "date": "2025-10",
+      "label": {
+        "en": "Oct 2025–Jun 2026",
+        "pt": "Out 2025–jun 2026",
+        "fr": "Oct 2025–juin 2026",
+        "es": "Oct 2025–jun 2026"
+      },
+      "title": {
+        "en": "Visiona · back in Brazil",
+        "pt": "Visiona · de volta ao Brasil",
+        "fr": "Visiona · retour au Brésil",
+        "es": "Visiona · de vuelta en Brasil"
+      }
+    }
+  ],
+  "entities": [
+    "visiona",
+    "inpe"
+  ]
 }

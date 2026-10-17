@@ -106,5 +106,47 @@
     "pt": "Meu diário do CERN: o projeto, as visitas e a vida fora do laboratório",
     "fr": "Mon journal du CERN : le projet, les visites et la vie en dehors du labo",
     "es": "Mi diario del CERN: el proyecto, las visitas y la vida fuera del laboratorio"
+  },
+  "timeline": {
+    "en": "Along the way",
+    "pt": "Linha do tempo",
+    "fr": "Au fil du temps",
+    "es": "Línea del tiempo"
+  },
+  "connections": {
+    "en": "People and institutions",
+    "pt": "Pessoas e instituições",
+    "fr": "Personnes et institutions",
+    "es": "Personas e instituciones"
+  },
+  "connections_intro": {
+    "en": "Follow the people and communities that appear in my stories.",
+    "pt": "Acompanhe as pessoas e comunidades que aparecem nas minhas histórias.",
+    "fr": "Retrouvez les personnes et les communautés présentes dans mes histoires.",
+    "es": "Sigue a las personas y comunidades que aparecen en mis historias."
+  },
+  "connections_in_story": {
+    "en": "In this story",
+    "pt": "Quem aparece nesta história",
+    "fr": "Dans cette histoire",
+    "es": "En esta historia"
+  },
+  "related": {
+    "en": "More stories connected to this one",
+    "pt": "Outras histórias que se conectam",
+    "fr": "D’autres histoires qui se rejoignent",
+    "es": "Otras historias conectadas"
+  },
+  "all_connections": {
+    "en": "Explore people and institutions",
+    "pt": "Explorar pessoas e instituições",
+    "fr": "Explorer les personnes et institutions",
+    "es": "Explorar personas e instituciones"
+  },
+  "transcript": {
+    "en": "Read the email excerpt",
+    "pt": "Ler o trecho do e-mail",
+    "fr": "Lire l’extrait de l’e-mail",
+    "es": "Leer el fragmento del correo"
   }
 }
