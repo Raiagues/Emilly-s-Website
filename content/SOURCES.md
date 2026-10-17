@@ -37,3 +37,7 @@ Revisão em 17/10/2026. As traduções reorganizam os fatos para leitura em um p
 Evidências publicadas: liderança técnica (Carancho e EP Aero), autonomia (projeto educacional e kernel), curiosidade técnica (CVA6 e CERN), colaboração entre áreas (Visiona e projetos em equipe), resolução de problemas (CNES, TIMA e CVA6) e comunicação científica (EP Aero e Webservatório).
 
 A usuária solicitou deixar de fora, por enquanto, negociação, decisões sob pressão, coordenação internacional e interface com clientes. Trabalhar em outros países não foi tratado como prova de coordenação internacional; comunicação com escolas não foi tratada como interface comercial com clientes.
+
+## Revisão visual e de navegação
+
+A revisão separa as seis seções em páginas próprias e troca títulos figurativos pelos nomes dos trabalhos. Mantém as mesmas evidências, datas e resultados. A fotografia pessoal vem do repositório; as ilustrações conceituais anteriores deixam de aparecer na interface. Os links de vídeos do CubeSat e do veículo foram preservados. A tentativa de obter miniaturas públicas no Drive não forneceu imagens acessíveis, e não se usaram imagens artificiais como registros dos projetos.

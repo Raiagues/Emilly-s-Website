@@ -1,30 +1,32 @@
 'use strict';
-// Progressive enhancement: every page and every language works without JavaScript.
-const menu = document.querySelector('.menu-toggle');
-const nav = document.querySelector('#main-nav');
-if (menu && nav) {
-  const mobile = window.matchMedia('(max-width: 850px)');
-  const setMenu = (open) => {
-    menu.setAttribute('aria-expanded', String(open));
-    nav.classList.toggle('is-collapsed', !open && mobile.matches);
-  };
-  setMenu(false);
-  menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
-  nav.addEventListener('click', (event) => {
-    if (event.target.closest('a')) setMenu(false);
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
-      setMenu(false);
-      menu.focus();
-    }
-  });
-  mobile.addEventListener('change', () => setMenu(false));
+// Every main destination is visible, including on mobile and with JS disabled.
+const scriptRoot = new URL('../', document.currentScript.src).pathname;
+const header = document.querySelector('.site-header');
+if (header && 'ResizeObserver' in window) {
+  new ResizeObserver(() => document.documentElement.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`)).observe(header);
 }
-// Keep the current section when changing language on the homepage.
+// Retain the actual section, not an obsolete anchor, on older shared home URLs.
+const oldSections = {projects:'projects.html',experience:'experience.html','about-me':'about.html',recognition:'recognition.html',contact:'contact.html'};
+if (document.body.dataset.page === 'home' && oldSections[location.hash.slice(1)]) {
+  location.replace(new URL(oldSections[location.hash.slice(1)], location.href).href);
+}
 for (const link of document.querySelectorAll('.languages a')) {
   link.addEventListener('click', () => { if (location.hash) link.hash = location.hash; });
 }
+// A project opened from filtered results returns to those results, also across languages.
+try {
+  const saved = new URLSearchParams(sessionStorage.getItem(`emilly-projects:${scriptRoot}`) || '');
+  const allowedAreas = ['space','hardware','control','software','outreach'];
+  const safe = new URLSearchParams();
+  if (allowedAreas.includes(saved.get('area'))) safe.set('area', saved.get('area'));
+  if (saved.get('q')) safe.set('q', saved.get('q').slice(0,120));
+  for (const link of document.querySelectorAll('[data-back-results]')) {
+    const target = new URL(link.href);
+    target.search = safe.toString();
+    target.hash = link.dataset.backResults;
+    link.href = target.href;
+  }
+} catch { /* Native links remain available if browser storage is restricted. */ }
 const copy = document.querySelector('#copy-email');
 if (copy && navigator.clipboard && window.isSecureContext) {
   copy.hidden = false;
@@ -33,11 +35,7 @@ if (copy && navigator.clipboard && window.isSecureContext) {
     try {
       await navigator.clipboard.writeText(copy.dataset.email);
       status.textContent = copy.dataset.success;
-    } catch {
-      status.textContent = copy.dataset.error;
-    }
+    } catch { status.textContent = copy.dataset.error; }
   });
 }
 for (const year of document.querySelectorAll('[data-year]')) year.textContent = new Date().getFullYear();
-// Native form POST keeps verification and delivery reporting with the email provider.
-// No fake success state, secret keys, or message content stored in the browser.

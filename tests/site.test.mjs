@@ -31,70 +31,86 @@ async function visit(path='', options={}) {
   assert.equal(response.status(),200);
   return {page,errors};
 }
-test('filters, search, reset, show more and empty state compose correctly', async () => {
-  const {page,errors}=await visit();
+test('directory shows every project and filters, search and reset compose correctly', async () => {
+  const {page,errors}=await visit('projects.html');
   const visible=page.locator('[data-project]:visible');
-  await expect(visible).toHaveCount(6);
-  await page.locator('#show-more').click();
   await expect(visible).toHaveCount(20);
   await page.locator('[data-filter=outreach]').click();
   await expect(visible).toHaveCount(5);
+  assert.equal(new URL(page.url()).searchParams.get('area'),'outreach');
   await page.locator('#project-search').fill('EP Aero');
   await expect(visible).toHaveCount(1);
   await page.locator('#project-search').fill('zzzz-no-match');
   await expect(visible).toHaveCount(0);
   await expect(page.locator('#empty-state')).toBeVisible();
   await page.locator('#reset-filters').click();
-  await expect(visible).toHaveCount(6);
-  await expect(page.locator('[data-filter=all]')).toHaveAttribute('aria-pressed','true');
+  await expect(visible).toHaveCount(20);
+  assert.equal(new URL(page.url()).search,'');
   await page.locator('#project-search').fill('STM32');
   await expect(visible).toHaveCount(1);
-  await page.locator('#project-search').fill('');
-  await page.locator('#show-more').click();
-  await page.locator('#show-more').click();
-  await expect(visible).toHaveCount(6);
   assert.deepEqual(errors,[]);
   await page.close();
 });
-test('language switching preserves the case study and homepage section', async () => {
+test('return link, browser back, reload and language changes retain directory filters', async () => {
+  const {page,errors}=await visit('projects.html?area=space&q=CubeSat');
+  await expect(page.locator('[data-project]:visible')).toHaveCount(1);
+  await page.locator('[data-project]:visible a').click();
+  await expect(page.locator('h1')).toHaveText('CubeSat embedded software');
+  await page.reload();
+  await page.locator('[data-back-results]').first().click();
+  await expect(page.locator('#project-search')).toHaveValue('CubeSat');
+  await expect(page.locator('[data-filter=space]')).toHaveAttribute('aria-pressed','true');
+  await expect(page.locator('[data-project]:visible')).toHaveCount(1);
+  assert.equal(new URL(page.url()).hash,'#project_9');
+  await page.locator('.languages a[lang=pt]').click();
+  await expect(page.locator('html')).toHaveAttribute('lang','pt');
+  await expect(page.locator('#project-search')).toHaveValue('CubeSat');
+  await page.locator('[data-project]:visible a').click();
+  await expect(page.locator('h1')).toHaveText('Software embarcado para CubeSat');
+  await page.goBack();
+  await expect(page.locator('[data-project]:visible')).toHaveCount(1);
+  await page.reload();
+  await expect(page.locator('[data-project]:visible')).toHaveCount(1);
+  assert.deepEqual(errors,[]);
+  await page.close();
+});
+test('language switching preserves the case study and section links point to dedicated pages', async () => {
   const {page,errors}=await visit('pages/projects/project_9.html');
-  for(const [lang,title] of [['pt','Um CubeSat que acompanha a luz.'],['fr','Un CubeSat qui suit la lumière.'],['es','Un CubeSat que sigue la luz.'],['en','A CubeSat that follows the light.']]) {
+  for(const [lang,title] of [['pt','Software embarcado para CubeSat'],['fr','Logiciel embarqué pour CubeSat'],['es','Software embebido para CubeSat'],['en','CubeSat embedded software']]) {
     await page.locator(`.languages a[lang=${lang}]`).click();
     await expect(page.locator('html')).toHaveAttribute('lang',lang);
     await expect(page.locator('h1')).toHaveText(title);
     assert.ok(page.url().endsWith('pages/projects/project_9.html'));
   }
   await page.goto(base+'#recognition');
+  await page.waitForURL('**/recognition.html');
   await page.locator('.languages a[lang=pt]').click();
-  assert.ok(page.url().endsWith('/pt/index.html#recognition'));
+  assert.ok(page.url().endsWith('/pt/recognition.html'));
+  await expect(page.locator('#main-nav a[aria-current]')).toHaveText('Conquistas');
   assert.deepEqual(errors,[]);
   await page.close();
 });
-test('all languages fit mobile, tablet and desktop; menu supports keyboard and resize', async () => {
-  for(const lang of ['en','pt','fr','es']) {
-    const {page,errors}=await visit(lang==='en'?'':`${lang}/`,{viewport:{width:390,height:844}});
-    await expect(page.locator('#main-nav')).not.toBeVisible();
-    await page.locator('.menu-toggle').click();
-    await expect(page.locator('#main-nav')).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(page.locator('#main-nav')).not.toBeVisible();
-    await expect(page.locator('.menu-toggle')).toBeFocused();
-    for(const width of [320,390,768,1024,1440]) {
-      await page.setViewportSize({width,height:900});
-      const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
-      assert.equal(overflow,false,`${lang} overflows at ${width}px`);
+test('six main pages stay reachable on mobile; all languages fit phone, tablet and desktop', async () => {
+  for(const lang of ['','pt/','fr/','es/']) {
+    const {page,errors}=await visit(lang,{viewport:{width:390,height:844}});
+    for(const file of ['index.html','projects.html','experience.html','about.html','recognition.html','contact.html']) {
+      await page.goto(base+lang+file);
+      await expect(page.locator('#main-nav a:visible')).toHaveCount(6);
+      await expect(page.locator('#main-nav a[aria-current]')).toHaveCount(1);
+      for(const width of [320,390,768,1024,1440]) {
+        await page.setViewportSize({width,height:900});
+        assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang}${file} overflows at ${width}px`);
+      }
     }
-    await expect(page.locator('#main-nav')).toBeVisible();
     await page.setViewportSize({width:390,height:844});
-    await page.locator('.menu-toggle').click();
-    await page.locator('#main-nav a').first().click();
-    await expect(page.locator('#main-nav')).not.toBeVisible();
+    await page.locator('#main-nav a[href="projects.html"]').click();
+    await expect(page.locator('[data-project]:visible')).toHaveCount(20);
     assert.deepEqual(errors,[]);
     await page.close();
   }
 });
 test('contact validates fields and posts to the confirmed email, with delivery intercepted', async () => {
-  const {page}=await visit();
+  const {page}=await visit('contact.html');
   assert.equal(await page.locator('form').evaluate(form=>form.checkValidity()),false);
   await page.locator('[name=name]').fill('Portfolio test');
   await page.locator('[name=email]').fill('visitor@example.com');
@@ -114,13 +130,13 @@ test('contact validates fields and posts to the confirmed email, with delivery i
   assert.equal(body.get('email'),'visitor@example.com');
   assert.equal(body.get('subject'),'Engineering collaboration');
   assert.ok(body.get('message').startsWith('Test message'));
-  assert.equal(body.has('_captcha'),false); // Provider verification remains enabled.
+  assert.equal(body.has('_captcha'),false);
   await page.close();
 });
 test('clipboard confirms success and explains permission failure', async () => {
   const context=await browser.newContext({permissions:['clipboard-read','clipboard-write']});
   const page=await context.newPage();
-  await page.goto(base);
+  await page.goto(base+'contact.html');
   await page.locator('#copy-email').click();
   await expect(page.locator('#copy-status')).toHaveText('Email copied');
   assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'emillyraianerodrigues@gmail.com');
@@ -131,23 +147,38 @@ test('clipboard confirms success and explains permission failure', async () => {
 });
 test('navigation, all projects and contact remain available without JavaScript', async () => {
   const {page}=await visit('',{javaScriptEnabled:false,viewport:{width:390,height:844}});
+  await expect(page.locator('#main-nav a:visible')).toHaveCount(6);
+  await page.locator('#main-nav a[href="projects.html"]').click();
   await expect(page.locator('[data-project]:visible')).toHaveCount(20);
-  await expect(page.locator('#main-nav')).toBeVisible();
   await expect(page.locator('[data-project-tools]')).not.toBeVisible();
   await page.locator('.languages a[lang=fr]').click();
   await expect(page.locator('html')).toHaveAttribute('lang','fr');
+  await page.locator('#main-nav a[href="contact.html"]').click();
   await expect(page.locator('form')).toHaveAttribute('method','POST');
   await page.close();
 });
-test('representative homepages and case studies meet automated WCAG A/AA checks', async () => {
-  for(const path of ['', 'pt/', 'fr/', 'es/', 'pages/projects/project_9.html', 'fr/pages/experience/cnes.html']) {
+test('directory works when browser storage is unavailable and untrusted queries stay text', async () => {
+  const {page,errors}=await visit('projects.html?q=%3Cimg%20onerror%3Dalert(1)%3E');
+  await page.addInitScript(()=>{Object.defineProperty(window,'sessionStorage',{get(){throw new Error('Storage disabled');}});});
+  await page.reload();
+  await expect(page.locator('#empty-state')).toBeVisible();
+  await page.locator('#reset-filters').click();
+  await page.locator('#project-search').fill('CVA6');
+  await expect(page.locator('[data-project]:visible')).toHaveCount(1);
+  await page.locator('[data-project]:visible a').click();
+  await expect(page.locator('[data-back-results]').first()).toHaveAttribute('href','../../projects.html');
+  assert.deepEqual(errors,[]);
+  await page.close();
+});
+test('new main pages and representative case studies meet automated WCAG A/AA checks', async () => {
+  for(const path of ['', 'pt/', 'fr/', 'es/', 'projects.html','experience.html','about.html','recognition.html','contact.html', 'pages/projects/project_9.html', 'fr/pages/experience/cnes.html']) {
     const {page}=await visit(path,{viewport:{width:path==='pt/'?390:1440,height:1000}});
     const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
     assert.deepEqual(result.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[],`Accessibility violations at ${path}`);
     await page.close();
   }
 });
-test('every generated case study loads without JS errors or missing imagery under a repository prefix', async () => {
+test('all 104 case studies load, show results and fit mobile under a repository prefix', async () => {
   const {page,errors}=await visit();
   for(const lang of ['','pt/','fr/','es/']) {
     for(const kind of ['projects','experience']) {
@@ -156,9 +187,9 @@ test('every generated case study loads without JS errors or missing imagery unde
         const response=await page.goto(`${base}${lang}pages/${kind}/${name}`);
         assert.equal(response.status(),200,name);
         await expect(page.locator('h1')).toHaveCount(1);
-        await expect(page.locator('.detail-image img')).toBeVisible();
-        await page.waitForFunction(()=>document.querySelector('.detail-image img').complete);
-        assert.equal(await page.locator('.detail-image img').evaluate(img=>img.naturalWidth>0),true,name);
+        await expect(page.locator('#results')).toBeVisible();
+        await expect(page.locator('.contents-nav a[href="#results"]')).toHaveCount(1);
+        await expect(page.locator('#main-nav a[aria-current]')).toHaveAttribute('href',new RegExp(`${kind}.html$`));
         await page.setViewportSize({width:320,height:844});
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang}${name} overflows`);
       }

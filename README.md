@@ -2,11 +2,13 @@
 
 Portfólio de engenharia aeroespacial, sistemas embarcados e divulgação científica. Inglês por padrão, com versões completas em português, francês e espanhol.
 
-20 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, demonstrações em vídeo e contato por e-mail. A identidade usa sua foto, diagramas vetoriais próprios, fundo claro, azul-tinta e terracota, com botões sem bordas.
+20 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, links para demonstrações em vídeo e contato por e-mail. A identidade combina seu retrato, tipografia direta, branco, azul intenso e verde-lima, com botões sem bordas.
+
+A navegação tem seis páginas: início, projetos, experiência, sobre mim, conquistas e contato. Todas ficam visíveis também no celular. O catálogo mostra os 20 projetos; busca e filtros são preservados ao abrir um trabalho, voltar aos resultados ou mudar o idioma.
 
 ![Prévia do novo portfólio em desktop](docs/preview-desktop.png)
 
-[Prévia no celular](docs/preview-mobile.png) · [Resultado dos testes](docs/VALIDATION.md)
+[Prévia no celular](docs/preview-mobile.png) · [Catálogo no celular](docs/preview-projects.png) · [Resultado dos testes](docs/VALIDATION.md)
 
 ## Abrir localmente
 
@@ -20,7 +22,7 @@ Acesse **http://127.0.0.1:8000**. Não é necessário instalar bibliotecas para 
 
 ## Publicar no GitHub Pages
 
-O repositório já aponta para `git@github.com:Raiagues/Emilly-s-Website.git`. O fluxo `.github/workflows/pages.yml` está preparado para publicar a branch `main`.
+O site está publicado em **https://raiagues.github.io/Emilly-s-Website/**, com GitHub Pages configurado para GitHub Actions. O repositório aponta para `git@github.com:Raiagues/Emilly-s-Website.git`. O fluxo `.github/workflows/pages.yml` está preparado para publicar a branch `main`.
 
 1. Confira as alterações e envie os arquivos, incluindo os dois PDFs da raiz:
 
@@ -62,9 +64,9 @@ Requer **Python 3.12 ou mais recente** para gerar as páginas. O site publicado 
 | `content/data.py` | Textos nos quatro idiomas, projetos, experiências, conquistas, e-mail e links |
 | `scripts/build.py` | Estrutura das páginas e configuração de publicação |
 | `style/style.css` | Cores, tipografia, botões e layout responsivo |
-| `scripts/artwork.py` | Ilustrações SVG originais |
-| `src/projects.js` | Busca, categorias, resultados e “ver todos” |
-| `src/script.js` | Menu, troca de idioma e copiar e-mail |
+| `scripts/artwork.py` | Gerador de ilustrações da versão anterior, preservado para consulta |
+| `src/projects.js` | Busca, categorias e preservação dos filtros na URL e no retorno |
+| `src/script.js` | Altura do menu, links antigos, retorno aos resultados e copiar e-mail |
 | `CV_Emilly.pdf` | Currículo detalhado usado no botão de download |
 | `content/SOURCES.md` | Origem das informações e divergências entre os currículos |
 
@@ -112,7 +114,8 @@ A auditoria automática não substitui avaliação manual por pessoas com defici
 ## Imagens e conteúdo
 
 - `img/me.png`: retrato original fornecido no repositório.
-- `img/illustrations/`: desenhos SVG locais de satélite, FPGA, detector, veículo, avião, rádio, foguete e outros temas. São ilustrações conceituais; as páginas de detalhes deixam isso explícito.
+- `img/illustrations/`: ilustrações conceituais da versão anterior, preservadas no repositório. A interface atual não as utiliza.
+- As páginas técnicas dão prioridade ao conteúdo e aos links de demonstrações. Os vídeos externos não forneceram miniaturas públicas acessíveis; não foram substituídos por imagens que poderiam parecer fotografias dos projetos.
 - Nenhuma imagem externa, biblioteca de ícones ou fonte remota é necessária em tempo de execução.
 - Os 18 projetos antigos foram preservados e atualizados, com dois novos projetos e três novas experiências profissionais.
 - Os textos originais foram preservados em `content/archive-en.json` para consulta editorial; o arquivo não vai para o pacote publicado.
