@@ -423,6 +423,12 @@
           "pt": "Conheci amigos incríveis durante o programa. Tem foto à mesa, no campus, nos passeios e nas montanhas. Quis colocar esses momentos aqui também, junto do relatório e do trabalho. Eles fazem parte de como eu lembro do meu período no CERN.",
           "fr": "J’ai rencontré des amis incroyables pendant le programme. Il y a des photos à table, sur le campus, en sortie et dans les montagnes. Je voulais garder ces moments ici aussi, à côté du rapport et du travail. Ils font partie de mes souvenirs du CERN.",
           "es": "Conocí amigos increíbles durante el programa. Hay fotos en la mesa, en el campus, de paseo y en las montañas. Quería incluir esos momentos aquí también, junto al informe y al trabajo. Son parte de cómo recuerdo mi tiempo en el CERN."
+        },
+        {
+          "en": "When I tell someone about CERN, it is easy to start with the experiments and the project. But I also want to remember who was around me during those weeks. The friends, the shared room and the trips belong in this story just as much as the work I went there to do.",
+          "pt": "Quando conto do CERN, é fácil começar pelos experimentos e pelo projeto. Mas também quero lembrar de quem estava comigo naquelas semanas. Os amigos, o quarto dividido e as viagens cabem nessa história tanto quanto o trabalho que fui fazer lá.",
+          "fr": "Quand je parle du CERN, je commence facilement par les expériences et le projet. Mais je veux aussi me souvenir des personnes présentes pendant ces semaines. Les amis, la chambre partagée et les voyages font autant partie de ce récit que le travail que j’y suis allée faire.",
+          "es": "Cuando hablo del CERN, es fácil empezar por los experimentos y el proyecto. Pero también quiero recordar a quienes estuvieron conmigo esas semanas. Los amigos, la habitación compartida y los viajes forman parte de esta historia tanto como el trabajo que fui a hacer."
         }
       ],
       "photos": [
@@ -443,10 +449,10 @@
     }
   },
   "closing": {
-    "en": "This is where I’m collecting these stories. I’ll keep adding to them as I write.",
-    "pt": "É aqui que vou juntando essas histórias. Vou acrescentando outras coisas conforme for escrevendo.",
-    "fr": "C’est ici que je rassemble ces histoires. J’en ajouterai d’autres au fil de mes textes.",
-    "es": "Aquí voy reuniendo estas historias. Iré añadiendo más cosas conforme escriba."
+    "en": "I still think about that email I almost dismissed. Preparing carefully hadn’t stopped the rejection, and being accepted later depended on a change I couldn’t control. But talking to former participants and taking the application seriously were things I could do. If you are considering applying, that is where I would start: understand the project, ask questions and give yourself the chance to be considered. I’m glad I didn’t decide on their behalf that I didn’t belong there.",
+    "pt": "Ainda penso naquele e-mail que quase deixei passar. Me preparar tanto não impediu a recusa, e a aprovação depois dependeu de uma mudança que eu não controlava. Mas conversar com quem já tinha participado e cuidar da candidatura eram coisas que eu podia fazer. Se você está pensando em tentar, eu começaria por aí: entender o projeto, fazer perguntas e se dar a chance de ser considerada. Ainda bem que eu não decidi por eles que aquele lugar não era pra mim.",
+    "fr": "Je repense encore à cet e-mail que j’ai failli ignorer. Ma préparation n’avait pas empêché le refus, et l’acceptation a ensuite dépendu d’un changement que je ne contrôlais pas. Mais échanger avec d’anciens participants et soigner ma candidature étaient à ma portée. Si vous envisagez de postuler, je commencerais par là : comprendre le projet, poser des questions et vous donner la possibilité d’être retenu. Heureusement que je n’ai pas décidé à leur place que je n’y avais pas ma place.",
+    "es": "Todavía pienso en aquel correo que casi ignoré. Prepararme tanto no evitó el rechazo, y la aceptación posterior dependió de un cambio que yo no controlaba. Pero hablar con antiguos participantes y cuidar la candidatura sí estaba en mis manos. Si estás pensando en intentarlo, empezaría por ahí: entender el proyecto, hacer preguntas y darte la oportunidad de que te consideren. Me alegro de no haber decidido por ellos que ese lugar no era para mí."
   },
   "series": {
     "en": "CERN openlab",

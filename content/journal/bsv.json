@@ -269,6 +269,12 @@
           "pt": "Voltei pro Brasil querendo andar mais rápido nos meus projetos: experimentar, ver como funciona e fazer outra versão. Foi uma das coisas que trouxe comigo, junto com as amizades e aquela certeza de que queria voltar.",
           "fr": "Je suis rentrée au Brésil avec l’envie d’avancer plus vite dans mes projets : essayer, voir comment cela fonctionne, puis en faire une nouvelle version. C’est une des choses que j’ai rapportées, avec les amitiés et cette envie très nette de revenir.",
           "es": "Volví a Brasil con ganas de avanzar más rápido en mis proyectos: probar, ver cómo funciona y hacer otra versión. Fue una de las cosas que me traje, junto con las amistades y esa certeza de que quería volver."
+        },
+        {
+          "en": "Meeting people from so many fields mattered too. A conversation didn’t have to be about satellites to make me think about my own work. Hearing how other people built things helped me see my projects from outside the engineering perspective I was used to.",
+          "pt": "Conhecer gente de tantas áreas também fez diferença. Uma conversa não precisava ser sobre satélites pra me fazer pensar no meu próprio trabalho. Ouvir como outras pessoas construíam as coisas me ajudou a olhar pros meus projetos de fora da engenharia com a qual eu estava acostumada.",
+          "fr": "Rencontrer des personnes de tant de domaines a aussi compté. Une conversation n’avait pas besoin de porter sur les satellites pour me faire réfléchir à mon travail. Écouter la façon dont d’autres construisaient leurs projets m’a aidée à regarder les miens autrement que par le seul prisme de l’ingénierie.",
+          "es": "Conocer a personas de tantas áreas también marcó una diferencia. Una conversación no tenía que ser sobre satélites para hacerme pensar en mi trabajo. Escuchar cómo otras personas construían sus proyectos me ayudó a mirar los míos desde fuera de la ingeniería a la que estaba acostumbrada."
         }
       ],
       "photos": [],
@@ -276,10 +282,10 @@
     }
   ],
   "closing": {
-    "en": "I still don’t quite know how to explain everything that trip meant to me. It was a whirlwind. And it was incredible.",
-    "pt": "Ainda não sei explicar muito bem tudo o que essa viagem significou pra mim. Foi uma loucura. E foi incrível.",
-    "fr": "Je ne sais toujours pas très bien expliquer tout ce que ce voyage a représenté pour moi. C’était un tourbillon. Et c’était incroyable.",
-    "es": "Todavía no sé explicar muy bien todo lo que ese viaje significó para mí. Fue una locura. Y fue increíble."
+    "en": "Seeing those campuses in person was a dream. What I could bring home, though, was something I could use without being there: the willingness to try an idea sooner, talk to someone who sees it differently and improve it as I learn. I still want to go back. In the meantime, I can put that part of the trip into practice in the projects I already have in front of me.",
+    "pt": "Ver aqueles lugares pessoalmente foi um sonho. Mas uma coisa que trouxe de volta dá pra usar sem estar lá: a vontade de experimentar uma ideia mais cedo, conversar com quem enxerga diferente e melhorar conforme eu aprendo. Continuo querendo voltar. Enquanto isso, posso colocar essa parte da viagem em prática nos projetos que já estão na minha frente.",
+    "fr": "Voir ces campus en vrai était un rêve. Mais j’en ai rapporté quelque chose que je peux utiliser sans y être : l’envie d’essayer une idée plus tôt, d’en parler avec quelqu’un qui la voit autrement et de l’améliorer en apprenant. J’ai toujours envie d’y retourner. En attendant, je peux faire vivre cette partie du voyage dans les projets sur lesquels je travaille déjà.",
+    "es": "Ver aquellos lugares en persona fue un sueño. Pero me traje algo que puedo usar sin estar allí: las ganas de probar una idea antes, hablar con alguien que la vea de otra manera y mejorarla mientras aprendo. Sigo queriendo volver. Mientras tanto, puedo poner esa parte del viaje en práctica en los proyectos que ya tengo delante."
   },
   "photos": {
     "almoco": {

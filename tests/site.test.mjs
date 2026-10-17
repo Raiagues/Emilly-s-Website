@@ -339,14 +339,14 @@ test('US diary is reachable from the feed and award, with translations and all 1
 });
 
 
-test('Visiona diary links both ways to experience and loads its six photos in every language', async () => {
+test('Visiona diary links both ways to experience and loads its nine photos in every language', async () => {
   const {page,errors}=await visit('pt/',{reducedMotion:'reduce'});
   await page.locator('.journal-entry-link[href="journal/visiona.html"]').click();
   await expect(page.locator('h1')).toHaveText('Visiona: um novo olhar para o Brasil');
   await expect(page.locator('#entrevista')).toContainText('francês');
   await expect(page.locator('#sistemas')).toContainText('engenharia de sistemas');
   await expect(page.locator('#lit')).toContainText('INPE');
-  await expect(page.locator('[data-gallery]')).toHaveCount(6);
+  await expect(page.locator('[data-gallery]')).toHaveCount(9);
   await page.locator('.journal-intro a').click();
   await expect(page.locator('h1')).toHaveText('Visiona · Software de voo embarcado');
   await page.locator('.journal-callout a').click();
@@ -370,9 +370,9 @@ test('Visiona diary links both ways to experience and loads its six photos in ev
   const headerBottom=await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().bottom);
   assert.ok(headingTop>=headerBottom,'Chapter heading stays below the sticky navigation');
   await page.locator('[data-gallery]').last().click();
-  await expect(page.locator('#photo-counter')).toHaveText('Foto 6 de 6');
+  await expect(page.locator('#photo-counter')).toHaveText('Foto 9 de 9');
   await page.keyboard.press('ArrowRight');
-  await expect(page.locator('#photo-counter')).toHaveText('Foto 1 de 6');
+  await expect(page.locator('#photo-counter')).toHaveText('Foto 1 de 9');
   await page.keyboard.press('Escape');
   assert.deepEqual(errors,[]);
   await page.close();
@@ -504,4 +504,43 @@ test('award story connects China and US diaries, keeps both award links, and loa
     assert.deepEqual(errors,[]);
     await page.close();
   }
+});
+
+
+test('homepage connects the featured work, illustrated projects, personal story and usable contact in four languages', async () => {
+  const {page,errors}=await visit('',{reducedMotion:'reduce'});
+  for (const lang of ['en','pt','fr','es']) {
+    await page.goto(base+(lang==='en'?'':lang+'/'));
+    await page.locator('.hero-actions .button-primary').click();
+    await expect(page.locator('.current-project')).toBeInViewport();
+    await page.locator('.current-project a').click();
+    assert.ok(page.url().endsWith('/pages/projects/flight-platform.html'));
+    await page.goto(base+(lang==='en'?'':lang+'/'));
+    await expect(page.locator('#my-story .education')).toContainText('UFSM');
+    await expect(page.locator('.home-contact-section form')).toHaveAttribute('action','https://formsubmit.co/emillyraianerodrigues@gmail.com');
+    for (const width of [320,390,768,1440]) {
+      await page.setViewportSize({width,height:900});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang} homepage at ${width}`);
+    }
+    for (const img of await page.locator('.project-thumb img,.experience-art,#my-story img').all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect.poll(()=>img.evaluate(el=>el.complete&&el.naturalWidth>0)).toBeTruthy();
+      assert.ok((await img.getAttribute('src')).endsWith('.svg'));
+    }
+  }
+  await page.goto(base);
+  let submitted;
+  await page.route('https://formsubmit.co/**',async route=>{
+    submitted=new URLSearchParams(route.request().postData());
+    await route.fulfill({status:200,contentType:'text/html',body:'<p>Intercepted test</p>'});
+  });
+  const form=page.locator('.home-contact-section form');
+  await form.locator('[name=name]').fill('Website test');
+  await form.locator('[name=email]').fill('test@example.com');
+  await form.locator('[name=subject]').fill('Portfolio test');
+  await form.locator('[name=message]').fill('Intercepted locally, never sent.');
+  await form.locator('[type=submit]').click();
+  await expect.poll(()=>submitted?.get('subject')).toBe('Portfolio test');
+  assert.deepEqual(errors,[]);
+  await page.close();
 });

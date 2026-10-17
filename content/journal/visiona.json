@@ -250,10 +250,25 @@
           "pt": "Também teve convivência fora do trabalho, como essa noite de jogos. Pra quem trabalhava remotamente, poder estar ali presencialmente significava muito. Voltei com aprendizados, lembranças com a equipe e uma visão muito mais próxima da indústria da qual eu queria fazer parte.",
           "fr": "Il y a aussi eu des moments ensemble en dehors du travail, comme cette soirée jeux. Pour quelqu’un qui travaillait à distance, pouvoir être là en personne comptait beaucoup. Je suis rentrée avec de nouveaux apprentissages, des souvenirs avec l’équipe et une vision bien plus concrète de l’industrie dont je voulais faire partie.",
           "es": "También hubo momentos juntos fuera del trabajo, como esta noche de juegos. Para alguien que trabajaba a distancia, poder estar allí en persona significaba mucho. Volví con aprendizajes, recuerdos con el equipo y una visión mucho más cercana de la industria de la que quería formar parte."
+        },
+        {
+          "en": "Outside Visiona, I also made friends in the house where I was staying. We were different ages and came from very different fields, and I loved getting to know people whose everyday lives were so different from mine. They became close friends.",
+          "pt": "Fora da Visiona, também fiz amigos na casa em que fiquei. Eram pessoas de idades e áreas bem diferentes da minha, e foi muito gostoso conhecer gente com rotinas e histórias tão diferentes. Viraram grandes amigos.",
+          "fr": "En dehors de Visiona, je me suis aussi fait des amis dans la maison où je logeais. Nous avions des âges et des métiers très différents, et j’ai adoré découvrir des personnes dont le quotidien était si éloigné du mien. Ils sont devenus des amis proches.",
+          "es": "Fuera de Visiona también hice amigos en la casa donde me alojé. Tenían edades y profesiones muy diferentes de las mías, y me encantó conocer a personas con vidas e historias tan distintas. Se convirtieron en grandes amigos."
+        },
+        {
+          "en": "We went karting in the rain and spent time in parks. These photos belong here too: staying there gave me the chance to get closer to the work, but also to share a little of my life with people I would probably never have met through engineering alone.",
+          "pt": "Teve kart na chuva e passeios em parques. Essas fotos também têm lugar aqui: ficar lá me deu a chance de conhecer o trabalho de perto e de dividir um pedaço da vida com pessoas que talvez eu nunca encontrasse só pela engenharia.",
+          "fr": "Nous avons fait du karting sous la pluie et des sorties dans des parcs. Ces photos ont leur place ici aussi : ce séjour m’a permis de découvrir le travail sur place, mais aussi de partager un bout de vie avec des personnes que je n’aurais peut-être jamais rencontrées par l’ingénierie seule.",
+          "es": "Hubo karting bajo la lluvia y paseos por parques. Estas fotos también tienen su sitio aquí: quedarme allí me permitió conocer el trabajo de cerca y compartir un pedazo de vida con personas que quizá nunca habría conocido solo a través de la ingeniería."
         }
       ],
       "photos": [
-        "jogos"
+        "jogos",
+        "amigos-kart",
+        "kart-chuva",
+        "parque-amigos"
       ],
       "links": []
     }
@@ -329,6 +344,39 @@
         "pt": "Noite de jogos: um encontro fora do trabalho.",
         "fr": "Soirée jeux : un moment ensemble en dehors du travail.",
         "es": "Noche de juegos: un encuentro fuera del trabajo."
+      }
+    },
+    "amigos-kart": {
+      "file": "portifolio/visiona/amigos-kart.png",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "With the friends I made at the house, after karting in the rain.",
+        "pt": "Com os amigos que fiz na casa, depois do kart na chuva.",
+        "fr": "Avec les amis rencontrés à la maison, après le karting sous la pluie.",
+        "es": "Con los amigos que hice en la casa, después del karting bajo la lluvia."
+      }
+    },
+    "kart-chuva": {
+      "file": "portifolio/visiona/kart-chuva.png",
+      "width": 900,
+      "height": 1600,
+      "caption": {
+        "en": "The track that night. The rain was part of the adventure.",
+        "pt": "A pista naquela noite. A chuva fez parte da aventura.",
+        "fr": "La piste ce soir-là. La pluie faisait partie de l’aventure.",
+        "es": "La pista aquella noche. La lluvia fue parte de la aventura."
+      }
+    },
+    "parque-amigos": {
+      "file": "portifolio/visiona/parque-amigos.png",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "An outing to the park with the friends from the house.",
+        "pt": "Um passeio no parque com os amigos da casa.",
+        "fr": "Une sortie au parc avec les amis de la maison.",
+        "es": "Un paseo por el parque con los amigos de la casa."
       }
     }
   },

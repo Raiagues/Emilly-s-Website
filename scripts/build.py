@@ -98,7 +98,7 @@ def project_row(p, lang, current, filterable=False, featured=False):
     title = p['title'][lang]
     search = ' '.join([title, p['summary'][lang], p['place'], *p['tech'], *[SKILLS[k][lang] for k in p['skills']]])
     attrs = f'data-project data-category="{p["category"]}" data-search="{E(search, quote=True)}"' if filterable else ''
-    preview = MEDIA.get(p["id"], f'img/illustrations/{p["art"]}.svg')
+    preview = f'img/illustrations/{p["art"]}.svg'
     media = f'<img src="{relative(current, preview)}" alt="" width="800" height="500" loading="lazy">'
     return f'''<article class="project-row {'featured-row' if featured else ''}" {attrs} id="{p['id']}">
 <a class="project-link" href="{href(current, detail(p), lang)}" {'data-result-link' if filterable else ''}>
@@ -107,7 +107,11 @@ def project_row(p, lang, current, filterable=False, featured=False):
 <span class="row-open">{txt('case', lang)} <span aria-hidden="true">→</span></span></a></article>'''
 
 def experience_row(p, lang, current, compact=False):
-    return f'''<article class="experience-row"><a href="{href(current, detail(p), lang)}"><span class="experience-date">{p['date']}</span><div><h3>{p['title'][lang]}</h3><p class="place">{E(p['place'])}</p>{'' if compact else f'<p class="experience-result">{p["outcome"][lang]}</p>'}</div><span aria-hidden="true">→</span></a></article>'''
+    return f'''<article class="experience-row"><a href="{href(current, detail(p), lang)}"><img class="experience-art" src="{relative(current, 'img/illustrations/' + p['art'] + '.svg')}" alt="" width="800" height="500" loading="lazy"><span class="experience-date">{p['date']}</span><div><h3>{p['title'][lang]}</h3><p class="place">{E(p['place'])}</p>{'' if compact else f'<p class="experience-result">{p["outcome"][lang]}</p>'}</div><span aria-hidden="true">→</span></a></article>'''
+
+def featured_project(lang, current):
+    p = next(p for p in PROJECTS if p['id'] == 'flight-platform')
+    return f'''<article class="current-project"><div class="current-project-copy"><p class="eyebrow">{txt('current_work', lang)} / {p['date']}</p><h2>{txt('current_title', lang)}</h2><p>{p['summary'][lang]}</p><p class="current-status">{p['outcome'][lang]}</p><a class="button button-paper" href="{href(current, detail(p), lang)}">{txt('case', lang)} <span aria-hidden="true">↗</span></a></div><img src="{relative(current, 'img/illustrations/platform.svg')}" alt="" width="800" height="500" loading="lazy"></article>'''
 
 def home(lang):
     current = loc('index.html', lang)
@@ -116,10 +120,13 @@ def home(lang):
     jt = lambda x: E(J['text'](JUI[x], lang))
     link = lambda x: href(current, x, lang)
     body = f'''<main id="main" class="container journal-home">
-<section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> {t('intro')}</p><h1 id="hero-title">{t('hero')}</h1><p class="discipline">{t('discipline')}</p><p class="hero-description">{jt('bio')}</p><div class="hero-actions"><a class="button button-primary" href="#journal">{jt('home')} <span aria-hidden="true">↓</span></a><a class="text-link" href="{link('projects.html')}">{t('explore')} →</a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↗</a></div></div><div class="hero-visual"><div class="orbit-art" aria-hidden="true"><div class="planet"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbital-point point-one"></span><span class="orbital-point point-two"></span><span class="hero-star">✳</span><span class="coordinates">BR → FR → CH</span></div><img class="portrait" src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718" fetchpriority="high"><div class="portrait-note"><span aria-hidden="true">↗</span><p>{t('orbit_note')}</p></div><span class="visual-caption">AEROSPACE / EMBEDDED / HUMAN</span></div></section>
+<section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> {t('intro')}</p><h1 id="hero-title">{t('hero')}</h1><p class="discipline">{t('discipline')}</p><p class="hero-description">{t('hero_body')}</p><div class="hero-actions"><a class="button button-primary" href="#current-work">{t('explore')} <span aria-hidden="true">↓</span></a><a class="text-link" href="#journal">{jt('home')} →</a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↗</a></div></div><div class="hero-visual"><div class="orbit-art" aria-hidden="true"><div class="planet"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbital-point point-one"></span><span class="orbital-point point-two"></span><span class="hero-star">✳</span><span class="coordinates">BR → FR → CH</span></div><img class="portrait" src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718" fetchpriority="high"><div class="portrait-note"><span aria-hidden="true">↗</span><p>{t('orbit_note')}</p></div><span class="visual-caption">AEROSPACE / EMBEDDED / HUMAN</span></div></section>
+<div class="institution-strip"><p class="eyebrow">{t('journey')}</p><span>CERN</span><span>CNES</span><span>Visiona</span><span>Grenoble INP</span><span>UFSM</span></div>
+<section id="current-work" class="home-section"><div class="home-section-heading"><div><p class="eyebrow">{t('work_eyebrow')}</p><h2>{t('work_title')}</h2></div><a class="text-link" href="{link('projects.html')}">{t('all_projects')} →</a></div>{featured_project(lang, current)}<div class="project-list">{''.join(project_row(p, lang, current) for p in PROJECTS if p['id'] in ('project_9', 'project_2', 'project_17'))}</div></section>
+<section class="home-section home-experience"><div class="home-section-heading"><h2>{t('experience')}</h2><a class="text-link" href="{link('experience.html')}">{t('experience')} →</a></div><div class="experience-list">{''.join(experience_row(p, lang, current, True) for p in PROJECTS if p['id'] in ('cern', 'visiona', 'cnes'))}</div></section>
+<section class="home-section personal-story" id="my-story"><div><p class="eyebrow">{t('about_eyebrow')}</p><h2>{t('personal_title')}</h2><img src="{r('img/illustrations/rocket.svg')}" width="800" height="500" loading="lazy" alt=""><p class="personal-motto">per aspera ad astra</p></div><div class="personal-copy"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><div class="education"><h3>{t('education')}</h3><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p></div><div class="personal-links"><a class="text-link" href="{link('about.html')}">{t('about')} →</a><a class="text-link" href="{link('recognition.html')}">{t('awards_title')} →</a></div></div></section>
 {J['feed'](POSTS, lang, current, link, JUI)}
-<section class="journal-work" id="projects"><div><h2>{jt('work')}</h2><p>{jt('work_body')}</p></div><div class="journal-work-links"><a class="button button-primary" href="{link('projects.html')}">{t('all_projects')} →</a><a class="button button-soft" href="{link('experience.html')}" id="experience">{t('experience')} →</a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↓</a></div></section>
-<div class="journal-footlinks"><a class="text-link" id="about-me" href="{link('about.html')}">{t('about')} →</a><a class="text-link" id="recognition" href="{link('recognition.html')}">{t('awards_title')} →</a><a class="text-link" id="contact" href="{link('contact.html')}">{t('contact')} →</a></div></main>'''
+<section class="home-section home-contact-section" id="say-hello"><div class="home-section-heading"><div><p class="eyebrow">{t('contact')}</p><h2>{t('contact_title')}</h2><p>{t('contact_body')}</p></div></div>{contact_panel(lang, current)}</section></main>'''
     return layout('index.html', lang, jt('home'), J['text'](JUI['bio'], lang), body)
 
 def journal(post, lang):
@@ -135,7 +142,8 @@ def projects(lang):
     categories = ['all', 'space', 'hardware', 'control', 'software', 'outreach']
     filters = ''.join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{t(key)}</button>' for key in categories)
     body = f'''<main id="main" class="container directory-page">
-{heading(lang, t('projects'), t('work_body'))}
+{heading(lang, t('work_title'), t('work_body'))}
+{featured_project(lang, current)}
 <div class="project-tools" data-project-tools hidden><label class="search-label" for="project-search">{t('search')}<input id="project-search" type="search" placeholder="{t('search_short')}" autocomplete="off" maxlength="120"></label><div class="filters" role="group" aria-label="{t('filter_label')}">{filters}</div><div class="filter-status"><p id="results-count" aria-live="polite" data-label="{t('results')}"></p><button id="reset-filters" type="button">{t('reset')}</button></div></div>
 <div id="project-grid" class="project-list">{''.join(project_row(p, lang, current, True) for p in work)}</div><div id="empty-state" class="empty-state" hidden><h2>{t('empty')}</h2></div>
 </main>'''
@@ -169,11 +177,14 @@ def recognition(lang):
 <article class="press-panel"><div><p class="role-label">Exame</p><h2>{t('press_title')}</h2><p>{t('press_body')}</p></div><a class="button button-primary" href="{D['EXAME']}" target="_blank" rel="noopener noreferrer">{t('article')} ↗</a></article></main>'''
     return layout('recognition.html', lang, t('awards_title'), t('awards_body'), body, 'recognition')
 
-def contact(lang):
-    current = loc('contact.html', lang)
+def contact_panel(lang, current):
     t = lambda x: txt(x, lang)
-    body = f'''<main id="main" class="container content-page">{heading(lang, t('contact_title'), t('contact_body'))}<div class="contact-layout"><div class="contact-info"><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><a href="{D['LINKEDIN']}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="{D['GITHUB']}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} ↓</a></div>
-<form class="contact-form" action="https://formsubmit.co/{EMAIL}" method="POST"><div class="form-row"><label>{t('name')}<input type="text" name="name" autocomplete="name" required maxlength="100"></label><label>{t('email')}<input type="email" name="email" autocomplete="email" required maxlength="254"></label></div><label>{t('subject')}<input type="text" name="subject" required maxlength="160"></label><label>{t('message')}<textarea name="message" rows="6" required maxlength="5000"></textarea></label><input type="hidden" name="_subject" value="Portfolio · Emilly Rodrigues"><input type="hidden" name="_template" value="table"><input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="button button-primary" type="submit">{t('send')} →</button><p class="form-note">{t('form_note')} <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit ↗</a></p></form></div></main>'''
+    return f'''<div class="contact-layout"><div class="contact-info"><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><a href="{D['LINKEDIN']}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="{D['GITHUB']}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} ↓</a></div>
+<form class="contact-form" action="https://formsubmit.co/{EMAIL}" method="POST"><div class="form-row"><label>{t('name')}<input type="text" name="name" autocomplete="name" required maxlength="100"></label><label>{t('email')}<input type="email" name="email" autocomplete="email" required maxlength="254"></label></div><label>{t('subject')}<input type="text" name="subject" required maxlength="160"></label><label>{t('message')}<textarea name="message" rows="6" required maxlength="5000"></textarea></label><input type="hidden" name="_subject" value="Portfolio · Emilly Rodrigues"><input type="hidden" name="_template" value="table"><input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="button button-primary" type="submit">{t('send')} →</button><p class="form-note">{t('form_note')} <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit ↗</a></p></form></div>'''
+
+def contact(lang):
+    t = lambda x: txt(x, lang)
+    body = f'<main id="main" class="container content-page">{heading(lang, t("contact_title"), t("contact_body"))}{contact_panel(lang, loc("contact.html", lang))}</main>'
     return layout('contact.html', lang, t('contact'), t('contact_body'), body, 'contact')
 
 def project(p, lang):

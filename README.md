@@ -128,3 +128,9 @@ A auditoria automática não substitui avaliação manual por pessoas com defici
 - Os 18 projetos antigos foram preservados e atualizados, com dois novos projetos e três novas experiências profissionais.
 - Os textos originais foram preservados em `content/archive-en.json` para consulta editorial; o arquivo não vai para o pacote publicado.
 - As quatro competências adicionais que exigiam exemplos (negociação, decisões sob pressão, coordenação internacional e interface com clientes) ficaram de fora conforme solicitado.
+
+## Editar a página inicial e o diário
+
+A página inicial reúne apresentação, projeto em andamento, três projetos selecionados, experiências, história pessoal, diário e formulário. Os textos pessoais e os rótulos ficam em `content/data.py`; o projeto em destaque usa os dados de `flight-platform`, inclusive seu estado de desenvolvimento. A composição está em `scripts/build.py`.
+
+As histórias ficam em `content/journal/*.json`. Edite `closing` para a reflexão final e `sections` para os capítulos; a numeração e o índice são gerados automaticamente. A primeira foto de cada capítulo aparece junto ao texto, e as demais formam o álbum abaixo. Prints de documentos continuam separados das fotos. Não é preciso editar o HTML de cada idioma: depois de alterar os dados, execute `npm run build`.

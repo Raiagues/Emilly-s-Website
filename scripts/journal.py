@@ -90,7 +90,7 @@ def feed(posts, lang, current, link, ui):
 {cover(post, lang, current)}<div class="journal-entry-copy"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h3>{E(text(post['title'], lang))}</h3><p>{E(text(post['subtitle'], lang))}</p><span class="text-link">{t('read')} <span aria-hidden="true">↗</span></span></div></a></article>''')
     events = sorted(((event, post) for post in posts for event in post.get('timeline', [])), key=lambda item: item[0]['date'])
     timeline = ''.join(f'<li><time datetime="{event["date"]}">{E(text(event["label"], lang))}</time><a href="{link(path(post))}{"#" + event["section"] if event.get("section") else ""}">{E(text(event["title"], lang))} <span aria-hidden="true">↗</span></a></li>' for event, post in events)
-    return f'<section class="journal-feed" id="journal"><div class="section-title"><h2>{t("latest")}</h2></div><nav class="journal-timeline" aria-label="{t("timeline")}"><h3>{t("timeline")}</h3><ol>{timeline}</ol></nav><p class="journal-browse"><a class="text-link" href="{link("journal/connections.html")}">{t("all_connections")} →</a></p>{"".join(cards)}</section>'
+    return f'<section class="journal-feed" id="journal"><div class="section-title"><h2>{t("latest")}</h2></div><nav class="journal-timeline" aria-label="{t("timeline")}"><h3>{t("timeline")}</h3><ol>{timeline}</ol></nav><p class="journal-browse"><a class="text-link" href="{link("journal/connections.html")}">{t("all_connections")} →</a></p><div class="journal-cards">{"".join(cards)}</div></section>'
 
 
 def connections(posts, entities, lang, link, ui):
@@ -123,7 +123,7 @@ def story(post, lang, current, link, ui, posts, entities):
     if post.get('technical_path') and not post.get('resource'):
         technical = f'<p><a class="text-link" href="{link(post["technical_path"])}">{E(text(post.get("technical_label", ui["technical"]), lang))} →</a></p>'
     sections = []
-    for section in post['sections']:
+    for number, section in enumerate(post['sections'], 1):
         photos = []
         for key in section.get('photos', []):
             photo = post['photos'][key]
@@ -142,11 +142,15 @@ def story(post, lang, current, link, ui, posts, entities):
             document = post['photos'][key]
             documents += f'<figure class="journal-document"><a href="{relative(current, document["file"])}" target="_blank" rel="noopener noreferrer">{photo_html(document, lang, current)}</a><figcaption>{E(text(document["caption"], lang))}</figcaption></figure>'
         sources = ''.join(f'<p><a class="text-link" href="{E(source["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{E(text(source["label"], lang))} ↗</a></p>' for source in section.get('links', []))
-        sections.append(f'''<section id="{section['id']}" class="journal-chapter"><div class="journal-prose"><h2>{E(text(section['title'], lang))}</h2>{paragraphs(section['paragraphs'])}{sources}{resource}{documents}{letter}</div><div class="journal-gallery {'single-photo' if len(photos) == 1 else ''}">{''.join(photos)}</div></section>''')
+        paired = bool(photos) and not documents
+        lead = photos[0] if paired else ''
+        remaining = photos[1:] if paired else photos
+        gallery = f'<div class="journal-gallery">{"".join(remaining)}</div>' if remaining else ''
+        sections.append(f'''<section id="{section['id']}" class="journal-chapter {'chapter-paired' if paired else 'chapter-text'}"><div class="chapter-layout"><div class="journal-prose"><span class="chapter-number" aria-hidden="true">{number:02d}</span><h2>{E(text(section['title'], lang))}</h2>{paragraphs(section['paragraphs'])}{sources}{resource}{documents}{letter}</div>{f'<div class="chapter-image">{lead}</div>' if lead else ''}</div>{gallery}</section>''')
     return f'''<main id="main" class="container journal-page"><a class="text-link journal-back" href="{link('index.html')}#journal">← {t('back')}</a>
-<article><header class="journal-heading"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h1>{E(text(post['title'], lang))}</h1><p class="journal-deck">{E(text(post['subtitle'], lang))}</p><p class="journal-byline">Emilly Rodrigues <span aria-hidden="true">/</span> {t('photos_credit')}</p></header>
-{cover(post, lang, current)}
+<article><div class="journal-opening"><header class="journal-heading"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h1>{E(text(post['title'], lang))}</h1><p class="journal-deck">{E(text(post['subtitle'], lang))}</p><p class="journal-byline">Emilly Rodrigues <span aria-hidden="true">/</span> {t('photos_credit')}</p></header>
+{cover(post, lang, current)}</div>
 <div class="journal-reading"><aside class="journal-index"><h2>{t('chapters')}</h2><nav aria-label="{t('chapters')}">{contents}</nav><p>{t('photos_hint')}</p></aside>
-<div class="journal-body"><div class="journal-prose journal-intro"><p>{E(text(post['intro'], lang))}</p>{technical}</div>{''.join(sections)}<div class="journal-closing journal-prose"><p>{E(text(post['closing'], lang))}</p><span class="journal-signature">Emilly</span><a class="text-link" href="{link('index.html')}#journal">← {t('back')}</a></div></div></div>
+<div class="journal-body"><div class="journal-prose journal-intro"><p>{E(text(post['intro'], lang))}</p>{technical}</div>{''.join(sections)}<div class="journal-closing journal-prose"><p class="eyebrow">{t("reflection")}</p><p>{E(text(post['closing'], lang))}</p><span class="journal-signature">Emilly</span><a class="text-link" href="{link('index.html')}#journal">← {t('back')}</a></div></div></div>
 {related_stories(post, posts, entities, lang, link, ui)}</article>
 <dialog class="photo-dialog" aria-label="{t('photo')}" data-photo-label="{t('photo')}" data-of-label="{t('of')}"><div class="photo-dialog-bar"><p id="photo-counter" role="status"></p><button type="button" class="photo-close" autofocus>{t('close')} ×</button></div><figure><img alt="" width="1280" height="1280"><figcaption id="photo-caption"></figcaption></figure><div class="photo-controls"><button type="button" data-photo-prev aria-label="{t('previous_photo')}">←</button><button type="button" data-photo-next aria-label="{t('next_photo')}">→</button></div></dialog></main>'''

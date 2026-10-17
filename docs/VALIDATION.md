@@ -1,10 +1,10 @@
-# Validação local — prêmio Na Prática e histórias relacionadas, 17/10/2026
+# Validação local — página inicial e diário editorial, 17/10/2026
 
 - `python3 scripts/build.py`: concluído; seis páginas principais, seis histórias do diário, 20 projetos e 6 experiências em quatro idiomas.
 - `python3 scripts/check.py`: 159 HTMLs verificados; links, âncoras e imagens locais íntegros, idioma e título principal presentes, formulário com o e-mail confirmado, pacote de publicação sem ferramentas ou fontes editoriais.
 - `node --check src/script.js`, `node --check src/projects.js` e `node --check src/journal.js`: sem erros de sintaxe.
 - `git diff --check`: sem erros de whitespace.
-- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **22 testes aprovados**, incluindo as 28 páginas de histórias e conexões nas verificações de acessibilidade.
+- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **23 testes aprovados**, incluindo as 28 páginas de histórias e conexões nas verificações de acessibilidade.
 
 Os testes cobrem:
 
@@ -24,7 +24,7 @@ Os testes cobrem:
 14. Nenhuma violação automática WCAG A/AA nas 28 páginas de histórias e conexões (CERN, Estados Unidos, Visiona, South Summit, China, prêmio Na Prática e Pessoas e instituições, em quatro idiomas).
 15. CSS antigo previamente guardado em cache não substitui o estilo restaurado; layout, fonte, fundo e órbitas corretos após navegar e recarregar.
 16. História dos Estados Unidos acessível pelo diário e por Conquistas, nos quatro idiomas; sete capítulos, 15 fotos carregando, fontes, galeria e distinção de financiamento, sem overflow.
-17. Visiona acessível pelo diário e pela página profissional, com retorno para a experiência no idioma atual, seis fotos, galeria, navegação por capítulos abaixo do menu fixo e layout sem overflow entre 320 e 1440 px.
+17. Visiona acessível pelo diário e pela página profissional, com retorno para a experiência no idioma atual, nove fotos, galeria, navegação por capítulos abaixo do menu fixo e layout sem overflow entre 320 e 1440 px.
 
 18. Linha do tempo ordenada pelas datas reais das experiências, com entradas próprias para BSV e Brasil Project; acesso direto ao capítulo de Boston e retorno ao diário sem JavaScript. O teste usa a preferência de movimento reduzido para evitar a disputa entre a rolagem animada do fragmento e o auto-scroll do navegador de testes.
 19. Pessoas e instituições nos quatro idiomas, com Visiona conectando duas histórias e Verônica/Fundação Estudar aparecendo apenas nos relatos em que são citadas; dez fotos do South Summit carregam e não há overflow entre 320 e 1440 px.
@@ -39,3 +39,7 @@ Conferência adicional dos PNGs por comparação de pixels com os originais: só
 Inspeção visual da página inicial em desktop e celular, das fotos, dos capítulos e dos trechos dos e-mails. Capturas: `preview-desktop.png`, `preview-mobile.png`, `preview-projects.png`, `preview-journal.png`, `preview-journal-mobile.png`, `preview-us-diary.png`, `preview-us-diary-mobile.png`, `preview-visiona-diary.png` e `preview-visiona-diary-mobile.png`. A cronologia e o South Summit foram conferidos em `preview-timeline.png`, `preview-south-summit.png` e `preview-south-summit-mobile.png`; os prints protegidos e a página de conexões também foram inspecionados em celular. A página inicial publicada foi inspecionada no navegador após a correção do cache; o CSS versionado carregou com fundo creme, fonte Georgia e hero em grid. A história da China foi conferida visualmente em `preview-china-diary.png` e `preview-china-diary-mobile.png`, e a linha do tempo atualizada em `preview-timeline.png`. O relato do prêmio e a linha do tempo foram inspecionados em `preview-award-diary.png`, `preview-award-diary-mobile.png` e na nova `preview-timeline.png`. A verificação automática de acessibilidade não substitui avaliação manual por pessoas com deficiência.
 
 O repositório já tem publicação via GitHub Actions. Nenhuma mensagem real foi enviada durante os testes; a ativação do FormSubmit e a confirmação de entrega dependem da proprietária. Os vídeos e relatórios mantêm os links fornecidos nos PDFs e no site original; permissões de acesso externas não foram alteradas.
+
+23. Página inicial nas quatro línguas: CTA leva ao projeto atual, destaque abre os detalhes corretos, ilustrações de projetos/experiências carregam, formação está presente e o formulário envia os dados ao destino correto com a requisição interceptada. Sem overflow a 320, 390, 768 e 1440 px.
+
+Nesta revisão, foram novamente inspecionados no navegador: retrato e órbitas, faixa de instituições, destaque da plataforma, cartões SVG, história pessoal e formação, índice do diário, formulário completo, abertura dos artigos, capítulos com foto ao lado e o álbum com as três novas fotos da Visiona. As capturas de início, projetos, CERN e Visiona acima foram atualizadas para o novo desenho. As reflexões foram revistas em EN/PT/FR/ES; os capítulos e a conclusão originais da Visiona foram preservados. Duas falhas de contraste encontradas durante o desenvolvimento foram corrigidas antes da execução final da suíte.

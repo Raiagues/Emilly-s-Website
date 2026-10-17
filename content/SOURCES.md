@@ -142,3 +142,10 @@ A nova história em `premio-na-pratica.json` vem do relato de Emilly: oportunida
 As 14 fotos foram inspecionadas e mantidas intactas, com legendas baseadas no relato e nos nomes dos arquivos. Gabi e Nara foram mantidas pelos nomes usados no álbum; não foram atribuídos cargos ou biografias a pessoas nas imagens. A referência ambígua da transcrição a ter voltado “do Brasil” e a palavra “aniversário” não viraram fatos novos. A vitória é regional, sem inventar o título de vencedora nacional.
 
 Conexões: `na-pratica` liga prêmio e China; `fundacao-estudar` liga prêmio e Estados Unidos; `naryane` reúne as histórias do prêmio e China. O fim do diário da China foi atualizado para deixar de anunciar o relato do prêmio como futuro. Os dois links permanecem disponíveis na mesma conquista. Textos, imagens e navegação estão nos quatro idiomas.
+
+## Revisão visual e reflexões — 17/10/2026
+
+- A autora pediu o retorno das ilustrações originais e do retrato com órbitas, além de projeto atual, história pessoal e contato na página inicial. As capas conceituais usam os SVGs locais; as páginas técnicas preservam suas mídias próprias.
+- As conclusões e os novos parágrafos de reflexão em CERN, China, Estados Unidos, South Summit e prêmio Na Prática são elaboração editorial em primeira pessoa, autorizada pela autora e baseada nos relatos desta conversa. Não são citações literais nem acrescentam novos acontecimentos ou credenciais.
+- A história da Visiona preserva os parágrafos e a conclusão anteriores. A autora acrescentou as amizades da casa onde se hospedou, com pessoas de outras idades e áreas, o kart na chuva e os passeios em parques. Esses amigos são descritos separadamente dos colegas da Visiona.
+- `portifolio/visiona/amigos-kart.png`, `kart-chuva.png` e `parque-amigos.png` são cópias integrais das três imagens anexadas pela autora nesta revisão. Legendas nos quatro idiomas, sem identificar pessoas cujo nome não foi fornecido. A galeria da Visiona passa de seis para nove fotos.

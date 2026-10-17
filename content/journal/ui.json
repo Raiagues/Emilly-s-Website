@@ -148,5 +148,11 @@
     "pt": "Ler o trecho do e-mail",
     "fr": "Lire l’extrait de l’e-mail",
     "es": "Leer el fragmento del correo"
+  },
+  "reflection": {
+    "en": "What stays with me",
+    "pt": "O que levo comigo",
+    "fr": "Ce que j’en retiens",
+    "es": "Lo que me llevo"
   }
 }
