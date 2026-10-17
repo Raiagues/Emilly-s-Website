@@ -1,0 +1,335 @@
+{
+  "slug": "visiona",
+  "published": true,
+  "date": "2026-10-17",
+  "series": {
+    "en": "Visiona · back in Brazil",
+    "pt": "Visiona · de volta ao Brasil",
+    "fr": "Visiona · retour au Brésil",
+    "es": "Visiona · de vuelta en Brasil"
+  },
+  "period": {
+    "en": "2025–2026",
+    "pt": "2025–2026",
+    "fr": "2025–2026",
+    "es": "2025–2026"
+  },
+  "title": {
+    "en": "Visiona: seeing Brazil differently",
+    "pt": "Visiona: um novo olhar para o Brasil",
+    "fr": "Visiona : voir le Brésil autrement",
+    "es": "Visiona: otra forma de ver Brasil"
+  },
+  "subtitle": {
+    "en": "An interview with French words in my head, a team that welcomed me and a growing interest in systems engineering.",
+    "pt": "Uma entrevista com a cabeça em francês, uma equipe que me acolheu e a descoberta da engenharia de sistemas.",
+    "fr": "Un entretien avec des mots français en tête, une équipe accueillante et la découverte de l’ingénierie système.",
+    "es": "Una entrevista con la cabeza en francés, un equipo que me recibió con los brazos abiertos y el descubrimiento de la ingeniería de sistemas."
+  },
+  "intro": {
+    "en": "I joined Visiona just after returning to Brazil from France. I arrived with everything I had learned abroad, but there was still so much I didn’t know about the space industry in my own country. That internship changed the way I saw it, and helped me understand what I enjoyed doing as an engineer.",
+    "pt": "Entrei na Visiona logo depois de voltar da França para o Brasil. Cheguei com tudo o que tinha aprendido lá fora, mas ainda havia muita coisa que eu não conhecia sobre a indústria espacial do meu próprio país. Esse estágio mudou a forma como eu enxergava isso e me ajudou a entender o que eu gostava de fazer como engenheira.",
+    "fr": "J’ai rejoint Visiona juste après mon retour de France au Brésil. J’arrivais avec tout ce que j’avais appris à l’étranger, mais je connaissais encore mal l’industrie spatiale de mon propre pays. Ce stage a changé mon regard et m’a aidée à comprendre ce que j’aimais faire en tant qu’ingénieure.",
+    "es": "Entré en Visiona justo después de volver de Francia a Brasil. Llegué con todo lo que había aprendido fuera, pero todavía desconocía muchas cosas de la industria espacial de mi propio país. Esas prácticas cambiaron mi forma de verla y me ayudaron a entender qué me gustaba hacer como ingeniera."
+  },
+  "cover": [
+    "equipe",
+    "termica-grande",
+    "jogos"
+  ],
+  "technical_path": "pages/experience/visiona.html",
+  "technical_label": {
+    "en": "My technical work at Visiona",
+    "pt": "Minha experiência técnica na Visiona",
+    "fr": "Mon travail technique chez Visiona",
+    "es": "Mi trabajo técnico en Visiona"
+  },
+  "journal_link_label": {
+    "en": "My Visiona diary: coming home, the team and systems engineering",
+    "pt": "Meu diário da Visiona: a volta, a equipe e a engenharia de sistemas",
+    "fr": "Mon journal de Visiona : le retour, l’équipe et l’ingénierie système",
+    "es": "Mi diario de Visiona: la vuelta, el equipo y la ingeniería de sistemas"
+  },
+  "sections": [
+    {
+      "id": "entrevista",
+      "title": {
+        "en": "An interview in Portuguese, a head full of French",
+        "pt": "Uma entrevista em português, uma cabeça em francês",
+        "fr": "Un entretien en portugais, la tête en français",
+        "es": "Una entrevista en portugués, la cabeza en francés"
+      },
+      "paragraphs": [
+        {
+          "en": "The interview was in Portuguese, of course. But I had just come back from spending my days speaking French or English. My head hadn’t quite switched languages yet.",
+          "pt": "A entrevista foi em português, claro. Só que eu tinha acabado de voltar de uma rotina em que falava francês ou inglês o dia inteiro. Minha cabeça ainda não tinha trocado de idioma.",
+          "fr": "L’entretien était en portugais, évidemment. Mais je revenais d’une période où je parlais français ou anglais toute la journée. Ma tête n’avait pas encore changé de langue.",
+          "es": "La entrevista fue en portugués, claro. Pero acababa de volver de una rutina en la que hablaba francés o inglés todo el día. Mi cabeza todavía no había cambiado de idioma."
+        },
+        {
+          "en": "Much of what I knew about embedded systems and working with satellites, I had learned in France. Sometimes I knew exactly what I wanted to explain, but the technical term would only come to me in French. It was strange to be back in my own country, trying to find words in my own language.",
+          "pt": "Grande parte do que eu sabia sobre sistemas embarcados e trabalho com satélites, eu tinha aprendido na França. Às vezes, eu sabia exatamente o que queria explicar, mas o termo técnico só vinha em francês. Era estranho estar de volta ao meu país e precisar procurar as palavras na minha própria língua.",
+          "fr": "Une grande partie de mes connaissances en systèmes embarqués et en satellites, je l’avais acquise en France. Parfois, je savais exactement ce que je voulais expliquer, mais le terme technique ne me venait qu’en français. C’était étrange de rentrer dans mon pays et de chercher mes mots dans ma propre langue.",
+          "es": "Gran parte de lo que sabía sobre sistemas embebidos y trabajo con satélites lo había aprendido en Francia. A veces sabía exactamente qué quería explicar, pero el término técnico solo me salía en francés. Era extraño estar de vuelta en mi país y tener que buscar las palabras en mi propio idioma."
+        }
+      ],
+      "photos": [],
+      "links": []
+    },
+    {
+      "id": "equipe",
+      "title": {
+        "en": "A team that welcomed me",
+        "pt": "Uma equipe que me acolheu",
+        "fr": "Une équipe qui m’a accueillie",
+        "es": "Un equipo que me acogió"
+      },
+      "paragraphs": [
+        {
+          "en": "The team was welcoming from the very beginning. The internship would normally have been on site, but they made an exception so I could work remotely. I learned so much there. During my holidays, I went to spend some time with them in person.",
+          "pt": "A equipe foi muito receptiva desde o começo. O estágio normalmente seria presencial, mas abriram uma exceção para que eu pudesse trabalhar remotamente. Aprendi muito ali. Nas férias, fui passar um período com eles presencialmente.",
+          "fr": "L’équipe m’a très bien accueillie dès le début. Le stage aurait normalement dû se faire sur place, mais une exception m’a permis de travailler à distance. J’y ai énormément appris. Pendant mes vacances, je suis allée passer du temps avec eux en présentiel.",
+          "es": "El equipo fue muy receptivo desde el principio. Normalmente las prácticas eran presenciales, pero hicieron una excepción para que pudiera trabajar a distancia. Aprendí muchísimo allí. Durante mis vacaciones fui a pasar un tiempo con ellos en persona."
+        },
+        {
+          "en": "A big part of those first weeks was talking to my supervisors and listening to how the company’s projects had come together. I wanted to understand the path they had taken to get there.",
+          "pt": "Uma parte importante do meu começo foi conversar com meus chefes e ouvir como os projetos da empresa tinham sido construídos. Eu queria entender o caminho que eles tinham percorrido até chegar ali.",
+          "fr": "Une part importante de mes débuts consistait à discuter avec mes responsables et à écouter l’histoire des projets de l’entreprise. Je voulais comprendre le chemin parcouru pour en arriver là.",
+          "es": "Una parte importante de mi comienzo fue conversar con mis responsables y escuchar cómo habían construido los proyectos de la empresa. Quería entender el camino que habían recorrido hasta llegar allí."
+        }
+      ],
+      "photos": [
+        "equipe"
+      ],
+      "links": []
+    },
+    {
+      "id": "brasil",
+      "title": {
+        "en": "The technology we have here",
+        "pt": "A tecnologia que a gente tem aqui",
+        "fr": "La technologie que nous avons ici",
+        "es": "La tecnología que tenemos aquí"
+      },
+      "paragraphs": [
+        {
+          "en": "I had already worked on a Brazilian satellite project, but I hadn’t seen this side of the industry from within. At Visiona, I met people with extraordinary technical knowledge. Seeing what that team could build made me reconsider assumptions I hadn’t even realised I carried about technology in Brazil.",
+          "pt": "Eu já tinha trabalhado em um projeto de satélite brasileiro, mas ainda não tinha visto esse lado da indústria por dentro. Na Visiona, encontrei pessoas com uma capacidade técnica enorme. Ver o que aquela equipe conseguia construir me fez rever ideias que eu nem percebia que carregava sobre a tecnologia no Brasil.",
+          "fr": "J’avais déjà travaillé sur un projet de satellite brésilien, mais je n’avais pas encore découvert cette facette de l’industrie de l’intérieur. Chez Visiona, j’ai rencontré des personnes aux compétences techniques extraordinaires. Voir ce que cette équipe pouvait construire m’a fait remettre en question des idées que je portais, parfois sans m’en rendre compte, sur la technologie au Brésil.",
+          "es": "Ya había trabajado en un proyecto de satélite brasileño, pero todavía no había visto ese lado de la industria desde dentro. En Visiona encontré personas con una capacidad técnica enorme. Ver lo que ese equipo podía construir me hizo revisar ideas que ni siquiera sabía que tenía sobre la tecnología en Brasil."
+        },
+        {
+          "en": "One milestone in that history was VCUB1, launched in 2023: a pioneering Earth-observation and data-collection nanosatellite designed by Brazilian industry.",
+          "pt": "Um dos marcos dessa história foi o VCUB1, lançado em 2023: um nanossatélite pioneiro de observação da Terra e coleta de dados projetado pela indústria brasileira.",
+          "fr": "L’un des jalons de cette histoire est VCUB1, lancé en 2023 : un nanosatellite pionnier d’observation de la Terre et de collecte de données conçu par l’industrie brésilienne.",
+          "es": "Uno de los hitos de esa historia fue VCUB1, lanzado en 2023: un nanosatélite pionero de observación de la Tierra y recogida de datos diseñado por la industria brasileña."
+        },
+        {
+          "en": "In 2023, Finep announced approximately R$220 million for a high-resolution Earth-observation satellite project led by Visiona, its largest economic subsidy award at that time.",
+          "pt": "Em 2023, a Finep anunciou cerca de R$ 220 milhões para um projeto de satélite de observação da Terra de alta resolução liderado pela Visiona, seu maior aporte de subvenção econômica até então.",
+          "fr": "En 2023, la Finep a annoncé environ 220 millions de réaux pour un projet de satellite d’observation de la Terre à haute résolution mené par Visiona, sa plus importante subvention économique à cette date.",
+          "es": "En 2023, Finep anunció unos 220 millones de reales para un proyecto de satélite de observación de la Tierra de alta resolución liderado por Visiona, su mayor subvención económica hasta ese momento."
+        },
+        {
+          "en": "And I was there, contributing to a project on that scale. Little by little, I began to understand how my work fitted into something much bigger. That gave what I was doing a different meaning.",
+          "pt": "E eu estava ali, contribuindo para um projeto dessa escala. Aos poucos, comecei a entender como o meu trabalho se encaixava em algo muito maior. Aquilo deu outro sentido ao que eu estava fazendo.",
+          "fr": "Et j’étais là, à contribuer à un projet de cette ampleur. Peu à peu, j’ai commencé à comprendre comment mon travail s’inscrivait dans un ensemble beaucoup plus vaste. Cela donnait un autre sens à ce que je faisais.",
+          "es": "Y yo estaba allí, contribuyendo a un proyecto de esa escala. Poco a poco empecé a entender cómo encajaba mi trabajo en algo mucho mayor. Eso le dio otro sentido a lo que estaba haciendo."
+        }
+      ],
+      "photos": [],
+      "links": [
+        {
+          "url": "https://visionaespacial.com/empresa/",
+          "label": {
+            "en": "Visiona · the company’s history",
+            "pt": "Visiona · a história da empresa",
+            "fr": "Visiona · l’histoire de l’entreprise",
+            "es": "Visiona · la historia de la empresa"
+          }
+        },
+        {
+          "url": "https://legacy.finep.gov.br/en/noticias/todas-noticias/6574-finep-e-mcti-vao-apoiar-com-r-360-milhoes-o-desenvolvimento-de-tecnologias-estrategicas-dos-setores-aeronautico-e-espacial",
+          "label": {
+            "en": "Finep · funding announcement, 2023",
+            "pt": "Finep · anúncio do investimento, 2023",
+            "fr": "Finep · annonce du financement, 2023",
+            "es": "Finep · anuncio de la inversión, 2023"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sistemas",
+      "title": {
+        "en": "Finding my way towards systems engineering",
+        "pt": "Me encontrando na engenharia de sistemas",
+        "fr": "Trouver ma voie vers l’ingénierie système",
+        "es": "Encontrándome en la ingeniería de sistemas"
+      },
+      "paragraphs": [
+        {
+          "en": "I worked on flight software, but I also learned a lot about systems engineering, integration and satellite operations. I started becoming interested in how everything connected.",
+          "pt": "Eu trabalhava com software de voo, mas também aprendi muito sobre engenharia de sistemas, integração e operação de satélites. Comecei a me interessar cada vez mais por como tudo se conectava.",
+          "fr": "Je travaillais sur le logiciel de vol, mais j’ai aussi beaucoup appris en ingénierie système, en intégration et en opérations satellitaires. Je m’intéressais de plus en plus à la manière dont tout s’articulait.",
+          "es": "Trabajaba con software de vuelo, pero también aprendí mucho sobre ingeniería de sistemas, integración y operaciones de satélites. Cada vez me interesaba más cómo se conectaba todo."
+        },
+        {
+          "en": "Because of my background, I had thought embedded software was the path I needed to stay on. Then I realised how much I enjoyed testing, reviewing cases, thinking through what could go wrong and finding errors. I liked having to question things and look carefully at the less obvious situations.",
+          "pt": "Por conta da minha formação, eu achava que precisava seguir focada em software embarcado. Só que fui percebendo o quanto gostava de testar, verificar os casos, pensar no que poderia dar errado e identificar erros. Eu gostava de precisar questionar as coisas e olhar com cuidado para as situações menos óbvias.",
+          "fr": "Avec ma formation, je pensais devoir rester concentrée sur le logiciel embarqué. Puis j’ai réalisé à quel point j’aimais tester, examiner les cas, réfléchir à ce qui pouvait mal se passer et repérer les erreurs. J’aimais devoir questionner les choses et regarder de près les situations moins évidentes.",
+          "es": "Por mi formación, pensaba que debía seguir centrada en el software embebido. Pero fui descubriendo cuánto me gustaba probar, revisar los casos, pensar en lo que podía salir mal e identificar errores. Me gustaba tener que cuestionar las cosas y mirar con atención las situaciones menos evidentes."
+        },
+        {
+          "en": "That interest in systems engineering grew almost naturally. Visiona helped me see it in the work I enjoyed doing every day.",
+          "pt": "Esse interesse pela engenharia de sistemas foi aparecendo quase naturalmente. A Visiona me ajudou a perceber isso no trabalho que eu gostava de fazer todos os dias.",
+          "fr": "Cet intérêt pour l’ingénierie système est apparu presque naturellement. Visiona m’a aidée à le reconnaître dans le travail que j’aimais faire au quotidien.",
+          "es": "Ese interés por la ingeniería de sistemas fue apareciendo casi de forma natural. Visiona me ayudó a reconocerlo en el trabajo que disfrutaba cada día."
+        }
+      ],
+      "photos": [],
+      "links": []
+    },
+    {
+      "id": "lit",
+      "title": {
+        "en": "Seeing the LIT in person",
+        "pt": "Conhecendo o LIT de perto",
+        "fr": "Découvrir le LIT sur place",
+        "es": "Conociendo el LIT de cerca"
+      },
+      "paragraphs": [
+        {
+          "en": "During my time on site, I visited INPE’s Integration and Testing Laboratory, the LIT. It provides facilities for assembling, integrating and qualifying space systems, including tests that reproduce conditions experienced in space.",
+          "pt": "Durante o período presencial, visitei o Laboratório de Integração e Testes do INPE, o LIT. Ele reúne instalações para montagem, integração e qualificação de sistemas espaciais, incluindo ensaios que reproduzem condições do ambiente espacial.",
+          "fr": "Pendant mon séjour sur place, j’ai visité le Laboratoire d’intégration et d’essais de l’INPE, le LIT. Il dispose d’installations pour assembler, intégrer et qualifier des systèmes spatiaux, notamment grâce à des essais reproduisant les conditions de l’environnement spatial.",
+          "es": "Durante mi estancia presencial visité el Laboratorio de Integración y Ensayos del INPE, el LIT. Cuenta con instalaciones para montar, integrar y cualificar sistemas espaciales, incluidos ensayos que reproducen condiciones del entorno espacial."
+        },
+        {
+          "en": "Seeing the thermal-vacuum chambers, the vibration test equipment and the anechoic chamber up close was incredible. The size of the large thermal-vacuum chamber really struck me. I also got to see satellite integration work happening in person.",
+          "pt": "Ver de perto as câmaras de vácuo térmico, a bancada de vibração e a câmara anecoica foi incrível. O tamanho da câmara de vácuo térmico maior me impressionou muito. Também pude acompanhar de perto o trabalho de integração de satélite.",
+          "fr": "Voir de près les chambres à vide thermique, les équipements d’essais vibratoires et la chambre anéchoïque était incroyable. La taille de la grande chambre à vide thermique m’a vraiment impressionnée. J’ai aussi pu voir sur place le travail d’intégration d’un satellite.",
+          "es": "Ver de cerca las cámaras de vacío térmico, el equipo de ensayos de vibración y la cámara anecoica fue increíble. El tamaño de la cámara de vacío térmico grande me impresionó muchísimo. También pude ver de cerca el trabajo de integración de un satélite."
+        },
+        {
+          "en": "I already worked in the field, and there was still so much technical capability in Brazil that I hadn’t known about. I left wanting to understand it better. I can’t share the satellite images or internal details, but these photos of the facilities bring back that feeling of discovery.",
+          "pt": "Eu já era uma pessoa da área e ainda havia tanta capacidade técnica no Brasil que eu não conhecia. Saí de lá querendo entender mais. Não posso compartilhar as imagens do satélite nem os detalhes internos, mas essas fotos das instalações me lembram muito daquela sensação de descoberta.",
+          "fr": "Je travaillais déjà dans le secteur, et il y avait encore tant de compétences techniques au Brésil que je ne connaissais pas. Je suis repartie avec l’envie d’en savoir plus. Je ne peux pas partager les images du satellite ni les détails internes, mais ces photos des installations me rappellent cette sensation de découverte.",
+          "es": "Ya trabajaba en el sector y todavía había tanta capacidad técnica en Brasil que no conocía. Salí de allí con ganas de entender más. No puedo compartir las imágenes del satélite ni los detalles internos, pero estas fotos de las instalaciones me recuerdan mucho aquella sensación de descubrimiento."
+        }
+      ],
+      "photos": [
+        "termica-grande",
+        "termica-menor",
+        "vibracao",
+        "anecoica"
+      ],
+      "links": [
+        {
+          "url": "https://www.gov.br/inpe/pt-br/area-conhecimento/montagem-integracao-e-testes",
+          "label": {
+            "en": "INPE · Integration and Testing Laboratory",
+            "pt": "INPE · Laboratório de Integração e Testes",
+            "fr": "INPE · Laboratoire d’intégration et d’essais",
+            "es": "INPE · Laboratorio de Integración y Ensayos"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fora-do-trabalho",
+      "title": {
+        "en": "And the time together outside work",
+        "pt": "E os momentos fora do trabalho",
+        "fr": "Et les moments en dehors du travail",
+        "es": "Y los momentos fuera del trabajo"
+      },
+      "paragraphs": [
+        {
+          "en": "There was also time together outside work, like this games night. For someone who worked remotely, being there in person meant a lot. I came back with new things I had learned, memories with the team and a much closer view of the industry I wanted to be part of.",
+          "pt": "Também teve convivência fora do trabalho, como essa noite de jogos. Pra quem trabalhava remotamente, poder estar ali presencialmente significava muito. Voltei com aprendizados, lembranças com a equipe e uma visão muito mais próxima da indústria da qual eu queria fazer parte.",
+          "fr": "Il y a aussi eu des moments ensemble en dehors du travail, comme cette soirée jeux. Pour quelqu’un qui travaillait à distance, pouvoir être là en personne comptait beaucoup. Je suis rentrée avec de nouveaux apprentissages, des souvenirs avec l’équipe et une vision bien plus concrète de l’industrie dont je voulais faire partie.",
+          "es": "También hubo momentos juntos fuera del trabajo, como esta noche de juegos. Para alguien que trabajaba a distancia, poder estar allí en persona significaba mucho. Volví con aprendizajes, recuerdos con el equipo y una visión mucho más cercana de la industria de la que quería formar parte."
+        }
+      ],
+      "photos": [
+        "jogos"
+      ],
+      "links": []
+    }
+  ],
+  "closing": {
+    "en": "I learned a lot at Visiona about satellites, about Brazil and about the kind of work that makes me curious. I loved getting to see all of that up close.",
+    "pt": "Aprendi muito na Visiona sobre satélites, sobre o Brasil e sobre o tipo de trabalho que me dá vontade de aprender mais. Amei poder conhecer tudo isso de perto.",
+    "fr": "Chez Visiona, j’ai beaucoup appris sur les satellites, sur le Brésil et sur le travail qui me donne envie d’en apprendre davantage. J’ai adoré découvrir tout cela de près.",
+    "es": "Aprendí mucho en Visiona sobre satélites, sobre Brasil y sobre el tipo de trabajo que me da ganas de seguir aprendiendo. Me encantó poder conocer todo eso de cerca."
+  },
+  "photos": {
+    "equipe": {
+      "file": "portifolio/visiona/equipe obdh.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "With the OBDH team during the visit to the LIT.",
+        "pt": "Com a equipe de OBDH durante a visita ao LIT.",
+        "fr": "Avec l’équipe OBDH lors de la visite du LIT.",
+        "es": "Con el equipo de OBDH durante la visita al LIT."
+      }
+    },
+    "termica-grande": {
+      "file": "portifolio/visiona/camaravacuotermica maior.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "The large thermal-vacuum chamber at the LIT.",
+        "pt": "A câmara de vácuo térmico de grande porte do LIT.",
+        "fr": "La grande chambre à vide thermique du LIT.",
+        "es": "La cámara de vacío térmico de gran tamaño del LIT."
+      }
+    },
+    "termica-menor": {
+      "file": "portifolio/visiona/camara vacuo termico menor.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Another thermal-vacuum chamber seen during the visit.",
+        "pt": "Outra câmara de vácuo térmico que conheci na visita.",
+        "fr": "Une autre chambre à vide thermique découverte pendant la visite.",
+        "es": "Otra cámara de vacío térmico que conocí durante la visita."
+      }
+    },
+    "vibracao": {
+      "file": "portifolio/visiona/bancada de vibracao.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "The vibration test equipment.",
+        "pt": "A bancada de ensaios de vibração.",
+        "fr": "Les équipements d’essais vibratoires.",
+        "es": "El equipo de ensayos de vibración."
+      }
+    },
+    "anecoica": {
+      "file": "portifolio/visiona/camara anecoica.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Inside the anechoic chamber.",
+        "pt": "Por dentro da câmara anecoica.",
+        "fr": "À l’intérieur de la chambre anéchoïque.",
+        "es": "Dentro de la cámara anecoica."
+      }
+    },
+    "jogos": {
+      "file": "portifolio/visiona/noite de jogos.jpeg",
+      "width": 1600,
+      "height": 1200,
+      "caption": {
+        "en": "Games night: time together outside work.",
+        "pt": "Noite de jogos: um encontro fora do trabalho.",
+        "fr": "Soirée jeux : un moment ensemble en dehors du travail.",
+        "es": "Noche de juegos: un encuentro fuera del trabajo."
+      }
+    }
+  }
+}

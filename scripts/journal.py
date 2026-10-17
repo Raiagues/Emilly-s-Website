@@ -78,6 +78,9 @@ def story(post, lang, current, link, ui):
     t = lambda key: E(text(ui[key], lang))
     paragraphs = lambda items: ''.join(f'<p>{E(text(p, lang))}</p>' for p in items)
     contents = ''.join(f'<a href="#{s["id"]}">{E(text(s["title"], lang))}</a>' for s in post['sections'])
+    technical = ''
+    if post.get('technical_path') and not post.get('resource'):
+        technical = f'<p><a class="text-link" href="{link(post["technical_path"])}">{E(text(post.get("technical_label", ui["technical"]), lang))} →</a></p>'
     sections = []
     for section in post['sections']:
         photos = []
@@ -97,6 +100,6 @@ def story(post, lang, current, link, ui):
 <article><header class="journal-heading"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h1>{E(text(post['title'], lang))}</h1><p class="journal-deck">{E(text(post['subtitle'], lang))}</p><p class="journal-byline">Emilly Rodrigues <span aria-hidden="true">/</span> {t('photos_credit')}</p></header>
 {cover(post, lang, current)}
 <div class="journal-reading"><aside class="journal-index"><h2>{t('chapters')}</h2><nav aria-label="{t('chapters')}">{contents}</nav><p>{t('photos_hint')}</p></aside>
-<div class="journal-body"><div class="journal-prose journal-intro"><p>{E(text(post['intro'], lang))}</p></div>{''.join(sections)}<div class="journal-closing journal-prose"><p>{E(text(post['closing'], lang))}</p><span class="journal-signature">Emilly</span><a class="text-link" href="{link('index.html')}#journal">← {t('back')}</a></div></div></div>
+<div class="journal-body"><div class="journal-prose journal-intro"><p>{E(text(post['intro'], lang))}</p>{technical}</div>{''.join(sections)}<div class="journal-closing journal-prose"><p>{E(text(post['closing'], lang))}</p><span class="journal-signature">Emilly</span><a class="text-link" href="{link('index.html')}#journal">← {t('back')}</a></div></div></div>
 </article>
 <dialog class="photo-dialog" aria-label="{t('photo')}" data-photo-label="{t('photo')}" data-of-label="{t('of')}"><div class="photo-dialog-bar"><p id="photo-counter" role="status"></p><button type="button" class="photo-close" autofocus>{t('close')} ×</button></div><figure><img alt="" width="1280" height="1280"><figcaption id="photo-caption"></figcaption></figure><div class="photo-controls"><button type="button" data-photo-prev aria-label="{t('previous_photo')}">←</button><button type="button" data-photo-next aria-label="{t('next_photo')}">→</button></div></dialog></main>'''

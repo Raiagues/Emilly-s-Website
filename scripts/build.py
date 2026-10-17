@@ -186,8 +186,10 @@ def project(p, lang):
     nxt = peers[idx + 1] if idx + 1 < len(peers) else None
     links = ''.join(f'<a class="button button-soft" href="{url}" target="_blank" rel="noopener noreferrer">{t(label)} ↗</a>' for label, url in p['links'])
     media = ''
-    if p['id'] == 'cern' and any(post['slug'] == 'cern' for post in POSTS):
-        media = f'<aside class="journal-callout"><a class="text-link" href="{href(current, "journal/cern.html", lang)}">{E(J["text"](JUI["cern_link"], lang))} →</a></aside>'
+    related_post = next((post for post in POSTS if post.get('technical_path') == path), None)
+    if related_post:
+        label = related_post.get('journal_link_label', JUI['cern_link'] if p['id'] == 'cern' else related_post['title'])
+        media = f'<aside class="journal-callout"><a class="text-link" href="{href(current, J["path"](related_post), lang)}">{E(J["text"](label, lang))} →</a></aside>'
     if p['id'] in MEDIA:
         media = f'<figure class="project-media"><img src="{relative(current, MEDIA[p["id"]])}" alt="{E(p["title"][lang], quote=True)}" width="640" height="400"><figcaption>{t("video_caption")}</figcaption></figure>'
     pager = ''.join(f'<a href="{href(current, detail(q), lang)}"><span>{t(key)}</span><strong>{q["title"][lang]} {arrow}</strong></a>' for q, key, arrow in [(prev, 'previous', '←'), (nxt, 'next', '→')] if q)

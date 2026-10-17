@@ -77,3 +77,18 @@ As fontes de contexto não comprovam participação pessoal; essa vem do relato 
 ## Correção do carregamento de estilos
 
 A captura enviada pela proprietária mostrava HTML recente combinado com a aparência da versão anterior. CSS, scripts e ícones agora recebem uma versão derivada do conteúdo no endereço, para renovar o cache quando mudam. O teste de regressão carrega um CSS antigo em cache antes de abrir a página nova. O visual restaurado foi também conferido no site público após a publicação.
+
+
+## Diário da Visiona
+
+Fonte principal: relato direto de Emilly em 17/10/2026 sobre a volta da França, a entrevista em português com vocabulário técnico aprendido em francês, a exceção para estágio remoto, o acolhimento da equipe, o interesse por testes e engenharia de sistemas, o período presencial nas férias e a visita ao LIT. O período 2025–2026 segue o currículo e a página profissional já existente. Não foram inventadas datas para as fotos ou para a visita.
+
+As seis fotos fornecidas em `portifolio/visiona/` mostram instalações de testes, o grupo identificado no nome do arquivo como equipe OBDH e uma noite de jogos. Foram inspecionadas antes da publicação. As legendas não identificam colegas pelo nome. Não foram adicionadas imagens de satélite, código, procedimentos internos, parâmetros de missão ou informações de projeto obtidas fora do relato. Os dados técnicos já presentes na página profissional foram preservados, com ligação para o novo diário.
+
+Contexto público conferido:
+
+- [Visiona — Empresa](https://visionaespacial.com/empresa/): trajetória da empresa e lançamento do VCUB1 em 2023. O diário o descreve como nanossatélite pioneiro de observação da Terra e coleta de dados da indústria brasileira, evitando a afirmação ampla “primeiro satélite comercial brasileiro”.
+- [Finep — anúncio de 5 de maio de 2023](https://legacy.finep.gov.br/en/noticias/todas-noticias/6574-finep-e-mcti-vao-apoiar-com-r-360-milhoes-o-desenvolvimento-de-tecnologias-estrategicas-dos-setores-aeronautico-e-espacial): esclarece a categoria e o alcance histórico do aporte. Não se trata de um recorde geral de todo investimento público brasileiro. O relato pessoal de contribuição vem de Emilly; o anúncio não comprova sua participação e não foi usado para inferir o nome do projeto interno.
+- [INPE — Laboratório de Integração e Testes](https://www.gov.br/inpe/pt-br/area-conhecimento/montagem-integracao-e-testes): atribuições de montagem, integração e qualificação de sistemas espaciais. O laboratório foi identificado como LIT do INPE a partir do relato e do contexto das fotos. Não foi mantido o superlativo “maior câmara do hemisfério sul”, pois não houve confirmação primária suficiente para essa comparação específica. O texto preserva a impressão pessoal de Emilly sobre o porte da instalação.
+
+O interesse por engenharia de sistemas é descrito como descoberta e aprendizado durante o estágio, sem converter isso em cargo, certificação ou liderança de campanha de integração. A visita ao laboratório não é apresentada como responsabilidade pela operação de seus equipamentos.

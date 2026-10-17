@@ -272,7 +272,7 @@ test('journal remains readable and photos open without JavaScript', async () => 
 });
 
 test('journal pages have no automated WCAG A/AA violations', async () => {
-  for(const path of ['journal/cern.html','journal/estados-unidos.html']) {
+  for(const path of ['journal/cern.html','journal/estados-unidos.html','journal/visiona.html']) {
     for(const prefix of ['','pt/','fr/','es/']) {
       const {page}=await visit(prefix+path,{viewport:{width:390,height:844}});
       const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -302,7 +302,7 @@ test('new pages load the restored layout even with a previous stylesheet cached'
 
 test('US diary is reachable from the feed and award, with translations and all 15 photos', async () => {
   const {page,errors}=await visit('pt/');
-  await expect(page.locator('.journal-entry-link')).toHaveCount(2);
+  await expect(page.locator('.journal-entry-link')).toHaveCount(3);
   await page.locator('.journal-entry-link[href="journal/estados-unidos.html"]').click();
   await expect(page.locator('h1')).toHaveText('Minha primeira vez nos Estados Unidos');
   await expect(page.locator('#visa')).toContainText('Anderson');
@@ -333,6 +333,46 @@ test('US diary is reachable from the feed and award, with translations and all 1
   await expect(page.locator('#photo-counter')).toHaveText('Foto 1 de 15');
   await page.keyboard.press('ArrowLeft');
   await expect(page.locator('#photo-counter')).toHaveText('Foto 15 de 15');
+  await page.keyboard.press('Escape');
+  assert.deepEqual(errors,[]);
+  await page.close();
+});
+
+
+test('Visiona diary links both ways to experience and loads its six photos in every language', async () => {
+  const {page,errors}=await visit('pt/',{reducedMotion:'reduce'});
+  await page.locator('.journal-entry-link[href="journal/visiona.html"]').click();
+  await expect(page.locator('h1')).toHaveText('Visiona: um novo olhar para o Brasil');
+  await expect(page.locator('#entrevista')).toContainText('francês');
+  await expect(page.locator('#sistemas')).toContainText('engenharia de sistemas');
+  await expect(page.locator('#lit')).toContainText('INPE');
+  await expect(page.locator('[data-gallery]')).toHaveCount(6);
+  await page.locator('.journal-intro a').click();
+  await expect(page.locator('h1')).toHaveText('Visiona · Software de voo embarcado');
+  await page.locator('.journal-callout a').click();
+  assert.ok(page.url().endsWith('journal/visiona.html'));
+  for(const lang of ['en','fr','es','pt']) {
+    await page.locator(`.languages a[lang=${lang}]`).click();
+    await expect(page.locator('html')).toHaveAttribute('lang',lang);
+    assert.ok(page.url().endsWith('journal/visiona.html'));
+    await expect(page.locator('.journal-intro a')).toHaveAttribute('href','../pages/experience/visiona.html');
+    for(const width of [320,390,768,1440]) {
+      await page.setViewportSize({width,height:844});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang} Visiona diary overflows at ${width}`);
+    }
+  }
+  for(const image of await page.locator('[data-gallery] img').all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(()=>image.evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
+  }
+  await page.locator('.journal-index a[href="#lit"]').click();
+  const headingTop=await page.locator('#lit h2').evaluate(el=>el.getBoundingClientRect().top);
+  const headerBottom=await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().bottom);
+  assert.ok(headingTop>=headerBottom,'Chapter heading stays below the sticky navigation');
+  await page.locator('[data-gallery]').last().click();
+  await expect(page.locator('#photo-counter')).toHaveText('Foto 6 de 6');
+  await page.keyboard.press('ArrowRight');
+  await expect(page.locator('#photo-counter')).toHaveText('Foto 1 de 6');
   await page.keyboard.press('Escape');
   assert.deepEqual(errors,[]);
   await page.close();
