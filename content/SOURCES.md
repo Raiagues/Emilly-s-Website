@@ -55,3 +55,25 @@ A proprietária corrigiu o intervalo entre recusa e aprovação: o e-mail de rec
 ## Restauração da identidade visual
 
 A pedido da proprietária, foi restaurada a identidade da primeira versão: fundo creme, azul-petróleo e terracota, tipografia com serifa, retrato com órbitas e capas ilustradas dos projetos. A navegação em páginas separadas e o conteúdo do diário foram preservados. As ilustrações vetoriais do catálogo são conceituais; as fotos do diário vêm do álbum fornecido.
+
+
+## Viagem aos Estados Unidos — abril de 2026
+
+Fonte principal: relato direto de Emilly, inclusive a confirmação de Anderson e Juliana como anfitriões, do Claude como ferramenta experimentada e da conversa com a professora do MIT. Os 15 JPEGs em `portifolio/bsv/` foram inspecionados; legendas descrevem as imagens, sem identificar os amigos. A foto `nobel.jpeg` mostra uma vaga de estacionamento reservada a ganhador do Nobel em Berkeley, não uma premiação de Emilly. `brasa.jpeg` usa legenda neutra para o grupo.
+
+A participação no Brazil at Silicon Valley foi financiada pela Fundação Estudar. A ida ao Brasil Project foi paga por Emilly; essa diferença está explícita nas quatro línguas. A referência à emergência do visto vem do relato, sem inventar datas de entrevista ou detalhes de aprovação. Apenas os primeiros nomes dos anfitriões foram confirmados; não foram adicionados sobrenomes ou biografias. A história preserva a primeira pessoa e as lembranças pessoais, sem atribuir resultados profissionais ou convites formais à conversa no MIT.
+
+Fontes públicas usadas para contextualizar os eventos e conferir a grafia de nomes:
+
+- [Brazil at Silicon Valley — site oficial](https://brazilatsiliconvalley.com/): edição de 6–8 de abril de 2026, Google MP7 em Sunnyvale; propósito ligado à tecnologia e ao empreendedorismo. Link incluído no capítulo correspondente.
+- [Fundação Estudar — BSV 2026](https://www.estudarfora.org.br/brazil-at-silicon-valley-2026/): contexto do evento, conferido sem transferir para Emilly experiências do autor.
+- [Brasil Project — programação 2026](https://brasilprojectagenda.netlify.app/): 10–12 de abril, Harvard e MIT em Cambridge, e temas dos painéis. É outro evento, não Brazil Conference. Link incluído no capítulo de Boston.
+- [Brasil Project — organização](https://www.linkedin.com/company/brasil-project) e [Fundação Estudar — primeira edição](https://www.estudarfora.org.br/primeira-edicao-brasil-project/): contexto e identificação do evento.
+- [MIT AeroAstro — Kerri Cahoy](https://aeroastro.mit.edu/people/kerri-cahoy/): grafia correta, vínculo e pesquisa do STAR Lab. O encontro em si é informação fornecida por Emilly; não é comprovado pela biografia institucional. Link incluído no capítulo do AeroAstro.
+- [NBA — Gui Santos](https://www.nba.com/player/1630611): nome e nacionalidade. Não foi inferida a data nem o adversário do jogo visto pela usuária.
+
+As fontes de contexto não comprovam participação pessoal; essa vem do relato e das fotos fornecidas. O texto não descreve a Fundação Estudar como organizadora de ambos os eventos.
+
+## Correção do carregamento de estilos
+
+A captura enviada pela proprietária mostrava HTML recente combinado com a aparência da versão anterior. CSS, scripts e ícones agora recebem uma versão derivada do conteúdo no endereço, para renovar o cache quando mudam. O teste de regressão carrega um CSS antigo em cache antes de abrir a página nova. O visual restaurado foi também conferido no site público após a publicação.

@@ -1,10 +1,10 @@
-# Validação local — identidade original restaurada, 17/10/2026
+# Validação local — estilos corrigidos e diário dos Estados Unidos, 17/10/2026
 
-- `python3 scripts/build.py`: concluído; seis páginas principais, uma história do diário, 20 projetos e 6 experiências em quatro idiomas.
-- `python3 scripts/check.py`: 135 HTMLs verificados; links, âncoras e imagens locais íntegros, idioma e título principal presentes, formulário com o e-mail confirmado, pacote de publicação sem ferramentas ou fontes editoriais.
+- `python3 scripts/build.py`: concluído; seis páginas principais, duas histórias do diário, 20 projetos e 6 experiências em quatro idiomas.
+- `python3 scripts/check.py`: 139 HTMLs verificados; links, âncoras e imagens locais íntegros, idioma e título principal presentes, formulário com o e-mail confirmado, pacote de publicação sem ferramentas ou fontes editoriais.
 - `node --check src/script.js`, `node --check src/projects.js` e `node --check src/journal.js`: sem erros de sintaxe.
 - `git diff --check`: sem erros de whitespace.
-- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **14 testes aprovados**; a auditoria de acessibilidade foi repetida com sucesso após o ajuste de contraste na seção de imprensa.
+- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **16 testes aprovados**, incluindo as oito páginas de diário nas verificações de acessibilidade.
 
 Os testes cobrem:
 
@@ -21,8 +21,10 @@ Os testes cobrem:
 11. História do CERN nas quatro línguas, com seis capítulos, 16 fotos e relatório PDF carregando corretamente.
 12. Galeria com botões, setas do teclado, Escape, retorno do foco e verificação axe dentro do diálogo.
 13. História, links de imagens e idiomas funcionando sem JavaScript.
-14. Nenhuma violação automática WCAG A/AA nas quatro versões do diário.
+14. Nenhuma violação automática WCAG A/AA nas oito páginas de diário (CERN e Estados Unidos).
+15. CSS antigo previamente guardado em cache não substitui o estilo restaurado; layout, fonte, fundo e órbitas corretos após navegar e recarregar.
+16. Nova história acessível pelo diário e por Conquistas, nos quatro idiomas; sete capítulos, 15 fotos carregando, fontes, galeria e distinção de financiamento, sem overflow.
 
-Inspeção visual da página inicial em desktop e celular, das fotos, dos capítulos e dos trechos dos e-mails. Capturas: `preview-desktop.png`, `preview-mobile.png`, `preview-projects.png`, `preview-journal.png` e `preview-journal-mobile.png`. A verificação automática de acessibilidade não substitui avaliação manual por pessoas com deficiência.
+Inspeção visual da página inicial em desktop e celular, das fotos, dos capítulos e dos trechos dos e-mails. Capturas: `preview-desktop.png`, `preview-mobile.png`, `preview-projects.png`, `preview-journal.png`, `preview-journal-mobile.png`, `preview-us-diary.png` e `preview-us-diary-mobile.png`. A página inicial publicada foi inspecionada no navegador após a correção do cache; o CSS versionado carregou com fundo creme, fonte Georgia e hero em grid. A verificação automática de acessibilidade não substitui avaliação manual por pessoas com deficiência.
 
 O repositório já tem publicação via GitHub Actions. Nenhuma mensagem real foi enviada durante os testes; a ativação do FormSubmit e a confirmação de entrega dependem da proprietária. Os vídeos e relatórios mantêm os links fornecidos nos PDFs e no site original; permissões de acesso externas não foram alteradas.

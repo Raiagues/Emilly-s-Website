@@ -2,9 +2,9 @@
 
 O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao salvar na branch `main`, o GitHub gera e publica as páginas automaticamente. Não precisa de Render nem de uma conta de administração no site.
 
-## Alterar a história do CERN
+## Alterar uma história
 
-Abra **`content/journal/cern.json`** no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+Abra **`content/journal/cern.json`** (CERN) ou **`content/journal/bsv.json`** (viagem aos Estados Unidos) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
 
 - `title`: título da história.
 - `subtitle`: resumo que aparece na página inicial.
@@ -14,6 +14,8 @@ Abra **`content/journal/cern.json`** no GitHub e clique no lápis para editar. T
 - `photos`: o catálogo de fotos e suas legendas.
 - `cover`: três fotos da capa, referenciadas pelos nomes do catálogo.
 - `resource`: arquivo e texto do botão do relatório. É opcional.
+- `links`: links opcionais dentro de cada capítulo; cada item contém `url` (HTTP/HTTPS) e `label` (texto nos quatro idiomas). Servem para indicar eventos, laboratórios ou outras fontes.
+- `related_award`: nome exato de uma conquista para ligar aquela entrada na página Conquistas à história. Opcional; `award_link_label` define o texto do link nos quatro idiomas.
 - `technical_path`: endereço da página técnica relacionada. É opcional.
 - `date`: data de publicação, no formato `AAAA-MM-DD`; ordena as histórias na página inicial.
 - `period`: o período da experiência, mostrado para quem lê. Pode ser diferente da data de publicação.

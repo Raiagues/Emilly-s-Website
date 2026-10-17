@@ -1,0 +1,448 @@
+{
+  "slug": "estados-unidos",
+  "published": true,
+  "date": "2026-10-17",
+  "series": {
+    "en": "Fundação Estudar · travel diary",
+    "pt": "Fundação Estudar · diário de viagem",
+    "fr": "Fundação Estudar · carnet de voyage",
+    "es": "Fundação Estudar · diario de viaje"
+  },
+  "period": {
+    "en": "April 2026",
+    "pt": "Abril de 2026",
+    "fr": "Avril 2026",
+    "es": "Abril de 2026"
+  },
+  "related_award": "Líderes Estudar",
+  "award_link_label": {
+    "en": "Read about my first trip to the US",
+    "pt": "Leia sobre minha primeira viagem aos EUA",
+    "fr": "Mon premier voyage aux États-Unis",
+    "es": "Mi primer viaje a Estados Unidos"
+  },
+  "title": {
+    "en": "My first time in the United States",
+    "pt": "Minha primeira vez nos Estados Unidos",
+    "fr": "Ma première fois aux États-Unis",
+    "es": "Mi primera vez en Estados Unidos"
+  },
+  "subtitle": {
+    "en": "An emergency visa appointment, Silicon Valley, Boston and the people who made it all worth it.",
+    "pt": "Uma correria com o visto, o Vale do Silício, Boston e as pessoas que fizeram tudo valer a pena.",
+    "fr": "Un rendez-vous de visa en urgence, la Silicon Valley, Boston et les personnes qui ont rendu ce voyage si spécial.",
+    "es": "Una cita de emergencia para el visado, Silicon Valley, Boston y las personas que hicieron que todo valiera la pena."
+  },
+  "intro": {
+    "en": "In April 2026, I went to the United States for the first time. I had grown up hearing about Stanford, MIT and Harvard, and suddenly I was there, walking around those campuses. But before any of that, there was a selection email, very little time and a visa to sort out.",
+    "pt": "Em abril de 2026, fui pela primeira vez aos Estados Unidos. Eu cresci ouvindo falar de Stanford, MIT e Harvard e, de repente, estava lá, andando por esses lugares. Mas, antes de tudo isso, teve uma aprovação, pouco tempo e um visto pra resolver.",
+    "fr": "En avril 2026, je suis allée aux États-Unis pour la première fois. J’avais grandi en entendant parler de Stanford, du MIT et de Harvard, et voilà que je me promenais sur leurs campus. Mais avant tout cela, il y a eu une sélection, très peu de temps et un visa à obtenir.",
+    "es": "En abril de 2026 fui a Estados Unidos por primera vez. Crecí escuchando hablar de Stanford, MIT y Harvard y, de repente, estaba allí, paseando por esos lugares. Pero antes de todo eso hubo una selección, muy poco tiempo y un visado que conseguir."
+  },
+  "cover": [
+    "stanford",
+    "mit",
+    "meta"
+  ],
+  "sections": [
+    {
+      "id": "visa",
+      "title": {
+        "en": "First, the visa",
+        "pt": "Primeiro, o visto",
+        "fr": "D’abord, le visa",
+        "es": "Primero, el visado"
+      },
+      "paragraphs": [
+        {
+          "en": "I was one of the students selected to attend Brazil at Silicon Valley with funding from Fundação Estudar. When the news came, I had a little over a month to get my visa. I requested an emergency appointment and started trying to make everything happen in time. It was chaotic.",
+          "pt": "Fui uma das alunas selecionadas para participar do Brazil at Silicon Valley com o apoio financeiro da Fundação Estudar. Quando veio a notícia, eu tinha mais ou menos um mês e pouco pra conseguir o visto. Pedi um agendamento de emergência e começou a correria pra fazer tudo dar certo a tempo. Foi caótico.",
+          "fr": "J’ai fait partie des étudiantes sélectionnées pour participer à Brazil at Silicon Valley avec le soutien financier de Fundação Estudar. À l’annonce de la sélection, il me restait un peu plus d’un mois pour obtenir mon visa. J’ai demandé un rendez-vous en urgence, puis tout s’est enchaîné pour essayer d’être prête à temps. C’était chaotique.",
+          "es": "Fui una de las estudiantes seleccionadas para participar en Brazil at Silicon Valley con el apoyo económico de Fundação Estudar. Cuando llegó la noticia, tenía poco más de un mes para conseguir el visado. Pedí una cita de emergencia y empezó la carrera para tenerlo todo listo a tiempo. Fue caótico."
+        },
+        {
+          "en": "In California, Anderson and his wife, Juliana, volunteers with Fundação Estudar, welcomed us into their home. Having people receive us like that made this first trip much more special.",
+          "pt": "Na Califórnia, ficamos na casa do Anderson e da Juliana, esposa dele, voluntários da Fundação Estudar. Ter pessoas recebendo a gente desse jeito deixou essa primeira viagem muito mais especial.",
+          "fr": "En Californie, Anderson et sa femme, Juliana, bénévoles de Fundação Estudar, nous ont accueillis chez eux. Cet accueil a rendu mon premier voyage encore plus spécial.",
+          "es": "En California nos alojamos en casa de Anderson y su esposa, Juliana, voluntarios de Fundação Estudar. Que nos recibieran así hizo que este primer viaje fuera todavía más especial."
+        }
+      ],
+      "photos": [
+        "almoco"
+      ],
+      "links": []
+    },
+    {
+      "id": "silicon-valley",
+      "title": {
+        "en": "So many different conversations",
+        "pt": "Gente de tantas áreas diferentes",
+        "fr": "Des échanges dans tous les domaines",
+        "es": "Conversaciones de todo tipo"
+      },
+      "paragraphs": [
+        {
+          "en": "Brazil at Silicon Valley brings people from Brazil closer to the technology and entrepreneurship community in Silicon Valley. The 2026 edition took place at Google MP7, in Sunnyvale, from April 6 to 8. And there I was, getting to be part of it.",
+          "pt": "O Brazil at Silicon Valley aproxima pessoas do Brasil da comunidade de tecnologia e empreendedorismo do Vale do Silício. A edição de 2026 aconteceu no Google MP7, em Sunnyvale, de 6 a 8 de abril. E lá estava eu, podendo participar daquilo.",
+          "fr": "Brazil at Silicon Valley rapproche des participants brésiliens de la communauté technologique et entrepreneuriale de la Silicon Valley. L’édition 2026 s’est tenue au Google MP7, à Sunnyvale, du 6 au 8 avril. Et j’étais là, avec la chance d’y participer.",
+          "es": "Brazil at Silicon Valley acerca a personas de Brasil a la comunidad tecnológica y emprendedora de Silicon Valley. La edición de 2026 tuvo lugar en Google MP7, en Sunnyvale, del 6 al 8 de abril. Y allí estaba yo, pudiendo formar parte de todo eso."
+        },
+        {
+          "en": "I talked to founders, investors, researchers and people working in law and AI. I loved that the conversations went so far beyond my own field. There were so many people to meet and so many things I wanted to ask. Somewhere along the way, I became sure I wanted to come back.",
+          "pt": "Conversei com founders, investidores, pesquisadores, gente do direito, de IA e de várias outras áreas. Gostei muito de as conversas irem tão além da minha própria área. Era tanta gente pra conhecer e tanta coisa que eu queria perguntar. Em algum momento, ficou muito claro que eu queria voltar.",
+          "fr": "J’ai échangé avec des fondateurs, des investisseurs, des chercheurs et des personnes travaillant dans le droit ou l’IA. J’ai adoré que les conversations dépassent autant mon propre domaine. Il y avait tellement de monde à rencontrer et de questions à poser. À un moment, j’ai su que je voulais revenir.",
+          "es": "Hablé con founders, inversores, investigadores y personas del derecho, de IA y de muchas otras áreas. Me encantó que las conversaciones fueran mucho más allá de mi propio campo. Había tanta gente por conocer y tantas cosas que quería preguntar. En algún momento tuve muy claro que quería volver."
+        }
+      ],
+      "photos": [
+        "meta"
+      ],
+      "links": [
+        {
+          "url": "https://brazilatsiliconvalley.com/",
+          "label": {
+            "en": "About Brazil at Silicon Valley",
+            "pt": "Sobre o Brazil at Silicon Valley",
+            "fr": "À propos de Brazil at Silicon Valley",
+            "es": "Sobre Brazil at Silicon Valley"
+          }
+        }
+      ]
+    },
+    {
+      "id": "campuses",
+      "title": {
+        "en": "Places I had only seen from afar",
+        "pt": "Lugares que eu só conhecia de longe",
+        "fr": "Ces lieux que je ne connaissais que de loin",
+        "es": "Lugares que solo conocía de lejos"
+      },
+      "paragraphs": [
+        {
+          "en": "Alongside the events, I visited companies and universities. I got to see Stanford and Berkeley, and we also visited Meta. Being at Stanford was one of those moments when I kept thinking: I am actually here.",
+          "pt": "Além dos eventos, visitei empresas e universidades. Conheci Stanford, Berkeley e também passamos pela Meta. Estar em Stanford foi um daqueles momentos em que eu ficava pensando: eu tô aqui mesmo.",
+          "fr": "En marge des événements, j’ai visité des entreprises et des universités. J’ai découvert Stanford et Berkeley, et nous sommes aussi passés chez Meta. À Stanford, je n’arrêtais pas de me dire : j’y suis vraiment.",
+          "es": "Además de los eventos, visité empresas y universidades. Conocí Stanford y Berkeley, y también pasamos por Meta. Estar en Stanford fue uno de esos momentos en los que no dejaba de pensar: de verdad estoy aquí."
+        },
+        {
+          "en": "At Berkeley, I even photographed a parking space reserved for a Nobel laureate. I wanted to keep all those little details, too.",
+          "pt": "Em Berkeley, fotografei até uma vaga de estacionamento reservada para um ganhador do Nobel. Eu queria guardar esses detalhes também.",
+          "fr": "À Berkeley, j’ai même photographié une place de parking réservée à un prix Nobel. Je voulais aussi garder une trace de ces petits détails.",
+          "es": "En Berkeley fotografié hasta una plaza de aparcamiento reservada para un premio Nobel. Quería guardar también esos pequeños detalles."
+        }
+      ],
+      "photos": [
+        "stanford",
+        "stanford2",
+        "nobel"
+      ],
+      "links": []
+    },
+    {
+      "id": "boston",
+      "title": {
+        "en": "And then, Boston",
+        "pt": "E depois, Boston",
+        "fr": "Et ensuite, Boston",
+        "es": "Y después, Boston"
+      },
+      "paragraphs": [
+        {
+          "en": "Since I was already in the US, I decided to go to Brasil Project as well. This part of the trip was my own expense. Fundação Estudar funded my participation in Brazil at Silicon Valley; going on to Boston was a separate decision.",
+          "pt": "Como eu já estava nos Estados Unidos, decidi ir também ao Brasil Project. Essa parte da viagem eu paguei por conta própria. A Fundação Estudar financiou minha participação no Brazil at Silicon Valley; seguir pra Boston foi uma decisão minha, separada daquele apoio.",
+          "fr": "Puisque j’étais déjà aux États-Unis, j’ai décidé d’aller aussi au Brasil Project. J’ai payé cette partie du voyage moi-même. Fundação Estudar a financé ma participation à Brazil at Silicon Valley ; poursuivre jusqu’à Boston était une décision personnelle, distincte de ce soutien.",
+          "es": "Como ya estaba en Estados Unidos, decidí ir también a Brasil Project. Esa parte del viaje la pagué yo. Fundação Estudar financió mi participación en Brazil at Silicon Valley; seguir hasta Boston fue una decisión personal, aparte de ese apoyo."
+        },
+        {
+          "en": "The first edition of Brasil Project took place from April 10 to 12 at Harvard and MIT, in Cambridge, near Boston, bringing together conversations about Brazil, technology, business and public life. I got to visit both universities. I had spent so long seeing these institutions from a distance, and now I could see them in person. It really was a dream coming true.",
+          "pt": "A primeira edição do Brasil Project aconteceu de 10 a 12 de abril, em Harvard e no MIT, em Cambridge, perto de Boston, reunindo conversas sobre Brasil, tecnologia, negócios e vida pública. Pude conhecer as duas universidades. Passei tanto tempo vendo essas instituições de longe e, agora, estava vendo tudo pessoalmente. Foi um sonho realizado mesmo.",
+          "fr": "La première édition du Brasil Project a eu lieu du 10 au 12 avril à Harvard et au MIT, à Cambridge, près de Boston, autour du Brésil, de la technologie, des affaires et de la vie publique. J’ai pu visiter les deux universités. Après les avoir vues de loin pendant si longtemps, j’y étais enfin. C’était vraiment un rêve qui se réalisait.",
+          "es": "La primera edición de Brasil Project se celebró del 10 al 12 de abril en Harvard y MIT, en Cambridge, cerca de Boston, con conversaciones sobre Brasil, tecnología, negocios y vida pública. Pude conocer las dos universidades. Después de ver esas instituciones desde lejos durante tanto tiempo, por fin estaba allí en persona. Fue un sueño cumplido."
+        }
+      ],
+      "photos": [
+        "brasa",
+        "harvard",
+        "mit"
+      ],
+      "links": [
+        {
+          "url": "https://brasilprojectagenda.netlify.app/",
+          "label": {
+            "en": "Brasil Project · 2026 programme",
+            "pt": "Brasil Project · programação de 2026",
+            "fr": "Brasil Project · programme 2026",
+            "es": "Brasil Project · programa de 2026"
+          }
+        }
+      ]
+    },
+    {
+      "id": "aeroastro",
+      "title": {
+        "en": "A conversation at AeroAstro",
+        "pt": "Uma conversa no AeroAstro",
+        "fr": "Une conversation à AeroAstro",
+        "es": "Una conversación en AeroAstro"
+      },
+      "paragraphs": [
+        {
+          "en": "At MIT, I had the chance to talk to Professor Kerri Cahoy, from AeroAstro, about different research areas, including satellites. She leads STAR Lab, which works on space technologies such as small satellites and laser communications.",
+          "pt": "No MIT, tive a oportunidade de conversar com a professora Kerri Cahoy, do AeroAstro, sobre diferentes áreas de pesquisa, incluindo satélites. Ela lidera o STAR Lab, que trabalha com tecnologias espaciais como pequenos satélites e comunicações a laser.",
+          "fr": "Au MIT, j’ai eu la chance de parler avec la professeure Kerri Cahoy, d’AeroAstro, de différents domaines de recherche, dont les satellites. Elle dirige STAR Lab, qui travaille sur des technologies spatiales comme les petits satellites et les communications laser.",
+          "es": "En MIT tuve la oportunidad de hablar con la profesora Kerri Cahoy, de AeroAstro, sobre distintas áreas de investigación, incluidos los satélites. Dirige STAR Lab, que trabaja con tecnologías espaciales como pequeños satélites y comunicaciones láser."
+        },
+        {
+          "en": "Getting to have that conversation in person meant a lot to me. Visiting the campus was already exciting; being able to talk about the areas I care about made it even more memorable.",
+          "pt": "Poder ter essa conversa pessoalmente significou muito pra mim. Conhecer o campus já era incrível; conseguir conversar sobre as áreas que me interessam deixou a visita ainda mais marcante.",
+          "fr": "Pouvoir avoir cette conversation en personne comptait beaucoup pour moi. Découvrir le campus était déjà incroyable ; parler des domaines qui m’intéressent a rendu cette visite encore plus marquante.",
+          "es": "Poder tener esa conversación en persona significó mucho para mí. Conocer el campus ya era increíble; hablar de las áreas que me interesan hizo que la visita fuera todavía más especial."
+        }
+      ],
+      "photos": [
+        "aeroastro"
+      ],
+      "links": [
+        {
+          "url": "https://aeroastro.mit.edu/people/kerri-cahoy/",
+          "label": {
+            "en": "Kerri Cahoy · MIT AeroAstro",
+            "pt": "Kerri Cahoy · MIT AeroAstro",
+            "fr": "Kerri Cahoy · MIT AeroAstro",
+            "es": "Kerri Cahoy · MIT AeroAstro"
+          }
+        }
+      ]
+    },
+    {
+      "id": "friends",
+      "title": {
+        "en": "There was so much life in between",
+        "pt": "E teve muita vida no meio disso",
+        "fr": "Et puis, tous ces moments ensemble",
+        "es": "Y también todo lo que vivimos entre medias"
+      },
+      "paragraphs": [
+        {
+          "en": "It was my first time in California. Even the yellow school buses were exciting: I had seen them so many times in films, and now they were right there. We rode bikes by the Golden Gate Bridge and went to a basketball game with the Brazilian player Gui Santos.",
+          "pt": "Era minha primeira vez na Califórnia. Até os ônibus escolares amarelos me animavam: eu tinha visto aquilo tantas vezes nos filmes e agora estava ali, na minha frente. Andamos de bicicleta na Golden Gate e fomos ver um jogo de basquete com o brasileiro Gui Santos.",
+          "fr": "C’était ma première fois en Californie. Même les bus scolaires jaunes m’enthousiasmaient : je les avais vus si souvent dans les films, et maintenant ils étaient juste devant moi. Nous avons fait du vélo près du Golden Gate et assisté à un match de basket avec le Brésilien Gui Santos.",
+          "es": "Era mi primera vez en California. Hasta los autobuses escolares amarillos me emocionaban: los había visto tantas veces en las películas y ahora estaban delante de mí. Anduvimos en bicicleta por el Golden Gate y fuimos a ver un partido de baloncesto con el brasileño Gui Santos."
+        },
+        {
+          "en": "There were shared meals, walks, time together at the apartment and a lot of laughter. Some of the people I met on this trip are still close to me. When I look at the photos, I remember how much fun we had just being together.",
+          "pt": "Teve almoço junto, passeio, convivência no apartamento e muita risada. Algumas das pessoas que conheci nessa viagem continuam próximas de mim até hoje. Quando olho as fotos, lembro de como era divertido estar ali com aquela turma.",
+          "fr": "Il y a eu les repas partagés, les balades, les moments à l’appartement et beaucoup de rires. Certaines des personnes rencontrées pendant ce voyage sont toujours proches de moi. Quand je regarde les photos, je repense au plaisir que nous avions à être ensemble.",
+          "es": "Hubo comidas juntos, paseos, momentos en el apartamento y muchas risas. Algunas de las personas que conocí en ese viaje siguen siendo cercanas hasta hoy. Cuando miro las fotos recuerdo lo divertido que era estar allí con ese grupo."
+        }
+      ],
+      "photos": [
+        "bridge",
+        "basquete",
+        "basqueteamigos",
+        "amigos",
+        "amigos2",
+        "saofrancisco"
+      ],
+      "links": []
+    },
+    {
+      "id": "back-home",
+      "title": {
+        "en": "Coming home wanting to try more",
+        "pt": "Voltei querendo experimentar mais",
+        "fr": "Rentrer avec l’envie d’essayer davantage",
+        "es": "Volví con ganas de probar más"
+      },
+      "paragraphs": [
+        {
+          "en": "It was on this trip that I tried Claude for the first time. It already existed, but I had never used it. I remember being amazed that the technology was already at that point.",
+          "pt": "Foi nessa viagem que experimentei o Claude pela primeira vez. Ele já existia, mas eu ainda não tinha usado. Lembro de ficar impressionada por a tecnologia já estar naquele nível.",
+          "fr": "C’est pendant ce voyage que j’ai essayé Claude pour la première fois. Il existait déjà, mais je ne l’avais jamais utilisé. Je me souviens de mon étonnement en voyant à quel point la technologie avait avancé.",
+          "es": "Fue en ese viaje cuando probé Claude por primera vez. Ya existía, pero yo todavía no lo había usado. Recuerdo lo mucho que me sorprendió que la tecnología ya estuviera a ese nivel."
+        },
+        {
+          "en": "I came back to Brazil wanting to move faster on my own projects: try something, see how it works and make another version. That was one of the things I brought home, along with the friendships and the very clear feeling that I wanted to go back.",
+          "pt": "Voltei pro Brasil querendo andar mais rápido nos meus projetos: experimentar, ver como funciona e fazer outra versão. Foi uma das coisas que trouxe comigo, junto com as amizades e aquela certeza de que queria voltar.",
+          "fr": "Je suis rentrée au Brésil avec l’envie d’avancer plus vite dans mes projets : essayer, voir comment cela fonctionne, puis en faire une nouvelle version. C’est une des choses que j’ai rapportées, avec les amitiés et cette envie très nette de revenir.",
+          "es": "Volví a Brasil con ganas de avanzar más rápido en mis proyectos: probar, ver cómo funciona y hacer otra versión. Fue una de las cosas que me traje, junto con las amistades y esa certeza de que quería volver."
+        }
+      ],
+      "photos": [],
+      "links": []
+    }
+  ],
+  "closing": {
+    "en": "I still don’t quite know how to explain everything that trip meant to me. It was a whirlwind. And it was incredible.",
+    "pt": "Ainda não sei explicar muito bem tudo o que essa viagem significou pra mim. Foi uma loucura. E foi incrível.",
+    "fr": "Je ne sais toujours pas très bien expliquer tout ce que ce voyage a représenté pour moi. C’était un tourbillon. Et c’était incroyable.",
+    "es": "Todavía no sé explicar muy bien todo lo que ese viaje significó para mí. Fue una locura. Y fue increíble."
+  },
+  "photos": {
+    "almoco": {
+      "file": "portifolio/bsv/almoco.jpeg",
+      "width": 1600,
+      "height": 1200,
+      "caption": {
+        "en": "A meal with the group.",
+        "pt": "Um almoço com a turma.",
+        "fr": "Un repas avec le groupe.",
+        "es": "Una comida con el grupo."
+      }
+    },
+    "meta": {
+      "file": "portifolio/bsv/meta.jpeg",
+      "width": 1600,
+      "height": 1200,
+      "caption": {
+        "en": "Visiting Meta with friends.",
+        "pt": "Uma visita à Meta com os amigos.",
+        "fr": "Une visite chez Meta avec des amis.",
+        "es": "Una visita a Meta con amigos."
+      }
+    },
+    "stanford": {
+      "file": "portifolio/bsv/stanford.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Me, at Stanford. Still taking it all in.",
+        "pt": "Eu, em Stanford. Ainda tentando acreditar.",
+        "fr": "Moi, à Stanford. Encore du mal à y croire.",
+        "es": "Yo, en Stanford. Todavía intentando creérmelo."
+      }
+    },
+    "stanford2": {
+      "file": "portifolio/bsv/stanford2.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "caption": {
+        "en": "A group photo during our Stanford visit.",
+        "pt": "Uma foto da turma na visita a Stanford.",
+        "fr": "Une photo de groupe pendant la visite de Stanford.",
+        "es": "Una foto del grupo durante la visita a Stanford."
+      }
+    },
+    "nobel": {
+      "file": "portifolio/bsv/nobel.jpeg",
+      "width": 1024,
+      "height": 1536,
+      "caption": {
+        "en": "At Berkeley: a parking space reserved for a Nobel laureate.",
+        "pt": "Em Berkeley: uma vaga reservada para um ganhador do Nobel.",
+        "fr": "À Berkeley : une place réservée à un prix Nobel.",
+        "es": "En Berkeley: una plaza reservada para un premio Nobel."
+      }
+    },
+    "brasa": {
+      "file": "portifolio/bsv/brasa.jpeg",
+      "width": 1295,
+      "height": 731,
+      "caption": {
+        "en": "One more photo with the group.",
+        "pt": "Mais uma foto com a turma.",
+        "fr": "Une autre photo avec le groupe.",
+        "es": "Otra foto con el grupo."
+      }
+    },
+    "harvard": {
+      "file": "portifolio/bsv/harvard.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Visiting Harvard.",
+        "pt": "Conhecendo Harvard.",
+        "fr": "À la découverte de Harvard.",
+        "es": "Conociendo Harvard."
+      }
+    },
+    "mit": {
+      "file": "portifolio/bsv/mit.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Finally seeing MIT in person.",
+        "pt": "Finalmente conhecendo o MIT pessoalmente.",
+        "fr": "Enfin au MIT, en personne.",
+        "es": "Por fin conociendo MIT en persona."
+      }
+    },
+    "aeroastro": {
+      "file": "portifolio/bsv/mit aeroastro.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "At MIT AeroAstro: “This is what we do.”",
+        "pt": "No MIT AeroAstro: “This is what we do.”",
+        "fr": "À MIT AeroAstro : « This is what we do. »",
+        "es": "En MIT AeroAstro: «This is what we do»."
+      }
+    },
+    "bridge": {
+      "file": "portifolio/bsv/bridge.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Bikes and the Golden Gate in the background.",
+        "pt": "Bicicletas e a Golden Gate ao fundo.",
+        "fr": "Des vélos et le Golden Gate en arrière-plan.",
+        "es": "Bicicletas y el Golden Gate al fondo."
+      }
+    },
+    "basquete": {
+      "file": "portifolio/bsv/basquete.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Seeing a basketball game in California.",
+        "pt": "Assistindo a um jogo de basquete na Califórnia.",
+        "fr": "Un match de basket en Californie.",
+        "es": "Viendo un partido de baloncesto en California."
+      }
+    },
+    "basqueteamigos": {
+      "file": "portifolio/bsv/basqueteamigos.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "caption": {
+        "en": "The group at the game.",
+        "pt": "A turma no jogo.",
+        "fr": "Le groupe au match.",
+        "es": "El grupo en el partido."
+      }
+    },
+    "amigos": {
+      "file": "portifolio/bsv/amigos.jpeg",
+      "width": 1320,
+      "height": 738,
+      "caption": {
+        "en": "Friends and one of the views we shared.",
+        "pt": "Amigos e uma das vistas que dividimos.",
+        "fr": "Des amis et l’un des panoramas partagés.",
+        "es": "Amigos y una de las vistas que compartimos."
+      }
+    },
+    "amigos2": {
+      "file": "portifolio/bsv/amigos2.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "caption": {
+        "en": "Another stop with friends.",
+        "pt": "Mais uma parada com os amigos.",
+        "fr": "Une autre halte avec les amis.",
+        "es": "Otra parada con los amigos."
+      }
+    },
+    "saofrancisco": {
+      "file": "portifolio/bsv/saofrancisco.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "San Francisco at night.",
+        "pt": "São Francisco à noite.",
+        "fr": "San Francisco la nuit.",
+        "es": "San Francisco de noche."
+      }
+    }
+  }
+}

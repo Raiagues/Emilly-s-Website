@@ -159,7 +159,11 @@ def about(lang):
 def recognition(lang):
     current = loc('recognition.html', lang)
     t = lambda x: txt(x, lang)
-    awards = ''.join(f'<article class="award"><span class="award-year">{date}</span><div><h2>{E(name)}</h2><p>{desc[lang]}</p></div><a class="text-link" href="{url or relative(current, "CV_Emilly.pdf")}" aria-label="{E(t("source") + ": " + name, quote=True)}" {"target=\"_blank\" rel=\"noopener noreferrer\"" if url else ""}>{t("source")} ↗</a></article>' for date, name, desc, url in D['AWARDS'])
+    related = {}
+    for post in POSTS:
+        if post.get('related_award'):
+            related[post['related_award']] = f'<p><a class="text-link" href="{href(current, J["path"](post), lang)}">{E(J["text"](post.get("award_link_label", post["title"]), lang))} →</a></p>'
+    awards = ''.join(f'<article class="award"><span class="award-year">{date}</span><div><h2>{E(name)}</h2><p>{desc[lang]}</p>{related.get(name, "")}</div><a class="text-link" href="{url or relative(current, "CV_Emilly.pdf")}" aria-label="{E(t("source") + ": " + name, quote=True)}" {"target=\"_blank\" rel=\"noopener noreferrer\"" if url else ""}>{t("source")} ↗</a></article>' for date, name, desc, url in D['AWARDS'])
     body = f'''<main id="main" class="container content-page">{heading(lang, t('awards_title'), t('awards_body'))}<div class="awards-list">{awards}</div>
 <article class="press-panel"><div><p class="role-label">Exame</p><h2>{t('press_title')}</h2><p>{t('press_body')}</p></div><a class="button button-primary" href="{D['EXAME']}" target="_blank" rel="noopener noreferrer">{t('article')} ↗</a></article></main>'''
     return layout('recognition.html', lang, t('awards_title'), t('awards_body'), body, 'recognition')

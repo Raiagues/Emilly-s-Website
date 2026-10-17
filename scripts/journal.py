@@ -5,6 +5,7 @@ import os
 import re
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlsplit
 
 E = html.escape
 LANGS = ('en', 'pt', 'fr', 'es')
@@ -36,6 +37,9 @@ def load_posts(root):
             assert key in post['photos'], key
         for section in post['sections']:
             assert section['title'].get('en') and all(p.get('en') for p in section['paragraphs'])
+            for source in section.get('links', []):
+                url = urlsplit(source['url'])
+                assert url.scheme in ('https', 'http') and url.netloc and source['label'].get('en'), (file, source)
         if post.get('resource'):
             asset = (root / post['resource']['file']).resolve()
             assert asset.is_relative_to((root / 'portifolio').resolve()) and asset.is_file(), asset
@@ -87,7 +91,8 @@ def story(post, lang, current, link, ui):
         if section.get('letter'):
             item = section['letter']
             letter = f'<aside class="journal-letter"><p class="journal-meta">{E(text(item["label"], lang))}</p><p class="letter-subject" lang="en">{E(item["subject"])}</p><blockquote lang="en">{E(item["excerpt"])}</blockquote></aside>'
-        sections.append(f'''<section id="{section['id']}" class="journal-chapter"><div class="journal-prose"><h2>{E(text(section['title'], lang))}</h2>{paragraphs(section['paragraphs'])}{resource}{letter}</div><div class="journal-gallery {'single-photo' if len(photos) == 1 else ''}">{''.join(photos)}</div></section>''')
+        sources = ''.join(f'<p><a class="text-link" href="{E(source["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{E(text(source["label"], lang))} ↗</a></p>' for source in section.get('links', []))
+        sections.append(f'''<section id="{section['id']}" class="journal-chapter"><div class="journal-prose"><h2>{E(text(section['title'], lang))}</h2>{paragraphs(section['paragraphs'])}{sources}{resource}{letter}</div><div class="journal-gallery {'single-photo' if len(photos) == 1 else ''}">{''.join(photos)}</div></section>''')
     return f'''<main id="main" class="container journal-page"><a class="text-link journal-back" href="{link('index.html')}#journal">← {t('back')}</a>
 <article><header class="journal-heading"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h1>{E(text(post['title'], lang))}</h1><p class="journal-deck">{E(text(post['subtitle'], lang))}</p><p class="journal-byline">Emilly Rodrigues <span aria-hidden="true">/</span> {t('photos_credit')}</p></header>
 {cover(post, lang, current)}
