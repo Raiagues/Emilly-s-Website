@@ -7,12 +7,12 @@ O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao
 Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) **`content/journal/china.json`** (China) **`content/journal/premio-na-pratica.json`** (prêmio Na Prática) ou **`content/journal/fundacao-estudar.json`** (Fundação Estudar e Lyfe Academy) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
 
 - `title`: título da história.
-- `subtitle`: resumo que aparece na página inicial.
-- `intro`: primeiro parágrafo.
+- `subtitle`: resumo na abertura da página da história.
+- `intro`: primeiro parágrafo, também usado como nota no álbum da página inicial.
 - `sections`: capítulos, na ordem em que aparecem na página.
 - `paragraphs`: os parágrafos de cada capítulo, na ordem de leitura.
 - `photos`: o catálogo de fotos e suas legendas.
-- `cover`: três fotos da capa, referenciadas pelos nomes do catálogo.
+- `cover`: três fotos da capa, referenciadas pelos nomes do catálogo. A última é a foto principal do álbum da página inicial; a primeira aparece como uma segunda foto menor.
 - `resource`: arquivo e texto do botão do relatório. É opcional.
 - `links`: links opcionais dentro de cada capítulo; cada item contém `url` (HTTP/HTTPS) e `label` (texto nos quatro idiomas). Servem para indicar eventos, laboratórios ou outras fontes.
 - `related_award`: nome exato de uma conquista para ligar aquela entrada na página Conquistas à história. Uma conquista pode apontar para mais de uma história. Opcional; `award_link_label` define o texto do link nos quatro idiomas.
@@ -76,11 +76,11 @@ A história do CERN já inclui os capítulos sobre a preparação e a aprovaçã
 
 Para retirar uma história do site, mude `published` para `false` e publique a alteração. O novo pacote deixa de incluir suas páginas e os arquivos exclusivos dela. Isso não apaga os arquivos nem o histórico do repositório GitHub.
 
-## Conectar histórias por pessoas ou instituições
+## Sugestões de leitura entre histórias
 
 No arquivo `entities.json`, cada entrada tem um identificador estável (por exemplo, `veronica` ou `fundacao-estudar`), um `name` nos quatro idiomas e `kind` (`person` ou `institution`). Acrescente o identificador à lista `entities` de cada história em que aquela pessoa ou instituição aparece.
 
-O site monta automaticamente a página **Pessoas e instituições** e as sugestões ao fim de cada história. Uma pessoa que aparece em apenas uma história continua acessível pelo índice; outras histórias só são sugeridas quando realmente compartilham um identificador. Não precisa cadastrar links manualmente. Ao renomear uma pessoa, mantenha o identificador para preservar os links.
+Esses identificadores são metadados internos para sugerir outras leituras ao fim das histórias. Não existe uma página pública de pessoas e instituições nem etiquetas com esses nomes. O arquivo `entities.json` não faz parte do pacote publicado. As sugestões só ligam relatos com um identificador em comum; links específicos entre capítulos continuam em `stories`.
 
 A história da candidatura e da final está em `premio-na-pratica.json`; a viagem está em `china.json`. As duas usam `na-pratica` em `entities` e o mesmo `related_award`, por isso aparecem juntas em Conquistas e nas sugestões de leitura. A introdução da China aponta diretamente para o relato do prêmio. A entidade `fundacao-estudar` também conecta o prêmio à viagem aos Estados Unidos. Para acrescentar detalhes da seleção, edite os capítulos `inscricao`, `imersao` e `resultado` do relato do prêmio.
 

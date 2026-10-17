@@ -16,6 +16,8 @@ SITE_URL = os.environ.get('SITE_URL', 'https://raiagues.github.io/Emilly-s-Websi
 E = html.escape
 EMAIL = D['EMAIL']
 ALL_PATHS = []
+ART = runpy.run_path(str(ROOT / 'scripts/illustrations.py'))
+art = lambda name: ART['illustration'](ROOT, name)
 J = runpy.run_path(str(ROOT / 'scripts/journal.py'))
 POSTS = J['load_posts'](ROOT)
 ENTITIES = J['load_entities'](ROOT, POSTS)
@@ -98,20 +100,17 @@ def project_row(p, lang, current, filterable=False, featured=False):
     title = p['title'][lang]
     search = ' '.join([title, p['summary'][lang], p['place'], *p['tech'], *[SKILLS[k][lang] for k in p['skills']]])
     attrs = f'data-project data-category="{p["category"]}" data-search="{E(search, quote=True)}"' if filterable else ''
-    preview = f'img/illustrations/{p["art"]}.svg'
-    media = f'<img src="{relative(current, preview)}" alt="" width="800" height="500" loading="lazy">'
     return f'''<article class="project-row {'featured-row' if featured else ''}" {attrs} id="{p['id']}">
-<a class="project-link" href="{href(current, detail(p), lang)}" {'data-result-link' if filterable else ''}>
-{f'<div class="project-thumb">{media}</div>' if media else ''}
-<div class="project-row-copy"><div class="row-meta"><span>{txt(p['category'], lang)}</span><span>{p['date']}</span></div><h3>{title}</h3><p>{p['summary'][lang]}</p>{tags(p)}</div>
-<span class="row-open">{txt('case', lang)} <span aria-hidden="true">→</span></span></a></article>'''
+<a class="project-link art-link" href="{href(current, detail(p), lang)}" {'data-result-link' if filterable else ''}>
+<div class="project-thumb">{art(p['art'])}<span class="art-date">{p['date']}</span><span class="art-open" aria-hidden="true">↗</span></div>
+<div class="project-row-copy"><div class="row-meta"><span>{txt(p['category'], lang)}</span></div><h3>{title}</h3><p>{p['summary'][lang]}</p>{tags(p)}</div></a></article>'''
 
 def experience_row(p, lang, current, compact=False):
-    return f'''<article class="experience-row"><a href="{href(current, detail(p), lang)}"><img class="experience-art" src="{relative(current, 'img/illustrations/' + p['art'] + '.svg')}" alt="" width="800" height="500" loading="lazy"><span class="experience-date">{p['date']}</span><div><h3>{p['title'][lang]}</h3><p class="place">{E(p['place'])}</p>{'' if compact else f'<p class="experience-result">{p["outcome"][lang]}</p>'}</div><span aria-hidden="true">→</span></a></article>'''
+    return f'''<article class="experience-row"><a class="art-link" href="{href(current, detail(p), lang)}"><div class="experience-art project-thumb">{art(p['art'])}<span class="art-date">{p['date']}</span><span class="art-open" aria-hidden="true">↗</span></div><div class="experience-copy"><p class="row-meta">{E(p['place'])}</p><h3>{p['title'][lang]}</h3><p class="experience-result">{p['summary'][lang] if compact else p['outcome'][lang]}</p>{tags(p, 3)}</div></a></article>'''
 
 def featured_project(lang, current):
     p = next(p for p in PROJECTS if p['id'] == 'flight-platform')
-    return f'''<article class="current-project"><div class="current-project-copy"><p class="eyebrow">{txt('current_work', lang)} / {p['date']}</p><h2>{txt('current_title', lang)}</h2><p>{p['summary'][lang]}</p><p class="current-status">{p['outcome'][lang]}</p><a class="button button-paper" href="{href(current, detail(p), lang)}">{txt('case', lang)} <span aria-hidden="true">↗</span></a></div><img src="{relative(current, 'img/illustrations/platform.svg')}" alt="" width="800" height="500" loading="lazy"></article>'''
+    return f'''<article class="current-project"><a class="art-link current-project-link" href="{href(current, detail(p), lang)}"><div class="current-project-copy"><p class="eyebrow">{txt('current_work', lang)} / {p['date']}</p><h2>{txt('current_title', lang)}</h2><p>{p['summary'][lang]}</p><p class="current-status">{p['outcome'][lang]}</p></div><div class="current-project-art">{art('platform')}<span class="art-open" aria-hidden="true">↗</span></div></a></article>'''
 
 def home(lang):
     current = loc('index.html', lang)
@@ -207,7 +206,7 @@ def project(p, lang):
     pager = ''.join(f'<a href="{href(current, detail(q), lang)}"><span>{t(key)}</span><strong>{q["title"][lang]} {arrow}</strong></a>' for q, key, arrow in [(prev, 'previous', '←'), (nxt, 'next', '→')] if q)
     body = f'''<main id="main" class="container detail-page"><nav class="breadcrumb" aria-label="{t('projects')}"><a href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}>← {t('back_results') if p['kind'] == 'projects' else t('experience')}</a><span>/ {t(p['category'])}</span></nav>
 <div class="detail-heading"><p class="role-label">{E(p['place'])} · {p['date']}</p><h1>{p['title'][lang]}</h1><p>{p['summary'][lang]}</p></div>
-<div class="detail-layout"><aside class="project-facts"><h2>{t('toolkit')}</h2>{tags(p, None)}<h2>{t('contents')}</h2><nav class="contents-nav" aria-label="{t('contents')}"><a href="#contribution">{t('contributions')}</a><a href="#results">{t('outcome')}</a><a href="#skills">{t('practice')}</a>{f'<a href="#resources">{t("links")}</a>' if links else ''}</nav></aside>
+<div class="detail-layout"><aside class="project-facts"><div class="project-sidebar"><div class="sidebar-art">{art(p["art"])}</div><p class="sidebar-place">{E(p["place"])} / {p["date"]}</p><h2>{t('toolkit')}</h2>{tags(p, None)}<h2>{t('contents')}</h2><nav class="contents-nav" aria-label="{t('contents')}"><a href="#contribution">{t('contributions')}</a><a href="#results">{t('outcome')}</a><a href="#skills">{t('practice')}</a>{f'<a href="#resources">{t("links")}</a>' if links else ''}</nav><a class="sidebar-return" href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}>← {t("back_results") if p["kind"] == "projects" else t("experience")}</a></div></aside>
 <div class="detail-story"><section id="contribution"><h2>{t('contributions')}</h2><ul>{''.join(f'<li>{item[lang]}</li>' for item in p['contributions'])}</ul></section><section id="results" class="result-panel"><h2>{t('outcome')}</h2><p>{p['outcome'][lang]}</p></section>{media}<section id="skills"><h2>{t('practice')}</h2><div class="skill-tags">{''.join(f'<span>{SKILLS[s][lang]}</span>' for s in p['skills'])}</div></section>{f'<section id="resources"><h2>{t("links")}</h2><div class="detail-links">{links}</div></section>' if links else ''}</div></div>
 <nav class="project-pagination" aria-label="{t('projects')}">{pager}</nav><div class="detail-bottom"><a class="button button-soft" href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}>← {t('back_results') if p['kind'] == 'projects' else t('experience')}</a><a class="text-link" href="{href(current, 'contact.html', lang)}">{t('contact')} →</a></div></main>'''
     return layout(path, lang, p['title'][lang], p['summary'][lang], body, p['kind'])
@@ -230,10 +229,6 @@ def main():
             write(loc(path, lang), render(lang))
         for post in POSTS:
             write(loc(J['path'](post), lang), journal(post, lang))
-        path = 'journal/connections.html'
-        current = loc(path, lang)
-        body = J['connections'](POSTS, ENTITIES, lang, lambda x: href(current, x, lang), JUI)
-        write(current, layout(path, lang, J['text'](JUI['connections'], lang), J['text'](JUI['connections_intro'], lang), body))
         for p in PROJECTS:
             write(loc(detail(p), lang), project(p, lang))
     for old in ['pages/projects/projects_exemple.html', 'pages/experience/experience_exemple.html']:

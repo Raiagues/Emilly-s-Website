@@ -39,3 +39,25 @@ if (copy && navigator.clipboard && window.isSecureContext) {
   });
 }
 for (const year of document.querySelectorAll('[data-year]')) year.textContent = new Date().getFullYear();
+
+// Keep the project sidebar oriented to the section currently being read.
+const chapterLinks = [...document.querySelectorAll('.project-sidebar .contents-nav a')];
+if (chapterLinks.length) {
+  const chapters = chapterLinks.map(link => document.querySelector(link.hash));
+  let pending = false;
+  const updateChapter = () => {
+    const edge = (header?.getBoundingClientRect().bottom || 0) + 100;
+    let active = 0;
+    chapters.forEach((section, index) => { if (section && section.getBoundingClientRect().top <= edge) active = index; });
+    chapterLinks.forEach((link, index) => {
+      if (index === active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    pending = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!pending) { pending = true; requestAnimationFrame(updateChapter); }
+  }, {passive: true});
+  window.addEventListener('resize', updateChapter);
+  updateChapter();
+}

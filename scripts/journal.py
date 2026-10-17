@@ -92,34 +92,25 @@ def cover(post, lang, current, thumbnail=False):
 def feed(posts, lang, current, link, ui):
     t = lambda key: E(text(ui[key], lang))
     cards = []
-    for post in posts:
+    for number, post in enumerate(posts, 1):
+        photo = post['photos'][post['cover'][-1]]
+        extra = post['photos'][post['cover'][0]]
+        album = f'<div class="notebook-photos" aria-hidden="true"><figure class="notebook-photo main-photo">{photo_html(photo, lang, current)}<figcaption>{E(text(photo["caption"], lang))}</figcaption></figure><figure class="notebook-photo small-photo">{photo_html(extra, lang, current)}</figure></div>'
         cards.append(f'''<article class="journal-entry"><a href="{link(path(post))}" class="journal-entry-link">
-{cover(post, lang, current, thumbnail=True)}<div class="journal-entry-copy"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h3>{E(text(post['title'], lang))}</h3><p>{E(text(post['subtitle'], lang))}</p><span class="text-link">{t('read')} <span aria-hidden="true">↗</span></span></div></a></article>''')
+{album}<div class="journal-entry-copy"><p class="journal-meta">{E(text(post['period'], lang))}</p><h3>{E(text(post['title'], lang))}</h3><p>{E(text(post['intro'], lang))}</p><span class="notebook-read">{t('read')} <span aria-hidden="true">↗</span></span><span class="notebook-page" aria-hidden="true">{number:02d} / {len(posts):02d}</span></div></a></article>''')
     events = sorted(((event, post) for post in posts for event in post.get('timeline', [])), key=lambda item: item[0]['date'])
     timeline = ''.join(f'<li><time datetime="{event["date"]}">{E(text(event["label"], lang))}</time><a href="{link(path(post))}{"#" + event["section"] if event.get("section") else ""}">{E(text(event["title"], lang))} <span aria-hidden="true">↗</span></a></li>' for event, post in events)
-    return f'<section class="journal-feed" id="journal"><div class="section-title"><h2>{t("latest")}</h2></div><nav class="journal-timeline" aria-label="{t("timeline")}"><h3>{t("timeline")}</h3><ol>{timeline}</ol></nav><p class="journal-browse"><a class="text-link" href="{link("journal/connections.html")}">{t("all_connections")} →</a></p><div class="journal-cards">{"".join(cards)}</div></section>'
-
-
-def connections(posts, entities, lang, link, ui):
-    t = lambda key: E(text(ui[key], lang))
-    index = ''.join(f'<a class="button button-soft" href="#{key}">{E(text(entity["name"], lang))}</a>' for key, entity in entities.items())
-    groups = []
-    for key, entity in entities.items():
-        entries = ''.join(f'<li><span>{E(text(post["period"], lang))}</span><a href="{link(path(post))}">{E(text(post["title"], lang))} →</a></li>' for post in posts if key in post.get('entities', []))
-        groups.append(f'<section class="connection-group" id="{key}"><h2>{E(text(entity["name"], lang))}</h2><ul>{entries}</ul></section>')
-    return f'<main id="main" class="container content-page connections-page"><a class="text-link" href="{link("index.html")}#journal">← {t("back")}</a><h1>{t("connections")}</h1><p>{t("connections_intro")}</p><nav class="connection-tags" aria-label="{t("connections")}">{index}</nav>{"".join(groups)}</main>'
+    return f'<section class="journal-feed notebook" id="journal"><div class="notebook-heading"><div><p class="eyebrow">{t("notebook_label")}</p><h2>{t("latest")}</h2></div><p class="notebook-note">{t("notebook_intro")}<span class="journal-signature">Emilly</span></p></div><details class="journal-timeline"><summary>{t("timeline")} <span aria-hidden="true">+</span></summary><nav aria-label="{t("timeline")}"><ol>{timeline}</ol></nav></details><div class="journal-cards">{"".join(cards)}</div></section>'
 
 
 def related_stories(post, posts, entities, lang, link, ui):
+    # Internal metadata suggests further reading; no public directory of people.
     keys = post.get('entities', [])
-    if not keys:
-        return ''
-    t = lambda key: E(text(ui[key], lang))
-    tags = ''.join(f'<a class="button button-soft" href="{link("journal/connections.html")}#{key}">{E(text(entities[key]["name"], lang))}</a>' for key in keys)
     related = [p for p in posts if p['slug'] != post['slug'] and set(keys).intersection(p.get('entities', []))]
-    links = ''.join(f'<li><a class="text-link" href="{link(path(p))}">{E(text(p["title"], lang))} →</a></li>' for p in related)
-    more = f'<h3>{t("related")}</h3><ul>{links}</ul>' if related else ''
-    return f'<section class="journal-connections"><h2>{t("connections_in_story")}</h2><div class="connection-tags">{tags}</div>{more}</section>'
+    if not related:
+        return ''
+    links = ''.join(f'<li><a href="{link(path(p))}"><span>{E(text(p["period"], lang))}</span>{E(text(p["title"], lang))} <span aria-hidden="true">↗</span></a></li>' for p in related)
+    return f'<section class="journal-related"><h2>{E(text(ui["related"], lang))}</h2><ul>{links}</ul></section>'
 
 
 def story(post, lang, current, link, ui, posts, entities):

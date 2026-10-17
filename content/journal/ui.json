@@ -113,35 +113,11 @@
     "fr": "Au fil du temps",
     "es": "Línea del tiempo"
   },
-  "connections": {
-    "en": "People and institutions",
-    "pt": "Pessoas e instituições",
-    "fr": "Personnes et institutions",
-    "es": "Personas e instituciones"
-  },
-  "connections_intro": {
-    "en": "Follow the people and communities that appear in my stories.",
-    "pt": "Acompanhe as pessoas e comunidades que aparecem nas minhas histórias.",
-    "fr": "Retrouvez les personnes et les communautés présentes dans mes histoires.",
-    "es": "Sigue a las personas y comunidades que aparecen en mis historias."
-  },
-  "connections_in_story": {
-    "en": "In this story",
-    "pt": "Quem aparece nesta história",
-    "fr": "Dans cette histoire",
-    "es": "En esta historia"
-  },
   "related": {
     "en": "More stories connected to this one",
     "pt": "Outras histórias que se conectam",
     "fr": "D’autres histoires qui se rejoignent",
     "es": "Otras historias conectadas"
-  },
-  "all_connections": {
-    "en": "Explore people and institutions",
-    "pt": "Explorar pessoas e instituições",
-    "fr": "Explorer les personnes et institutions",
-    "es": "Explorar personas e instituciones"
   },
   "transcript": {
     "en": "Read the email excerpt",
@@ -154,5 +130,17 @@
     "pt": "O que levo comigo",
     "fr": "Ce que j’en retiens",
     "es": "Lo que me llevo"
+  },
+  "notebook_label": {
+    "en": "Notes, photos & memories",
+    "pt": "Anotações, fotos e memórias",
+    "fr": "Notes, photos et souvenirs",
+    "es": "Notas, fotos y recuerdos"
+  },
+  "notebook_intro": {
+    "en": "The things I keep from each place: conversations, discoveries, and what I’m still trying to understand.",
+    "pt": "O que guardo de cada lugar: as conversas, as descobertas e o que ainda estou tentando entender.",
+    "fr": "Ce que je garde de chaque endroit : les conversations, les découvertes et ce que j’essaie encore de comprendre.",
+    "es": "Lo que guardo de cada lugar: las conversaciones, los descubrimientos y lo que todavía intento entender."
   }
 }
