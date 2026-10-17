@@ -78,8 +78,8 @@ def photo_html(photo, lang, current, eager=False):
     return f'<img src="{relative(current, photo["file"])}" alt="{caption}" width="{photo["width"]}" height="{photo["height"]}" loading="{"eager" if eager else "lazy"}" decoding="async">'
 
 
-def cover(post, lang, current):
-    return '<div class="journal-mosaic" aria-hidden="true">' + ''.join(photo_html(post['photos'][key], lang, current, True).replace('alt="'+E(text(post['photos'][key]['caption'], lang), quote=True)+'"', 'alt=""') for key in post['cover']) + '</div>'
+def cover(post, lang, current, thumbnail=False):
+    return '<div class="journal-mosaic" aria-hidden="true">' + ''.join(photo_html(post['photos'][key], lang, current, not thumbnail).replace('alt="'+E(text(post['photos'][key]['caption'], lang), quote=True)+'"', 'alt=""') for key in (post['cover'][-1:] if thumbnail else post['cover'])) + '</div>'
 
 
 def feed(posts, lang, current, link, ui):
@@ -87,7 +87,7 @@ def feed(posts, lang, current, link, ui):
     cards = []
     for post in posts:
         cards.append(f'''<article class="journal-entry"><a href="{link(path(post))}" class="journal-entry-link">
-{cover(post, lang, current)}<div class="journal-entry-copy"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h3>{E(text(post['title'], lang))}</h3><p>{E(text(post['subtitle'], lang))}</p><span class="text-link">{t('read')} <span aria-hidden="true">↗</span></span></div></a></article>''')
+{cover(post, lang, current, thumbnail=True)}<div class="journal-entry-copy"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h3>{E(text(post['title'], lang))}</h3><p>{E(text(post['subtitle'], lang))}</p><span class="text-link">{t('read')} <span aria-hidden="true">↗</span></span></div></a></article>''')
     events = sorted(((event, post) for post in posts for event in post.get('timeline', [])), key=lambda item: item[0]['date'])
     timeline = ''.join(f'<li><time datetime="{event["date"]}">{E(text(event["label"], lang))}</time><a href="{link(path(post))}{"#" + event["section"] if event.get("section") else ""}">{E(text(event["title"], lang))} <span aria-hidden="true">↗</span></a></li>' for event, post in events)
     return f'<section class="journal-feed" id="journal"><div class="section-title"><h2>{t("latest")}</h2></div><nav class="journal-timeline" aria-label="{t("timeline")}"><h3>{t("timeline")}</h3><ol>{timeline}</ol></nav><p class="journal-browse"><a class="text-link" href="{link("journal/connections.html")}">{t("all_connections")} →</a></p><div class="journal-cards">{"".join(cards)}</div></section>'
