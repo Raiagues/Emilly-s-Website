@@ -291,3 +291,8 @@ UI.update({k: L(v) for k, v in {
  'current_title': 'A flight software lab for more people. | Um laboratório de software de voo para mais pessoas. | Un laboratoire de logiciel de vol pour davantage de personnes. | Un laboratorio de software de vuelo para más personas.',
  'personal_title': 'Space belongs<br>to <em>all of us.</em> | O espaço é de<br><em>todos nós.</em> | L’espace appartient<br>à <em>tout le monde.</em> | El espacio es de<br><em>todos nosotros.</em>',
 }.items()})
+
+UI.update({k: L(v) for k, v in {
+ 'footer_note': 'Projects & field notes | Projetos e registros | Projets et carnets | Proyectos y notas',
+ 'more_projects': 'More projects | Mais projetos | Plus de projets | Más proyectos',
+}.items()})

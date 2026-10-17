@@ -16,6 +16,7 @@ SITE_URL = os.environ.get('SITE_URL', 'https://raiagues.github.io/Emilly-s-Websi
 E = html.escape
 EMAIL = D['EMAIL']
 ALL_PATHS = []
+icon = runpy.run_path(str(ROOT / 'scripts/icons.py'))['icon']
 ART = runpy.run_path(str(ROOT / 'scripts/illustrations.py'))
 art = lambda name: ART['illustration'](ROOT, name)
 J = runpy.run_path(str(ROOT / 'scripts/journal.py'))
@@ -57,7 +58,7 @@ def layout(path, lang, title, description, body, active='home'):
     r = lambda x: relative(current, x)
     asset = lambda x: asset_url(current, x)
     t = lambda x: txt(x, lang)
-    nav = ''.join(f'<a href="{href(current, target, lang)}" {"aria-current=\"page\"" if key == active else ""}>{t(key)}</a>' for key, target in SECTIONS)
+    nav = ''.join(f'<a href="{href(current, target, lang)}" {"aria-current=\"page\"" if key == active else ""}>{icon(key)}<span>{t(key)}</span></a>' for key, target in SECTIONS)
     languages = ''.join(f'<a href="{r(loc(path, code))}" lang="{code}" hreflang="{code}" aria-label="{name}" {"aria-current=\"page\"" if code == lang else ""}>{code.upper()}</a>' for code, name in [('en','English'),('pt','Português'),('fr','Français'),('es','Español')])
     alternates = ''.join(f'<link rel="alternate" hreflang="{code}" href="{SITE_URL}/{loc(path, code)}">' for code in LANGS)
     structured = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': title, 'inLanguage': lang}
@@ -85,13 +86,16 @@ def layout(path, lang, title, description, body, active='home'):
 <body id="top" data-page="{active}">
 <a class="skip-link" href="#main">{t('skip')}</a>
 <header class="site-header"><div class="header-inner">
-  <a class="wordmark" href="{href(current, 'index.html', lang)}"><img src="{asset('img/favicon.svg')}" width="34" height="34" alt="">emilly rodrigues<span class="wordmark-dot" aria-hidden="true">.</span></a>
+  <a class="wordmark" href="{href(current, 'index.html', lang)}" aria-label="Portfolio">{icon("brand")}<span>portfolio</span></a>
   <nav id="main-nav" aria-label="{t('menu')}">{nav}</nav>
   <div class="languages" role="group" aria-label="{t('language')}">{languages}</div>
 </div></header>
 {body}
-<footer class="site-footer container"><div><a class="wordmark" href="{href(current, 'index.html', lang)}">Emilly Rodrigues</a><p>© <span data-year>2026</span></p></div><div class="footer-links"><a href="{D['LINKEDIN']}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="{D['GITHUB']}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="{href(current, 'contact.html', lang)}">{t('contact')}</a><a href="#top">{t('top')} ↑</a></div></footer>
+<footer class="site-footer container"><div class="footer-identity"><a class="wordmark" href="{href(current, 'index.html', lang)}">{icon('brand')}<span>portfolio</span></a><p>{t('footer_note')} <span>© <span data-year>2026</span></span></p></div><nav class="footer-links" aria-label="{t('contact')}">{social_links()}<a class="icon-link" href="{href(current, 'contact.html', lang)}" aria-label="{t('contact')}" title="{t('contact')}">{icon('contact')}</a><a class="icon-link" href="#top" aria-label="{t('top')}" title="{t('top')}">{icon('top')}</a></nav></footer>
 </body></html>'''
+
+def social_links():
+    return ''.join(f'<a class="icon-link" href="{url}" target="_blank" rel="noopener noreferrer" aria-label="{name}" title="{name}">{icon(key)}</a>' for key, name, url in [('linkedin', 'LinkedIn', D['LINKEDIN']), ('github', 'GitHub', D['GITHUB'])])
 
 def heading(lang, title, description='', extra=''):
     return f'<div class="page-heading"><h1>{title}</h1>{f"<p>{description}</p>" if description else ""}{extra}</div>'
@@ -102,15 +106,15 @@ def project_row(p, lang, current, filterable=False, featured=False):
     attrs = f'data-project data-category="{p["category"]}" data-search="{E(search, quote=True)}"' if filterable else ''
     return f'''<article class="project-row {'featured-row' if featured else ''}" {attrs} id="{p['id']}">
 <a class="project-link art-link" href="{href(current, detail(p), lang)}" {'data-result-link' if filterable else ''}>
-<div class="project-thumb">{art(p['art'])}<span class="art-date">{p['date']}</span><span class="art-open" aria-hidden="true">↗</span></div>
+<div class="project-thumb">{art(p['art'])}<span class="art-date">{p['date']}</span></div>
 <div class="project-row-copy"><div class="row-meta"><span>{txt(p['category'], lang)}</span></div><h3>{title}</h3><p>{p['summary'][lang]}</p>{tags(p)}</div></a></article>'''
 
 def experience_row(p, lang, current, compact=False):
-    return f'''<article class="experience-row"><a class="art-link" href="{href(current, detail(p), lang)}"><div class="experience-art project-thumb">{art(p['art'])}<span class="art-date">{p['date']}</span><span class="art-open" aria-hidden="true">↗</span></div><div class="experience-copy"><p class="row-meta">{E(p['place'])}</p><h3>{p['title'][lang]}</h3><p class="experience-result">{p['summary'][lang] if compact else p['outcome'][lang]}</p>{tags(p, 3)}</div></a></article>'''
+    return f'''<article class="experience-row"><a class="art-link" href="{href(current, detail(p), lang)}"><div class="experience-art project-thumb">{art(p['art'])}<span class="art-date">{p['date']}</span></div><div class="experience-copy"><p class="row-meta">{E(p['place'])}</p><h3>{p['title'][lang]}</h3><p class="experience-result">{p['summary'][lang] if compact else p['outcome'][lang]}</p>{tags(p, 3)}</div></a></article>'''
 
 def featured_project(lang, current):
     p = next(p for p in PROJECTS if p['id'] == 'flight-platform')
-    return f'''<article class="current-project"><a class="art-link current-project-link" href="{href(current, detail(p), lang)}"><div class="current-project-copy"><p class="eyebrow">{txt('current_work', lang)} / {p['date']}</p><h2>{txt('current_title', lang)}</h2><p>{p['summary'][lang]}</p><p class="current-status">{p['outcome'][lang]}</p></div><div class="current-project-art">{art('platform')}<span class="art-open" aria-hidden="true">↗</span></div></a></article>'''
+    return f'''<article class="current-project"><a class="art-link current-project-link" href="{href(current, detail(p), lang)}"><div class="current-project-copy"><p class="eyebrow">{txt('current_work', lang)} / {p['date']}</p><h2>{txt('current_title', lang)}</h2><p>{p['summary'][lang]}</p><p class="current-status">{p['outcome'][lang]}</p></div><div class="current-project-art">{art('platform')}</div></a></article>'''
 
 def home(lang):
     current = loc('index.html', lang)
@@ -118,12 +122,13 @@ def home(lang):
     t = lambda x: txt(x, lang)
     jt = lambda x: E(J['text'](JUI[x], lang))
     link = lambda x: href(current, x, lang)
+    selection = [p for p in PROJECTS if p['kind'] == 'projects' and p['id'] != 'flight-platform']
     body = f'''<main id="main" class="container journal-home">
-<section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> {t('intro')}</p><h1 id="hero-title">{t('hero')}</h1><p class="discipline">{t('discipline')}</p><p class="hero-description">{t('hero_body')}</p><div class="hero-actions"><a class="button button-primary" href="#current-work">{t('explore')} <span aria-hidden="true">↓</span></a><a class="text-link" href="#journal">{jt('home')} →</a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↗</a></div></div><div class="hero-visual"><div class="orbit-art" aria-hidden="true"><div class="planet"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbital-point point-one"></span><span class="orbital-point point-two"></span><span class="hero-star">✳</span><span class="coordinates">BR → FR → CH</span></div><img class="portrait" src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718" fetchpriority="high"><div class="portrait-note"><span aria-hidden="true">↗</span><p>{t('orbit_note')}</p></div><span class="visual-caption">AEROSPACE / EMBEDDED / HUMAN</span></div></section>
+<section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> {t('intro')}</p><h1 id="hero-title">{t('hero')}</h1><p class="discipline">{t('discipline')}</p><p class="hero-description">{t('hero_body')}</p><div class="hero-actions"><a class="button button-primary" href="#current-work">{t('explore')} </a><a class="text-link" href="#journal">{jt('home')} </a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} </a></div></div><div class="hero-visual"><div class="orbit-art" aria-hidden="true"><div class="planet"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbital-point point-one"></span><span class="orbital-point point-two"></span><span class="hero-star">✳</span><span class="coordinates">BR / FR / CH</span></div><img class="portrait" src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718" fetchpriority="high"><span class="visual-caption">AEROSPACE / EMBEDDED / HUMAN</span></div></section>
 <div class="institution-strip"><p class="eyebrow">{t('journey')}</p><span>CERN</span><span>CNES</span><span>Visiona</span><span>Grenoble INP</span><span>UFSM</span></div>
-<section id="current-work" class="home-section"><div class="home-section-heading"><div><p class="eyebrow">{t('work_eyebrow')}</p><h2>{t('work_title')}</h2></div><a class="text-link" href="{link('projects.html')}">{t('all_projects')} →</a></div>{featured_project(lang, current)}<div class="project-list">{''.join(project_row(p, lang, current) for p in PROJECTS if p['id'] in ('project_9', 'project_2', 'project_17'))}</div></section>
-<section class="home-section home-experience"><div class="home-section-heading"><h2>{t('experience')}</h2><a class="text-link" href="{link('experience.html')}">{t('experience')} →</a></div><div class="experience-list">{''.join(experience_row(p, lang, current, True) for p in PROJECTS if p['id'] in ('cern', 'visiona', 'cnes'))}</div></section>
-<section class="home-section personal-story" id="my-story"><div><p class="eyebrow">{t('about_eyebrow')}</p><h2>{t('personal_title')}</h2><img src="{r('img/illustrations/rocket.svg')}" width="800" height="500" loading="lazy" alt=""><p class="personal-motto">per aspera ad astra</p></div><div class="personal-copy"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><div class="education"><h3>{t('education')}</h3><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p></div><div class="personal-links"><a class="text-link" href="{link('about.html')}">{t('about')} →</a><a class="text-link" href="{link('recognition.html')}">{t('awards_title')} →</a></div></div></section>
+<section id="current-work" class="home-section"><div class="home-section-heading"><div><p class="eyebrow">{t('work_eyebrow')}</p><h2>{t('work_title')}</h2></div><a class="text-link" href="{link('projects.html')}">{t('all_projects')} </a></div>{featured_project(lang, current)}<div class="project-list">{''.join(project_row(p, lang, current) for p in selection[:6])}</div><details class="more-projects"><summary>{t('more_projects')} <span>{len(selection[6:])}</span></summary><div class="project-list">{''.join(project_row(p, lang, current) for p in selection[6:])}</div></details></section>
+<section class="home-section home-experience"><div class="home-section-heading"><h2>{t('experience')}</h2><a class="text-link" href="{link('experience.html')}">{t('experience')} </a></div><div class="experience-list">{''.join(experience_row(p, lang, current, True) for p in PROJECTS if p['id'] in ('cern', 'visiona', 'cnes'))}</div></section>
+<section class="home-section personal-story" id="my-story"><div><p class="eyebrow">{t('about_eyebrow')}</p><h2>{t('personal_title')}</h2><img src="{r('img/illustrations/rocket.svg')}" width="800" height="500" loading="lazy" alt=""></div><div class="personal-copy"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><div class="education"><h3>{t('education')}</h3><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p></div><div class="personal-links"><a class="text-link" href="{link('about.html')}">{t('about')} </a><a class="text-link" href="{link('recognition.html')}">{t('awards_title')} </a></div></div></section>
 {J['feed'](POSTS, lang, current, link, JUI)}
 <section class="home-section home-contact-section" id="say-hello"><div class="home-section-heading"><div><p class="eyebrow">{t('contact')}</p><h2>{t('contact_title')}</h2><p>{t('contact_body')}</p></div></div>{contact_panel(lang, current)}</section></main>'''
     return layout('index.html', lang, jt('home'), J['text'](JUI['bio'], lang), body)
@@ -158,9 +163,9 @@ def experience(lang):
 def about(lang):
     current = loc('about.html', lang)
     t = lambda x: txt(x, lang)
-    evidence = ''.join(f'<article class="skill"><h3>{SKILLS[key][lang]}</h3><p>{copy[lang]}</p><a class="text-link" href="{href(current, detail(next(p for p in PROJECTS if p["id"] == id)), lang)}">{txt("case", lang)} →</a></article>' for key, id, copy in D['EVIDENCE'])
+    evidence = ''.join(f'<article class="skill"><h3>{SKILLS[key][lang]}</h3><p>{copy[lang]}</p><a class="text-link" href="{href(current, detail(next(p for p in PROJECTS if p["id"] == id)), lang)}">{txt("case", lang)} </a></article>' for key, id, copy in D['EVIDENCE'])
     body = f'''<main id="main" class="container content-page">{heading(lang, t('about'))}
-<div class="about-layout"><div class="prose"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><a class="text-link" href="{href(current, 'pages/projects/project_17.html', lang)}">EP Aero →</a></div><aside class="education"><h2>{t('education')}</h2><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p><a class="button button-soft" href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} ↓</a></aside></div>
+<div class="about-layout"><div class="prose"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><a class="text-link" href="{href(current, 'pages/projects/project_17.html', lang)}">EP Aero </a></div><aside class="education"><h2>{t('education')}</h2><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p><a class="button button-soft" href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} </a></aside></div>
 <section class="skills-section"><h2>{t('skills_title')}</h2><p>{t('skills_body')}</p><div class="skills-grid">{evidence}</div></section></main>'''
     return layout('about.html', lang, t('about'), t('short_bio'), body, 'about')
 
@@ -170,16 +175,16 @@ def recognition(lang):
     related = {}
     for post in POSTS:
         if post.get('related_award'):
-            related[post['related_award']] = related.get(post['related_award'], '') + f'<p><a class="text-link" href="{href(current, J["path"](post), lang)}">{E(J["text"](post.get("award_link_label", post["title"]), lang))} →</a></p>'
-    awards = ''.join(f'<article class="award"><span class="award-year">{date}</span><div><h2>{E(name)}</h2><p>{desc[lang]}</p>{related.get(name, "")}</div><a class="text-link" href="{url or relative(current, "CV_Emilly.pdf")}" aria-label="{E(t("source") + ": " + name, quote=True)}" {"target=\"_blank\" rel=\"noopener noreferrer\"" if url else ""}>{t("source")} ↗</a></article>' for date, name, desc, url in D['AWARDS'])
+            related[post['related_award']] = related.get(post['related_award'], '') + f'<p><a class="text-link" href="{href(current, J["path"](post), lang)}">{E(J["text"](post.get("award_link_label", post["title"]), lang))} </a></p>'
+    awards = ''.join(f'<article class="award"><span class="award-year">{date}</span><div><h2>{E(name)}</h2><p>{desc[lang]}</p>{related.get(name, "")}</div><a class="text-link" href="{url or relative(current, "CV_Emilly.pdf")}" aria-label="{E(t("source") + ": " + name, quote=True)}" {"target=\"_blank\" rel=\"noopener noreferrer\"" if url else ""}>{t("source")} </a></article>' for date, name, desc, url in D['AWARDS'])
     body = f'''<main id="main" class="container content-page">{heading(lang, t('awards_title'), t('awards_body'))}<div class="awards-list">{awards}</div>
-<article class="press-panel"><div><p class="role-label">Exame</p><h2>{t('press_title')}</h2><p>{t('press_body')}</p></div><a class="button button-primary" href="{D['EXAME']}" target="_blank" rel="noopener noreferrer">{t('article')} ↗</a></article></main>'''
+<article class="press-panel"><div><p class="role-label">Exame</p><h2>{t('press_title')}</h2><p>{t('press_body')}</p></div><a class="button button-primary" href="{D['EXAME']}" target="_blank" rel="noopener noreferrer">{t('article')} </a></article></main>'''
     return layout('recognition.html', lang, t('awards_title'), t('awards_body'), body, 'recognition')
 
 def contact_panel(lang, current):
     t = lambda x: txt(x, lang)
-    return f'''<div class="contact-layout"><div class="contact-info"><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><a href="{D['LINKEDIN']}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="{D['GITHUB']}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} ↓</a></div>
-<form class="contact-form" action="https://formsubmit.co/{EMAIL}" method="POST"><div class="form-row"><label>{t('name')}<input type="text" name="name" autocomplete="name" required maxlength="100"></label><label>{t('email')}<input type="email" name="email" autocomplete="email" required maxlength="254"></label></div><label>{t('subject')}<input type="text" name="subject" required maxlength="160"></label><label>{t('message')}<textarea name="message" rows="6" required maxlength="5000"></textarea></label><input type="hidden" name="_subject" value="Portfolio · Emilly Rodrigues"><input type="hidden" name="_template" value="table"><input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="button button-primary" type="submit">{t('send')} →</button><p class="form-note">{t('form_note')} <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit ↗</a></p></form></div>'''
+    return f'''<div class="contact-layout"><div class="contact-info"><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><div class="social-links">{social_links()}</div><a href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} </a></div>
+<form class="contact-form" action="https://formsubmit.co/{EMAIL}" method="POST"><div class="form-row"><label>{t('name')}<input type="text" name="name" autocomplete="name" required maxlength="100"></label><label>{t('email')}<input type="email" name="email" autocomplete="email" required maxlength="254"></label></div><label>{t('subject')}<input type="text" name="subject" required maxlength="160"></label><label>{t('message')}<textarea name="message" rows="6" required maxlength="5000"></textarea></label><input type="hidden" name="_subject" value="Portfolio · Emilly Rodrigues"><input type="hidden" name="_template" value="table"><input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="button button-primary" type="submit">{t('send')} </button><p class="form-note">{t('form_note')} <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit </a></p></form></div>'''
 
 def contact(lang):
     t = lambda x: txt(x, lang)
@@ -195,20 +200,20 @@ def project(p, lang):
     idx = peers.index(p)
     prev = peers[idx - 1] if idx > 0 else None
     nxt = peers[idx + 1] if idx + 1 < len(peers) else None
-    links = ''.join(f'<a class="button button-soft" href="{url}" target="_blank" rel="noopener noreferrer">{t(label)} ↗</a>' for label, url in p['links'])
+    links = ''.join(f'<a class="button button-soft" href="{url}" target="_blank" rel="noopener noreferrer">{t(label)} </a>' for label, url in p['links'])
     media = ''
     related_post = next((post for post in POSTS if post.get('technical_path') == path), None)
     if related_post:
         label = related_post.get('journal_link_label', JUI['cern_link'] if p['id'] == 'cern' else related_post['title'])
-        media = f'<aside class="journal-callout"><a class="text-link" href="{href(current, J["path"](related_post), lang)}">{E(J["text"](label, lang))} →</a></aside>'
+        media = f'<aside class="journal-callout"><a class="text-link" href="{href(current, J["path"](related_post), lang)}">{E(J["text"](label, lang))} </a></aside>'
     if p['id'] in MEDIA:
         media = f'<figure class="project-media"><img src="{relative(current, MEDIA[p["id"]])}" alt="{E(p["title"][lang], quote=True)}" width="640" height="400"><figcaption>{t("video_caption")}</figcaption></figure>'
-    pager = ''.join(f'<a href="{href(current, detail(q), lang)}"><span>{t(key)}</span><strong>{q["title"][lang]} {arrow}</strong></a>' for q, key, arrow in [(prev, 'previous', '←'), (nxt, 'next', '→')] if q)
-    body = f'''<main id="main" class="container detail-page"><nav class="breadcrumb" aria-label="{t('projects')}"><a href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}>← {t('back_results') if p['kind'] == 'projects' else t('experience')}</a><span>/ {t(p['category'])}</span></nav>
+    pager = ''.join(f'<a href="{href(current, detail(q), lang)}"><span>{t(key)}</span><strong>{q["title"][lang]} {arrow}</strong></a>' for q, key, arrow in [(prev, 'previous', ''), (nxt, 'next', '')] if q)
+    body = f'''<main id="main" class="container detail-page"><nav class="breadcrumb" aria-label="{t('projects')}"><a href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}> {t('back_results') if p['kind'] == 'projects' else t('experience')}</a><span>/ {t(p['category'])}</span></nav>
 <div class="detail-heading"><p class="role-label">{E(p['place'])} · {p['date']}</p><h1>{p['title'][lang]}</h1><p>{p['summary'][lang]}</p></div>
-<div class="detail-layout"><aside class="project-facts"><div class="project-sidebar"><div class="sidebar-art">{art(p["art"])}</div><p class="sidebar-place">{E(p["place"])} / {p["date"]}</p><h2>{t('toolkit')}</h2>{tags(p, None)}<h2>{t('contents')}</h2><nav class="contents-nav" aria-label="{t('contents')}"><a href="#contribution">{t('contributions')}</a><a href="#results">{t('outcome')}</a><a href="#skills">{t('practice')}</a>{f'<a href="#resources">{t("links")}</a>' if links else ''}</nav><a class="sidebar-return" href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}>← {t("back_results") if p["kind"] == "projects" else t("experience")}</a></div></aside>
+<div class="detail-layout"><aside class="project-facts"><div class="project-sidebar"><div class="sidebar-art">{art(p["art"])}</div><p class="sidebar-place">{E(p["place"])} / {p["date"]}</p><h2>{t('toolkit')}</h2>{tags(p, None)}<h2>{t('contents')}</h2><nav class="contents-nav" aria-label="{t('contents')}"><a href="#contribution">{t('contributions')}</a><a href="#results">{t('outcome')}</a><a href="#skills">{t('practice')}</a>{f'<a href="#resources">{t("links")}</a>' if links else ''}</nav><a class="sidebar-return" href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}> {t("back_results") if p["kind"] == "projects" else t("experience")}</a></div></aside>
 <div class="detail-story"><section id="contribution"><h2>{t('contributions')}</h2><ul>{''.join(f'<li>{item[lang]}</li>' for item in p['contributions'])}</ul></section><section id="results" class="result-panel"><h2>{t('outcome')}</h2><p>{p['outcome'][lang]}</p></section>{media}<section id="skills"><h2>{t('practice')}</h2><div class="skill-tags">{''.join(f'<span>{SKILLS[s][lang]}</span>' for s in p['skills'])}</div></section>{f'<section id="resources"><h2>{t("links")}</h2><div class="detail-links">{links}</div></section>' if links else ''}</div></div>
-<nav class="project-pagination" aria-label="{t('projects')}">{pager}</nav><div class="detail-bottom"><a class="button button-soft" href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}>← {t('back_results') if p['kind'] == 'projects' else t('experience')}</a><a class="text-link" href="{href(current, 'contact.html', lang)}">{t('contact')} →</a></div></main>'''
+<nav class="project-pagination" aria-label="{t('projects')}">{pager}</nav><div class="detail-bottom"><a class="button button-soft" href="{href(current, parent, lang)}" {f'data-back-results="{p["id"]}"' if p['kind'] == 'projects' else ''}> {t('back_results') if p['kind'] == 'projects' else t('experience')}</a><a class="text-link" href="{href(current, 'contact.html', lang)}">{t('contact')} </a></div></main>'''
     return layout(path, lang, p['title'][lang], p['summary'][lang], body, p['kind'])
 
 def write(path, content):
@@ -234,7 +239,7 @@ def main():
     for old in ['pages/projects/projects_exemple.html', 'pages/experience/experience_exemple.html']:
         write(old, '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=../../projects.html"><title>Projects — Emilly Rodrigues</title><a href="../../projects.html">Projects</a></html>')
     base = SITE_URL + '/'
-    write('404.html', f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found — Emilly Rodrigues</title><link rel="stylesheet" href="{base}style/style.css?v={asset_version("style/style.css")}"><main class="container content-page"><h1>Page not found.</h1><p><a class="button button-primary" href="{base}">Home →</a></p></main></html>')
+    write('404.html', f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found — Emilly Rodrigues</title><link rel="stylesheet" href="{base}style/style.css?v={asset_version("style/style.css")}"><main class="container content-page"><h1>Page not found.</h1><p><a class="button button-primary" href="{base}">Home </a></p></main></html>')
     write('.nojekyll', '')
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE_URL}/{p}</loc></url>' for p in ALL_PATHS if p.endswith('.html') and 'exemple' not in p and p != '404.html') + '</urlset>')
     dist = ROOT / 'dist'

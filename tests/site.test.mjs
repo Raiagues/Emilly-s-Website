@@ -31,6 +31,9 @@ async function visit(path='', options={}) {
   assert.equal(response.status(),200);
   return {page,errors};
 }
+async function openStories(page) {
+  if (!await page.locator('.story-menu').evaluate(el=>el.open)) await page.locator('.story-menu>summary').click();
+}
 test('directory shows every project and filters, search and reset compose correctly', async () => {
   const {page,errors}=await visit('projects.html');
   const visible=page.locator('[data-project]:visible');
@@ -302,7 +305,7 @@ test('new pages load the restored layout even with a previous stylesheet cached'
 
 test('US diary is reachable from the feed and award, with translations and all 15 photos', async () => {
   const {page,errors}=await visit('pt/');
-  await expect(page.locator('.journal-entry-link')).toHaveCount(7);
+  await expect(page.locator('.journal-entry-link')).toHaveCount(8);
   await page.locator('.journal-entry-link[href="journal/estados-unidos.html"]').click();
   await expect(page.locator('h1')).toHaveText('Minha primeira vez nos Estados Unidos');
   await expect(page.locator('#visa')).toContainText('Anderson');
@@ -381,8 +384,8 @@ test('Visiona diary links both ways to experience and loads its nine photos in e
 
 test('timeline follows experience dates and links directly to the two US trip stages without JavaScript', async () => {
   const {page}=await visit('pt/',{javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});
-  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2022','2025-02','2025-08','2025-10','2025-11-03','2026-01-25','2026-03-25','2026-04-06','2026-04-10','2026-07']);
-  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/fundacao-estudar.html','journal/cnes.html','journal/visiona.html','journal/premio-na-pratica.html','journal/china.html','journal/south-summit.html','journal/estados-unidos.html','journal/cern.html']);
+  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2026-07','2026-04-10','2026-04-06','2026-03-25','2026-01-25','2025-11-03','2025-10','2025-08','2025-02','2022']);
+  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/cern.html','journal/estados-unidos.html','journal/south-summit.html','journal/china.html','journal/premio-na-pratica.html','journal/visiona.html','journal/fundacao-estudar.html','journal/cnes.html']);
   await page.locator('.journal-timeline summary').click();
   await page.locator('.journal-timeline a[href="journal/estados-unidos.html#boston"]').click();
   await expect(page.locator('#boston h2')).toBeInViewport();
@@ -398,9 +401,11 @@ test('stories remain connected without a public people directory in every langua
     const {page,errors}=await visit(prefix+'journal/south-summit.html',{viewport:{width:390,height:844}});
     await expect(page.locator('a[href*="connections.html"]')).toHaveCount(0);
     assert.equal((await page.request.get(base+prefix+'journal/connections.html')).status(),404);
-    await page.locator('.journal-related a[href="visiona.html"]').click();
-    await expect(page.locator('.journal-related a[href="south-summit.html"]')).toHaveCount(1);
-    await page.locator('.journal-related a[href="south-summit.html"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="visiona.html"]').click();
+    await expect(page.locator('.journal-chronology a[href="south-summit.html"]')).toHaveCount(1);
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="south-summit.html"]').click();
     for(const width of [320,390,768,1440]) {
       await page.setViewportSize({width,height:844});
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${prefix} South Summit overflows at ${width}`);
@@ -468,8 +473,9 @@ test('China diary connects to its award, loads all 26 photos and keeps chapter n
     await page.locator('[data-gallery]').last().click();
     await expect(page.locator('#photo-counter')).toContainText('26');
     await page.keyboard.press('Escape');
-    await page.locator('.journal-related a[href="premio-na-pratica.html"]').click();
-    await expect(page.locator('.journal-related a[href="china.html"]')).toHaveCount(1);
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="premio-na-pratica.html"]').click();
+    await expect(page.locator('.journal-chronology a[href="china.html"]')).toHaveCount(1);
     assert.deepEqual(errors,[]);
     await page.close();
   }
@@ -485,8 +491,8 @@ test('award story connects China and US diaries, keeps both award links, and loa
     await expect(page.locator('.journal-chapter')).toHaveCount(6);
     await expect(page.locator('[data-gallery]')).toHaveCount(14);
     await expect(page.locator('.journal-intro a[href="../recognition.html"]')).toHaveCount(1);
-    await expect(page.locator('.journal-related a[href="china.html"]')).toHaveCount(1);
-    await expect(page.locator('.journal-related a[href="estados-unidos.html"]')).toHaveCount(1);
+    await expect(page.locator('.journal-chronology a[href="china.html"]')).toHaveCount(1);
+    await expect(page.locator('.journal-chronology a[href="estados-unidos.html"]')).toHaveCount(1);
     for(const width of [320,390,768,1440]) {
       await page.setViewportSize({width,height:844});
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${prefix} Award diary overflows at ${width}`);
@@ -497,10 +503,12 @@ test('award story connects China and US diaries, keeps both award links, and loa
     }
     await page.locator('.journal-index a[href="#resultado"]').click();
     assert.ok(await page.locator('#resultado h2').evaluate(el=>el.getBoundingClientRect().top)>=await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().bottom));
-    await page.locator('.journal-related a[href="china.html"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="china.html"]').click();
     await page.locator('.journal-intro a[href="premio-na-pratica.html"]').click();
-    await page.locator('.journal-related a[href="estados-unidos.html"]').click();
-    await expect(page.locator('.journal-related a[href="premio-na-pratica.html"]')).toHaveCount(1);
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="estados-unidos.html"]').click();
+    await expect(page.locator('.journal-chronology a[href="premio-na-pratica.html"]')).toHaveCount(1);
     assert.deepEqual(errors,[]);
     await page.close();
   }
@@ -564,7 +572,7 @@ test('Fundação Estudar joins the award and story paths, with nine photos and h
     const prefix=lang==='en'?'':lang+'/';
     const {page,errors}=await visit(prefix+'recognition.html',{viewport:{width:390,height:844},reducedMotion:'reduce'});
     await page.locator('.award a[href="journal/fundacao-estudar.html"]').click();
-    await expect(page.locator('.journal-chapter')).toHaveCount(8);
+    await expect(page.locator('.journal-chapter')).toHaveCount(7);
     await expect(page.locator('[data-gallery]')).toHaveCount(9);
     await expect(page.locator('#limites')).toContainText(markers[lang]);
     await expect(page.locator('#primeira-tentativa')).toContainText('2022');
@@ -577,12 +585,17 @@ test('Fundação Estudar joins the award and story paths, with nine photos and h
       await expect.poll(()=>img.evaluate(i=>i.complete&&i.naturalWidth>0)).toBeTruthy();
     }
     for(const slug of ['premio-na-pratica','china','estados-unidos','south-summit']) {
-      await page.locator(`#caminhos a[href="${slug}.html"]`).click();
+    await openStories(page);
+      await page.locator(`.journal-chronology a[href="${slug}.html"]`).click();
       assert.ok(page.url().endsWith(`journal/${slug}.html`));
-      await page.locator('.journal-related a[href="fundacao-estudar.html"]').click();
+    await openStories(page);
+      await page.locator('.journal-chronology a[href="fundacao-estudar.html"]').click();
     }
-    await page.locator('#caminhos a[href="south-summit.html"]').click();
-    await page.locator('.journal-path[href="fundacao-estudar.html#lyfe"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="south-summit.html"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="fundacao-estudar.html"]').click();
+    await page.locator('.journal-index a[href="#lyfe"]').click();
     await expect(page.locator('#lyfe h2')).toBeInViewport();
     assert.ok(await page.locator('#lyfe h2').evaluate(el=>el.getBoundingClientRect().top)>=await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().bottom));
     await page.locator('[data-gallery]').last().click();
@@ -664,15 +677,57 @@ test('CNES diary joins the timeline and professional experience, with 26 photos 
     await page.locator('[data-gallery]').last().click();
     await expect(page.locator('#photo-counter')).toContainText('26');
     await page.keyboard.press('Escape');
-    await page.locator('#volta .journal-path[href="visiona.html"]').click();
-    await page.locator('#entrevista .journal-path[href="cnes.html"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="visiona.html"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="cnes.html"]').click();
     await expect(page.locator('h1')).toContainText('CNES');
-    await page.locator('#volta .journal-path[href="cern.html"]').click();
-    await page.locator('.journal-related a[href="cnes.html"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="cern.html"]').click();
+    await openStories(page);
+    await page.locator('.journal-chronology a[href="cnes.html"]').click();
     await page.locator('.journal-back').click();
     await page.locator('.journal-timeline summary').click();
     await expect(page.locator('.journal-timeline li').filter({has:page.locator('a[href="journal/cnes.html"]')}).locator('time')).toHaveAttribute('datetime','2025-02');
     assert.deepEqual(errors,[]);
     await page.close();
   }
+});
+
+test('home expands all projects without JavaScript and the shared chrome uses accessible icons', async () => {
+  const {page}=await visit('pt/',{javaScriptEnabled:false,viewport:{width:390,height:844},reducedMotion:'reduce'});
+  await expect(page.locator('#current-work .project-row:visible')).toHaveCount(6);
+  await page.locator('.more-projects summary').click();
+  await expect(page.locator('#current-work .project-row:visible')).toHaveCount(19);
+  await expect(page.locator('.current-project a')).toHaveCount(1);
+  await expect(page.locator('.art-open,.journal-signature,.notebook-note,.portrait-note')).toHaveCount(0);
+  await expect(page.locator('.site-header .wordmark')).toHaveText('portfolio');
+  await expect(page.locator('.site-footer .wordmark')).toHaveText('portfolio');
+  for(const label of ['LinkedIn','GitHub','Contato','Voltar ao topo']) {
+    const link=page.locator('.footer-links').getByRole('link',{name:label,exact:true});
+    await expect(link).toHaveCount(1);
+    await expect(link.locator('svg')).toHaveCount(1);
+  }
+  assert.equal(await page.locator('a').evaluateAll(links=>links.some(a=>/[↗→←↑↓]/.test(a.textContent))),false);
+  await page.locator('#current-work .project-row a').last().click();
+  await expect(page.locator('h1')).toHaveCount(1);
+  await page.close();
+});
+
+test('journal has a reverse chronological photo sidebar and plain conclusions without repeated recommendations', async () => {
+  const {page}=await visit('pt/journal/fundacao-estudar.html',{viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+  await expect(page.locator('.journal-sidebar')).toBeVisible();
+  await expect(page.locator('.journal-chronology a')).toHaveCount(8);
+  await expect(page.locator('.journal-chronology img')).toHaveCount(8);
+  const dates=await page.locator('.journal-chronology time').evaluateAll(items=>items.map(i=>i.dateTime));
+  assert.deepEqual(dates,[...dates].sort().reverse());
+  await expect(page.locator('.journal-chronology a[aria-current=page]')).toHaveAttribute('href','fundacao-estudar.html');
+  await expect(page.locator('.journal-related,.journal-paths,.journal-signature,#caminhos')).toHaveCount(0);
+  assert.equal(await page.locator('.journal-closing').evaluate(el=>getComputedStyle(el).backgroundColor),'rgba(0, 0, 0, 0)');
+  assert.equal(await page.locator('h1,h2,h3').evaluateAll(items=>items.some(i=>/Verônica|Marcel|Lemann|Sicupira/.test(i.textContent))),false);
+  await expect(page.locator('#lyfe')).toContainText('Verônica');
+  await page.locator('.journal-chronology a[href="south-summit.html"]').click();
+  await expect(page.locator('#mentoria h2')).toHaveText('Uma ideia da minha mentora');
+  await expect(page.locator('#mentoria')).toContainText('Verônica');
+  await page.close();
 });

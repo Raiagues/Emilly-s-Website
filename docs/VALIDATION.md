@@ -34,3 +34,13 @@ Os textos, os capítulos e as fotografias dos relatos foram preservados. A intro
 - Seis testes direcionados aprovados: acessibilidade das 32 páginas de histórias, Visiona, cronologia sem JavaScript, álbum/contato em quatro idiomas, Fundação/Lyfe e o novo percurso do CNES.
 - Novo teste cobre 26 fotos carregadas em cada idioma, galeria, capítulos abaixo do menu, retorno entre histórias, datas, fonte oficial e layout entre 320 e 1440 px.
 - Inspeção visual: abertura, capítulo AEROSAT, fotos e versão móvel. Capturas em `/tmp/cnes-story-desktop.png`, `/tmp/cnes-aerosat.png` e `/tmp/cnes-story-mobile.png`.
+
+## Navegação e identidade discreta — 17/10/2026
+
+- Cabeçalho e rodapé com identidade “portfolio”, navegação com ícones e redes sociais com nomes acessíveis. Removidas as setas decorativas de links e os círculos sobre as ilustrações; o cartão completo continua clicável.
+- Inicial com o projeto atual, mais seis projetos visíveis e um controle nativo para os outros 13. Todos os 20 são acessíveis sem JavaScript.
+- Álbum e linha do tempo em ordem decrescente. Lateral dos oito relatos com capítulos e índice cronológico com fotos; em telas pequenas, outras histórias ficam num controle expansível.
+- Removidos os cartões repetidos, a seção final de sugestões e as assinaturas. Conclusões mantidas como texto normal. Títulos de capítulos não usam os nomes da mentora; os nomes permanecem nos parágrafos.
+- Suíte completa: **29 testes aprovados**, incluindo navegação sem JavaScript, fotos, teclado, movimento reduzido, versões EN/PT/FR/ES e verificações Axe. Build e verificador: 163 HTMLs.
+- Após aumentar a legibilidade do índice lateral: quatro testes direcionados aprovados (layouts, acessibilidade dos relatos, expansão dos projetos e cronologia).
+- Inspeção visual em 1440 e 390 px: cabeçalho, projetos, relato da Fundação, lateral e rodapé. Capturas locais `/tmp/nav-home-desktop.png`, `/tmp/nav-home-mobile.png`, `/tmp/nav-diary-desktop.png`, `/tmp/nav-footer-desktop.png` e `/tmp/nav-diary-mobile.png` (não publicadas).

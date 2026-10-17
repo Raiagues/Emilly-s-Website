@@ -137,10 +137,16 @@
     "fr": "Notes, photos et souvenirs",
     "es": "Notas, fotos y recuerdos"
   },
-  "notebook_intro": {
-    "en": "The things I keep from each place: conversations, discoveries, and what I’m still trying to understand.",
-    "pt": "O que guardo de cada lugar: as conversas, as descobertas e o que ainda estou tentando entender.",
-    "fr": "Ce que je garde de chaque endroit : les conversations, les découvertes et ce que j’essaie encore de comprendre.",
-    "es": "Lo que guardo de cada lugar: las conversaciones, los descubrimientos y lo que todavía intento entender."
+  "archive": {
+    "en": "Other stories",
+    "pt": "Outras histórias",
+    "fr": "Autres histoires",
+    "es": "Otras historias"
+  },
+  "newest_first": {
+    "en": "Newest first",
+    "pt": "Mais recentes primeiro",
+    "fr": "Du plus récent au plus ancien",
+    "es": "Más recientes primero"
   }
 }

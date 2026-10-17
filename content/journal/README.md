@@ -19,7 +19,7 @@ Abra **`content/journal/cern.json`** (CERN), **`content/journal/cnes.json`** (CN
 - `technical_path`: endereço da página técnica relacionada. É opcional. A página técnica também passa a apontar para o diário. Sem relatório, o link aparece na introdução da história.
 - `technical_label` e `journal_link_label`: textos opcionais, nos quatro idiomas, para os links entre a história e a página técnica.
 - `date`: data de publicação, no formato `AAAA-MM-DD`, usada nos metadados.
-- `timeline`: acontecimentos da história; cada item tem `date` (`AAAA`, `AAAA-MM` ou `AAAA-MM-DD`), `label` e `title` nos quatro idiomas e, opcionalmente, `section` para abrir diretamente um capítulo. A página inicial ordena esses acontecimentos e as histórias pela data da experiência, não pela publicação.
+- `timeline`: acontecimentos da história; cada item tem `date` (`AAAA`, `AAAA-MM` ou `AAAA-MM-DD`), `label` e `title` nos quatro idiomas e, opcionalmente, `section` para abrir diretamente um capítulo. A página inicial mostra os acontecimentos do mais recente ao mais antigo. O álbum e a lateral dos relatos usam o acontecimento mais recente de cada história para ordenar as entradas; a data de publicação não interfere.
 - `entities`: identificadores das pessoas e instituições que aparecem no relato, cadastrados em `entities.json`.
 - `documents`: dentro de um capítulo, lista de imagens de documentos, referenciadas pelo mesmo catálogo `photos`. São mostradas inteiras e podem ser abertas em outra aba; não entram no contador da galeria de fotos.
 - `period`: o período da experiência, mostrado para quem lê. Pode ser diferente da data de publicação.
@@ -76,13 +76,13 @@ A história do CERN já inclui os capítulos sobre a preparação e a aprovaçã
 
 Para retirar uma história do site, mude `published` para `false` e publique a alteração. O novo pacote deixa de incluir suas páginas e os arquivos exclusivos dela. Isso não apaga os arquivos nem o histórico do repositório GitHub.
 
-## Sugestões de leitura entre histórias
+## Navegação entre histórias
 
-No arquivo `entities.json`, cada entrada tem um identificador estável (por exemplo, `veronica` ou `fundacao-estudar`), um `name` nos quatro idiomas e `kind` (`person` ou `institution`). Acrescente o identificador à lista `entities` de cada história em que aquela pessoa ou instituição aparece.
+Cada relato tem um índice de capítulos e uma lista com fotos das outras histórias, do mais recente ao mais antigo. Essa lista é gerada automaticamente a partir de `timeline` e `cover`. No celular, ela fica em um controle expansível antes do texto. Não há cartões de recomendações ao final dos relatos.
 
-Esses identificadores são metadados internos para sugerir outras leituras ao fim das histórias. Não existe uma página pública de pessoas e instituições nem etiquetas com esses nomes. O arquivo `entities.json` não faz parte do pacote publicado. As sugestões só ligam relatos com um identificador em comum; links específicos entre capítulos continuam em `stories`.
+Os identificadores de `entities` são apenas metadados editoriais internos. Não existe uma página pública de pessoas e instituições nem etiquetas com esses nomes; `entities.json` não faz parte do pacote publicado. Use títulos sobre a experiência ou o papel da pessoa (por exemplo, “minha mentora”); nomes podem aparecer no corpo do relato.
 
-A história da candidatura e da final está em `premio-na-pratica.json`; a viagem está em `china.json`. As duas usam `na-pratica` em `entities` e o mesmo `related_award`, por isso aparecem juntas em Conquistas e nas sugestões de leitura. A introdução da China aponta diretamente para o relato do prêmio. A entidade `fundacao-estudar` também conecta o prêmio à viagem aos Estados Unidos. Para acrescentar detalhes da seleção, edite os capítulos `inscricao`, `imersao` e `resultado` do relato do prêmio.
+A história da candidatura e da final está em `premio-na-pratica.json`; a viagem está em `china.json`. O mesmo `related_award` faz com que ambas apareçam na página Conquistas. Para acrescentar detalhes da seleção, edite os capítulos `inscricao`, `imersao` e `resultado` do relato do prêmio.
 
 ## E-mails e outros documentos
 
@@ -106,6 +106,6 @@ Pelo editor do GitHub, salve usando **Commit changes** na branch `main`. O workf
 
 Os arquivos JSON são públicos no repositório, inclusive os rascunhos. `published: false` controla o site, não a privacidade do GitHub.
 
-## Conectar capítulos de histórias diferentes
+## Conclusões e referências antigas
 
-Dentro de um capítulo, `stories` permite colocar links locais com contexto. Cada item tem `slug` da história de destino, `title` e `description` nos quatro idiomas e, opcionalmente, `section` para abrir um capítulo específico. O gerador verifica se a história e o capítulo existem. O último capítulo da Fundação Estudar tem quatro exemplos; o início do South Summit aponta diretamente para o capítulo `lyfe`.
+`closing` aparece como um parágrafo normal ao final da história, sem caixa de citação ou assinatura. O campo antigo `stories` pode existir nos JSONs como referência editorial validada, mas não produz cartões na página. A navegação entre relatos fica na lateral cronológica.

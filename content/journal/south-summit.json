@@ -67,10 +67,10 @@
     {
       "id": "mentoria",
       "title": {
-        "en": "An idea from Verônica",
-        "pt": "Uma ideia da Verônica",
-        "fr": "Une idée de Verônica",
-        "es": "Una idea de Verônica"
+        "en": "An idea from my mentor",
+        "pt": "Uma ideia da minha mentora",
+        "fr": "Une idée de ma mentore",
+        "es": "Una idea de mi mentora"
       },
       "paragraphs": [
         {
@@ -105,10 +105,10 @@
           "slug": "fundacao-estudar",
           "section": "lyfe",
           "title": {
-            "en": "How I met Verônica",
-            "pt": "Como conheci a Verônica",
-            "fr": "Comment j’ai rencontré Verônica",
-            "es": "Cómo conocí a Verônica"
+            "en": "How I met my mentor",
+            "pt": "Como conheci minha mentora",
+            "fr": "Comment j’ai rencontré ma mentore",
+            "es": "Cómo conocí a mi mentora"
           },
           "description": {
             "en": "The Fundação Estudar application, Lyfe Academy and the beginning of our mentorship.",

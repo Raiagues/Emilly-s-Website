@@ -266,10 +266,10 @@
     {
       "id": "lyfe",
       "title": {
-        "en": "Lyfe Academy: where I met Verônica",
-        "pt": "Lyfe Academy: onde conheci a Verônica",
-        "fr": "Lyfe Academy : ma rencontre avec Verônica",
-        "es": "Lyfe Academy: donde conocí a Verônica"
+        "en": "Lyfe Academy and mentorship",
+        "pt": "Lyfe Academy e a mentoria",
+        "fr": "Lyfe Academy et le mentorat",
+        "es": "Lyfe Academy y la mentoría"
       },
       "paragraphs": [
         {
@@ -321,86 +321,6 @@
       ],
       "photos": [
         "brindes"
-      ]
-    },
-    {
-      "id": "caminhos",
-      "title": {
-        "en": "The stories that grew from here",
-        "pt": "As histórias que começaram por aqui",
-        "fr": "Les histoires qui ont commencé ici",
-        "es": "Las historias que empezaron aquí"
-      },
-      "paragraphs": [
-        {
-          "en": "Instead of trying to fit everything onto this page, I want to show where these connections led. Some opportunities came directly through the foundation; others grew from an introduction or an experience along the way. Each has its own story.",
-          "pt": "Em vez de tentar colocar tudo nesta página, quero mostrar aonde essas conexões foram levando. Algumas oportunidades vieram diretamente da Fundação; outras nasceram de uma apresentação ou de uma experiência no caminho. Cada uma tem sua história.",
-          "fr": "Plutôt que de tout raconter sur cette page, j’ai envie de montrer où ces liens m’ont menée. Certaines occasions sont venues directement de la fondation ; d’autres sont nées d’une présentation ou d’une expérience en chemin. Chacune a son histoire.",
-          "es": "En lugar de intentar meterlo todo en esta página, quiero mostrar adónde fueron llevando estas conexiones. Algunas oportunidades llegaron directamente de la fundación; otras nacieron de una presentación o de una experiencia en el camino. Cada una tiene su historia."
-        }
-      ],
-      "photos": [],
-      "stories": [
-        {
-          "slug": "premio-na-pratica",
-          "title": {
-            "en": "The award I almost didn’t apply for",
-            "pt": "O prêmio em que quase não me inscrevi",
-            "fr": "Le prix auquel j’ai failli ne pas postuler",
-            "es": "El premio al que casi no me presenté"
-          },
-          "description": {
-            "en": "I heard about Na Prática through the foundation. The application led to São Paulo, friendships and an award.",
-            "pt": "Conheci o prêmio Na Prática pela Fundação. A candidatura me levou a São Paulo, a amizades e à premiação.",
-            "fr": "J’ai découvert le prix Na Prática grâce à la fondation. La candidature m’a menée à São Paulo, à des amitiés et au prix.",
-            "es": "Conocí el premio Na Prática por la fundación. La candidatura me llevó a São Paulo, a amistades y al premio."
-          }
-        },
-        {
-          "slug": "china",
-          "title": {
-            "en": "China, through the Na Prática award",
-            "pt": "A China, pelo prêmio Na Prática",
-            "fr": "La Chine, grâce au prix Na Prática",
-            "es": "China, a través del premio Na Prática"
-          },
-          "description": {
-            "en": "The immersion was part of the prize. A week of visits and questions that changed the way I listened.",
-            "pt": "A imersão fez parte da premiação. Uma semana de visitas e perguntas que mudou meu jeito de escutar.",
-            "fr": "Le séjour faisait partie du prix. Une semaine de visites et de questions qui a changé ma façon d’écouter.",
-            "es": "La inmersión fue parte del premio. Una semana de visitas y preguntas que cambió mi forma de escuchar."
-          }
-        },
-        {
-          "slug": "estados-unidos",
-          "title": {
-            "en": "My first time in the United States",
-            "pt": "Minha primeira vez nos Estados Unidos",
-            "fr": "Mon premier voyage aux États-Unis",
-            "es": "Mi primera vez en Estados Unidos"
-          },
-          "description": {
-            "en": "Fundação Estudar funded my participation in Brazil at Silicon Valley. Afterwards, I paid for my trip to Brasil Project in Boston.",
-            "pt": "A Fundação Estudar financiou minha participação no Brazil at Silicon Valley. Depois, paguei minha ida ao Brasil Project, em Boston.",
-            "fr": "Fundação Estudar a financé ma participation à Brazil at Silicon Valley. J’ai ensuite payé mon voyage à Brasil Project, à Boston.",
-            "es": "Fundação Estudar financió mi participación en Brazil at Silicon Valley. Después pagué mi viaje a Brasil Project, en Boston."
-          }
-        },
-        {
-          "slug": "south-summit",
-          "title": {
-            "en": "From mentorship to a space panel",
-            "pt": "Da mentoria a um painel sobre o espaço",
-            "fr": "Du mentorat à une table ronde sur le spatial",
-            "es": "De la mentoría a un panel sobre el espacio"
-          },
-          "description": {
-            "en": "I met Verônica through Lyfe Academy. A conversation with her became the opportunity to organise a panel at South Summit.",
-            "pt": "Conheci a Verônica pela Lyfe Academy. Uma conversa com ela virou a oportunidade de organizar um painel no South Summit.",
-            "fr": "J’ai rencontré Verônica grâce à Lyfe Academy. Une conversation avec elle m’a donné l’occasion d’organiser une table ronde au South Summit.",
-            "es": "Conocí a Verônica a través de Lyfe Academy. Una conversación con ella se convirtió en la oportunidad de organizar un panel en South Summit."
-          }
-        }
       ]
     }
   ],
