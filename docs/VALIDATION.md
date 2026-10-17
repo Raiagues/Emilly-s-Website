@@ -1,10 +1,10 @@
-# Validação local — página inicial e diário editorial, 17/10/2026
+# Validação local — Fundação Estudar, Lyfe e conexões, 17/10/2026
 
-- `python3 scripts/build.py`: concluído; seis páginas principais, seis histórias do diário, 20 projetos e 6 experiências em quatro idiomas.
-- `python3 scripts/check.py`: 159 HTMLs verificados; links, âncoras e imagens locais íntegros, idioma e título principal presentes, formulário com o e-mail confirmado, pacote de publicação sem ferramentas ou fontes editoriais.
+- `python3 scripts/build.py`: concluído; seis páginas principais, sete histórias do diário, 20 projetos e 6 experiências em quatro idiomas.
+- `python3 scripts/check.py`: 163 HTMLs verificados; links, âncoras e imagens locais íntegros, idioma e título principal presentes, formulário com o e-mail confirmado, pacote de publicação sem ferramentas ou fontes editoriais.
 - `node --check src/script.js`, `node --check src/projects.js` e `node --check src/journal.js`: sem erros de sintaxe.
 - `git diff --check`: sem erros de whitespace.
-- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **23 testes aprovados**, incluindo as 28 páginas de histórias e conexões nas verificações de acessibilidade.
+- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **24 testes aprovados**, incluindo as 32 páginas de histórias e conexões nas verificações de acessibilidade.
 
 Os testes cobrem:
 
@@ -21,7 +21,7 @@ Os testes cobrem:
 11. História do CERN nas quatro línguas, com seis capítulos, 16 fotos e relatório PDF carregando corretamente.
 12. Galeria com botões, setas do teclado, Escape, retorno do foco e verificação axe dentro do diálogo.
 13. História, links de imagens e idiomas funcionando sem JavaScript.
-14. Nenhuma violação automática WCAG A/AA nas 28 páginas de histórias e conexões (CERN, Estados Unidos, Visiona, South Summit, China, prêmio Na Prática e Pessoas e instituições, em quatro idiomas).
+14. Nenhuma violação automática WCAG A/AA nas 32 páginas de histórias e conexões (CERN, Estados Unidos, Visiona, South Summit, China, prêmio Na Prática, Fundação Estudar/Lyfe e Pessoas e instituições, em quatro idiomas).
 15. CSS antigo previamente guardado em cache não substitui o estilo restaurado; layout, fonte, fundo e órbitas corretos após navegar e recarregar.
 16. História dos Estados Unidos acessível pelo diário e por Conquistas, nos quatro idiomas; sete capítulos, 15 fotos carregando, fontes, galeria e distinção de financiamento, sem overflow.
 17. Visiona acessível pelo diário e pela página profissional, com retorno para a experiência no idioma atual, nove fotos, galeria, navegação por capítulos abaixo do menu fixo e layout sem overflow entre 320 e 1440 px.
@@ -45,3 +45,7 @@ O repositório já tem publicação via GitHub Actions. Nenhuma mensagem real fo
 Nesta revisão, foram novamente inspecionados no navegador: retrato e órbitas, faixa de instituições, destaque da plataforma, cartões SVG, história pessoal e formação, índice do diário, formulário completo, abertura dos artigos, capítulos com foto ao lado e o álbum com as três novas fotos da Visiona. As capturas de início, projetos, CERN e Visiona acima foram atualizadas para o novo desenho. As reflexões foram revistas em EN/PT/FR/ES; os capítulos e a conclusão originais da Visiona foram preservados. Duas falhas de contraste encontradas durante o desenvolvimento foram corrigidas antes da execução final da suíte.
 
 A lista do diário carrega apenas uma foto de capa por história, sob demanda; os mosaicos completos ficam nas páginas dos relatos. Após esse ajuste de carregamento, build e verificação estática passaram novamente, assim como os dois testes direcionados à página inicial e à navegação do diário.
+
+24. Fundação Estudar acessível pela conquista Líderes Estudar em EN/PT/FR/ES, com oito capítulos, nove fotos carregando e participação não concluída na Lyfe declarada nas quatro traduções. Os quatro caminhos para prêmio, China, EUA e South Summit e seus retornos funcionam; o South Summit abre diretamente o capítulo da Lyfe abaixo do menu fixo. Galeria, ausência de erros JavaScript e layout verificados de 320 a 1440 px.
+
+A cronologia passa a ter nove entradas, incluindo a primeira candidatura em 2022 (precisão apenas de ano) e a aprovação em agosto de 2025. A Fundação conecta três histórias; Verônica e Lyfe conectam esta página ao South Summit. Build e verificação estática passaram com 163 HTMLs, e a suíte completa passou com 24 testes. Inspeção visual registrada em `preview-foundation-diary.png` e `preview-foundation-diary-mobile.png`; também foram conferidos o retiro, o texto de não conclusão e os cartões de histórias relacionadas.

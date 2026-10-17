@@ -950,3 +950,12 @@ a:hover .row-open, .text-link:hover { text-decoration: underline; text-underline
 }
 
 .journal-closing .text-link { color: var(--blue-dark); }
+
+/* Related chapters explain how each opportunity connects to the story. */
+.journal-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 32px; }
+.journal-path { display: block; padding: 28px; background: var(--soft); border-radius: 5px; }
+.journal-path h3 { font: 400 26px/1.2 var(--serif); margin-bottom: 14px; }
+.journal-path p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.journal-path:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.journal-paths:has(>.journal-path:only-child) { grid-template-columns: minmax(0, 730px); justify-content: center; }
+@media (max-width: 700px) { .journal-paths { grid-template-columns: 1fr; } .journal-path { padding: 24px; } }

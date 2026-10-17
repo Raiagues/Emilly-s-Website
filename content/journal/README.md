@@ -4,7 +4,7 @@ O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao
 
 ## Alterar uma história
 
-Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) **`content/journal/china.json`** (China) ou **`content/journal/premio-na-pratica.json`** (prêmio Na Prática) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) **`content/journal/china.json`** (China) **`content/journal/premio-na-pratica.json`** (prêmio Na Prática) ou **`content/journal/fundacao-estudar.json`** (Fundação Estudar e Lyfe Academy) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
 
 - `title`: título da história.
 - `subtitle`: resumo que aparece na página inicial.
@@ -19,7 +19,7 @@ Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (via
 - `technical_path`: endereço da página técnica relacionada. É opcional. A página técnica também passa a apontar para o diário. Sem relatório, o link aparece na introdução da história.
 - `technical_label` e `journal_link_label`: textos opcionais, nos quatro idiomas, para os links entre a história e a página técnica.
 - `date`: data de publicação, no formato `AAAA-MM-DD`, usada nos metadados.
-- `timeline`: acontecimentos da história; cada item tem `date` (`AAAA-MM` ou `AAAA-MM-DD`), `label` e `title` nos quatro idiomas e, opcionalmente, `section` para abrir diretamente um capítulo. A página inicial ordena esses acontecimentos e as histórias pela data da experiência, não pela publicação.
+- `timeline`: acontecimentos da história; cada item tem `date` (`AAAA`, `AAAA-MM` ou `AAAA-MM-DD`), `label` e `title` nos quatro idiomas e, opcionalmente, `section` para abrir diretamente um capítulo. A página inicial ordena esses acontecimentos e as histórias pela data da experiência, não pela publicação.
 - `entities`: identificadores das pessoas e instituições que aparecem no relato, cadastrados em `entities.json`.
 - `documents`: dentro de um capítulo, lista de imagens de documentos, referenciadas pelo mesmo catálogo `photos`. São mostradas inteiras e podem ser abertas em outra aba; não entram no contador da galeria de fotos.
 - `period`: o período da experiência, mostrado para quem lê. Pode ser diferente da data de publicação.
@@ -105,3 +105,7 @@ Abra `http://127.0.0.1:8000/pt/`. Após conferir, envie ao GitHub o JSON, as nov
 Pelo editor do GitHub, salve usando **Commit changes** na branch `main`. O workflow gera os HTMLs de publicação; você não precisa fazê-lo manualmente nesse caminho. Acompanhe **Actions → Publish portfolio to GitHub Pages**. Se a edição contiver JSON inválido ou um arquivo ausente, a publicação falha e a última versão publicada continua no ar. Corrija o arquivo e faça outro commit.
 
 Os arquivos JSON são públicos no repositório, inclusive os rascunhos. `published: false` controla o site, não a privacidade do GitHub.
+
+## Conectar capítulos de histórias diferentes
+
+Dentro de um capítulo, `stories` permite colocar links locais com contexto. Cada item tem `slug` da história de destino, `title` e `description` nos quatro idiomas e, opcionalmente, `section` para abrir um capítulo específico. O gerador verifica se a história e o capítulo existem. O último capítulo da Fundação Estudar tem quatro exemplos; o início do South Summit aponta diretamente para o capítulo `lyfe`.

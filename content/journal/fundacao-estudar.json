@@ -1,0 +1,514 @@
+{
+  "slug": "fundacao-estudar",
+  "published": true,
+  "date": "2026-10-17",
+  "series": {
+    "en": "Fundação Estudar · community and mentorship",
+    "pt": "Fundação Estudar · comunidade e mentoria",
+    "fr": "Fundação Estudar · communauté et mentorat",
+    "es": "Fundação Estudar · comunidad y mentoría"
+  },
+  "period": {
+    "en": "First application in 2022 · fellow since 2025",
+    "pt": "Primeira candidatura em 2022 · bolsista desde 2025",
+    "fr": "Première candidature en 2022 · boursière depuis 2025",
+    "es": "Primera candidatura en 2022 · becaria desde 2025"
+  },
+  "title": {
+    "en": "Fundação Estudar: seeing more possibilities for myself",
+    "pt": "Fundação Estudar: comecei a me ver mais longe",
+    "fr": "Fundação Estudar : élargir ce que je croyais possible",
+    "es": "Fundação Estudar: empecé a verme más lejos"
+  },
+  "subtitle": {
+    "en": "A rejection, months of interviews and a call after midnight. Then came the people who changed what I thought I could try.",
+    "pt": "Uma recusa, meses de entrevistas e uma ligação depois da meia-noite. Depois vieram as pessoas que mudaram o que eu achava que podia tentar.",
+    "fr": "Un refus, des mois d’entretiens et un appel après minuit. Puis des rencontres qui ont changé ce que je me croyais capable de tenter.",
+    "es": "Un rechazo, meses de entrevistas y una llamada después de medianoche. Después llegaron las personas que cambiaron lo que creía que podía intentar."
+  },
+  "intro": {
+    "en": "Fundação Estudar appears in so many of my stories that it deserves one of its own. I have fewer photos than I would like, but I remember the conversations very well. It was there that I started looking beyond my space engineering bubble and meeting people whose paths made me reconsider what might be possible for me too.",
+    "pt": "A Fundação Estudar aparece em tantas histórias minhas que merecia uma só dela. Tenho menos fotos do que gostaria, mas lembro muito das conversas. Foi ali que comecei a sair da minha bolha do setor espacial e a conviver com pessoas cujas trajetórias me faziam pensar: talvez eu também possa tentar.",
+    "fr": "Fundação Estudar revient dans tant de mes histoires qu’elle mérite la sienne. J’ai moins de photos que je ne le voudrais, mais je me souviens très bien des conversations. C’est là que j’ai commencé à sortir de ma bulle du spatial et à rencontrer des personnes dont le parcours me faisait penser : peut-être que je peux essayer, moi aussi.",
+    "es": "Fundação Estudar aparece en tantas historias mías que merecía una propia. Tengo menos fotos de las que me gustaría, pero recuerdo muy bien las conversaciones. Allí empecé a salir de mi burbuja del sector espacial y a conocer a personas cuyas trayectorias me hacían pensar: quizá yo también pueda intentarlo."
+  },
+  "cover": [
+    "entrevista",
+    "microfone",
+    "evento"
+  ],
+  "related_award": "Líderes Estudar",
+  "award_link_label": {
+    "en": "My application, the community and Lyfe Academy",
+    "pt": "Minha candidatura, a comunidade e a Lyfe Academy",
+    "fr": "Ma candidature, la communauté et Lyfe Academy",
+    "es": "Mi candidatura, la comunidad y Lyfe Academy"
+  },
+  "technical_path": "recognition.html",
+  "technical_label": {
+    "en": "Scholarships and recognitions along the way",
+    "pt": "Bolsas e reconhecimentos pelo caminho",
+    "fr": "Bourses et distinctions au fil du parcours",
+    "es": "Becas y reconocimientos en el camino"
+  },
+  "entities": [
+    "fundacao-estudar",
+    "life-academy",
+    "veronica",
+    "na-pratica",
+    "marcel-telles",
+    "beto-sicupira",
+    "jorge-paulo-lemann"
+  ],
+  "timeline": [
+    {
+      "date": "2022",
+      "section": "primeira-tentativa",
+      "label": {
+        "en": "2022",
+        "pt": "2022",
+        "fr": "2022",
+        "es": "2022"
+      },
+      "title": {
+        "en": "My first Fundação Estudar application",
+        "pt": "Minha primeira candidatura à Fundação Estudar",
+        "fr": "Ma première candidature à Fundação Estudar",
+        "es": "Mi primera candidatura a Fundação Estudar"
+      }
+    },
+    {
+      "date": "2025-08",
+      "section": "aprovacao",
+      "label": {
+        "en": "August 2025",
+        "pt": "Agosto de 2025",
+        "fr": "Août 2025",
+        "es": "Agosto de 2025"
+      },
+      "title": {
+        "en": "Accepted into Líderes Estudar",
+        "pt": "A aprovação no Líderes Estudar",
+        "fr": "Mon admission à Líderes Estudar",
+        "es": "La aceptación en Líderes Estudar"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "primeira-tentativa",
+      "title": {
+        "en": "The first time, I didn’t even get an interview",
+        "pt": "Na primeira vez, nem cheguei à entrevista",
+        "fr": "La première fois, je n’ai même pas eu d’entretien",
+        "es": "La primera vez, ni siquiera llegué a la entrevista"
+      },
+      "paragraphs": [
+        {
+          "en": "I first applied in 2022 and was rejected before being invited to an interview. But the application had already made me think. Trying to understand what the foundation was looking for made me look more closely at the impact I wanted my work to have.",
+          "pt": "Me inscrevi pela primeira vez em 2022 e fui recusada antes mesmo de ser chamada pra uma entrevista. Só que a candidatura já tinha mexido comigo. Tentar entender o que a Fundação buscava me fez olhar com mais cuidado pro impacto que eu queria ter com o meu trabalho.",
+          "fr": "J’ai postulé une première fois en 2022 et j’ai été refusée avant même d’être invitée à un entretien. Mais la candidature m’avait déjà fait réfléchir. Essayer de comprendre ce que la fondation recherchait m’a amenée à regarder de plus près l’impact que je voulais avoir par mon travail.",
+          "es": "Me inscribí por primera vez en 2022 y me rechazaron antes de invitarme a una entrevista. Pero la candidatura ya me había hecho pensar. Intentar entender qué buscaba la fundación me llevó a mirar con más atención el impacto que quería tener con mi trabajo."
+        },
+        {
+          "en": "I wasn’t trying to arrange my life around being accepted one day. I genuinely identified with those questions. What did I want to build? Who would it help? I kept living my life, but I was starting to understand my own reasons more clearly, even before becoming part of the community.",
+          "pt": "Eu não estava tentando organizar minha vida pra convencer alguém a me aceitar um dia. Eu me identifiquei com aquelas perguntas. O que eu queria construir? Pra quem aquilo faria diferença? Continuei vivendo minha vida, mas comecei a entender melhor meus próprios motivos, antes mesmo de fazer parte da comunidade.",
+          "fr": "Je ne cherchais pas à organiser ma vie pour convaincre quelqu’un de m’accepter un jour. Ces questions me parlaient vraiment. Qu’est-ce que je voulais construire ? Pour qui cela ferait-il une différence ? J’ai continué mon chemin en comprenant un peu mieux mes propres motivations, avant même de rejoindre la communauté.",
+          "es": "No estaba intentando organizar mi vida para convencer a alguien de que me aceptara algún día. Me identificaba con aquellas preguntas. ¿Qué quería construir? ¿Para quién marcaría una diferencia? Seguí con mi vida, pero empecé a entender mejor mis propios motivos, incluso antes de formar parte de la comunidad."
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "processo",
+      "title": {
+        "en": "I needed the scholarship",
+        "pt": "Eu precisava da bolsa",
+        "fr": "J’avais besoin de la bourse",
+        "es": "Necesitaba la beca"
+      },
+      "paragraphs": [
+        {
+          "en": "When I applied again in 2025, I was in France and preparing to return to Brazil. I needed financial support to continue my studies. That was a very real part of my decision. At that point, I still couldn’t imagine how much the community would come to mean to me.",
+          "pt": "Quando me inscrevi de novo, em 2025, estava na França e me preparando pra voltar ao Brasil. Eu precisava de apoio financeiro pra continuar meus estudos. Isso pesava muito na minha decisão. Naquele momento, ainda não conseguia imaginar o tamanho que a comunidade teria na minha vida.",
+          "fr": "Lorsque j’ai postulé à nouveau en 2025, j’étais en France et je préparais mon retour au Brésil. J’avais besoin d’un soutien financier pour poursuivre mes études. C’était une raison très concrète de ma candidature. Je n’imaginais pas encore la place que cette communauté prendrait dans ma vie.",
+          "es": "Cuando volví a inscribirme en 2025, estaba en Francia y preparaba mi regreso a Brasil. Necesitaba apoyo económico para seguir estudiando. Era una parte muy concreta de mi decisión. Todavía no imaginaba el lugar que la comunidad acabaría ocupando en mi vida."
+        },
+        {
+          "en": "My selection process lasted roughly from February to August. There were behavioural interviews, technical interviews, individual conversations and group stages, all alongside university. It was demanding because I had to do much more than fill in forms: I had to think about my choices, understand my results and find a way to explain my story.",
+          "pt": "Meu processo foi mais ou menos de fevereiro a agosto. Teve entrevista comportamental, técnica, conversas individuais e etapas em grupo, tudo ao mesmo tempo que a faculdade. Foi puxado porque exigia muito mais do que preencher formulários: eu precisava refletir sobre minhas escolhas, entender meus resultados e encontrar um jeito de contar minha história.",
+          "fr": "Mon processus de sélection s’est étalé à peu près de février à août. Il y a eu des entretiens comportementaux, techniques, individuels et des étapes en groupe, en parallèle des études. C’était exigeant : il fallait réfléchir à mes choix, comprendre mes résultats et trouver comment raconter mon parcours, bien au-delà des formulaires.",
+          "es": "Mi proceso fue aproximadamente de febrero a agosto. Hubo entrevistas de comportamiento, técnicas, conversaciones individuales y etapas en grupo, todo a la vez que la universidad. Fue exigente porque requería mucho más que rellenar formularios: tenía que reflexionar sobre mis decisiones, entender mis resultados y encontrar cómo contar mi historia."
+        },
+        {
+          "en": "In the individual interviews, I also tried to ask questions. One interviewer, who was studying at Harvard at the time, told me he couldn’t see a downside to being part of the foundation. That stayed with me. As I learned more from the people interviewing me, I found more reasons of my own for wanting to join.",
+          "pt": "Nas entrevistas individuais, eu também tentava fazer perguntas. Um dos entrevistadores, que estudava em Harvard naquela época, me disse que não via um lado negativo em fazer parte da Fundação. Aquilo ficou comigo. Conforme eu ouvia as experiências de quem me entrevistava, encontrava mais motivos meus pra querer entrar.",
+          "fr": "Pendant les entretiens individuels, j’essayais aussi de poser des questions. Un des intervieweurs, alors étudiant à Harvard, m’a dit qu’il ne voyait pas d’inconvénient à faire partie de la fondation. Cela m’a marquée. Leurs expériences me donnaient de nouvelles raisons personnelles de vouloir les rejoindre.",
+          "es": "En las entrevistas individuales también intentaba hacer preguntas. Uno de los entrevistadores, que estudiaba en Harvard entonces, me dijo que no veía ningún lado negativo en formar parte de la fundación. Se me quedó grabado. Al escuchar sus experiencias, encontraba más razones propias para querer entrar."
+        }
+      ],
+      "photos": [
+        "entrevista"
+      ]
+    },
+    {
+      "id": "aprovacao",
+      "title": {
+        "en": "The call after midnight",
+        "pt": "A ligação depois da meia-noite",
+        "fr": "L’appel après minuit",
+        "es": "La llamada después de medianoche"
+      },
+      "paragraphs": [
+        {
+          "en": "The final panel would normally have been in person, but they let me take part online because I was still in France. Several evaluators and other people were watching, and I was the first to answer. Somehow, I felt confident. After months of taking the process seriously, I knew why I wanted to be there and could explain the numbers behind my work.",
+          "pt": "A banca final normalmente seria presencial, mas me deixaram participar online porque eu ainda estava na França. Tinha vários avaliadores e outras pessoas assistindo, e fui a primeira a responder. Só que eu estava confiante. Depois de meses me dedicando ao processo, sabia por que queria estar ali e conseguia explicar os números por trás do meu trabalho.",
+          "fr": "La dernière étape devait normalement se dérouler en présentiel, mais j’ai pu participer en ligne puisque j’étais encore en France. Plusieurs évaluateurs et d’autres personnes assistaient aux échanges, et j’ai répondu la première. Pourtant, j’étais confiante. Après des mois d’investissement, je savais pourquoi je voulais être là et je pouvais expliquer les chiffres de mon travail.",
+          "es": "La evaluación final normalmente era presencial, pero me dejaron participar online porque seguía en Francia. Había varios evaluadores y otras personas escuchando, y fui la primera en responder. Aun así, me sentía segura. Después de meses dedicándome al proceso, sabía por qué quería estar allí y podía explicar los números de mi trabajo."
+        },
+        {
+          "en": "It was already around midnight in France when it ended. I tried to sleep and couldn’t. Then I got hungry, got up and noticed all the missed calls on my phone. I called back. It was someone from the foundation: the evaluation was over, and I had been accepted.",
+          "pt": "Já era por volta de meia-noite na França quando terminou. Tentei dormir e não consegui. Depois fiquei com fome, levantei e vi um monte de ligações perdidas no celular. Liguei de volta. Era uma pessoa da Fundação: a avaliação tinha terminado, e eu estava aprovada.",
+          "fr": "Il était déjà autour de minuit en France quand tout s’est terminé. J’ai essayé de dormir, sans y arriver. Puis j’ai eu faim, je me suis levée et j’ai vu tous les appels manqués sur mon téléphone. J’ai rappelé. C’était quelqu’un de la fondation : l’évaluation était terminée et j’étais acceptée.",
+          "es": "Ya era alrededor de medianoche en Francia cuando terminó. Intenté dormir y no pude. Después me dio hambre, me levanté y vi un montón de llamadas perdidas en el móvil. Devolví la llamada. Era alguien de la fundación: habían terminado la evaluación y me habían aceptado."
+        },
+        {
+          "en": "I didn’t know what to say. My face actually hurt from smiling so much. I still find it hard to describe that moment, but I remember the feeling very clearly.",
+          "pt": "Eu não sabia nem o que falar. Meu rosto chegou a doer de tanto sorrir. Ainda acho difícil explicar aquele momento, mas lembro muito bem da sensação.",
+          "fr": "Je ne savais plus quoi dire. J’avais mal au visage à force de sourire. J’ai encore du mal à décrire cet instant, mais je me souviens très bien de ce que j’ai ressenti.",
+          "es": "No sabía ni qué decir. Me llegó a doler la cara de tanto sonreír. Todavía me cuesta explicar aquel momento, pero recuerdo muy bien la sensación."
+        }
+      ],
+      "photos": [
+        "presentes"
+      ],
+      "links": [
+        {
+          "url": "https://www.estudarfora.org.br/fellows-fundacao-estudar-2025/",
+          "label": {
+            "en": "The 2025 fellows",
+            "pt": "A turma de bolsistas de 2025",
+            "fr": "La promotion de boursiers 2025",
+            "es": "La promoción de becarios de 2025"
+          }
+        }
+      ]
+    },
+    {
+      "id": "comunidade",
+      "title": {
+        "en": "Learning to be in a different room",
+        "pt": "Aprendendo a estar em outros ambientes",
+        "fr": "Apprendre à évoluer dans d’autres milieux",
+        "es": "Aprendiendo a estar en otros ambientes"
+      },
+      "paragraphs": [
+        {
+          "en": "I had spent so much time around the space sector that meeting people from completely different fields was an education in itself. I was learning to take part in conversations where I wasn’t surrounded by people with the same technical background as me.",
+          "pt": "Eu tinha passado tanto tempo perto do setor espacial que conhecer gente de áreas completamente diferentes já era um aprendizado. Estava aprendendo a participar de conversas em que nem todo mundo tinha a mesma formação técnica que eu.",
+          "fr": "J’avais passé tellement de temps dans le milieu spatial que rencontrer des personnes de domaines complètement différents était déjà un apprentissage. J’apprenais à participer à des conversations où tout le monde n’avait pas la même formation technique que moi.",
+          "es": "Había pasado tanto tiempo cerca del sector espacial que conocer a personas de áreas completamente diferentes ya era un aprendizaje. Estaba aprendiendo a participar en conversaciones donde no todos tenían mi misma formación técnica."
+        },
+        {
+          "en": "The support became very concrete: being able to message someone, ask for help, hear about an opportunity or talk through something I was trying to do. And being around ambitious people changed my own sense of possibility. I knew I had a good technical foundation. Seeing people with backgrounds I could relate to doing remarkable things made me think I could try more too.",
+          "pt": "O apoio foi ficando muito concreto: poder mandar uma mensagem, pedir ajuda, descobrir uma oportunidade ou conversar sobre algo que eu estava tentando fazer. E estar perto de pessoas ambiciosas mudou minha própria noção do que era possível. Eu sabia que tinha uma boa base técnica. Ver gente com trajetórias em que eu me reconhecia conquistando coisas incríveis me fez pensar que eu também podia tentar mais.",
+          "fr": "Le soutien a pris des formes très concrètes : envoyer un message, demander de l’aide, découvrir une occasion ou parler de ce que j’essayais de faire. Être entourée de personnes ambitieuses a changé ma perception du possible. Je savais avoir une bonne base technique. Voir des personnes dans lesquelles je me reconnaissais accomplir des choses remarquables m’a donné envie d’essayer davantage, moi aussi.",
+          "es": "El apoyo se volvió muy concreto: poder mandar un mensaje, pedir ayuda, descubrir una oportunidad o hablar de algo que estaba intentando hacer. Estar cerca de personas ambiciosas cambió mi propia idea de lo posible. Sabía que tenía una buena base técnica. Ver a gente con trayectorias en las que me reconocía conseguir cosas increíbles me hizo pensar que yo también podía intentar más."
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "encontro-anual",
+      "title": {
+        "en": "Conversations I couldn’t have imagined",
+        "pt": "Conversas que eu nem imaginava ter",
+        "fr": "Des conversations que je n’aurais pas imaginées",
+        "es": "Conversaciones que no imaginaba tener"
+      },
+      "paragraphs": [
+        {
+          "en": "I couldn’t attend the in-person onboarding because I was in France, but I did go to the annual event in São Paulo. We had the chance to speak directly with the foundation’s founders: Beto Sicupira, Marcel Telles and Jorge Paulo Lemann.",
+          "pt": "Não consegui participar do onboarding presencial porque estava na França, mas fui ao evento anual em São Paulo. A gente pôde conversar diretamente com os fundadores da Fundação: Beto Sicupira, Marcel Telles e Jorge Paulo Lemann.",
+          "fr": "Je n’ai pas pu assister à l’accueil en présentiel parce que j’étais en France, mais j’ai participé à l’événement annuel à São Paulo. Nous avons pu échanger directement avec les fondateurs : Beto Sicupira, Marcel Telles et Jorge Paulo Lemann.",
+          "es": "No pude participar en la bienvenida presencial porque estaba en Francia, pero fui al evento anual en São Paulo. Pudimos conversar directamente con los fundadores: Beto Sicupira, Marcel Telles y Jorge Paulo Lemann."
+        },
+        {
+          "en": "I spent a long time talking with Beto and Marcel. Later, I had lunch with Marcel and other fellows, and the conversation continued. He even tried to connect me with a founder he thought I should meet. I hadn’t imagined being able to have those conversations, sitting around the same table.",
+          "pt": "Passei bastante tempo conversando principalmente com o Beto e o Marcel. Depois almocei com o Marcel e outros bolsistas, e a conversa continuou. Ele chegou a tentar me conectar com uma fundadora com quem achou que faria sentido eu conversar. Eu não imaginava ter acesso a essas trocas, sentada ali na mesma mesa.",
+          "fr": "J’ai longuement parlé avec Beto et Marcel. J’ai ensuite déjeuné avec Marcel et d’autres boursiers, et la conversation s’est poursuivie. Il a même essayé de me mettre en contact avec une fondatrice qu’il pensait utile que je rencontre. Je n’imaginais pas pouvoir avoir ces échanges, assise à la même table.",
+          "es": "Pasé mucho tiempo hablando sobre todo con Beto y Marcel. Después almorcé con Marcel y otros becarios, y seguimos conversando. Incluso intentó ponerme en contacto con una fundadora con quien pensaba que tendría sentido hablar. No imaginaba poder tener esas conversaciones, sentada en la misma mesa."
+        },
+        {
+          "en": "Meeting the other fellows mattered just as much. It was a chance to put faces, voices and stories to that community I had joined from a distance. Little by little, I was learning how to be part of it.",
+          "pt": "Conhecer os outros bolsistas também fez muita diferença. Era a chance de dar rosto, voz e história àquela comunidade da qual eu tinha começado a fazer parte de longe. Aos poucos, eu estava aprendendo a estar ali.",
+          "fr": "Rencontrer les autres boursiers a tout autant compté. Je pouvais enfin associer des visages, des voix et des histoires à cette communauté que j’avais rejointe à distance. Peu à peu, j’apprenais à en faire partie.",
+          "es": "Conocer a los otros becarios también marcó una diferencia. Era la oportunidad de poner caras, voces e historias a esa comunidad a la que me había unido desde lejos. Poco a poco estaba aprendiendo a formar parte de ella."
+        }
+      ],
+      "photos": [
+        "almoco",
+        "evento",
+        "microfone"
+      ],
+      "links": [
+        {
+          "url": "https://www.estudar.org.br/sobre-nos/",
+          "label": {
+            "en": "About Fundação Estudar",
+            "pt": "Sobre a Fundação Estudar",
+            "fr": "À propos de Fundação Estudar",
+            "es": "Sobre Fundação Estudar"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lyfe",
+      "title": {
+        "en": "Lyfe Academy: where I met Verônica",
+        "pt": "Lyfe Academy: onde conheci a Verônica",
+        "fr": "Lyfe Academy : ma rencontre avec Verônica",
+        "es": "Lyfe Academy: donde conocí a Verônica"
+      },
+      "paragraphs": [
+        {
+          "en": "Soon after joining the foundation in 2025, I started receiving the community emails. One of the first opportunities I saw was the selection process for Lyfe Academy, a programme focused on personal and professional development, with mentorship. I applied and joined.",
+          "pt": "Logo depois de entrar na Fundação, em 2025, comecei a receber os e-mails da comunidade. Uma das primeiras oportunidades que apareceu foi o processo seletivo da Lyfe Academy, um programa de desenvolvimento pessoal e profissional, com mentoria. Me inscrevi e entrei.",
+          "fr": "Peu après avoir rejoint la fondation en 2025, j’ai commencé à recevoir les e-mails de la communauté. L’une des premières occasions a été la sélection pour Lyfe Academy, un programme de développement personnel et professionnel avec du mentorat. J’ai postulé et intégré le programme.",
+          "es": "Poco después de entrar en la fundación en 2025, empecé a recibir los correos de la comunidad. Una de las primeras oportunidades fue el proceso de selección de Lyfe Academy, un programa de desarrollo personal y profesional con mentoría. Me inscribí y entré."
+        },
+        {
+          "en": "We spent about three days at a countryside hotel in São Paulo state. I met people from different fields, made friends and kept in touch with the group throughout the year. There were conversations about our futures, but also karaoke and time in the pool. Those moments are part of how I remember the programme.",
+          "pt": "Tivemos um retiro de uns três dias em um hotel fazenda em São Paulo. Conheci gente de várias áreas, fiz amizades e continuei conversando com a turma ao longo do ano. Teve conversa sobre futuro, mas também karaokê e piscina. Esses momentos fazem parte de como eu lembro do programa.",
+          "fr": "Nous avons passé environ trois jours dans un hôtel à la campagne, dans l’État de São Paulo. J’y ai rencontré des personnes de différents domaines, noué des amitiés et gardé le contact avec le groupe au fil de l’année. Il y avait des discussions sur l’avenir, mais aussi du karaoké et des moments à la piscine. Cela fait aussi partie de mes souvenirs du programme.",
+          "es": "Tuvimos un retiro de unos tres días en un hotel rural en São Paulo. Conocí a personas de distintas áreas, hice amigos y seguí hablando con el grupo durante el año. Hubo conversaciones sobre el futuro, pero también karaoke y piscina. Esos momentos forman parte de cómo recuerdo el programa."
+        },
+        {
+          "en": "Lyfe matched me with Verônica Allende Serra as my mentor. She helped me in many ways, and one of our conversations later led to the space panel at South Summit. That story has its own chapter in this diary; this is where it began.",
+          "pt": "Foi a Lyfe que me colocou em contato com a Verônica Allende Serra como minha mentora. Ela me ajudou em vários aspectos, e uma das nossas conversas acabou dando origem ao painel sobre o setor espacial no South Summit. Essa história tem um capítulo próprio aqui no diário; foi aqui que ela começou.",
+          "fr": "Lyfe m’a attribué Verônica Allende Serra comme mentore. Elle m’a aidée sur plusieurs plans, et l’une de nos conversations a ensuite donné naissance à la table ronde sur le spatial au South Summit. Cette histoire a sa propre page dans ce journal ; c’est ici qu’elle a commencé.",
+          "es": "Lyfe me puso en contacto con Verônica Allende Serra como mentora. Me ayudó en muchos aspectos, y una de nuestras conversaciones acabó dando origen al panel sobre el sector espacial en South Summit. Esa historia tiene su propia página en este diario; aquí fue donde empezó."
+        }
+      ],
+      "photos": [
+        "hotel",
+        "karaoke",
+        "piscina"
+      ]
+    },
+    {
+      "id": "limites",
+      "title": {
+        "en": "The part I couldn’t finish",
+        "pt": "A parte que não consegui concluir",
+        "fr": "La partie que je n’ai pas pu terminer",
+        "es": "La parte que no pude terminar"
+      },
+      "paragraphs": [
+        {
+          "en": "I didn’t complete Lyfe Academy. The later part overlapped with CERN and the end of my degree, and I had a very heavy workload. I want to be clear about that when I talk about the programme: I took part, learned a lot and made meaningful connections, but I didn’t finish it.",
+          "pt": "Eu não concluí a Lyfe Academy. A parte final coincidiu com o CERN e a reta final da faculdade, e eu estava com uma carga muito grande. Acho importante contar isso quando falo do programa: participei, aprendi muito e construí relações importantes, mas não cheguei até o fim.",
+          "fr": "Je n’ai pas terminé Lyfe Academy. La dernière partie a coïncidé avec le CERN et la fin de mes études, avec une charge de travail très importante. Je tiens à le préciser : j’ai participé, beaucoup appris et noué des relations importantes, mais je ne suis pas allée jusqu’au bout.",
+          "es": "No completé Lyfe Academy. La parte final coincidió con el CERN y el final de la carrera, y tenía una carga de trabajo muy grande. Quiero dejarlo claro al hablar del programa: participé, aprendí mucho y construí relaciones importantes, pero no llegué hasta el final."
+        },
+        {
+          "en": "That is part of the story too. Being excited about opportunities doesn’t make time unlimited. I can value what I experienced there and be honest about what I was able to take on during that period.",
+          "pt": "Isso também faz parte da história. Estar animada com as oportunidades não faz o tempo ficar infinito. Posso valorizar o que vivi ali e ser honesta sobre o que consegui abraçar naquele período.",
+          "fr": "Cela fait aussi partie du parcours. L’enthousiasme pour les occasions qui se présentent ne rend pas le temps illimité. Je peux apprécier ce que j’y ai vécu tout en étant honnête sur ce que j’ai pu assumer à cette période.",
+          "es": "Eso también forma parte de la historia. Estar entusiasmada con las oportunidades no hace que el tiempo sea infinito. Puedo valorar lo que viví allí y ser honesta sobre lo que pude asumir durante ese período."
+        }
+      ],
+      "photos": [
+        "brindes"
+      ]
+    },
+    {
+      "id": "caminhos",
+      "title": {
+        "en": "The stories that grew from here",
+        "pt": "As histórias que começaram por aqui",
+        "fr": "Les histoires qui ont commencé ici",
+        "es": "Las historias que empezaron aquí"
+      },
+      "paragraphs": [
+        {
+          "en": "Instead of trying to fit everything onto this page, I want to show where these connections led. Some opportunities came directly through the foundation; others grew from an introduction or an experience along the way. Each has its own story.",
+          "pt": "Em vez de tentar colocar tudo nesta página, quero mostrar aonde essas conexões foram levando. Algumas oportunidades vieram diretamente da Fundação; outras nasceram de uma apresentação ou de uma experiência no caminho. Cada uma tem sua história.",
+          "fr": "Plutôt que de tout raconter sur cette page, j’ai envie de montrer où ces liens m’ont menée. Certaines occasions sont venues directement de la fondation ; d’autres sont nées d’une présentation ou d’une expérience en chemin. Chacune a son histoire.",
+          "es": "En lugar de intentar meterlo todo en esta página, quiero mostrar adónde fueron llevando estas conexiones. Algunas oportunidades llegaron directamente de la fundación; otras nacieron de una presentación o de una experiencia en el camino. Cada una tiene su historia."
+        }
+      ],
+      "photos": [],
+      "stories": [
+        {
+          "slug": "premio-na-pratica",
+          "title": {
+            "en": "The award I almost didn’t apply for",
+            "pt": "O prêmio em que quase não me inscrevi",
+            "fr": "Le prix auquel j’ai failli ne pas postuler",
+            "es": "El premio al que casi no me presenté"
+          },
+          "description": {
+            "en": "I heard about Na Prática through the foundation. The application led to São Paulo, friendships and an award.",
+            "pt": "Conheci o prêmio Na Prática pela Fundação. A candidatura me levou a São Paulo, a amizades e à premiação.",
+            "fr": "J’ai découvert le prix Na Prática grâce à la fondation. La candidature m’a menée à São Paulo, à des amitiés et au prix.",
+            "es": "Conocí el premio Na Prática por la fundación. La candidatura me llevó a São Paulo, a amistades y al premio."
+          }
+        },
+        {
+          "slug": "china",
+          "title": {
+            "en": "China, through the Na Prática award",
+            "pt": "A China, pelo prêmio Na Prática",
+            "fr": "La Chine, grâce au prix Na Prática",
+            "es": "China, a través del premio Na Prática"
+          },
+          "description": {
+            "en": "The immersion was part of the prize. A week of visits and questions that changed the way I listened.",
+            "pt": "A imersão fez parte da premiação. Uma semana de visitas e perguntas que mudou meu jeito de escutar.",
+            "fr": "Le séjour faisait partie du prix. Une semaine de visites et de questions qui a changé ma façon d’écouter.",
+            "es": "La inmersión fue parte del premio. Una semana de visitas y preguntas que cambió mi forma de escuchar."
+          }
+        },
+        {
+          "slug": "estados-unidos",
+          "title": {
+            "en": "My first time in the United States",
+            "pt": "Minha primeira vez nos Estados Unidos",
+            "fr": "Mon premier voyage aux États-Unis",
+            "es": "Mi primera vez en Estados Unidos"
+          },
+          "description": {
+            "en": "Fundação Estudar funded my participation in Brazil at Silicon Valley. Afterwards, I paid for my trip to Brasil Project in Boston.",
+            "pt": "A Fundação Estudar financiou minha participação no Brazil at Silicon Valley. Depois, paguei minha ida ao Brasil Project, em Boston.",
+            "fr": "Fundação Estudar a financé ma participation à Brazil at Silicon Valley. J’ai ensuite payé mon voyage à Brasil Project, à Boston.",
+            "es": "Fundação Estudar financió mi participación en Brazil at Silicon Valley. Después pagué mi viaje a Brasil Project, en Boston."
+          }
+        },
+        {
+          "slug": "south-summit",
+          "title": {
+            "en": "From mentorship to a space panel",
+            "pt": "Da mentoria a um painel sobre o espaço",
+            "fr": "Du mentorat à une table ronde sur le spatial",
+            "es": "De la mentoría a un panel sobre el espacio"
+          },
+          "description": {
+            "en": "I met Verônica through Lyfe Academy. A conversation with her became the opportunity to organise a panel at South Summit.",
+            "pt": "Conheci a Verônica pela Lyfe Academy. Uma conversa com ela virou a oportunidade de organizar um painel no South Summit.",
+            "fr": "J’ai rencontré Verônica grâce à Lyfe Academy. Une conversation avec elle m’a donné l’occasion d’organiser une table ronde au South Summit.",
+            "es": "Conocí a Verônica a través de Lyfe Academy. Una conversación con ella se convirtió en la oportunidad de organizar un panel en South Summit."
+          }
+        }
+      ]
+    }
+  ],
+  "closing": {
+    "en": "I applied because I needed a scholarship. Today, when I think about Fundação Estudar, I also think about the people I can reach out to and the things I now allow myself to try. I don’t think I needed to arrive with my whole future worked out. Taking the application seriously helped me understand myself better; being part of the community keeps expanding the questions I ask about what comes next.",
+    "pt": "Me inscrevi porque precisava de uma bolsa. Hoje, quando penso na Fundação Estudar, penso também nas pessoas com quem posso contar e nas coisas que passei a me permitir tentar. Não acho que precisava chegar com o futuro inteiro resolvido. Levar a candidatura a sério me ajudou a me entender melhor; fazer parte da comunidade continua ampliando as perguntas que faço sobre o que vem depois.",
+    "fr": "J’ai postulé parce que j’avais besoin d’une bourse. Aujourd’hui, je pense aussi aux personnes sur qui je peux compter et à ce que je m’autorise désormais à tenter. Je ne crois pas qu’il fallait arriver avec tout mon avenir déjà défini. Prendre la candidature au sérieux m’a aidée à mieux me comprendre ; faire partie de cette communauté continue d’élargir les questions que je me pose sur la suite.",
+    "es": "Me inscribí porque necesitaba una beca. Hoy también pienso en las personas con las que puedo contar y en las cosas que empecé a permitirme intentar. No creo que tuviera que llegar con todo mi futuro resuelto. Tomarme la candidatura en serio me ayudó a entenderme mejor; formar parte de la comunidad sigue ampliando las preguntas que me hago sobre lo que viene después."
+  },
+  "photos": {
+    "entrevista": {
+      "file": "portifolio/fundacao estudar/entrevista tecnica.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "The technical interview reminder on my watch, while I was in France.",
+        "pt": "O lembrete da entrevista técnica no relógio, enquanto eu estava na França.",
+        "fr": "Le rappel de l’entretien technique sur ma montre, quand j’étais en France.",
+        "es": "El recordatorio de la entrevista técnica en mi reloj, mientras estaba en Francia."
+      }
+    },
+    "presentes": {
+      "file": "portifolio/fundacao estudar/presentes fundacao.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Materials and gifts from Fundação Estudar.",
+        "pt": "Materiais e presentes da Fundação Estudar.",
+        "fr": "Supports et cadeaux de Fundação Estudar.",
+        "es": "Materiales y regalos de Fundação Estudar."
+      }
+    },
+    "almoco": {
+      "file": "portifolio/fundacao estudar/almoco marcel telles.jpeg",
+      "width": 1280,
+      "height": 854,
+      "caption": {
+        "en": "At lunch with Marcel Telles and other fellows.",
+        "pt": "No almoço com Marcel Telles e outros bolsistas.",
+        "fr": "Au déjeuner avec Marcel Telles et d’autres boursiers.",
+        "es": "En el almuerzo con Marcel Telles y otros becarios."
+      }
+    },
+    "evento": {
+      "file": "portifolio/fundacao estudar/evento anual.jpeg",
+      "width": 1280,
+      "height": 854,
+      "caption": {
+        "en": "One of the conversations at the annual event.",
+        "pt": "Uma das conversas no evento anual.",
+        "fr": "Une conversation lors de l’événement annuel.",
+        "es": "Una de las conversaciones en el evento anual."
+      }
+    },
+    "microfone": {
+      "file": "portifolio/fundacao estudar/evento anual2.jpeg",
+      "width": 854,
+      "height": 1280,
+      "caption": {
+        "en": "Taking part in the annual event.",
+        "pt": "Participando do evento anual.",
+        "fr": "Pendant l’événement annuel.",
+        "es": "Participando en el evento anual."
+      }
+    },
+    "hotel": {
+      "file": "portifolio/fundacao estudar/hotel fazenda lyfe.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Sunset at the hotel during the Lyfe Academy retreat.",
+        "pt": "O fim de tarde no hotel fazenda durante o retiro da Lyfe Academy.",
+        "fr": "Le coucher du soleil à l’hôtel pendant le séjour Lyfe Academy.",
+        "es": "El atardecer en el hotel durante el retiro de Lyfe Academy."
+      }
+    },
+    "karaoke": {
+      "file": "portifolio/fundacao estudar/karaoke lyfe.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "There was karaoke too.",
+        "pt": "Também teve karaokê.",
+        "fr": "Il y avait aussi du karaoké.",
+        "es": "También hubo karaoke."
+      }
+    },
+    "piscina": {
+      "file": "portifolio/fundacao estudar/pscina lyfe.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "With the group in the pool during the retreat.",
+        "pt": "Com a turma na piscina durante o retiro.",
+        "fr": "Avec le groupe à la piscine pendant le séjour.",
+        "es": "Con el grupo en la piscina durante el retiro."
+      }
+    },
+    "brindes": {
+      "file": "portifolio/fundacao estudar/brindes lyfe.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "The materials I received at Lyfe Academy.",
+        "pt": "Os materiais que recebi na Lyfe Academy.",
+        "fr": "Les supports reçus à Lyfe Academy.",
+        "es": "Los materiales que recibí en Lyfe Academy."
+      }
+    }
+  }
+}

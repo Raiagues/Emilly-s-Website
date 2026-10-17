@@ -19,10 +19,10 @@
   },
   "life-academy": {
     "name": {
-      "en": "Life Academy",
-      "pt": "Life Academy",
-      "fr": "Life Academy",
-      "es": "Life Academy"
+      "en": "Lyfe Academy",
+      "pt": "Lyfe Academy",
+      "fr": "Lyfe Academy",
+      "es": "Lyfe Academy"
     },
     "kind": "institution"
   },
@@ -178,5 +178,32 @@
       "es": "WhalesBot"
     },
     "kind": "institution"
+  },
+  "marcel-telles": {
+    "name": {
+      "en": "Marcel Telles",
+      "pt": "Marcel Telles",
+      "fr": "Marcel Telles",
+      "es": "Marcel Telles"
+    },
+    "kind": "person"
+  },
+  "beto-sicupira": {
+    "name": {
+      "en": "Beto Sicupira",
+      "pt": "Beto Sicupira",
+      "fr": "Beto Sicupira",
+      "es": "Beto Sicupira"
+    },
+    "kind": "person"
+  },
+  "jorge-paulo-lemann": {
+    "name": {
+      "en": "Jorge Paulo Lemann",
+      "pt": "Jorge Paulo Lemann",
+      "fr": "Jorge Paulo Lemann",
+      "es": "Jorge Paulo Lemann"
+    },
+    "kind": "person"
   }
 }

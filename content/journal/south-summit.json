@@ -74,10 +74,10 @@
       },
       "paragraphs": [
         {
-          "en": "I met Verônica Allende Serra through Life Academy, and she has helped me in many parts of my journey. When I told her what I was looking for, she said she was on the South Summit board and would talk to the organisers about the possibility of me putting together a panel on the space sector.",
-          "pt": "Conheci a Verônica Allende Serra pela Life Academy, e ela me ajudou muito em vários momentos da minha trajetória. Quando contei o que estava buscando, ela disse que fazia parte do conselho do South Summit e que conversaria com os organizadores sobre a possibilidade de eu montar um painel sobre o setor espacial.",
-          "fr": "J’ai rencontré Verônica Allende Serra grâce à Life Academy, et elle m’a beaucoup aidée à différents moments de mon parcours. Quand je lui ai expliqué ce que je cherchais, elle m’a dit qu’elle faisait partie du conseil du South Summit et qu’elle parlerait aux organisateurs de la possibilité de me confier une table ronde sur le secteur spatial.",
-          "es": "Conocí a Verônica Allende Serra a través de Life Academy y me ha ayudado mucho en distintos momentos de mi trayectoria. Cuando le conté lo que buscaba, me dijo que formaba parte del consejo de South Summit y que hablaría con los organizadores sobre la posibilidad de que yo preparara un panel sobre el sector espacial."
+          "en": "I met Verônica Allende Serra through Lyfe Academy, and she has helped me in many parts of my journey. When I told her what I was looking for, she said she was on the South Summit board and would talk to the organisers about the possibility of me putting together a panel on the space sector.",
+          "pt": "Conheci a Verônica Allende Serra pela Lyfe Academy, e ela me ajudou muito em vários momentos da minha trajetória. Quando contei o que estava buscando, ela disse que fazia parte do conselho do South Summit e que conversaria com os organizadores sobre a possibilidade de eu montar um painel sobre o setor espacial.",
+          "fr": "J’ai rencontré Verônica Allende Serra grâce à Lyfe Academy, et elle m’a beaucoup aidée à différents moments de mon parcours. Quand je lui ai expliqué ce que je cherchais, elle m’a dit qu’elle faisait partie du conseil du South Summit et qu’elle parlerait aux organisateurs de la possibilité de me confier une table ronde sur le secteur spatial.",
+          "es": "Conocí a Verônica Allende Serra a través de Lyfe Academy y me ha ayudado mucho en distintos momentos de mi trayectoria. Cuando le conté lo que buscaba, me dijo que formaba parte del consejo de South Summit y que hablaría con los organizadores sobre la posibilidad de que yo preparara un panel sobre el sector espacial."
         },
         {
           "en": "The 2026 event took place from March 25 to 27 at Cais Mauá, in Porto Alegre. For me, the work started well before those three days.",
@@ -97,6 +97,24 @@
             "pt": "South Summit Brazil · edição de 2026",
             "fr": "South Summit Brazil · édition 2026",
             "es": "South Summit Brazil · edición de 2026"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "slug": "fundacao-estudar",
+          "section": "lyfe",
+          "title": {
+            "en": "How I met Verônica",
+            "pt": "Como conheci a Verônica",
+            "fr": "Comment j’ai rencontré Verônica",
+            "es": "Cómo conocí a Verônica"
+          },
+          "description": {
+            "en": "The Fundação Estudar application, Lyfe Academy and the beginning of our mentorship.",
+            "pt": "A candidatura à Fundação Estudar, a Lyfe Academy e o começo da mentoria.",
+            "fr": "La candidature à Fundação Estudar, Lyfe Academy et le début du mentorat.",
+            "es": "La candidatura a Fundação Estudar, Lyfe Academy y el comienzo de la mentoría."
           }
         }
       ]

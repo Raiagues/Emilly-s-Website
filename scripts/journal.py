@@ -27,8 +27,8 @@ def load_posts(root):
         date.fromisoformat(post['date'])
         for event in post.get('timeline', []):
             value = event['date']
-            assert re.fullmatch(r'\d{4}-\d{2}(?:-\d{2})?', value), (file, value)
-            date.fromisoformat(value + '-01' if len(value) == 7 else value)
+            assert re.fullmatch(r'\d{4}(?:-\d{2}(?:-\d{2})?)?', value), (file, value)
+            date.fromisoformat(value + {4: '-01-01', 7: '-01', 10: ''}[len(value)])
             assert event['title'].get('en') and event['label'].get('en')
         ids = [s['id'] for s in post['sections']]
         assert len(ids) == len(set(ids)) and all(re.fullmatch(r'[a-z][a-z0-9-]*', i) for i in ids)
@@ -52,6 +52,13 @@ def load_posts(root):
             assert asset.is_relative_to((root / 'portifolio').resolve()) and asset.is_file(), asset
         posts.append(post)
     assert len({p['slug'] for p in posts}) == len(posts), 'Duplicate journal slug'
+    by_slug = {post['slug']: post for post in posts}
+    for post in posts:
+        for section in post['sections']:
+            for destination in section.get('stories', []):
+                assert destination['slug'] in by_slug, destination
+                assert destination['title'].get('en') and destination['description'].get('en')
+                assert not destination.get('section') or destination['section'] in {s['id'] for s in by_slug[destination['slug']]['sections']}
     return sorted(posts, key=lambda p: min((e['date'] for e in p.get('timeline', [])), default=p['date']))
 
 
@@ -142,11 +149,17 @@ def story(post, lang, current, link, ui, posts, entities):
             document = post['photos'][key]
             documents += f'<figure class="journal-document"><a href="{relative(current, document["file"])}" target="_blank" rel="noopener noreferrer">{photo_html(document, lang, current)}</a><figcaption>{E(text(document["caption"], lang))}</figcaption></figure>'
         sources = ''.join(f'<p><a class="text-link" href="{E(source["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{E(text(source["label"], lang))} ↗</a></p>' for source in section.get('links', []))
+        paths = ''
+        for destination in section.get('stories', []):
+            target = f'journal/{destination["slug"]}.html'
+            fragment = '#' + destination['section'] if destination.get('section') else ''
+            paths += f'<a class="journal-path" href="{link(target)}{fragment}"><h3>{E(text(destination["title"], lang))} <span aria-hidden="true">↗</span></h3><p>{E(text(destination["description"], lang))}</p></a>'
+        paths = f'<div class="journal-paths">{paths}</div>' if paths else ''
         paired = bool(photos) and not documents
         lead = photos[0] if paired else ''
         remaining = photos[1:] if paired else photos
         gallery = f'<div class="journal-gallery">{"".join(remaining)}</div>' if remaining else ''
-        sections.append(f'''<section id="{section['id']}" class="journal-chapter {'chapter-paired' if paired else 'chapter-text'}"><div class="chapter-layout"><div class="journal-prose"><span class="chapter-number" aria-hidden="true">{number:02d}</span><h2>{E(text(section['title'], lang))}</h2>{paragraphs(section['paragraphs'])}{sources}{resource}{documents}{letter}</div>{f'<div class="chapter-image">{lead}</div>' if lead else ''}</div>{gallery}</section>''')
+        sections.append(f'''<section id="{section['id']}" class="journal-chapter {'chapter-paired' if paired else 'chapter-text'}"><div class="chapter-layout"><div class="journal-prose"><span class="chapter-number" aria-hidden="true">{number:02d}</span><h2>{E(text(section['title'], lang))}</h2>{paragraphs(section['paragraphs'])}{sources}{resource}{documents}{letter}</div>{f'<div class="chapter-image">{lead}</div>' if lead else ''}</div>{gallery}{paths}</section>''')
     return f'''<main id="main" class="container journal-page"><a class="text-link journal-back" href="{link('index.html')}#journal">← {t('back')}</a>
 <article><div class="journal-opening"><header class="journal-heading"><p class="journal-meta">{E(text(post.get('series', ''), lang))} · {E(text(post['period'], lang))}</p><h1>{E(text(post['title'], lang))}</h1><p class="journal-deck">{E(text(post['subtitle'], lang))}</p><p class="journal-byline">Emilly Rodrigues <span aria-hidden="true">/</span> {t('photos_credit')}</p></header>
 {cover(post, lang, current)}</div>

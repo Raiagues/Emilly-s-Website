@@ -149,3 +149,22 @@ Conexões: `na-pratica` liga prêmio e China; `fundacao-estudar` liga prêmio e 
 - As conclusões e os novos parágrafos de reflexão em CERN, China, Estados Unidos, South Summit e prêmio Na Prática são elaboração editorial em primeira pessoa, autorizada pela autora e baseada nos relatos desta conversa. Não são citações literais nem acrescentam novos acontecimentos ou credenciais.
 - A história da Visiona preserva os parágrafos e a conclusão anteriores. A autora acrescentou as amizades da casa onde se hospedou, com pessoas de outras idades e áreas, o kart na chuva e os passeios em parques. Esses amigos são descritos separadamente dos colegas da Visiona.
 - `portifolio/visiona/amigos-kart.png`, `kart-chuva.png` e `parque-amigos.png` são cópias integrais das três imagens anexadas pela autora nesta revisão. Legendas nos quatro idiomas, sem identificar pessoas cujo nome não foi fornecido. A galeria da Visiona passa de seis para nove fotos.
+
+## Fundação Estudar e Lyfe Academy — 17/10/2026
+
+A história `fundacao-estudar.json` segue o relato da autora nesta conversa: candidatura recusada em 2022 antes da entrevista; novo processo aproximadamente de fevereiro a agosto de 2025; necessidade de bolsa para os estudos; preparação em paralelo à faculdade; banca final remota na França; ligação de aprovação após a meia-noite; perguntas feitas aos entrevistadores; comunidade, evento anual e almoço com outros bolsistas e Marcel Telles. A frase do entrevistador sobre não ver desvantagens foi parafraseada como lembrança pessoal, sem virar uma garantia sobre o programa.
+
+A primeira tentativa aparece na linha do tempo apenas como **2022**, sem inventar mês ou dia. A aprovação aparece como **agosto de 2025**, conforme a autora. Não foi atribuída data exata ao encontro anual ou ao retiro da Lyfe.
+
+A grafia **Lyfe Academy** foi confirmada na foto `brindes lyfe.jpeg` e em [publicação de Pedro Earp sobre o programa](https://pt.linkedin.com/posts/pedroearp_depois-de-uma-ano-de-muito-aprendizado-hoje-activity-7494703959568302080-i06b). A referência anterior à “Life Academy” no South Summit e no nome exibido da entidade foi corrigida, preservando o identificador já publicado `life-academy`. A autora relata seleção para o programa, retiro de cerca de três dias em São Paulo, amizades, mentoria de Verônica Allende Serra e **não conclusão** devido à sobreposição com CERN e o final da faculdade. O relato não apresenta certificado nem conclusão.
+
+Fontes públicas usadas para nomes e contexto, não para comprovar encontros pessoais:
+
+- [Fundação Estudar — Sobre nós](https://www.estudar.org.br/sobre-nos/): nomes dos fundadores Beto Sicupira, Marcel Telles e Jorge Paulo Lemann. A experiência de conversar e almoçar com eles vem da autora e da legenda fornecida.
+- [Fellows da turma de 2025](https://www.estudarfora.org.br/fellows-fundacao-estudar-2025/): identificação da autora na seleção, já utilizada na seção Conquistas.
+
+Não foi identificada de forma independente a empresa mencionada na lembrança sobre SpaceX; o texto preserva apenas a tentativa de conexão com uma fundadora, sem nomear a empresa, afirmar aquisição, investimento ou contato efetivamente realizado.
+
+As nove fotos de `portifolio/fundacao estudar/` foram fornecidas pela autora e inspecionadas antes da publicação. As legendas se limitam ao relato e ao que aparece nas imagens. Não foi inferida a identidade de outras pessoas nas fotos.
+
+As relações têm contexto explícito: Fundação → divulgação do prêmio; prêmio → China; Fundação → financiamento da participação no BSV; Brasil Project permanece autofinanciado; Fundação → descoberta da Lyfe; Lyfe → mentoria da Verônica → painel no South Summit. Os quatro caminhos do último capítulo e o link direto do South Summit para `#lyfe` ajudam a percorrer essas histórias. As novas reflexões são elaboração editorial em primeira pessoa a partir das memórias da autora, com versões em EN/PT/FR/ES.

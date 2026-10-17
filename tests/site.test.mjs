@@ -272,7 +272,7 @@ test('journal remains readable and photos open without JavaScript', async () => 
 });
 
 test('journal pages have no automated WCAG A/AA violations', async () => {
-  for(const path of ['journal/cern.html','journal/estados-unidos.html','journal/visiona.html','journal/south-summit.html','journal/china.html','journal/premio-na-pratica.html','journal/connections.html']) {
+  for(const path of ['journal/cern.html','journal/estados-unidos.html','journal/visiona.html','journal/south-summit.html','journal/china.html','journal/premio-na-pratica.html','journal/fundacao-estudar.html','journal/connections.html']) {
     for(const prefix of ['','pt/','fr/','es/']) {
       const {page}=await visit(prefix+path,{viewport:{width:390,height:844}});
       const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -302,7 +302,7 @@ test('new pages load the restored layout even with a previous stylesheet cached'
 
 test('US diary is reachable from the feed and award, with translations and all 15 photos', async () => {
   const {page,errors}=await visit('pt/');
-  await expect(page.locator('.journal-entry-link')).toHaveCount(6);
+  await expect(page.locator('.journal-entry-link')).toHaveCount(7);
   await page.locator('.journal-entry-link[href="journal/estados-unidos.html"]').click();
   await expect(page.locator('h1')).toHaveText('Minha primeira vez nos Estados Unidos');
   await expect(page.locator('#visa')).toContainText('Anderson');
@@ -381,8 +381,8 @@ test('Visiona diary links both ways to experience and loads its nine photos in e
 
 test('timeline follows experience dates and links directly to the two US trip stages without JavaScript', async () => {
   const {page}=await visit('pt/',{javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});
-  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2025-10','2025-11-03','2026-01-25','2026-03-25','2026-04-06','2026-04-10','2026-07']);
-  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/visiona.html','journal/premio-na-pratica.html','journal/china.html','journal/south-summit.html','journal/estados-unidos.html','journal/cern.html']);
+  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2022','2025-08','2025-10','2025-11-03','2026-01-25','2026-03-25','2026-04-06','2026-04-10','2026-07']);
+  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/fundacao-estudar.html','journal/visiona.html','journal/premio-na-pratica.html','journal/china.html','journal/south-summit.html','journal/estados-unidos.html','journal/cern.html']);
   await page.locator('.journal-timeline a[href="journal/estados-unidos.html#boston"]').click();
   await expect(page.locator('#boston h2')).toBeInViewport();
   await page.locator('.journal-back').click();
@@ -396,8 +396,8 @@ test('people and institutions connect stories in all languages without fabricate
     const {page,errors}=await visit(prefix+'journal/south-summit.html',{viewport:{width:390,height:844}});
     await page.locator('.journal-connections a[href="connections.html#visiona"]').click();
     await expect(page.locator('#visiona li')).toHaveCount(2);
-    await expect(page.locator('#veronica li')).toHaveCount(1);
-    await expect(page.locator('#fundacao-estudar li')).toHaveCount(2);
+    await expect(page.locator('#veronica li')).toHaveCount(2);
+    await expect(page.locator('#fundacao-estudar li')).toHaveCount(3);
     await page.locator('#visiona a[href="visiona.html"]').click();
     await expect(page.locator('.journal-connections a[href="south-summit.html"]')).toHaveCount(1);
     await page.locator('.journal-connections a[href="south-summit.html"]').click();
@@ -543,4 +543,40 @@ test('homepage connects the featured work, illustrated projects, personal story 
   await expect.poll(()=>submitted?.get('subject')).toBe('Portfolio test');
   assert.deepEqual(errors,[]);
   await page.close();
+});
+
+test('Fundação Estudar joins the award and story paths, with nine photos and honest Lyfe participation in every language', async () => {
+  const markers={en:'I didn’t complete Lyfe Academy',pt:'Eu não concluí a Lyfe Academy',fr:'Je n’ai pas terminé Lyfe Academy',es:'No completé Lyfe Academy'};
+  for(const lang of ['en','pt','fr','es']) {
+    const prefix=lang==='en'?'':lang+'/';
+    const {page,errors}=await visit(prefix+'recognition.html',{viewport:{width:390,height:844},reducedMotion:'reduce'});
+    await page.locator('.award a[href="journal/fundacao-estudar.html"]').click();
+    await expect(page.locator('.journal-chapter')).toHaveCount(8);
+    await expect(page.locator('[data-gallery]')).toHaveCount(9);
+    await expect(page.locator('#limites')).toContainText(markers[lang]);
+    await expect(page.locator('#primeira-tentativa')).toContainText('2022');
+    for(const width of [320,390,768,1440]) {
+      await page.setViewportSize({width,height:844});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang} foundation at ${width}`);
+    }
+    for(const img of await page.locator('[data-gallery] img').all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect.poll(()=>img.evaluate(i=>i.complete&&i.naturalWidth>0)).toBeTruthy();
+    }
+    for(const slug of ['premio-na-pratica','china','estados-unidos','south-summit']) {
+      await page.locator(`#caminhos a[href="${slug}.html"]`).click();
+      assert.ok(page.url().endsWith(`journal/${slug}.html`));
+      await page.locator('.journal-connections a[href="fundacao-estudar.html"]').click();
+    }
+    await page.locator('#caminhos a[href="south-summit.html"]').click();
+    await page.locator('.journal-path[href="fundacao-estudar.html#lyfe"]').click();
+    await expect(page.locator('#lyfe h2')).toBeInViewport();
+    assert.ok(await page.locator('#lyfe h2').evaluate(el=>el.getBoundingClientRect().top)>=await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().bottom));
+    await page.locator('[data-gallery]').last().click();
+    await expect(page.locator('.photo-dialog')).toBeVisible();
+    await expect(page.locator('#photo-counter')).toContainText('9');
+    await page.keyboard.press('Escape');
+    assert.deepEqual(errors,[]);
+    await page.close();
+  }
 });
