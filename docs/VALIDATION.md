@@ -1,10 +1,10 @@
-# Validação local — diário do CERN, 17/10/2026
+# Validação local — identidade original restaurada, 17/10/2026
 
 - `python3 scripts/build.py`: concluído; seis páginas principais, uma história do diário, 20 projetos e 6 experiências em quatro idiomas.
 - `python3 scripts/check.py`: 135 HTMLs verificados; links, âncoras e imagens locais íntegros, idioma e título principal presentes, formulário com o e-mail confirmado, pacote de publicação sem ferramentas ou fontes editoriais.
 - `node --check src/script.js`, `node --check src/projects.js` e `node --check src/journal.js`: sem erros de sintaxe.
 - `git diff --check`: sem erros de whitespace.
-- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **14 testes passaram, 0 falharam**.
+- `npm test`, usando o Chromium disponível via `BROWSER_EXECUTABLE`: **14 testes aprovados**; a auditoria de acessibilidade foi repetida com sucesso após o ajuste de contraste na seção de imprensa.
 
 Os testes cobrem:
 

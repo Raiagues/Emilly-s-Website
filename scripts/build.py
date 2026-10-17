@@ -59,7 +59,7 @@ def layout(path, lang, title, description, body, active='home'):
 <html lang="{lang}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbfcfe"><meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f4f1e9"><meta name="color-scheme" content="light">
   <title>{E(title)} — Emilly Rodrigues</title><meta name="description" content="{E(description, quote=True)}">
   <link rel="icon" href="{r('img/favicon.svg')}" type="image/svg+xml">
   <link rel="canonical" href="{SITE_URL}/{current}">{alternates}<link rel="alternate" hreflang="x-default" href="{SITE_URL}/{path}">
@@ -74,7 +74,7 @@ def layout(path, lang, title, description, body, active='home'):
 <body id="top" data-page="{active}">
 <a class="skip-link" href="#main">{t('skip')}</a>
 <header class="site-header"><div class="header-inner">
-  <a class="wordmark" href="{href(current, 'index.html', lang)}">Emilly<span> Rodrigues</span><b aria-hidden="true">/</b></a>
+  <a class="wordmark" href="{href(current, 'index.html', lang)}"><img src="{r('img/favicon.svg')}" width="34" height="34" alt="">emilly rodrigues<span class="wordmark-dot" aria-hidden="true">.</span></a>
   <nav id="main-nav" aria-label="{t('menu')}">{nav}</nav>
   <div class="languages" role="group" aria-label="{t('language')}">{languages}</div>
 </div></header>
@@ -89,7 +89,8 @@ def project_row(p, lang, current, filterable=False, featured=False):
     title = p['title'][lang]
     search = ' '.join([title, p['summary'][lang], p['place'], *p['tech'], *[SKILLS[k][lang] for k in p['skills']]])
     attrs = f'data-project data-category="{p["category"]}" data-search="{E(search, quote=True)}"' if filterable else ''
-    media = f'<img src="{relative(current, MEDIA[p["id"]])}" alt="" width="640" height="400" loading="lazy">' if p['id'] in MEDIA else ''
+    preview = MEDIA.get(p["id"], f'img/illustrations/{p["art"]}.svg')
+    media = f'<img src="{relative(current, preview)}" alt="" width="800" height="500" loading="lazy">'
     return f'''<article class="project-row {'featured-row' if featured else ''}" {attrs} id="{p['id']}">
 <a class="project-link" href="{href(current, detail(p), lang)}" {'data-result-link' if filterable else ''}>
 {f'<div class="project-thumb">{media}</div>' if media else ''}
@@ -106,7 +107,7 @@ def home(lang):
     jt = lambda x: E(J['text'](JUI[x], lang))
     link = lambda x: href(current, x, lang)
     body = f'''<main id="main" class="container journal-home">
-<header class="diary-intro"><div><p class="role-label">Emilly Rodrigues / {jt('home')}</p><h1>{jt('intro')}</h1><p>{jt('bio')}</p><a class="text-link" href="{link('about.html')}">{t('more_about')} →</a></div><img src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718"></header>
+<section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> {t('intro')}</p><h1 id="hero-title">{t('hero')}</h1><p class="discipline">{t('discipline')}</p><p class="hero-description">{jt('bio')}</p><div class="hero-actions"><a class="button button-primary" href="#journal">{jt('home')} <span aria-hidden="true">↓</span></a><a class="text-link" href="{link('projects.html')}">{t('explore')} →</a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↗</a></div></div><div class="hero-visual"><div class="orbit-art" aria-hidden="true"><div class="planet"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbital-point point-one"></span><span class="orbital-point point-two"></span><span class="hero-star">✳</span><span class="coordinates">BR → FR → CH</span></div><img class="portrait" src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718" fetchpriority="high"><div class="portrait-note"><span aria-hidden="true">↗</span><p>{t('orbit_note')}</p></div><span class="visual-caption">AEROSPACE / EMBEDDED / HUMAN</span></div></section>
 {J['feed'](POSTS, lang, current, link, JUI)}
 <section class="journal-work" id="projects"><div><h2>{jt('work')}</h2><p>{jt('work_body')}</p></div><div class="journal-work-links"><a class="button button-primary" href="{link('projects.html')}">{t('all_projects')} →</a><a class="button button-soft" href="{link('experience.html')}" id="experience">{t('experience')} →</a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↓</a></div></section>
 <div class="journal-footlinks"><a class="text-link" id="about-me" href="{link('about.html')}">{t('about')} →</a><a class="text-link" id="recognition" href="{link('recognition.html')}">{t('awards_title')} →</a><a class="text-link" id="contact" href="{link('contact.html')}">{t('contact')} →</a></div></main>'''

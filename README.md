@@ -2,7 +2,7 @@
 
 Diário pessoal e portfólio de engenharia aeroespacial, sistemas embarcados e divulgação científica. Inglês por padrão, com versões completas em português, francês e espanhol.
 
-20 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, links para demonstrações em vídeo e contato por e-mail. A identidade combina seu retrato, tipografia direta, branco, azul intenso e verde-lima, com botões sem bordas.
+20 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, links para demonstrações em vídeo e contato por e-mail. A identidade original foi restaurada: fundo creme, azul-petróleo, detalhes terracota, títulos com serifa e o retrato com elementos de órbita. Os botões continuam sem bordas. A navegação organizada e as histórias do diário foram mantidas.
 
 A página inicial abre o diário, com histórias em primeira pessoa e fotos pessoais. A primeira entrada reúne o CERN openlab: trabalho ligado ao ATLAS, visitas, aulas, viagens, trilhas e amigos.
 
@@ -122,7 +122,7 @@ A auditoria automática não substitui avaliação manual por pessoas com defici
 
 - `img/me.png`: retrato original fornecido no repositório.
 - `portifolio/cern/`: 16 fotos do álbum pessoal e o relatório fornecidos pela proprietária, usados na história do CERN.
-- `img/illustrations/`: ilustrações conceituais da versão anterior, preservadas no repositório. A interface atual não as utiliza.
+- `img/illustrations/`: ilustrações conceituais da versão anterior, preservadas no repositório. O catálogo de projetos volta a usar essas ilustrações como capas; as fotos do diário são as imagens pessoais fornecidas.
 - As páginas técnicas dão prioridade ao conteúdo e aos links de demonstrações. Os vídeos externos não forneceram miniaturas públicas acessíveis; não foram substituídos por imagens que poderiam parecer fotografias dos projetos.
 - Nenhuma imagem externa, biblioteca de ícones ou fonte remota é necessária em tempo de execução.
 - Os 18 projetos antigos foram preservados e atualizados, com dois novos projetos e três novas experiências profissionais.
