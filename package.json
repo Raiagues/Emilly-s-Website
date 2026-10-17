@@ -1,0 +1,13 @@
+{
+  "name": "emilly-rodrigues-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Multilingual aerospace and embedded systems portfolio",
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "dev": "python3 -m http.server 8000 --bind 127.0.0.1",
+    "check": "python3 scripts/check.py",
+    "test": "node --test tests/site.test.mjs"
+  },
+  "devDependencies": {"@playwright/test": "1.61.1", "@axe-core/playwright": "4.11.1"}
+}

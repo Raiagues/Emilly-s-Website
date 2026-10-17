@@ -1,0 +1,44 @@
+name: Publish portfolio to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Generate site
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python3 scripts/build.py
+      - name: Check pages and local links
+        run: python3 scripts/check.py
+      - name: Upload web files
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
