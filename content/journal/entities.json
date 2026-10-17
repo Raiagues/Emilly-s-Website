@@ -106,5 +106,77 @@
       "es": "Marina Sirotsky"
     },
     "kind": "person"
+  },
+  "na-pratica": {
+    "name": {
+      "en": "Na Prática",
+      "pt": "Na Prática",
+      "fr": "Na Prática",
+      "es": "Na Prática"
+    },
+    "kind": "institution"
+  },
+  "fgci": {
+    "name": {
+      "en": "FGCI",
+      "pt": "FGCI",
+      "fr": "FGCI",
+      "es": "FGCI"
+    },
+    "kind": "institution"
+  },
+  "naryane": {
+    "name": {
+      "en": "Naryane Ribeiro Medeiros",
+      "pt": "Naryane Ribeiro Medeiros",
+      "fr": "Naryane Ribeiro Medeiros",
+      "es": "Naryane Ribeiro Medeiros"
+    },
+    "kind": "person"
+  },
+  "spacesail": {
+    "name": {
+      "en": "SpaceSail",
+      "pt": "SpaceSail",
+      "fr": "SpaceSail",
+      "es": "SpaceSail"
+    },
+    "kind": "institution"
+  },
+  "suzano": {
+    "name": {
+      "en": "Suzano",
+      "pt": "Suzano",
+      "fr": "Suzano",
+      "es": "Suzano"
+    },
+    "kind": "institution"
+  },
+  "alibaba": {
+    "name": {
+      "en": "Alibaba",
+      "pt": "Alibaba",
+      "fr": "Alibaba",
+      "es": "Alibaba"
+    },
+    "kind": "institution"
+  },
+  "huawei": {
+    "name": {
+      "en": "Huawei",
+      "pt": "Huawei",
+      "fr": "Huawei",
+      "es": "Huawei"
+    },
+    "kind": "institution"
+  },
+  "whalesbot": {
+    "name": {
+      "en": "WhalesBot",
+      "pt": "WhalesBot",
+      "fr": "WhalesBot",
+      "es": "WhalesBot"
+    },
+    "kind": "institution"
   }
 }

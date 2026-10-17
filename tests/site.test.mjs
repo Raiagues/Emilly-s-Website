@@ -272,7 +272,7 @@ test('journal remains readable and photos open without JavaScript', async () => 
 });
 
 test('journal pages have no automated WCAG A/AA violations', async () => {
-  for(const path of ['journal/cern.html','journal/estados-unidos.html','journal/visiona.html','journal/south-summit.html','journal/connections.html']) {
+  for(const path of ['journal/cern.html','journal/estados-unidos.html','journal/visiona.html','journal/south-summit.html','journal/china.html','journal/connections.html']) {
     for(const prefix of ['','pt/','fr/','es/']) {
       const {page}=await visit(prefix+path,{viewport:{width:390,height:844}});
       const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -302,7 +302,7 @@ test('new pages load the restored layout even with a previous stylesheet cached'
 
 test('US diary is reachable from the feed and award, with translations and all 15 photos', async () => {
   const {page,errors}=await visit('pt/');
-  await expect(page.locator('.journal-entry-link')).toHaveCount(4);
+  await expect(page.locator('.journal-entry-link')).toHaveCount(5);
   await page.locator('.journal-entry-link[href="journal/estados-unidos.html"]').click();
   await expect(page.locator('h1')).toHaveText('Minha primeira vez nos Estados Unidos');
   await expect(page.locator('#visa')).toContainText('Anderson');
@@ -381,8 +381,8 @@ test('Visiona diary links both ways to experience and loads its six photos in ev
 
 test('timeline follows experience dates and links directly to the two US trip stages without JavaScript', async () => {
   const {page}=await visit('pt/',{javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});
-  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2025-10','2026-03-25','2026-04-06','2026-04-10','2026-07']);
-  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/visiona.html','journal/south-summit.html','journal/estados-unidos.html','journal/cern.html']);
+  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2025-10','2026-01-25','2026-03-25','2026-04-06','2026-04-10','2026-07']);
+  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/visiona.html','journal/china.html','journal/south-summit.html','journal/estados-unidos.html','journal/cern.html']);
   await page.locator('.journal-timeline a[href="journal/estados-unidos.html#boston"]').click();
   await expect(page.locator('#boston h2')).toBeInViewport();
   await page.locator('.journal-back').click();
@@ -442,4 +442,35 @@ test('email screenshots are real image links and sender-address masks are baked 
   }
   assert.deepEqual(errors,[]);
   await page.close();
+});
+
+
+test('China diary connects to its award, loads all 26 photos and keeps chapter navigation usable in four languages', async () => {
+  for(const prefix of ['', 'pt/', 'fr/', 'es/']) {
+    const {page,errors}=await visit(prefix+'recognition.html',{reducedMotion:'reduce',viewport:{width:390,height:844}});
+    await page.locator('.award a[href="journal/china.html"]').click();
+    await expect(page.locator('.journal-chapter')).toHaveCount(8);
+    await expect(page.locator('[data-gallery]')).toHaveCount(26);
+    await expect(page.locator('.journal-intro a[href="../recognition.html"]')).toHaveCount(1);
+    await expect(page.locator('.journal-connections a[href="connections.html#na-pratica"]')).toHaveCount(1);
+    for(const width of [320,390,768,1440]) {
+      await page.setViewportSize({width,height:844});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${prefix} China diary overflows at ${width}`);
+    }
+    for(const img of await page.locator('[data-gallery] img').all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect.poll(()=>img.evaluate(i=>i.complete&&i.naturalWidth>0)).toBeTruthy();
+    }
+    await page.locator('.journal-index a[href="#regras-invisiveis"]').click();
+    const headingTop=await page.locator('#regras-invisiveis h2').evaluate(el=>el.getBoundingClientRect().top);
+    const headerBottom=await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().bottom);
+    assert.ok(headingTop>=headerBottom,'Reflection heading is below the sticky header');
+    await page.locator('[data-gallery]').last().click();
+    await expect(page.locator('#photo-counter')).toContainText('26');
+    await page.keyboard.press('Escape');
+    await page.locator('.journal-connections a[href="connections.html#na-pratica"]').click();
+    await expect(page.locator('#na-pratica a[href="china.html"]')).toHaveCount(1);
+    assert.deepEqual(errors,[]);
+    await page.close();
+  }
 });

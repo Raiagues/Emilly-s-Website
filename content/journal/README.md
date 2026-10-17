@@ -4,7 +4,7 @@ O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao
 
 ## Alterar uma história
 
-Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) ou **`content/journal/south-summit.json`** (South Summit) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) ou **`content/journal/china.json`** (China) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
 
 - `title`: título da história.
 - `subtitle`: resumo que aparece na página inicial.
@@ -15,7 +15,7 @@ Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (via
 - `cover`: três fotos da capa, referenciadas pelos nomes do catálogo.
 - `resource`: arquivo e texto do botão do relatório. É opcional.
 - `links`: links opcionais dentro de cada capítulo; cada item contém `url` (HTTP/HTTPS) e `label` (texto nos quatro idiomas). Servem para indicar eventos, laboratórios ou outras fontes.
-- `related_award`: nome exato de uma conquista para ligar aquela entrada na página Conquistas à história. Opcional; `award_link_label` define o texto do link nos quatro idiomas.
+- `related_award`: nome exato de uma conquista para ligar aquela entrada na página Conquistas à história. Uma conquista pode apontar para mais de uma história. Opcional; `award_link_label` define o texto do link nos quatro idiomas.
 - `technical_path`: endereço da página técnica relacionada. É opcional. A página técnica também passa a apontar para o diário. Sem relatório, o link aparece na introdução da história.
 - `technical_label` e `journal_link_label`: textos opcionais, nos quatro idiomas, para os links entre a história e a página técnica.
 - `date`: data de publicação, no formato `AAAA-MM-DD`, usada nos metadados.
@@ -81,6 +81,8 @@ Para retirar uma história do site, mude `published` para `false` e publique a a
 No arquivo `entities.json`, cada entrada tem um identificador estável (por exemplo, `veronica` ou `fundacao-estudar`), um `name` nos quatro idiomas e `kind` (`person` ou `institution`). Acrescente o identificador à lista `entities` de cada história em que aquela pessoa ou instituição aparece.
 
 O site monta automaticamente a página **Pessoas e instituições** e as sugestões ao fim de cada história. Uma pessoa que aparece em apenas uma história continua acessível pelo índice; outras histórias só são sugeridas quando realmente compartilham um identificador. Não precisa cadastrar links manualmente. Ao renomear uma pessoa, mantenha o identificador para preservar os links.
+
+A viagem à China já está em `china.json`, conectada ao Prêmio Protagonismo Universitário e à entidade `na-pratica`. Quando escrever a história da candidatura ao prêmio, crie outro post, reutilize `na-pratica` em `entities` e o mesmo `related_award`. Assim os dois relatos ficam conectados e aparecem em Conquistas, sem precisar juntar os textos. Não há uma página vazia esperando essa história.
 
 ## E-mails e outros documentos
 
