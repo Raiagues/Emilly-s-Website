@@ -15,6 +15,10 @@ SITE_URL = os.environ.get('SITE_URL', 'https://raiagues.github.io/Emilly-s-Websi
 E = html.escape
 EMAIL = D['EMAIL']
 ALL_PATHS = []
+J = runpy.run_path(str(ROOT / 'scripts/journal.py'))
+POSTS = J['load_posts'](ROOT)
+JUI = json.loads((ROOT / 'content/journal/ui.json').read_text())
+UI['home'] = JUI['home']
 SECTIONS = [('home', 'index.html'), ('projects', 'projects.html'), ('experience', 'experience.html'),
             ('about', 'about.html'), ('recognition', 'recognition.html'), ('contact', 'contact.html')]
 MEDIA = {id: f'img/projects/{name}.jpg' for id, name in [('project_9', 'cubesat'), ('project_7', 'vehicle')]
@@ -46,8 +50,11 @@ def layout(path, lang, title, description, body, active='home'):
     languages = ''.join(f'<a href="{r(loc(path, code))}" lang="{code}" hreflang="{code}" aria-label="{name}" {"aria-current=\"page\"" if code == lang else ""}>{code.upper()}</a>' for code, name in [('en','English'),('pt','Português'),('fr','Français'),('es','Español')])
     alternates = ''.join(f'<link rel="alternate" hreflang="{code}" href="{SITE_URL}/{loc(path, code)}">' for code in LANGS)
     structured = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': title, 'inLanguage': lang}
-    if active == 'home':
+    if path == 'index.html':
         structured.update({'@type': 'ProfilePage', 'mainEntity': {'@type': 'Person', 'name': 'Emilly Raiane Rodrigues', 'sameAs': [D['LINKEDIN'], D['GITHUB']]}})
+    if path.startswith('journal/'):
+        post = next(post for post in POSTS if J['path'](post) == path)
+        structured.update({'@type': 'BlogPosting', 'headline': title, 'datePublished': post['date'], 'author': {'@type': 'Person', 'name': 'Emilly Rodrigues'}, 'image': [SITE_URL + '/' + post['photos'][key]['file'] for key in post['cover']]})
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -62,6 +69,7 @@ def layout(path, lang, title, description, body, active='home'):
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
   <script src="{r('src/script.js')}" defer></script>
 {f'<script src="{r("src/projects.js")}" defer></script>' if path == 'projects.html' else ''}
+{f'<script src="{r("src/journal.js")}" defer></script>' if path.startswith('journal/') else ''}
 </head>
 <body id="top" data-page="{active}">
 <a class="skip-link" href="#main">{t('skip')}</a>
@@ -95,18 +103,20 @@ def home(lang):
     current = loc('index.html', lang)
     r = lambda x: relative(current, x)
     t = lambda x: txt(x, lang)
-    featured = [next(p for p in PROJECTS if p['id'] == id) for id in ['flight-platform', 'project_9', 'project_17']]
-    jobs = [p for p in PROJECTS if p['kind'] == 'experience'][:3]
-    # Existing section fragments remain useful entry points for older shared links.
-    body = f'''<main id="main" class="container">
-<section class="home-intro"><div class="intro-copy"><p class="role-label">{t('discipline')}</p><h1>Emilly<br>Rodrigues<span>.</span></h1><p class="intro-bio">{t('hero_body')}</p><div class="intro-actions"><a class="button button-primary" href="{href(current, 'projects.html', lang)}">{t('projects')} →</a><a class="button button-soft" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↓</a></div><div class="intro-socials"><a href="{D['LINKEDIN']}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="{D['GITHUB']}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="{href(current, 'contact.html', lang)}">{t('contact')} →</a></div></div>
-<figure class="home-portrait"><div class="portrait-panel"><span class="portrait-initial" aria-hidden="true">ER</span><img src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718" fetchpriority="high"></div><figcaption>Brasil / France / Switzerland</figcaption></figure></section>
-<section class="home-work" id="projects"><div class="section-title"><h2>{t('selected')}</h2><a class="text-link" href="{href(current, 'projects.html', lang)}">{t('all_projects')} <span class="count">20</span> →</a></div>{''.join(project_row(p, lang, current, featured=True) for p in featured)}</section>
-<section class="home-experience" id="experience"><div class="section-title"><h2>{t('recent')}</h2><a class="text-link" href="{href(current, 'experience.html', lang)}">{t('all_experience')} →</a></div>{''.join(experience_row(p, lang, current, True) for p in jobs)}</section>
-<div class="home-bottom"><section id="about-me"><h2>{t('about')}</h2><p>{t('short_bio')}</p><a class="text-link" href="{href(current, 'about.html', lang)}">{t('more_about')} →</a></section><section id="recognition"><h2>{t('recognition')}</h2><p>{t('award_home')}</p><a class="text-link" href="{href(current, 'recognition.html', lang)}">{t('awards_title')} →</a></section></div>
-<section class="home-contact" id="contact"><h2>{t('contact_title')}</h2><a href="mailto:{EMAIL}">{EMAIL}</a><a class="button button-primary" href="{href(current, 'contact.html', lang)}">{t('contact')} →</a></section>
-</main>'''
-    return layout('index.html', lang, t('discipline'), t('hero_body'), body)
+    jt = lambda x: E(J['text'](JUI[x], lang))
+    link = lambda x: href(current, x, lang)
+    body = f'''<main id="main" class="container journal-home">
+<header class="diary-intro"><div><p class="role-label">Emilly Rodrigues / {jt('home')}</p><h1>{jt('intro')}</h1><p>{jt('bio')}</p><a class="text-link" href="{link('about.html')}">{t('more_about')} →</a></div><img src="{r('img/me.png')}" alt="{t('portrait')}" width="484" height="718"></header>
+{J['feed'](POSTS, lang, current, link, JUI)}
+<section class="journal-work" id="projects"><div><h2>{jt('work')}</h2><p>{jt('work_body')}</p></div><div class="journal-work-links"><a class="button button-primary" href="{link('projects.html')}">{t('all_projects')} →</a><a class="button button-soft" href="{link('experience.html')}" id="experience">{t('experience')} →</a><a class="text-link" href="{r('CV_Emilly.pdf')}" download>{t('cv')} ↓</a></div></section>
+<div class="journal-footlinks"><a class="text-link" id="about-me" href="{link('about.html')}">{t('about')} →</a><a class="text-link" id="recognition" href="{link('recognition.html')}">{t('awards_title')} →</a><a class="text-link" id="contact" href="{link('contact.html')}">{t('contact')} →</a></div></main>'''
+    return layout('index.html', lang, jt('home'), J['text'](JUI['bio'], lang), body)
+
+def journal(post, lang):
+    path = J['path'](post)
+    current = loc(path, lang)
+    body = J['story'](post, lang, current, lambda x: href(current, x, lang), JUI)
+    return layout(path, lang, J['text'](post['title'], lang), J['text'](post['subtitle'], lang), body)
 
 def projects(lang):
     current = loc('projects.html', lang)
@@ -163,6 +173,8 @@ def project(p, lang):
     nxt = peers[idx + 1] if idx + 1 < len(peers) else None
     links = ''.join(f'<a class="button button-soft" href="{url}" target="_blank" rel="noopener noreferrer">{t(label)} ↗</a>' for label, url in p['links'])
     media = ''
+    if p['id'] == 'cern' and any(post['slug'] == 'cern' for post in POSTS):
+        media = f'<aside class="journal-callout"><a class="text-link" href="{href(current, "journal/cern.html", lang)}">{E(J["text"](JUI["cern_link"], lang))} →</a></aside>'
     if p['id'] in MEDIA:
         media = f'<figure class="project-media"><img src="{relative(current, MEDIA[p["id"]])}" alt="{E(p["title"][lang], quote=True)}" width="640" height="400"><figcaption>{t("video_caption")}</figcaption></figure>'
     pager = ''.join(f'<a href="{href(current, detail(q), lang)}"><span>{t(key)}</span><strong>{q["title"][lang]} {arrow}</strong></a>' for q, key, arrow in [(prev, 'previous', '←'), (nxt, 'next', '→')] if q)
@@ -180,9 +192,17 @@ def write(path, content):
     ALL_PATHS.append(path)
 
 def main():
+    # Only generated journal pages are removed; unpublished entries stay out of the site.
+    for lang in LANGS:
+        folder = ROOT / loc('journal', lang)
+        if folder.exists():
+            for old in folder.glob('*.html'):
+                old.unlink()
     for lang in LANGS:
         for path, render in [('index.html', home), ('projects.html', projects), ('experience.html', experience), ('about.html', about), ('recognition.html', recognition), ('contact.html', contact)]:
             write(loc(path, lang), render(lang))
+        for post in POSTS:
+            write(loc(J['path'](post), lang), journal(post, lang))
         for p in PROJECTS:
             write(loc(detail(p), lang), project(p, lang))
     for old in ['pages/projects/projects_exemple.html', 'pages/experience/experience_exemple.html']:
@@ -192,16 +212,24 @@ def main():
     write('.nojekyll', '')
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE_URL}/{p}</loc></url>' for p in ALL_PATHS if p.endswith('.html') and 'exemple' not in p and p != '404.html') + '</urlset>')
     dist = ROOT / 'dist'
-    dist.mkdir(exist_ok=True)
+    if dist.exists():
+        shutil.rmtree(dist)
+    dist.mkdir()
     for path in ALL_PATHS:
         dest = dist / path
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / path, dest)
     for folder in ['style', 'src', 'img', 'doc']:
         shutil.copytree(ROOT / folder, dist / folder, dirs_exist_ok=True)
+    assets = {photo['file'] for post in POSTS for photo in post['photos'].values()}
+    assets.update(post['resource']['file'] for post in POSTS if post.get('resource'))
+    for asset in assets:
+        destination = dist / asset
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / asset, destination)
     for name in ['CV_Emilly.pdf', 'Emilly_Rodrigues_Resume.pdf']:
         shutil.copyfile(ROOT / name, dist / name)
-    print(f'Built {len(PROJECTS)} case studies and 6 main pages × {len(LANGS)} languages.')
+    print(f'Built {len(PROJECTS)} case studies and {len(POSTS)} journal posts, plus 6 main pages × {len(LANGS)} languages.')
 
 if __name__ == '__main__':
     main()

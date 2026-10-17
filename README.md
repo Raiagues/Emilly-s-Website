@@ -1,10 +1,14 @@
-# Emilly Rodrigues · Portfolio
+# Emilly Rodrigues · Diário e portfólio
 
-Portfólio de engenharia aeroespacial, sistemas embarcados e divulgação científica. Inglês por padrão, com versões completas em português, francês e espanhol.
+Diário pessoal e portfólio de engenharia aeroespacial, sistemas embarcados e divulgação científica. Inglês por padrão, com versões completas em português, francês e espanhol.
 
 20 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, links para demonstrações em vídeo e contato por e-mail. A identidade combina seu retrato, tipografia direta, branco, azul intenso e verde-lima, com botões sem bordas.
 
-A navegação tem seis páginas: início, projetos, experiência, sobre mim, conquistas e contato. Todas ficam visíveis também no celular. O catálogo mostra os 20 projetos; busca e filtros são preservados ao abrir um trabalho, voltar aos resultados ou mudar o idioma.
+A página inicial abre o diário, com histórias em primeira pessoa e fotos pessoais. A primeira entrada reúne o CERN openlab: trabalho ligado ao ATLAS, visitas, aulas, viagens, trilhas e amigos.
+
+**Para editar histórias ou publicar outras: [guia do diário](content/journal/README.md).** Textos e legendas ficam em arquivos JSON; rascunhos com `published: false` não aparecem no site.
+
+A navegação tem seis páginas: diário, projetos, experiência, sobre mim, conquistas e contato. Todas ficam visíveis também no celular. O catálogo mostra os 20 projetos; busca e filtros são preservados ao abrir um trabalho, voltar aos resultados ou mudar o idioma.
 
 ![Prévia do novo portfólio em desktop](docs/preview-desktop.png)
 
@@ -61,6 +65,9 @@ Requer **Python 3.12 ou mais recente** para gerar as páginas. O site publicado 
 
 | Arquivo | O que editar |
 | --- | --- |
+| `content/journal/*.json` | Histórias, capítulos, fotos e legendas do diário |
+| `scripts/journal.py` | Geração das páginas de histórias |
+| `src/journal.js` | Ampliação de fotos, teclado e retorno do foco |
 | `content/data.py` | Textos nos quatro idiomas, projetos, experiências, conquistas, e-mail e links |
 | `scripts/build.py` | Estrutura das páginas e configuração de publicação |
 | `style/style.css` | Cores, tipografia, botões e layout responsivo |
@@ -114,6 +121,7 @@ A auditoria automática não substitui avaliação manual por pessoas com defici
 ## Imagens e conteúdo
 
 - `img/me.png`: retrato original fornecido no repositório.
+- `portifolio/cern/`: 16 fotos do álbum pessoal e o relatório fornecidos pela proprietária, usados na história do CERN.
 - `img/illustrations/`: ilustrações conceituais da versão anterior, preservadas no repositório. A interface atual não as utiliza.
 - As páginas técnicas dão prioridade ao conteúdo e aos links de demonstrações. Os vídeos externos não forneceram miniaturas públicas acessíveis; não foram substituídos por imagens que poderiam parecer fotografias dos projetos.
 - Nenhuma imagem externa, biblioteca de ícones ou fonte remota é necessária em tempo de execução.

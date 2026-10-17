@@ -1,0 +1,110 @@
+{
+  "home": {
+    "en": "Journal",
+    "pt": "Diário",
+    "fr": "Journal",
+    "es": "Diario"
+  },
+  "intro": {
+    "en": "Hi, I’m Emilly.",
+    "pt": "Oi, eu sou a Emilly.",
+    "fr": "Bonjour, moi c’est Emilly.",
+    "es": "Hola, soy Emilly."
+  },
+  "bio": {
+    "en": "I’m Brazilian, I study aerospace engineering and work with embedded systems. Here I share what I’m building, the places I’ve been and the stories in between.",
+    "pt": "Sou brasileira, estudo engenharia aeroespacial e trabalho com sistemas embarcados. Aqui conto o que estou construindo, os lugares por onde passei e as histórias no meio disso tudo.",
+    "fr": "Je suis brésilienne, j’étudie l’ingénierie aérospatiale et je travaille en systèmes embarqués. Ici, je raconte mes projets, les endroits où je suis passée et ce qui se passe entre les deux.",
+    "es": "Soy brasileña, estudio ingeniería aeroespacial y trabajo con sistemas embebidos. Aquí cuento lo que estoy construyendo, los lugares por los que he pasado y las historias entre una cosa y otra."
+  },
+  "latest": {
+    "en": "From my journal",
+    "pt": "Do meu diário",
+    "fr": "Dans mon journal",
+    "es": "De mi diario"
+  },
+  "read": {
+    "en": "Read the story",
+    "pt": "Ler a história",
+    "fr": "Lire l’histoire",
+    "es": "Leer la historia"
+  },
+  "back": {
+    "en": "Back to my journal",
+    "pt": "Voltar ao diário",
+    "fr": "Retour au journal",
+    "es": "Volver al diario"
+  },
+  "chapters": {
+    "en": "In this story",
+    "pt": "Nesta história",
+    "fr": "Dans cette histoire",
+    "es": "En esta historia"
+  },
+  "photos_credit": {
+    "en": "From my personal photo album",
+    "pt": "Do meu álbum pessoal",
+    "fr": "De mon album personnel",
+    "es": "De mi álbum personal"
+  },
+  "photos_hint": {
+    "en": "Select a photo to see it in full.",
+    "pt": "Toque em uma foto para ver inteira.",
+    "fr": "Sélectionnez une photo pour la voir en entier.",
+    "es": "Selecciona una foto para verla completa."
+  },
+  "close": {
+    "en": "Close photo",
+    "pt": "Fechar foto",
+    "fr": "Fermer la photo",
+    "es": "Cerrar foto"
+  },
+  "previous_photo": {
+    "en": "Previous photo",
+    "pt": "Foto anterior",
+    "fr": "Photo précédente",
+    "es": "Foto anterior"
+  },
+  "next_photo": {
+    "en": "Next photo",
+    "pt": "Próxima foto",
+    "fr": "Photo suivante",
+    "es": "Foto siguiente"
+  },
+  "photo": {
+    "en": "Photo",
+    "pt": "Foto",
+    "fr": "Photo",
+    "es": "Foto"
+  },
+  "of": {
+    "en": "of",
+    "pt": "de",
+    "fr": "sur",
+    "es": "de"
+  },
+  "work": {
+    "en": "Looking for my work?",
+    "pt": "Quer conhecer meu trabalho?",
+    "fr": "Envie de découvrir mes projets ?",
+    "es": "¿Quieres conocer mi trabajo?"
+  },
+  "work_body": {
+    "en": "My technical projects, experience and CV are here too.",
+    "pt": "Meus projetos técnicos, experiências e currículo também estão por aqui.",
+    "fr": "Mes projets techniques, mes expériences et mon CV sont ici aussi.",
+    "es": "Mis proyectos técnicos, experiencias y currículum también están aquí."
+  },
+  "technical": {
+    "en": "See the technical project",
+    "pt": "Ver o projeto técnico",
+    "fr": "Voir le projet technique",
+    "es": "Ver el proyecto técnico"
+  },
+  "cern_link": {
+    "en": "My CERN diary: the project, visits and life outside the lab",
+    "pt": "Meu diário do CERN: o projeto, as visitas e a vida fora do laboratório",
+    "fr": "Mon journal du CERN : le projet, les visites et la vie en dehors du labo",
+    "es": "Mi diario del CERN: el proyecto, las visitas y la vida fuera del laboratorio"
+  }
+}

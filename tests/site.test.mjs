@@ -198,3 +198,84 @@ test('all 104 case studies load, show results and fit mobile under a repository 
   assert.deepEqual(errors,[]);
   await page.close();
 });
+
+test('journal photos, report, chapters and translations load under the repository prefix', async () => {
+  const {page,errors}=await visit('pt/');
+  await page.locator('.journal-entry-link').click();
+  await expect(page.locator('h1')).toHaveText('Meu verão no CERN');
+  await expect(page.locator('#main-nav a[aria-current]')).toHaveText('Diário');
+  await expect(page.locator('[data-gallery]')).toHaveCount(16);
+  const report=await page.locator('.journal-resource a[href$=".pdf"]').getAttribute('href');
+  const response=await page.request.get(new URL(report,page.url()).href);
+  assert.equal(response.status(),200);
+  assert.match(response.headers()['content-type'],/pdf/);
+  for(const lang of ['en','fr','es','pt']) {
+    await page.locator(`.languages a[lang=${lang}]`).click();
+    await expect(page.locator('html')).toHaveAttribute('lang',lang);
+    assert.ok(page.url().endsWith('journal/cern.html'));
+    for(const width of [320,390,768,1440]) {
+      await page.setViewportSize({width,height:844});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang} journal overflows at ${width}`);
+    }
+  }
+  for(const image of await page.locator('[data-gallery] img').all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toHaveJSProperty('complete',true);
+    assert.ok(await image.evaluate(img=>img.naturalWidth>0));
+  }
+  await page.locator('.journal-index a[href="#travel"]').click();
+  await expect(page.locator('#travel')).toBeInViewport();
+  await page.locator('.journal-back').click();
+  await expect(page.locator('.journal-feed')).toBeInViewport();
+  assert.deepEqual(errors,[]);
+  await page.close();
+});
+
+test('photo viewer supports buttons, keyboard, focus restoration and mobile accessibility', async () => {
+  const {page,errors}=await visit('pt/journal/cern.html',{viewport:{width:390,height:844}});
+  const first=page.locator('[data-gallery]').first();
+  await first.click();
+  const dialog=page.locator('.photo-dialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('img')).toHaveAttribute('src',/globo.jpeg$/);
+  await expect(page.locator('#photo-counter')).toHaveText('Foto 1 de 16');
+  await page.keyboard.press('ArrowRight');
+  await expect(dialog.locator('img')).toHaveAttribute('src',/atlas.jpeg$/);
+  await dialog.locator('[data-photo-prev]').click();
+  await page.keyboard.press('ArrowLeft');
+  await expect(page.locator('#photo-counter')).toHaveText('Foto 16 de 16');
+  await dialog.locator('[data-photo-next]').click();
+  await expect(page.locator('#photo-counter')).toHaveText('Foto 1 de 16');
+  const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+  assert.deepEqual(result.violations.map(v=>v.id),[]);
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(first).toBeFocused();
+  assert.equal(await page.locator('html').evaluate(el=>el.classList.contains('photo-is-open')),false);
+  await first.press('Enter');
+  await dialog.locator('.photo-close').click();
+  await expect(first).toBeFocused();
+  assert.deepEqual(errors,[]);
+  await page.close();
+});
+
+test('journal remains readable and photos open without JavaScript', async () => {
+  const {page}=await visit('journal/cern.html',{javaScriptEnabled:false,viewport:{width:390,height:844}});
+  await expect(page.locator('.journal-chapter')).toHaveCount(6);
+  await expect(page.locator('[data-gallery]')).toHaveCount(16);
+  await page.locator('[data-gallery]').first().click();
+  assert.ok(page.url().endsWith('portifolio/cern/globo.jpeg'));
+  await page.goBack();
+  await page.locator('.languages a[lang=fr]').click();
+  await expect(page.locator('h1')).toHaveText('Mon été au CERN');
+  await page.close();
+});
+
+test('journal pages have no automated WCAG A/AA violations', async () => {
+  for(const prefix of ['','pt/','fr/','es/']) {
+    const {page}=await visit(prefix+'journal/cern.html',{viewport:{width:390,height:844}});
+    const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+    assert.deepEqual(result.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[],prefix);
+    await page.close();
+  }
+});

@@ -1,0 +1,430 @@
+{
+  "slug": "cern",
+  "published": true,
+  "date": "2026-10-17",
+  "period": {
+    "en": "Summer 2026",
+    "pt": "Verão de 2026",
+    "fr": "Été 2026",
+    "es": "Verano de 2026"
+  },
+  "title": {
+    "en": "My summer at CERN",
+    "pt": "Meu verão no CERN",
+    "fr": "Mon été au CERN",
+    "es": "Mi verano en el CERN"
+  },
+  "subtitle": {
+    "en": "Three applications, an email I almost missed, and nine weeks of work, travel and new friends.",
+    "pt": "Três candidaturas, um e-mail que eu quase não li e nove semanas de trabalho, viagens e novos amigos.",
+    "fr": "Trois candidatures, un e-mail que j’ai failli manquer et neuf semaines de travail, de voyages et de nouvelles amitiés.",
+    "es": "Tres candidaturas, un correo que casi no leí y nueve semanas de trabajo, viajes y nuevos amigos."
+  },
+  "intro": {
+    "en": "I had known about CERN for years. Before the photos at ATLAS, the hikes and the friends, there were two unsuccessful applications. On my third attempt, I was rejected again. So my summer at CERN actually starts with an email I nearly dismissed.",
+    "pt": "Eu já conhecia o CERN havia muitos anos. Antes das fotos no ATLAS, das trilhas e dos amigos, houve duas candidaturas recusadas. Na terceira tentativa, também recebi uma recusa. Então a história do meu verão no CERN começa, na verdade, com um e-mail ao qual eu quase não dei atenção.",
+    "fr": "Je connaissais le CERN depuis des années. Avant les photos à ATLAS, les randonnées et les amis, il y a eu deux candidatures refusées. À ma troisième tentative, j’ai encore reçu un refus. L’histoire de mon été au CERN commence donc par un e-mail auquel j’ai failli ne pas prêter attention.",
+    "es": "Conocía el CERN desde hacía muchos años. Antes de las fotos en ATLAS, las caminatas y los amigos, hubo dos candidaturas rechazadas. En el tercer intento también recibí un rechazo. Así que mi verano en el CERN empieza, en realidad, con un correo al que casi no presté atención."
+  },
+  "cover": [
+    "atlas",
+    "mountain1",
+    "friends4"
+  ],
+  "photos": {
+    "globe": {
+      "file": "portifolio/cern/globo.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "At the CERN Globe.",
+        "pt": "No Globo do CERN.",
+        "fr": "Au Globe du CERN.",
+        "es": "En el Globo del CERN."
+      }
+    },
+    "atlas": {
+      "file": "portifolio/cern/atlas.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Visiting ATLAS, the experiment my project was connected to.",
+        "pt": "Na visita ao ATLAS, o experimento ao qual meu projeto estava ligado.",
+        "fr": "En visite à ATLAS, l’expérience à laquelle mon projet était lié.",
+        "es": "Visitando ATLAS, el experimento al que estaba vinculado mi proyecto."
+      }
+    },
+    "alice": {
+      "file": "portifolio/cern/alice.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A visit to the ALICE experiment.",
+        "pt": "Visita ao experimento ALICE.",
+        "fr": "Visite de l’expérience ALICE.",
+        "es": "Visita al experimento ALICE."
+      }
+    },
+    "antimatter": {
+      "file": "portifolio/cern/antimatter.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Inside the Antimatter Factory.",
+        "pt": "Na Fábrica de Antimatéria.",
+        "fr": "À l’Usine d’antimatière.",
+        "es": "En la Fábrica de Antimateria."
+      }
+    },
+    "cpp": {
+      "file": "portifolio/cern/c++.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "In a lecture with the creator of C++.",
+        "pt": "Na aula com o criador da linguagem C++.",
+        "fr": "Pendant un cours avec le créateur du C++.",
+        "es": "En una clase con el creador de C++."
+      }
+    },
+    "mountain1": {
+      "file": "portifolio/cern/montanha1.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "One of the landscapes I found while hiking.",
+        "pt": "Uma das paisagens que encontrei nas trilhas.",
+        "fr": "Un des paysages découverts en randonnée.",
+        "es": "Uno de los paisajes que encontré haciendo senderismo."
+      }
+    },
+    "mountain2": {
+      "file": "portifolio/cern/montanha2.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "More mountains, more reasons to go hiking.",
+        "pt": "Mais montanhas, mais motivos para fazer uma trilha.",
+        "fr": "Encore des montagnes, encore des raisons de partir marcher.",
+        "es": "Más montañas, más motivos para salir a caminar."
+      }
+    },
+    "barcelona": {
+      "file": "portifolio/cern/barcelona.jpeg",
+      "width": 900,
+      "height": 1600,
+      "caption": {
+        "en": "Barcelona with friends.",
+        "pt": "Barcelona com amigos.",
+        "fr": "Barcelone avec des amis.",
+        "es": "Barcelona con amigos."
+      }
+    },
+    "einstein": {
+      "file": "portifolio/cern/casaeisntenbern.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "At Einstein’s house in Bern.",
+        "pt": "Na casa de Einstein, em Berna.",
+        "fr": "À la maison d’Einstein, à Berne.",
+        "es": "En la casa de Einstein, en Berna."
+      }
+    },
+    "nobel": {
+      "file": "portifolio/cern/medalhasnobel.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Nobel medals on display.",
+        "pt": "Medalhas Nobel em exposição.",
+        "fr": "Des médailles Nobel exposées.",
+        "es": "Medallas Nobel expuestas."
+      }
+    },
+    "cinema": {
+      "file": "portifolio/cern/cinema_arlivre.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "An evening at the open-air cinema.",
+        "pt": "Uma noite de cinema ao ar livre.",
+        "fr": "Une soirée au cinéma en plein air.",
+        "es": "Una noche de cine al aire libre."
+      }
+    },
+    "friends1": {
+      "file": "portifolio/cern/amigos.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "A break together at CERN.",
+        "pt": "Uma pausa com os amigos no CERN.",
+        "fr": "Une pause entre amis au CERN.",
+        "es": "Un descanso con amigos en el CERN."
+      }
+    },
+    "friends2": {
+      "file": "portifolio/cern/amigos2.jpeg",
+      "width": 1280,
+      "height": 720,
+      "caption": {
+        "en": "The group on a hike.",
+        "pt": "A turma em uma das trilhas.",
+        "fr": "Le groupe pendant une randonnée.",
+        "es": "El grupo en una de las caminatas."
+      }
+    },
+    "friends3": {
+      "file": "portifolio/cern/amigos3.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "An evening out with friends.",
+        "pt": "Uma saída com os amigos.",
+        "fr": "Une sortie entre amis.",
+        "es": "Una salida con amigos."
+      }
+    },
+    "friends4": {
+      "file": "portifolio/cern/amigos4.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "Around the table.",
+        "pt": "Todo mundo à mesa.",
+        "fr": "Tout le monde à table.",
+        "es": "Todos a la mesa."
+      }
+    },
+    "friends5": {
+      "file": "portifolio/cern/amigos5.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "Another meal together.",
+        "pt": "Mais uma refeição juntos.",
+        "fr": "Encore un repas ensemble.",
+        "es": "Otra comida juntos."
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "application",
+      "title": {
+        "en": "The third application",
+        "pt": "A terceira tentativa",
+        "fr": "La troisième candidature",
+        "es": "El tercer intento"
+      },
+      "paragraphs": [
+        {
+          "en": "I had applied twice before and been rejected both times. For the third attempt, I spent months preparing. I studied what the programme was looking for and messaged people who had already been through the process.",
+          "pt": "Eu já tinha tentado duas vezes e sido recusada nas duas. Para a terceira, passei meses me preparando. Estudei o que o programa buscava e mandei mensagens para pessoas que já tinham passado pelo processo.",
+          "fr": "J’avais déjà postulé deux fois et reçu deux refus. Pour la troisième candidature, j’ai passé des mois à me préparer. J’ai étudié ce que le programme recherchait et contacté des personnes qui avaient déjà passé la sélection.",
+          "es": "Ya había intentado entrar dos veces y me habían rechazado las dos. Para la tercera, pasé meses preparándome. Estudié lo que buscaba el programa y escribí a personas que ya habían pasado por el proceso."
+        },
+        {
+          "en": "I tried to put all that motivation into my application, to show how much I wanted to be there. On 2 April, the answer came: another rejection. Almost a month passed, and I had more or less put it out of my mind.",
+          "pt": "Tentei colocar toda a minha vontade na candidatura, mostrar o quanto eu queria estar lá. No dia 2 de abril, veio a resposta: recusada de novo. Passou quase um mês e eu já tinha até esquecido.",
+          "fr": "J’ai essayé de faire passer toute ma motivation dans ma candidature, de montrer à quel point je voulais être là. Le 2 avril, la réponse est arrivée : encore un refus. Presque un mois a passé et j’avais fini par ne plus y penser.",
+          "es": "Intenté poner todas mis ganas en la candidatura, mostrar cuánto quería estar allí. El 2 de abril llegó la respuesta: otro rechazo. Pasó casi un mes y ya casi lo había olvidado."
+        }
+      ],
+      "photos": [],
+      "letter": {
+        "date": "2026-04-02",
+        "label": {
+          "en": "An excerpt from the email · 2 April 2026",
+          "pt": "Trecho do e-mail · 2 de abril de 2026",
+          "fr": "Extrait de l’e-mail · 2 avril 2026",
+          "es": "Fragmento del correo · 2 de abril de 2026"
+        },
+        "subject": "Selection result of CERN openlab Summer Student Programme 2026",
+        "excerpt": "The selection process has now concluded, and we regret to inform you that we are unable to offer you a place in the programme this summer."
+      }
+    },
+    {
+      "id": "acceptance",
+      "title": {
+        "en": "The email I nearly missed",
+        "pt": "O e-mail que eu quase não li",
+        "fr": "L’e-mail que j’ai failli manquer",
+        "es": "El correo que casi no leí"
+      },
+      "paragraphs": [
+        {
+          "en": "On 30 April 2026, I woke up to an email from CERN openlab. I had just got up and, because I had already been rejected, I thought it was another automatic rejection message. It was only when I started reading about the project that I realised what had happened: I had been accepted.",
+          "pt": "Em 30 de abril de 2026, acordei com um e-mail do CERN openlab. Eu tinha acabado de acordar e, como já tinha recebido a recusa, achei que era mais uma mensagem automática. Só quando comecei a ler sobre o projeto é que me dei conta: eu tinha sido aprovada.",
+          "fr": "Le 30 avril 2026, j’ai reçu un e-mail de CERN openlab au réveil. Comme j’avais déjà été refusée, j’ai pensé à un autre message automatique. Ce n’est qu’en lisant les détails du projet que j’ai compris : j’étais acceptée.",
+          "es": "El 30 de abril de 2026 me desperté con un correo de CERN openlab. Como ya había recibido el rechazo, pensé que era otro mensaje automático. Solo cuando empecé a leer sobre el proyecto me di cuenta: me habían aceptado."
+        },
+        {
+          "en": "The email explained that there had been changes in one of the projects. I had been selected from nearly 6,000 valid applications for nine weeks at CERN, working on “Trigger Level Analysis data preparation through co-processors”.",
+          "pt": "O e-mail explicava que tinham ocorrido mudanças em um dos projetos. Eu havia sido selecionada entre quase 6.000 candidaturas válidas para passar nove semanas no CERN, trabalhando em “Trigger Level Analysis data preparation through co-processors”.",
+          "fr": "L’e-mail expliquait qu’un des projets avait évolué. J’avais été sélectionnée parmi près de 6 000 candidatures valides pour passer neuf semaines au CERN sur le projet « Trigger Level Analysis data preparation through co-processors ».",
+          "es": "El correo explicaba que había habido cambios en uno de los proyectos. Me habían seleccionado entre casi 6.000 candidaturas válidas para pasar nueve semanas en el CERN, trabajando en «Trigger Level Analysis data preparation through co-processors»."
+        },
+        {
+          "en": "It was incredible. And then came the rush to buy tickets and organise the trip. Once there, I shared a room with a girl from Mexico, which was really lovely. The programme team arranged everything for us.",
+          "pt": "Foi incrível. E depois veio a correria para comprar as passagens e organizar toda a viagem. Lá, dividi quarto com uma menina do México, e foi muito legal. A equipe do programa organizou tudo para a gente.",
+          "fr": "C’était incroyable. Ensuite, il a fallu vite acheter les billets et organiser tout le voyage. Sur place, j’ai partagé une chambre avec une Mexicaine, et c’était vraiment chouette. L’équipe du programme avait tout organisé pour nous.",
+          "es": "Fue increíble. Después vinieron las prisas para comprar los pasajes y organizar todo el viaje. Allí compartí habitación con una chica de México y estuvo muy bien. El equipo del programa lo organizó todo para nosotras."
+        }
+      ],
+      "letter": {
+        "date": "2026-04-30",
+        "label": {
+          "en": "An excerpt from the email · 30 April 2026",
+          "pt": "Trecho do e-mail · 30 de abril de 2026",
+          "fr": "Extrait de l’e-mail · 30 avril 2026",
+          "es": "Fragmento del correo · 30 de abril de 2026"
+        },
+        "subject": "Successful application to the CERN openlab Summer Student Programme 2026",
+        "excerpt": "While you previously received a rejection from us, we are pleased to inform you that, following recent changes in one of our projects, you have now been accepted to the CERN openlab Summer Student Programme 2026"
+      },
+      "photos": [
+        "globe"
+      ]
+    },
+    {
+      "id": "work",
+      "title": {
+        "en": "What I worked on",
+        "pt": "O que fui fazer lá",
+        "fr": "Le projet sur lequel j’ai travaillé",
+        "es": "En qué trabajé"
+      },
+      "paragraphs": [
+        {
+          "en": "My project was called “Trigger Level Analysis Data Preparation through Co-processors”. I worked on it with supervisors Ioannis Xiotidis and Noah Clarke Hall, within the Next-Generation Triggers activities for ATLAS.",
+          "pt": "Meu projeto se chamava “Trigger Level Analysis Data Preparation through Co-processors”. Trabalhei com a orientação de Ioannis Xiotidis e Noah Clarke Hall, nas atividades de Next-Generation Triggers para o ATLAS.",
+          "fr": "Mon projet s’intitulait « Trigger Level Analysis Data Preparation through Co-processors ». J’ai travaillé avec mes encadrants Ioannis Xiotidis et Noah Clarke Hall, dans le cadre des activités Next-Generation Triggers pour ATLAS.",
+          "es": "Mi proyecto se llamaba «Trigger Level Analysis Data Preparation through Co-processors». Trabajé con mis supervisores Ioannis Xiotidis y Noah Clarke Hall, en las actividades Next-Generation Triggers para ATLAS."
+        },
+        {
+          "en": "The question was quite concrete: could we turn a large amount of calorimeter data into a small list of jets, keeping useful physics information while reducing the data we needed to transmit? Jets are groups of particles reconstructed from their detector signals. I investigated small machine-learning models with the constraints of a future FPGA implementation in mind.",
+          "pt": "A pergunta era bem concreta: dava para transformar uma grande quantidade de dados do calorímetro em uma pequena lista de jatos, preservando informação útil para a física e reduzindo o que precisava ser transmitido? Jatos são conjuntos de partículas reconstruídos a partir dos sinais no detector. Investiguei modelos pequenos de machine learning pensando nas restrições de uma futura implementação em FPGA.",
+          "fr": "La question était concrète : pouvait-on transformer beaucoup de données du calorimètre en une petite liste de jets, tout en conservant l’information utile pour la physique et en réduisant les données à transmettre ? Les jets sont des ensembles de particules reconstruits à partir des signaux du détecteur. J’ai étudié de petits modèles d’apprentissage automatique en tenant compte d’une future implémentation sur FPGA.",
+          "es": "La pregunta era concreta: ¿podíamos transformar muchos datos del calorímetro en una pequeña lista de jets, conservando información útil para la física y reduciendo lo que necesitábamos transmitir? Los jets son grupos de partículas reconstruidos a partir de las señales del detector. Investigué modelos pequeños de aprendizaje automático pensando en una futura implementación en FPGA."
+        },
+        {
+          "en": "I started with a convolutional baseline of 708 trainable parameters, then studied attention between candidates and the effect of overlapping collisions, known as pile-up. The baseline reached 77.3% efficiency at 78.0% purity; adding candidate-level attention brought efficiency to about 80.5%. The compact output was estimated at about 2.1 Gb/s per board, below the assumed 20 Gb/s limit. Hardware synthesis and latency measurements were still next steps, not completed results.",
+          "pt": "Comecei com um modelo convolucional de 708 parâmetros treináveis e depois estudei atenção entre candidatos e o efeito das colisões sobrepostas, o pile-up. O modelo inicial atingiu 77,3% de eficiência e 78,0% de pureza; a atenção entre candidatos levou a eficiência a cerca de 80,5%. A saída compacta foi estimada em aproximadamente 2,1 Gb/s por placa, abaixo do limite assumido de 20 Gb/s. A síntese em hardware e as medições de latência ainda eram próximos passos, não resultados concluídos.",
+          "fr": "Je suis partie d’un modèle convolutif de 708 paramètres entraînables, puis j’ai étudié l’attention entre candidats et l’effet des collisions superposées, le pile-up. Le modèle de base a atteint 77,3 % d’efficacité pour 78,0 % de pureté ; l’attention a porté l’efficacité à environ 80,5 %. Le débit de sortie a été estimé à environ 2,1 Gb/s par carte, sous la limite supposée de 20 Gb/s. La synthèse matérielle et les mesures de latence restaient des étapes à réaliser.",
+          "es": "Empecé con un modelo convolucional de 708 parámetros entrenables y después estudié la atención entre candidatos y el efecto de las colisiones superpuestas, el pile-up. El modelo inicial alcanzó un 77,3 % de eficiencia y un 78,0 % de pureza; la atención llevó la eficiencia a aproximadamente el 80,5 %. La salida compacta se estimó en unos 2,1 Gb/s por placa, por debajo del límite supuesto de 20 Gb/s. La síntesis en hardware y las medidas de latencia seguían siendo pasos pendientes."
+        }
+      ],
+      "photos": [
+        "atlas"
+      ],
+      "resource": true
+    },
+    {
+      "id": "visits",
+      "title": {
+        "en": "The visits and the classes",
+        "pt": "As visitas e as aulas",
+        "fr": "Les visites et les cours",
+        "es": "Las visitas y las clases"
+      },
+      "paragraphs": [
+        {
+          "en": "I visited ATLAS, the experiment my work was connected to. I also visited ALICE and the Antimatter Factory. These photos show very different corners of CERN, each with its own equipment and experiments.",
+          "pt": "Visitei o ATLAS, o experimento ao qual meu trabalho estava ligado. Também fui ao ALICE e à Fábrica de Antimatéria. Essas fotos mostram cantos bem diferentes do CERN, cada um com seus equipamentos e experimentos.",
+          "fr": "J’ai visité ATLAS, l’expérience à laquelle mon travail était lié, mais aussi ALICE et l’Usine d’antimatière. Ces photos montrent des endroits très différents du CERN, avec leurs équipements et leurs expériences.",
+          "es": "Visité ATLAS, el experimento al que estaba vinculado mi trabajo. También fui a ALICE y a la Fábrica de Antimateria. Estas fotos muestran lugares muy diferentes del CERN, cada uno con sus equipos y experimentos."
+        },
+        {
+          "en": "And yes, one of those classroom photos is from a lecture with the creator of C++. That definitely belongs in this diary.",
+          "pt": "E sim, uma dessas fotos de sala de aula é de uma aula com o criador da linguagem C++. Essa tinha que entrar no diário.",
+          "fr": "Et oui, une de ces photos a été prise pendant un cours avec le créateur du C++. Elle avait toute sa place dans ce journal.",
+          "es": "Y sí, una de esas fotos es de una clase con el creador de C++. Esa tenía que estar en este diario."
+        }
+      ],
+      "photos": [
+        "alice",
+        "antimatter",
+        "cpp"
+      ]
+    },
+    {
+      "id": "travel",
+      "title": {
+        "en": "I also packed my hiking shoes",
+        "pt": "Também teve muita trilha",
+        "fr": "J’avais aussi mes chaussures de randonnée",
+        "es": "También hubo muchas caminatas"
+      },
+      "paragraphs": [
+        {
+          "en": "There were a lot of mountains that summer. I went hiking, travelled with friends and took plenty of photos along the way. The lake, the paths and the views in this album are part of that side of the experience.",
+          "pt": "Teve muita montanha nesse verão. Fiz trilhas, viajei com amigos e tirei muitas fotos pelo caminho. O lago, os caminhos e as vistas desse álbum fazem parte desse outro lado da experiência.",
+          "fr": "Il y a eu beaucoup de montagnes cet été-là. J’ai fait des randonnées, voyagé avec des amis et pris beaucoup de photos. Le lac, les sentiers et les paysages de cet album font aussi partie de cette expérience.",
+          "es": "Hubo muchas montañas ese verano. Hice senderismo, viajé con amigos y saqué muchas fotos por el camino. El lago, los senderos y las vistas de este álbum también forman parte de esa experiencia."
+        },
+        {
+          "en": "I went to Spain to watch the World Cup final. I also have memories from Barcelona, a visit to Einstein’s house in Bern, Nobel medals on display and an evening at an open-air cinema. There was plenty to do outside the lab.",
+          "pt": "Fui para a Espanha assistir à final da Copa do Mundo. Também ficaram registros de Barcelona, da visita à casa de Einstein em Berna, das medalhas Nobel em exposição e de uma noite de cinema ao ar livre. Teve muita coisa fora do laboratório.",
+          "fr": "Je suis allée en Espagne pour regarder la finale de la Coupe du monde. J’ai aussi des souvenirs de Barcelone, de la maison d’Einstein à Berne, de médailles Nobel exposées et d’une soirée au cinéma en plein air. Il y avait beaucoup à découvrir en dehors du laboratoire.",
+          "es": "Fui a España para ver la final de la Copa del Mundo. También tengo recuerdos de Barcelona, de la visita a la casa de Einstein en Berna, de medallas Nobel expuestas y de una noche de cine al aire libre. Hubo mucho que hacer fuera del laboratorio."
+        }
+      ],
+      "photos": [
+        "mountain1",
+        "mountain2",
+        "friends2",
+        "barcelona",
+        "einstein",
+        "nobel",
+        "cinema"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "en": "And then there were the people",
+        "pt": "E teve a turma",
+        "fr": "Et puis, il y a eu les rencontres",
+        "es": "Y también estuvo la gente"
+      },
+      "paragraphs": [
+        {
+          "en": "I met incredible friends during the programme. There are photos at the table, on campus, out together and up in the mountains. I wanted those moments here too, alongside the report and the work. They are part of how I remember my time at CERN.",
+          "pt": "Conheci amigos incríveis durante o programa. Tem foto à mesa, no campus, nos passeios e nas montanhas. Quis colocar esses momentos aqui também, junto do relatório e do trabalho. Eles fazem parte de como eu lembro do meu período no CERN.",
+          "fr": "J’ai rencontré des amis incroyables pendant le programme. Il y a des photos à table, sur le campus, en sortie et dans les montagnes. Je voulais garder ces moments ici aussi, à côté du rapport et du travail. Ils font partie de mes souvenirs du CERN.",
+          "es": "Conocí amigos increíbles durante el programa. Hay fotos en la mesa, en el campus, de paseo y en las montañas. Quería incluir esos momentos aquí también, junto al informe y al trabajo. Son parte de cómo recuerdo mi tiempo en el CERN."
+        }
+      ],
+      "photos": [
+        "friends1",
+        "friends4",
+        "friends3",
+        "friends5"
+      ]
+    }
+  ],
+  "resource": {
+    "file": "portifolio/cern/Report_Openlab.pdf",
+    "label": {
+      "en": "Read my report · PDF, English",
+      "pt": "Ler meu relatório · PDF, inglês",
+      "fr": "Lire mon rapport · PDF, anglais",
+      "es": "Leer mi informe · PDF, inglés"
+    }
+  },
+  "closing": {
+    "en": "This is where I’m collecting these stories. I’ll keep adding to them as I write.",
+    "pt": "É aqui que vou juntando essas histórias. Vou acrescentando outras coisas conforme for escrevendo.",
+    "fr": "C’est ici que je rassemble ces histoires. J’en ajouterai d’autres au fil de mes textes.",
+    "es": "Aquí voy reuniendo estas historias. Iré añadiendo más cosas conforme escriba."
+  },
+  "series": {
+    "en": "CERN openlab",
+    "pt": "CERN openlab",
+    "fr": "CERN openlab",
+    "es": "CERN openlab"
+  },
+  "technical_path": "pages/experience/cern.html"
+}
