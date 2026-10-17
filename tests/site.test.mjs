@@ -279,3 +279,20 @@ test('journal pages have no automated WCAG A/AA violations', async () => {
     await page.close();
   }
 });
+
+
+test('new pages load the restored layout even with a previous stylesheet cached', async () => {
+  const {page,errors}=await visit('__legacy-cache.html',{viewport:{width:1440,height:1000}});
+  assert.equal(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(255, 0, 255)');
+  await page.goto(base+'pt/');
+  await expect(page.locator('link[rel=stylesheet]')).toHaveAttribute('href', /style\.css\?v=[a-f0-9]{12}$/);
+  for(let attempt=0;attempt<2;attempt++) {
+    assert.equal(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(244, 241, 233)');
+    assert.equal(await page.locator('.hero').evaluate(el=>getComputedStyle(el).display),'grid');
+    assert.match(await page.locator('h1').evaluate(el=>getComputedStyle(el).fontFamily),/Georgia/);
+    assert.equal(await page.locator('.orbit').first().evaluate(el=>getComputedStyle(el).position),'absolute');
+    await page.reload();
+  }
+  assert.deepEqual(errors,[]);
+  await page.close();
+});

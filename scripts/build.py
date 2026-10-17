@@ -2,6 +2,7 @@
 """Build the multilingual portfolio: short homepage, directories, and case studies."""
 from pathlib import Path
 import html
+import hashlib
 import json
 import os
 import runpy
@@ -30,6 +31,12 @@ def loc(path, lang):
 def relative(current, target):
     return os.path.relpath(target, Path(current).parent).replace(os.sep, '/')
 
+def asset_version(path):
+    return hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:12]
+
+def asset_url(current, path):
+    return relative(current, path) + '?v=' + asset_version(path)
+
 def detail(p):
     return f'pages/{p["kind"]}/{p["id"]}.html'
 
@@ -45,6 +52,7 @@ def tags(p, limit=4):
 def layout(path, lang, title, description, body, active='home'):
     current = loc(path, lang)
     r = lambda x: relative(current, x)
+    asset = lambda x: asset_url(current, x)
     t = lambda x: txt(x, lang)
     nav = ''.join(f'<a href="{href(current, target, lang)}" {"aria-current=\"page\"" if key == active else ""}>{t(key)}</a>' for key, target in SECTIONS)
     languages = ''.join(f'<a href="{r(loc(path, code))}" lang="{code}" hreflang="{code}" aria-label="{name}" {"aria-current=\"page\"" if code == lang else ""}>{code.upper()}</a>' for code, name in [('en','English'),('pt','Português'),('fr','Français'),('es','Español')])
@@ -61,20 +69,20 @@ def layout(path, lang, title, description, body, active='home'):
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f1e9"><meta name="color-scheme" content="light">
   <title>{E(title)} — Emilly Rodrigues</title><meta name="description" content="{E(description, quote=True)}">
-  <link rel="icon" href="{r('img/favicon.svg')}" type="image/svg+xml">
+  <link rel="icon" href="{asset('img/favicon.svg')}" type="image/svg+xml">
   <link rel="canonical" href="{SITE_URL}/{current}">{alternates}<link rel="alternate" hreflang="x-default" href="{SITE_URL}/{path}">
   <meta property="og:title" content="{E(title, quote=True)} — Emilly Rodrigues"><meta property="og:description" content="{E(description, quote=True)}">
   <meta property="og:type" content="website"><meta property="og:url" content="{SITE_URL}/{current}"><meta property="og:image" content="{SITE_URL}/img/me.png">
-  <link rel="stylesheet" href="{r('style/style.css')}">
+  <link rel="stylesheet" href="{asset('style/style.css')}">
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
-  <script src="{r('src/script.js')}" defer></script>
-{f'<script src="{r("src/projects.js")}" defer></script>' if path == 'projects.html' else ''}
-{f'<script src="{r("src/journal.js")}" defer></script>' if path.startswith('journal/') else ''}
+  <script src="{asset('src/script.js')}" defer></script>
+{f'<script src="{asset("src/projects.js")}" defer></script>' if path == 'projects.html' else ''}
+{f'<script src="{asset("src/journal.js")}" defer></script>' if path.startswith('journal/') else ''}
 </head>
 <body id="top" data-page="{active}">
 <a class="skip-link" href="#main">{t('skip')}</a>
 <header class="site-header"><div class="header-inner">
-  <a class="wordmark" href="{href(current, 'index.html', lang)}"><img src="{r('img/favicon.svg')}" width="34" height="34" alt="">emilly rodrigues<span class="wordmark-dot" aria-hidden="true">.</span></a>
+  <a class="wordmark" href="{href(current, 'index.html', lang)}"><img src="{asset('img/favicon.svg')}" width="34" height="34" alt="">emilly rodrigues<span class="wordmark-dot" aria-hidden="true">.</span></a>
   <nav id="main-nav" aria-label="{t('menu')}">{nav}</nav>
   <div class="languages" role="group" aria-label="{t('language')}">{languages}</div>
 </div></header>
@@ -209,7 +217,7 @@ def main():
     for old in ['pages/projects/projects_exemple.html', 'pages/experience/experience_exemple.html']:
         write(old, '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=../../projects.html"><title>Projects — Emilly Rodrigues</title><a href="../../projects.html">Projects</a></html>')
     base = SITE_URL + '/'
-    write('404.html', f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found — Emilly Rodrigues</title><link rel="stylesheet" href="{base}style/style.css"><main class="container content-page"><h1>Page not found.</h1><p><a class="button button-primary" href="{base}">Home →</a></p></main></html>')
+    write('404.html', f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found — Emilly Rodrigues</title><link rel="stylesheet" href="{base}style/style.css?v={asset_version("style/style.css")}"><main class="container content-page"><h1>Page not found.</h1><p><a class="button button-primary" href="{base}">Home →</a></p></main></html>')
     write('.nojekyll', '')
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE_URL}/{p}</loc></url>' for p in ALL_PATHS if p.endswith('.html') and 'exemple' not in p and p != '404.html') + '</urlset>')
     dist = ROOT / 'dist'
