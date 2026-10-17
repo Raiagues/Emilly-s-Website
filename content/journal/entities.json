@@ -205,5 +205,14 @@
       "es": "Jorge Paulo Lemann"
     },
     "kind": "person"
+  },
+  "cnes": {
+    "name": {
+      "en": "CNES",
+      "pt": "CNES",
+      "fr": "CNES",
+      "es": "CNES"
+    },
+    "kind": "institution"
   }
 }

@@ -4,7 +4,7 @@ O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao
 
 ## Alterar uma história
 
-Abra **`content/journal/cern.json`** (CERN), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) **`content/journal/china.json`** (China) **`content/journal/premio-na-pratica.json`** (prêmio Na Prática) ou **`content/journal/fundacao-estudar.json`** (Fundação Estudar e Lyfe Academy) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+Abra **`content/journal/cern.json`** (CERN), **`content/journal/cnes.json`** (CNES e Toulouse), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) **`content/journal/china.json`** (China) **`content/journal/premio-na-pratica.json`** (prêmio Na Prática) ou **`content/journal/fundacao-estudar.json`** (Fundação Estudar e Lyfe Academy) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
 
 - `title`: título da história.
 - `subtitle`: resumo na abertura da página da história.

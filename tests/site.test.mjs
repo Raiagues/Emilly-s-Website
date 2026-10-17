@@ -272,7 +272,7 @@ test('journal remains readable and photos open without JavaScript', async () => 
 });
 
 test('journal pages have no automated WCAG A/AA violations', async () => {
-  for(const path of ['journal/cern.html','journal/estados-unidos.html','journal/visiona.html','journal/south-summit.html','journal/china.html','journal/premio-na-pratica.html','journal/fundacao-estudar.html']) {
+  for(const path of ['journal/cern.html','journal/cnes.html','journal/estados-unidos.html','journal/visiona.html','journal/south-summit.html','journal/china.html','journal/premio-na-pratica.html','journal/fundacao-estudar.html']) {
     for(const prefix of ['','pt/','fr/','es/']) {
       const {page}=await visit(prefix+path,{viewport:{width:390,height:844}});
       const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -381,8 +381,8 @@ test('Visiona diary links both ways to experience and loads its nine photos in e
 
 test('timeline follows experience dates and links directly to the two US trip stages without JavaScript', async () => {
   const {page}=await visit('pt/',{javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});
-  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2022','2025-08','2025-10','2025-11-03','2026-01-25','2026-03-25','2026-04-06','2026-04-10','2026-07']);
-  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/fundacao-estudar.html','journal/visiona.html','journal/premio-na-pratica.html','journal/china.html','journal/south-summit.html','journal/estados-unidos.html','journal/cern.html']);
+  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2022','2025-02','2025-08','2025-10','2025-11-03','2026-01-25','2026-03-25','2026-04-06','2026-04-10','2026-07']);
+  assert.deepEqual(await page.locator('.journal-entry-link').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/fundacao-estudar.html','journal/cnes.html','journal/visiona.html','journal/premio-na-pratica.html','journal/china.html','journal/south-summit.html','journal/estados-unidos.html','journal/cern.html']);
   await page.locator('.journal-timeline summary').click();
   await page.locator('.journal-timeline a[href="journal/estados-unidos.html#boston"]').click();
   await expect(page.locator('#boston h2')).toBeInViewport();
@@ -523,8 +523,8 @@ test('homepage connects the featured work, illustrated projects, personal story 
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang} homepage at ${width}`);
     }
     const entries=page.locator('.journal-entry');
-    await expect(entries).toHaveCount(7);
-    await expect(page.locator('.notebook-photos img')).toHaveCount(14);
+    await expect(entries).toHaveCount(8);
+    await expect(page.locator('.notebook-photos img')).toHaveCount(16);
     for (const img of await page.locator('.notebook-photos img').all()) {
       await img.scrollIntoViewIfNeeded();
       await expect.poll(()=>img.evaluate(el=>el.complete&&el.naturalWidth>0)).toBeTruthy();
@@ -635,4 +635,44 @@ test('project sidebar stays available on desktop and reaches sections without co
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
   }
   await page.close();
+});
+
+test('CNES diary joins the timeline and professional experience, with 26 photos and a return path from Visiona', async () => {
+  for(const lang of ['en','pt','fr','es']) {
+    const prefix=lang==='en'?'':lang+'/';
+    const {page,errors}=await visit(prefix+'pages/experience/cnes.html',{viewport:{width:390,height:844},reducedMotion:'reduce'});
+    await page.locator('.journal-callout a[href="../../journal/cnes.html"]').click();
+    await expect(page.locator('h1')).toContainText('CNES');
+    await expect(page.locator('.journal-chapter')).toHaveCount(7);
+    await expect(page.locator('[data-gallery]')).toHaveCount(26);
+    await expect(page.locator('#aerosat')).toContainText('AEROSAT');
+    await expect(page.locator('#escolha')).toContainText('2025');
+    await expect(page.locator('#escolha')).toContainText('2026');
+    await expect(page.locator('.journal-intro a')).toHaveAttribute('href','../pages/experience/cnes.html');
+    await expect(page.locator('a[href="https://cnes.fr/projets/nanolab-academy"]')).toHaveCount(1);
+    for(const width of [320,390,768,1440]) {
+      await page.setViewportSize({width,height:844});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang} CNES at ${width}`);
+    }
+    for(const img of await page.locator('[data-gallery] img').all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect.poll(()=>img.evaluate(i=>i.complete&&i.naturalWidth>0)).toBeTruthy();
+    }
+    await page.locator('.journal-index a[href="#aerosat"]').click();
+    await expect(page.locator('#aerosat h2')).toBeInViewport();
+    assert.ok(await page.locator('#aerosat h2').evaluate(el=>el.getBoundingClientRect().top)>=await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().bottom));
+    await page.locator('[data-gallery]').last().click();
+    await expect(page.locator('#photo-counter')).toContainText('26');
+    await page.keyboard.press('Escape');
+    await page.locator('#volta .journal-path[href="visiona.html"]').click();
+    await page.locator('#entrevista .journal-path[href="cnes.html"]').click();
+    await expect(page.locator('h1')).toContainText('CNES');
+    await page.locator('#volta .journal-path[href="cern.html"]').click();
+    await page.locator('.journal-related a[href="cnes.html"]').click();
+    await page.locator('.journal-back').click();
+    await page.locator('.journal-timeline summary').click();
+    await expect(page.locator('.journal-timeline li').filter({has:page.locator('a[href="journal/cnes.html"]')}).locator('time')).toHaveAttribute('datetime','2025-02');
+    assert.deepEqual(errors,[]);
+    await page.close();
+  }
 });

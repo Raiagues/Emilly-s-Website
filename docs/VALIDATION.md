@@ -23,3 +23,14 @@
 Conferidos no navegador: catálogo de projetos, experiências, destaque da plataforma, sidebar, álbum em desktop e celular e abertura da Visiona. Fotos aguardadas até o carregamento completo. Capturas desta revisão em `/tmp/album-final-desktop.png`, `/tmp/album-final-mobile.png`, `/tmp/story-final-mobile.png`, `/tmp/new-projects.png`, `/tmp/new-experience.png` e `/tmp/new-sidebar.png` (não publicadas).
 
 Os textos, os capítulos e as fotografias dos relatos foram preservados. A introdução de cada história agora também aparece na página do álbum. As instruções de edição em `content/journal/README.md` refletem esse comportamento.
+
+## História do CNES — 17/10/2026
+
+- Oitava história, em EN/PT/FR/ES, com sete capítulos e 26 fotos. Período fevereiro–agosto de 2025 conferido nos currículos; nome AEROSAT e vínculo com Nanolab Academy conferidos na página oficial do CNES, citada no capítulo.
+- As condições de nacionalidade aparecem como relato das respostas recebidas pela autora, sem apresentar uma regra geral de contratação. A oferta do CERN de 2025 é distinguida do openlab de 2026; nenhum lançamento do AEROSAT é afirmado como realizado.
+- Nova entrada cronológica em fevereiro de 2025, entre a candidatura de 2022 à Fundação e a aprovação de agosto de 2025. O álbum tem oito entradas e 16 fotos de capa.
+- Links entre página técnica do CNES e relato; continuação para a Visiona com retorno; ligação com o CERN de 2026. Nenhuma página de pessoas/instituições foi recriada.
+- Build e verificação estática: 163 HTMLs aprovados.
+- Seis testes direcionados aprovados: acessibilidade das 32 páginas de histórias, Visiona, cronologia sem JavaScript, álbum/contato em quatro idiomas, Fundação/Lyfe e o novo percurso do CNES.
+- Novo teste cobre 26 fotos carregadas em cada idioma, galeria, capítulos abaixo do menu, retorno entre histórias, datas, fonte oficial e layout entre 320 e 1440 px.
+- Inspeção visual: abertura, capítulo AEROSAT, fotos e versão móvel. Capturas em `/tmp/cnes-story-desktop.png`, `/tmp/cnes-aerosat.png` e `/tmp/cnes-story-mobile.png`.

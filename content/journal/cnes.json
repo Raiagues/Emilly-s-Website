@@ -1,0 +1,619 @@
+{
+  "slug": "cnes",
+  "published": true,
+  "date": "2026-10-17",
+  "series": {
+    "en": "CNES · Toulouse",
+    "pt": "CNES · Toulouse",
+    "fr": "CNES · Toulouse",
+    "es": "CNES · Toulouse"
+  },
+  "period": {
+    "en": "February–August 2025",
+    "pt": "Fevereiro–agosto de 2025",
+    "fr": "Février–août 2025",
+    "es": "Febrero–agosto de 2025"
+  },
+  "title": {
+    "en": "CNES: six months in Toulouse",
+    "pt": "CNES: seis meses em Toulouse",
+    "fr": "CNES : six mois à Toulouse",
+    "es": "CNES: seis meses en Toulouse"
+  },
+  "subtitle": {
+    "en": "A student satellite, a difficult choice and a group of friends in Toulouse, during my last semester in France.",
+    "pt": "Um satélite de estudantes, uma escolha difícil e uma turma de amigos em Toulouse, no meu último semestre na França.",
+    "fr": "Un satellite étudiant, un choix difficile et une bande d’amis à Toulouse, pour mon dernier semestre en France.",
+    "es": "Un satélite de estudiantes, una decisión difícil y un grupo de amigos en Toulouse, durante mi último semestre en Francia."
+  },
+  "intro": {
+    "en": "Before Toulouse, there were around 200 applications and a very practical worry: I needed to save money to finish university in Brazil. When two offers finally arrived, the decision wasn’t obvious. I chose CNES, and those six months gave me a satellite to work on, friends from different countries and a city I loved living in.",
+    "pt": "Antes de Toulouse, teve por volta de 200 candidaturas e uma preocupação bem concreta: eu precisava guardar dinheiro para terminar a faculdade no Brasil. Quando finalmente apareceram duas propostas, a decisão não foi óbvia. Escolhi o CNES, e aqueles seis meses me deram um satélite para trabalhar, amigos de vários países e uma cidade em que amei morar.",
+    "fr": "Avant Toulouse, il y a eu environ 200 candidatures et une préoccupation très concrète : mettre de l’argent de côté pour terminer mes études au Brésil. Quand deux propositions sont enfin arrivées, le choix n’était pas évident. J’ai choisi le CNES. Ces six mois m’ont apporté un satellite sur lequel travailler, des amis de plusieurs pays et une ville où j’ai adoré vivre.",
+    "es": "Antes de Toulouse, hubo unas 200 candidaturas y una preocupación muy concreta: necesitaba ahorrar para terminar la universidad en Brasil. Cuando por fin llegaron dos ofertas, la decisión no fue obvia. Elegí el CNES, y aquellos seis meses me dieron un satélite en el que trabajar, amigos de varios países y una ciudad en la que me encantó vivir."
+  },
+  "closing": {
+    "en": "When I think about CNES, I remember the work, but I also remember who was there with me. Money mattered a lot in that decision, and I don’t want to pretend otherwise. What made the choice worthwhile for me was being able to learn about satellites in a team where I felt comfortable asking questions, while making the most of my last months in France. If you’re choosing an internship, ask about the everyday work too: who will help you, who you’ll work alongside and how much room you’ll have to learn. Those answers mattered to me as much as the project description.",
+    "pt": "Quando penso no CNES, lembro do trabalho, mas também de quem estava ali comigo. O dinheiro pesava muito naquela decisão, e não quero fingir que não. O que fez a escolha valer a pena pra mim foi poder aprender sobre satélites numa equipe em que eu me sentia à vontade para perguntar, enquanto aproveitava meus últimos meses na França. Se você está escolhendo um estágio, tenta perguntar sobre o dia a dia também: quem vai te acompanhar, com quem você vai trabalhar e quanto espaço vai ter para aprender. Essas respostas fizeram tanta diferença pra mim quanto a descrição do projeto.",
+    "fr": "Quand je pense au CNES, je me souviens du travail, mais aussi des personnes qui étaient là avec moi. L’argent pesait beaucoup dans cette décision, et je ne veux pas faire comme si ce n’était pas le cas. Ce qui a rendu ce choix précieux pour moi, c’est de pouvoir apprendre sur les satellites dans une équipe où j’osais poser des questions, tout en profitant de mes derniers mois en France. Si vous cherchez un stage, renseignez-vous aussi sur le quotidien : qui vous accompagnera, avec qui vous travaillerez et quelle place sera donnée à votre apprentissage. Ces réponses ont autant compté pour moi que la description du projet.",
+    "es": "Cuando pienso en el CNES, recuerdo el trabajo, pero también a quienes estaban allí conmigo. El dinero pesaba mucho en aquella decisión, y no quiero fingir que no. Lo que hizo que valiera la pena para mí fue aprender sobre satélites en un equipo en el que me sentía cómoda preguntando, mientras aprovechaba mis últimos meses en Francia. Si estás eligiendo unas prácticas, pregunta también por el día a día: quién te acompañará, con quién trabajarás y cuánto espacio tendrás para aprender. Esas respuestas fueron tan importantes para mí como la descripción del proyecto."
+  },
+  "cover": [
+    "nanosatelite",
+    "rio",
+    "estagiarios"
+  ],
+  "entities": [
+    "cnes",
+    "cern"
+  ],
+  "technical_path": "pages/experience/cnes.html",
+  "technical_label": {
+    "en": "My flight software work at CNES",
+    "pt": "Meu trabalho com software de voo no CNES",
+    "fr": "Mon travail sur le logiciel de vol au CNES",
+    "es": "Mi trabajo con software de vuelo en el CNES"
+  },
+  "journal_link_label": {
+    "en": "My CNES diary: AEROSAT, the team and life in Toulouse",
+    "pt": "Meu diário do CNES: AEROSAT, a equipe e a vida em Toulouse",
+    "fr": "Mon journal du CNES : AEROSAT, l’équipe et la vie à Toulouse",
+    "es": "Mi diario del CNES: AEROSAT, el equipo y la vida en Toulouse"
+  },
+  "timeline": [
+    {
+      "date": "2025-02",
+      "label": {
+        "en": "Feb–Aug 2025",
+        "pt": "Fev–ago 2025",
+        "fr": "Fév–août 2025",
+        "es": "Feb–ago 2025"
+      },
+      "title": {
+        "en": "CNES · my last semester in France",
+        "pt": "CNES · meu último semestre na França",
+        "fr": "CNES · mon dernier semestre en France",
+        "es": "CNES · mi último semestre en Francia"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "candidaturas",
+      "title": {
+        "en": "Before the offer, the applications",
+        "pt": "Antes da proposta, as candidaturas",
+        "fr": "Avant la proposition, les candidatures",
+        "es": "Antes de la oferta, las candidaturas"
+      },
+      "paragraphs": [
+        {
+          "en": "I was in my final year in France and looking for a six-month, full-time internship. Afterwards, I would return to Brazil to finish my aerospace engineering degree. I wasn’t a Fundação Estudar scholar yet, and I needed to put money aside to support myself when I got back. The pay wasn’t a small detail in my search.",
+          "pt": "Eu estava no último ano na França e procurando um estágio de seis meses em tempo integral. Depois, voltaria ao Brasil para terminar engenharia aeroespacial. Naquele momento, eu ainda não era bolsista da Fundação Estudar e precisava guardar dinheiro para me sustentar na volta. A remuneração não era um detalhe pequeno nessa busca.",
+          "fr": "J’étais dans ma dernière année en France et je cherchais un stage de six mois à temps plein. Ensuite, je devais rentrer au Brésil pour terminer mes études d’ingénierie aérospatiale. Je n’étais pas encore boursière de Fundação Estudar et j’avais besoin d’économiser pour vivre à mon retour. La rémunération était donc un vrai critère de recherche.",
+          "es": "Estaba en mi último año en Francia y buscaba unas prácticas de seis meses a tiempo completo. Después volvería a Brasil para terminar ingeniería aeroespacial. Todavía no era becaria de Fundação Estudar y necesitaba ahorrar para mantenerme al regresar. La remuneración no era un detalle menor en aquella búsqueda."
+        },
+        {
+          "en": "I also really wanted to work with satellites or launch vehicles. I had already done research internships and wanted to get closer to that work. I sent around 200 applications. Some led to interviews, sometimes even the final stage, but there were many rejections. At career fairs, I also heard that certain roles weren’t open to me because I didn’t have French or European citizenship, especially when the work involved defence. I had to learn that a rejection didn’t always tell me something about my technical ability.",
+          "pt": "Eu também queria muito trabalhar com satélites ou veículos lançadores. Já tinha feito estágios de pesquisa e queria me aproximar desse trabalho. Mandei por volta de 200 candidaturas. Algumas viraram entrevistas, às vezes até a etapa final, mas recebi muitas recusas. Nas feiras de carreira, também ouvi que certas vagas não estavam abertas para mim porque eu não tinha cidadania francesa ou europeia, principalmente quando o trabalho envolvia defesa. Precisei aprender que uma recusa nem sempre dizia alguma coisa sobre a minha capacidade técnica.",
+          "fr": "Je voulais aussi vraiment travailler sur des satellites ou des lanceurs. J’avais déjà fait des stages de recherche et je voulais me rapprocher de ce domaine. J’ai envoyé environ 200 candidatures. Certaines ont débouché sur des entretiens, parfois jusqu’à la dernière étape, mais j’ai reçu beaucoup de refus. Sur les forums de recrutement, on m’expliquait aussi que certains postes n’étaient pas accessibles sans nationalité française ou européenne, notamment quand ils touchaient à la défense. J’ai dû comprendre qu’un refus ne disait pas toujours quelque chose sur mes compétences techniques.",
+          "es": "También quería mucho trabajar con satélites o lanzadores. Ya había hecho prácticas de investigación y quería acercarme a ese trabajo. Envié unas 200 candidaturas. Algunas llegaron a entrevistas, a veces hasta la etapa final, pero recibí muchos rechazos. En las ferias de empleo también me dijeron que ciertos puestos no estaban abiertos para mí porque no tenía ciudadanía francesa o europea, sobre todo cuando el trabajo estaba relacionado con defensa. Tuve que aprender que un rechazo no siempre decía algo sobre mi capacidad técnica."
+        }
+      ],
+      "photos": [
+        "cnes"
+      ]
+    },
+    {
+      "id": "escolha",
+      "title": {
+        "en": "Two offers, one last semester",
+        "pt": "Duas propostas, um último semestre",
+        "fr": "Deux propositions, un dernier semestre",
+        "es": "Dos ofertas, un último semestre"
+      },
+      "paragraphs": [
+        {
+          "en": "Eventually, I had two offers: CERN and CNES. The CERN role paid more and involved physics and electronics, with a team I really liked. I would have been the only intern on that project, working with senior engineers. It was an exciting possibility.",
+          "pt": "Em algum momento, chegaram duas propostas: uma do CERN e uma do CNES. No CERN, eu ganharia mais e trabalharia com física e eletrônica, numa equipe de que tinha gostado muito. Seria a única estagiária daquele projeto, ao lado de engenheiros seniores. Era uma possibilidade muito boa.",
+          "fr": "J’ai finalement reçu deux propositions : une du CERN et une du CNES. Au CERN, la rémunération était plus élevée et le projet portait sur la physique et l’électronique, avec une équipe qui m’avait beaucoup plu. J’aurais été la seule stagiaire du projet, aux côtés d’ingénieurs expérimentés. C’était une très belle possibilité.",
+          "es": "Al final llegaron dos ofertas: una del CERN y otra del CNES. En el CERN cobraría más y trabajaría con física y electrónica, en un equipo que me había gustado mucho. Sería la única estudiante en prácticas del proyecto, junto a ingenieros sénior. Era una posibilidad muy buena."
+        },
+        {
+          "en": "At CNES, the pay was lower, but the project was a satellite developed by students. I had loved meeting the team, and I knew there would be other interns sharing that experience. Both choices meant moving to a new city. I kept thinking about the work I wanted to do, but also about how I wanted to spend those last months in France.",
+          "pt": "No CNES, a remuneração era menor, mas o projeto era um satélite desenvolvido por estudantes. Eu tinha gostado muito da equipe e sabia que haveria outros estagiários vivendo aquilo comigo. Nas duas opções, teria que mudar de cidade. Fiquei pensando no trabalho que queria fazer, mas também em como queria viver aqueles últimos meses na França.",
+          "fr": "Au CNES, la rémunération était plus basse, mais il s’agissait d’un satellite développé par des étudiants. J’avais beaucoup aimé l’équipe et je savais que d’autres stagiaires partageraient cette expérience. Dans les deux cas, il fallait changer de ville. Je pensais au travail que je voulais faire, mais aussi à la manière dont je voulais vivre ces derniers mois en France.",
+          "es": "En el CNES la remuneración era menor, pero el proyecto era un satélite desarrollado por estudiantes. Me había encantado el equipo y sabía que habría otros estudiantes viviendo aquello conmigo. Ambas opciones implicaban mudarme de ciudad. Pensaba en el trabajo que quería hacer, pero también en cómo quería vivir aquellos últimos meses en Francia."
+        },
+        {
+          "en": "I chose CNES. The recruitment process itself had been fairly straightforward; the difficult part was everything I was weighing up around it. This was a decision in 2025. My CERN openlab summer, which I tell elsewhere in this diary, would come in 2026.",
+          "pt": "Escolhi o CNES. O processo seletivo em si tinha sido bem tranquilo; a parte difícil era tudo o que eu estava colocando na balança. Essa foi uma decisão de 2025. O verão no CERN openlab, que conto em outra parte deste diário, viria em 2026.",
+          "fr": "J’ai choisi le CNES. Le recrutement lui-même avait été assez simple ; le plus difficile, c’était tout ce que je mettais dans la balance. Ce choix date de 2025. Mon été au CERN openlab, raconté ailleurs dans ce journal, viendrait en 2026.",
+          "es": "Elegí el CNES. El proceso de selección en sí había sido bastante tranquilo; lo difícil era todo lo que estaba poniendo en la balanza. Aquella fue una decisión de 2025. El verano en CERN openlab, que cuento en otra parte del diario, llegaría en 2026."
+        }
+      ],
+      "photos": [
+        "rio"
+      ]
+    },
+    {
+      "id": "aerosat",
+      "title": {
+        "en": "AEROSAT, beyond the application",
+        "pt": "AEROSAT, depois da candidatura",
+        "fr": "AEROSAT, après la candidature",
+        "es": "AEROSAT, después de la candidatura"
+      },
+      "paragraphs": [
+        {
+          "en": "AEROSAT is a student nanosatellite project at CNES, within Nanolab Academy. That was one of the things that drew me in: we were students, with support from experienced people, developing a real satellite intended for launch. Knowing that gave the work a very concrete purpose.",
+          "pt": "O AEROSAT é um projeto de nanossatélite de estudantes no CNES, dentro da Nanolab Academy. Era uma das coisas que tinham me atraído: éramos estudantes, acompanhados por pessoas experientes, desenvolvendo um satélite de verdade, pensado para ser lançado. Saber disso dava um sentido muito concreto ao trabalho.",
+          "fr": "AEROSAT est un projet de nanosatellite étudiant au CNES, dans le cadre de Nanolab Academy. C’est ce qui m’avait attirée : nous étions des étudiants, accompagnés par des personnes expérimentées, en train de développer un vrai satellite destiné à être lancé. Cela donnait un sens très concret au travail.",
+          "es": "AEROSAT es un proyecto de nanosatélite de estudiantes en el CNES, dentro de Nanolab Academy. Eso era parte de lo que me había atraído: éramos estudiantes, acompañados por personas con experiencia, desarrollando un satélite real destinado a ser lanzado. Saberlo daba un sentido muy concreto al trabajo."
+        },
+        {
+          "en": "I worked on flight software: how the system recovered after a reset, read its memory and organised its tasks. One part involved restoring saved state from FRAM, a memory that retains data without power. I also worked on moving non-critical reads into the background so they wouldn’t hold up startup. These are the technical details behind the experience, and I’ve kept them together on the project page.",
+          "pt": "Trabalhei com software de voo: como o sistema se recuperava depois de uma reinicialização, lia sua memória e organizava suas tarefas. Uma parte envolvia recuperar o estado salvo em FRAM, uma memória que mantém os dados sem energia. Também trabalhei para levar leituras não críticas para segundo plano, sem bloquear a inicialização. É a parte técnica por trás dessa experiência, que deixei reunida na página do projeto.",
+          "fr": "Je travaillais sur le logiciel de vol : la reprise après une réinitialisation, la lecture de la mémoire et l’ordonnancement des tâches. Une partie consistait à restaurer l’état sauvegardé en FRAM, une mémoire qui conserve ses données sans alimentation. J’ai aussi travaillé à déplacer les lectures non critiques en arrière-plan pour ne pas bloquer le démarrage. Ce sont les détails techniques de cette expérience, réunis sur la page du projet.",
+          "es": "Trabajé con software de vuelo: cómo se recuperaba el sistema después de un reinicio, leía su memoria y organizaba sus tareas. Una parte consistía en recuperar el estado guardado en FRAM, una memoria que conserva los datos sin alimentación. También trabajé para trasladar lecturas no críticas a segundo plano y evitar que bloquearan el arranque. Es la parte técnica de esta experiencia, que reuní en la página del proyecto."
+        }
+      ],
+      "photos": [
+        "nanosatelite",
+        "quadro"
+      ],
+      "links": [
+        {
+          "url": "https://cnes.fr/projets/nanolab-academy",
+          "label": {
+            "en": "About AEROSAT and Nanolab Academy, on the CNES website",
+            "pt": "Sobre o AEROSAT e a Nanolab Academy, no site do CNES",
+            "fr": "AEROSAT et Nanolab Academy, sur le site du CNES",
+            "es": "Sobre AEROSAT y Nanolab Academy, en la web del CNES"
+          }
+        }
+      ]
+    },
+    {
+      "id": "equipe",
+      "title": {
+        "en": "Having room to ask",
+        "pt": "Ter espaço para perguntar",
+        "fr": "Avoir la liberté de poser des questions",
+        "es": "Tener espacio para preguntar"
+      },
+      "paragraphs": [
+        {
+          "en": "My supervisors were always there to help, and we also had a lot of freedom. That combination made a difference. I could take responsibility for my work without feeling that I had to figure everything out alone.",
+          "pt": "Meus supervisores estavam sempre por perto para ajudar, e a gente também tinha muita liberdade. Essa combinação fez diferença. Eu podia assumir responsabilidade pelo meu trabalho sem sentir que precisava descobrir tudo sozinha.",
+          "fr": "Mes encadrants étaient toujours disponibles pour nous aider, et nous avions aussi beaucoup de liberté. Cette combinaison a compté. Je pouvais prendre des responsabilités sans avoir l’impression de devoir tout découvrir seule.",
+          "es": "Mis supervisores siempre estaban disponibles para ayudar, y también teníamos mucha libertad. Esa combinación marcó la diferencia. Podía asumir responsabilidades sin sentir que tenía que descubrirlo todo sola."
+        },
+        {
+          "en": "We had weekly meetings, and they encouraged us to ask about the space agency itself, to make the most of being there. I liked that invitation. I was learning to do my work, but I could also ask about the place around me and the people who made it run.",
+          "pt": "Tínhamos reuniões semanais, e eles incentivavam a gente a perguntar sobre a própria agência espacial, a aproveitar a oportunidade de estar ali. Eu gostava muito desse convite. Estava aprendendo a fazer meu trabalho, mas também podia perguntar sobre o lugar à minha volta e sobre as pessoas que faziam tudo acontecer.",
+          "fr": "Nous avions des réunions hebdomadaires, et ils nous encourageaient à poser des questions sur l’agence spatiale elle-même, à profiter du fait d’être là. J’aimais beaucoup cette invitation. J’apprenais mon travail, mais je pouvais aussi découvrir l’organisation autour de moi et les personnes qui la faisaient fonctionner.",
+          "es": "Teníamos reuniones semanales y nos animaban a preguntar por la propia agencia espacial, a aprovechar la oportunidad de estar allí. Me gustaba mucho esa invitación. Aprendía a hacer mi trabajo, pero también podía preguntar por el lugar que me rodeaba y por las personas que lo hacían funcionar."
+        }
+      ],
+      "photos": [
+        "estagiarios",
+        "laboratorio",
+        "churrasco",
+        "mural"
+      ]
+    },
+    {
+      "id": "toulouse",
+      "title": {
+        "en": "Space outside work, too",
+        "pt": "O espaço também fora do trabalho",
+        "fr": "Le spatial, même en dehors du travail",
+        "es": "El espacio también fuera del trabajo"
+      },
+      "paragraphs": [
+        {
+          "en": "Toulouse was a wonderful place to live while working in space. My curiosity didn’t stop when I left work. I visited museums and exhibitions, saw rockets and spacecraft displays, and also explored aviation: an A380, Concorde, a cockpit. These photos are part of how I remember that period.",
+          "pt": "Toulouse foi uma cidade maravilhosa para viver enquanto eu trabalhava com espaço. Minha curiosidade não acabava quando saía do trabalho. Visitei museus e exposições, vi foguetes e peças ligadas à exploração espacial e também fui conhecer mais da aviação: um A380, o Concorde, um cockpit. Essas fotos fazem parte de como lembro daquele período.",
+          "fr": "Toulouse a été une ville formidable à vivre pendant que je travaillais dans le spatial. Ma curiosité ne s’arrêtait pas en quittant le travail. J’ai visité des musées et des expositions, vu des fusées et des éléments liés à l’exploration spatiale, et découvert aussi l’aviation : un A380, le Concorde, un cockpit. Ces photos font partie de mes souvenirs de cette période.",
+          "es": "Toulouse fue una ciudad maravillosa para vivir mientras trabajaba en el sector espacial. Mi curiosidad no terminaba al salir del trabajo. Visité museos y exposiciones, vi cohetes y elementos de exploración espacial, y también conocí más de aviación: un A380, el Concorde, un cockpit. Estas fotos forman parte de cómo recuerdo aquella época."
+        },
+        {
+          "en": "I liked being able to see things up close that I had spent so much time studying. And I liked that discovering the city could include all of this, as well as a concert or an afternoon by the river.",
+          "pt": "Gostava de poder ver de perto coisas que tinha passado tanto tempo estudando. E gostava de descobrir uma cidade onde cabia tudo isso, mas também um concerto ou uma tarde à beira do rio.",
+          "fr": "J’aimais voir de près des choses que j’avais étudiées si longtemps. Et j’aimais découvrir une ville où il y avait tout cela, mais aussi un concert ou un après-midi au bord du fleuve.",
+          "es": "Me gustaba ver de cerca cosas que había pasado tanto tiempo estudiando. Y me gustaba descubrir una ciudad en la que cabía todo eso, además de un concierto o una tarde junto al río."
+        }
+      ],
+      "photos": [
+        "ariane",
+        "ariane-detalhe",
+        "mars",
+        "lunar",
+        "traje",
+        "a380",
+        "concorde",
+        "cockpit",
+        "concerto"
+      ]
+    },
+    {
+      "id": "amigos",
+      "title": {
+        "en": "The people in these photos",
+        "pt": "As pessoas dessas fotos",
+        "fr": "Les personnes sur ces photos",
+        "es": "Las personas de estas fotos"
+      },
+      "paragraphs": [
+        {
+          "en": "I shared an apartment, made French friends and friends from other countries, and spoke French throughout the day. With so many interns, we became close and spent a lot of time together outside work too. There were meals, picnics, walks and plans around the city. Looking at these photos, I remember how much we managed to fit into those months.",
+          "pt": "Dividi apartamento, fiz amigos franceses e de outros países e falava francês o dia inteiro. Como havia muitos estagiários, a gente ficou muito próximo e passou a fazer muita coisa junto fora do trabalho também. Teve comida, piquenique, trilha, passeio pela cidade. Olhando essas fotos, lembro de quanta coisa coube naqueles meses.",
+          "fr": "Je partageais un appartement, je me suis fait des amis français et d’autres pays, et je parlais français toute la journée. Avec autant de stagiaires, nous sommes devenus proches et nous passions aussi beaucoup de temps ensemble après le travail. Il y a eu des repas, des pique-niques, des randonnées et des sorties en ville. Ces photos me rappellent tout ce que nous avons vécu en quelques mois.",
+          "es": "Compartí piso, hice amigos franceses y de otros países, y hablaba francés todo el día. Como había muchos estudiantes en prácticas, nos hicimos muy cercanos y empezamos a hacer muchas cosas juntos fuera del trabajo. Hubo comidas, pícnics, caminatas y paseos por la ciudad. Al mirar estas fotos recuerdo cuánto vivimos en aquellos meses."
+        },
+        {
+          "en": "It was intense, and we learned a lot. But we also had so much fun. When I was deciding between the two offers, I had hoped to find that kind of company. Getting to live it was one of the best parts of the choice.",
+          "pt": "Foi intenso, e a gente aprendeu muito. Mas também se divertiu muito. Quando estava escolhendo entre as duas propostas, eu imaginava que seria bom ter essa companhia. Poder viver isso foi uma das partes mais gostosas da escolha.",
+          "fr": "C’était intense, et nous avons beaucoup appris. Mais nous nous sommes aussi beaucoup amusés. Au moment de choisir entre les deux propositions, j’espérais trouver cette compagnie. La vivre a été l’une des plus belles choses que ce choix m’ait apportées.",
+          "es": "Fue intenso y aprendimos mucho. Pero también nos divertimos muchísimo. Cuando estaba eligiendo entre las dos ofertas, imaginaba lo bonito que sería tener esa compañía. Poder vivirlo fue una de las mejores partes de aquella elección."
+        }
+      ],
+      "photos": [
+        "picnic",
+        "brunch",
+        "jantar",
+        "jantar-outro",
+        "trilhas",
+        "amigas",
+        "vista",
+        "cabine",
+        "lembranca"
+      ]
+    },
+    {
+      "id": "volta",
+      "title": {
+        "en": "What I brought back",
+        "pt": "O que voltou comigo",
+        "fr": "Ce que j’ai ramené",
+        "es": "Lo que volvió conmigo"
+      },
+      "paragraphs": [
+        {
+          "en": "Having CNES on my CV opened doors. I felt that in the opportunities that came afterwards. But it was also where I built experience working on a satellite with people who knew so much and were willing to teach us. I came back to Brazil with more than a line on my CV to explain.",
+          "pt": "Ter o CNES no currículo abriu portas. Senti isso nas oportunidades que vieram depois. Mas foi também onde construí experiência trabalhando num satélite, com pessoas que sabiam muito e tinham disposição para ensinar. Voltei ao Brasil com muito mais do que uma linha no currículo para explicar.",
+          "fr": "Avoir le CNES sur mon CV m’a ouvert des portes. Je l’ai ressenti dans les possibilités qui se sont présentées ensuite. C’est aussi là que j’ai acquis de l’expérience sur un satellite, avec des personnes qui savaient beaucoup et prenaient le temps de transmettre. Je suis rentrée au Brésil avec bien plus qu’une ligne sur mon CV à raconter.",
+          "es": "Tener el CNES en mi currículum me abrió puertas. Lo noté en las oportunidades que llegaron después. Pero también fue donde adquirí experiencia trabajando en un satélite con personas que sabían mucho y querían enseñarnos. Volví a Brasil con mucho más que una línea en el currículum para explicar."
+        },
+        {
+          "en": "The next part of this story was my return to Brazil and Visiona. After speaking French every day and learning so much engineering in that language, even explaining my work in Portuguese took some getting used to. That story has its own page here.",
+          "pt": "A continuação dessa história foi a volta ao Brasil e a Visiona. Depois de falar francês todos os dias e aprender tanta engenharia nessa língua, até explicar meu trabalho em português exigiu uma adaptação. Essa história tem uma página só dela aqui.",
+          "fr": "La suite, c’était mon retour au Brésil et Visiona. Après avoir parlé français tous les jours et appris tant de choses techniques dans cette langue, même expliquer mon travail en portugais a demandé un temps d’adaptation. Cette histoire a sa propre page ici.",
+          "es": "La continuación fue la vuelta a Brasil y Visiona. Después de hablar francés todos los días y aprender tanta ingeniería en ese idioma, incluso explicar mi trabajo en portugués requirió adaptación. Esa historia tiene su propia página aquí."
+        }
+      ],
+      "photos": [],
+      "stories": [
+        {
+          "slug": "visiona",
+          "title": {
+            "en": "Back in Brazil, at Visiona",
+            "pt": "De volta ao Brasil, na Visiona",
+            "fr": "De retour au Brésil, chez Visiona",
+            "es": "De vuelta en Brasil, en Visiona"
+          },
+          "description": {
+            "en": "The next internship, a welcoming team and a new view of Brazilian space technology.",
+            "pt": "O estágio seguinte, uma equipe que me acolheu e um novo olhar para a tecnologia espacial brasileira.",
+            "fr": "Le stage suivant, une équipe accueillante et un autre regard sur le spatial brésilien.",
+            "es": "Las siguientes prácticas, un equipo que me acogió y una nueva mirada a la tecnología espacial brasileña."
+          }
+        },
+        {
+          "slug": "cern",
+          "title": {
+            "en": "CERN would come later",
+            "pt": "O CERN viria depois",
+            "fr": "Le CERN viendrait ensuite",
+            "es": "El CERN llegaría después"
+          },
+          "description": {
+            "en": "My openlab summer in 2026 began with an acceptance email I almost overlooked.",
+            "pt": "Meu verão no openlab em 2026 começou com um e-mail de aprovação ao qual quase não dei atenção.",
+            "fr": "Mon été openlab en 2026 a commencé par un e-mail d’acceptation que j’ai failli ignorer.",
+            "es": "Mi verano en openlab en 2026 empezó con un correo de aceptación al que casi no presté atención."
+          }
+        }
+      ]
+    }
+  ],
+  "photos": {
+    "cnes": {
+      "file": "portifolio/cnes/cnes.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A CNES stand, in a photo from that period.",
+        "pt": "Um estande do CNES, num registro daquele período.",
+        "fr": "Un stand du CNES, dans une photo de cette période.",
+        "es": "Un estand del CNES, en una foto de aquella época."
+      }
+    },
+    "rio": {
+      "file": "portifolio/cnes/pintar no rio de toulouse.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Painting by the river in Toulouse.",
+        "pt": "Pintando à beira do rio em Toulouse.",
+        "fr": "Peindre au bord du fleuve à Toulouse.",
+        "es": "Pintando junto al río en Toulouse."
+      }
+    },
+    "nanosatelite": {
+      "file": "portifolio/cnes/nanosatelite .jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A nanosatellite setup on the lab bench.",
+        "pt": "Uma montagem de nanossatélite na bancada.",
+        "fr": "Un montage de nanosatellite sur le banc de travail.",
+        "es": "Un montaje de nanosatélite en el banco de trabajo."
+      }
+    },
+    "quadro": {
+      "file": "portifolio/cnes/quadro projeto.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Project notes on the whiteboard.",
+        "pt": "Anotações do projeto no quadro.",
+        "fr": "Des notes du projet au tableau.",
+        "es": "Apuntes del proyecto en la pizarra."
+      }
+    },
+    "estagiarios": {
+      "file": "portifolio/cnes/cnes estagiarios.jpeg",
+      "width": 1600,
+      "height": 1200,
+      "caption": {
+        "en": "With the interns, taking a break outside.",
+        "pt": "Com a turma de estagiários, numa pausa ao ar livre.",
+        "fr": "Avec les stagiaires, pendant une pause dehors.",
+        "es": "Con el grupo de estudiantes en prácticas, en una pausa al aire libre."
+      }
+    },
+    "laboratorio": {
+      "file": "portifolio/cnes/amigos jogando laboratorio.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A game with friends in the lab.",
+        "pt": "Uma partida com os amigos no laboratório.",
+        "fr": "Une partie avec les amis au labo.",
+        "es": "Una partida con amigos en el laboratorio."
+      }
+    },
+    "churrasco": {
+      "file": "portifolio/cnes/churrasco cnes.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A barbecue with the CNES group.",
+        "pt": "Churrasco com a turma do CNES.",
+        "fr": "Un barbecue avec le groupe du CNES.",
+        "es": "Una barbacoa con el grupo del CNES."
+      }
+    },
+    "mural": {
+      "file": "portifolio/cnes/fotos amigos.jpeg",
+      "width": 791,
+      "height": 760,
+      "caption": {
+        "en": "Our photos gathered on a board.",
+        "pt": "Nossas fotos reunidas num mural.",
+        "fr": "Nos photos réunies sur un panneau.",
+        "es": "Nuestras fotos reunidas en un panel."
+      }
+    },
+    "ariane": {
+      "file": "portifolio/cnes/ariane .jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Seeing Ariane up close.",
+        "pt": "Vendo o Ariane de perto.",
+        "fr": "Voir Ariane de près.",
+        "es": "Viendo el Ariane de cerca."
+      }
+    },
+    "ariane-detalhe": {
+      "file": "portifolio/cnes/ariane.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Another view of Ariane.",
+        "pt": "Outro ângulo do Ariane.",
+        "fr": "Un autre angle sur Ariane.",
+        "es": "Otro ángulo del Ariane."
+      }
+    },
+    "mars": {
+      "file": "portifolio/cnes/mars.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A Mars-themed exhibition.",
+        "pt": "Uma exposição sobre Marte.",
+        "fr": "Une exposition sur Mars.",
+        "es": "Una exposición sobre Marte."
+      }
+    },
+    "lunar": {
+      "file": "portifolio/cnes/modulos lunare.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Exploring the lunar exhibition.",
+        "pt": "Conhecendo a exposição lunar.",
+        "fr": "Découvrir l’exposition lunaire.",
+        "es": "Conociendo la exposición lunar."
+      }
+    },
+    "traje": {
+      "file": "portifolio/cnes/roupas astronautas.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "An astronaut suit on display.",
+        "pt": "Um traje de astronauta em exposição.",
+        "fr": "Une combinaison d’astronaute exposée.",
+        "es": "Un traje de astronauta expuesto."
+      }
+    },
+    "a380": {
+      "file": "portifolio/cnes/airbus a380.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "Up close to an Airbus A380.",
+        "pt": "De perto com um Airbus A380.",
+        "fr": "Au plus près d’un Airbus A380.",
+        "es": "De cerca con un Airbus A380."
+      }
+    },
+    "concorde": {
+      "file": "portifolio/cnes/concorde.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A visit to see Concorde.",
+        "pt": "Uma visita para conhecer o Concorde.",
+        "fr": "Une visite pour découvrir le Concorde.",
+        "es": "Una visita para conocer el Concorde."
+      }
+    },
+    "cockpit": {
+      "file": "portifolio/cnes/cockpit .jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Inside a cockpit during a visit.",
+        "pt": "Dentro de um cockpit durante uma visita.",
+        "fr": "Dans un cockpit pendant une visite.",
+        "es": "Dentro de un cockpit durante una visita."
+      }
+    },
+    "concerto": {
+      "file": "portifolio/cnes/concerto musica.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "An evening of music.",
+        "pt": "Uma noite de música.",
+        "fr": "Une soirée de musique.",
+        "es": "Una noche de música."
+      }
+    },
+    "picnic": {
+      "file": "portifolio/cnes/picnic cnes.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A picnic with friends from CNES.",
+        "pt": "Piquenique com os amigos do CNES.",
+        "fr": "Un pique-nique avec les amis du CNES.",
+        "es": "Un pícnic con los amigos del CNES."
+      }
+    },
+    "brunch": {
+      "file": "portifolio/cnes/brunch amigos.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Brunch with friends.",
+        "pt": "Brunch com os amigos.",
+        "fr": "Un brunch entre amis.",
+        "es": "Brunch con amigos."
+      }
+    },
+    "jantar": {
+      "file": "portifolio/cnes/jantar amigos.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Dinner together.",
+        "pt": "Um jantar juntos.",
+        "fr": "Un dîner ensemble.",
+        "es": "Una cena juntos."
+      }
+    },
+    "jantar-outro": {
+      "file": "portifolio/cnes/jantar amigso.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Another meal around the table with friends.",
+        "pt": "Mais uma mesa com os amigos.",
+        "fr": "Un autre repas entre amis.",
+        "es": "Otra mesa compartida con amigos."
+      }
+    },
+    "trilhas": {
+      "file": "portifolio/cnes/trilhas.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A landscape from one of our hikes.",
+        "pt": "Uma paisagem das trilhas.",
+        "fr": "Un paysage de randonnée.",
+        "es": "Un paisaje de las caminatas."
+      }
+    },
+    "amigas": {
+      "file": "portifolio/cnes/amigos.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "caption": {
+        "en": "With friends in the mountains.",
+        "pt": "Com as amigas nas montanhas.",
+        "fr": "Avec des amies en montagne.",
+        "es": "Con amigas en las montañas."
+      }
+    },
+    "vista": {
+      "file": "portifolio/cnes/amigos4.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "A view worth sharing.",
+        "pt": "Uma vista para aproveitar junto.",
+        "fr": "Une vue à partager.",
+        "es": "Una vista para disfrutar juntos."
+      }
+    },
+    "cabine": {
+      "file": "portifolio/cnes/amigos2.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A photo-booth memory with friends.",
+        "pt": "Uma lembrança de cabine de fotos com os amigos.",
+        "fr": "Un souvenir de photomaton entre amis.",
+        "es": "Un recuerdo de fotomatón con amigos."
+      }
+    },
+    "lembranca": {
+      "file": "portifolio/cnes/amigos3.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Another photo souvenir from that period.",
+        "pt": "Mais uma foto de lembrança daquele período.",
+        "fr": "Une autre photo souvenir de cette période.",
+        "es": "Otra foto de recuerdo de aquella época."
+      }
+    }
+  }
+}

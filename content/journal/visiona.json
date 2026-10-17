@@ -74,7 +74,24 @@
         }
       ],
       "photos": [],
-      "links": []
+      "links": [],
+      "stories": [
+        {
+          "slug": "cnes",
+          "title": {
+            "en": "Before coming home: CNES and Toulouse",
+            "pt": "Antes da volta: CNES e Toulouse",
+            "fr": "Avant le retour : le CNES et Toulouse",
+            "es": "Antes de volver: CNES y Toulouse"
+          },
+          "description": {
+            "en": "The satellite project, the internship choice and my last semester in France.",
+            "pt": "O projeto de satélite, a escolha do estágio e meu último semestre na França.",
+            "fr": "Le projet de satellite, le choix du stage et mon dernier semestre en France.",
+            "es": "El proyecto de satélite, la elección de las prácticas y mi último semestre en Francia."
+          }
+        }
+      ]
     },
     {
       "id": "equipe",
