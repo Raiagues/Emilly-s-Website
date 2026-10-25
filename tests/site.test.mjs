@@ -1207,3 +1207,14 @@ test('CERN report passes accessibility checks in every language', async () => {
     await page.close();
   }
 });
+
+test('CERN rotation resumes after tapping the control on a touch screen', async () => {
+  const {page}=await visit('pt/pages/experience/cern.html',{viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
+  const button=page.locator('[data-atlas-pause]');
+  const state=()=>page.locator('[data-atlas]').evaluate(el=>getComputedStyle(el).animationPlayState);
+  await button.tap();assert.equal(await state(),'paused');
+  await button.tap();assert.equal(await state(),'running');
+  await button.focus();await page.keyboard.press('Space');assert.equal(await state(),'paused');
+  await page.keyboard.press('Space');assert.equal(await state(),'running');
+  await page.close();
+});

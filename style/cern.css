@@ -48,7 +48,7 @@
 .cern-report .scene{perspective:1100px;perspective-origin:50% 40%}
 .cern-report .atlas{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-14deg) rotateY(-32deg);animation:cern-spiny 40s linear infinite}
 .cern-report .atlas span{transition:opacity .4s}
-.cern-report .scene:hover .atlas{animation-play-state:paused}
+@media(hover:hover){.cern-report .scene:hover .atlas{animation-play-state:paused}}
 .cern-report .lg{transition:transform .2s,background .2s}
 .cern-report .lg:hover{transform:translateY(-2px)}
 .cern-report .lg:focus-visible{outline:3px solid #D9694E;outline-offset:2px}
@@ -322,7 +322,8 @@
 .cern-report .atlas span{position:absolute;left:0;top:0;box-sizing:border-box;backface-visibility:visible}
 .cern-report .atlas{scale:var(--atlas-scale,1);animation-play-state:paused}
 .cern-report[data-ready] .atlas{animation-play-state:running}
-.cern-report .scene:hover .atlas,.cern-report .scene:focus-within .atlas,.cern-report .scene[data-paused="true"] .atlas{animation-play-state:paused}
+.cern-report .scene[data-paused="true"] .atlas{animation-play-state:paused}
+@media(hover:hover){.cern-report .scene:hover .atlas{animation-play-state:paused}}
 .cern-report .cern-layer{min-height:36px;padding:0 12px 0 8px;border:0;border-radius:999px;background:#EADFC8;color:#1E3A3D;font:10px/1.6 'Space Mono',monospace;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .cern-report .cern-layer>span{width:10px;height:10px;border-radius:3px;flex-shrink:0}
 .cern-report .cern-layer[aria-pressed="true"],.cern-report [data-visibility][aria-pressed="true"]{background:#1F4A4F;color:#F4EEE2}

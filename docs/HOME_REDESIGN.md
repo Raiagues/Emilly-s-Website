@@ -8,7 +8,7 @@ As cinco camadas do detector podem ser destacadas e a rotação pode ser pausada
 
 O relatório final e os slides usam os links fornecidos pela proprietária. Não há runtime do exportador, React, imagens externas de exemplo ou botões sem destino. Os 14 PNGs são idênticos aos do ZIP. O arquivo original e os materiais pessoais não selecionados continuam fora de `dist`.
 
-Validação: build e verificador aprovados nos 171 HTMLs; 45 cenários de navegador cobertos, com 43 aprovados na execução completa e reexecução aprovada dos dois cenários ajustados (retorno específico do CERN e espera pelo término da animação de entrada antes de medir contraste no diário). Os cinco cenários novos conferem quatro idiomas, larguras de 320 a 1440 px, links finais, oito capítulos, métricas, detector, ampliação, teclado, conteúdo sem JavaScript e WCAG A/AA. A comparação visual com o HTML enviado confirmou as mesmas medidas da abertura no desktop.
+Validação: build e verificador aprovados nos 171 HTMLs; 46 cenários de navegador cobertos, incluindo reexecução dos testes de retorno, contraste e interações do CERN após os ajustes finais. Os seis cenários novos conferem quatro idiomas, larguras de 320 a 1440 px, links finais, oito capítulos, métricas, detector, ampliação, teclado, toque, conteúdo sem JavaScript e WCAG A/AA. A comparação visual com o HTML enviado confirmou as mesmas medidas da abertura no desktop. A pausa por hover se aplica somente a dispositivos com mouse; manter o foco no botão não impede retomar a rotação por toque ou teclado.
 
 ## Catálogos, navegação e fontes públicas — 25/10/2026
 
