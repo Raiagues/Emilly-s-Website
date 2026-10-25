@@ -4,7 +4,7 @@ Diário pessoal e portfólio de engenharia aeroespacial, sistemas embarcados e d
 
 20 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, links para demonstrações em vídeo e contato por e-mail. A identidade original foi restaurada: fundo creme, azul-petróleo, detalhes terracota, títulos com serifa e o retrato com elementos de órbita. Os botões continuam sem bordas. A navegação organizada e as histórias do diário foram mantidas.
 
-A página inicial abre o diário, com histórias em primeira pessoa e fotos pessoais. A primeira entrada reúne o CERN openlab: trabalho ligado ao ATLAS, visitas, aulas, viagens, trilhas e amigos.
+A página inicial abre o diário, com nove histórias em primeira pessoa e fotos pessoais. O relato do BRAFITEC acompanha a seleção, o francês e a vida em Grenoble. Os álbuns respeitam a proporção de cada foto e permitem ampliar as imagens.
 
 **Para editar histórias ou publicar outras: [guia do diário](content/journal/README.md).** Textos e legendas ficam em arquivos JSON; rascunhos com `published: false` não aparecem no site.
 
@@ -16,13 +16,39 @@ A navegação tem seis páginas: diário, projetos, experiência, sobre mim, con
 
 ## Abrir localmente
 
-As páginas HTML já estão geradas. Abra `index.html` ou execute:
+Na pasta do projeto, execute uma vez para preparar o ambiente e gerar o site.
 
 ```bash
-python3 -m http.server 8000 --bind 127.0.0.1
+./setup
 ```
 
-Acesse **http://127.0.0.1:8000**. Não é necessário instalar bibliotecas para visualizar o site. Para encerrar o servidor, pressione `Ctrl+C`. Se a porta estiver ocupada, troque `8000` por `8137` no comando e no endereço.
+Depois, inicie o site.
+
+```bash
+./start
+```
+
+Abra **http://127.0.0.1:8000/pt/**. O servidor fica em segundo plano e você pode fechar o terminal. Para parar, execute na pasta do projeto.
+
+```bash
+./stop
+```
+
+O `./start` gera as páginas novamente, então alterações nos textos e fotos aparecem após `./stop` e `./start`. Repetir `./start` informa o endereço do servidor já aberto. Repetir `./stop` também é seguro. Para usar outra porta, execute `./start 8137` ou `PORT=8137 ./start`. O `./stop` encontra a porta usada automaticamente e encerra apenas este projeto.
+
+Os comandos funcionam em Linux, macOS e WSL com Bash. O único requisito para gerar e servir o site é Python 3.12 ou mais recente. O `./setup` aproveita uma instalação compatível existente. Se precisar, baixa o Python com o instalador oficial do [uv](https://docs.astral.sh/uv/guides/install-python/) para `.runtime/`, sem mudar o Python do sistema. Esse primeiro download precisa de internet e `curl`. O site não precisa de Node nem de bibliotecas Python para rodar.
+
+O servidor atende apenas em `127.0.0.1` e serve o conteúdo de `dist/`. Os registros ficam em `.runtime/server.log`. Essa pasta é local e não entra no Git nem na publicação.
+
+Para instalar também os testes de navegador, com Node.js 20 ou mais recente e npm já disponíveis, use `./setup --with-tests`. Isso instala as versões do `package-lock.json` e o Chromium local. Se preferir um Chrome já instalado, informe seu caminho em `BROWSER_EXECUTABLE` ao preparar e testar.
+
+```bash
+./setup --with-tests
+npm test
+python3 -m unittest discover -s tests -p 'local_test.py' -v
+```
+
+Em Linux, se o Chromium informar falta de bibliotecas do sistema, execute `npx playwright install-deps chromium` e tente novamente. A instalação dessas bibliotecas pode solicitar a senha de administrador.
 
 ## Publicar no GitHub Pages
 

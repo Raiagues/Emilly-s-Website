@@ -9,28 +9,28 @@
     "es": "South Summit · Porto Alegre"
   },
   "period": {
-    "en": "25–27 March 2026",
-    "pt": "25–27 de março de 2026",
-    "fr": "25–27 mars 2026",
-    "es": "25–27 de marzo de 2026"
+    "en": "25 to 27 March 2026",
+    "pt": "25 a 27 de março de 2026",
+    "fr": "25 à 27 mars 2026",
+    "es": "25 a 27 de marzo de 2026"
   },
   "title": {
-    "en": "How a conversation became a panel",
-    "pt": "Como uma conversa virou um painel",
-    "fr": "Comment une conversation est devenue une table ronde",
-    "es": "Cómo una conversación se convirtió en un panel"
+    "en": "Organising and moderating panels at South Summit",
+    "pt": "Organização e mediação de painéis no South Summit",
+    "fr": "Organisation et animation de panels au South Summit",
+    "es": "Organización y moderación de paneles en South Summit"
   },
   "subtitle": {
-    "en": "My mentor Verônica, the people I wanted to meet and the work that took me to the South Summit stage.",
-    "pt": "Minha mentora Verônica, as pessoas que eu queria conhecer e o trabalho até chegar ao palco do South Summit.",
-    "fr": "Ma mentore Verônica, les personnes que je voulais rencontrer et le travail qui m’a menée sur la scène du South Summit.",
-    "es": "Mi mentora Verônica, las personas que quería conocer y el trabajo que me llevó al escenario de South Summit."
+    "en": "Researching the sector, inviting speakers and discussing aerospace with professionals from the field.",
+    "pt": "Pesquisa sobre o setor, convites aos participantes e conversas sobre aeroespacial com profissionais da área.",
+    "fr": "Recherches sur le secteur, invitations et échanges sur l’aérospatial avec des professionnels.",
+    "es": "Investigación del sector, invitaciones y conversaciones sobre el ámbito aeroespacial con profesionales del área."
   },
   "intro": {
-    "en": "It started with a conversation with Verônica, my mentor. I told her I wanted to get closer to people in the space industry, hear about their work and understand the paths they had taken. I wasn’t imagining that this conversation would lead to organising and moderating a panel.",
-    "pt": "Começou numa conversa com a Verônica, minha mentora. Eu falei que queria me aproximar de pessoas do setor espacial, ouvir sobre o trabalho delas e entender os caminhos que tinham percorrido. Eu não estava imaginando que aquela conversa ia virar a organização e a mediação de um painel.",
-    "fr": "Tout a commencé par une conversation avec Verônica, ma mentore. Je lui ai dit que je voulais me rapprocher de personnes du secteur spatial, découvrir leur travail et comprendre leurs parcours. Je n’imaginais pas que cette conversation allait m’amener à organiser et animer une table ronde.",
-    "es": "Todo empezó en una conversación con Verônica, mi mentora. Le dije que quería acercarme a personas del sector espacial, conocer su trabajo y entender sus trayectorias. No imaginaba que esa conversación terminaría llevándome a organizar y moderar un panel."
+    "en": "At South Summit Brazil 2026, I organised and moderated conversations about the space sector. The work began with a suggestion from my mentor and involved research, invitations and preparing questions for the guests.",
+    "pt": "No South Summit Brazil 2026, organizei e mediei conversas sobre o setor espacial. O trabalho começou com uma sugestão da minha mentora e envolveu pesquisa, convites e preparação das perguntas para os convidados.",
+    "fr": "Au South Summit Brazil 2026, j’ai organisé et animé des échanges sur le secteur spatial. Le travail a commencé par une suggestion de ma mentore et a compris des recherches, des invitations et la préparation des questions.",
+    "es": "En South Summit Brazil 2026, organicé y moderé conversaciones sobre el sector espacial. El trabajo comenzó con una sugerencia de mi mentora e incluyó investigación, invitaciones y preparación de preguntas."
   },
   "cover": [
     "palco",
@@ -41,10 +41,10 @@
     {
       "date": "2026-03-25",
       "label": {
-        "en": "25–27 Mar 2026",
-        "pt": "25–27 mar 2026",
-        "fr": "25–27 mars 2026",
-        "es": "25–27 mar 2026"
+        "en": "25 to 27 Mar 2026",
+        "pt": "25 a 27 mar 2026",
+        "fr": "25 à 27 mars 2026",
+        "es": "25 a 27 mar 2026"
       },
       "title": {
         "en": "South Summit · Porto Alegre",
@@ -67,23 +67,23 @@
     {
       "id": "mentoria",
       "title": {
-        "en": "An idea from my mentor",
+        "en": "A suggestion from my mentor",
         "pt": "Uma ideia da minha mentora",
         "fr": "Une idée de ma mentore",
         "es": "Una idea de mi mentora"
       },
       "paragraphs": [
         {
-          "en": "I met Verônica Allende Serra through Lyfe Academy, and she has helped me in many parts of my journey. When I told her what I was looking for, she said she was on the South Summit board and would talk to the organisers about the possibility of me putting together a panel on the space sector.",
-          "pt": "Conheci a Verônica Allende Serra pela Lyfe Academy, e ela me ajudou muito em vários momentos da minha trajetória. Quando contei o que estava buscando, ela disse que fazia parte do conselho do South Summit e que conversaria com os organizadores sobre a possibilidade de eu montar um painel sobre o setor espacial.",
-          "fr": "J’ai rencontré Verônica Allende Serra grâce à Lyfe Academy, et elle m’a beaucoup aidée à différents moments de mon parcours. Quand je lui ai expliqué ce que je cherchais, elle m’a dit qu’elle faisait partie du conseil du South Summit et qu’elle parlerait aux organisateurs de la possibilité de me confier une table ronde sur le secteur spatial.",
-          "es": "Conocí a Verônica Allende Serra a través de Lyfe Academy y me ha ayudado mucho en distintos momentos de mi trayectoria. Cuando le conté lo que buscaba, me dijo que formaba parte del consejo de South Summit y que hablaría con los organizadores sobre la posibilidad de que yo preparara un panel sobre el sector espacial."
+          "en": "I met Verônica Allende Serra through Lyfe Academy. When we discussed my interest in learning more about the space sector, she suggested proposing a panel to South Summit and helped connect me with the organisers.",
+          "pt": "Conheci a Verônica Allende Serra pela Lyfe Academy. Ao conversarmos sobre meu interesse em conhecer melhor o setor espacial, ela sugeriu propor um painel ao South Summit e ajudou no contato com a organização.",
+          "fr": "J’ai rencontré Verônica Allende Serra grâce à la Lyfe Academy. En parlant de mon intérêt pour le spatial, elle a proposé de soumettre un panel au South Summit et m’a aidée à contacter l’organisation.",
+          "es": "Conocí a Verônica Allende Serra a través de Lyfe Academy. Al hablar de mi interés por conocer mejor el sector espacial, sugirió proponer un panel a South Summit y me ayudó a contactar con la organización."
         },
         {
-          "en": "The 2026 event took place from March 25 to 27 at Cais Mauá, in Porto Alegre. For me, the work started well before those three days.",
-          "pt": "O evento de 2026 aconteceu de 25 a 27 de março, no Cais Mauá, em Porto Alegre. Pra mim, o trabalho começou bem antes daqueles três dias.",
-          "fr": "L’événement de 2026 s’est tenu du 25 au 27 mars au Cais Mauá, à Porto Alegre. Pour moi, le travail avait commencé bien avant ces trois journées.",
-          "es": "El evento de 2026 se celebró del 25 al 27 de marzo en Cais Mauá, en Porto Alegre. Para mí, el trabajo empezó mucho antes de esos tres días."
+          "en": "The event took place from 25 to 27 March 2026 at Cais Mauá in Porto Alegre. Preparation began before the event, with research into the topics and possible speakers.",
+          "pt": "O evento aconteceu de 25 a 27 de março de 2026, no Cais Mauá, em Porto Alegre. A preparação começou antes, com pesquisa sobre os temas e possíveis convidados.",
+          "fr": "L’événement s’est déroulé du 25 au 27 mars 2026 au Cais Mauá, à Porto Alegre. La préparation avait commencé en amont, par des recherches sur les sujets et les intervenants possibles.",
+          "es": "El evento tuvo lugar del 25 al 27 de marzo de 2026 en Cais Mauá, en Porto Alegre. La preparación comenzó antes, con investigación sobre los temas y posibles invitados."
         }
       ],
       "photos": [
@@ -122,35 +122,23 @@
     {
       "id": "preparacao",
       "title": {
-        "en": "Research, messages and invitations",
-        "pt": "Pesquisa, mensagens e convites",
-        "fr": "Recherches, messages et invitations",
-        "es": "Investigación, mensajes e invitaciones"
+        "en": "Research and invitations",
+        "pt": "Pesquisa e convites",
+        "fr": "Recherches et invitations",
+        "es": "Investigación e invitaciones"
       },
       "paragraphs": [
         {
-          "en": "I started researching the sector, mapping out people I wanted to invite and thinking about the conversation I wanted to bring to the stage. Then came the messages and the introductions. Some people couldn’t take part, but there were two guests I especially hoped would say yes.",
-          "pt": "Comecei estudando o setor, mapeando quem eu queria convidar e pensando na conversa que queria levar para o palco. Depois vieram as mensagens e os contatos. Algumas pessoas não puderam participar, mas tinha dois convidados que eu queria muito que aceitassem.",
-          "fr": "J’ai commencé par étudier le secteur, repérer les personnes que je souhaitais inviter et réfléchir à la conversation que je voulais proposer sur scène. Puis sont venus les messages et les prises de contact. Certaines personnes ne pouvaient pas participer, mais j’espérais particulièrement un oui de deux invités.",
-          "es": "Empecé estudiando el sector, identificando a las personas que quería invitar y pensando en la conversación que quería llevar al escenario. Después vinieron los mensajes y los contactos. Algunas personas no pudieron participar, pero había dos invitados que esperaba especialmente que dijeran que sí."
+          "en": "I researched the sector, identified speakers and planned the topics for discussion. Coordinating invitations and availability was part of turning the proposal into a panel.",
+          "pt": "Pesquisei o setor, identifiquei convidados e planejei os assuntos da conversa. Conciliar os convites e a disponibilidade dos participantes fez parte do trabalho para transformar a proposta em um painel.",
+          "fr": "J’ai étudié le secteur, identifié les intervenants et préparé les sujets de discussion. Coordonner les invitations et les disponibilités faisait partie du travail pour concrétiser le panel.",
+          "es": "Investigué el sector, identifiqué invitados y preparé los temas de conversación. Coordinar las invitaciones y la disponibilidad de los participantes fue parte del trabajo para concretar el panel."
         },
         {
-          "en": "One was Danilo Miranda. His work included systems engineering and project management on VCUB1 at Visiona, followed by leadership of the RATO-14X hypersonic launch vehicle project at Mac Jee.",
-          "pt": "Um deles era o Danilo Miranda. Sua trajetória inclui engenharia de sistemas e gestão do projeto VCUB1 na Visiona, seguida pela liderança do projeto do veículo lançador hipersônico RATO-14X na Mac Jee.",
-          "fr": "L’un d’eux était Danilo Miranda. Son parcours comprend l’ingénierie système et la gestion du projet VCUB1 chez Visiona, puis la direction du projet de véhicule lanceur hypersonique RATO-14X chez Mac Jee.",
-          "es": "Uno era Danilo Miranda. Su trayectoria incluye ingeniería de sistemas y gestión del proyecto VCUB1 en Visiona, y después la dirección del proyecto del vehículo lanzador hipersónico RATO-14X en Mac Jee."
-        },
-        {
-          "en": "The other was Thais Cardoso Franco, co-founder and CEO of Quasar Space, with a master’s and doctorate from ITA. I admired her technical knowledge and the story of building her startup with her own resources. I really wanted to hear from her.",
-          "pt": "A outra era a Thais Cardoso Franco, cofundadora e CEO da Quasar Space, mestre e doutora pelo ITA. Eu admirava muito o conhecimento técnico dela e a história de construir a startup com recursos próprios. Queria muito poder ouvi-la.",
-          "fr": "L’autre était Thais Cardoso Franco, cofondatrice et CEO de Quasar Space, titulaire d’un master et d’un doctorat de l’ITA. J’admirais ses connaissances techniques et son parcours de création d’une startup avec ses propres ressources. Je voulais vraiment l’écouter.",
-          "es": "La otra era Thais Cardoso Franco, cofundadora y CEO de Quasar Space, con máster y doctorado por ITA. Admiraba mucho sus conocimientos técnicos y la historia de construir su startup con recursos propios. Tenía muchas ganas de escucharla."
-        },
-        {
-          "en": "I wanted to get closer to the space sector, and organising the panel gave me a reason to reach out with something concrete. I needed to understand each person’s work and think about what they could bring to the conversation. The preparation itself was already a way of learning about the field.",
-          "pt": "Eu queria me aproximar do setor espacial, e organizar o painel me deu um motivo concreto pra entrar em contato. Precisava entender o trabalho de cada pessoa e pensar no que ela poderia trazer pra conversa. A própria preparação já era um jeito de aprender sobre o setor.",
-          "fr": "Je voulais me rapprocher du secteur spatial, et organiser la table ronde m’a donné une raison concrète de prendre contact. Il fallait comprendre le travail de chacun et réfléchir à ce qu’il pouvait apporter à la discussion. La préparation était déjà une façon d’apprendre à connaître le secteur.",
-          "es": "Quería acercarme al sector espacial, y organizar el panel me dio un motivo concreto para contactar con la gente. Necesitaba entender el trabajo de cada persona y pensar qué podía aportar a la conversación. La propia preparación ya era una forma de aprender sobre el sector."
+          "en": "The guests included Danilo Miranda, with experience in systems engineering and management of VCUB1 at Visiona and leadership of the RATO-14X project at Mac Jee, and Thais Cardoso Franco, cofounder of Quasar Space with a master’s degree and doctorate from ITA.",
+          "pt": "Os convidados incluíram Danilo Miranda, com experiência em engenharia de sistemas e gestão do VCUB1 na Visiona e liderança do projeto RATO-14X na Mac Jee, e Thais Cardoso Franco, cofundadora da Quasar Space, mestre e doutora pelo ITA.",
+          "fr": "Les invités comprenaient Danilo Miranda, avec une expérience en ingénierie système, en gestion du VCUB1 chez Visiona et à la tête du projet RATO-14X chez Mac Jee, ainsi que Thais Cardoso Franco, cofondatrice de Quasar Space, titulaire d’un master et d’un doctorat de l’ITA.",
+          "es": "Entre los invitados estaban Danilo Miranda, con experiencia en ingeniería de sistemas y gestión del VCUB1 en Visiona y dirección del proyecto RATO-14X en Mac Jee, y Thais Cardoso Franco, cofundadora de Quasar Space, con maestría y doctorado por el ITA."
         }
       ],
       "photos": [
@@ -180,23 +168,23 @@
     {
       "id": "palco",
       "title": {
-        "en": "And then we were on stage",
-        "pt": "E aí a gente estava no palco",
-        "fr": "Et puis, nous étions sur scène",
-        "es": "Y de repente estábamos en el escenario"
+        "en": "Moderating the panels",
+        "pt": "A mediação dos painéis",
+        "fr": "L’animation des panels",
+        "es": "La moderación de los paneles"
       },
       "paragraphs": [
         {
-          "en": "They both accepted. There were some last-minute complications and, for a while, Danilo’s participation was uncertain. In the end, it worked out. Getting to moderate that conversation after all the preparation was very special.",
-          "pt": "Os dois aceitaram. Teve imprevisto antes do evento e, por um momento, a participação do Danilo ficou incerta. No fim, deu tudo certo. Poder mediar aquela conversa depois de toda a preparação foi muito especial.",
-          "fr": "Ils ont tous les deux accepté. Il y a eu des imprévus avant l’événement et, pendant un moment, la participation de Danilo était incertaine. Finalement, tout s’est bien passé. Animer cette conversation après toute la préparation a été un moment très spécial.",
-          "es": "Los dos aceptaron. Hubo imprevistos antes del evento y, durante un momento, la participación de Danilo estuvo en duda. Al final salió todo bien. Moderar esa conversación después de toda la preparación fue muy especial."
+          "en": "I moderated the conversation with Thais Cardoso Franco and Danilo Miranda. Preparing the questions helped me connect their different experiences within the discussion.",
+          "pt": "Mediei a conversa com Thais Cardoso Franco e Danilo Miranda. A preparação das perguntas me ajudou a conectar as diferentes experiências dos convidados durante a discussão.",
+          "fr": "J’ai animé la discussion avec Thais Cardoso Franco et Danilo Miranda. La préparation des questions m’a aidée à relier leurs différentes expériences au fil de l’échange.",
+          "es": "Moderé la conversación con Thais Cardoso Franco y Danilo Miranda. Preparar las preguntas me ayudó a relacionar las diferentes experiencias de los invitados durante el debate."
         },
         {
-          "en": "My photos also capture the panel “Aerospace Innovation Shaping New Markets”, which I moderated with Jorgito Stocchero, from AEL Sistemas. Looking at those images brings back the feeling of being there, asking questions of people whose experience I wanted to learn from.",
-          "pt": "As fotos também guardam o painel “Aerospace Innovation Shaping New Markets”, que mediei com Jorgito Stocchero, da AEL Sistemas. Olhar esses registros me traz de volta a sensação de estar ali, fazendo perguntas para pessoas com quem eu queria aprender.",
-          "fr": "Mes photos gardent aussi une trace de la table ronde « Aerospace Innovation Shaping New Markets », que j’ai animée avec Jorgito Stocchero, d’AEL Sistemas. Ces images me rappellent ce que je ressentais en posant des questions à des personnes dont je voulais apprendre.",
-          "es": "Las fotos también guardan el panel «Aerospace Innovation Shaping New Markets», que moderé con Jorgito Stocchero, de AEL Sistemas. Mirarlas me devuelve la sensación de estar allí, haciendo preguntas a personas de las que quería aprender."
+          "en": "I also moderated “Aerospace Innovation Shaping New Markets” with Jorgito Stocchero from AEL Sistemas. These panels gave me practical experience in preparing and leading technical conversations for an event audience.",
+          "pt": "Também mediei “Aerospace Innovation Shaping New Markets”, com Jorgito Stocchero, da AEL Sistemas. Os painéis me deram experiência prática na preparação e condução de conversas técnicas para o público de um evento.",
+          "fr": "J’ai aussi animé “Aerospace Innovation Shaping New Markets” avec Jorgito Stocchero, d’AEL Sistemas. Ces panels m’ont apporté une expérience pratique de préparation et d’animation d’échanges techniques pour le public d’un événement.",
+          "es": "También moderé “Aerospace Innovation Shaping New Markets”, con Jorgito Stocchero, de AEL Sistemas. Los paneles me dieron experiencia práctica preparando y conduciendo conversaciones técnicas para el público de un evento."
         }
       ],
       "photos": [
@@ -209,29 +197,17 @@
     {
       "id": "encontros",
       "title": {
-        "en": "People I got to meet",
-        "pt": "As pessoas que encontrei",
-        "fr": "Les personnes rencontrées",
-        "es": "Las personas que conocí"
+        "en": "Conversations across fields",
+        "pt": "Conversas entre diferentes áreas",
+        "fr": "Des échanges entre domaines",
+        "es": "Conversaciones entre áreas"
       },
       "paragraphs": [
         {
-          "en": "One of the conversations I loved was with Mariana Chaves. She had studied at the military school in Santa Maria, the same city as my university, and had been accepted to Harvard with a full scholarship. That connection to Santa Maria made meeting her even more special to me.",
-          "pt": "Uma das conversas de que gostei muito foi com a Mariana Chaves. Ela estudou no Colégio Militar de Santa Maria, a mesma cidade da minha universidade, e foi aprovada em Harvard com bolsa integral. Essa conexão com Santa Maria deixou o encontro ainda mais especial pra mim.",
-          "fr": "L’une des conversations que j’ai beaucoup aimées était avec Mariana Chaves. Elle avait étudié au lycée militaire de Santa Maria, la ville de mon université, et avait été admise à Harvard avec une bourse complète. Ce lien avec Santa Maria rendait cette rencontre encore plus spéciale pour moi.",
-          "es": "Una de las conversaciones que más disfruté fue con Mariana Chaves. Estudió en el colegio militar de Santa Maria, la misma ciudad de mi universidad, y fue admitida en Harvard con una beca completa. Esa conexión con Santa Maria hizo que conocerla fuera todavía más especial para mí."
-        },
-        {
-          "en": "I also met Eduardo Leite, governor of Rio Grande do Sul at the time of the event, and Marcelo Lacerda, one of the co-founders of Terra. There were so many different paths and experiences in one place.",
-          "pt": "Também conheci Eduardo Leite, governador do Rio Grande do Sul na época do evento, e Marcelo Lacerda, um dos cofundadores do Terra. Eram muitas trajetórias e experiências diferentes no mesmo lugar.",
-          "fr": "J’ai aussi rencontré Eduardo Leite, gouverneur du Rio Grande do Sul au moment de l’événement, et Marcelo Lacerda, l’un des cofondateurs de Terra. Tant de parcours et d’expériences différents réunis au même endroit.",
-          "es": "También conocí a Eduardo Leite, gobernador de Rio Grande do Sul en la época del evento, y a Marcelo Lacerda, uno de los cofundadores de Terra. Había muchas trayectorias y experiencias diferentes reunidas en un mismo lugar."
-        },
-        {
-          "en": "And there was Jade Picon. We are the same age, and I had followed her since I was about twelve or thirteen. It felt as if I had watched her grow up while I was growing up too, even though we had never met. Hearing about her work as an entrepreneur in person was such a different experience.",
-          "pt": "E teve a Jade Picon. A gente tem a mesma idade, e eu acompanhava ela desde os meus doze ou treze anos. Era como se eu tivesse visto ela crescer enquanto eu também crescia, mesmo sem a gente nunca ter se conhecido. Ouvir pessoalmente sobre o lado empreendedor dela foi uma experiência muito diferente.",
-          "fr": "Et il y a eu Jade Picon. Nous avons le même âge, et je la suivais depuis mes douze ou treize ans. J’avais l’impression de l’avoir vue grandir pendant que je grandissais aussi, alors que nous ne nous étions jamais rencontrées. L’écouter parler de son parcours entrepreneurial en personne était une expérience vraiment différente.",
-          "es": "Y también estuvo Jade Picon. Tenemos la misma edad y la seguía desde mis doce o trece años. Sentía que la había visto crecer mientras yo también crecía, aunque nunca nos habíamos conocido. Escuchar en persona su historia como emprendedora fue una experiencia muy distinta."
+          "en": "Beyond the panels, I met people from research, business and public life. The photos record some of those encounters, including Mariana Chaves, Marcelo Lacerda, Eduardo Leite and Jade Picon. I enjoyed hearing perspectives beyond my own field.",
+          "pt": "Além dos painéis, conheci pessoas ligadas à pesquisa, ao empreendedorismo e à vida pública. As fotos registram alguns desses encontros, incluindo Mariana Chaves, Marcelo Lacerda, Eduardo Leite e Jade Picon. Gostei de ouvir perspectivas de fora da minha área.",
+          "fr": "En dehors des panels, j’ai rencontré des personnes de la recherche, de l’entrepreneuriat et de la vie publique. Les photos montrent notamment Mariana Chaves, Marcelo Lacerda, Eduardo Leite et Jade Picon. J’ai apprécié d’écouter des perspectives extérieures à mon domaine.",
+          "es": "Además de los paneles, conocí personas de la investigación, el emprendimiento y la vida pública. Las fotos recogen algunos encuentros, incluidos Mariana Chaves, Marcelo Lacerda, Eduardo Leite y Jade Picon. Disfruté escuchando perspectivas de fuera de mi área."
         }
       ],
       "photos": [
@@ -254,23 +230,17 @@
     {
       "id": "alem-do-evento",
       "title": {
-        "en": "The conversations kept going",
-        "pt": "As conversas continuavam",
-        "fr": "Les conversations continuaient",
-        "es": "Las conversaciones seguían"
+        "en": "Contacts that continued",
+        "pt": "Contatos que continuaram",
+        "fr": "Des échanges qui se poursuivent",
+        "es": "Contactos que continuaron"
       },
       "paragraphs": [
         {
-          "en": "Our host was Marina Sirotsky, a board member at Maromar Investimentos with experience in family governance at Grupo RBS. Staying at her home and spending time together outside the event are part of the memories I keep from those days.",
-          "pt": "Nossa anfitriã foi a Marina Sirotsky, conselheira da Maromar Investimentos, com atuação em governança familiar no Grupo RBS. Ficar na casa dela e conviver fora do evento também faz parte das lembranças que guardo daqueles dias.",
-          "fr": "Notre hôte était Marina Sirotsky, membre du conseil de Maromar Investimentos, avec une expérience de la gouvernance familiale au Grupo RBS. Le séjour chez elle et les moments partagés en dehors de l’événement font aussi partie des souvenirs que je garde de ces journées.",
-          "es": "Nuestra anfitriona fue Marina Sirotsky, consejera de Maromar Investimentos, con experiencia en gobernanza familiar en Grupo RBS. Alojarme en su casa y pasar tiempo juntos fuera del evento también forma parte de los recuerdos que guardo de aquellos días."
-        },
-        {
-          "en": "I met people from other countries, and an investor introduced me to other founders in the space sector. I had wanted to get closer to people in the industry, and that was happening through conversations, introductions and the work of bringing the panel together.",
-          "pt": "Conheci pessoas de outros países, e um investidor me apresentou a outros founders do setor espacial. Eu queria me aproximar de pessoas da área, e isso estava acontecendo por meio das conversas, das apresentações e do próprio trabalho de construir o painel.",
-          "fr": "J’ai rencontré des personnes d’autres pays, et un investisseur m’a présentée à d’autres fondateurs du secteur spatial. Je voulais me rapprocher des personnes de ce milieu, et cela se faisait au fil des conversations, des présentations et du travail pour préparer la table ronde.",
-          "es": "Conocí a personas de otros países y un inversor me presentó a otros founders del sector espacial. Quería acercarme a personas de la industria y eso estaba pasando a través de las conversaciones, las presentaciones y el propio trabajo de preparar el panel."
+          "en": "The event also brought introductions to other space-sector entrepreneurs and conversations with people from different countries. Organising the panel was a practical way to get closer to the sector and build contacts through shared work.",
+          "pt": "O evento também trouxe apresentações a outros empreendedores do setor espacial e conversas com pessoas de diferentes países. Organizar o painel foi uma forma prática de me aproximar da área e construir contatos a partir de um trabalho em comum.",
+          "fr": "L’événement a aussi permis des présentations à d’autres entrepreneurs du spatial et des échanges internationaux. Organiser le panel était une façon concrète de me rapprocher du secteur et de créer des contacts autour d’un travail commun.",
+          "es": "El evento también permitió conocer a otros emprendedores del sector espacial y conversar con personas de distintos países. Organizar el panel fue una forma práctica de acercarme al área y crear contactos a partir de un trabajo compartido."
         }
       ],
       "photos": [
@@ -291,10 +261,10 @@
     }
   ],
   "closing": {
-    "en": "It all began with telling Verônica something I wanted to understand better. Her support opened a door, and then came the research, the invitations and the work of putting the panel together. That is what I take from this experience: being specific about what I want to learn helps other people help me. And when an opportunity appears, I can start with the next concrete task, even before I feel completely ready.",
-    "pt": "Tudo começou contando pra Verônica uma coisa que eu queria entender melhor. O apoio dela abriu uma porta, e depois vieram a pesquisa, os convites e o trabalho de montar o painel. É isso que levo dessa experiência: falar com clareza sobre o que quero aprender ajuda as pessoas a me ajudarem. E, quando aparece uma oportunidade, posso começar pela próxima tarefa concreta, mesmo antes de me sentir totalmente pronta.",
-    "fr": "Tout a commencé lorsque j’ai expliqué à Verônica ce que je voulais mieux comprendre. Son soutien m’a ouvert une porte, puis il a fallu faire les recherches, envoyer les invitations et préparer la table ronde. J’en retiens que dire précisément ce que je veux apprendre permet aux autres de mieux m’aider. Et lorsqu’une occasion se présente, je peux commencer par la prochaine tâche concrète, même sans me sentir tout à fait prête.",
-    "es": "Todo empezó al contarle a Verônica algo que quería entender mejor. Su apoyo abrió una puerta, y después vinieron la investigación, las invitaciones y el trabajo de preparar el panel. Eso me llevo: explicar con claridad qué quiero aprender ayuda a otras personas a ayudarme. Y cuando aparece una oportunidad, puedo empezar por la siguiente tarea concreta, incluso antes de sentirme completamente preparada."
+    "en": "Preparing the panel involved research, invitations and help from my mentor. I enjoyed moderating the conversations and learning about the guests’ work. Some of those contacts continued after the event.",
+    "pt": "A preparação do painel envolveu pesquisa, convites e a ajuda da minha mentora. Gostei de mediar as conversas e conhecer melhor o trabalho dos convidados. Alguns desses contatos continuaram depois do evento.",
+    "fr": "La préparation du panel a réuni recherches, invitations et aide de ma mentore. J’ai aimé animer les échanges et découvrir le travail des invités. Certains de ces contacts se sont poursuivis après l’événement.",
+    "es": "Preparar el panel implicó investigación, invitaciones y la ayuda de mi mentora. Disfruté moderando las conversaciones y conociendo mejor el trabajo de los invitados. Algunos de esos contactos continuaron después del evento."
   },
   "photos": {
     "veronica-mariana": {
@@ -390,10 +360,10 @@
       "width": 1600,
       "height": 1200,
       "caption": {
-        "en": "With our host, Marina Sirotsky.",
-        "pt": "Com nossa anfitriã, Marina Sirotsky.",
-        "fr": "Avec notre hôte, Marina Sirotsky.",
-        "es": "Con nuestra anfitriona, Marina Sirotsky."
+        "en": "With Marina Sirotsky during the event.",
+        "pt": "Com Marina Sirotsky durante o evento.",
+        "fr": "Avec Marina Sirotsky pendant l’événement.",
+        "es": "Con Marina Sirotsky durante el evento."
       }
     },
     "b55": {

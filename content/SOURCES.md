@@ -38,6 +38,10 @@ Evidências publicadas: liderança técnica (Carancho e EP Aero), autonomia (pro
 
 A usuária solicitou deixar de fora, por enquanto, negociação, decisões sob pressão, coordenação internacional e interface com clientes. Trabalhar em outros países não foi tratado como prova de coordenação internacional; comunicação com escolas não foi tratada como interface comercial com clientes.
 
+## Revisão editorial para publicação em 25/10/2026
+
+Os nove relatos foram revisados nos quatro idiomas a pedido da proprietária, para manter um tom profissional e autêntico, em primeira pessoa. A revisão destaca contribuições, conquistas e dificuldades concretas dos processos, como requisitos de idioma, adaptação técnica e preparação das candidaturas. Foram retiradas reflexões dramáticas, comparações de remuneração, situações íntimas, exceções internas de trabalho e experiências privadas de terceiros. A biografia e as legendas receberam o mesmo tratamento. Datas, projetos, resultados técnicos, fontes, fotos selecionadas e a informação de participação sem conclusão na Lyfe Academy foram preservados. As descrições históricas abaixo registram o processo editorial anterior, não necessariamente a redação atual.
+
 ## Revisão visual e de navegação
 
 A revisão separa as seis seções em páginas próprias e troca títulos figurativos pelos nomes dos trabalhos. Mantém as mesmas evidências, datas e resultados. A fotografia pessoal vem do repositório; as ilustrações conceituais anteriores deixam de aparecer na interface. Os links de vídeos do CubeSat e do veículo foram preservados. A tentativa de obter miniaturas públicas no Drive não forneceu imagens acessíveis, e não se usaram imagens artificiais como registros dos projetos.

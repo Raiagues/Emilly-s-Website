@@ -1,0 +1,28 @@
+/* Launch animation ported from Main.dc.html. */
+.cam{transform-box:view-box;transform-origin:0 0;animation:cam 12s infinite}
+.rk{animation:rk 12s linear infinite}
+.shk{animation:shk 12s infinite}
+.flmv{animation:flmv 12s infinite}
+.flm{transform-box:fill-box;transform-origin:50% 0;animation:flm .12s infinite alternate}
+.trail{stroke-dasharray:100;stroke-dashoffset:100;animation:trail 12s linear infinite}
+.pfL,.pfR,.pfC{transform-box:fill-box;transform-origin:50% 50%}
+.pfL{animation:pfL 12s infinite}.pfR{animation:pfR 12s infinite}.pfC{animation:pfC 12s infinite}
+.d2{animation-delay:.25s}
+.satv{animation:satv 12s infinite}
+.ringv{animation:ringv 12s infinite}
+.sx{animation:ox 3s -.24s infinite}
+.sy{animation:oy 3s -.24s infinite}
+
+@keyframes cam{0%,15%{transform:translate(-200px,-154px) scale(3);animation-timing-function:cubic-bezier(.6,0,.3,1)}34%,78%{transform:translate(0px,0px) scale(1);animation-timing-function:cubic-bezier(.6,0,.3,1)}92%,100%{transform:translate(-200px,-154px) scale(3)}}
+@keyframes rk{0%,14%{transform:translate(100px,118px) rotate(0deg);opacity:1;animation-timing-function:cubic-bezier(.5,0,1,1)}20%{transform:translate(100px,100px) rotate(0deg)}26%{transform:translate(107px,81px) rotate(22deg)}32%{transform:translate(132px,68px) rotate(70deg)}38%{transform:translate(163px,79px) rotate(118deg)}44%{transform:translate(181px,118px) rotate(165deg)}48%{transform:translate(180px,165px) rotate(188deg)}54%{transform:translate(166px,192px) rotate(222deg);opacity:1}58%{transform:translate(140px,208px) rotate(245deg);opacity:0}88%{transform:translate(100px,118px) rotate(360deg);opacity:0}89%{transform:translate(100px,118px) rotate(0deg);opacity:0}94%,100%{transform:translate(100px,118px) rotate(0deg);opacity:1}}
+@keyframes shk{0%,9%{transform:translateX(0)}10%{transform:translateX(-.35px)}11%{transform:translateX(.35px)}12%{transform:translateX(-.35px)}13%{transform:translateX(.35px)}14%,100%{transform:translateX(0)}}
+@keyframes flmv{0%,11%{opacity:0}12%,57%{opacity:1}58%,100%{opacity:0}}
+@keyframes flm{from{transform:scaleY(1)}to{transform:scaleY(1.5)}}
+@keyframes trail{0%,14%{stroke-dashoffset:100;opacity:.6}20%{stroke-dashoffset:92}26%{stroke-dashoffset:83}32%{stroke-dashoffset:69}38%{stroke-dashoffset:55}44%{stroke-dashoffset:42}48%{stroke-dashoffset:29}54%{stroke-dashoffset:15}58%{stroke-dashoffset:6;opacity:.6}72%{stroke-dashoffset:0;opacity:0}100%{stroke-dashoffset:100;opacity:0}}
+@keyframes pfL{0%,9%{transform:translate(0,0) scale(0);opacity:0}15%{transform:translate(-4px,-1px) scale(1);opacity:1}28%{transform:translate(-12px,-3px) scale(1.8);opacity:.9}40%{transform:translate(-18px,-5px) scale(2.2);opacity:0}100%{transform:translate(0,0) scale(0);opacity:0}}
+@keyframes pfR{0%,9%{transform:translate(0,0) scale(0);opacity:0}15%{transform:translate(4px,-1px) scale(1);opacity:1}28%{transform:translate(12px,-3px) scale(1.8);opacity:.9}40%{transform:translate(18px,-5px) scale(2.2);opacity:0}100%{transform:translate(0,0) scale(0);opacity:0}}
+@keyframes pfC{0%,10%{transform:translate(0,0) scale(0);opacity:0}16%{transform:translate(0,-2px) scale(1.1);opacity:1}28%{transform:translate(0,-7px) scale(2);opacity:.8}40%{transform:translate(0,-11px) scale(2.4);opacity:0}100%{transform:translate(0,0) scale(0);opacity:0}}
+@keyframes satv{0%,47.5%{opacity:0}49%,80%{opacity:1}85%,100%{opacity:0}}
+@keyframes ringv{0%,46%{opacity:0}52%,78%{opacity:.85}84%,100%{opacity:0}}
+@keyframes ox{0%{transform:translateX(80px);animation-timing-function:cubic-bezier(.12,0,.39,0)}25%{transform:translateX(0px);animation-timing-function:cubic-bezier(.61,1,.88,1)}50%{transform:translateX(-80px);animation-timing-function:cubic-bezier(.12,0,.39,0)}75%{transform:translateX(0px);animation-timing-function:cubic-bezier(.61,1,.88,1)}100%{transform:translateX(80px)}}
+@keyframes oy{0%{transform:translateY(0px);animation-timing-function:cubic-bezier(.61,1,.88,1)}25%{transform:translateY(24px);animation-timing-function:cubic-bezier(.12,0,.39,0)}50%{transform:translateY(0px);animation-timing-function:cubic-bezier(.61,1,.88,1)}75%{transform:translateY(-24px);animation-timing-function:cubic-bezier(.12,0,.39,0)}100%{transform:translateY(0px)}}

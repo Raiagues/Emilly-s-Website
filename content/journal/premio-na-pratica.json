@@ -15,29 +15,29 @@
     "es": "Noviembre de 2025"
   },
   "title": {
-    "en": "I almost didn’t apply",
-    "pt": "Eu quase não me inscrevi",
-    "fr": "J’ai failli ne pas candidater",
-    "es": "Casi no me presento"
+    "en": "My experience at the Na Prática Award",
+    "pt": "Minha experiência no Prêmio Na Prática",
+    "fr": "Mon expérience au prix Na Prática",
+    "es": "Mi experiencia en el Premio Na Prática"
   },
   "subtitle": {
-    "en": "The Na Prática award: a last-minute application, friendships in São Paulo and finding ourselves on a magazine cover.",
-    "pt": "O prêmio Na Prática: uma inscrição em cima da hora, amizades em São Paulo e a gente na capa de uma revista.",
-    "fr": "Le prix Na Prática : une candidature de dernière minute, des amitiés à São Paulo et nous, en couverture d’un magazine.",
-    "es": "El premio Na Prática: una candidatura a última hora, amistades en São Paulo y nosotros en la portada de una revista."
+    "en": "Winner for the Southern Region in 2025, with training, mentoring and exchanges with other finalists.",
+    "pt": "Vencedora da Região Sul em 2025, com formação, mentorias e trocas com outros finalistas.",
+    "fr": "Lauréate de la Région Sud en 2025, avec des formations, du mentorat et des échanges entre finalistes.",
+    "es": "Ganadora de la Región Sur en 2025, con formación, mentorías e intercambios con otros finalistas."
   },
   "intro": {
-    "en": "I applied with about two or three days left before the deadline. I didn’t think I had much chance of winning, and going to China wasn’t even something I imagined for myself. Looking back, I’m so glad I filled in that application.",
-    "pt": "Me inscrevi faltando uns dois ou três dias para o prazo acabar. Eu achava que nem tinha como ganhar, e ir para a China não era uma coisa que imaginava pra mim. Hoje, olhando para trás, fico muito feliz de ter preenchido aquela inscrição.",
-    "fr": "J’ai candidaté alors qu’il restait environ deux ou trois jours avant la clôture. Je ne pensais pas avoir beaucoup de chances de gagner, et partir en Chine n’était même pas quelque chose que j’imaginais pour moi. Avec le recul, je suis tellement contente d’avoir envoyé cette candidature.",
-    "es": "Me presenté cuando faltaban unos dos o tres días para el cierre. Pensaba que no tenía muchas posibilidades de ganar, e ir a China ni siquiera era algo que imaginara para mí. Ahora, mirando atrás, me alegro mucho de haber enviado aquella candidatura."
+    "en": "In November 2025, I received the Southern Region award at the Prêmio Na Prática Protagonismo Universitário. The selection was an opportunity to present my university work, take part in mentoring and exchange experiences with finalists from different fields.",
+    "pt": "Em novembro de 2025, recebi o prêmio da Região Sul no Prêmio Na Prática Protagonismo Universitário. A seleção foi uma oportunidade de apresentar meu trabalho na universidade, participar de mentorias e trocar experiências com finalistas de diferentes áreas.",
+    "fr": "En novembre 2025, j’ai reçu le prix de la Région Sud au Prêmio Na Prática Protagonismo Universitário. La sélection m’a permis de présenter mon travail universitaire, de bénéficier de mentorat et d’échanger avec des finalistes de différents domaines.",
+    "es": "En noviembre de 2025, recibí el premio de la Región Sur en el Prêmio Na Prática Protagonismo Universitário. La selección fue una oportunidad para presentar mi trabajo universitario, participar en mentorías e intercambiar experiencias con finalistas de distintas áreas."
   },
   "related_award": "Prêmio Protagonismo Universitário",
   "award_link_label": {
-    "en": "How I almost missed applying for this award",
-    "pt": "Como eu quase deixei de me inscrever nesse prêmio",
-    "fr": "Comment j’ai failli ne pas candidater à ce prix",
-    "es": "Cómo casi dejo pasar la candidatura a este premio"
+    "en": "The selection and the award",
+    "pt": "A seleção e a premiação",
+    "fr": "La sélection et le prix",
+    "es": "La selección y la premiación"
   },
   "technical_path": "recognition.html",
   "technical_label": {
@@ -77,23 +77,23 @@
     {
       "id": "inscricao",
       "title": {
-        "en": "Looking back at my own story",
-        "pt": "Olhando para a minha própria história",
-        "fr": "Revenir sur mon propre parcours",
-        "es": "Mirar mi propia historia"
+        "en": "Presenting my work",
+        "pt": "A apresentação do meu trabalho",
+        "fr": "La présentation de mon travail",
+        "es": "La presentación de mi trabajo"
       },
       "paragraphs": [
         {
-          "en": "I heard about the Prêmio Na Prática Protagonismo Universitário through Fundação Estudar. They shared the opportunity with our community. At first, I wasn’t going to apply. Then, very close to the deadline, I decided to try.",
-          "pt": "Soube do Prêmio Na Prática Protagonismo Universitário pela Fundação Estudar, que compartilhou a oportunidade com a nossa comunidade. No começo, eu não ia me inscrever. Depois, bem perto do prazo, resolvi tentar.",
-          "fr": "J’ai découvert le Prêmio Na Prática Protagonismo Universitário grâce à Fundação Estudar, qui avait partagé cette opportunité avec notre communauté. Au début, je ne comptais pas candidater. Puis, tout près de la date limite, j’ai décidé d’essayer.",
-          "es": "Conocí el Prêmio Na Prática Protagonismo Universitário a través de Fundação Estudar, que compartió la oportunidad con nuestra comunidad. Al principio no iba a presentarme. Después, muy cerca de la fecha límite, decidí intentarlo."
+          "en": "I learned about the award through Fundação Estudar. Preparing the application required bringing together my projects, responsibilities and results in a clear account of my university experience.",
+          "pt": "Conheci o prêmio pela Fundação Estudar. Preparar a candidatura exigiu reunir meus projetos, responsabilidades e resultados em uma apresentação clara da minha experiência universitária.",
+          "fr": "J’ai découvert le prix grâce à la Fundação Estudar. Préparer la candidature demandait de réunir mes projets, responsabilités et résultats dans une présentation claire de mon expérience universitaire.",
+          "es": "Conocí el premio por la Fundação Estudar. Preparar la candidatura exigió reunir mis proyectos, responsabilidades y resultados en una presentación clara de mi experiencia universitaria."
         },
         {
-          "en": "The process itself was already worth it. Writing about my experiences made me notice things I hadn’t stopped to see while I was living them. It wasn’t that I had forgotten what I’d done; I just hadn’t looked at those moments together, with a little distance.",
-          "pt": "O processo já valeu muito por si só. Escrever sobre a minha trajetória me fez perceber coisas em que eu não tinha parado para prestar atenção enquanto estava vivendo. Não era que eu tivesse esquecido o que fiz; eu só ainda não tinha olhado para aqueles momentos juntos, com um pouco de distância.",
-          "fr": "Le processus valait déjà la peine à lui seul. Écrire sur mon parcours m’a fait remarquer des choses que je n’avais pas pris le temps de voir en les vivant. Je n’avais pas oublié ce que j’avais fait ; je n’avais simplement pas encore regardé ces moments ensemble, avec un peu de recul.",
-          "es": "El proceso ya valió mucho por sí mismo. Escribir sobre mi trayectoria me hizo notar cosas en las que no me había detenido mientras las vivía. No había olvidado lo que hice; simplemente aún no había mirado esos momentos juntos, con algo de distancia."
+          "en": "That preparation helped me connect activities I had developed in different contexts and communicate what I had contributed to each one.",
+          "pt": "Essa preparação ajudou a conectar atividades que desenvolvi em contextos diferentes e a comunicar minha contribuição em cada uma delas.",
+          "fr": "Cette préparation m’a aidée à relier des activités menées dans différents contextes et à communiquer ma contribution à chacune.",
+          "es": "Esa preparación me ayudó a relacionar actividades desarrolladas en distintos contextos y comunicar mi contribución en cada una."
         }
       ],
       "photos": [],
@@ -102,23 +102,17 @@
     {
       "id": "sao-paulo",
       "title": {
-        "en": "The pink plane and arriving in São Paulo",
-        "pt": "O avião rosa e a chegada a São Paulo",
-        "fr": "L’avion rose et l’arrivée à São Paulo",
-        "es": "El avión rosa y la llegada a São Paulo"
+        "en": "The final in São Paulo",
+        "pt": "A final em São Paulo",
+        "fr": "La finale à São Paulo",
+        "es": "La final en São Paulo"
       },
       "paragraphs": [
         {
-          "en": "When I reached the in-person final, Na Prática covered the trip to São Paulo: flights, hotel and the costs of taking part. They met us at the airport, and we all stayed in the same hotel, each with our own room. I felt so well looked after.",
-          "pt": "Quando cheguei à final presencial, o Na Prática bancou a viagem para São Paulo: passagens, hotel e os custos para participar. Receberam a gente no aeroporto, e ficamos todos no mesmo hotel, cada um com seu quarto. Eu me senti muito bem recebida.",
-          "fr": "Quand j’ai été retenue pour la finale en présentiel, Na Prática a pris en charge le voyage à São Paulo : les vols, l’hôtel et les frais de participation. On nous a accueillis à l’aéroport et nous avons tous séjourné dans le même hôtel, chacun avec sa chambre. Je me suis sentie très bien accueillie.",
-          "es": "Cuando llegué a la final presencial, Na Prática cubrió el viaje a São Paulo: vuelos, hotel y los gastos de participación. Nos recibieron en el aeropuerto y nos alojamos todos en el mismo hotel, cada uno con su habitación. Me sentí muy bien acogida."
-        },
-        {
-          "en": "And I flew on a pink plane! I kept a photo because it was one of those little details that made the whole experience even more fun.",
-          "pt": "E eu fui num avião rosa! Guardei a foto porque foi um daqueles pequenos detalhes que deixaram a experiência ainda mais divertida.",
-          "fr": "Et j’ai voyagé dans un avion rose ! J’ai gardé une photo, parce que c’était l’un de ces petits détails qui rendaient l’expérience encore plus amusante.",
-          "es": "¡Y viajé en un avión rosa! Guardé la foto porque fue uno de esos pequeños detalles que hicieron la experiencia todavía más divertida."
+          "en": "Na Prática covered travel and accommodation for the in-person final in São Paulo. Bringing the finalists together made it easier to exchange experiences throughout the programme.",
+          "pt": "O Na Prática custeou a viagem e a hospedagem para a final presencial em São Paulo. Reunir os finalistas facilitou a troca de experiências ao longo da programação.",
+          "fr": "Na Prática a pris en charge le voyage et l’hébergement pour la finale en présentiel à São Paulo. Réunir les finalistes facilitait les échanges tout au long du programme.",
+          "es": "Na Prática cubrió el viaje y el alojamiento para la final presencial en São Paulo. Reunir a los finalistas facilitó el intercambio de experiencias durante el programa."
         }
       ],
       "photos": [
@@ -130,23 +124,17 @@
     {
       "id": "imersao",
       "title": {
-        "en": "A few days at BTG Pactual",
-        "pt": "Os dias de imersão no BTG Pactual",
-        "fr": "Les journées d’immersion chez BTG Pactual",
-        "es": "Los días de inmersión en BTG Pactual"
+        "en": "Training and mentoring at BTG Pactual",
+        "pt": "Formação e mentorias no BTG Pactual",
+        "fr": "Formation et mentorat au BTG Pactual",
+        "es": "Formación y mentorías en BTG Pactual"
       },
       "paragraphs": [
         {
-          "en": "The final took place at BTG Pactual. Alongside the final judging panel, we had training, mentoring and plenty of chances to talk to people. I wanted to make the most of being there.",
-          "pt": "A final aconteceu no BTG Pactual. Além da banca final, tivemos formação, mentorias e muitas oportunidades de conversar com pessoas. Eu queria aproveitar muito o fato de estar ali.",
-          "fr": "La finale s’est déroulée chez BTG Pactual. En plus du jury final, il y avait une formation, du mentorat et beaucoup d’occasions de discuter. Je voulais profiter au maximum du fait d’être là.",
-          "es": "La final tuvo lugar en BTG Pactual. Además del jurado final, tuvimos formación, mentorías y muchas oportunidades para conversar. Quería aprovechar al máximo el hecho de estar allí."
-        },
-        {
-          "en": "There were people from very different fields. That was part of what made it so good: hearing about experiences that weren’t like mine and learning from them.",
-          "pt": "Tinha gente de áreas muito diferentes. Essa era uma das coisas mais legais: ouvir experiências que não eram parecidas com a minha e aprender com elas.",
-          "fr": "Les participants venaient de domaines très différents. C’était l’un des meilleurs aspects : écouter des expériences différentes des miennes et apprendre à leur contact.",
-          "es": "Había personas de áreas muy distintas. Eso era parte de lo mejor: escuchar experiencias diferentes de la mía y aprender de ellas."
+          "en": "The final took place at BTG Pactual. Alongside the assessment panel, we had training and mentoring sessions. Hearing about projects from other fields was useful for thinking about how I present and develop my own work.",
+          "pt": "A final aconteceu no BTG Pactual. Além da banca de avaliação, tivemos atividades de formação e mentoria. Conhecer projetos de outras áreas foi útil para pensar em como apresento e desenvolvo meu próprio trabalho.",
+          "fr": "La finale s’est tenue au BTG Pactual. En plus du jury d’évaluation, nous avons suivi des activités de formation et de mentorat. Découvrir des projets d’autres domaines m’a aidée à réfléchir à ma façon de présenter et développer mon travail.",
+          "es": "La final tuvo lugar en BTG Pactual. Además del comité de evaluación, tuvimos actividades de formación y mentoría. Conocer proyectos de otras áreas me ayudó a pensar en cómo presento y desarrollo mi trabajo."
         }
       ],
       "photos": [
@@ -159,23 +147,23 @@
     {
       "id": "resultado",
       "title": {
-        "en": "When they announced the result",
-        "pt": "Quando anunciaram o resultado",
-        "fr": "Quand le résultat a été annoncé",
-        "es": "Cuando anunciaron el resultado"
+        "en": "The Southern Region award",
+        "pt": "O prêmio da Região Sul",
+        "fr": "Le prix de la Région Sud",
+        "es": "El premio de la Región Sur"
       },
       "paragraphs": [
         {
-          "en": "The ceremony was on 3 November 2025, and I won the award for the South region. There are photos of me waiting for the result, speaking on stage and holding the trophy. Seeing them still brings that moment back.",
-          "pt": "A cerimônia foi em 3 de novembro de 2025, e fui a vencedora da Região Sul. Tem foto minha esperando o resultado, falando no palco e segurando o troféu. Ver esses registros ainda me traz de volta aquele momento.",
-          "fr": "La cérémonie a eu lieu le 3 novembre 2025, et j’ai remporté le prix pour la région Sud. Il y a des photos de moi attendant le résultat, parlant sur scène et tenant le trophée. Les revoir me ramène encore à ce moment-là.",
-          "es": "La ceremonia fue el 3 de noviembre de 2025 y gané el premio de la Región Sur. Hay fotos mías esperando el resultado, hablando en el escenario y sosteniendo el trofeo. Verlas todavía me devuelve a aquel momento."
+          "en": "At the ceremony on 3 November 2025, I received the Southern Region award. I am proud of that recognition and of the university work I was able to present during the selection.",
+          "pt": "Na cerimônia de 3 de novembro de 2025, recebi o prêmio da Região Sul. Tenho orgulho desse reconhecimento e do trabalho que pude apresentar durante a seleção.",
+          "fr": "Lors de la cérémonie du 3 novembre 2025, j’ai reçu le prix de la Région Sud. Je suis fière de cette reconnaissance et du travail universitaire présenté pendant la sélection.",
+          "es": "En la ceremonia del 3 de noviembre de 2025, recibí el premio de la Región Sur. Estoy orgullosa de ese reconocimiento y del trabajo que pude presentar durante la selección."
         },
         {
-          "en": "Winning was wonderful, of course. But I would also have been happy to see another finalist from the South receive it. They were incredible people with incredible stories. I never experienced those days as a competition between us. I was already so happy just to be there.",
-          "pt": "Ganhar foi maravilhoso, claro. Mas eu também teria ficado feliz se outra pessoa do Sul tivesse recebido o prêmio. Eram pessoas incríveis, com histórias incríveis. Em nenhum momento vivi aqueles dias como uma competição entre a gente. Eu já estava muito feliz só de estar ali.",
-          "fr": "Gagner était merveilleux, bien sûr. Mais j’aurais aussi été heureuse de voir une autre personne du Sud recevoir le prix. C’étaient des personnes incroyables, avec des histoires incroyables. Je n’ai jamais vécu ces journées comme une compétition entre nous. J’étais déjà tellement heureuse d’être là.",
-          "es": "Ganar fue maravilloso, claro. Pero también me habría alegrado que otra persona del Sur recibiera el premio. Eran personas increíbles, con historias increíbles. Nunca viví aquellos días como una competición entre nosotros. Ya estaba muy feliz solo por estar allí."
+          "en": "The award also included the immersion trip to China in January 2026. That experience has its own page in this journal.",
+          "pt": "A premiação também incluiu a imersão na China, realizada em janeiro de 2026. Essa experiência tem uma página própria no diário.",
+          "fr": "Le prix comprenait aussi le voyage d’immersion en Chine, réalisé en janvier 2026. Cette expérience a sa propre page dans le journal.",
+          "es": "El premio también incluyó la inmersión en China, realizada en enero de 2026. Esa experiencia tiene su propia página en el diario."
         }
       ],
       "photos": [
@@ -199,35 +187,17 @@
     {
       "id": "amizades",
       "title": {
-        "en": "The friendships that stayed",
-        "pt": "As amizades que ficaram",
-        "fr": "Les amitiés qui sont restées",
-        "es": "Las amistades que se quedaron"
+        "en": "Connections after the award",
+        "pt": "Os contatos depois da premiação",
+        "fr": "Les échanges après le prix",
+        "es": "Los contactos después del premio"
       },
       "paragraphs": [
         {
-          "en": "There was a party, there were long conversations, and at the hotel we spent evenings in each other’s rooms, chatting and gossiping. We all stayed in the same place, so there was time to get to know each other beyond the programme.",
-          "pt": "Teve festa, teve muita conversa e, no hotel, a gente passava a noite no quarto um do outro, conversando e fofocando. Estava todo mundo no mesmo lugar, então dava para se conhecer para além da programação.",
-          "fr": "Il y a eu une fête, de longues conversations et, à l’hôtel, des soirées dans les chambres les uns des autres, à discuter et à papoter. Comme nous étions tous au même endroit, nous avions le temps de faire connaissance au-delà du programme.",
-          "es": "Hubo fiesta, muchas conversaciones y noches en las habitaciones de unos y otros, charlando y cotilleando. Estábamos todos en el mismo lugar, así que había tiempo para conocernos más allá del programa."
-        },
-        {
-          "en": "I met people from the space sector and from Fundação Estudar, including friends like Gabi and Nara. Some of those friendships carried on through the trips to China and Brazil at Silicon Valley. It was lovely to see those paths crossing again.",
-          "pt": "Conheci pessoas do setor espacial e da Fundação Estudar, entre elas amigas como a Gabi e a Nara. Algumas dessas amizades continuaram nas viagens para a China e para o Brazil at Silicon Valley. Foi muito gostoso ver esses caminhos se encontrando de novo.",
-          "fr": "J’ai rencontré des personnes du secteur spatial et de Fundação Estudar, dont des amies comme Gabi et Nara. Certaines de ces amitiés se sont prolongées pendant les voyages en Chine et à Brazil at Silicon Valley. C’était vraiment agréable de voir ces chemins se croiser à nouveau.",
-          "es": "Conocí a personas del sector espacial y de Fundação Estudar, entre ellas amigas como Gabi y Nara. Algunas de esas amistades continuaron en los viajes a China y a Brazil at Silicon Valley. Fue muy bonito ver cómo esos caminos volvían a cruzarse."
-        },
-        {
-          "en": "We’re still close. We have a group where we keep talking, and now we’re following the new finalists in the 2026 edition together. It brings back so much of what we lived through.",
-          "pt": "A gente continua próximo. Temos um grupo em que seguimos conversando e agora estamos acompanhando juntos os novos finalistas da edição de 2026. Dá uma sensação muito boa de rever tudo o que vivemos.",
-          "fr": "Nous sommes restés proches. Nous continuons à échanger dans notre groupe et nous suivons maintenant ensemble les nouveaux finalistes de l’édition 2026. Cela nous rappelle tellement de moments vécus ensemble.",
-          "es": "Seguimos siendo cercanos. Tenemos un grupo en el que seguimos hablando y ahora estamos acompañando juntos a los nuevos finalistas de la edición de 2026. Es muy bonito recordar todo lo que vivimos."
-        },
-        {
-          "en": "That is why I find it strange to remember those days only as a competition. Of course I wanted to win, but I also wanted things to go well for the people I was getting to know. Following the new finalists together now brings back that feeling: how good it is to have people around who are excited about what you are trying to do.",
-          "pt": "Por isso acho estranho lembrar daqueles dias só como uma competição. Claro que eu queria ganhar, mas também queria muito que desse certo pras pessoas que eu estava conhecendo. Acompanhar juntos os novos finalistas agora traz de volta essa sensação: como é bom ter por perto gente que torce pelo que a gente está tentando fazer.",
-          "fr": "C’est pour cela que j’ai du mal à me souvenir de ces journées uniquement comme d’une compétition. Bien sûr, j’avais envie de gagner, mais je souhaitais aussi le meilleur aux personnes que je rencontrais. Suivre ensemble les nouveaux finalistes me rappelle combien il est précieux d’être entourée de gens qui vous encouragent.",
-          "es": "Por eso me resulta extraño recordar aquellos días solo como una competición. Claro que quería ganar, pero también deseaba que les fuera bien a las personas que estaba conociendo. Seguir juntos a los nuevos finalistas me devuelve esa sensación: qué bueno es tener cerca a gente que se ilusiona con lo que estás intentando hacer."
+          "en": "I stayed in touch with other finalists and people from Fundação Estudar. Some of those friendships continued on the trips to China and Brazil at Silicon Valley, with new opportunities to exchange ideas.",
+          "pt": "Continuei em contato com outros finalistas e pessoas da Fundação Estudar. Algumas dessas amizades seguiram nas viagens à China e ao Brazil at Silicon Valley, com novas oportunidades de trocar ideias.",
+          "fr": "J’ai gardé contact avec d’autres finalistes et des personnes de la Fundação Estudar. Certaines amitiés se sont poursuivies lors des voyages en Chine et au Brazil at Silicon Valley, avec de nouvelles occasions d’échanger.",
+          "es": "Seguí en contacto con otros finalistas y personas de la Fundação Estudar. Algunas amistades continuaron en los viajes a China y a Brazil at Silicon Valley, con nuevas oportunidades para intercambiar ideas."
         }
       ],
       "photos": [
@@ -241,23 +211,17 @@
     {
       "id": "revista",
       "title": {
-        "en": "And then we were on a magazine cover",
-        "pt": "E aí a gente estava na capa de uma revista",
-        "fr": "Et puis, nous étions en couverture d’un magazine",
-        "es": "Y de pronto estábamos en la portada de una revista"
+        "en": "Press coverage",
+        "pt": "A divulgação na imprensa",
+        "fr": "La couverture médiatique",
+        "es": "La cobertura en prensa"
       },
       "paragraphs": [
         {
-          "en": "Then something happened that I hadn’t imagined either: we appeared on the cover of EXAME. My university, UFSM, also published an article about me and my story.",
-          "pt": "Depois aconteceu outra coisa que eu não imaginava: a gente apareceu na capa da EXAME. Minha universidade, a UFSM, também publicou uma matéria sobre mim e sobre a minha história.",
-          "fr": "Puis quelque chose d’autre que je n’avais pas imaginé est arrivé : nous sommes apparus en couverture d’EXAME. Mon université, l’UFSM, a aussi publié un article sur moi et mon parcours.",
-          "es": "Después pasó otra cosa que no imaginaba: aparecimos en la portada de EXAME. Mi universidad, la UFSM, también publicó un artículo sobre mí y mi historia."
-        },
-        {
-          "en": "People started stopping me at the supermarket to say they had seen the news and to congratulate me. It was funny: I felt like a celebrity. Such an unexpected, lovely part of it all.",
-          "pt": "As pessoas começaram a me parar no mercado para dizer que tinham visto a notícia e me dar parabéns. Foi engraçado: eu me senti uma celebridade. Uma parte muito inesperada e muito gostosa de tudo isso.",
-          "fr": "Des personnes ont commencé à m’arrêter au supermarché pour me dire qu’elles avaient vu la nouvelle et me féliciter. C’était drôle : je me sentais comme une célébrité. Une partie si inattendue et si agréable de cette histoire.",
-          "es": "La gente empezó a pararme en el supermercado para decirme que había visto la noticia y felicitarme. Fue divertido: me sentí como una celebridad. Una parte muy inesperada y muy bonita de todo aquello."
+          "en": "The award recipients appeared on the cover of EXAME, and UFSM also published an article about my work. The coverage brought my projects to audiences beyond the university.",
+          "pt": "Os premiados apareceram na capa da EXAME, e a UFSM também publicou uma matéria sobre meu trabalho. A divulgação levou os projetos a públicos além da universidade.",
+          "fr": "Les lauréats sont apparus en couverture d’EXAME et l’UFSM a aussi publié un article sur mon travail. Cette couverture a fait connaître les projets au-delà de l’université.",
+          "es": "Los premiados aparecieron en la portada de EXAME y la UFSM también publicó un artículo sobre mi trabajo. La difusión acercó los proyectos a públicos más allá de la universidad."
         }
       ],
       "photos": [
@@ -286,10 +250,10 @@
     }
   ],
   "closing": {
-    "en": "I almost let the deadline pass because I thought I had no chance. Looking back, writing the application was already valuable: I had to stop and notice things I had done without giving myself much credit for them. The award and China were wonderful, and so were the friendships. If you recognise yourself in that hesitation, my advice is to look at what the application actually asks for before ruling yourself out. You may have more to say about your own story than you think.",
-    "pt": "Eu quase deixei o prazo passar porque achava que não tinha chance. Olhando agora, escrever a candidatura já tinha valido a pena: precisei parar e reconhecer coisas que tinha feito sem dar muita importância. O prêmio e a China foram incríveis, assim como as amizades que ficaram. Se você se reconhece nessa vontade de nem tentar, meu conselho é olhar o que a candidatura pede antes de se eliminar. Talvez você tenha mais pra contar sobre a sua própria história do que imagina.",
-    "fr": "J’ai failli laisser passer la date limite parce que je pensais n’avoir aucune chance. Avec le recul, rédiger la candidature avait déjà de la valeur : cela m’a obligée à reconnaître des choses que j’avais faites sans leur accorder beaucoup d’importance. Le prix, la Chine et les amitiés ont été merveilleux. Si vous vous reconnaissez dans cette hésitation, regardez ce que demande réellement la candidature avant de vous écarter vous-même. Vous avez peut-être plus à raconter sur votre parcours que vous ne le pensez.",
-    "es": "Casi dejé pasar el plazo porque pensaba que no tenía posibilidades. Ahora veo que escribir la candidatura ya había merecido la pena: tuve que parar y reconocer cosas que había hecho sin darles mucha importancia. El premio, China y las amistades fueron increíbles. Si te reconoces en esas ganas de ni siquiera intentarlo, mi consejo es mirar qué pide realmente la candidatura antes de descartarte. Quizá tengas más que contar sobre tu propia historia de lo que imaginas."
+    "en": "I remember those days for the award, the mentoring and the group that stayed in touch. Some of those friendships continued on the trips to China and the United States. It is nice to find familiar faces on new journeys.",
+    "pt": "Lembro daqueles dias pelo prêmio, pelas mentorias e pela turma que continuou em contato. Algumas dessas amizades seguiram nas viagens para a China e os Estados Unidos. É bom reencontrar pessoas conhecidas em novas experiências.",
+    "fr": "Je garde le souvenir du prix, du mentorat et du groupe qui est resté en contact. Certaines de ces amitiés se sont poursuivies lors des voyages en Chine et aux États-Unis. C’est agréable de retrouver des visages connus dans de nouvelles expériences.",
+    "es": "Recuerdo esos días por el premio, las mentorías y el grupo que siguió en contacto. Algunas de esas amistades continuaron en los viajes a China y Estados Unidos. Es agradable reencontrarse con personas conocidas en nuevas experiencias."
   },
   "photos": {
     "amigas": {
@@ -429,10 +393,10 @@
       "width": 720,
       "height": 1280,
       "caption": {
-        "en": "Little gifts and materials from the immersion.",
-        "pt": "Presentinhos e materiais da imersão.",
-        "fr": "Petits cadeaux et supports de l’immersion.",
-        "es": "Regalos y materiales de la inmersión."
+        "en": "Materials from the immersion programme.",
+        "pt": "Materiais da imersão.",
+        "fr": "Supports du programme d’immersion.",
+        "es": "Materiales de la inmersión."
       }
     },
     "trofeu": {

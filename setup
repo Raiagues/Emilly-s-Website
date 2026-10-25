@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname -- "${BASH_SOURCE[0]}")/scripts/runtime.sh"
+if [[ $# -gt 1 || ( $# -eq 1 && "$1" != --with-tests ) ]]; then
+  echo 'Uso ./setup [--with-tests]' >&2
+  exit 2
+fi
+cd "$SITE_ROOT"
+mkdir -p "$SITE_RUNTIME/bin"
+if ! find_site_python; then
+  echo 'Preparando Python 3.12 nesta pasta, sem alterar o Python do sistema.'
+  export UV_PYTHON_INSTALL_DIR="$SITE_RUNTIME/python"
+  export UV_PYTHON_BIN_DIR="$SITE_RUNTIME/bin"
+  export UV_CACHE_DIR="$SITE_RUNTIME/cache"
+  if [[ ! -x "$SITE_RUNTIME/bin/uv" ]]; then
+    command -v curl >/dev/null || { echo 'Instale curl e execute ./setup novamente.' >&2; exit 1; }
+    installer="$(mktemp "$SITE_RUNTIME/uv-install.XXXXXX")"
+    trap 'rm -f -- "$installer"' EXIT
+    curl --proto '=https' --tlsv1.2 --fail --show-error --location https://astral.sh/uv/install.sh -o "$installer"
+    UV_UNMANAGED_INSTALL="$SITE_RUNTIME/bin" sh "$installer"
+  fi
+  "$SITE_RUNTIME/bin/uv" python install 3.12
+  managed_python="$("$SITE_RUNTIME/bin/uv" python find --managed-python 3.12)"
+  ln -sfn "$managed_python" "$SITE_RUNTIME/bin/python3"
+  require_site_python
+fi
+"$SITE_PYTHON" "$SITE_ROOT/scripts/local.py" build
+if [[ "${1:-}" == --with-tests ]]; then
+  command -v npm >/dev/null || { echo 'Os testes opcionais precisam de Node.js 20 ou mais recente e npm.' >&2; exit 1; }
+  node -e 'if (Number(process.versions.node.split(".")[0]) < 20) process.exit(1)' || { echo 'Atualize o Node.js para a versão 20 ou mais recente.' >&2; exit 1; }
+  npm ci --cache "$SITE_RUNTIME/npm-cache"
+  if [[ -z "${BROWSER_EXECUTABLE:-}" ]]; then
+    export PLAYWRIGHT_BROWSERS_PATH="$SITE_RUNTIME/browsers"
+    npx --no-install playwright install chromium
+  fi
+fi
+echo 'Tudo pronto. Execute ./start e abra o endereço que aparecer.'

@@ -9,28 +9,28 @@
     "es": "China · Pekín y Shanghái"
   },
   "period": {
-    "en": "25–31 January 2026",
-    "pt": "25–31 de janeiro de 2026",
-    "fr": "25–31 janvier 2026",
-    "es": "25–31 de enero de 2026"
+    "en": "25 to 31 January 2026",
+    "pt": "25 a 31 de janeiro de 2026",
+    "fr": "25 à 31 janvier 2026",
+    "es": "25 a 31 de enero de 2026"
   },
   "title": {
-    "en": "A week in China, with room to be surprised",
-    "pt": "Uma semana na China, sem saber o que esperar",
-    "fr": "Une semaine en Chine, prête à me laisser surprendre",
-    "es": "Una semana en China, sin saber qué esperar"
+    "en": "A week of technology visits in China",
+    "pt": "Uma semana de visitas de tecnologia na China",
+    "fr": "Une semaine de visites technologiques en Chine",
+    "es": "Una semana de visitas tecnológicas en China"
   },
   "subtitle": {
-    "en": "Robots, breakfast noodles, a rainy night in Shanghai and learning to ask questions differently.",
-    "pt": "Robôs, macarrão no café da manhã, uma noite chuvosa em Xangai e um novo jeito de fazer perguntas.",
-    "fr": "Des robots, des nouilles au petit-déjeuner, une soirée pluvieuse à Shanghai et une autre façon de poser des questions.",
-    "es": "Robots, fideos en el desayuno, una noche lluviosa en Shanghái y otra forma de hacer preguntas."
+    "en": "Technology visits, new food and time with the group in Beijing and Shanghai.",
+    "pt": "Visitas de tecnologia, comidas novas e dias com a turma em Pequim e Xangai.",
+    "fr": "Des visites technologiques, de nouvelles saveurs et des moments avec le groupe à Pékin et Shanghai.",
+    "es": "Visitas tecnológicas, comidas nuevas y días con el grupo en Pekín y Shanghái."
   },
   "intro": {
-    "en": "When I applied for the Prêmio Na Prática Protagonismo Universitário, I didn’t even think I would win. The trip to China was part of the prize. I tried to go without building up too many expectations, leaving room for whatever I would find. I’m really glad I did.",
-    "pt": "Quando me inscrevi no Prêmio Na Prática Protagonismo Universitário, eu achava que nem ia passar. A viagem à China fazia parte do prêmio. Tentei ir sem criar muita expectativa, aberta ao que fosse encontrar. E foi muito bom ter ido assim.",
-    "fr": "Quand j’ai candidaté au Prêmio Na Prática Protagonismo Universitário, je ne pensais même pas gagner. Le voyage en Chine faisait partie du prix. J’ai essayé de partir sans trop d’attentes, ouverte à ce que j’allais découvrir. Je suis vraiment contente d’avoir fait ce choix.",
-    "es": "Cuando me presenté al Prêmio Na Prática Protagonismo Universitário, ni siquiera pensaba que iba a ganar. El viaje a China formaba parte del premio. Intenté ir sin crear demasiadas expectativas, abierta a lo que encontrara. Y me alegro mucho de haber ido así."
+    "en": "The trip to China was part of the Na Prática Award. In January 2026, I spent a week in Beijing and Shanghai with the group, visiting companies and getting to know a little of the cities between activities.",
+    "pt": "A viagem à China fazia parte do Prêmio Na Prática. Em janeiro de 2026, passei uma semana em Pequim e Xangai com a turma, visitando empresas e conhecendo um pouco das cidades entre as atividades.",
+    "fr": "Le voyage en Chine faisait partie du prix Na Prática. En janvier 2026, j’ai passé une semaine à Pékin et Shanghai avec le groupe, à visiter des entreprises et découvrir les villes entre les activités.",
+    "es": "El viaje a China formaba parte del Premio Na Prática. En enero de 2026, pasé una semana en Pekín y Shanghái con el grupo, visitando empresas y conociendo un poco las ciudades entre actividades."
   },
   "related_award": "Prêmio Protagonismo Universitário",
   "award_link_label": {
@@ -55,10 +55,10 @@
     {
       "date": "2026-01-25",
       "label": {
-        "en": "25–31 Jan 2026",
-        "pt": "25–31 jan 2026",
-        "fr": "25–31 janv. 2026",
-        "es": "25–31 ene 2026"
+        "en": "25 to 31 Jan 2026",
+        "pt": "25 a 31 jan 2026",
+        "fr": "25 à 31 janv. 2026",
+        "es": "25 a 31 ene 2026"
       },
       "title": {
         "en": "China · Beijing / Shanghai",
@@ -82,23 +82,17 @@
     {
       "id": "viagem",
       "title": {
-        "en": "Twenty-five hours on the way",
-        "pt": "Vinte e cinco horas de viagem",
-        "fr": "Vingt-cinq heures de voyage",
-        "es": "Veinticinco horas de viaje"
+        "en": "The journey to Beijing",
+        "pt": "A viagem até Pequim",
+        "fr": "Le voyage jusqu’à Pékin",
+        "es": "El viaje hasta Pekín"
       },
       "paragraphs": [
         {
-          "en": "Our immersion took place from 25 to 31 January 2026, between Beijing and Shanghai. Before that, there were about twenty-five hours of travel. I kept taking pictures through the plane window: mountains, the Nile, places I was seeing from above for the first time.",
-          "pt": "A imersão aconteceu de 25 a 31 de janeiro de 2026, entre Pequim e Xangai. Antes disso, foram cerca de vinte e cinco horas de viagem. Eu ficava fotografando pela janela do avião: montanhas, o Nilo, lugares que estava vendo de cima pela primeira vez.",
-          "fr": "L’immersion a eu lieu du 25 au 31 janvier 2026, entre Pékin et Shanghai. Avant cela, il y a eu environ vingt-cinq heures de voyage. Je prenais des photos par le hublot : des montagnes, le Nil, des endroits que je voyais d’en haut pour la première fois.",
-          "es": "La inmersión fue del 25 al 31 de enero de 2026, entre Pekín y Shanghái. Antes hubo unas veinticinco horas de viaje. No paraba de hacer fotos por la ventanilla: montañas, el Nilo, lugares que veía desde arriba por primera vez."
-        },
-        {
-          "en": "We stopped in Doha, Qatar. The airport was enormous, with so much greenery inside that it felt like a forest. Even the stopover became part of the trip.",
-          "pt": "Fizemos uma conexão em Doha, no Catar. O aeroporto era enorme, com uma área tão cheia de plantas que parecia uma floresta lá dentro. Até a conexão virou parte da viagem.",
-          "fr": "Nous avons fait escale à Doha, au Qatar. L’aéroport était immense, avec tellement de végétation à l’intérieur qu’on aurait dit une forêt. Même l’escale faisait partie du voyage.",
-          "es": "Hicimos escala en Doha, Catar. El aeropuerto era enorme, con una zona tan llena de plantas que parecía un bosque dentro del edificio. Hasta la escala se convirtió en parte del viaje."
+          "en": "The immersion took place from 25 to 31 January 2026, in Beijing and Shanghai, as part of the Na Prática Award. We travelled for about 25 hours, including a connection in Doha, before beginning the visits.",
+          "pt": "A imersão aconteceu de 25 a 31 de janeiro de 2026, em Pequim e Xangai, como parte do Prêmio Na Prática. Foram cerca de 25 horas de viagem, com conexão em Doha, antes de começar as visitas.",
+          "fr": "L’immersion s’est déroulée du 25 au 31 janvier 2026 à Pékin et Shanghai, dans le cadre du prix Na Prática. Le voyage a duré environ 25 heures, avec une correspondance à Doha, avant le début des visites.",
+          "es": "La inmersión tuvo lugar del 25 al 31 de enero de 2026 en Pekín y Shanghái, como parte del Premio Na Prática. El viaje duró unas 25 horas, con escala en Doha, antes de comenzar las visitas."
         }
       ],
       "photos": [
@@ -121,23 +115,17 @@
     {
       "id": "primeiro-jantar",
       "title": {
-        "en": "Our first dinner, around a round table",
-        "pt": "O primeiro jantar, numa mesa redonda",
-        "fr": "Le premier dîner, autour d’une table ronde",
-        "es": "La primera cena, alrededor de una mesa redonda"
+        "en": "Meeting the group and organisers",
+        "pt": "O encontro com a turma e a organização",
+        "fr": "La rencontre avec le groupe et l’organisation",
+        "es": "El encuentro con el grupo y la organización"
       },
       "paragraphs": [
         {
-          "en": "It was already dark when we arrived. The FGCI team, who organised the immersion, welcomed us with dinner at a traditional restaurant. We sat around a round table, getting to know each other and hearing about the week ahead. That was also the first time I ate shrimp. I loved it.",
-          "pt": "Já era noite quando chegamos. A equipe da FGCI, que organizou a imersão, recebeu a gente com um jantar num restaurante tradicional. Sentamos numa mesa redonda, nos apresentamos e ouvimos sobre a semana que vinha pela frente. Foi também a primeira vez que comi camarão. Eu adorei.",
-          "fr": "Il faisait déjà nuit à notre arrivée. L’équipe de FGCI, qui organisait l’immersion, nous a accueillis avec un dîner dans un restaurant traditionnel. Autour d’une table ronde, nous avons fait connaissance et découvert la semaine qui nous attendait. C’était aussi la première fois que je mangeais des crevettes. J’ai adoré.",
-          "es": "Ya era de noche cuando llegamos. El equipo de FGCI, que organizó la inmersión, nos recibió con una cena en un restaurante tradicional. Nos sentamos alrededor de una mesa redonda, nos presentamos y escuchamos lo que nos esperaba esa semana. También fue la primera vez que comí camarones. Me encantaron."
-        },
-        {
-          "en": "We had an interpreter throughout the visits. He was used to working with executives, investors and political delegations, and there he was, helping our group of students follow the conversations in real time. That support made such a difference.",
-          "pt": "Tivemos um intérprete acompanhando as visitas. Ele já trabalhava com executivos, investidores e delegações políticas, e ali estava ajudando nosso grupo de estudantes a acompanhar as conversas em tempo real. Esse apoio fez muita diferença.",
-          "fr": "Un interprète nous accompagnait pendant les visites. Habitué à travailler avec des dirigeants, des investisseurs et des délégations politiques, il aidait cette fois notre groupe d’étudiants à suivre les conversations en temps réel. Cet accompagnement changeait beaucoup de choses.",
-          "es": "Tuvimos un intérprete durante las visitas. Estaba acostumbrado a trabajar con directivos, inversores y delegaciones políticas, y allí estaba, ayudando a nuestro grupo de estudiantes a seguir las conversaciones en tiempo real. Ese apoyo marcó una gran diferencia."
+          "en": "FGCI, which organised the immersion, welcomed us with a dinner and an introduction to the programme. An interpreter accompanied the visits and helped us follow the presentations and discussions.",
+          "pt": "A FGCI, responsável pela imersão, nos recebeu com um jantar e a apresentação da programação. Um intérprete acompanhou as visitas e ajudou o grupo a participar das apresentações e conversas.",
+          "fr": "La FGCI, responsable de l’immersion, nous a accueillis avec un dîner et une présentation du programme. Un interprète accompagnait les visites et facilitait les échanges et les présentations.",
+          "es": "FGCI, responsable de la inmersión, nos recibió con una cena y la presentación del programa. Un intérprete acompañó las visitas y ayudó al grupo a seguir las presentaciones y conversaciones."
         }
       ],
       "photos": [
@@ -149,23 +137,17 @@
     {
       "id": "ritmo",
       "title": {
-        "en": "Breakfast, visits, and very little energy left",
-        "pt": "Café da manhã, visitas e a bateria acabando",
-        "fr": "Petit-déjeuner, visites et batteries à plat",
-        "es": "Desayuno, visitas y la batería agotándose"
+        "en": "A varied schedule",
+        "pt": "Uma programação variada",
+        "fr": "Un programme varié",
+        "es": "Un programa variado"
       },
       "paragraphs": [
         {
-          "en": "Our days were intense. We had breakfast at the hotel and headed out for three or four visits a day. I was eating sushi and noodles for breakfast every day, which is a detail I don’t want to forget.",
-          "pt": "Nossos dias eram muito intensos. Acordávamos, tomávamos café da manhã no hotel e saíamos para três ou quatro visitas por dia. Eu estava comendo sushi e macarrão no café da manhã todos os dias, e esse é um detalhe que não quero esquecer.",
-          "fr": "Nos journées étaient très intenses. Après le petit-déjeuner à l’hôtel, nous partions pour trois ou quatre visites par jour. Je mangeais des sushis et des nouilles au petit-déjeuner tous les jours, un détail que je ne veux pas oublier.",
-          "es": "Los días eran muy intensos. Desayunábamos en el hotel y salíamos para hacer tres o cuatro visitas al día. Estaba comiendo sushi y fideos en el desayuno todos los días, un detalle que no quiero olvidar."
-        },
-        {
-          "en": "We wanted to film everything and share it on Instagram as we went. But by the end of the day we were exhausted. Sometimes there was barely any energy left to post. We were busy living through so much of what we wanted to show.",
-          "pt": "A gente queria gravar tudo e ir compartilhando no Instagram. Só que, no fim do dia, estávamos mortos. Às vezes mal sobrava energia para postar. Era muita coisa acontecendo, e a gente estava tentando absorver tudo.",
-          "fr": "Nous voulions tout filmer et partager au fur et à mesure sur Instagram. Mais en fin de journée, nous étions épuisés. Il restait parfois à peine assez d’énergie pour publier. Il se passait tellement de choses, et nous essayions de tout absorber.",
-          "es": "Queríamos grabarlo todo e ir compartiéndolo en Instagram. Pero al final del día estábamos agotados. A veces apenas quedaba energía para publicar. Estaban pasando tantas cosas y tratábamos de absorberlo todo."
+          "en": "We had three or four visits a day, covering different technologies and organisations. Taking photos and discussing what we saw with the group helped me organise the information. The meals were also a chance to try local food.",
+          "pt": "Tínhamos três ou quatro visitas por dia, passando por diferentes tecnologias e organizações. Registrar o que víamos e conversar com a turma ajudou a organizar as informações. As refeições também foram uma oportunidade de conhecer a comida local.",
+          "fr": "Nous faisions trois ou quatre visites par jour, dans différentes technologies et organisations. Prendre des photos et échanger avec le groupe m’a aidée à organiser les informations. Les repas étaient aussi l’occasion de découvrir la cuisine locale.",
+          "es": "Teníamos tres o cuatro visitas al día, con distintas tecnologías y organizaciones. Registrar lo que veíamos y comentarlo con el grupo me ayudó a organizar la información. Las comidas también permitieron conocer la gastronomía local."
         }
       ],
       "photos": [
@@ -179,29 +161,23 @@
     {
       "id": "tecnologia",
       "title": {
-        "en": "The visits where I wanted to look at everything",
-        "pt": "As visitas em que eu queria olhar tudo",
-        "fr": "Les visites où je voulais tout regarder",
-        "es": "Las visitas en las que quería verlo todo"
+        "en": "Hardware, robotics and space",
+        "pt": "Hardware, robótica e espaço",
+        "fr": "Matériel, robotique et spatial",
+        "es": "Hardware, robótica y espacio"
       },
       "paragraphs": [
         {
-          "en": "There were visits close to my world: hardware, robotics and the space sector, including SpaceSail. But much of the programme took me into other fields, from education to medicine, entrepreneurship and innovation hubs. We also visited Alibaba and Huawei. I loved having that mix.",
-          "pt": "Teve visita muito próxima da minha área: hardware, robótica e setor espacial, incluindo a SpaceSail. Mas boa parte da programação me levou para outros assuntos, da educação à medicina, passando por hubs de empreendedorismo e inovação. Visitamos também a Alibaba e a Huawei. Gostei muito dessa mistura.",
-          "fr": "Certaines visites étaient proches de mon domaine : le matériel, la robotique et le spatial, notamment SpaceSail. Mais une grande partie du programme m’a emmenée vers d’autres sujets, de l’éducation à la médecine, en passant par des lieux dédiés à l’entrepreneuriat et à l’innovation. Nous avons aussi visité Alibaba et Huawei. J’ai beaucoup aimé ce mélange.",
-          "es": "Algunas visitas estaban muy cerca de mi área: hardware, robótica y sector espacial, incluida SpaceSail. Pero gran parte del programa me llevó a otros temas, desde educación hasta medicina, pasando por centros de emprendimiento e innovación. También visitamos Alibaba y Huawei. Me encantó esa mezcla."
+          "en": "The visits included SpaceSail, Alibaba, Huawei and WhalesBot, alongside organisations in education, healthcare and entrepreneurship. I was particularly interested in the hardware, robotics and space applications.",
+          "pt": "As visitas incluíram SpaceSail, Alibaba, Huawei e WhalesBot, além de organizações de educação, saúde e empreendedorismo. Meu interesse esteve especialmente nas aplicações de hardware, robótica e espaço.",
+          "fr": "Les visites comprenaient SpaceSail, Alibaba, Huawei et WhalesBot, ainsi que des organisations de l’éducation, de la santé et de l’entrepreneuriat. Je m’intéressais particulièrement aux applications matérielles, robotiques et spatiales.",
+          "es": "Las visitas incluyeron SpaceSail, Alibaba, Huawei y WhalesBot, además de organizaciones de educación, salud y emprendimiento. Me interesaron especialmente las aplicaciones de hardware, robótica y espacio."
         },
         {
-          "en": "We saw so many robots. One of them even drew Naryane! At WhalesBot, there were robotics kits and models that made me want to stop and look at every detail.",
-          "pt": "Vimos muitos robôs. Um deles chegou a desenhar a Naryane! Na WhalesBot, tinha kits de robótica e maquetes que davam vontade de parar para olhar cada detalhe.",
-          "fr": "Nous avons vu tellement de robots. L’un d’eux a même dessiné Naryane ! Chez WhalesBot, les kits de robotique et les maquettes donnaient envie de s’arrêter devant chaque détail.",
-          "es": "Vimos muchísimos robots. ¡Uno incluso dibujó a Naryane! En WhalesBot había kits de robótica y maquetas que daban ganas de detenerse a mirar cada detalle."
-        },
-        {
-          "en": "Another demonstration stayed with me: a little car on a track, presented as being controlled through signals picked up by a device worn on the head. Seeing that idea turned into something you could watch moving right there was so much fun.",
-          "pt": "Outra demonstração ficou na minha cabeça: um carrinho numa pista, apresentado como controlado por sinais captados por um dispositivo colocado na cabeça. Ver aquela ideia virando uma coisa que se mexia ali, na nossa frente, foi muito legal.",
-          "fr": "Une autre démonstration m’est restée en tête : une petite voiture sur une piste, présentée comme commandée par des signaux captés par un dispositif porté sur la tête. Voir cette idée devenir quelque chose qui bougeait juste devant nous était vraiment amusant.",
-          "es": "Otra demostración se me quedó grabada: un cochecito en una pista, presentado como controlado mediante señales captadas por un dispositivo colocado en la cabeza. Ver esa idea convertida en algo que se movía allí, delante de nosotros, fue increíble."
+          "en": "We saw educational robotics kits, a robot drawing a portrait and a small car presented as controlled by signals from a device worn on the head. The demonstrations offered concrete examples of how the technologies were being presented and applied.",
+          "pt": "Vimos kits de robótica educacional, um robô desenhando um retrato e um carrinho apresentado como controlado por sinais de um dispositivo colocado na cabeça. As demonstrações trouxeram exemplos concretos de como as tecnologias eram apresentadas e aplicadas.",
+          "fr": "Nous avons vu des kits de robotique éducative, un robot dessinant un portrait et une petite voiture présentée comme commandée par les signaux d’un dispositif porté sur la tête. Les démonstrations donnaient des exemples concrets de présentation et d’application des technologies.",
+          "es": "Vimos kits de robótica educativa, un robot dibujando un retrato y un coche presentado como controlado por señales de un dispositivo colocado en la cabeza. Las demostraciones aportaron ejemplos concretos de cómo se presentaban y aplicaban las tecnologías."
         }
       ],
       "photos": [
@@ -220,17 +196,17 @@
     {
       "id": "hospital",
       "title": {
-        "en": "A hospital, seen through its processes",
-        "pt": "Um hospital visto pelos seus processos",
-        "fr": "Un hôpital vu à travers son organisation",
-        "es": "Un hospital visto a través de sus procesos"
+        "en": "Processes in healthcare",
+        "pt": "Processos na área da saúde",
+        "fr": "Les processus dans la santé",
+        "es": "Procesos en el área de salud"
       },
       "paragraphs": [
         {
-          "en": "At the hospital, what caught my attention was how they organised the flow of so many patients. The triage process we were shown was digital, and there was even something like a slide to move medicines. I kept looking at how those parts fitted together to make things move quickly.",
-          "pt": "No hospital, o que me chamou a atenção foi a organização para atender tantos pacientes. A triagem que nos mostraram era digital e tinha até uma espécie de escorregador para transportar os remédios. Eu ficava olhando como essas partes se conectavam para fazer tudo andar rápido.",
-          "fr": "À l’hôpital, j’ai surtout remarqué l’organisation nécessaire pour accueillir autant de patients. Le triage qu’on nous a montré était numérique, et il y avait même une sorte de toboggan pour acheminer les médicaments. J’observais la façon dont ces éléments s’articulaient pour que tout avance rapidement.",
-          "es": "En el hospital me llamó la atención la organización necesaria para atender a tantos pacientes. El triaje que nos mostraron era digital y había incluso una especie de tobogán para transportar los medicamentos. Me fijaba en cómo se conectaban esas partes para que todo avanzara rápido."
+          "en": "At a hospital, I was interested in how the different processes worked together. The visit included digital triage and a medication transport system. It was a chance to look at technology through the organisation of a service.",
+          "pt": "Em um hospital, me interessei pela integração dos processos. A visita incluiu triagem digital e um sistema de transporte de medicamentos. Foi uma oportunidade de observar a tecnologia pela organização de um serviço.",
+          "fr": "Dans un hôpital, je me suis intéressée à l’articulation des processus. La visite comprenait le triage numérique et un système de transport de médicaments. C’était une occasion d’observer la technologie à travers l’organisation d’un service.",
+          "es": "En un hospital, me interesó la integración de los procesos. La visita incluyó triaje digital y un sistema de transporte de medicamentos. Fue una oportunidad para observar la tecnología desde la organización de un servicio."
         }
       ],
       "photos": [
@@ -241,35 +217,17 @@
     {
       "id": "regras-invisiveis",
       "title": {
-        "en": "Learning to notice the invisible rules",
-        "pt": "Aprendendo a perceber as regras invisíveis",
-        "fr": "Apprendre à repérer les règles invisibles",
-        "es": "Aprender a reconocer las reglas invisibles"
+        "en": "Adapting the questions",
+        "pt": "A adaptação das perguntas",
+        "fr": "Adapter les questions",
+        "es": "Adaptar las preguntas"
       },
       "paragraphs": [
         {
-          "en": "I had always thought good questions were open-ended ones, leaving room for the other person to express themselves. That had worked well for me in Brazil. During some of our visits in China, I tried the same approach and felt the conversation stall. When I started asking more direct, specific questions, the answers flowed better.",
-          "pt": "Eu sempre achei que boas perguntas eram perguntas abertas, que davam espaço para a outra pessoa se expressar. Isso tinha funcionado bem pra mim no Brasil. Em algumas visitas na China, tentei fazer do mesmo jeito e senti que a conversa travava. Quando comecei a fazer perguntas mais diretas e específicas, as respostas fluíam melhor.",
-          "fr": "J’avais toujours pensé que les bonnes questions étaient ouvertes, pour laisser à l’autre la place de s’exprimer. Cela avait bien fonctionné pour moi au Brésil. Pendant certaines visites en Chine, j’ai essayé la même approche et senti la conversation se bloquer. Avec des questions plus directes et précises, les réponses venaient plus facilement.",
-          "es": "Siempre había pensado que las buenas preguntas eran abiertas, para dar espacio a que la otra persona se expresara. Eso me había funcionado bien en Brasil. En algunas visitas en China intenté hacer lo mismo y sentí que la conversación se atascaba. Cuando empecé a hacer preguntas más directas y concretas, las respuestas fluían mejor."
-        },
-        {
-          "en": "It wasn’t just about speaking another language. The setting, the way people showed respect and what each person expected from a conversation mattered too. This was something I noticed with the people we met, not a rule about everyone in a country.",
-          "pt": "Não era só uma questão de falar outro idioma. O contexto, a forma de demonstrar respeito e o que cada pessoa esperava da conversa também importavam. Foi uma percepção sobre os encontros que tivemos, não uma regra sobre todas as pessoas de um país.",
-          "fr": "Ce n’était pas seulement une question de langue. Le contexte, les façons de montrer du respect et les attentes de chacun comptaient aussi. C’était une observation liée aux personnes rencontrées, pas une règle valable pour tout un pays.",
-          "es": "No era solo una cuestión de hablar otro idioma. También importaban el contexto, la forma de mostrar respeto y lo que cada persona esperaba de la conversación. Fue una observación sobre nuestros encuentros, no una regla para todas las personas de un país."
-        },
-        {
-          "en": "At Suzano, a Brazilian company with a presence in China, we also had a session on negotiating with Chinese counterparts. It gave me more to think about alongside those conversations. Since then, when I enter a new environment, I try to notice its invisible rules before assuming that the way I already know will work there too.",
-          "pt": "Na Suzano, uma empresa brasileira com presença na China, tivemos também uma aula sobre negociação com chineses. Foi mais uma coisa para pensar junto com aquelas conversas. Desde então, quando entro num ambiente novo, tento perceber suas regras invisíveis antes de presumir que o jeito que já conheço vai funcionar ali também.",
-          "fr": "Chez Suzano, une entreprise brésilienne présente en Chine, nous avons aussi suivi une session sur la négociation avec des interlocuteurs chinois. Cela a nourri mes réflexions sur ces échanges. Depuis, quand j’arrive dans un nouvel environnement, j’essaie d’en repérer les règles invisibles avant de supposer que ma façon habituelle de faire y fonctionnera aussi.",
-          "es": "En Suzano, una empresa brasileña con presencia en China, también tuvimos una clase sobre negociación con interlocutores chinos. Me dio más cosas que pensar junto con aquellas conversaciones. Desde entonces, cuando entro en un entorno nuevo, intento reconocer sus reglas invisibles antes de asumir que mi forma habitual de hacer las cosas también funcionará allí."
-        },
-        {
-          "en": "I don’t want to turn that observation into a rule about an entire country. What I noticed was that, in those visits, more specific questions led to better conversations. It made me question a habit I had brought from home: assuming that what helped me communicate in one setting would work equally well in another.",
-          "pt": "Não quero transformar essa observação numa regra sobre um país inteiro. O que percebi foi que, naquelas visitas, perguntas mais específicas faziam a conversa render melhor. Isso me fez questionar um hábito que levei de casa: achar que o que me ajudava a conversar num ambiente funcionaria do mesmo jeito em outro.",
-          "fr": "Je ne veux pas en faire une règle sur tout un pays. J’ai simplement remarqué que, pendant ces visites, des questions plus précises facilitaient les échanges. Cela m’a fait remettre en question une habitude : supposer que ce qui m’aidait à communiquer dans un contexte fonctionnerait aussi bien dans un autre.",
-          "es": "No quiero convertir esa observación en una regla sobre un país entero. Lo que noté fue que, en aquellas visitas, las preguntas más concretas hacían avanzar mejor la conversación. Me hizo cuestionar una costumbre que llevaba de casa: suponer que lo que me ayudaba a comunicarme en un entorno funcionaría igual en otro."
+          "en": "In some visits, more specific questions led to clearer answers than broad ones. A conversation at Suzano about negotiation in China also helped me pay attention to the context of each exchange. This was a lesson from those particular meetings, rather than a general rule about the country.",
+          "pt": "Em algumas visitas, perguntas mais específicas trouxeram respostas mais claras do que perguntas amplas. Uma conversa na Suzano sobre negociação na China também me ajudou a prestar atenção ao contexto de cada troca. Foi um aprendizado daqueles encontros, sem tratar a experiência como uma regra sobre o país.",
+          "fr": "Lors de certaines visites, des questions précises donnaient des réponses plus claires que des questions larges. Un échange chez Suzano sur la négociation en Chine m’a aussi aidée à tenir compte du contexte. C’est un apprentissage lié à ces rencontres, plutôt qu’une règle générale sur le pays.",
+          "es": "En algunas visitas, las preguntas específicas daban respuestas más claras que las amplias. Una conversación en Suzano sobre negociación en China también me ayudó a atender al contexto. Fue un aprendizaje de esos encuentros, sin convertirlo en una regla sobre el país."
         }
       ],
       "photos": [
@@ -280,17 +238,17 @@
     {
       "id": "muralha",
       "title": {
-        "en": "Cold days and the Great Wall",
-        "pt": "O frio e a Muralha",
-        "fr": "Le froid et la Grande Muraille",
-        "es": "El frío y la Gran Muralla"
+        "en": "A visit to the Great Wall",
+        "pt": "A visita à Muralha",
+        "fr": "La visite de la Grande Muraille",
+        "es": "La visita a la Muralla"
       },
       "paragraphs": [
         {
-          "en": "It was really cold. Between all those visits, there was also time to see the Great Wall, walk around, do some shopping and enjoy being there together. Looking at the group’s photos brings back so many things that wouldn’t fit into a list of companies we visited.",
-          "pt": "Estava bem frio. No meio de todas aquelas visitas, também deu tempo de conhecer a Muralha, passear, fazer umas comprinhas e aproveitar estar ali com o grupo. Olhar as fotos traz muita coisa que não caberia numa lista de empresas visitadas.",
-          "fr": "Il faisait vraiment froid. Entre toutes ces visites, nous avons aussi pu découvrir la Grande Muraille, nous promener, faire quelques achats et profiter du fait d’être là ensemble. Les photos du groupe me rappellent tant de choses qui ne tiendraient pas dans une liste d’entreprises visitées.",
-          "es": "Hacía mucho frío. Entre todas aquellas visitas también hubo tiempo para conocer la Gran Muralla, pasear, hacer algunas compras y disfrutar de estar allí juntos. Las fotos del grupo me traen muchos recuerdos que no cabrían en una lista de empresas visitadas."
+          "en": "The schedule also included time to visit the Great Wall and explore the cities with the group. Those outings added cultural context to the technical programme.",
+          "pt": "A programação também deixou tempo para conhecer a Muralha e passear pelas cidades com a turma. Essas visitas trouxeram contexto cultural à experiência técnica.",
+          "fr": "Le programme laissait aussi du temps pour visiter la Grande Muraille et découvrir les villes en groupe. Ces sorties apportaient un contexte culturel à l’expérience technique.",
+          "es": "El programa también dejó tiempo para conocer la Muralla y recorrer las ciudades con el grupo. Esas visitas aportaron contexto cultural a la experiencia técnica."
         }
       ],
       "photos": [
@@ -303,23 +261,17 @@
     {
       "id": "xangai",
       "title": {
-        "en": "Shanghai, in the rain",
-        "pt": "Xangai, na chuva",
-        "fr": "Shanghai, sous la pluie",
-        "es": "Shanghái, bajo la lluvia"
+        "en": "The final days in Shanghai",
+        "pt": "Os últimos dias em Xangai",
+        "fr": "Les derniers jours à Shanghai",
+        "es": "Los últimos días en Shanghái"
       },
       "paragraphs": [
         {
-          "en": "On our last night in Shanghai, we had dinner in a room reserved just for our group, with a view of the tower across the water. It was raining, and the city was all lit up. That is one of my favourite memories: the view, the food, being there with everyone.",
-          "pt": "Na última noite em Xangai, jantamos numa sala reservada só para o nosso grupo, com a torre do outro lado da água. Estava chovendo, e a cidade estava toda iluminada. É uma das minhas lembranças mais gostosas: a vista, a comida, estar ali com todo mundo.",
-          "fr": "Le dernier soir à Shanghai, nous avons dîné dans une salle réservée à notre groupe, avec vue sur la tour de l’autre côté de l’eau. Il pleuvait et la ville était toute illuminée. C’est l’un de mes souvenirs préférés : la vue, le repas, le fait d’être là tous ensemble.",
-          "es": "La última noche en Shanghái cenamos en una sala reservada para nuestro grupo, con la torre al otro lado del agua. Llovía y la ciudad estaba toda iluminada. Es uno de mis recuerdos más bonitos: la vista, la comida, estar allí con todos."
-        },
-        {
-          "en": "I’m still in touch with people I met during that week, and we’ve even been talking about possible collaborations. The trip ended, but some of those conversations are still going.",
-          "pt": "Continuo conversando com pessoas que conheci naquela semana, e estamos até pensando em possíveis parcerias. A viagem acabou, mas algumas daquelas conversas continuam até hoje.",
-          "fr": "Je suis toujours en contact avec des personnes rencontrées pendant cette semaine, et nous parlons même de collaborations possibles. Le voyage est terminé, mais certaines de ces conversations continuent.",
-          "es": "Sigo hablando con personas que conocí aquella semana, e incluso estamos pensando en posibles colaboraciones. El viaje terminó, pero algunas de aquellas conversaciones siguen hasta hoy."
+          "en": "We finished the trip in Shanghai, with a group dinner overlooking the illuminated city. I stayed in touch with people from the immersion and continued some of the conversations we had begun during the visits.",
+          "pt": "Terminamos a viagem em Xangai, com um jantar em grupo e a vista da cidade iluminada. Continuei em contato com pessoas da imersão e dei sequência a algumas conversas iniciadas durante as visitas.",
+          "fr": "Nous avons terminé le voyage à Shanghai, avec un dîner en groupe face à la ville illuminée. J’ai gardé contact avec des participants et poursuivi certains échanges commencés pendant les visites.",
+          "es": "Terminamos el viaje en Shanghái, con una cena en grupo y la vista de la ciudad iluminada. Seguí en contacto con participantes y continué algunas conversaciones iniciadas durante las visitas."
         }
       ],
       "photos": [
@@ -331,10 +283,10 @@
     }
   ],
   "closing": {
-    "en": "I came home with far more questions than I had taken with me. I had gone looking forward to the technology, but I keep returning to those conversations where changing the question changed what I could learn. I want to carry that attention into other places too: observe, ask, and leave room to discover that my usual way of doing something may not be the only one that works.",
-    "pt": "Voltei com muito mais perguntas do que levei. Eu estava curiosa pela tecnologia, mas continuo voltando àquelas conversas em que mudar a pergunta mudou o que eu conseguia aprender. Quero levar essa atenção pra outros lugares também: observar, perguntar e dar espaço pra descobrir que o meu jeito habitual de fazer alguma coisa pode não ser o único que funciona.",
-    "fr": "Je suis rentrée avec bien plus de questions qu’au départ. J’étais curieuse de découvrir la technologie, mais je repense surtout à ces conversations où changer ma question changeait ce que je pouvais apprendre. J’ai envie de garder cette attention ailleurs aussi : observer, poser des questions et accepter que ma façon habituelle de faire ne soit pas la seule qui fonctionne.",
-    "es": "Volví con muchas más preguntas de las que llevaba. Sentía curiosidad por la tecnología, pero sigo pensando en aquellas conversaciones en las que cambiar la pregunta cambiaba lo que podía aprender. Quiero llevar esa atención a otros lugares: observar, preguntar y dejar espacio para descubrir que mi manera habitual de hacer algo puede no ser la única que funciona."
+    "en": "It was a busy week, with visits across different fields and plenty to talk about with the group. I remember the robots, the Great Wall and our last dinner in Shanghai. I still keep in touch with people I met there.",
+    "pt": "Foi uma semana cheia, com visitas de áreas diferentes e muita conversa com a turma. Lembro dos robôs, da Muralha e do último jantar em Xangai. Continuo em contato com pessoas que conheci por lá.",
+    "fr": "C’était une semaine bien remplie, avec des visites dans différents domaines et beaucoup d’échanges avec le groupe. Je me souviens des robots, de la Grande Muraille et du dernier dîner à Shanghai. Je garde contact avec des personnes rencontrées là-bas.",
+    "es": "Fue una semana llena de actividades, con visitas de distintas áreas y muchas conversaciones con el grupo. Recuerdo los robots, la Muralla y la última cena en Shanghái. Sigo en contacto con personas que conocí allí."
   },
   "photos": {
     "doha": {
@@ -365,9 +317,9 @@
       "height": 1280,
       "caption": {
         "en": "A stop at Alibaba.",
-        "pt": "Uma das visitas: Alibaba.",
+        "pt": "Uma das visitas, Alibaba.",
         "fr": "Une visite chez Alibaba.",
-        "es": "Una de las visitas: Alibaba."
+        "es": "Una de las visitas, Alibaba."
       }
     },
     "comida": {

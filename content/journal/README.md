@@ -4,7 +4,19 @@ O site continua no GitHub Pages. Você edita texto e fotos no repositório e, ao
 
 ## Alterar uma história
 
-Abra **`content/journal/cern.json`** (CERN), **`content/journal/cnes.json`** (CNES e Toulouse), **`content/journal/bsv.json`** (viagem aos Estados Unidos), **`content/journal/visiona.json`** (Visiona) **`content/journal/south-summit.json`** (South Summit) **`content/journal/china.json`** (China) **`content/journal/premio-na-pratica.json`** (prêmio Na Prática) ou **`content/journal/fundacao-estudar.json`** (Fundação Estudar e Lyfe Academy) no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+Abra o arquivo da história em `content/journal/` no GitHub e clique no lápis para editar. Também pode usar um editor no computador.
+
+| Arquivo | História |
+| --- | --- |
+| `brafitec.json` | A seleção, o francês e a vida em Grenoble |
+| `cern.json` | CERN openlab |
+| `cnes.json` | CNES e Toulouse |
+| `bsv.json` | Viagem aos Estados Unidos |
+| `visiona.json` | Visiona e a volta ao Brasil |
+| `south-summit.json` | Os painéis e os encontros no South Summit |
+| `china.json` | A imersão na China |
+| `premio-na-pratica.json` | Prêmio Na Prática |
+| `fundacao-estudar.json` | Fundação Estudar e Lyfe Academy |
 
 - `title`: título da história.
 - `subtitle`: resumo na abertura da página da história.
@@ -62,7 +74,11 @@ O inglês é a versão padrão. Se uma tradução estiver vazia, o site usa a ve
 
 3. Acrescente `"nova-foto"` à lista `photos` do capítulo escolhido. A ordem dessa lista é a ordem das fotos na história.
 
-Use as dimensões reais da imagem, para reservar o espaço correto durante o carregamento. A galeria exibe a foto inteira e permite ampliá-la. As fotos não precisam ter todas a mesma orientação. A capa atual combina duas fotos verticais e uma horizontal; em outra composição, ajuste `cover` e, se necessário, `.journal-mosaic` no CSS.
+Use as dimensões reais da imagem, para reservar o espaço correto durante o carregamento. A galeria, a capa e o álbum da página inicial respeitam a proporção original. As fotos não precisam ter a mesma orientação. A capa se adapta automaticamente à última foto de `cover`, que é a principal. Uma foto vertical fica ao lado das duas menores. Uma horizontal ocupa a largura acima delas.
+
+As galerias agrupam as imagens pelas proporções, mantendo a ordem do capítulo. No celular, elas aparecem uma abaixo da outra. Uma foto vertical pode acompanhar um trecho curto na lateral. Trechos mais longos recebem as fotos abaixo do texto. Não é necessário editar o CSS ao trocar uma foto.
+
+As molduras têm inclinações suaves e incluem a legenda. O tamanho das fotos é limitado mesmo em telas grandes, para manter o ritmo da leitura. Um clique abre a foto maior no visualizador.
 
 As fotos fornecidas ficam intactas. Apenas as imagens e o relatório referenciados pelos posts publicados entram no pacote do site; arquivos extras da pasta não são publicados automaticamente.
 
@@ -78,7 +94,7 @@ Para retirar uma história do site, mude `published` para `false` e publique a a
 
 ## Navegação entre histórias
 
-Cada relato tem um índice de capítulos e uma lista com fotos das outras histórias, do mais recente ao mais antigo. Essa lista é gerada automaticamente a partir de `timeline` e `cover`. No celular, ela fica em um controle expansível antes do texto. Não há cartões de recomendações ao final dos relatos.
+Cada relato tem um índice de capítulos e uma lista com fotos das outras histórias, do mais recente ao mais antigo. Essa lista é gerada automaticamente a partir de `timeline` e `cover` e começa recolhida. O controle “Recolher menu” fecha toda a navegação, enquanto “Nesta história” e “Outras histórias” abrem e fecham suas próprias listas. Esses controles funcionam com teclado e sem JavaScript. No celular, o menu fica antes do texto. Não há cartões de recomendações ao final dos relatos.
 
 Os identificadores de `entities` são apenas metadados editoriais internos. Não existe uma página pública de pessoas e instituições nem etiquetas com esses nomes; `entities.json` não faz parte do pacote publicado. Use títulos sobre a experiência ou o papel da pessoa (por exemplo, “minha mentora”); nomes podem aparecer no corpo do relato.
 
@@ -95,17 +111,26 @@ No CERN, o trecho transcrito do e-mail continua disponível em **Ler o trecho do
 No computador:
 
 ```bash
-python3 scripts/build.py
-python3 scripts/check.py
-python3 -m http.server 8000 --bind 127.0.0.1
+./setup
+./start
 ```
 
-Abra `http://127.0.0.1:8000/pt/`. Após conferir, envie ao GitHub o JSON, as novas fotos e os HTMLs gerados.
+Abra `http://127.0.0.1:8000/pt/`. Para encerrar, use `./stop`. Depois de editar, use `./stop` e `./start` para gerar e conferir novamente. Após conferir, envie ao GitHub o JSON, as fotos selecionadas para a história e os HTMLs gerados.
 
 Pelo editor do GitHub, salve usando **Commit changes** na branch `main`. O workflow gera os HTMLs de publicação; você não precisa fazê-lo manualmente nesse caminho. Acompanhe **Actions → Publish portfolio to GitHub Pages**. Se a edição contiver JSON inválido ou um arquivo ausente, a publicação falha e a última versão publicada continua no ar. Corrija o arquivo e faça outro commit.
 
-Os arquivos JSON são públicos no repositório, inclusive os rascunhos. `published: false` controla o site, não a privacidade do GitHub.
+Os arquivos JSON ficam no repositório, inclusive os rascunhos, e seguem a visibilidade configurada no GitHub. `published: false` controla apenas a presença da história no site.
 
 ## Conclusões e referências antigas
 
 `closing` aparece como um parágrafo normal ao final da história, sem caixa de citação ou assinatura. O campo antigo `stories` pode existir nos JSONs como referência editorial validada, mas não produz cartões na página. A navegação entre relatos fica na lateral cronológica.
+
+## A voz do diário
+
+Escreva em primeira pessoa, como ao contar uma história para amigos. Os leitores também podem ser estudantes, familiares, recrutadores, founders e investidores. Explique termos técnicos quando forem necessários para entender a experiência. Os detalhes de implementação e os resultados completos podem ficar na página do projeto ou no relatório.
+
+Prefira cenas, decisões e aprendizados que realmente aconteceram. Uma recusa não precisa desaparecer da história, assim como uma conquista não precisa virar uma lição para quem lê. Evite repetir a conclusão ao longo de vários capítulos. Os textos editoriais e as legendas não usam dois pontos, travessões ou ponto e vírgula. As transcrições de documentos mantêm o texto original.
+
+Mantenha o tom profissional, direto e em primeira pessoa. Dê destaque às contribuições, conquistas e dificuldades concretas dos processos, como requisitos de idioma, preparação técnica e organização de prazos. Evite dramatização, comparações de remuneração, detalhes íntimos, condições internas de trabalho e relatos pessoais de terceiros. Lembranças leves de viagens e convivência podem preservar a autenticidade sem exposição excessiva. A revisão de outubro de 2026 aplica esse cuidado aos nove relatos, nos quatro idiomas.
+
+No BRAFITEC, a preparação acadêmica, a seleção condicionada ao certificado e a adaptação ao francês em sala são etapas diferentes. O relato não afirma fluência após um mês nem apresenta a experiência pessoal como regra de todos os processos seletivos ou de todas as universidades francesas. As fotos publicadas são apenas as escolhidas no catálogo do JSON.

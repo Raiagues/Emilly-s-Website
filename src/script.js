@@ -61,7 +61,3 @@ if (chapterLinks.length) {
   window.addEventListener('resize', updateChapter);
   updateChapter();
 }
-
-// Full chronological archive on desktop; a native disclosure saves space on phones.
-const storyMenu = document.querySelector('.story-menu');
-if (storyMenu && matchMedia('(min-width: 1101px)').matches) storyMenu.open = true;

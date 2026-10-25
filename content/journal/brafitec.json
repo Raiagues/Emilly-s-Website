@@ -1,0 +1,538 @@
+{
+  "slug": "brafitec",
+  "published": true,
+  "date": "2026-10-18",
+  "title": {
+    "pt": "O caminho até Grenoble",
+    "en": "Finding my way to Grenoble",
+    "fr": "Mon chemin jusqu’à Grenoble",
+    "es": "Mi camino hasta Grenoble"
+  },
+  "subtitle": {
+    "en": "Selection for BRAFITEC, studying in French and a dual degree in embedded systems.",
+    "pt": "A seleção para o BRAFITEC, os estudos em francês e a dupla diplomação em sistemas embarcados.",
+    "fr": "La sélection au BRAFITEC, les études en français et le double diplôme en systèmes embarqués.",
+    "es": "La selección para BRAFITEC, los estudios en francés y la doble titulación en sistemas embebidos."
+  },
+  "intro": {
+    "en": "In 2023, I was selected for BRAFITEC to study embedded systems at Grenoble INP. Getting there involved two applications, preparing for the French exam and organising the move alongside my studies at UFSM. Those two years expanded my technical training and gave me experience studying and working in an international environment.",
+    "pt": "Em 2023, fui selecionada pelo BRAFITEC para estudar sistemas embarcados no Grenoble INP. Até lá, foram duas candidaturas, a preparação para a prova de francês e a organização da mudança junto aos estudos na UFSM. Aqueles dois anos ampliaram minha formação técnica e me deram experiência estudando e trabalhando em um ambiente internacional.",
+    "fr": "En 2023, j’ai été sélectionnée par le BRAFITEC pour étudier les systèmes embarqués à Grenoble INP. Le parcours a compris deux candidatures, la préparation de l’examen de français et l’organisation du départ en parallèle de mes études à l’UFSM. Ces deux années ont enrichi ma formation technique et mon expérience dans un environnement international.",
+    "es": "En 2023, fui seleccionada por BRAFITEC para estudiar sistemas embebidos en Grenoble INP. El proceso incluyó dos candidaturas, la preparación del examen de francés y la organización de la mudanza junto con mis estudios en la UFSM. Esos dos años ampliaron mi formación técnica y mi experiencia en un entorno internacional."
+  },
+  "series": {
+    "pt": "BRAFITEC · Grenoble",
+    "en": "BRAFITEC · Grenoble",
+    "fr": "BRAFITEC · Grenoble",
+    "es": "BRAFITEC · Grenoble"
+  },
+  "period": {
+    "pt": "2023 a 2025",
+    "en": "2023 to 2025",
+    "fr": "De 2023 à 2025",
+    "es": "De 2023 a 2025"
+  },
+  "timeline": [
+    {
+      "date": "2023",
+      "label": {
+        "pt": "2023 a 2025",
+        "en": "2023 to 2025",
+        "fr": "De 2023 à 2025",
+        "es": "De 2023 a 2025"
+      },
+      "title": {
+        "pt": "BRAFITEC e a vida em Grenoble",
+        "en": "BRAFITEC and life in Grenoble",
+        "fr": "BRAFITEC et la vie à Grenoble",
+        "es": "BRAFITEC y la vida en Grenoble"
+      },
+      "section": "chegada"
+    }
+  ],
+  "entities": [],
+  "cover": [
+    "aprovacao",
+    "paris",
+    "bastilha"
+  ],
+  "photos": {
+    "espera": {
+      "file": "portifolio/brafitec/dia que estavamos esperando o resultado do brafitec no site com amigos.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Esperando o resultado com os amigos.",
+        "en": "Waiting for the results with friends.",
+        "fr": "En attendant les résultats avec mes amis.",
+        "es": "Esperando el resultado con amigos."
+      }
+    },
+    "aprovacao": {
+      "file": "portifolio/brafitec/foto de quando recebi a aprovacao do brafitec.jpeg",
+      "width": 720,
+      "height": 1280,
+      "caption": {
+        "pt": "Uma foto para guardar o dia da aprovação.",
+        "en": "A photo to remember the day I was accepted.",
+        "fr": "Une photo pour garder le souvenir de mon admission.",
+        "es": "Una foto para recordar el día que me aceptaron."
+      }
+    },
+    "frances": {
+      "file": "portifolio/brafitec/eu estudando pra prova de frances no quarto q dividia na faculdade.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Preparing for the French exam.",
+        "pt": "Preparação para a prova de francês.",
+        "fr": "Préparation de l’examen de français.",
+        "es": "Preparación del examen de francés."
+      }
+    },
+    "passaporte": {
+      "file": "portifolio/brafitec/dia q fiz meu passaporte.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Documents ready for the exchange.",
+        "pt": "Documentação pronta para o intercâmbio.",
+        "fr": "Documents prêts pour l’échange.",
+        "es": "Documentación preparada para el intercambio."
+      }
+    },
+    "despedida": {
+      "file": "portifolio/brafitec/despedida amigos faculdade.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "With friends before leaving.",
+        "pt": "Com amigos antes da partida.",
+        "fr": "Avec des amis avant le départ.",
+        "es": "Con amigos antes de partir."
+      }
+    },
+    "familia": {
+      "file": "portifolio/brafitec/familia despedindo noaeroporto de curitiba.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "caption": {
+        "en": "Before departure at Curitiba airport.",
+        "pt": "Antes do embarque no aeroporto de Curitiba.",
+        "fr": "Avant le départ à l’aéroport de Curitiba.",
+        "es": "Antes de embarcar en el aeropuerto de Curitiba."
+      }
+    },
+    "embarque": {
+      "file": "portifolio/brafitec/embarcando voo franca.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Indo embarcar para a França.",
+        "en": "Boarding my flight to France.",
+        "fr": "En route pour embarquer vers la France.",
+        "es": "Embarcando rumbo a Francia."
+      }
+    },
+    "croissant": {
+      "file": "portifolio/brafitec/primeira vez comendo croissant.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "O croissant que marcou a chegada.",
+        "en": "The croissant that marked my arrival.",
+        "fr": "Le croissant de mon arrivée.",
+        "es": "El croissant que marcó la llegada."
+      }
+    },
+    "paris": {
+      "file": "portifolio/brafitec/eu e amigos na torre eiffel.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "Visiting Paris during the exchange.",
+        "pt": "Visita a Paris durante o intercâmbio.",
+        "fr": "Visite de Paris pendant l’échange.",
+        "es": "Visita a París durante el intercambio."
+      }
+    },
+    "torre": {
+      "file": "portifolio/brafitec/primeira vez vendo a torre eiffel.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "pt": "Minha primeira vez vendo a Torre Eiffel.",
+        "en": "Seeing the Eiffel Tower for the first time.",
+        "fr": "Ma première fois devant la tour Eiffel.",
+        "es": "Mi primera vez viendo la Torre Eiffel."
+      }
+    },
+    "universidade": {
+      "file": "portifolio/brafitec/minha universidade em grenoble.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Minha universidade em Grenoble, com as montanhas ao fundo.",
+        "en": "My university in Grenoble, with mountains behind it.",
+        "fr": "Mon université à Grenoble, avec les montagnes au fond.",
+        "es": "Mi universidad en Grenoble, con las montañas al fondo."
+      }
+    },
+    "mesa": {
+      "file": "portifolio/brafitec/minha mesa de estudos na faculdade.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Minha mesa de estudos, entre fios, anotações e projetos.",
+        "en": "My study desk, with wires, notes and projects.",
+        "fr": "Mon bureau, entre fils, notes et projets.",
+        "es": "Mi mesa de estudio, entre cables, notas y proyectos."
+      }
+    },
+    "semestre": {
+      "file": "portifolio/brafitec/eu e amigos no ultimo dia do primeiro semestre.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "pt": "Juntos no último dia do primeiro semestre.",
+        "en": "Together on the last day of the first semester.",
+        "fr": "Ensemble le dernier jour du premier semestre.",
+        "es": "Juntos el último día del primer semestre."
+      }
+    },
+    "ski": {
+      "file": "portifolio/brafitec/eu fazendo ski.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "O ski virou parte da minha vida em Grenoble.",
+        "en": "Skiing became part of my life in Grenoble.",
+        "fr": "Le ski est devenu une partie de ma vie à Grenoble.",
+        "es": "El esquí pasó a formar parte de mi vida en Grenoble."
+      }
+    },
+    "montanha": {
+      "file": "portifolio/brafitec/eu e amigos hiking.jpeg",
+      "width": 1024,
+      "height": 768,
+      "caption": {
+        "pt": "Mais uma trilha com os amigos.",
+        "en": "Another hike with friends.",
+        "fr": "Encore une randonnée entre amis.",
+        "es": "Otra caminata con amigos."
+      }
+    },
+    "neve": {
+      "file": "portifolio/brafitec/hiking na neve.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Uma trilha com bastante neve pelo caminho.",
+        "en": "A hike with plenty of snow along the way.",
+        "fr": "Une randonnée avec beaucoup de neige en chemin.",
+        "es": "Una caminata con mucha nieve por el camino."
+      }
+    },
+    "cafe": {
+      "file": "portifolio/brafitec/cafe da manha ski.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Uma pausa para o café da manhã na estação de ski.",
+        "en": "A breakfast break at the ski resort.",
+        "fr": "Une pause petit-déjeuner à la station de ski.",
+        "es": "Una pausa para desayunar en la estación de esquí."
+      }
+    },
+    "italia": {
+      "file": "portifolio/brafitec/eu e amigos na italia.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Uma viagem à Itália com a turma.",
+        "en": "A trip to Italy with friends.",
+        "fr": "Un voyage en Italie avec les amis.",
+        "es": "Un viaje a Italia con el grupo."
+      }
+    },
+    "budapeste": {
+      "file": "portifolio/brafitec/eu e amiga em budapest.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Com uma amiga em Budapeste.",
+        "en": "With a friend in Budapest.",
+        "fr": "Avec une amie à Budapest.",
+        "es": "Con una amiga en Budapest."
+      }
+    },
+    "jogos": {
+      "file": "portifolio/brafitec/eu e amigos em noite de jogos.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "Noite de jogos e a mesa cheia.",
+        "en": "Game night around a full table.",
+        "fr": "Soirée jeux autour d’une table bien remplie.",
+        "es": "Noche de juegos alrededor de una mesa llena."
+      }
+    },
+    "rodoviaria": {
+      "file": "portifolio/brafitec/eu e amigos dormindo na ponte depois da rodoviaria fechar.jpeg",
+      "width": 1280,
+      "height": 960,
+      "caption": {
+        "en": "With the group during a trip.",
+        "pt": "Com a turma durante uma viagem.",
+        "fr": "Avec le groupe pendant un voyage.",
+        "es": "Con el grupo durante un viaje."
+      }
+    },
+    "outono": {
+      "file": "portifolio/brafitec/meu primeiro outono na europa.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "pt": "As cores do meu primeiro outono na Europa.",
+        "en": "The colours of my first autumn in Europe.",
+        "fr": "Les couleurs de mon premier automne en Europe.",
+        "es": "Los colores de mi primer otoño en Europa."
+      }
+    },
+    "janela": {
+      "file": "portifolio/brafitec/janela do meu quarto.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "A view from the exchange period.",
+        "pt": "Uma vista do período de intercâmbio.",
+        "fr": "Une vue pendant le séjour d’échange.",
+        "es": "Una vista durante el intercambio."
+      }
+    },
+    "bastilha": {
+      "file": "portifolio/brafitec/eu no topo da bastilha em grenoble.jpeg",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "en": "Grenoble seen from the Bastille.",
+        "pt": "Grenoble vista da Bastilha.",
+        "fr": "Grenoble vue depuis la Bastille.",
+        "es": "Grenoble vista desde la Bastilla."
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "primeira-tentativa",
+      "title": {
+        "en": "Preparing the application",
+        "pt": "A preparação da candidatura",
+        "fr": "La préparation de la candidature",
+        "es": "La preparación de la candidatura"
+      },
+      "paragraphs": [
+        {
+          "en": "BRAFITEC offered a full scholarship for two years of engineering studies in France. For the selection I applied to, academic performance, research experience, publications and language requirements mattered. I prepared my application alongside research in electronics, computing and satellites.",
+          "pt": "O BRAFITEC oferecia bolsa integral para dois anos de engenharia na França. Na seleção de que participei, contavam o desempenho acadêmico, a experiência em pesquisa, as publicações e os requisitos de idioma. Preparei a candidatura junto às atividades de pesquisa em eletrônica, computação e satélites.",
+          "fr": "Le BRAFITEC proposait une bourse complète pour deux années d’études d’ingénierie en France. La sélection à laquelle je postulais prenait en compte les résultats, la recherche, les publications et les langues. J’ai préparé ma candidature en parallèle de recherches en électronique, informatique et satellites.",
+          "es": "BRAFITEC ofrecía una beca completa para dos años de ingeniería en Francia. La selección valoraba el rendimiento académico, la investigación, las publicaciones y los idiomas. Preparé mi candidatura junto con actividades de investigación en electrónica, informática y satélites."
+        },
+        {
+          "en": "In 2022, I was placed on the waiting list and did not get a place. I continued my studies and research, then applied again in the next selection.",
+          "pt": "Em 2022, fiquei na lista de suplentes e não fui chamada. Continuei os estudos e a pesquisa e me candidatei novamente na seleção seguinte.",
+          "fr": "En 2022, j’ai été placée sur liste d’attente sans obtenir de place. J’ai poursuivi mes études et mes recherches, puis postulé à la sélection suivante.",
+          "es": "En 2022, quedé en lista de espera sin obtener plaza. Continué mis estudios y la investigación y volví a presentarme en la siguiente selección."
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "grenoble",
+      "title": {
+        "en": "Selection for Grenoble",
+        "pt": "A seleção para Grenoble",
+        "fr": "La sélection pour Grenoble",
+        "es": "La selección para Grenoble"
+      },
+      "paragraphs": [
+        {
+          "en": "In 2023, I was accepted and could choose Grenoble and embedded systems, the combination I had been aiming for. The time between applications allowed me to build more experience in programming and research.",
+          "pt": "Em 2023, fui aceita e pude escolher Grenoble e sistemas embarcados, a combinação que buscava. O período entre as candidaturas permitiu ampliar minha experiência em programação e pesquisa.",
+          "fr": "En 2023, j’ai été acceptée et pu choisir Grenoble et les systèmes embarqués, la combinaison que je recherchais. Entre les deux candidatures, j’avais renforcé mon expérience en programmation et en recherche.",
+          "es": "En 2023, fui aceptada y pude elegir Grenoble y sistemas embebidos, la combinación que buscaba. El tiempo entre candidaturas me permitió ampliar mi experiencia en programación e investigación."
+        }
+      ],
+      "photos": [
+        "espera",
+        "aprovacao"
+      ]
+    },
+    {
+      "id": "frances",
+      "title": {
+        "en": "The French language requirement",
+        "pt": "O requisito de francês",
+        "fr": "L’exigence de français",
+        "es": "El requisito de francés"
+      },
+      "paragraphs": [
+        {
+          "en": "My acceptance was conditional on submitting an official French certificate by the end of the month. I devoted that period to intensive preparation, took the exam in Curitiba and achieved the required score.",
+          "pt": "Minha aprovação estava condicionada à entrega de um certificado oficial de francês até o fim do mês. Dediquei esse período à preparação intensiva, fiz a prova em Curitiba e alcancei a nota exigida.",
+          "fr": "Mon admission était conditionnée à la remise d’un certificat officiel de français avant la fin du mois. J’ai consacré cette période à une préparation intensive, passé l’examen à Curitiba et obtenu la note exigée.",
+          "es": "Mi admisión dependía de entregar un certificado oficial de francés antes de fin de mes. Dediqué ese periodo a una preparación intensiva, hice el examen en Curitiba y alcancé la nota exigida."
+        },
+        {
+          "en": "Passing the exam met the scholarship requirement. Following technical classes and communicating in French every day was a separate learning process that continued after I arrived.",
+          "pt": "A aprovação na prova cumpriu o requisito da bolsa. Acompanhar aulas técnicas e me comunicar em francês no dia a dia foi uma etapa de aprendizado que continuou depois da chegada.",
+          "fr": "La réussite à l’examen remplissait l’exigence de la bourse. Suivre les cours techniques et communiquer au quotidien en français a demandé un apprentissage qui s’est poursuivi après mon arrivée.",
+          "es": "Aprobar el examen cumplió el requisito de la beca. Seguir clases técnicas y comunicarme en francés a diario fue un aprendizaje que continuó después de llegar."
+        }
+      ],
+      "photos": [
+        "frances"
+      ]
+    },
+    {
+      "id": "partida",
+      "title": {
+        "en": "Preparing the move",
+        "pt": "A organização da mudança",
+        "fr": "L’organisation du départ",
+        "es": "La organización de la mudanza"
+      },
+      "paragraphs": [
+        {
+          "en": "I arranged my passport, visa and travel while completing the semester at UFSM and continuing my research at ITA. It meant coordinating deadlines and academic commitments, with support from professors and classmates.",
+          "pt": "Organizei passaporte, visto e viagem enquanto concluía o semestre na UFSM e continuava minha pesquisa no ITA. Foi preciso conciliar prazos e compromissos acadêmicos, com apoio de professores e colegas.",
+          "fr": "J’ai organisé passeport, visa et voyage tout en terminant le semestre à l’UFSM et en poursuivant mes recherches à l’ITA. Il fallait coordonner les délais et les engagements universitaires, avec l’appui des enseignants et des collègues.",
+          "es": "Organicé el pasaporte, el visado y el viaje mientras terminaba el semestre en la UFSM y continuaba mi investigación en el ITA. Tuve que coordinar plazos y compromisos académicos, con apoyo de profesores y compañeros."
+        }
+      ],
+      "photos": [
+        "passaporte",
+        "despedida",
+        "familia",
+        "embarque"
+      ]
+    },
+    {
+      "id": "chegada",
+      "title": {
+        "en": "The first month in France",
+        "pt": "O primeiro mês na França",
+        "fr": "Le premier mois en France",
+        "es": "El primer mes en Francia"
+      },
+      "paragraphs": [
+        {
+          "en": "The first month included orientation activities and daily French classes. Meeting other exchange students helped me settle into the routine and practise the language beyond the classroom.",
+          "pt": "O primeiro mês teve atividades de integração e aulas diárias de francês. Conhecer outros intercambistas ajudou na adaptação à rotina e na prática do idioma fora da sala de aula.",
+          "fr": "Le premier mois comprenait des activités d’accueil et des cours quotidiens de français. Rencontrer d’autres étudiants en échange m’a aidée à m’adapter et à pratiquer la langue en dehors des cours.",
+          "es": "El primer mes incluyó actividades de integración y clases diarias de francés. Conocer a otros estudiantes de intercambio me ayudó a adaptarme a la rutina y a practicar el idioma fuera del aula."
+        },
+        {
+          "en": "I also had time to visit Paris and get to know the country a little. Those outings were a relaxed way to practise French and build friendships.",
+          "pt": "Também aproveitei para visitar Paris e conhecer um pouco do país. Esses passeios foram uma forma leve de praticar francês e construir amizades.",
+          "fr": "J’ai aussi profité de cette période pour visiter Paris et découvrir un peu le pays. Ces sorties permettaient de pratiquer le français et de nouer des amitiés dans un cadre détendu.",
+          "es": "También aproveché para visitar París y conocer un poco el país. Esas salidas fueron una forma distendida de practicar francés y hacer amistades."
+        }
+      ],
+      "photos": [
+        "croissant",
+        "paris",
+        "torre"
+      ]
+    },
+    {
+      "id": "aulas",
+      "title": {
+        "en": "Adapting to technical classes",
+        "pt": "A adaptação às aulas técnicas",
+        "fr": "L’adaptation aux cours techniques",
+        "es": "La adaptación a las clases técnicas"
+      },
+      "paragraphs": [
+        {
+          "en": "Studying in French required a new routine. I took notes on unfamiliar terms, reviewed the material at home and gradually became more comfortable following the classes.",
+          "pt": "Estudar em francês exigiu uma nova rotina. Anotava os termos que ainda não conhecia, revisava o conteúdo em casa e, aos poucos, passei a acompanhar as aulas com mais facilidade.",
+          "fr": "Étudier en français demandait une nouvelle méthode. Je notais les termes inconnus, reprenais le contenu chez moi et suivais progressivement les cours avec plus d’aisance.",
+          "es": "Estudiar en francés exigió una nueva rutina. Anotaba los términos desconocidos, repasaba el contenido en casa y poco a poco seguía las clases con más facilidad."
+        },
+        {
+          "en": "The move from aerospace engineering to embedded systems also meant strengthening my foundations in electronics and computing. Conversations with classmates helped me understand the grading system and adjust my preparation for exams.",
+          "pt": "A transição da engenharia aeroespacial para sistemas embarcados também exigiu aprofundar a base em eletrônica e computação. As conversas com colegas ajudaram a entender o sistema de avaliação e a ajustar a preparação para as provas.",
+          "fr": "Le passage de l’aérospatial aux systèmes embarqués demandait aussi de renforcer mes bases en électronique et en informatique. Les échanges avec mes camarades m’ont aidée à comprendre l’évaluation et à adapter ma préparation aux examens.",
+          "es": "La transición de ingeniería aeroespacial a sistemas embebidos también requirió reforzar mis bases en electrónica e informática. Las conversaciones con compañeros me ayudaron a entender la evaluación y a ajustar mi preparación para los exámenes."
+        }
+      ],
+      "photos": [
+        "universidade",
+        "mesa",
+        "semestre"
+      ]
+    },
+    {
+      "id": "montanhas",
+      "title": {
+        "en": "Life in Grenoble",
+        "pt": "A rotina em Grenoble",
+        "fr": "Le quotidien à Grenoble",
+        "es": "La vida en Grenoble"
+      },
+      "paragraphs": [
+        {
+          "en": "As I settled into the course, I organised my study time better and made room for sport. Grenoble made it easy to enjoy hiking and skiing with classmates. That balance became part of my routine.",
+          "pt": "Com a adaptação ao curso, organizei melhor os estudos e reservei tempo para os esportes. Grenoble facilitava as trilhas e o esqui com os colegas. Esse equilíbrio passou a fazer parte da minha rotina.",
+          "fr": "En m’adaptant à la formation, j’ai mieux organisé mes études et gardé du temps pour le sport. Grenoble se prêtait aux randonnées et au ski avec les camarades. Cet équilibre est devenu une habitude.",
+          "es": "A medida que me adaptaba al curso, organicé mejor los estudios y reservé tiempo para el deporte. Grenoble facilitaba el senderismo y el esquí con compañeros. Ese equilibrio se incorporó a mi rutina."
+        }
+      ],
+      "photos": [
+        "ski",
+        "montanha",
+        "neve",
+        "cafe"
+      ]
+    },
+    {
+      "id": "amigos",
+      "title": {
+        "en": "An international exchange",
+        "pt": "A convivência internacional",
+        "fr": "Les échanges internationaux",
+        "es": "La convivencia internacional"
+      },
+      "paragraphs": [
+        {
+          "en": "Studying with people from different countries brought me into contact with other approaches to learning and everyday life. Group work, conversations and trips were opportunities to practise languages and learn from those differences.",
+          "pt": "Estudar com pessoas de vários países me colocou em contato com outras formas de aprender e organizar o dia a dia. Trabalhos em grupo, conversas e viagens foram oportunidades de praticar idiomas e aprender com essas diferenças.",
+          "fr": "Étudier avec des personnes de plusieurs pays m’a fait découvrir d’autres façons d’apprendre et de s’organiser. Les travaux de groupe, les échanges et les voyages permettaient de pratiquer les langues et d’apprendre de ces différences.",
+          "es": "Estudiar con personas de varios países me acercó a otras formas de aprender y organizarse. Los trabajos en grupo, las conversaciones y los viajes permitieron practicar idiomas y aprender de esas diferencias."
+        }
+      ],
+      "photos": [
+        "italia",
+        "budapeste",
+        "jogos",
+        "rodoviaria",
+        "outono",
+        "janela"
+      ]
+    }
+  ],
+  "closing": {
+    "en": "I came back with a degree in embedded systems, internship experience and friends I still keep in touch with. I also learned to balance studying with life outside university. Grenoble remains a place I remember fondly.",
+    "pt": "Voltei com a formação em sistemas embarcados, experiências de estágio e amigos com quem continuo em contato. Também aprendi a equilibrar os estudos com a vida fora da faculdade. Grenoble continua sendo um lugar de que lembro com carinho.",
+    "fr": "Je suis rentrée avec une formation en systèmes embarqués, des expériences de stage et des amis avec qui je garde contact. J’ai aussi appris à équilibrer les études et la vie en dehors de l’école. Je garde de Grenoble un souvenir chaleureux.",
+    "es": "Volví con una formación en sistemas embebidos, experiencias de prácticas y amigos con quienes sigo en contacto. También aprendí a equilibrar los estudios con la vida fuera de la universidad. Sigo recordando Grenoble con cariño."
+  },
+  "related_award": "CAPES–BRAFITEC",
+  "award_link_label": {
+    "pt": "O caminho até Grenoble",
+    "en": "Finding my way to Grenoble",
+    "fr": "Mon chemin jusqu’à Grenoble",
+    "es": "Mi camino hasta Grenoble"
+  }
+}

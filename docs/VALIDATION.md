@@ -1,4 +1,61 @@
-# Validação — ilustrações, álbum e navegação, 17/10/2026
+# Validação do diário e da execução local
+
+## Publicação e revisão editorial — 25/10/2026
+
+Os nove relatos, suas chamadas e legendas foram revisados em EN, PT, FR e ES. A redação prioriza contribuições, conquistas e dificuldades concretas dos processos, em primeira pessoa e sem dramatização. Foram retirados detalhes íntimos, comparações de remuneração e circunstâncias privadas de terceiros. A biografia da home e de Sobre mim segue o mesmo tom.
+
+As datas, fontes, resultados técnicos, projetos e fotos selecionadas foram preservados. A seleção do CERN mantém a distinção entre os resultados do estudo e a implementação futura em FPGA. A participação sem conclusão na Lyfe Academy continua explícita. O financiamento do Brazil at Silicon Valley permanece separado da participação autofinanciada no Brasil Project.
+
+O GitHub Pages foi reativado com publicação por Actions no endereço existente. O pacote continua restrito a `dist/`, sem protótipos, rascunhos ou fotos não selecionadas. As instruções do diário foram atualizadas para orientar futuras edições com esse critério editorial.
+
+Validação desta revisão: 167 HTMLs aprovados pelo verificador estático e 35 testes de navegador aprovados. A suíte cobre quatro idiomas, navegação, proporções e carregamento das fotos, teclado, acessibilidade automatizada, funcionamento sem JavaScript e formulários com envio interceptado. Os títulos revisados também foram inspecionados visualmente no celular e no desktop.
+
+## Redesign dos modelos fornecidos — 18/10/2026
+
+A revisão atual substitui os layouts históricos descritos abaixo. Home, catálogo, projetos, experiências e histórias usam os modelos do ZIP. O [relatório do redesign](HOME_REDESIGN.md) registra as mudanças, a mídia fornecida, os campos omitidos, as prévias e a validação de conteúdo, navegação e acessibilidade.
+
+## Revisão de 18/10/2026
+
+- `./setup` executado com Python 3.12.3. O build gerou 26 estudos de caso, nove histórias e seis páginas principais em quatro idiomas. O verificador aprovou 167 HTMLs, os links e os limites do pacote publicado.
+- `./setup --with-tests` instalou as dependências do lockfile. Nesta máquina, os testes usaram o Google Chrome existente por meio de `BROWSER_EXECUTABLE`. Os caminhos de download de Python e Chromium estão disponíveis no setup, mas não foram necessários nesta execução.
+- Suíte completa com **31 testes aprovados**, incluindo acessibilidade Axe das 36 páginas de histórias, navegação sem JavaScript, traduções, cronologia, fotos, visualizador com teclado e foco, formulários interceptados e regressões do portfólio.
+- **Três testes de integração dos comandos aprovados**. Cobrem execução a partir de outra pasta e caminhos com espaços, preparação, início e parada repetidos, porta inválida, porta ocupada, estado antigo, proteção de outro servidor e acesso apenas aos arquivos publicados.
+- `bash -n setup start stop scripts/runtime.sh` e `git diff --check` aprovados.
+- BRAFITEC em oito capítulos, com 24 imagens selecionadas do álbum fornecido. São 23 fotos no visualizador e uma foto adicional usada na capa. A história aparece na página inicial, na cronologia, na lateral das outras histórias e na conquista CAPES–BRAFITEC.
+- Os nove relatos foram revisados nos quatro idiomas. O teste editorial verifica traduções completas e a ausência de dois pontos, travessões e ponto e vírgula nos textos e legendas. URLs e transcrições literais de documentos preservam seus caracteres.
+- As fotos usam as proporções originais. A capa se adapta à orientação da foto principal, as galerias agrupam proporções compatíveis e passam a uma coluna no celular. O espaço da imagem é reservado antes do carregamento.
+- Após separar as duas fotos do álbum para preservar a imagem principal e a legenda, passaram novamente os três testes direcionados de layout responsivo, acessibilidade das páginas principais e álbum nos quatro idiomas.
+
+Inspeção visual em 1440, 390 e 320 px, com as imagens carregadas. Prévias da [abertura](preview-brafitec-desktop.png), do [celular](preview-brafitec-mobile.png), das [fotos nos capítulos](preview-brafitec-photos.png) e do [álbum](preview-brafitec-album.png).
+
+### Ajuste de largura e fotos dos capítulos
+
+- Diário ampliado no desktop, com lateral próxima à borda e introdução, capítulos e conclusão alinhados à esquerda. As galerias aproveitam a largura disponível e os parágrafos mantêm uma largura de leitura limitada.
+- Fotografias dos capítulos com moldura de papel, legenda dentro da moldura, inclinações variadas e movimento suave no hover e no foco. As imagens preservam suas proporções e a preferência por movimento reduzido continua respeitada.
+- Estados Unidos, CERN, BRAFITEC e China conferidos em 320, 390, 768, 1100, 1280, 1440, 1880 e 2560 px, sem rolagem horizontal. Alinhamento dos textos, movimento das fotos, abertura do visualizador e retorno de foco também verificados.
+- Seis testes direcionados aprovados, incluindo fotografias, teclado, acessibilidade das 36 páginas de histórias, cronologia, Estados Unidos e BRAFITEC. Build, verificador dos 167 HTMLs e `git diff --check` aprovados.
+
+Prévias da [leitura em tela larga](preview-journal-wide-desktop.png), das [fotos com molduras inclinadas](preview-journal-album-photos.png) e da [leitura no celular](preview-journal-wide-mobile.png).
+
+### Revisão para uma leitura mais compacta
+
+Esta revisão substitui a largura ampliada descrita acima, seguindo o retorno sobre o tamanho excessivo das fotos.
+
+- Página limitada a 1160 px, corpo de leitura a 880 px e parágrafos a 680 px. Galerias e fotos laterais têm limites próprios de tamanho, preservando as proporções originais e as molduras inclinadas.
+- Controle nativo para recolher e reabrir toda a navegação. Os grupos de capítulos e outras histórias também podem ser recolhidos individualmente. Outras histórias começam fechadas em todas as telas.
+- Rolagem interna com fundo transparente e cor discreta. O controle para recolher o menu permanece fora da área rolável.
+- Sete testes direcionados aprovados, incluindo recolhimento com Enter e Espaço, navegação sem JavaScript, proporções e limites das fotos, visualizador, CNES, BRAFITEC, traduções e acessibilidade das 36 páginas de histórias.
+- Cinco histórias verificadas entre 320 e 2560 px, sem rolagem horizontal. Build e verificação estática dos 167 HTMLs aprovados.
+
+Prévias do [capítulo compacto](preview-journal-compact-desktop.png), da [galeria reduzida](preview-journal-compact-gallery.png), do [menu recolhido](preview-journal-compact-collapsed.png) e do [celular](preview-journal-compact-mobile.png).
+
+### Retorno ao visual anterior
+
+A tentativa de identidade com títulos de pôster foi retirada a pedido da proprietária. O site voltou às cores suaves, à tipografia com serifa e à composição anterior do retrato. O diário compacto, as fotos menores e inclinadas e os controles para recolher o menu foram mantidos.
+
+As alterações foram preparadas e verificadas localmente. Nenhum deploy nem envio de formulário real foi realizado. As verificações automáticas de acessibilidade cobrem os critérios selecionados, sem substituir uma avaliação manual completa.
+
+## Histórico de 17/10/2026
 
 - Build: 20 projetos, 6 experiências e 7 histórias, além das seis páginas principais, em EN/PT/FR/ES.
 - `python3 scripts/check.py`: 159 HTMLs; links, fragmentos, IDs únicos, imagens, idiomas e pacote de publicação válidos. As quatro páginas `journal/connections.html` foram removidas, inclusive do sitemap.

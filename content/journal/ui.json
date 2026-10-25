@@ -41,6 +41,18 @@
     "fr": "Dans cette histoire",
     "es": "En esta historia"
   },
+  "hide_navigation": {
+    "en": "Hide navigation",
+    "pt": "Recolher menu",
+    "fr": "Replier le menu",
+    "es": "Ocultar menú"
+  },
+  "show_navigation": {
+    "en": "Show navigation",
+    "pt": "Mostrar menu",
+    "fr": "Afficher le menu",
+    "es": "Mostrar menú"
+  },
   "photos_credit": {
     "en": "From my personal photo album",
     "pt": "Do meu álbum pessoal",
@@ -102,10 +114,10 @@
     "es": "Ver el proyecto técnico"
   },
   "cern_link": {
-    "en": "My CERN diary: the project, visits and life outside the lab",
-    "pt": "Meu diário do CERN: o projeto, as visitas e a vida fora do laboratório",
-    "fr": "Mon journal du CERN : le projet, les visites et la vie en dehors du labo",
-    "es": "Mi diario del CERN: el proyecto, las visitas y la vida fuera del laboratorio"
+    "en": "My CERN diary, the project, visits and life outside the lab",
+    "pt": "Meu diário do CERN, o projeto, as visitas e a vida fora do laboratório",
+    "fr": "Mon journal du CERN, le projet, les visites et la vie en dehors du labo",
+    "es": "Mi diario del CERN, el proyecto, las visitas y la vida fuera del laboratorio"
   },
   "timeline": {
     "en": "Along the way",

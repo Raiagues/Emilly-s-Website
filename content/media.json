@@ -1,0 +1,111 @@
+{
+  "cover": {
+    "file": "img/media/exame-cover.png",
+    "url": "https://exame.com/revista-exame/um-olhar-para-o-futuro/",
+    "title": "Um olhar para o futuro",
+    "outlet": "Exame",
+    "date": "2025-11-27"
+  },
+  "videos": [
+    {
+      "id": "o7bnA2HklhQ",
+      "url": "https://www.youtube.com/watch?v=o7bnA2HklhQ&t=2s",
+      "outlet": "TV Campus UFSM",
+      "title": "Estudante de Engenharia Aeroespacial ganha prêmio Protagonismo Universitário  | TV Campus Entrevista",
+      "kind": "podcast",
+      "title_verified": true
+    },
+    {
+      "id": "eNSZSa2DNVE",
+      "url": "https://www.youtube.com/watch?v=eNSZSa2DNVE&t=87s",
+      "outlet": "Na Prática",
+      "title": "Mundo Na Prática: a China como você nunca viu | EP. 1",
+      "kind": "video",
+      "title_verified": true
+    },
+    {
+      "id": "UhJK2MkTbvc",
+      "url": "https://www.youtube.com/watch?v=UhJK2MkTbvc&t=24s",
+      "outlet": "Na Prática",
+      "title": "Mundo Na Prática: como a China forma os líderes do futuro | EP. 2",
+      "kind": "video",
+      "title_verified": true
+    },
+    {
+      "id": "caFomOwNt2c",
+      "url": "https://www.youtube.com/watch?v=caFomOwNt2c",
+      "outlet": "Webservatório",
+      "title": "Webservatório",
+      "kind": "video",
+      "title_verified": false
+    },
+    {
+      "id": "k7l6g_Nd2s0",
+      "url": "https://www.youtube.com/watch?v=k7l6g_Nd2s0",
+      "outlet": "Webservatório",
+      "title": "Webservatório",
+      "kind": "video",
+      "title_verified": false
+    },
+    {
+      "id": "kr31NMvucCc",
+      "url": "https://www.youtube.com/watch?v=kr31NMvucCc",
+      "outlet": "Na Prática",
+      "title": "Prêmio Protagonismo Universitário | Um encontro com os finalistas da Região Sul",
+      "kind": "video",
+      "title_verified": true
+    },
+    {
+      "id": "_rLBmKiaz5A",
+      "url": "https://www.youtube.com/watch?v=_rLBmKiaz5A",
+      "outlet": "Na Prática",
+      "title": "Live | Como eles ganharam uma viagem para a China? Conheça os vencedores do Prêmio Na Prática",
+      "kind": "video",
+      "title_verified": true
+    }
+  ],
+  "press": [
+    {
+      "outlet": "Exame",
+      "date": "2025-12-17",
+      "title": "Aos 24, universitária cria solução inovadora para satélites e impacta escolas",
+      "url": "https://exame.com/carreira/aos-24-universitaria-cria-solucao-inovadora-para-satelites-e-impacta-escolas/"
+    },
+    {
+      "outlet": "UFSM",
+      "date": "2025-11-19",
+      "title": "Da UFSM ao espaço: Emilly Rodrigues vence prêmio de protagonismo universitário",
+      "url": "https://www.ufsm.br/2025/11/19/aeroespacial-emilly-rodrigues"
+    },
+    {
+      "outlet": "Na Prática",
+      "date": "2026-03-08",
+      "title": "No 8/3, conheça 8 estudantes universitárias que estão transformando o mundo",
+      "url": "https://napratica.org.br/noticias/no-8-3-conheca-8-estudantes-universitarias-que-estao-transformando-o-mundo"
+    },
+    {
+      "outlet": "Na Prática",
+      "date": "2026-02-10",
+      "title": "Vencedores do Prêmio Na Prática – Protagonismo Universitário participam de imersão de uma semana na China",
+      "url": "https://napratica.org.br/noticias/vencedores-do-premio-na-pratica-protagonismo-universitario-participam-de-imersao-de-uma-semana-na-china"
+    }
+  ],
+  "social": [
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/p/DS8S-uLknBW/"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/p/DQr8Ky3CbTi/"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/p/DNdJI-GSBf4/"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://lnkd.in/p/dFN6g7zh"
+    }
+  ]
+}
