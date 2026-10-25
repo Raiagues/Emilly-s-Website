@@ -15,7 +15,7 @@ for (const link of document.querySelectorAll('.languages a')) {
 }
 // A project opened from filtered results returns to those results, also across languages.
 try {
-  const allowedAreas = ['space','hardware','control','software','outreach'];
+  const allowedAreas = ['space','hardware','control','software','structures','outreach'];
   for (const link of document.querySelectorAll('[data-back-results]')) {
     const kind = link.dataset.directoryKind === 'experience' ? 'experience' : 'projects';
     const saved = new URLSearchParams(sessionStorage.getItem(`emilly-${kind}:${scriptRoot}`) || '');

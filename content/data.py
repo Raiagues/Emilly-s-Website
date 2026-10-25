@@ -37,6 +37,7 @@ UI = {k:L(v) for k,v in {
  'hardware':'Hardware | Hardware | Matériel | Hardware',
  'control':'Control & signals | Controle e sinais | Commande et signaux | Control y señales',
  'software':'Software & AI | Software e IA | Logiciel et IA | Software e IA',
+ 'structures':'Structures | Estruturas | Structures | Estructuras',
  'outreach':'Education & leadership | Educação e liderança | Éducation et leadership | Educación y liderazgo',
  'search':'Search projects or technologies | Buscar projetos ou tecnologias | Rechercher projets ou technologies | Buscar proyectos o tecnologías',
  'results':'projects found | projetos encontrados | projets trouvés | proyectos encontrados',
@@ -110,6 +111,12 @@ SKILLS = {
 PROJECTS=[]
 def P(id, category, art, date, place, tech, skills, title, summary, contributions, outcome, links=None, kind='projects'):
     PROJECTS.append(dict(id=id,category=category,art=art,date=date,place=place,tech=tech.split(', '),skills=skills.split(),title=L(title),summary=L(summary),contributions=[L(x) for x in contributions],outcome=L(outcome),links=links or [],kind=kind))
+P('wing-box-analysis','structures','aircraft','2023','UFSM','Python, NumPy, SciPy, SymPy','autonomy collaboration problem',
+ 'Wing box analysis | Análise da caixa da asa | Analyse du caisson de voilure | Análisis del cajón del ala',
+ 'A Python tool built across three assignments to take a wing from flight loads to bending, torsion and buckling. | Uma ferramenta em Python construída ao longo de três trabalhos para analisar uma asa: das cargas de voo à flexão, torção e flambagem. | Un outil Python construit au fil de trois travaux pour analyser une aile, des charges de vol à la flexion, la torsion et le flambement. | Una herramienta en Python construida a lo largo de tres trabajos para analizar un ala, desde las cargas de vuelo hasta la flexión, torsión y pandeo.',
+ ['Python code and reports for Aeronautical Structures Analysis at UFSM. | Código Python e relatórios para Análise de Estruturas Aeronáuticas na UFSM. | Code Python et rapports pour l’analyse des structures aéronautiques à l’UFSM. | Código Python e informes para Análisis de Estructuras Aeronáuticas en la UFSM.'],
+ 'Five flight conditions, a three-cell wing box, and ribs and stiffeners sized against buckling. | Cinco condições de voo, uma caixa de asa com três células e nervuras e reforçadores dimensionados contra flambagem. | Cinq conditions de vol, un caisson à trois cellules et des nervures et raidisseurs dimensionnés contre le flambement. | Cinco condiciones de vuelo, un cajón de tres celdas y costillas y rigidizadores dimensionados frente al pandeo.',
+ [('github','https://github.com/Raiagues/areonautical_structure')])
 P('damas-espaciais','software','code','2021','UFSM','C99, Allegro 5, CMake, WebAssembly','autonomy curiosity problem',
  'Damas Espaciais | Damas Espaciais | Damas Espaciais | Damas Espaciais',
  'A space checkers game in C and Allegro 5. Created in 2021, restored in 2026 and playable here with the shared C engine. | Um jogo de damas espaciais em C e Allegro 5. Criado em 2021, restaurado em 2026 e jogável aqui com o mesmo motor em C. | Un jeu de dames spatial en C et Allegro 5. Créé en 2021, restauré en 2026 et jouable ici avec le moteur C partagé. | Un juego de damas espaciales en C y Allegro 5. Creado en 2021, restaurado en 2026 y jugable aquí con el mismo motor C.',

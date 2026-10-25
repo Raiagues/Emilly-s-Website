@@ -1,0 +1,16 @@
+<div class="wingbox-charts wb-s20" data-charts-panel="{{condition}}-{{mode}}">
+<sc-for as="ch" list="{{charts}}">
+<figure class="card wb-s21">
+<div class="wb-s22"><span class="wb-s23">{{ch.title}}</span><span class="wb-s24">{{text.t014}}</span></div>
+<div class="wb-s4">
+<svg aria-hidden="true" class="wb-s5" viewbox="0 0 440 200">
+<g stroke="#EFEFEF" stroke-width="1"><sc-for as="g" list="{{ch.grid}}"><line x1="52" x2="428" y1="{{g.y}}" y2="{{g.y}}"></line></sc-for></g>
+<line stroke="#9AA5B1" stroke-width="1" x1="52" x2="428" y1="{{ch.zeroY}}" y2="{{ch.zeroY}}"></line>
+<sc-for as="p" list="{{ch.paths}}"><path d="{{p.d}}" fill="none" stroke="{{p.c}}" stroke-linejoin="round" stroke-width="2.5"></path></sc-for>
+</svg>
+<sc-for as="t" list="{{ch.labels}}"><span style="position: absolute; transform: translate(-50%, -50%); font-family: 'Space Mono', monospace; white-space: nowrap; pointer-events: none; left: {{t.l}}; top: {{t.t2}}; font-size: 10px; color: #55605E">{{t.t}}</span></sc-for>
+</div>
+<div class="wb-s6"><sc-for as="lg" list="{{ch.legend}}"><span class="wb-s7"><span style="width: 16px; height: 0; border-top: 2.5px solid {{lg.c}}"></span>{{lg.t}}</span></sc-for></div>
+</figure>
+</sc-for>
+</div>

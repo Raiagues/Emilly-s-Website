@@ -1,0 +1,24 @@
+<div class="wingbox-panel" data-envelope-panel="{{condition}}"><div class="wb-s1">
+<figure class="card wb-s2">
+<span class="wb-s3">{{text.t001}}</span>
+<div class="wb-s4">
+<svg aria-label="{{text.t013}}" class="wb-s5" role="group" viewbox="0 0 420 300">
+<sc-for as="l" list="{{vnLines}}"><path d="{{l.d}}" fill="none" stroke="{{l.c}}" stroke-dasharray="{{l.dash}}" stroke-linejoin="round" stroke-width="{{l.w}}"></path></sc-for>
+<sc-for as="p" list="{{vnPts}}"><g aria-disabled="true" aria-label="{{p.aria}}" aria-pressed="{{p.pressed}}" class="vpt" data-condition="{{p.key}}" data-wing-control="" role="button" tabindex="-1"><circle cx="{{p.x}}" cy="{{p.y}}" fill="transparent" r="18"></circle><circle class="pt" cx="{{p.x}}" cy="{{p.y}}" fill="{{p.fill}}" r="{{p.r}}" stroke="#000000" stroke-width="1.5"></circle></g></sc-for>
+</svg>
+<sc-for as="g" list="{{vnT}}"><span style="position: absolute; transform: translate(-50%, -50%); font-family: 'Space Mono', monospace; white-space: nowrap; pointer-events: none; left: {{g.l}}; top: {{g.t2}}; font-size: {{g.fs}}; font-weight: {{g.fw}}; color: {{g.c}}">{{g.t}}</span></sc-for>
+</div>
+<figcaption class="wb-s6"><span class="wb-s7"><span class="wb-s8"></span>{{text.t002}}</span><span class="wb-s7"><span class="wb-s9"></span>{{text.t003}}</span><span class="wb-s7"><span class="wb-s10"></span>{{text.t004}}</span></figcaption>
+</figure>
+<figure class="card wb-s11">
+<span class="wb-s3">{{text.t005}}</span>
+<svg aria-label="{{bend.aria}}" class="wb-s12" role="img" viewbox="0 0 460 180">
+<defs><lineargradient gradientunits="userSpaceOnUse" id="jetGrad" x1="{{bend.gx1}}" x2="{{bend.gx2}}" y1="{{bend.gy1}}" y2="{{bend.gy2}}"><stop offset="0" stop-color="#00007F"></stop><stop offset="0.125" stop-color="#0000FF"></stop><stop offset="0.375" stop-color="#00FFFF"></stop><stop offset="0.5" stop-color="#7FFF7F"></stop><stop offset="0.625" stop-color="#FFFF00"></stop><stop offset="0.875" stop-color="#FF0000"></stop><stop offset="1" stop-color="#7F0000"></stop></lineargradient><clippath id="secClip"><rect height="120" width="420" x="20" y="30"></rect></clippath></defs>
+<g fill="url(#jetGrad)" stroke="#1E3A3D" stroke-width="0.8"><rect height="9" width="400" x="30" y="40"></rect><rect height="9" width="400" x="30" y="131"></rect><rect height="82" width="9" x="30" y="49"></rect><rect height="82" width="9" x="421" y="49"></rect><rect height="82" width="9" x="159" y="49"></rect><rect height="82" width="9" x="292" y="49"></rect></g>
+<line clip-path="url(#secClip)" stroke="#FF0000" stroke-dasharray="6 4" stroke-width="1.5" x1="{{bend.lx1}}" x2="{{bend.lx2}}" y1="{{bend.ly1}}" y2="{{bend.ly2}}"></line>
+<circle cx="230" cy="90" fill="#FF0000" r="4"></circle>
+</svg>
+<div class="wb-s13"><span>− σ</span><span class="wb-s14"></span><span>+ σ</span></div>
+<p class="wb-s15">{{text.t006}}</p>
+</figure>
+</div><div class="card wb-s16"><div class="wb-s17"><span class="wb-s18">{{text.t007}}</span><span class="wb-s19">{{cond.label}}</span></div><div class="wb-s17"><span class="wb-s18">{{text.t008}}</span><span class="wb-s19">{{cond.sig}}</span></div><div class="wb-s17"><span class="wb-s18">{{text.t009}}</span><span class="wb-s19">{{cond.ang}}</span></div><div class="wb-s17"><span class="wb-s18">{{text.t010}}</span><span class="wb-s19">{{cond.ribs}}</span></div><div class="wb-s17"><span class="wb-s18">{{text.t011}}</span><span class="wb-s19">{{cond.top}}</span></div><div class="wb-s17"><span class="wb-s18">{{text.t012}}</span><span class="wb-s19">{{cond.side}}</span></div></div></div>

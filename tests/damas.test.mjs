@@ -58,7 +58,7 @@ test('Damas preserves the supplied design, professor credentials and responsive 
     await expect(page.locator('[data-screen-image]')).toHaveAttribute('src',/victory.jpg$/);
     await page.locator('[data-back-results]').click();
     await expect(page.locator('#damas-espaciais .project-card')).toBeVisible();
-    await expect(page.locator('[data-project]')).toHaveCount(21);
+    await expect(page.locator('[data-project]')).toHaveCount(22);
     assert.deepEqual(errors,[]);
     await context.close();
   }

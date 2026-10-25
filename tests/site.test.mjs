@@ -60,7 +60,7 @@ async function openChapter(page, id) {
 test('directory shows every project and filters, search and reset compose correctly', async () => {
   const {page,errors}=await visit('projects.html');
   const visible=page.locator('[data-project]:visible');
-  await expect(visible).toHaveCount(21);
+  await expect(visible).toHaveCount(22);
   await page.locator('[data-filter=outreach]').click();
   await expect(visible).toHaveCount(5);
   assert.equal(new URL(page.url()).searchParams.get('area'),'outreach');
@@ -70,7 +70,7 @@ test('directory shows every project and filters, search and reset compose correc
   await expect(visible).toHaveCount(0);
   await expect(page.locator('#empty-state')).toBeVisible();
   await page.locator('#reset-filters').click();
-  await expect(visible).toHaveCount(21);
+  await expect(visible).toHaveCount(22);
   assert.equal(new URL(page.url()).search,'');
   await page.locator('#project-search').fill('STM32');
   await expect(visible).toHaveCount(1);
@@ -129,7 +129,7 @@ test('persistent seven-item navigation keeps every destination reachable across 
     }
     await page.setViewportSize({width:390,height:844});
     await page.locator('#main-nav a[href="projects.html"]').click();
-    await expect(page.locator('[data-project]:visible')).toHaveCount(21);
+    await expect(page.locator('[data-project]:visible')).toHaveCount(22);
     assert.deepEqual(errors,[]);
     await page.close();
   }
@@ -174,7 +174,7 @@ test('navigation, all projects and contact remain available without JavaScript',
   const {page}=await visit('',{javaScriptEnabled:false,viewport:{width:390,height:844}});
   await expect(page.locator('#main-nav a:visible')).toHaveCount(7);
   await page.locator('#current-work .section-heading a[href="projects.html"]').click();
-  await expect(page.locator('[data-project]:visible')).toHaveCount(21);
+  await expect(page.locator('[data-project]:visible')).toHaveCount(22);
   await expect(page.locator('[data-project-tools]')).not.toBeVisible();
   await chooseLanguage(page, 'fr');
   await expect(page.locator('html')).toHaveAttribute('lang','fr');
@@ -203,7 +203,7 @@ test('new main pages and representative case studies meet automated WCAG A/AA ch
     await page.close();
   }
 });
-test('all 108 case studies load, show results and fit mobile under a repository prefix', async () => {
+test('all 112 case studies load, show results and fit mobile under a repository prefix', async () => {
   const {page,errors}=await visit();
   for(const lang of ['','pt/','fr/','es/']) {
     for(const kind of ['projects','experience']) {
@@ -218,8 +218,8 @@ test('all 108 case studies load, show results and fit mobile under a repository 
           await expect(page.locator('.cern-report #documents a')).toHaveCount(2);
         } else {
           await expect(page.locator('#results')).toBeVisible();
-          await expect(page.locator('.damas-pass,.case-boarding')).toHaveCount(1);
-          await expect(page.locator('.flight-stop')).toHaveCount(kind==='projects'?21:6);
+          await expect(page.locator('.damas-pass,.wingbox-pass,.case-boarding')).toHaveCount(1);
+          await expect(page.locator('.flight-stop')).toHaveCount(kind==='projects'?22:6);
           await expect(page.locator('.flight-stop[aria-current=page]')).toHaveCount(1);
         }
         await expect(page.locator('#main-nav a[aria-current]')).toHaveAttribute('href',new RegExp(`${kind}.html$`));
@@ -770,7 +770,7 @@ test('Fundação Estudar joins the award and story paths, with nine photos and h
 
 test('every project and experience has a clickable original illustration; motion respects reduced motion', async () => {
   const {page}=await visit('pt/projects.html',{viewport:{width:1440,height:1000},reducedMotion:'no-preference'});
-  await expect(page.locator('[data-project] svg.illustration')).toHaveCount(21);
+  await expect(page.locator('[data-project] svg.illustration')).toHaveCount(22);
   await expect(page.locator('[data-project] .row-open')).toHaveCount(0);
   for(const card of await page.locator('[data-project]').all()) await expect(card.locator('a')).toHaveCount(1);
   const satellite=page.locator('#project_9 .project-card');
@@ -795,7 +795,7 @@ test('every project and experience has a clickable original illustration; motion
 });
 
 test('case flight paths preview every chronological stop with keyboard and link to real destinations', async () => {
-  for (const [kind,id,count] of [['projects','project_9',21],['experience','cnes',6]]) {
+  for (const [kind,id,count] of [['projects','project_9',22],['experience','cnes',6]]) {
     const {page}=await visit(`pt/pages/${kind}/${id}.html`,{viewport:{width:1440,height:900},reducedMotion:'reduce'});
     const stops=page.locator('.flight-stop');
     await expect(stops).toHaveCount(count);
@@ -818,7 +818,7 @@ test('case flight paths preview every chronological stop with keyboard and link 
     if (expected) await expect(next).toHaveAttribute('href',expected);
     await stops.first().focus();
     await page.keyboard.press('Enter');
-    await expect(page.locator('.damas-pass,.case-boarding')).toHaveCount(1);
+    await expect(page.locator('.damas-pass,.wingbox-pass,.case-boarding')).toHaveCount(1);
     await page.close();
   }
 });
@@ -881,7 +881,7 @@ test('separate diary archive and full project catalogue work without JavaScript'
   await page.locator('.inner-breadcrumb a').click();
   await expect(page.locator('.boarding-pass:visible')).toHaveCount(3);
   await page.locator('#current-work .section-heading a[href="projects.html"]').click();
-  await expect(page.locator('[data-project]')).toHaveCount(21);
+  await expect(page.locator('[data-project]')).toHaveCount(22);
   await page.close();
 });
 
@@ -1025,7 +1025,7 @@ test('home projects are whole-card links and the on-air indicator respects reduc
   const {page}=await visit('pt/',{viewport:{width:1440,height:900},reducedMotion:'no-preference'});
   await expect(page.locator('.current-panel')).toHaveAttribute('href','pages/projects/flight-platform.html');
   await expect(page.locator('.current-panel .btn,.current-panel button,.project-grid .more')).toHaveCount(0);
-  await expect(page.locator('#current-work .section-heading a')).toContainText('21');
+  await expect(page.locator('#current-work .section-heading a')).toContainText('22');
   assert.ok(await page.locator('.current-panel .live-dot').evaluate(el=>el.getAnimations({subtree:true}).length)>0);
   await page.emulateMedia({reducedMotion:'reduce'});
   assert.equal(await page.locator('.current-panel .live-dot').evaluate(el=>el.getAnimations({subtree:true}).length),0);

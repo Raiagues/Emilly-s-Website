@@ -1,0 +1,18 @@
+<div class="card wb-s37" data-holds="{{p.ok}}" data-part-panel="{{p.key}}-{{choice}}">
+<figure class="wb-s38">
+<span class="wb-s39">{{p.view}}</span>
+<svg aria-label="{{p.name}}: {{p.verdict}}" class="wb-s5" role="img" viewbox="0 0 600 170">
+<sc-for as="f" list="{{p.fills}}"><path d="{{f.d}}" fill="rgba(229,72,77,0.14)" stroke="none"></path></sc-for>
+<sc-for as="b" list="{{p.blocks}}"><rect fill="{{b.f}}" height="{{b.h}}" rx="1.5" width="{{b.w}}" x="{{b.x}}" y="{{b.y}}"></rect></sc-for>
+<sc-for as="h" list="{{p.hats}}"><path d="{{h.d}}" fill="none" stroke="#1F1FB0" stroke-linejoin="round" stroke-width="2.5"></path></sc-for>
+<sc-for as="l" list="{{p.lines}}"><path d="{{l.d}}" fill="none" stroke="{{l.c}}" stroke-linecap="round" stroke-linejoin="round" stroke-width="{{l.w}}"></path></sc-for>
+</svg>
+</figure>
+<div class="wb-s40">
+<div class="wb-s41"><span class="wb-s36">{{p.name}}</span><span data-verdict style="font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #FFFFFF; background: {{p.verdictC}}; border-radius: 999px; padding: 4px 10px">{{p.verdict}}</span></div>
+<div aria-label="{{text.t022}}" class="wb-s42" role="group"><span class="wb-s43">{{text.t021}}</span><sc-for as="o" list="{{p.opts}}"><button aria-pressed="{{o.pressed}}" class="seg tog wb-s44" data-choice="{{o.key}}" data-part="{{p.key}}" data-wing-control="" disabled="" type="button">{{o.label}}</button></sc-for></div>
+<div aria-hidden="true" class="wb-s45"><span class="bar" style="position: absolute; left: 0; top: 0; bottom: 0; width: {{p.w}}; background: {{p.barC}}; border-radius: 4px"></span><span style="position: absolute; top: -5px; bottom: -5px; left: {{p.req}}; width: 2px; background: #1E3A3D"></span></div>
+<span class="wb-s46" data-critical>{{p.text}}</span>
+<p class="wb-s15">{{p.why}}</p>
+</div>
+</div>

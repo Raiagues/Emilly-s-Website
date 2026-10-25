@@ -66,7 +66,7 @@ def case_pagination(d, p, peers):
 def directory(b,lang,kind):
     d=Design(b,lang,kind+'.html')
     work=list(reversed(chronological([p for p in b['PROJECTS'] if p['kind']==kind])))
-    categories=['all']+[key for key in ['space','hardware','control','software','outreach'] if any(p['category']==key for p in work)]
+    categories=['all']+[key for key in ['space','hardware','control','software','structures','outreach'] if any(p['category']==key for p in work)]
     filters=''.join(f'<button type="button" class="chip" data-filter="{key}" aria-pressed="{str(key=="all").lower()}">{d.t(key)} <span>{sum(key=="all" or p["category"]==key for p in work)}</span></button>' for key in categories)
     cards=[]
     for p in work:

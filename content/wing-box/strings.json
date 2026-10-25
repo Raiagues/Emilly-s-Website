@@ -1,0 +1,896 @@
+{
+  "t001": {
+    "en": "V-n diagram",
+    "pt": "Diagrama V-n",
+    "fr": "Diagramme V-n",
+    "es": "Diagrama V-n"
+  },
+  "t002": {
+    "en": "Flight envelope",
+    "pt": "Envelope de voo",
+    "fr": "Domaine de vol",
+    "es": "Envolvente de vuelo"
+  },
+  "t003": {
+    "en": "Cruise gust",
+    "pt": "Rajada em cruzeiro",
+    "fr": "Rafale en croisière",
+    "es": "Ráfaga en crucero"
+  },
+  "t004": {
+    "en": "Dive gust",
+    "pt": "Rajada em mergulho",
+    "fr": "Rafale en piqué",
+    "es": "Ráfaga en picado"
+  },
+  "t005": {
+    "en": "Bending stress at the root · {{cond.name}}",
+    "pt": "Tensão de flexão na raiz · {{cond.name}}",
+    "fr": "Contrainte de flexion à l’emplanture · {{cond.name}}",
+    "es": "Tensión de flexión en la raíz · {{cond.name}}"
+  },
+  "t006": {
+    "en": "The red dashed line is the neutral axis, where the stress is zero. The stress grows towards the corners furthest from it. In our results, the closer the axis got to 90°, the lower the peak, and P1 was the worst case.",
+    "pt": "A linha vermelha tracejada é a linha neutra, onde a tensão é zero. A tensão aumenta nos cantos mais distantes dela. Nos nossos resultados, quanto mais o ângulo se aproximava de 90°, menor era o pico. P1 foi o caso mais crítico.",
+    "fr": "La ligne rouge en pointillés est l’axe neutre, où la contrainte est nulle. Elle augmente vers les coins les plus éloignés. Dans nos résultats, plus l’axe s’approchait de 90°, plus le pic diminuait. P1 était le cas le plus critique.",
+    "es": "La línea roja discontinua es el eje neutro, donde la tensión es cero. La tensión aumenta hacia las esquinas más alejadas. En nuestros resultados, cuanto más se acercaba el eje a 90°, menor era el pico. P1 fue el caso más crítico."
+  },
+  "t007": {
+    "en": "Condition",
+    "pt": "Condição",
+    "fr": "Condition",
+    "es": "Condición"
+  },
+  "t008": {
+    "en": "Peak bending stress",
+    "pt": "Pico de tensão de flexão",
+    "fr": "Pic de contrainte de flexion",
+    "es": "Pico de tensión de flexión"
+  },
+  "t009": {
+    "en": "Neutral axis",
+    "pt": "Linha neutra",
+    "fr": "Axe neutre",
+    "es": "Eje neutro"
+  },
+  "t010": {
+    "en": "Ribs needed",
+    "pt": "Nervuras necessárias",
+    "fr": "Nervures nécessaires",
+    "es": "Costillas necesarias"
+  },
+  "t011": {
+    "en": "Panel stiffeners",
+    "pt": "Reforçadores dos painéis",
+    "fr": "Raidisseurs des panneaux",
+    "es": "Rigidizadores de los paneles"
+  },
+  "t012": {
+    "en": "Web stiffeners",
+    "pt": "Reforçadores das almas",
+    "fr": "Raidisseurs des âmes",
+    "es": "Rigidizadores de las almas"
+  },
+  "t013": {
+    "en": "V-n diagram with the flight envelope in red, gust lines in green and yellow, and the five critical points",
+    "pt": "Diagrama V-n com o envelope de voo em vermelho, rajadas em verde e amarelo e os cinco pontos críticos",
+    "fr": "Diagramme V-n avec le domaine de vol en rouge, les rafales en vert et jaune et les cinq points critiques",
+    "es": "Diagrama V-n con la envolvente de vuelo en rojo, ráfagas en verde y amarillo y los cinco puntos críticos"
+  },
+  "t014": {
+    "en": "{{ch.unit}} · span in m",
+    "pt": "{{ch.unit}} · semienvergadura em m",
+    "fr": "{{ch.unit}} · demi-envergure en m",
+    "es": "{{ch.unit}} · semienvergadura en m"
+  },
+  "t015": {
+    "en": "q1 {{tor.q1}}",
+    "pt": "q1 {{tor.q1}}",
+    "fr": "q1 {{tor.q1}}",
+    "es": "q1 {{tor.q1}}"
+  },
+  "t016": {
+    "en": "q2 {{tor.q2}}",
+    "pt": "q2 {{tor.q2}}",
+    "fr": "q2 {{tor.q2}}",
+    "es": "q2 {{tor.q2}}"
+  },
+  "t017": {
+    "en": "q3 {{tor.q3}}",
+    "pt": "q3 {{tor.q3}}",
+    "fr": "q3 {{tor.q3}}",
+    "es": "q3 {{tor.q3}}"
+  },
+  "t018": {
+    "en": "Geometry",
+    "pt": "Geometria",
+    "fr": "Géométrie",
+    "es": "Geometría"
+  },
+  "t019": {
+    "en": "Max shear",
+    "pt": "Cisalhamento máximo",
+    "fr": "Cisaillement maximal",
+    "es": "Cortante máximo"
+  },
+  "t020": {
+    "en": "Min shear",
+    "pt": "Cisalhamento mínimo",
+    "fr": "Cisaillement minimal",
+    "es": "Cortante mínimo"
+  },
+  "t021": {
+    "en": "How many",
+    "pt": "Quantidade",
+    "fr": "Nombre",
+    "es": "Cantidad"
+  },
+  "t022": {
+    "en": "{{p.name}} · How many",
+    "pt": "{{p.name}} · Quantidade",
+    "fr": "{{p.name}} · Nombre",
+    "es": "{{p.name}} · Cantidad"
+  },
+  "t023": {
+    "en": "All projects",
+    "pt": "Todos os projetos",
+    "fr": "Tous les projets",
+    "es": "Todos los proyectos"
+  },
+  "t024": {
+    "en": "Projects · Structures · 2023",
+    "pt": "Projetos · Estruturas · 2023",
+    "fr": "Projets · Structures · 2023",
+    "es": "Proyectos · Estructuras · 2023"
+  },
+  "t025": {
+    "en": "Mission patch · 2023",
+    "pt": "Emblema da missão · 2023",
+    "fr": "Écusson de mission · 2023",
+    "es": "Emblema de la misión · 2023"
+  },
+  "t026": {
+    "en": "Structures · project · 2023",
+    "pt": "Estruturas · projeto · 2023",
+    "fr": "Structures · projet · 2023",
+    "es": "Estructuras · proyecto · 2023"
+  },
+  "t027": {
+    "en": "Wing box analysis",
+    "pt": "Análise da caixa da asa",
+    "fr": "Analyse du caisson de voilure",
+    "es": "Análisis del cajón del ala"
+  },
+  "t028": {
+    "en": "A Python tool we built across three assignments to take a wing from flight loads to bending, torsion and buckling.",
+    "pt": "Uma ferramenta em Python que construímos ao longo de três trabalhos para analisar uma asa: das cargas de voo à flexão, torção e flambagem.",
+    "fr": "Un outil Python construit au fil de trois travaux pour analyser une aile, des charges de vol à la flexion, la torsion et le flambement.",
+    "es": "Una herramienta en Python que construimos a lo largo de tres trabajos para analizar un ala, desde las cargas de vuelo hasta la flexión, torsión y pandeo."
+  },
+  "t029": {
+    "en": "Thin-walled structures",
+    "pt": "Estruturas de paredes finas",
+    "fr": "Structures à parois minces",
+    "es": "Estructuras de paredes delgadas"
+  },
+  "t030": {
+    "en": "Buckling",
+    "pt": "Flambagem",
+    "fr": "Flambement",
+    "es": "Pandeo"
+  },
+  "t031": {
+    "en": "My role",
+    "pt": "Minha parte",
+    "fr": "Mon rôle",
+    "es": "Mi papel"
+  },
+  "t032": {
+    "en": "Python code and reports",
+    "pt": "Código Python e relatórios",
+    "fr": "Code Python et rapports",
+    "es": "Código Python e informes"
+  },
+  "t033": {
+    "en": "Crew",
+    "pt": "Equipe",
+    "fr": "Équipe",
+    "es": "Equipo"
+  },
+  "t034": {
+    "en": "Teams of 2 to 3",
+    "pt": "Equipes de 2 a 3",
+    "fr": "Équipes de 2 à 3",
+    "es": "Equipos de 2 a 3"
+  },
+  "t035": {
+    "en": "Course",
+    "pt": "Disciplina",
+    "fr": "Cours",
+    "es": "Asignatura"
+  },
+  "t036": {
+    "en": "Aeronautical Structures",
+    "pt": "Estruturas aeronáuticas",
+    "fr": "Structures aéronautiques",
+    "es": "Estructuras aeronáuticas"
+  },
+  "t037": {
+    "en": "Base",
+    "pt": "Base",
+    "fr": "Base",
+    "es": "Base"
+  },
+  "t038": {
+    "en": "Assignments",
+    "pt": "Trabalhos",
+    "fr": "Travaux",
+    "es": "Trabajos"
+  },
+  "t039": {
+    "en": "Original Python",
+    "pt": "Python original",
+    "fr": "Python d’origine",
+    "es": "Python original"
+  },
+  "t040": {
+    "en": "12 modules · 1,610 lines",
+    "pt": "12 módulos · 1.610 linhas",
+    "fr": "12 modules · 1 610 lignes",
+    "es": "12 módulos · 1610 líneas"
+  },
+  "t041": {
+    "en": "Departure",
+    "pt": "Partida",
+    "fr": "Départ",
+    "es": "Salida"
+  },
+  "t042": {
+    "en": "Next destination",
+    "pt": "Próximo destino",
+    "fr": "Prochaine destination",
+    "es": "Próximo destino"
+  },
+  "t043": {
+    "en": "See the code on GitHub",
+    "pt": "Ver o código no GitHub",
+    "fr": "Voir le code sur GitHub",
+    "es": "Ver el código en GitHub"
+  },
+  "t044": {
+    "en": "Open the interactive lab ↗",
+    "pt": "Abrir o laboratório interativo ↗",
+    "fr": "Ouvrir le laboratoire interactif ↗",
+    "es": "Abrir el laboratorio interactivo ↗"
+  },
+  "t045": {
+    "en": "01 The wing",
+    "pt": "01 A asa",
+    "fr": "01 L’aile",
+    "es": "01 El ala"
+  },
+  "t046": {
+    "en": "02 Flight envelope",
+    "pt": "02 Envelope de voo",
+    "fr": "02 Domaine de vol",
+    "es": "02 Envolvente de vuelo"
+  },
+  "t047": {
+    "en": "03 Loads",
+    "pt": "03 Cargas",
+    "fr": "03 Charges",
+    "es": "03 Cargas"
+  },
+  "t048": {
+    "en": "04 Torsion",
+    "pt": "04 Torção",
+    "fr": "04 Torsion",
+    "es": "04 Torsión"
+  },
+  "t049": {
+    "en": "05 Buckling",
+    "pt": "05 Flambagem",
+    "fr": "05 Flambement",
+    "es": "05 Pandeo"
+  },
+  "t050": {
+    "en": "What we designed",
+    "pt": "O que projetamos",
+    "fr": "Ce que nous avons conçu",
+    "es": "Lo que diseñamos"
+  },
+  "t051": {
+    "en": "This project came from the Aeronautical Structures Analysis course at UFSM, in 2023. The aircraft has a rectangular wing with a 12 m span, a 2 m chord and a NACA 63A415 airfoil, and weighs up to 5,500 kg.",
+    "pt": "Este projeto nasceu na disciplina de Análise de Estruturas Aeronáuticas da UFSM, em 2023. A aeronave tem uma asa retangular de 12 m de envergadura, corda de 2 m, perfil NACA 63A415 e massa máxima de 5.500 kg.",
+    "fr": "Ce projet vient du cours d’analyse des structures aéronautiques de l’UFSM, en 2023. L’avion possède une aile rectangulaire de 12 m d’envergure, une corde de 2 m, un profil NACA 63A415 et une masse maximale de 5 500 kg.",
+    "es": "Este proyecto nació en la asignatura de Análisis de Estructuras Aeronáuticas de la UFSM, en 2023. La aeronave tiene un ala rectangular de 12 m de envergadura, cuerda de 2 m, perfil NACA 63A415 y masa máxima de 5500 kg."
+  },
+  "t052": {
+    "en": "Inside the wing runs a box with three cells. It is the part that carries the loads of the wing. Its top and bottom panels are aluminium 7075-T6 and its four webs are titanium Ti-6Al-4V.",
+    "pt": "Dentro da asa há uma caixa com três células. É ela que sustenta as cargas da asa. Os painéis superior e inferior são de alumínio 7075-T6, e as quatro almas são de titânio Ti-6Al-4V.",
+    "fr": "L’aile contient un caisson à trois cellules qui reprend ses charges. Les panneaux supérieur et inférieur sont en aluminium 7075-T6 et ses quatre âmes en titane Ti-6Al-4V.",
+    "es": "Dentro del ala hay un cajón con tres celdas que soporta sus cargas. Los paneles superior e inferior son de aluminio 7075-T6 y las cuatro almas de titanio Ti-6Al-4V."
+  },
+  "t053": {
+    "en": "Over three assignments we built a Python tool that finds the loads on this box, the stresses they cause, and how many ribs and stiffeners it needs so its thin panels do not buckle. I wrote the code.",
+    "pt": "Ao longo de três trabalhos, construímos uma ferramenta em Python que calcula as cargas nessa caixa, as tensões que elas causam e quantas nervuras e reforçadores são necessários para evitar a flambagem dos painéis. Eu escrevi o código.",
+    "fr": "Au fil de trois travaux, nous avons créé un outil Python qui calcule les charges sur ce caisson, les contraintes qu’elles produisent et le nombre de nervures et de raidisseurs nécessaires pour éviter le flambement des panneaux. J’ai écrit le code.",
+    "es": "A lo largo de tres trabajos, construimos una herramienta en Python que calcula las cargas sobre el cajón, las tensiones que producen y cuántas costillas y rigidizadores hacen falta para evitar el pandeo de los paneles. Yo escribí el código."
+  },
+  "t054": {
+    "en": "Schematic 3D · drag to turn · scroll to zoom",
+    "pt": "3D esquemático · arraste para girar · role para ampliar",
+    "fr": "3D schématique · glisser pour tourner · défiler pour zoomer",
+    "es": "3D esquemático · arrastra para girar · desplaza para ampliar"
+  },
+  "t055": {
+    "en": "Aluminium panels",
+    "pt": "Painéis de alumínio",
+    "fr": "Panneaux en aluminium",
+    "es": "Paneles de aluminio"
+  },
+  "t056": {
+    "en": "Titanium webs",
+    "pt": "Almas de titânio",
+    "fr": "Âmes en titane",
+    "es": "Almas de titanio"
+  },
+  "t057": {
+    "en": "Ribs",
+    "pt": "Nervuras",
+    "fr": "Nervures",
+    "es": "Costillas"
+  },
+  "t058": {
+    "en": "Stiffeners",
+    "pt": "Reforçadores",
+    "fr": "Raidisseurs",
+    "es": "Rigidizadores"
+  },
+  "t059": {
+    "en": "Final design · try the Front view",
+    "pt": "Projeto final · experimente a vista frontal",
+    "fr": "Conception finale · essayez la vue de face",
+    "es": "Diseño final · prueba la vista frontal"
+  },
+  "t060": {
+    "en": "Figures and results from the original assignments. The 3D shapes and deformations are schematic; the interactive lab contains the revised model.",
+    "pt": "Figuras e resultados dos trabalhos originais. As formas e deformações 3D são esquemáticas; o laboratório interativo contém o modelo revisado.",
+    "fr": "Figures et résultats des travaux d’origine. Les formes et déformations 3D sont schématiques ; le laboratoire interactif contient le modèle révisé.",
+    "es": "Figuras y resultados de los trabajos originales. Las formas y deformaciones 3D son esquemáticas; el laboratorio interactivo contiene el modelo revisado."
+  },
+  "t061": {
+    "en": "Flight envelope and stress",
+    "pt": "Envelope de voo e tensões",
+    "fr": "Domaine de vol et contraintes",
+    "es": "Envolvente de vuelo y tensiones"
+  },
+  "t062": {
+    "en": "Click a point on the V-n",
+    "pt": "Clique em um ponto do V-n",
+    "fr": "Choisissez un point du V-n",
+    "es": "Elige un punto del V-n"
+  },
+  "t063": {
+    "en": "The box was checked at the five corners of the flight envelope. Click a point to see the bending stress it causes at the root of the wing.",
+    "pt": "A caixa foi verificada nos cinco vértices do envelope de voo. Clique em um ponto para ver a tensão de flexão que ele provoca na raiz da asa.",
+    "fr": "Le caisson a été vérifié aux cinq sommets du domaine de vol. Choisissez un point pour voir la contrainte de flexion qu’il produit à l’emplanture de l’aile.",
+    "es": "Comprobamos el cajón en los cinco vértices de la envolvente de vuelo. Elige un punto para ver la tensión de flexión que produce en la raíz del ala."
+  },
+  "t064": {
+    "en": "Loads on the wing",
+    "pt": "Cargas na asa",
+    "fr": "Charges sur l’aile",
+    "es": "Cargas sobre el ala"
+  },
+  "t065": {
+    "en": "Schrenk distribution",
+    "pt": "Distribuição de Schrenk",
+    "fr": "Répartition de Schrenk",
+    "es": "Distribución de Schrenk"
+  },
+  "t066": {
+    "en": "Torsion in the three cells",
+    "pt": "Torção nas três células",
+    "fr": "Torsion dans les trois cellules",
+    "es": "Torsión en las tres celdas"
+  },
+  "t067": {
+    "en": "Shear flow",
+    "pt": "Fluxo de cisalhamento",
+    "fr": "Flux de cisaillement",
+    "es": "Flujo cortante"
+  },
+  "t068": {
+    "en": "The pitching moment twists the box. Each cell resists it with a shear flow that runs around its walls. The solver asks the three cells to twist at the same rate and finds the flow in each one.",
+    "pt": "O momento de arfagem torce a caixa. Cada célula resiste com um fluxo de cisalhamento ao redor de suas paredes. O cálculo impõe a mesma taxa de torção às três células e encontra o fluxo em cada uma.",
+    "fr": "Le moment de tangage tord le caisson. Chaque cellule y résiste par un flux de cisaillement le long de ses parois. Le calcul impose le même taux de torsion aux trois cellules et détermine leur flux respectif.",
+    "es": "El momento de cabeceo retuerce el cajón. Cada celda resiste con un flujo cortante alrededor de sus paredes. El cálculo impone la misma tasa de torsión a las tres celdas y obtiene el flujo de cada una."
+  },
+  "t069": {
+    "en": "The middle cell carries the most. The inner webs only see the difference between two cells, so they carry the least. Thinner walls always meant higher shear stress.",
+    "pt": "A célula central carrega mais. As almas internas recebem apenas a diferença entre os fluxos de duas células, por isso carregam menos. Paredes mais finas resultaram em tensões de cisalhamento maiores.",
+    "fr": "La cellule centrale reprend le plus d’effort. Les âmes internes ne subissent que la différence entre les flux de deux cellules et sont donc moins chargées. Les parois plus fines conduisaient à des contraintes de cisaillement plus élevées.",
+    "es": "La celda central soporta más carga. Las almas internas solo reciben la diferencia entre los flujos de dos celdas, por lo que soportan menos. Las paredes más delgadas dieron lugar a tensiones cortantes mayores."
+  },
+  "t070": {
+    "en": "Shear flow for a unit torque",
+    "pt": "Fluxo para um torque unitário",
+    "fr": "Flux pour un couple unitaire",
+    "es": "Flujo para un par unitario"
+  },
+  "t071": {
+    "en": "Why it needs ribs and stiffeners",
+    "pt": "Por que a asa precisa de nervuras e reforçadores",
+    "fr": "Pourquoi ajouter nervures et raidisseurs",
+    "es": "Por qué necesita costillas y rigidizadores"
+  },
+  "t072": {
+    "en": "Thin panels in compression bend sideways long before the metal breaks. This is buckling. We took the peak compression of P1, 229.1 MPa, added a safety factor of 2.5, and asked every panel to hold 572.8 MPa. Change the number of parts below and watch where the structure gives way, in red.",
+    "pt": "Painéis finos sob compressão se deformam lateralmente muito antes de o metal romper. Isso é flambagem. Partimos do pico de compressão em P1, 229,1 MPa, aplicamos um fator de segurança de 2,5 e exigimos que cada painel suportasse 572,8 MPa. Altere a quantidade de peças abaixo e veja, em vermelho, onde a estrutura perde estabilidade.",
+    "fr": "Les panneaux minces en compression se déforment latéralement bien avant la rupture du métal : c’est le flambement. Nous avons pris le pic de compression de P1, 229,1 MPa, appliqué un coefficient de sécurité de 2,5 et demandé à chaque panneau de résister à 572,8 MPa. Changez le nombre de pièces pour voir en rouge où la structure devient instable.",
+    "es": "Los paneles delgados bajo compresión se deforman lateralmente mucho antes de que el metal se rompa. Esto es el pandeo. Partimos del pico de compresión de P1, 229,1 MPa, aplicamos un factor de seguridad de 2,5 y exigimos que cada panel resistiera 572,8 MPa. Cambia la cantidad de piezas y observa en rojo dónde la estructura pierde estabilidad."
+  },
+  "t073": {
+    "en": "06 · What I learned",
+    "pt": "06 · O que aprendi",
+    "fr": "06 · Ce que j’ai appris",
+    "es": "06 · Lo que aprendí"
+  },
+  "t074": {
+    "en": "I split the first version of the tool into small modules with all the inputs in one place. That is what let us add torsion and buckling later without starting over, since each new assignment only added one or two modules to the same code.",
+    "pt": "Dividi a primeira versão da ferramenta em módulos pequenos, com todas as entradas em um só lugar. Foi isso que permitiu adicionar torção e flambagem depois, sem começar do zero: cada novo trabalho acrescentava apenas um ou dois módulos ao mesmo código.",
+    "fr": "J’ai divisé la première version de l’outil en petits modules, avec toutes les données d’entrée au même endroit. Cela nous a permis d’ajouter ensuite la torsion et le flambement sans tout reprendre : chaque nouveau travail n’ajoutait qu’un ou deux modules au même code.",
+    "es": "Dividí la primera versión de la herramienta en módulos pequeños, con todas las entradas en un solo lugar. Eso nos permitió añadir después torsión y pandeo sin empezar de nuevo: cada trabajo añadía solo uno o dos módulos al mismo código."
+  },
+  "t075": {
+    "en": "Crew manifest",
+    "pt": "Equipe do projeto",
+    "fr": "Équipe du projet",
+    "es": "Equipo del proyecto"
+  },
+  "t076": {
+    "en": "Python code · reports 01, 02, 04",
+    "pt": "Código Python · relatórios 01, 02, 04",
+    "fr": "Code Python · rapports 01, 02, 04",
+    "es": "Código Python · informes 01, 02, 04"
+  },
+  "t077": {
+    "en": "Reports 01, 02, 04",
+    "pt": "Relatórios 01, 02, 04",
+    "fr": "Rapports 01, 02, 04",
+    "es": "Informes 01, 02, 04"
+  },
+  "t078": {
+    "en": "Report 01",
+    "pt": "Relatório 01",
+    "fr": "Rapport 01",
+    "es": "Informe 01"
+  },
+  "t079": {
+    "en": "Report 04",
+    "pt": "Relatório 04",
+    "fr": "Rapport 04",
+    "es": "Informe 04"
+  },
+  "t080": {
+    "en": "CAD render of the finished half wing, with the three-cell box visible at the root",
+    "pt": "Modelo CAD da semiasa final, com a caixa de três células visível na raiz",
+    "fr": "Rendu CAO de la demi-aile finale, avec le caisson à trois cellules visible à l’emplanture",
+    "es": "Modelo CAD de la semiala final, con el cajón de tres celdas visible en la raíz"
+  },
+  "t081": {
+    "en": "Chapters",
+    "pt": "Capítulos",
+    "fr": "Chapitres",
+    "es": "Capítulos"
+  },
+  "t082": {
+    "en": "CAD view of the half wing",
+    "pt": "Vista CAD da semiasa",
+    "fr": "Vue CAO de la demi-aile",
+    "es": "Vista CAD de la semiala"
+  },
+  "t083": {
+    "en": "Schematic 3D view of the half wing. Use the view buttons or arrow keys to turn; + and − to zoom; Home to reset.",
+    "pt": "Vista 3D esquemática da semiasa. Use os botões de vista ou as setas do teclado para girar; + e − para ampliar; Home para reiniciar.",
+    "fr": "Vue 3D schématique de la demi-aile. Utilisez les boutons de vue ou les flèches pour tourner ; + et − pour zoomer ; Début pour réinitialiser.",
+    "es": "Vista 3D esquemática de la semiala. Usa los botones de vista o las flechas para girar; + y − para ampliar; Inicio para restablecer."
+  },
+  "t084": {
+    "en": "Zoom in",
+    "pt": "Ampliar",
+    "fr": "Zoom avant",
+    "es": "Ampliar"
+  },
+  "t085": {
+    "en": "Zoom out",
+    "pt": "Reduzir",
+    "fr": "Zoom arrière",
+    "es": "Reducir"
+  },
+  "t086": {
+    "en": "What to show on the wing",
+    "pt": "O que mostrar na asa",
+    "fr": "Que montrer sur l’aile",
+    "es": "Qué mostrar sobre el ala"
+  },
+  "t087": {
+    "en": "Pick a flight condition",
+    "pt": "Escolha uma condição de voo",
+    "fr": "Choisir une condition de vol",
+    "es": "Elige una condición de vuelo"
+  },
+  "t088": {
+    "en": "Pick a geometry",
+    "pt": "Escolha uma geometria",
+    "fr": "Choisir une géométrie",
+    "es": "Elige una geometría"
+  },
+  "t089": {
+    "en": "What I learned",
+    "pt": "O que aprendi",
+    "fr": "Ce que j’ai appris",
+    "es": "Lo que aprendí"
+  },
+  "t090": {
+    "en": "100 m/s",
+    "pt": "100 m/s",
+    "fr": "100 m/s",
+    "es": "100 m/s"
+  },
+  "t091": {
+    "en": "Lift and drag along the half wing",
+    "pt": "Sustentação e arrasto na semiasa",
+    "fr": "Portance et traînée sur la demi-aile",
+    "es": "Sustentación y resistencia en la semiala"
+  },
+  "t092": {
+    "en": "Lift",
+    "pt": "Sustentação",
+    "fr": "Portance",
+    "es": "Sustentación"
+  },
+  "t093": {
+    "en": "Drag",
+    "pt": "Arrasto",
+    "fr": "Traînée",
+    "es": "Resistencia"
+  },
+  "t094": {
+    "en": "Red arrows are the lift and blue arrows the drag at each station, using the Schrenk distribution. Drag is drawn five times larger so you can see it.",
+    "pt": "As setas vermelhas mostram a sustentação e as azuis o arrasto em cada estação, usando a distribuição de Schrenk. O arrasto aparece cinco vezes maior para facilitar a visualização.",
+    "fr": "Les flèches rouges représentent la portance et les bleues la traînée à chaque station, selon la répartition de Schrenk. La traînée est représentée cinq fois plus grande pour rester visible.",
+    "es": "Las flechas rojas muestran la sustentación y las azules la resistencia en cada estación, usando la distribución de Schrenk. La resistencia se dibuja cinco veces mayor para que sea visible."
+  },
+  "t095": {
+    "en": "Lift at the root",
+    "pt": "Sustentação na raiz",
+    "fr": "Portance à l’emplanture",
+    "es": "Sustentación en la raíz"
+  },
+  "t096": {
+    "en": "Lift at the tip",
+    "pt": "Sustentação na ponta",
+    "fr": "Portance en bout d’aile",
+    "es": "Sustentación en la punta"
+  },
+  "t097": {
+    "en": "Drag at the root",
+    "pt": "Arrasto na raiz",
+    "fr": "Traînée à l’emplanture",
+    "es": "Resistencia en la raíz"
+  },
+  "t098": {
+    "en": "Shear force from the lift",
+    "pt": "Força cortante da sustentação",
+    "fr": "Effort tranchant dû à la portance",
+    "es": "Fuerza cortante de la sustentación"
+  },
+  "t099": {
+    "en": "Shear force",
+    "pt": "Força cortante",
+    "fr": "Effort tranchant",
+    "es": "Fuerza cortante"
+  },
+  "t100": {
+    "en": "Bending moment from the lift",
+    "pt": "Momento fletor da sustentação",
+    "fr": "Moment fléchissant dû à la portance",
+    "es": "Momento flector de la sustentación"
+  },
+  "t101": {
+    "en": "Bending moment",
+    "pt": "Momento fletor",
+    "fr": "Moment fléchissant",
+    "es": "Momento flector"
+  },
+  "t102": {
+    "en": "Adding the lift from the tip inwards gives the shear force, and adding the shear gives the bending moment. Both are largest at the root. The bend in the 3D view is exaggerated.",
+    "pt": "Somar a sustentação da ponta para a raiz fornece a força cortante; somar a força cortante fornece o momento fletor. Ambos são máximos na raiz. A deformação na vista 3D está ampliada.",
+    "fr": "L’intégration de la portance du bout de l’aile vers l’emplanture donne l’effort tranchant, puis son intégration donne le moment fléchissant. Tous deux sont maximaux à l’emplanture. La déformation est amplifiée dans la vue 3D.",
+    "es": "Integrar la sustentación desde la punta hacia la raíz da la fuerza cortante, e integrar esta da el momento flector. Ambos son máximos en la raíz. La deformación de la vista 3D está exagerada."
+  },
+  "t103": {
+    "en": "Shear at the root",
+    "pt": "Cortante na raiz",
+    "fr": "Effort tranchant à l’emplanture",
+    "es": "Cortante en la raíz"
+  },
+  "t104": {
+    "en": "Moment at the root",
+    "pt": "Momento na raiz",
+    "fr": "Moment à l’emplanture",
+    "es": "Momento en la raíz"
+  },
+  "t105": {
+    "en": "Torque from the pitching moment",
+    "pt": "Torque do momento de arfagem",
+    "fr": "Couple dû au moment de tangage",
+    "es": "Par del momento de cabeceo"
+  },
+  "t106": {
+    "en": "Torque",
+    "pt": "Torque",
+    "fr": "Couple",
+    "es": "Par"
+  },
+  "t107": {
+    "en": "The pitching moment (cm = −0.078) is spread evenly along the span, so the torque grows in a straight line from zero at the tip to its largest value at the root. The twist in the 3D view is exaggerated.",
+    "pt": "O momento de arfagem (cm = −0,078) é distribuído uniformemente pela envergadura. Assim, o torque cresce linearmente de zero na ponta até o máximo na raiz. A torção na vista 3D está ampliada.",
+    "fr": "Le moment de tangage (cm = −0,078) est réparti uniformément sur l’envergure. Le couple croît donc linéairement de zéro en bout d’aile à son maximum à l’emplanture. La torsion est amplifiée dans la vue 3D.",
+    "es": "El momento de cabeceo (cm = −0,078) se distribuye uniformemente por la envergadura. El par crece linealmente desde cero en la punta hasta su máximo en la raíz. La torsión de la vista 3D está exagerada."
+  },
+  "t108": {
+    "en": "Pitching moment",
+    "pt": "Momento de arfagem",
+    "fr": "Moment de tangage",
+    "es": "Momento de cabeceo"
+  },
+  "t109": {
+    "en": "Torque at the root",
+    "pt": "Torque na raiz",
+    "fr": "Couple à l’emplanture",
+    "es": "Par en la raíz"
+  },
+  "t110": {
+    "en": "Twist",
+    "pt": "Torção",
+    "fr": "Torsion",
+    "es": "Torsión"
+  },
+  "t111": {
+    "en": "Zero at the root",
+    "pt": "Zero na raiz",
+    "fr": "Nulle à l’emplanture",
+    "es": "Cero en la raíz"
+  },
+  "t112": {
+    "en": "180 m/s",
+    "pt": "180 m/s",
+    "fr": "180 m/s",
+    "es": "180 m/s"
+  },
+  "t113": {
+    "en": "Not needed",
+    "pt": "Não necessários",
+    "fr": "Non nécessaires",
+    "es": "No necesarios"
+  },
+  "t114": {
+    "en": "80 m/s",
+    "pt": "80 m/s",
+    "fr": "80 m/s",
+    "es": "80 m/s"
+  },
+  "t115": {
+    "en": "140 m/s",
+    "pt": "140 m/s",
+    "fr": "140 m/s",
+    "es": "140 m/s"
+  },
+  "t116": {
+    "en": "Top panel of cell 1, seen from the root",
+    "pt": "Painel superior da célula 1, visto da raiz",
+    "fr": "Panneau supérieur de la cellule 1, vu de l’emplanture",
+    "es": "Panel superior de la celda 1, visto desde la raíz"
+  },
+  "t117": {
+    "en": "The compression runs along the span. Each stiffener cuts the panel into narrower strips, and a narrower strip needs much more stress to buckle, because the critical stress grows with (t/b)².",
+    "pt": "A compressão atua ao longo da envergadura. Cada reforçador divide o painel em faixas mais estreitas, que precisam de tensões muito maiores para flambar: a tensão crítica cresce com (t/b)².",
+    "fr": "La compression agit le long de l’envergure. Chaque raidisseur divise le panneau en bandes plus étroites, qui résistent mieux au flambement : la contrainte critique augmente avec (t/b)².",
+    "es": "La compresión actúa a lo largo de la envergadura. Cada rigidizador divide el panel en franjas más estrechas, que necesitan tensiones mucho mayores para pandear: la tensión crítica crece con (t/b)²."
+  },
+  "t118": {
+    "en": "Buckles",
+    "pt": "Flamba",
+    "fr": "Flambe",
+    "es": "Pandea"
+  },
+  "t119": {
+    "en": "Holds",
+    "pt": "Resiste",
+    "fr": "Résiste",
+    "es": "Resiste"
+  },
+  "t120": {
+    "en": "Outer web, seen from the root",
+    "pt": "Alma externa, vista da raiz",
+    "fr": "Âme extérieure, vue de l’emplanture",
+    "es": "Alma exterior, vista desde la raíz"
+  },
+  "t121": {
+    "en": "The tilted neutral axis also puts the outer webs in compression. Stiffeners along the web split its 0.5 m height into shorter strips that hold their shape.",
+    "pt": "A linha neutra inclinada também coloca as almas externas em compressão. Reforçadores ao longo da alma dividem seus 0,5 m de altura em faixas menores que mantêm sua forma.",
+    "fr": "L’axe neutre incliné place aussi les âmes extérieures en compression. Les raidisseurs divisent leurs 0,5 m de hauteur en bandes plus courtes qui conservent leur forme.",
+    "es": "El eje neutro inclinado también comprime las almas exteriores. Los rigidizadores dividen sus 0,5 m de altura en franjas más cortas que mantienen su forma."
+  },
+  "t122": {
+    "en": "One stiffener along the half wing, root on the left",
+    "pt": "Um reforçador ao longo da semiasa, raiz à esquerda",
+    "fr": "Un raidisseur le long de la demi-aile, emplanture à gauche",
+    "es": "Un rigidizador a lo largo de la semiala, raíz a la izquierda"
+  },
+  "t123": {
+    "en": "A stiffener is a long column. Ribs hold it at points along the span, so it can only bow between two ribs. Closer ribs mean a shorter column and a higher critical stress.",
+    "pt": "Um reforçador se comporta como uma coluna longa. As nervuras o apoiam ao longo da envergadura, limitando a flexão ao trecho entre dois apoios. Nervuras mais próximas significam uma coluna mais curta e uma tensão crítica maior.",
+    "fr": "Un raidisseur se comporte comme une longue colonne. Les nervures le maintiennent le long de l’envergure : il ne peut fléchir qu’entre deux appuis. Des nervures rapprochées raccourcissent cette colonne et augmentent sa contrainte critique.",
+    "es": "Un rigidizador se comporta como una columna larga. Las costillas lo sujetan a lo largo de la envergadura, limitando la flexión al tramo entre dos apoyos. Costillas más próximas significan una columna más corta y una tensión crítica mayor."
+  },
+  "t124": {
+    "en": "3D",
+    "pt": "3D",
+    "fr": "3D",
+    "es": "3D"
+  },
+  "t125": {
+    "en": "Top",
+    "pt": "Superior",
+    "fr": "Dessus",
+    "es": "Superior"
+  },
+  "t126": {
+    "en": "Front",
+    "pt": "Frontal",
+    "fr": "Face",
+    "es": "Frontal"
+  },
+  "t127": {
+    "en": "Side",
+    "pt": "Lateral",
+    "fr": "Côté",
+    "es": "Lateral"
+  },
+  "t128": {
+    "en": "Lift and drag",
+    "pt": "Sustentação e arrasto",
+    "fr": "Portance et traînée",
+    "es": "Sustentación y resistencia"
+  },
+  "t129": {
+    "en": "Shear and bending",
+    "pt": "Cortante e flexão",
+    "fr": "Effort tranchant et flexion",
+    "es": "Cortante y flexión"
+  },
+  "t130": {
+    "en": "Torque and twist",
+    "pt": "Torque e torção",
+    "fr": "Couple et torsion",
+    "es": "Par y torsión"
+  },
+  "t131": {
+    "en": "Flight conditions",
+    "pt": "Condições de voo",
+    "fr": "Conditions de vol",
+    "es": "Condiciones de vuelo"
+  },
+  "t132": {
+    "en": "Case 1",
+    "pt": "Caso 1",
+    "fr": "Cas 1",
+    "es": "Caso 1"
+  },
+  "t133": {
+    "en": "Case 2",
+    "pt": "Caso 2",
+    "fr": "Cas 2",
+    "es": "Caso 2"
+  },
+  "t134": {
+    "en": "Case 3",
+    "pt": "Caso 3",
+    "fr": "Cas 3",
+    "es": "Caso 3"
+  },
+  "t135": {
+    "en": "Case 4",
+    "pt": "Caso 4",
+    "fr": "Cas 4",
+    "es": "Caso 4"
+  },
+  "t136": {
+    "en": "Case 5",
+    "pt": "Caso 5",
+    "fr": "Cas 5",
+    "es": "Caso 5"
+  },
+  "bend_aria": {
+    "en": "Section for {{cond.name}}, neutral axis {{cond.ang}}, peak bending stress {{cond.sig}}",
+    "pt": "Seção de {{cond.name}}, linha neutra {{cond.ang}}, pico de tensão {{cond.sig}}",
+    "fr": "Section de {{cond.name}}, axe neutre {{cond.ang}}, pic de contrainte {{cond.sig}}",
+    "es": "Sección de {{cond.name}}, eje neutro {{cond.ang}}, pico de tensión {{cond.sig}}"
+  },
+  "point_aria": {
+    "en": "P{{p.key}}, load factor {{p.n}}, {{p.v}} metres per second",
+    "pt": "P{{p.key}}, fator de carga {{p.n}}, {{p.v}} metros por segundo",
+    "fr": "P{{p.key}}, facteur de charge {{p.n}}, {{p.v}} mètres par seconde",
+    "es": "P{{p.key}}, factor de carga {{p.n}}, {{p.v}} metros por segundo"
+  },
+  "critical": {
+    "en": "Critical stress {{p.critical}} MPa · needed 572.8 MPa",
+    "pt": "Tensão crítica {{p.critical}} MPa · necessária 572.8 MPa",
+    "fr": "Contrainte critique {{p.critical}} MPa · requise 572.8 MPa",
+    "es": "Tensión crítica {{p.critical}} MPa · necesaria 572.8 MPa"
+  },
+  "design": {
+    "en": "design",
+    "pt": "projeto",
+    "fr": "conception",
+    "es": "diseño"
+  },
+  "p1_bend": {
+    "en": "P1 tip bend, report",
+    "pt": "Flexão na ponta em P1, relatório",
+    "fr": "Flèche de P1 en bout, rapport",
+    "es": "Flexión en la punta en P1, informe"
+  },
+  "fallback": {
+    "en": "Results for all five flight conditions",
+    "pt": "Resultados das cinco condições de voo",
+    "fr": "Résultats des cinq conditions de vol",
+    "es": "Resultados de las cinco condiciones de vuelo"
+  },
+  "nojs": {
+    "en": "Enable JavaScript to rotate the wing and compare the interactive diagrams. The original results are listed below.",
+    "pt": "Ative o JavaScript para girar a asa e comparar os diagramas interativos. Os resultados originais estão na tabela abaixo.",
+    "fr": "Activez JavaScript pour tourner l’aile et comparer les diagrammes interactifs. Les résultats d’origine figurent ci-dessous.",
+    "es": "Activa JavaScript para girar el ala y comparar los diagramas interactivos. Los resultados originales aparecen abajo."
+  },
+  "selection": {
+    "en": "Selected",
+    "pt": "Selecionado",
+    "fr": "Sélection",
+    "es": "Seleccionado"
+  },
+  "load_factor": {
+    "en": "Load factor",
+    "pt": "Fator de carga",
+    "fr": "Facteur de charge",
+    "es": "Factor de carga"
+  },
+  "velocity": {
+    "en": "Speed (m/s)",
+    "pt": "Velocidade (m/s)",
+    "fr": "Vitesse (m/s)",
+    "es": "Velocidad (m/s)"
+  },
+  "pause": {
+    "en": "Pause flow animation",
+    "pt": "Pausar animação do fluxo",
+    "fr": "Mettre le flux en pause",
+    "es": "Pausar animación del flujo"
+  },
+  "resume": {
+    "en": "Resume flow animation",
+    "pt": "Retomar animação do fluxo",
+    "fr": "Reprendre l’animation du flux",
+    "es": "Reanudar animación del flujo"
+  },
+  "live_summary": {
+    "en": "{{condition}} · {{mode}}",
+    "pt": "{{condition}} · {{mode}}",
+    "fr": "{{condition}} · {{mode}}",
+    "es": "{{condition}} · {{mode}}"
+  }
+}

@@ -2,13 +2,13 @@
 
 Diário pessoal e portfólio de engenharia aeroespacial, sistemas embarcados e divulgação científica. Inglês por padrão, com versões completas em português, francês e espanhol.
 
-21 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, links para demonstrações em vídeo e contato por e-mail. A identidade original foi restaurada: fundo creme, azul-petróleo, detalhes terracota, títulos com serifa e o retrato com elementos de órbita. Os botões continuam sem bordas. A navegação organizada e as histórias do diário foram mantidas.
+22 projetos, 6 experiências profissionais, bolsas e premiações, páginas individuais, busca e filtros, links para demonstrações em vídeo e contato por e-mail. A identidade original foi restaurada: fundo creme, azul-petróleo, detalhes terracota, títulos com serifa e o retrato com elementos de órbita. Os botões continuam sem bordas. A navegação organizada e as histórias do diário foram mantidas.
 
 A página inicial abre o diário, com nove histórias em primeira pessoa e fotos pessoais. O relato do BRAFITEC acompanha a seleção, o francês e a vida em Grenoble. Os álbuns respeitam a proporção de cada foto e permitem ampliar as imagens.
 
 **Para editar histórias ou publicar outras: [guia do diário](content/journal/README.md).** Textos e legendas ficam em arquivos JSON; rascunhos com `published: false` não aparecem no site.
 
-A navegação tem seis páginas: diário, projetos, experiência, sobre mim, conquistas e contato. Todas ficam visíveis também no celular. O catálogo mostra os 21 projetos; busca e filtros são preservados ao abrir um trabalho, voltar aos resultados ou mudar o idioma.
+A navegação tem seis páginas: diário, projetos, experiência, sobre mim, conquistas e contato. Todas ficam visíveis também no celular. O catálogo mostra os 22 projetos; busca e filtros são preservados ao abrir um trabalho, voltar aos resultados ou mudar o idioma.
 
 ![Prévia do novo portfólio em desktop](docs/preview-desktop.png)
 
@@ -54,11 +54,11 @@ Em Linux, se o Chromium informar falta de bibliotecas do sistema, execute `npx p
 
 O site está publicado em **https://raiagues.github.io/Emilly-s-Website/**, com GitHub Pages configurado para GitHub Actions. O repositório aponta para `git@github.com:Raiagues/Emilly-s-Website.git`. O fluxo `.github/workflows/pages.yml` está preparado para publicar a branch `main`.
 
-1. Confira as alterações e envie os arquivos, incluindo os dois PDFs da raiz:
+1. Confira as alterações e envie somente os arquivos da implementação. ZIPs de referência, currículos e fotos não selecionadas não entram na publicação:
 
    ```bash
    git status
-   git add .
+   git add <arquivos-da-implementacao>
    git commit -m "Redesign multilingual portfolio and configure GitHub Pages"
    git push origin main
    ```
@@ -98,6 +98,8 @@ Requer **Python 3.12 ou mais recente** para gerar as páginas. O site publicado 
 | `content/damas-espaciais/` | Design e textos do projeto Damas Espaciais nos quatro idiomas |
 | `scripts/damas_redesign.py`, `style/damas.css`, `src/damas.js` | Página, tabuleiro jogável, inspetor e comparações de Damas Espaciais |
 | `src/damas-engine/` | Motor original em C, licença e módulo WebAssembly reproduzível |
+| `content/wing-box/` | Design, resultados originais e textos de Wing box analysis nos quatro idiomas |
+| `scripts/wingbox_redesign.py`, `style/wingbox.css`, `src/wingbox.js` | Página da asa, vistas 3D e comparações de cargas, torção e flambagem |
 | `scripts/build.py` | Estrutura das páginas e configuração de publicação |
 | `style/style.css` | Cores, tipografia, botões e layout responsivo |
 | `scripts/artwork.py` | Gerador de ilustrações da versão anterior, preservado para consulta |

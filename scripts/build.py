@@ -25,6 +25,7 @@ ENTITIES = J['load_entities'](ROOT, POSTS)
 INNER = runpy.run_path(str(ROOT / 'scripts/inner_redesign.py'))
 CERN = runpy.run_path(str(ROOT / 'scripts/cern_redesign.py'))
 DAMAS = runpy.run_path(str(ROOT / 'scripts/damas_redesign.py'))
+WINGBOX = runpy.run_path(str(ROOT / 'scripts/wingbox_redesign.py'))
 DESIGN = runpy.run_path(str(ROOT / 'scripts/redesign_components.py'))
 JUI = json.loads((ROOT / 'content/journal/ui.json').read_text())
 UI['home'] = JUI['home']
@@ -74,6 +75,7 @@ def layout(path, lang, title, description, body, active='home'):
     redesigned_home = path == 'index.html'
     cern_report = path == 'pages/experience/cern.html'
     damas_project = path == 'pages/projects/damas-espaciais.html'
+    wingbox_project = path == 'pages/projects/wing-box-analysis.html'
     design = DESIGN['Design'](globals(), lang, path)
     return f'''<!doctype html>
 <html lang="{lang}">
@@ -93,7 +95,7 @@ def layout(path, lang, title, description, body, active='home'):
 {f'<link rel="stylesheet" href="{asset("style/journal-design.css")}">' if not cern_report and (post or path == 'journal.html' or path.startswith('pages/')) else ''}
   <link rel="stylesheet" href="{asset('style/components.css')}">
 {f'<link rel="stylesheet" href="{asset("style/work.css")}">' if not cern_report and (path in ('projects.html','experience.html','recognition.html','contact.html') or path.startswith('pages/')) else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/cern.css")}">' if cern_report else ''}
-  <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>{chr(10) + f'<link rel="stylesheet" href="{asset("style/damas.css")}"><script src="{asset("src/damas.js")}" defer></script>' if damas_project else ''}
+  <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>{chr(10) + f'<link rel="stylesheet" href="{asset("style/damas.css")}"><script src="{asset("src/damas.js")}" defer></script>' if damas_project else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/wingbox.css")}"><script src="{asset("src/wingbox.js")}" defer></script>' if wingbox_project else ''}
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
   <script src="{asset('src/redesign.js')}" defer></script>
 {f'<script src="{asset("src/projects.js")}" defer></script>' if path in ('projects.html','experience.html') else ''}
@@ -183,6 +185,8 @@ def contact(lang):
     return layout('contact.html', lang, t('contact'), t('contact_body'), body, 'contact')
 
 def project(p, lang):
+    if p['id'] == 'wing-box-analysis':
+        return layout(detail(p), lang, p['title'][lang], p['summary'][lang], WINGBOX['render'](globals(), p, lang), 'projects')
     if p['id'] == 'damas-espaciais':
         return layout(detail(p), lang, p['title'][lang], p['summary'][lang], DAMAS['render'](globals(), p, lang), 'projects')
     if p['id'] == 'cern':

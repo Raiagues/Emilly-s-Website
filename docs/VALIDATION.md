@@ -1,5 +1,13 @@
 # Validação do diário e da execução local
 
+## Wing box analysis — 25/10/2026
+
+- Projeto integrado a partir do ZIP fornecido, mantendo o cartão, os seis capítulos, o CAD, os gráficos e a composição visual. EN/PT/FR/ES, categoria Estruturas, cabeçalho persistente, filtro preservado no retorno e links reais para repositório, laboratório e projetos vizinhos.
+- Duas vistas 3D com rotação, zoom, pinça e teclado; cinco condições de voo sincronizadas com quinze comparações de cargas; seis geometrias de torção; nove configurações de flambagem. Valores e vetores originais documentados em `content/wing-box/README.md`.
+- Revisão visual em desktop e celular. Sem sobreposição dos controles ou rolagem horizontal entre 320 e 1440 px. Verificação automatizada WCAG A/AA nos quatro idiomas, inclusive estados de falha de flambagem; movimento reduzido e pausa do fluxo; resultados acessíveis sem JavaScript.
+- `npm run build` e `npm run check`: 179 páginas válidas, com 22 projetos, seis experiências e nove histórias nos quatro idiomas. `BROWSER_EXECUTABLE=/usr/bin/google-chrome npm test`: **59 testes aprovados**, sem falhas, incluindo os sete novos testes da asa. `git diff --check` sem erros.
+- ZIP arquivado em `local-reference/designs/`, fora do Git e da publicação. Fotos pessoais não selecionadas preservadas, sem incluí-las na alteração.
+
 ## Publicação e revisão editorial — 25/10/2026
 
 Os nove relatos, suas chamadas e legendas foram revisados em EN, PT, FR e ES. A redação prioriza contribuições, conquistas e dificuldades concretas dos processos, em primeira pessoa e sem dramatização. Foram retirados detalhes íntimos, comparações de remuneração e circunstâncias privadas de terceiros. A biografia da home e de Sobre mim segue o mesmo tom.
