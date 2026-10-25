@@ -123,21 +123,21 @@ def render(b, lang):
         return f'<div class="art {cls}" aria-hidden="true">{illustration}</div>'
 
     design = b['DESIGN']['Design'](b, lang, 'index.html')
-    nav_sections = [('experience', t('experience')), ('current-work', t('projects')), ('my-story', design.u('about_nav')), ('journal', jt('home')), ('say-hello', t('contact'))]
-    nav = ''.join(f'<a href="#{key}">{label}</a>' for key, label in nav_sections)
+    nav_sections = [('top', design.u('home_nav')), ('experience', t('experience')), ('current-work', t('projects')), ('my-story', design.u('about_nav')), ('recognition', t('recognition')), ('journal', jt('home')), ('say-hello', t('contact'))]
+    nav = ''.join(f'<a href="#{key}" {"aria-current=\"location\"" if key == "top" else ""}>{label}</a>' for key, label in nav_sections)
     top = f'''<header class="home-header"><div class="airmail-line" aria-hidden="true"></div>
-<div class="wrap navigation"><a class="brand" href="{link('index.html')}" aria-label="{design.u('home')}"><span class="brand-icon">{rocket}</span></a><nav id="main-nav" aria-label="{t('menu')}">{nav}</nav>{design.language_selector()}</div></header>'''
+<div class="wrap navigation"><a class="brand" href="#top"><span class="brand-icon">{rocket}</span><span>Emilly Rodrigues<small>{design.u('portfolio')}</small></span></a><nav id="main-nav" aria-label="{t('menu')}">{nav}</nav>{design.language_selector()}</div></header>'''
 
-    guide_art = ['experience', 'projects', 'about', 'diary', 'contact']
+    guide_art = ['experience', 'projects', 'about', 'awards', 'diary', 'contact']
     launch = (b['ROOT'] / 'img/redesign/launch.svg').read_text()
-    hero = f'''<section class="hero" aria-labelledby="hero-title"><div class="hero-scrapbook"><figure class="polaroid portrait"><div class="portrait-paper"><img src="{r('img/portrait-lab.jpeg')}" alt="{t('portrait')}" width="1150" height="1280" fetchpriority="high"></div><figcaption>{u('portrait_caption')}</figcaption></figure><aside class="guide"><span class="mono">{u('guide')}</span><nav aria-label="{u('guide')}">{''.join(f'<a href="#{key}">{drawing("guide-" + name)}{label}</a>' for (key, label), name in zip(nav_sections, guide_art))}</nav></aside></div>
-<div class="hero-copy"><h1 id="hero-title"><span>Emilly</span> <strong>Rodrigues</strong></h1><p class="hero-description">{t('hero_body')}</p><div class="actions">{button(t('explore'), '#current-work', True)}{button(jt('home'), '#journal')}</div></div>
+    hero = f'''<section class="hero" aria-labelledby="hero-title"><div class="hero-scrapbook"><figure class="polaroid portrait"><div class="portrait-paper"><img src="{r('img/portrait-lab.jpeg')}" alt="{t('portrait')}" width="1150" height="1280" fetchpriority="high"></div><figcaption>{u('portrait_caption')}</figcaption></figure><aside class="guide"><span class="mono">{u('guide')}</span><nav aria-label="{u('guide')}">{''.join(f'<a href="#{key}">{drawing("guide-" + name)}{label}</a>' for (key, label), name in zip(nav_sections[1:], guide_art))}</nav></aside></div>
+<div class="hero-copy"><h1 id="hero-title"><span>Emilly</span> <strong>Rodrigues</strong><small>{design.u("portfolio")}</small></h1><p class="hero-description">{t('hero_body')}</p><div class="actions">{button(t('explore'), '#current-work', True)}{button(jt('home'), '#journal')}</div></div>
 <div class="hero-launch"><div class="launch-window" aria-hidden="true">{launch}</div><button class="motion-toggle" type="button" data-pause="{u('pause')}" data-play="{u('play')}" aria-pressed="false" hidden>{u('pause')}</button></div></section>'''
 
     stories = []
     for i, post in enumerate(posts[:2]):
         images = [post['photos'][post['cover'][-1]], post['photos'][post['cover'][0]]]
-        stories.append(f'''<article class="story-preview" id="journal-{post['slug']}"><div class="story-preview-copy"><p class="eyebrow">{localized(post['period'])}</p><h3><a href="{link(j['path'](post))}">{localized(post['title'])}</a></h3><p>{localized(post['intro'])}</p><div class="story-preview-actions">{button(jt('read'), link(j['path'](post)), True)}<span class="story-count mono">{i+1:02} / {len(posts):02}</span></div></div><div class="story-photos">{polaroid(images[0], 'photo-main')}{polaroid(images[1], 'photo-small')}</div></article>''')
+        stories.append(f'''<article class="story-preview" id="journal-{post['slug']}"><div class="story-preview-copy"><p class="eyebrow">{localized(post['period'])}</p><h3><a href="{link(j['path'](post))}">{localized(post['title'])}</a></h3><p>{localized(post['subtitle'])}</p><div class="story-preview-actions">{button(jt('read'), link(j['path'](post)), True)}<span class="story-count mono">{i+1:02} / {len(posts):02}</span></div></div><div class="story-photos">{polaroid(images[0], 'photo-main')}{polaroid(images[1], 'photo-small')}</div></article>''')
     diary = f'<section id="journal">{section_heading(jt("home"), button(u("all_stories") + f" · {len(posts)}", link("journal.html")))}{"".join(stories)}</section>'
 
     cards = ''.join(f'''<a class="project-card" href="{link(b['detail'](p))}" data-featured-project="{p['id']}">{item_image(p)}<p class="eyebrow">{t(p['category'])} · {p['date']}</p><h3>{p['title'][lang]}</h3><p>{p['summary'][lang]}</p>{keywords(p['tech'])}<span class="more">{t('case')}{arrow}</span></a>''' for p in selected)
@@ -145,25 +145,31 @@ def render(b, lang):
 
     passes = []
     stops = {'cern': 'CERN · GVA', 'visiona': 'VISIONA · BR', 'cnes': 'CNES · TLS', 'experience_1': 'TIMA · GRENOBLE', 'experience_2': 'ITA · BR', 'experience_3': 'DAFITI · BR'}
-    for i, p in reversed(list(enumerate(experiences))):
+    for i, p in list(reversed(list(enumerate(experiences))))[:3]:
         successor = experiences[i+1] if i+1 < len(experiences) else None
         departure_year = re.sub(r'(\d{4})–\d{2}(\d{2})', r'\1–\2', E(p['date']))
         # Use the next real experience. The newest pass has no invented future stop.
         destination = f'<div><span class="mono">{u("destination")}</span><strong class="next-destination">{E(stops.get(successor["id"], successor["place"]))}</strong></div>' if successor else ''
         passes.append(f'''<a class="boarding-pass" data-experience-id="{p['id']}" data-experience="{p['category']}" href="{link(b['detail'](p))}">{item_image(p)}<div class="pass-copy"><p class="eyebrow">{E(p['place'])}</p><h3>{p['title'][lang].split(' · ', 1)[-1]}</h3><p>{p['summary'][lang]}</p>{keywords(p['tech'][:3])}</div><div class="pass-stub"><div><span class="mono">{u('departure')}</span><strong>{departure_year}</strong></div>{destination}<span class="more">{u('details')}{arrow}</span></div></a>''')
-    categories = list(dict.fromkeys(p['category'] for p in reversed(experiences)))
-    filters = ''.join(f'<button type="button" class="chip" data-experience-filter="{key}" aria-pressed="{str(key == "all").lower()}">{t(key)}</button>' for key in ['all', *categories])
-    experience = f'<section id="experience">{section_heading(t("experience"))}<div class="experience-filters" role="group" aria-label="{t("filter_label")}" hidden>{filters}</div><div class="boarding-passes">{"".join(passes)}</div><div class="section-end">{button(t("all_experience"), link("experience.html"))}</div></section>'
+    experience = f'<section id="experience">{section_heading(t("experience"), button(t("all_experience") + f" · {len(experiences)}", link("experience.html")))}<div class="boarding-passes">{"".join(passes)}</div></section>'
 
     about = f'''<section id="my-story" aria-labelledby="about-title"><div class="envelope"><div class="envelope-sheet"><div class="envelope-copy"><p class="eyebrow">Par avion · {t('about')}</p><h2 id="about-title">{u('personal_title')}</h2><p>{u('personal_body')}</p><div class="letter-lines"><p>{u('from')} · Jaru, Rondônia</p><p>{u('to')} · {u('personal_destination')}</p></div>{button(t('more_about'), link('about.html'))}</div><div class="about-aside"><figure class="portrait-stamp"><div class="portrait-stamp-inner"><div class="portrait-paper"><img src="{r('img/portrait-lab.jpeg')}" alt="{t('portrait')}" width="1150" height="1280" loading="lazy"></div></div></figure>{postmark('JARU · RONDÔNIA · BRASIL', 'PAR AVION')}</div></div></div></section>'''
 
     award_cards = []
+    award_details = [
+        ('Na Prática', ('South Region winner', 'Vencedora da Região Sul', 'Lauréate de la région Sud', 'Ganadora de la Región Sur')),
+        ('Fundação Estudar', ('Merit scholarship', 'Bolsa de mérito', 'Bourse au mérite', 'Beca al mérito')),
+        ('CAPES', ('Dual degree in France', 'Dupla diplomação na França', 'Double diplôme en France', 'Doble titulación en Francia')),
+        ('CERN', ('Summer Student Programme',) * 4),
+    ]
     stamp_art = ['rocket', 'satellite', 'star', 'planet']
     for i, (date, name, description, url) in enumerate(d['AWARDS'][:4]):
+        issuer, distinction = award_details[i]
+        caption = issuer + " · " + distinction[("en", "pt", "fr", "es").index(lang)]
         related = next((post for post in posts if post.get('related_award') == name), None)
         target = url or (link(j['path'](related)) if related else link('recognition.html'))
         external = 'target="_blank" rel="noopener noreferrer"' if url else ''
-        award_cards.append(f'''<a class="award-card" href="{target}" {external}><div class="stamp-holder"><div class="stamp stamp-{i}"><div class="stamp-inner"><span class="stamp-year">{E(date)}</span>{drawing("stamp-" + stamp_art[i])}<span class="stamp-name">{E(name)}</span></div></div>{postmark('EMILLY RODRIGUES', date) if i in (0, 2) else ""}</div><h3>{E(name)}</h3><p>{description[lang]}</p><span class="more">{t('source')}{arrow}</span></a>''')
+        award_cards.append(f'''<a class="award-card" href="{target}" {external}><div class="stamp-holder"><div class="stamp stamp-{i}"><div class="stamp-inner"><span class="stamp-year">{E(date)}</span>{drawing("stamp-" + stamp_art[i])}<span class="stamp-name">{E(name)}</span></div></div>{postmark('EMILLY RODRIGUES', date) if i in (0, 2) else ""}</div><h3>{E(name)}</h3><p>{E(caption)}</p></a>''')
     awards = f'<section id="recognition">{section_heading(t("recognition"), button(u("all_awards"), link("recognition.html")))}<div class="award-grid">{"".join(award_cards)}</div></section>'
 
     media_body = runpy.run_path(str(b['ROOT'] / 'scripts/media_redesign.py'))['render'](b['ROOT'], lang, r, drawing, arrow)

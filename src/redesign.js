@@ -1,16 +1,10 @@
 /* Progressive enhancement for the original prototype interactions. */
 (() => {
-  const languages = document.querySelector('details.languages');
-  if (languages) {
-    document.addEventListener('click', event => {
-      if (!languages.contains(event.target)) languages.open = false;
-    });
-    languages.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && languages.open) {
-        languages.open = false;
-        languages.querySelector('summary').focus();
-      }
-    });
+  const header = document.querySelector('.home-header');
+  if (header && 'ResizeObserver' in window) {
+    const measureHeader = () => document.documentElement.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
+    measureHeader();
+    new ResizeObserver(measureHeader).observe(header);
   }
   document.querySelectorAll('[data-carousel]').forEach(carousel => {
     const items=[...carousel.querySelectorAll('[data-carousel-item]')];

@@ -24,6 +24,8 @@ LABELS = {
  'home': ('Back home','Voltar ao início','Retour à l’accueil','Volver al inicio'),
  'logbook': ('Mission logbook','Diário de missões','Carnet de missions','Bitácora de misiones'),
  'about_nav': ('About','Sobre','À propos','Sobre mí'),
+ 'home_nav': ('Home','Início','Accueil','Inicio'),
+ 'portfolio': ('Portfolio','Portfólio','Portfolio','Portafolio'),
 }
 
 
@@ -69,15 +71,15 @@ class Design:
 
     def language_selector(self):
         locales = [('en','English'),('pt','Português'),('fr','Français'),('es','Español')]
-        name = dict(locales)[self.lang]
-        links = ''.join(f'<a href="{self.r(self.b["loc"](self.path,code))}" lang="{code}" hreflang="{code}" {"aria-current=\"page\"" if code == self.lang else ""}>{label}</a>' for code,label in locales)
-        return f'<details class="languages"><summary aria-label="{self.t("language")}: {name}"><span>{self.lang.upper()}</span><span class="language-chevron" aria-hidden="true">⌄</span></summary><nav class="language-options" aria-label="{self.t("language")}">{links}</nav></details>'
+        links = ''.join(f'<a href="{self.r(self.b["loc"](self.path,code))}" lang="{code}" hreflang="{code}" aria-label="{label}" {"aria-current=\"page\"" if code == self.lang else ""}>{code.upper()}</a>' for code,label in locales)
+        return f'<nav class="languages" aria-label="{self.t("language")}">{links}</nav>'
 
     def header(self, active):
-        current = {'stories': 'home', 'recognition': 'about'}.get(active, active)
-        sections = [('projects','projects.html'),('experience','experience.html'),('about','about.html'),('home','index.html#journal'),('contact','contact.html')]
-        nav=''.join(f'<a href="{self.link(path)}" {"aria-current=\"page\"" if key == current else ""}>{self.u("about_nav") if key == "about" else self.t(key)}</a>' for key,path in sections)
-        return f'<header class="home-header"><div class="airmail-line" aria-hidden="true"></div><div class="wrap navigation"><a class="brand" href="{self.link("index.html")}"><span class="brand-icon">{self.drawing("guide-projects")}</span><span>Emilly Rodrigues</span></a><nav id="main-nav" aria-label="{self.t("menu")}">{nav}</nav>{self.language_selector()}</div></header>'
+        current = 'diary' if active == 'stories' or self.path.startswith('journal/') else active
+        sections = [('home','index.html#top'),('experience','experience.html'),('projects','projects.html'),('about','about.html'),('recognition','recognition.html'),('diary','journal.html'),('contact','contact.html')]
+        labels = {'home': self.u('home_nav'), 'about': self.u('about_nav'), 'diary': self.t('home')}
+        nav=''.join(f'<a href="{self.link(path)}" {"aria-current=\"page\"" if key == current else ""}>{labels[key] if key in labels else self.t(key)}</a>' for key,path in sections)
+        return f'<header class="home-header"><div class="airmail-line" aria-hidden="true"></div><div class="wrap navigation"><a class="brand" href="{self.link("index.html#top")}"><span class="brand-icon">{self.drawing("guide-projects")}</span><span>Emilly Rodrigues<small>{self.u("portfolio")}</small></span></a><nav id="main-nav" aria-label="{self.t("menu")}">{nav}</nav>{self.language_selector()}</div></header>'
 
     def footer(self):
         return f'<footer class="wrap footer"><span>© 2026 Emilly Rodrigues · {self.t("footer_note")}</span><a href="#top">{self.t("top")}{ARROW}</a></footer>'

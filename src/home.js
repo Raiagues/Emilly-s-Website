@@ -1,43 +1,49 @@
 /* Home-only interactions. The generated content remains usable without JS. */
 (() => {
   const header = document.querySelector('.home-header');
-  if (header && 'ResizeObserver' in window) {
-    new ResizeObserver(() => {
-      document.documentElement.style.setProperty('--home-header-height', `${header.getBoundingClientRect().height}px`);
-    }).observe(header);
-  }
   const previousSections = {projects:'projects.html', 'about-me':'about.html', contact:'contact.html'};
   const previous = previousSections[location.hash.slice(1)];
   if (previous) location.replace(new URL(previous, location.href).href);
+  let pendingDestination = '';
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (!event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) pendingDestination = link.hash;
+    });
+  });
+  window.addEventListener('scrollend', () => { pendingDestination = ''; });
+  window.addEventListener('wheel', () => { pendingDestination = ''; }, {passive:true});
+  window.addEventListener('touchmove', () => { pendingDestination = ''; }, {passive:true});
   document.querySelectorAll('.languages a').forEach(link => {
-    link.addEventListener('click', () => { link.hash = location.hash; });
+    link.addEventListener('click', () => {
+      link.hash = pendingDestination || document.querySelector('#main-nav a[aria-current]')?.hash || location.hash;
+    });
   });
   const navigation = [...document.querySelectorAll('#main-nav a')];
   function highlightDestination() {
-    const groups = {'#recognition': '#my-story', '#media': '#journal', '#newsletter': '#journal'};
-    const current = navigation.find(link => link.hash === (groups[location.hash] || location.hash));
+    const edge = (header?.getBoundingClientRect().bottom || 0) + 64;
+    let current = navigation[0];
+    navigation.slice(1).forEach(link => {
+      const section = document.querySelector(link.hash);
+      if (section && section.getBoundingClientRect().top <= edge) current = link;
+    });
+    if (Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight) {
+      current = navigation[navigation.length - 1];
+    }
     navigation.forEach(link => {
       if (link === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
   }
   window.addEventListener('hashchange', highlightDestination);
+  window.addEventListener('resize', highlightDestination);
+  window.addEventListener('load', highlightDestination);
+  let scrollPending = false;
+  window.addEventListener('scroll', () => {
+    if (scrollPending) return;
+    scrollPending = true;
+    requestAnimationFrame(() => { highlightDestination(); scrollPending = false; });
+  }, {passive:true});
   highlightDestination();
-  const filters = document.querySelector('.experience-filters');
-  if (filters) {
-    filters.hidden = false;
-    filters.addEventListener('click', event => {
-      const button = event.target.closest('[data-experience-filter]');
-      if (!button) return;
-      const selected = button.dataset.experienceFilter;
-      filters.querySelectorAll('button').forEach(item => {
-        item.setAttribute('aria-pressed', String(item === button));
-      });
-      document.querySelectorAll('[data-experience]').forEach(pass => {
-        pass.hidden = selected !== 'all' && pass.dataset.experience !== selected;
-      });
-    });
-  }
 
   const motion = document.querySelector('.motion-toggle');
   if (motion) {

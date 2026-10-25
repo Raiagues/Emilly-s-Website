@@ -1,5 +1,17 @@
 # Redesign do portfólio
 
+## Capa, navegação persistente e seções compactas — 25/10/2026
+
+A capa ocupa uma tela própria no computador, sem antecipar o título de Experiência. A tipografia de pôster ganhou a linha Portfólio, e a apresentação usa o texto solicitado sobre software de voo, processadores e FPGAs, traduzido nos quatro idiomas. Foto, post-it, cores, botões e lançamento animado permanecem. Telas de notebook recebem espaçamentos menores para manter todos os elementos da capa visíveis.
+
+O cabeçalho permanece no topo durante a navegação, inclusive nas páginas internas. A marca reúne foguete, nome e Portfólio; o menu tem Início, Experiência, Projetos, Sobre, Conquistas, Diário e Contato, com a seção atual em laranja. Conquistas também voltou ao Guia de voo. EN, PT, FR e ES ficam visíveis em um seletor segmentado. A troca de idioma conserva a seção escolhida, inclusive durante a rolagem animada.
+
+A home apresenta as três experiências mais recentes, sem filtros, e o botão junto ao título informa o total de seis experiências. As quatro conquistas mantêm seus selos, acompanhados apenas do nome e de uma linha com instituição e reconhecimento. O botão Consultar fonte foi retirado. Linhas e espaçamentos maiores delimitam as seções.
+
+As duas chamadas do Diário alternam texto e fotografias. Resumos, fotos e espaçamentos foram compactados para as duas histórias caberem juntas abaixo do cabeçalho no computador; no celular, o conteúdo continua empilhado e legível. Os relatos completos e a página com todas as histórias permanecem disponíveis.
+
+Validação: build e verificador aprovados para 171 HTMLs. Os 36 cenários de navegador foram cobertos, com reexecução aprovada dos três cenários afetados pelos ajustes finais. Foram conferidos teclado, acessibilidade automatizada, navegação sem JavaScript, quatro idiomas e ausência de rolagem horizontal. A capa e as duas histórias foram verificadas em 1920 × 960, 1440 × 900 e 1366 × 768. Os registros abaixo descrevem versões anteriores.
+
 ## Restauração visual e nova organização — 25/10/2026
 
 A abertura voltou ao modelo ilustrado: foto em polaroid com fita, Guia de voo em post-it, nome em tipografia de pôster, botões e planeta com lançamento animado. A paleta original de verde-petróleo, verde-água, pêssego, lilás e terracota foi recuperada. A animação tem controle de pausa e respeita movimento reduzido. A foto indicada pela proprietária, `fotominha.jpeg`, foi incorporada como `img/portrait-lab.jpeg`.

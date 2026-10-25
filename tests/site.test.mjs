@@ -37,9 +37,7 @@ async function visit(path='', options={}) {
   return {page,errors};
 }
 async function chooseLanguage(page, lang) {
-  const selector=page.locator('details.languages');
-  if (!await selector.evaluate(el=>el.open)) await selector.locator('summary').click();
-  await selector.locator(`a[lang=${lang}]`).click();
+  await page.locator(`.languages a[lang=${lang}]`).click();
 }
 async function openArchive(page) {
   if (!new URL(page.url()).pathname.endsWith('/journal.html')) await page.locator('#journal .section-heading a[href="journal.html"]').click();
@@ -113,17 +111,17 @@ test('language switching preserves the case study and section links point to ded
   await page.goto(base+'recognition.html');
   await chooseLanguage(page, 'pt');
   assert.ok(page.url().endsWith('/pt/recognition.html'));
-  await expect(page.locator('#main-nav a[aria-current]')).toHaveText('Sobre');
+  await expect(page.locator('#main-nav a[aria-current]')).toHaveText('Conquistas');
   assert.deepEqual(errors,[]);
   await page.close();
 });
-test('five-item navigation keeps every destination reachable across languages and viewport sizes', async () => {
+test('persistent seven-item navigation keeps every destination reachable across languages and viewport sizes', async () => {
   for(const lang of ['','pt/','fr/','es/']) {
     const {page,errors}=await visit(lang,{viewport:{width:390,height:844}});
     for(const file of ['index.html','projects.html','experience.html','about.html','recognition.html','journal.html','contact.html']) {
       await page.goto(base+lang+file);
-      await expect(page.locator('#main-nav a:visible')).toHaveCount(5);
-      await expect(page.locator('#main-nav a[aria-current]')).toHaveCount(file==='index.html'?0:1);
+      await expect(page.locator('#main-nav a:visible')).toHaveCount(7);
+      await expect(page.locator('#main-nav a[aria-current]')).toHaveCount(1);
       for(const width of [360,390,768,1024,1440]) {
         await page.setViewportSize({width,height:900});
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang}${file} overflows at ${width}px`);
@@ -174,7 +172,7 @@ test('clipboard confirms success and explains permission failure', async () => {
 });
 test('navigation, all projects and contact remain available without JavaScript', async () => {
   const {page}=await visit('',{javaScriptEnabled:false,viewport:{width:390,height:844}});
-  await expect(page.locator('#main-nav a:visible')).toHaveCount(5);
+  await expect(page.locator('#main-nav a:visible')).toHaveCount(7);
   await page.locator('.project-deck').click();
   await expect(page.locator('[data-project]:visible')).toHaveCount(20);
   await expect(page.locator('[data-project-tools]')).not.toBeVisible();
@@ -328,7 +326,7 @@ test('home redesign loads even with a previous stylesheet cached', async () => {
     assert.equal(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(244, 238, 226)');
     assert.equal(await page.locator('.hero').evaluate(el=>getComputedStyle(el).display),'grid');
     assert.match(await page.locator('h1').evaluate(el=>getComputedStyle(el).fontFamily),/Big Shoulders Display/);
-    await expect(page.locator('.hero h1')).toHaveText('Emilly Rodrigues');
+    await expect(page.locator('.hero h1')).toHaveText('Emilly RodriguesPortfólio');
     await expect(page.locator('.hero-launch')).toHaveCount(1);
     await page.reload();
   }
@@ -366,7 +364,7 @@ test('US diary is reachable from the feed and award, with translations and all 1
     assert.ok(await image.evaluate(img=>img.naturalWidth>0));
   }
   await page.locator('#main-nav a[href="../about.html"]').click();
-  await page.locator('a[href="recognition.html"]').click();
+  await page.locator('main a[href="recognition.html"]').click();
   await page.locator('.award a[href="journal/estados-unidos.html"]').click();
   await expect(page.locator('h1')).toHaveText('Minha primeira vez nos Estados Unidos');
   await page.locator('[data-gallery]').first().click();
@@ -564,13 +562,13 @@ test('home preview follows the new section order with official content in four l
     assert.deepEqual(await page.locator('main>section[id]').evaluateAll(nodes=>nodes.map(n=>n.id)),['experience','current-work','my-story','recognition','media','journal','newsletter','say-hello']);
     await expect(page.locator('.story-preview')).toHaveCount(2);
     await expect(page.locator('.story-preview').first().locator('h3')).toHaveText(latest.title[lang]);
-    await expect(page.locator('.story-preview').first().locator('.story-preview-copy>p:not(.eyebrow)')).toHaveText(latest.intro[lang]);
+    await expect(page.locator('.story-preview').first().locator('.story-preview-copy>p:not(.eyebrow)')).toHaveText(latest.subtitle[lang]);
     await expect(page.locator('[data-featured-project]')).toHaveCount(3);
     await expect(page.locator('#current-work [data-filter]')).toHaveCount(0);
     await expect(page.locator('.project-deck')).toHaveAttribute('href','projects.html');
-    await expect(page.locator('.boarding-pass')).toHaveCount(6);
+    await expect(page.locator('.boarding-pass')).toHaveCount(3);
     await expect(page.locator('.boarding-pass img, #current-work img')).toHaveCount(0);
-    await expect(page.locator('.boarding-pass svg.illustration')).toHaveCount(6);
+    await expect(page.locator('.boarding-pass svg.illustration')).toHaveCount(3);
     await expect(page.locator('#my-story .letter-lines')).toContainText('Jaru, Rondônia');
     await expect(page.locator('#my-story .letter-lines p')).toHaveCount(2);
     await expect(page.locator('.award-card')).toHaveCount(4);
@@ -592,16 +590,17 @@ test('home preview follows the new section order with official content in four l
   await page.close();
 });
 
-test('home experience filters, real chronological destinations and inactive newsletter behave honestly', async () => {
+test('three featured experiences link to the full list and the inactive newsletter behaves honestly', async () => {
   const {page,errors}=await visit('');
   const passes=page.locator('.boarding-pass');
   await expect(passes.first().locator('.next-destination')).toHaveCount(0);
   await expect(passes.nth(1).locator('.next-destination')).toHaveText('CERN · GVA');
   await expect(passes.nth(2).locator('.next-destination')).toHaveText('VISIONA · BR');
-  await page.locator('[data-experience-filter=space]').click();
-  await expect(page.locator('.boarding-pass:visible')).toHaveCount(2);
-  await page.locator('[data-experience-filter=all]').click();
-  await expect(page.locator('.boarding-pass:visible')).toHaveCount(6);
+  await expect(page.locator('.experience-filters,[data-experience-filter]')).toHaveCount(0);
+  await expect(page.locator('#experience .section-heading .btn')).toContainText('6');
+  await expect(page.locator('#experience .section-heading .btn')).toHaveAttribute('href','experience.html');
+  await expect(page.locator('.award-card .more')).toHaveCount(0);
+  await expect(page.locator('.boarding-pass:visible')).toHaveCount(3);
   await expect(page.locator('#newsletter input[type=checkbox]')).toHaveCount(3);
   await expect(page.locator('#newsletter input[type=radio]')).toHaveCount(2);
   await page.locator('#newsletter input[value="6"]').check();
@@ -651,7 +650,7 @@ test('personal envelope and illustrated media retain magazines, interviews and n
 test('home restores the illustrated opening, original colours and controllable motion', async () => {
   const {page,errors}=await visit('pt/',{reducedMotion:'no-preference'});
   await page.evaluate(()=>document.fonts.ready);
-  await expect(page.locator('.hero h1')).toHaveText('Emilly Rodrigues');
+  await expect(page.locator('.hero h1')).toHaveText('Emilly RodriguesPortfólio');
   await expect(page.locator('.hero .btn')).toHaveCount(2);
   await expect(page.locator('.guide')).toBeVisible();
   await expect(page.locator('.hero-launch .launch-window>svg')).toHaveCount(1);
@@ -668,14 +667,9 @@ test('home restores the illustrated opening, original colours and controllable m
     await page.setViewportSize({width,height:900});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`Opening overflow at ${width}`);
   }
-  const selector=page.locator('details.languages');
-  await selector.locator('summary').focus();
-  await page.keyboard.press('Enter');
-  await expect(selector.locator('a')).toHaveCount(4);
-  await expect(selector.locator('a[lang=fr]')).toBeVisible();
-  await page.keyboard.press('Escape');
-  await expect(selector.locator('a[lang=fr]')).not.toBeVisible();
-  await expect(selector.locator('summary')).toBeFocused();
+  await expect(page.locator('.languages a:visible')).toHaveCount(4);
+  await page.locator('.languages a[lang=fr]').focus();
+  await expect(page.locator('.languages a[lang=fr]')).toBeFocused();
   await page.locator('#main-nav a[href="#journal"]').click();
   await chooseLanguage(page, 'fr');
   await expect(page.locator('html')).toHaveAttribute('lang','fr');
@@ -683,6 +677,45 @@ test('home restores the illustrated opening, original colours and controllable m
   await page.emulateMedia({reducedMotion:'reduce'});
   assert.equal(await page.evaluate(()=>document.getAnimations().length),0);
   assert.deepEqual(errors,[]);
+  await page.close();
+});
+
+test('cover stays self-contained and both alternating stories fit below the persistent header', async () => {
+  const {page}=await visit('pt/',{reducedMotion:'reduce'});
+  for (const [width,height] of [[1920,960],[1440,900],[1366,768]]) {
+    await page.setViewportSize({width,height});
+    await page.goto(base+'pt/');
+    await page.evaluate(()=>document.fonts.ready);
+    await expect(page.locator('#main-nav a[href="#top"]')).toHaveAttribute('aria-current','location');
+    assert.ok(await page.locator('#experience').evaluate(el=>el.getBoundingClientRect().top>=innerHeight));
+    for (const panel of await page.locator('.hero-scrapbook,.hero-copy,.hero-launch').all()) {
+      assert.ok(await panel.evaluate(el=>el.getBoundingClientRect().bottom<=innerHeight),`Cover fits at ${width}×${height}`);
+    }
+    for (const img of await page.locator('#journal img').all()) {
+      await img.scrollIntoViewIfNeeded();
+      await img.evaluate(el=>el.decode());
+    }
+    await page.locator('#main-nav a[href="#journal"]').click();
+    await expect(page.locator('#main-nav a[href="#journal"]')).toHaveAttribute('aria-current','location');
+    const bounds=await page.evaluate(()=>({
+      header:document.querySelector('.home-header').getBoundingClientRect().toJSON(),
+      diary:document.querySelector('#journal').getBoundingClientRect().toJSON(),
+      entries:[...document.querySelectorAll('.story-preview')].map(el=>({
+        row:el.getBoundingClientRect().toJSON(),
+        copy:el.querySelector('.story-preview-copy').getBoundingClientRect().toJSON(),
+        photos:el.querySelector('.story-photos').getBoundingClientRect().toJSON(),
+      })),
+    }));
+    assert.ok(Math.abs(bounds.header.top)<1,'Header stays at the top');
+    assert.ok(bounds.diary.top>=bounds.header.bottom,`Diary heading is clear at ${width}`);
+    assert.ok(bounds.entries[1].row.bottom<=height,`Both stories fit at ${width}×${height}`);
+    assert.ok(bounds.entries[0].copy.left<bounds.entries[0].photos.left);
+    assert.ok(bounds.entries[1].copy.left>bounds.entries[1].photos.left);
+    await page.locator('#main-nav a[href="#say-hello"]').click();
+    await expect(page.locator('#main-nav a[href="#say-hello"]')).toHaveAttribute('aria-current','location');
+    await page.locator('#main-nav a[href="#top"]').click();
+    await expect(page.locator('#main-nav a[href="#top"]')).toHaveAttribute('aria-current','location');
+  }
   await page.close();
 });
 
@@ -838,7 +871,7 @@ test('separate diary archive and project deck work without JavaScript', async ()
   assert.ok(page.url().endsWith('/fr/journal.html'));
   await expect(page.locator('.story-archive>ol>li>a:visible')).toHaveCount(9);
   await page.locator('.inner-breadcrumb a').click();
-  await expect(page.locator('.boarding-pass:visible')).toHaveCount(6);
+  await expect(page.locator('.boarding-pass:visible')).toHaveCount(3);
   await page.locator('.project-deck').click();
   await expect(page.locator('[data-project]')).toHaveCount(20);
   await page.close();
