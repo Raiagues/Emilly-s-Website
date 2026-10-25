@@ -27,10 +27,10 @@
     "es": "La vuelta a Brasil, el trabajo con el equipo y el contacto con la integración y las pruebas de satélites."
   },
   "intro": {
-    "en": "After returning from France, I joined Visiona to work on flight software. The internship gave me a closer view of Brazil’s space industry and expanded my interest in systems engineering, integration and testing.",
-    "pt": "Depois de voltar da França, entrei na Visiona para trabalhar com software de voo. O estágio me aproximou da indústria espacial brasileira e ampliou meu interesse por engenharia de sistemas, integração e testes.",
-    "fr": "Après mon retour de France, j’ai rejoint Visiona pour travailler sur le logiciel de vol. Le stage m’a rapprochée de l’industrie spatiale brésilienne et a renforcé mon intérêt pour l’ingénierie système, l’intégration et les essais.",
-    "es": "Después de volver de Francia, entré en Visiona para trabajar en software de vuelo. Las prácticas me acercaron a la industria espacial brasileña y ampliaron mi interés por la ingeniería de sistemas, la integración y las pruebas."
+    "en": "I joined Visiona just after returning to Brazil from France. I arrived with everything I had learned abroad, but there was still so much I didn’t know about the space industry in my own country. That internship changed the way I saw it, and helped me understand what I enjoyed doing as an engineer.",
+    "pt": "Entrei na Visiona logo depois de voltar da França para o Brasil. Cheguei com tudo o que tinha aprendido lá fora, mas ainda havia muita coisa que eu não conhecia sobre a indústria espacial do meu próprio país. Esse estágio mudou a forma como eu enxergava isso e me ajudou a entender o que eu gostava de fazer como engenheira.",
+    "fr": "J’ai rejoint Visiona juste après mon retour de France au Brésil. J’arrivais avec tout ce que j’avais appris à l’étranger, mais je connaissais encore mal l’industrie spatiale de mon propre pays. Ce stage a changé mon regard et m’a aidée à comprendre ce que j’aimais faire en tant qu’ingénieure.",
+    "es": "Entré en Visiona justo después de volver de Francia a Brasil. Llegué con todo lo que había aprendido fuera, pero todavía desconocía muchas cosas de la industria espacial de mi propio país. Esas prácticas cambiaron mi forma de verla y me ayudaron a entender qué me gustaba hacer como ingeniera."
   },
   "cover": [
     "equipe",
@@ -61,10 +61,16 @@
       },
       "paragraphs": [
         {
-          "en": "I brought experience in embedded systems and satellite software from France. Adapting to the work in Brazil also meant becoming familiar with technical terminology in Portuguese after studying and working mainly in French and English.",
-          "pt": "Trouxe da França experiência em sistemas embarcados e software de satélites. A adaptação ao trabalho no Brasil também passou pela terminologia técnica em português, depois de estudar e trabalhar principalmente em francês e inglês.",
-          "fr": "Je revenais de France avec une expérience en systèmes embarqués et en logiciel pour satellites. L’adaptation au travail au Brésil passait aussi par la terminologie technique en portugais, après des études et un travail surtout en français et en anglais.",
-          "es": "Traje de Francia experiencia en sistemas embebidos y software de satélites. Adaptarme al trabajo en Brasil también implicó familiarizarme con la terminología técnica en portugués, después de estudiar y trabajar principalmente en francés e inglés."
+          "en": "The interview was in Portuguese, of course. But I had just come back from spending my days speaking French or English. My head hadn’t quite switched languages yet.",
+          "pt": "A entrevista foi em português, claro. Só que eu tinha acabado de voltar de uma rotina em que falava francês ou inglês o dia inteiro. Minha cabeça ainda não tinha trocado de idioma.",
+          "fr": "L’entretien était en portugais, évidemment. Mais je revenais d’une période où je parlais français ou anglais toute la journée. Ma tête n’avait pas encore changé de langue.",
+          "es": "La entrevista fue en portugués, claro. Pero acababa de volver de una rutina en la que hablaba francés o inglés todo el día. Mi cabeza todavía no había cambiado de idioma."
+        },
+        {
+          "en": "Much of what I knew about embedded systems and working with satellites, I had learned in France. Sometimes I knew exactly what I wanted to explain, but the technical term would only come to me in French. It was strange to be back in my own country, trying to find words in my own language.",
+          "pt": "Grande parte do que eu sabia sobre sistemas embarcados e trabalho com satélites, eu tinha aprendido na França. Às vezes, eu sabia exatamente o que queria explicar, mas o termo técnico só vinha em francês. Era estranho estar de volta ao meu país e precisar procurar as palavras na minha própria língua.",
+          "fr": "Une grande partie de mes connaissances en systèmes embarqués et en satellites, je l’avais acquise en France. Parfois, je savais exactement ce que je voulais expliquer, mais le terme technique ne me venait qu’en français. C’était étrange de rentrer dans mon pays et de chercher mes mots dans ma propre langue.",
+          "es": "Gran parte de lo que sabía sobre sistemas embebidos y trabajo con satélites lo había aprendido en Francia. A veces sabía exactamente qué quería explicar, pero el término técnico solo me salía en francés. Era extraño estar de vuelta en mi país y tener que buscar las palabras en mi propio idioma."
         }
       ],
       "photos": [],
@@ -118,10 +124,10 @@
       },
       "paragraphs": [
         {
-          "en": "I had already worked on a Brazilian satellite project, but at Visiona I got to see more of the industry’s day-to-day work. Talking with the team helped me understand how the company develops and integrates its systems.",
-          "pt": "Eu já tinha trabalhado em um projeto de satélite brasileiro, mas na Visiona conheci melhor o dia a dia da indústria. Conversar com a equipe me ajudou a entender como a empresa desenvolve e integra seus sistemas.",
-          "fr": "J’avais déjà travaillé sur un projet de satellite brésilien, mais chez Visiona j’ai mieux découvert le quotidien de l’industrie. Les échanges avec l’équipe m’ont aidée à comprendre comment l’entreprise développe et intègre ses systèmes.",
-          "es": "Ya había trabajado en un proyecto de satélite brasileño, pero en Visiona conocí mejor el día a día de la industria. Hablar con el equipo me ayudó a entender cómo la empresa desarrolla e integra sus sistemas."
+          "en": "I had already worked on a Brazilian satellite project, but I hadn’t seen this side of the industry from within. At Visiona, I met people with extraordinary technical knowledge. Seeing what that team could build made me reconsider assumptions I hadn’t even realised I carried about technology in Brazil.",
+          "pt": "Eu já tinha trabalhado em um projeto de satélite brasileiro, mas ainda não tinha visto esse lado da indústria por dentro. Na Visiona, encontrei pessoas com uma capacidade técnica enorme. Ver o que aquela equipe conseguia construir me fez rever ideias que eu nem percebia que carregava sobre a tecnologia no Brasil.",
+          "fr": "J’avais déjà travaillé sur un projet de satellite brésilien, mais je n’avais pas encore découvert cette facette de l’industrie de l’intérieur. Chez Visiona, j’ai rencontré des personnes aux compétences techniques extraordinaires. Voir ce que cette équipe pouvait construire m’a fait remettre en question des idées que je portais, parfois sans m’en rendre compte, sur la technologie au Brésil.",
+          "es": "Ya había trabajado en un proyecto de satélite brasileño, pero todavía no había visto ese lado de la industria desde dentro. En Visiona encontré personas con una capacidad técnica enorme. Ver lo que ese equipo podía construir me hizo revisar ideas que ni siquiera sabía que tenía sobre la tecnología en Brasil."
         },
         {
           "en": "One milestone in that history was VCUB1, launched in 2023. A pioneering Earth-observation and data-collection nanosatellite designed by Brazilian industry.",
@@ -174,16 +180,22 @@
       },
       "paragraphs": [
         {
-          "en": "Alongside flight software, I learned about systems engineering, integration and satellite operations. I became particularly interested in checking how different parts interact and how a problem in one can affect the others.",
-          "pt": "Além do software de voo, aprendi sobre engenharia de sistemas, integração e operação de satélites. Passei a me interessar especialmente por verificar como as partes interagem e como um problema em uma delas pode afetar as demais.",
-          "fr": "En parallèle du logiciel de vol, j’ai découvert l’ingénierie système, l’intégration et les opérations des satellites. Je me suis particulièrement intéressée aux interactions entre les éléments et aux effets d’un problème sur l’ensemble.",
-          "es": "Además del software de vuelo, aprendí sobre ingeniería de sistemas, integración y operación de satélites. Me interesó especialmente comprobar cómo interactúan las partes y cómo un problema en una de ellas puede afectar a las demás."
+          "en": "I worked on flight software, but I also learned a lot about systems engineering, integration and satellite operations. I started becoming interested in how everything connected.",
+          "pt": "Eu trabalhava com software de voo, mas também aprendi muito sobre engenharia de sistemas, integração e operação de satélites. Comecei a me interessar cada vez mais por como tudo se conectava.",
+          "fr": "Je travaillais sur le logiciel de vol, mais j’ai aussi beaucoup appris en ingénierie système, en intégration et en opérations satellitaires. Je m’intéressais de plus en plus à la manière dont tout s’articulait.",
+          "es": "Trabajaba con software de vuelo, pero también aprendí mucho sobre ingeniería de sistemas, integración y operaciones de satélites. Cada vez me interesaba más cómo se conectaba todo."
         },
         {
-          "en": "Testing scenarios, identifying faults and questioning assumptions became parts of the work I especially enjoyed. The internship helped me recognise that interest through practice.",
-          "pt": "Testar cenários, identificar falhas e questionar hipóteses se tornaram partes do trabalho de que eu gostava especialmente. O estágio me ajudou a reconhecer esse interesse na prática.",
-          "fr": "Tester des scénarios, identifier des défauts et questionner les hypothèses sont devenus des aspects du travail que j’appréciais particulièrement. Le stage m’a permis de reconnaître cet intérêt dans la pratique.",
-          "es": "Probar escenarios, identificar fallos y cuestionar supuestos se convirtieron en partes del trabajo que disfrutaba especialmente. Las prácticas me ayudaron a reconocer ese interés."
+          "en": "Because of my background, I had thought embedded software was the path I needed to stay on. Then I realised how much I enjoyed testing, reviewing cases, thinking through what could go wrong and finding errors. I liked having to question things and look carefully at the less obvious situations.",
+          "pt": "Por conta da minha formação, eu achava que precisava seguir focada em software embarcado. Só que fui percebendo o quanto gostava de testar, verificar os casos, pensar no que poderia dar errado e identificar erros. Eu gostava de precisar questionar as coisas e olhar com cuidado para as situações menos óbvias.",
+          "fr": "Avec ma formation, je pensais devoir rester concentrée sur le logiciel embarqué. Puis j’ai réalisé à quel point j’aimais tester, examiner les cas, réfléchir à ce qui pouvait mal se passer et repérer les erreurs. J’aimais devoir questionner les choses et regarder de près les situations moins évidentes.",
+          "es": "Por mi formación, pensaba que debía seguir centrada en el software embebido. Pero fui descubriendo cuánto me gustaba probar, revisar los casos, pensar en lo que podía salir mal e identificar errores. Me gustaba tener que cuestionar las cosas y mirar con atención las situaciones menos evidentes."
+        },
+        {
+          "en": "That interest in systems engineering grew almost naturally. Visiona helped me see it in the work I enjoyed doing every day.",
+          "pt": "Esse interesse pela engenharia de sistemas foi aparecendo quase naturalmente. A Visiona me ajudou a perceber isso no trabalho que eu gostava de fazer todos os dias.",
+          "fr": "Cet intérêt pour l’ingénierie système est apparu presque naturellement. Visiona m’a aidée à le reconnaître dans le travail que j’aimais faire au quotidien.",
+          "es": "Ese interés por la ingeniería de sistemas fue apareciendo casi de forma natural. Visiona me ayudó a reconocerlo en el trabajo que disfrutaba cada día."
         }
       ],
       "photos": [],
@@ -255,10 +267,10 @@
     }
   ],
   "closing": {
-    "en": "The internship deepened my interest in systems engineering, integration and testing. Alongside programming, I enjoyed checking how the different parts worked together. I also came away with a closer understanding of Brazil’s space industry and good memories with the team.",
-    "pt": "O estágio ampliou meu interesse por engenharia de sistemas, integração e testes. Além de programar, gostei de verificar como as diferentes partes funcionavam juntas. Também conheci melhor a indústria espacial brasileira e guardei boas lembranças com a equipe.",
-    "fr": "Le stage a renforcé mon intérêt pour l’ingénierie système, l’intégration et les tests. En plus de programmer, j’aimais vérifier le fonctionnement des différents éléments ensemble. J’ai aussi mieux découvert l’industrie spatiale brésilienne et gardé de bons souvenirs avec l’équipe.",
-    "es": "Las prácticas ampliaron mi interés por la ingeniería de sistemas, la integración y las pruebas. Además de programar, disfruté comprobando cómo funcionaban juntas las distintas partes. También conocí mejor la industria espacial brasileña y guardé buenos recuerdos con el equipo."
+    "en": "I had arrived thinking that my background pointed mainly towards embedded software. The everyday work helped me notice something else. How much I enjoyed asking what could go wrong, testing and understanding how the parts fitted together. That interest in systems engineering grew through doing the work. I also left with a much closer view of Brazil’s space industry and more questions I wanted to explore.",
+    "pt": "Cheguei achando que minha formação apontava principalmente para software embarcado. O trabalho do dia a dia me ajudou a perceber outra coisa. O quanto eu gostava de perguntar o que podia dar errado, testar e entender como as partes se encaixavam. Meu interesse por engenharia de sistemas foi crescendo na prática. Também saí com uma visão muito mais próxima da indústria espacial brasileira e mais perguntas que queria explorar.",
+    "fr": "En arrivant, je pensais que ma formation me destinait surtout au logiciel embarqué. Le travail quotidien m’a révélé autre chose . J’aimais me demander ce qui pouvait mal fonctionner, tester et comprendre les liens entre les différents éléments. Mon intérêt pour l’ingénierie système s’est développé dans la pratique. Je suis aussi repartie avec une vision plus concrète de l’industrie spatiale brésilienne et de nouvelles questions à explorer.",
+    "es": "Llegué pensando que mi formación me orientaba sobre todo al software embebido. El trabajo diario me ayudó a descubrir cuánto disfrutaba preguntando qué podía fallar, probando y entendiendo cómo encajaban las partes. Mi interés por la ingeniería de sistemas fue creciendo en la práctica. También salí con una visión más cercana de la industria espacial brasileña y nuevas preguntas por explorar."
   },
   "photos": {
     "equipe": {

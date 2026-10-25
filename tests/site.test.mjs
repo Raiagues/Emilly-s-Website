@@ -173,7 +173,7 @@ test('clipboard confirms success and explains permission failure', async () => {
 test('navigation, all projects and contact remain available without JavaScript', async () => {
   const {page}=await visit('',{javaScriptEnabled:false,viewport:{width:390,height:844}});
   await expect(page.locator('#main-nav a:visible')).toHaveCount(7);
-  await page.locator('.project-deck').click();
+  await page.locator('#current-work .section-heading a[href="projects.html"]').click();
   await expect(page.locator('[data-project]:visible')).toHaveCount(20);
   await expect(page.locator('[data-project-tools]')).not.toBeVisible();
   await chooseLanguage(page, 'fr');
@@ -260,7 +260,7 @@ test('journal photos, report, chapters and translations load under the repositor
   await openChapter(page, 'travel');
   await expect(page.locator('#travel')).toBeInViewport();
   await page.locator('.inner-breadcrumb .btn').click();
-  await expect(page.locator('#journal')).toBeInViewport();
+  await expect(page.locator('.postcard-rack')).toHaveCount(1);
   assert.deepEqual(errors,[]);
   await page.close();
 });
@@ -418,19 +418,18 @@ test('Visiona diary links both ways to experience and loads its nine photos in e
 });
 
 
-test('timeline follows experience dates and links directly to the two US trip stages without JavaScript', async () => {
-  const {page}=await visit('pt/',{javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});
-  await openArchive(page);
-  assert.deepEqual(await page.locator('.journal-timeline time').evaluateAll(items=>items.map(i=>i.dateTime)),['2026-07','2026-04-10','2026-04-06','2026-03-25','2026-01-25','2025-11-03','2025-10','2025-08','2025-02','2023','2022']);
-  assert.deepEqual(await page.locator('.story-archive>ol>li>a').evaluateAll(items=>items.map(i=>i.getAttribute('href'))),['journal/cern.html','journal/estados-unidos.html','journal/south-summit.html','journal/china.html','journal/premio-na-pratica.html','journal/visiona.html','journal/fundacao-estudar.html','journal/cnes.html','journal/brafitec.html']);
-  await openArchive(page);
-  await page.locator('.journal-timeline summary').click();
-  await page.locator('.journal-timeline a[href="journal/estados-unidos.html#boston"]').click();
+test('postcard route follows story dates and preserves access to each trip stage without JavaScript', async () => {
+  const {page}=await visit('pt/journal.html',{javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});
+  const dates=await page.locator('.rack-route time').evaluateAll(items=>items.map(i=>i.dateTime));
+  assert.equal(dates.length,9);
+  assert.deepEqual(dates,[...dates].sort().reverse());
+  await page.locator('.postcard-card[href="journal/estados-unidos.html"]').click();
+  await openChapter(page,'boston');
   await expect(page.locator('#boston h2')).toBeInViewport();
+  await openChapter(page,'silicon-valley');
+  await expect(page.locator('#silicon-valley h2')).toBeInViewport();
   await page.locator('.inner-breadcrumb .btn').click();
-  await openArchive(page);
-  await page.locator('.journal-timeline summary').click();
-  await page.locator('.journal-timeline a[href="journal/south-summit.html"]').click();
+  await page.locator('.postcard-card[href="journal/south-summit.html"]').click();
   await expect(page.locator('[data-gallery]')).toHaveCount(10);
   await page.close();
 });
@@ -562,10 +561,10 @@ test('home preview follows the new section order with official content in four l
     assert.deepEqual(await page.locator('main>section[id]').evaluateAll(nodes=>nodes.map(n=>n.id)),['experience','current-work','my-story','recognition','media','journal','newsletter','say-hello']);
     await expect(page.locator('.story-preview')).toHaveCount(2);
     await expect(page.locator('.story-preview').first().locator('h3')).toHaveText(latest.title[lang]);
-    await expect(page.locator('.story-preview').first().locator('.story-preview-copy>p:not(.eyebrow)')).toHaveText(latest.subtitle[lang]);
+    await expect(page.locator('.story-preview').first().locator('.story-preview-copy>p:not(.eyebrow)')).toHaveText(latest.intro[lang]);
     await expect(page.locator('[data-featured-project]')).toHaveCount(3);
     await expect(page.locator('#current-work [data-filter]')).toHaveCount(0);
-    await expect(page.locator('.project-deck')).toHaveAttribute('href','projects.html');
+    await expect(page.locator('#current-work .section-heading a[href="projects.html"]')).toHaveAttribute('href','projects.html');
     await expect(page.locator('.boarding-pass')).toHaveCount(3);
     await expect(page.locator('.boarding-pass img, #current-work img')).toHaveCount(0);
     await expect(page.locator('.boarding-pass svg.illustration')).toHaveCount(3);
@@ -680,7 +679,7 @@ test('home restores the illustrated opening, original colours and controllable m
   await page.close();
 });
 
-test('cover stays self-contained and both alternating stories fit below the persistent header', async () => {
+test('cover stays self-contained and both postcard previews fit below the persistent header', async () => {
   const {page}=await visit('pt/',{reducedMotion:'reduce'});
   for (const [width,height] of [[1920,960],[1440,900],[1366,768]]) {
     await page.setViewportSize({width,height});
@@ -709,8 +708,9 @@ test('cover stays self-contained and both alternating stories fit below the pers
     assert.ok(Math.abs(bounds.header.top)<1,'Header stays at the top');
     assert.ok(bounds.diary.top>=bounds.header.bottom,`Diary heading is clear at ${width}`);
     assert.ok(bounds.entries[1].row.bottom<=height,`Both stories fit at ${width}×${height}`);
-    assert.ok(bounds.entries[0].copy.left<bounds.entries[0].photos.left);
-    assert.ok(bounds.entries[1].copy.left>bounds.entries[1].photos.left);
+    assert.ok(bounds.entries[0].row.right<=bounds.entries[1].row.left);
+    assert.ok(Math.abs(bounds.entries[0].row.top-bounds.entries[1].row.top)<1);
+    assert.ok(bounds.entries.every(entry=>entry.photos.bottom<=entry.copy.top));
     await page.locator('#main-nav a[href="#say-hello"]').click();
     await expect(page.locator('#main-nav a[href="#say-hello"]')).toHaveAttribute('aria-current','location');
     await page.locator('#main-nav a[href="#top"]').click();
@@ -852,14 +852,13 @@ test('CNES diary joins the timeline and professional experience, with 26 photos 
     await openFlightStory(page, 'cnes');
     await page.locator('.inner-breadcrumb .btn').click();
     await openArchive(page);
-  await page.locator('.journal-timeline summary').click();
-    await expect(page.locator('.journal-timeline li').filter({has:page.locator('a[href="journal/cnes.html"]')}).locator('time')).toHaveAttribute('datetime','2025-02');
+    await expect(page.locator('.rack-route a[href="#archive-cnes"] time')).toHaveAttribute('datetime','2025-02');
     assert.deepEqual(errors,[]);
     await page.close();
   }
 });
 
-test('separate diary archive and project deck work without JavaScript', async () => {
+test('separate diary archive and full project catalogue work without JavaScript', async () => {
   const {page}=await visit('pt/',{javaScriptEnabled:false,viewport:{width:360,height:844},reducedMotion:'reduce'});
   await expect(page.locator('.project-card:visible')).toHaveCount(3);
   await expect(page.locator('.current-panel')).toHaveCount(1);
@@ -872,7 +871,7 @@ test('separate diary archive and project deck work without JavaScript', async ()
   await expect(page.locator('.story-archive>ol>li>a:visible')).toHaveCount(9);
   await page.locator('.inner-breadcrumb a').click();
   await expect(page.locator('.boarding-pass:visible')).toHaveCount(3);
-  await page.locator('.project-deck').click();
+  await page.locator('#current-work .section-heading a[href="projects.html"]').click();
   await expect(page.locator('[data-project]')).toHaveCount(20);
   await page.close();
 });
@@ -975,4 +974,53 @@ test('all journal editorial text has four languages and follows the requested pu
     if(!file.endsWith('.json')||file==='entities.json') continue;
     inspect(JSON.parse(await readFile(`content/journal/${file}`,'utf8')),file);
   }
+});
+
+test('postcard rack sorts, keeps a fixed header and previews stories on hover and focus', async () => {
+  const {page,errors}=await visit('pt/journal.html',{viewport:{width:1440,height:900},reducedMotion:'reduce'});
+  await expect(page.locator('.postcard-card')).toHaveCount(9);
+  await expect(page.locator('.postcard-card').first()).toHaveAttribute('href','journal/cern.html');
+  await page.locator('[data-story-order=oldest]').click();
+  await expect(page.locator('.postcard-card').first()).toHaveAttribute('href','journal/brafitec.html');
+  await page.locator('[data-story-order=newest]').click();
+  await expect(page.locator('.postcard-card').first()).toHaveAttribute('href','journal/cern.html');
+  await page.locator('.rack-stop[href="#archive-estados-unidos"]').click();
+  await expect(page.locator('#archive-estados-unidos')).toBeInViewport();
+  assert.equal(await page.locator('.home-header').evaluate(el=>el.getBoundingClientRect().top),0);
+  await expect(page.locator('.journal-archive-page #newsletter,.journal-archive-page .dispatch-card')).toHaveCount(0);
+  await page.locator('.postcard-card[href="journal/estados-unidos.html"]').click();
+  await page.locator('.story-explorer').scrollIntoViewIfNeeded();
+  const stop=page.locator('.story-stop[href="brafitec.html"]');
+  await stop.hover();
+  await expect(page.locator('.story-explorer-preview:visible h3')).toHaveText('O caminho até Grenoble');
+  assert.ok(page.url().endsWith('estados-unidos.html'),'Hover does not navigate');
+  await stop.focus();
+  await page.keyboard.press('ArrowDown');
+  await expect(page.locator('.story-stop[href="cnes.html"]')).toBeFocused();
+  await expect(page.locator('.story-explorer-preview:visible h3')).toContainText('CNES');
+  assert.ok(await page.locator('.story-explorer .flight-map').evaluate(el=>el.scrollHeight>el.clientHeight&&el.clientHeight<=250));
+  const railHeight=await page.locator('.story-explorer .flight-map').evaluate(rail=>{
+    const height=rail.clientHeight;
+    while(rail.children.length<100) rail.append(rail.firstElementChild.cloneNode(true));
+    return {before:height,after:rail.clientHeight,scroll:rail.scrollHeight};
+  });
+  assert.equal(railHeight.after,railHeight.before,'A hundred stories keep the same compact rail');
+  assert.ok(railHeight.scroll>railHeight.after*10);
+  await page.locator('.story-explorer-preview:visible .btn').click();
+  await expect(page.locator('h1')).toContainText('CNES');
+  assert.deepEqual(errors,[]);
+  await page.close();
+});
+
+test('home projects are whole-card links and the on-air indicator respects reduced motion', async () => {
+  const {page}=await visit('pt/',{viewport:{width:1440,height:900},reducedMotion:'no-preference'});
+  await expect(page.locator('.current-panel')).toHaveAttribute('href','pages/projects/flight-platform.html');
+  await expect(page.locator('.current-panel .btn,.current-panel button,.project-grid .more')).toHaveCount(0);
+  await expect(page.locator('#current-work .section-heading a')).toContainText('20');
+  assert.ok(await page.locator('.current-panel .live-dot').evaluate(el=>el.getAnimations({subtree:true}).length)>0);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  assert.equal(await page.locator('.current-panel .live-dot').evaluate(el=>el.getAnimations({subtree:true}).length),0);
+  await page.locator('.current-panel').click();
+  await expect(page.locator('.case-boarding h1')).toBeVisible();
+  await page.close();
 });

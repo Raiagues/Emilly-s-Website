@@ -21,7 +21,7 @@
     controls.querySelector('[data-carousel-next]').addEventListener('click',()=>show(selected+1));
     show(0);
   });
-  document.querySelectorAll('.flight-path').forEach(route => {
+  document.querySelectorAll('.flight-path:not(.story-explorer)').forEach(route => {
     const stops=[...route.querySelectorAll('[data-flight-stop]')];
     const show=stop => {
       stops.forEach(item=>{

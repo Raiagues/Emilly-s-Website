@@ -110,7 +110,7 @@ def gallery(items):
         else:
             rows.append(row)
     return '<div class="journal-gallery">' + ''.join(
-        '<div class="photo-row">' + ''.join(markup for markup, _ in row) + '</div>' for row in rows
+        f'<div class="photo-row" style="--row-max:{sum(r for _,r in row)*340 + len(row)*24 + (len(row)-1)*20:.0f}px">' + ''.join(markup for markup, _ in row) + '</div>' for row in rows
     ) + '</div>' if rows else ''
 
 

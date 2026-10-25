@@ -38,6 +38,8 @@ LABELS = {
     'latest_stop': ('Latest stop', 'Última parada', 'Dernière escale', 'Última parada'),
     'route': ('Flight path', 'Trajetória', 'Itinéraire', 'Trayectoria'),
     'ticket': ('Latest boarding pass', 'Último cartão de embarque', 'Dernière carte d’embarquement', 'Última tarjeta de embarque'),
+    'development': ('In development', 'Em desenvolvimento', 'En développement', 'En desarrollo'),
+    'accepted': ('Paper accepted · AIAA SciTech 2027', 'Artigo aceito · AIAA SciTech 2027', 'Article accepté · AIAA SciTech 2027', 'Artículo aceptado · AIAA SciTech 2027'),
     'on_air': ('Now on air', 'Agora no ar', 'En ce moment', 'Ahora al aire'),
     'all_stories': ('All stories', 'Todas as histórias', 'Toutes les histoires', 'Todas las historias'),
     'departure': ('Departure', 'Partida', 'Départ', 'Salida'),
@@ -115,7 +117,8 @@ def render(b, lang):
         return f'<svg class="postmark" viewBox="0 0 240 130" aria-hidden="true"><g transform="translate(85 65) rotate(-15)"><defs><path id="{path_id}" d="M-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs><circle r="54"/><circle r="34"/><text class="postmark-ring"><textPath href="#{path_id}">{E(label)} · </textPath></text><text class="postmark-center" y="6" text-anchor="middle">{E(center)}</text></g><path d="M125 40q15-9 30 0t30 0t30 0M125 53q15-9 30 0t30 0t30 0M125 66q15-9 30 0t30 0t30 0M125 79q15-9 30 0t30 0t30 0"/></svg>'
 
     def polaroid(photo, cls='', eager=False):
-        return f'<figure class="polaroid {cls}">{j["photo_html"](photo, lang, current, eager)}<figcaption>{localized(photo["caption"])}</figcaption></figure>'
+        ratio = photo['width'] / photo['height']
+        return f'<figure class="polaroid {cls}" style="--photo-ratio:{ratio:.6f}">{j["photo_html"](photo, lang, current, eager)}<figcaption>{localized(photo["caption"])}</figcaption></figure>'
 
     def item_image(p, cls=''):
         drawings = {'cnes': 'experience-clock', 'visiona': 'experience-satellite', 'experience_2': 'experience-satellite'}
@@ -137,11 +140,11 @@ def render(b, lang):
     stories = []
     for i, post in enumerate(posts[:2]):
         images = [post['photos'][post['cover'][-1]], post['photos'][post['cover'][0]]]
-        stories.append(f'''<article class="story-preview" id="journal-{post['slug']}"><div class="story-preview-copy"><p class="eyebrow">{localized(post['period'])}</p><h3><a href="{link(j['path'](post))}">{localized(post['title'])}</a></h3><p>{localized(post['subtitle'])}</p><div class="story-preview-actions">{button(jt('read'), link(j['path'](post)), True)}<span class="story-count mono">{i+1:02} / {len(posts):02}</span></div></div><div class="story-photos">{polaroid(images[0], 'photo-main')}{polaroid(images[1], 'photo-small')}</div></article>''')
-    diary = f'<section id="journal">{section_heading(jt("home"), button(u("all_stories") + f" · {len(posts)}", link("journal.html")))}{"".join(stories)}</section>'
+        stories.append(f'''<article class="story-preview" id="journal-{post['slug']}"><div class="story-preview-copy"><p class="eyebrow">{localized(post['period'])}</p><h3><a href="{link(j['path'](post))}">{localized(post['title'])}</a></h3><p>{localized(post['intro'])}</p><div class="story-preview-actions">{button(jt('read'), link(j['path'](post)), True)}<span class="story-count mono">{i+1:02} / {len(posts):02}</span></div></div><div class="story-photos">{polaroid(images[0], 'photo-main')}{polaroid(images[1], 'photo-small')}</div></article>''')
+    diary = f'<section id="journal">{section_heading(jt("home"), button(u("all_stories") + f" · {len(posts)}", link("journal.html")))}<div class="diary-preview-grid">{"".join(stories)}</div></section>'
 
-    cards = ''.join(f'''<a class="project-card" href="{link(b['detail'](p))}" data-featured-project="{p['id']}">{item_image(p)}<p class="eyebrow">{t(p['category'])} · {p['date']}</p><h3>{p['title'][lang]}</h3><p>{p['summary'][lang]}</p>{keywords(p['tech'])}<span class="more">{t('case')}{arrow}</span></a>''' for p in selected)
-    current_work = f'''<section id="current-work">{section_heading(t('projects'))}<article class="current-panel"><div class="current-copy"><p class="eyebrow">{u('on_air')}  {featured['date']}</p><h3>{t('current_title')}</h3><p>{featured['summary'][lang]}</p><p class="current-outcome">{featured['outcome'][lang]}</p>{keywords(featured['tech'])}{button(t('case'), link(b['detail'](featured)))}</div>{item_image(featured, 'current-art')}</article><div class="project-grid">{cards}<a class="project-deck" href="{link('projects.html')}"><div class="deck-stack"><span aria-hidden="true"></span><span aria-hidden="true"></span><span>{drawing('deck-satellite')}<strong>+{len(projects)-len(selected)-1}</strong><span class="mono">{t('more_projects')}</span></span></div><span class="more">{t('all_projects')}{arrow}</span></a></div></section>'''
+    cards = ''.join(f'''<a class="project-card" href="{link(b['detail'](p))}" data-featured-project="{p['id']}">{item_image(p)}<p class="eyebrow">{t(p['category'])} · {p['date']}</p><h3>{p['title'][lang]}</h3><p>{p['summary'][lang]}</p></a>''' for p in selected)
+    current_work = f'''<section id="current-work">{section_heading(t('projects'), button(t('all_projects') + f" · {len(projects)}", link('projects.html')))}<a class="current-panel" href="{link(b['detail'](featured))}" aria-labelledby="current-project-title"><div class="current-copy"><p class="eyebrow"><span class="live-dot" aria-hidden="true"></span>{u('on_air')} · {featured['date']}</p><h3 id="current-project-title">{t('current_title')}</h3><p>{featured['summary'][lang]}</p><div class="current-status"><span>{u('development')}</span><span>{u('accepted')}</span></div></div>{item_image(featured, 'current-art')}</a><div class="project-grid">{cards}</div></section>'''
 
     passes = []
     stops = {'cern': 'CERN · GVA', 'visiona': 'VISIONA · BR', 'cnes': 'CNES · TLS', 'experience_1': 'TIMA · GRENOBLE', 'experience_2': 'ITA · BR', 'experience_3': 'DAFITI · BR'}

@@ -33,10 +33,10 @@
     "es": "En 2025, pasé seis meses en Toulouse trabajando en el software de vuelo de AEROSAT en el CNES. Fue mi último semestre en Francia, con un nuevo equipo, amigos de varios países y una ciudad que disfruté conociendo."
   },
   "closing": {
-    "en": "At CNES, I gained experience in flight software and learned from a team that gave us room to ask questions and try things out. I remember the work on AEROSAT as fondly as the time spent with friends in Toulouse.",
-    "pt": "No CNES, ganhei experiência com software de voo e aprendi com uma equipe que nos dava espaço para perguntar e experimentar. Guardo boas lembranças tanto do trabalho no AEROSAT quanto da convivência com os amigos em Toulouse.",
-    "fr": "Au CNES, j’ai acquis de l’expérience en logiciel de vol auprès d’une équipe qui nous laissait poser des questions et expérimenter. Je garde de bons souvenirs du travail sur AEROSAT et des moments avec mes amis à Toulouse.",
-    "es": "En el CNES, adquirí experiencia en software de vuelo y aprendí de un equipo que nos daba espacio para preguntar y experimentar. Guardo buenos recuerdos tanto del trabajo en AEROSAT como del tiempo con amigos en Toulouse."
+    "en": "What made the choice worthwhile was the everyday experience. Working on a satellite with people who gave me room to try things and were there when I needed help. I liked that balance of responsibility and guidance. When I think about another internship or project now, I also want to know what the team’s day is like. Those conversations mattered as much to my learning as the project description.",
+    "pt": "O que fez a escolha valer a pena foi o dia a dia. Trabalhar em um satélite com pessoas que me davam espaço para experimentar e estavam por perto quando eu precisava de ajuda. Gostei dessa combinação de responsabilidade e orientação. Hoje, quando penso em outro estágio ou projeto, quero saber também como é a rotina da equipe. Essas conversas fizeram tanta diferença para aprender quanto a descrição do trabalho.",
+    "fr": "Ce qui a donné tout son sens à ce choix, c’était le quotidien . Travailler sur un satellite avec des personnes qui me laissaient expérimenter et restaient disponibles pour m’aider. J’aimais cet équilibre entre responsabilité et accompagnement. Aujourd’hui, pour un stage ou un projet, je veux aussi connaître le quotidien de l’équipe. Ces échanges ont autant compté dans mon apprentissage que la description du travail.",
+    "es": "Lo que hizo que la elección valiera la pena fue el día a día. Trabajar en un satélite con personas que me daban espacio para experimentar y estaban cerca cuando necesitaba ayuda. Me gustó esa combinación de responsabilidad y orientación. Hoy, al pensar en otras prácticas o proyectos, también quiero conocer la rutina del equipo. Esas conversaciones influyeron tanto en mi aprendizaje como la descripción del trabajo."
   },
   "cover": [
     "nanosatelite",
@@ -146,16 +146,16 @@
       },
       "paragraphs": [
         {
-          "en": "AEROSAT is a student nanosatellite project at CNES within Nanolab Academy. Working on a satellite intended for launch gave me practical experience with the requirements of this kind of system.",
-          "pt": "O AEROSAT é um projeto de nanossatélite de estudantes no CNES, dentro da Nanolab Academy. Trabalhar em um satélite pensado para lançamento me deu experiência prática com as exigências desse tipo de sistema.",
-          "fr": "AEROSAT est un projet de nanosatellite étudiant au CNES, au sein de Nanolab Academy. Travailler sur un satellite destiné à être lancé m’a apporté une expérience pratique des exigences de ce type de système.",
-          "es": "AEROSAT es un proyecto de nanosatélite estudiantil en el CNES, dentro de Nanolab Academy. Trabajar en un satélite pensado para su lanzamiento me dio experiencia práctica con las exigencias de este tipo de sistema."
+          "en": "AEROSAT is a student nanosatellite project at CNES, within Nanolab Academy. That was one of the things that drew me in. We were students, with support from experienced people, developing a real satellite intended for launch. Knowing that gave the work a very concrete purpose.",
+          "pt": "O AEROSAT é um projeto de nanossatélite de estudantes no CNES, dentro da Nanolab Academy. Era uma das coisas que tinham me atraído. Éramos estudantes, acompanhados por pessoas experientes, desenvolvendo um satélite de verdade, pensado para ser lançado. Saber disso dava um sentido muito concreto ao trabalho.",
+          "fr": "AEROSAT est un projet de nanosatellite étudiant au CNES, dans le cadre de Nanolab Academy. C’est ce qui m’avait attirée . Nous étions des étudiants, accompagnés par des personnes expérimentées, en train de développer un vrai satellite destiné à être lancé. Cela donnait un sens très concret au travail.",
+          "es": "AEROSAT es un proyecto de nanosatélite de estudiantes en el CNES, dentro de Nanolab Academy. Eso era parte de lo que me había atraído. Éramos estudiantes, acompañados por personas con experiencia, desarrollando un satélite real destinado a ser lanzado. Saberlo daba un sentido muy concreto al trabajo."
         },
         {
-          "en": "My work focused on flight software, including recovering information after a restart and organising tasks without delaying initialisation. The technical page explains the memory and implementation details.",
-          "pt": "Meu trabalho se concentrou no software de voo, incluindo a recuperação de informações após reinicializações e a organização de tarefas sem atrasar a inicialização. A página técnica apresenta os detalhes de memória e implementação.",
-          "fr": "Mon travail portait sur le logiciel de vol, notamment la récupération des informations après un redémarrage et l’organisation des tâches sans retarder l’initialisation. La page technique détaille la mémoire et l’implémentation.",
-          "es": "Mi trabajo se centró en el software de vuelo, incluida la recuperación de información tras reinicios y la organización de tareas sin retrasar la inicialización. La página técnica presenta los detalles de memoria e implementación."
+          "en": "I worked on flight software. How the system recovered after a reset, read its memory and organised its tasks. One part involved restoring saved state from FRAM, a memory that retains data without power. I also worked on moving non-critical reads into the background so they wouldn’t hold up startup. These are the technical details behind the experience, and I’ve kept them together on the project page.",
+          "pt": "Trabalhei com software de voo. Como o sistema se recuperava depois de uma reinicialização, lia sua memória e organizava suas tarefas. Uma parte envolvia recuperar o estado salvo em FRAM, uma memória que mantém os dados sem energia. Também trabalhei para levar leituras não críticas para segundo plano, sem bloquear a inicialização. É a parte técnica por trás dessa experiência, que deixei reunida na página do projeto.",
+          "fr": "Je travaillais sur le logiciel de vol . La reprise après une réinitialisation, la lecture de la mémoire et l’ordonnancement des tâches. Une partie consistait à restaurer l’état sauvegardé en FRAM, une mémoire qui conserve ses données sans alimentation. J’ai aussi travaillé à déplacer les lectures non critiques en arrière-plan pour ne pas bloquer le démarrage. Ce sont les détails techniques de cette expérience, réunis sur la page du projet.",
+          "es": "Trabajé con software de vuelo. Cómo se recuperaba el sistema después de un reinicio, leía su memoria y organizaba sus tareas. Una parte consistía en recuperar el estado guardado en FRAM, una memoria que conserva los datos sin alimentación. También trabajé para trasladar lecturas no críticas a segundo plano y evitar que bloquearan el arranque. Es la parte técnica de esta experiencia, que reuní en la página del proyecto."
         }
       ],
       "photos": [
@@ -184,10 +184,16 @@
       },
       "paragraphs": [
         {
-          "en": "I had autonomy in my tasks and regular guidance from my supervisors. Weekly meetings were a chance to discuss progress, ask questions and understand more about the agency’s work.",
-          "pt": "Tive autonomia nas minhas tarefas e orientação regular dos supervisores. As reuniões semanais eram um espaço para discutir o andamento do trabalho, esclarecer dúvidas e conhecer melhor a atuação da agência.",
-          "fr": "Je disposais d’autonomie dans mes tâches et d’un suivi régulier de mes encadrants. Les réunions hebdomadaires permettaient de discuter de l’avancement, de poser des questions et de mieux connaître le travail de l’agence.",
-          "es": "Tuve autonomía en mis tareas y orientación regular de mis supervisores. Las reuniones semanales permitían discutir los avances, resolver dudas y conocer mejor el trabajo de la agencia."
+          "en": "My supervisors were always there to help, and we also had a lot of freedom. That combination made a difference. I could take responsibility for my work without feeling that I had to figure everything out alone.",
+          "pt": "Meus supervisores estavam sempre por perto para ajudar, e a gente também tinha muita liberdade. Essa combinação fez diferença. Eu podia assumir responsabilidade pelo meu trabalho sem sentir que precisava descobrir tudo sozinha.",
+          "fr": "Mes encadrants étaient toujours disponibles pour nous aider, et nous avions aussi beaucoup de liberté. Cette combinaison a compté. Je pouvais prendre des responsabilités sans avoir l’impression de devoir tout découvrir seule.",
+          "es": "Mis supervisores siempre estaban disponibles para ayudar, y también teníamos mucha libertad. Esa combinación marcó la diferencia. Podía asumir responsabilidades sin sentir que tenía que descubrirlo todo sola."
+        },
+        {
+          "en": "We had weekly meetings, and they encouraged us to ask about the space agency itself, to make the most of being there. I liked that invitation. I was learning to do my work, but I could also ask about the place around me and the people who made it run.",
+          "pt": "Tínhamos reuniões semanais, e eles incentivavam a gente a perguntar sobre a própria agência espacial, a aproveitar a oportunidade de estar ali. Eu gostava muito desse convite. Estava aprendendo a fazer meu trabalho, mas também podia perguntar sobre o lugar à minha volta e sobre as pessoas que faziam tudo acontecer.",
+          "fr": "Nous avions des réunions hebdomadaires, et ils nous encourageaient à poser des questions sur l’agence spatiale elle-même, à profiter du fait d’être là. J’aimais beaucoup cette invitation. J’apprenais mon travail, mais je pouvais aussi découvrir l’organisation autour de moi et les personnes qui la faisaient fonctionner.",
+          "es": "Teníamos reuniones semanales y nos animaban a preguntar por la propia agencia espacial, a aprovechar la oportunidad de estar allí. Me gustaba mucho esa invitación. Aprendía a hacer mi trabajo, pero también podía preguntar por el lugar que me rodeaba y por las personas que lo hacían funcionar."
         }
       ],
       "photos": [
@@ -207,10 +213,16 @@
       },
       "paragraphs": [
         {
-          "en": "Living in Toulouse was also an opportunity to visit aerospace museums and exhibitions. I saw spacecraft and aircraft displays, including an A380 and Concorde. I enjoyed connecting those visits with subjects I had studied.",
-          "pt": "Morar em Toulouse também permitiu visitar museus e exposições aeroespaciais. Conheci peças ligadas à exploração espacial e à aviação, incluindo um A380 e o Concorde. Gostei de conectar essas visitas a assuntos que tinha estudado.",
-          "fr": "Vivre à Toulouse m’a aussi permis de visiter des musées et des expositions aérospatiales. J’ai découvert des objets liés à l’exploration spatiale et des avions, dont un A380 et le Concorde. J’ai aimé relier ces visites aux sujets étudiés.",
-          "es": "Vivir en Toulouse también me permitió visitar museos y exposiciones aeroespaciales. Conocí piezas relacionadas con la exploración espacial y la aviación, incluidos un A380 y el Concorde. Disfruté relacionando esas visitas con temas que había estudiado."
+          "en": "Toulouse was a wonderful place to live while working in space. My curiosity didn’t stop when I left work. I visited museums and exhibitions, saw rockets and spacecraft displays, and also explored aviation. An A380, Concorde, a cockpit. These photos are part of how I remember that period.",
+          "pt": "Toulouse foi uma cidade maravilhosa para viver enquanto eu trabalhava com espaço. Minha curiosidade não acabava quando saía do trabalho. Visitei museus e exposições, vi foguetes e peças ligadas à exploração espacial e também fui conhecer mais da aviação. Um A380, o Concorde, um cockpit. Essas fotos fazem parte de como lembro daquele período.",
+          "fr": "Toulouse a été une ville formidable à vivre pendant que je travaillais dans le spatial. Ma curiosité ne s’arrêtait pas en quittant le travail. J’ai visité des musées et des expositions, vu des fusées et des éléments liés à l’exploration spatiale, et découvert aussi l’aviation . Un A380, le Concorde, un cockpit. Ces photos font partie de mes souvenirs de cette période.",
+          "es": "Toulouse fue una ciudad maravillosa para vivir mientras trabajaba en el sector espacial. Mi curiosidad no terminaba al salir del trabajo. Visité museos y exposiciones, vi cohetes y elementos de exploración espacial, y también conocí más de aviación. Un A380, el Concorde, un cockpit. Estas fotos forman parte de cómo recuerdo aquella época."
+        },
+        {
+          "en": "I liked being able to see things up close that I had spent so much time studying. And I liked that discovering the city could include all of this, as well as a concert or an afternoon by the river.",
+          "pt": "Gostava de poder ver de perto coisas que tinha passado tanto tempo estudando. E gostava de descobrir uma cidade onde cabia tudo isso, mas também um concerto ou uma tarde à beira do rio.",
+          "fr": "J’aimais voir de près des choses que j’avais étudiées si longtemps. Et j’aimais découvrir une ville où il y avait tout cela, mais aussi un concert ou un après-midi au bord du fleuve.",
+          "es": "Me gustaba ver de cerca cosas que había pasado tanto tiempo estudiando. Y me gustaba descubrir una ciudad en la que cabía todo eso, además de un concierto o una tarde junto al río."
         }
       ],
       "photos": [
@@ -235,10 +247,16 @@
       },
       "paragraphs": [
         {
-          "en": "The group of interns included people from France and other countries. Alongside work, we explored the city and went on outings together. Those exchanges helped me practise French and get to know people from different backgrounds.",
-          "pt": "A turma de estagiários reunia pessoas da França e de outros países. Além do trabalho, conhecemos a cidade e fizemos passeios juntos. Essa convivência ajudou a praticar francês e conhecer pessoas com outras formações.",
-          "fr": "Le groupe de stagiaires réunissait des personnes de France et d’autres pays. En dehors du travail, nous découvrions la ville et faisions des sorties ensemble. Ces échanges me permettaient de pratiquer le français et de connaître d’autres parcours.",
-          "es": "El grupo de prácticas reunía personas de Francia y otros países. Además del trabajo, conocimos la ciudad e hicimos salidas juntos. Esa convivencia me ayudó a practicar francés y conocer personas con otras formaciones."
+          "en": "I shared an apartment, made French friends and friends from other countries, and spoke French throughout the day. With so many interns, we became close and spent a lot of time together outside work too. There were meals, picnics, walks and plans around the city. Looking at these photos, I remember how much we managed to fit into those months.",
+          "pt": "Dividi apartamento, fiz amigos franceses e de outros países e falava francês o dia inteiro. Como havia muitos estagiários, a gente ficou muito próximo e passou a fazer muita coisa junto fora do trabalho também. Teve comida, piquenique, trilha, passeio pela cidade. Olhando essas fotos, lembro de quanta coisa coube naqueles meses.",
+          "fr": "Je partageais un appartement, je me suis fait des amis français et d’autres pays, et je parlais français toute la journée. Avec autant de stagiaires, nous sommes devenus proches et nous passions aussi beaucoup de temps ensemble après le travail. Il y a eu des repas, des pique-niques, des randonnées et des sorties en ville. Ces photos me rappellent tout ce que nous avons vécu en quelques mois.",
+          "es": "Compartí piso, hice amigos franceses y de otros países, y hablaba francés todo el día. Como había muchos estudiantes en prácticas, nos hicimos muy cercanos y empezamos a hacer muchas cosas juntos fuera del trabajo. Hubo comidas, pícnics, caminatas y paseos por la ciudad. Al mirar estas fotos recuerdo cuánto vivimos en aquellos meses."
+        },
+        {
+          "en": "It was intense, and we learned a lot. But we also had so much fun. When I was deciding between the two offers, I had hoped to find that kind of company. Getting to live it was one of the best parts of the choice.",
+          "pt": "Foi intenso, e a gente aprendeu muito. Mas também se divertiu muito. Quando estava escolhendo entre as duas propostas, eu imaginava que seria bom ter essa companhia. Poder viver isso foi uma das partes mais gostosas da escolha.",
+          "fr": "C’était intense, et nous avons beaucoup appris. Mais nous nous sommes aussi beaucoup amusés. Au moment de choisir entre les deux propositions, j’espérais trouver cette compagnie. La vivre a été l’une des plus belles choses que ce choix m’ait apportées.",
+          "es": "Fue intenso y aprendimos mucho. Pero también nos divertimos muchísimo. Cuando estaba eligiendo entre las dos ofertas, imaginaba lo bonito que sería tener esa compañía. Poder vivirlo fue una de las mejores partes de aquella elección."
         }
       ],
       "photos": [
@@ -263,10 +281,16 @@
       },
       "paragraphs": [
         {
-          "en": "The internship gave me practical experience in flight software and a clearer view of satellite development. After returning to Brazil, I continued in the space sector at Visiona, where I also developed an interest in integration and testing.",
-          "pt": "O estágio me deu experiência prática em software de voo e uma visão mais clara do desenvolvimento de satélites. Depois de voltar ao Brasil, continuei no setor espacial na Visiona, onde também desenvolvi interesse por integração e testes.",
-          "fr": "Le stage m’a apporté une expérience pratique en logiciel de vol et une vision plus claire du développement des satellites. Après mon retour au Brésil, j’ai poursuivi dans le spatial chez Visiona, où j’ai aussi développé un intérêt pour l’intégration et les essais.",
-          "es": "Las prácticas me dieron experiencia en software de vuelo y una visión más clara del desarrollo de satélites. Tras volver a Brasil, continué en el sector espacial en Visiona, donde también desarrollé interés por la integración y las pruebas."
+          "en": "Having CNES on my CV opened doors. I felt that in the opportunities that came afterwards. But it was also where I built experience working on a satellite with people who knew so much and were willing to teach us. I came back to Brazil with more than a line on my CV to explain.",
+          "pt": "Ter o CNES no currículo abriu portas. Senti isso nas oportunidades que vieram depois. Mas foi também onde construí experiência trabalhando num satélite, com pessoas que sabiam muito e tinham disposição para ensinar. Voltei ao Brasil com muito mais do que uma linha no currículo para explicar.",
+          "fr": "Avoir le CNES sur mon CV m’a ouvert des portes. Je l’ai ressenti dans les possibilités qui se sont présentées ensuite. C’est aussi là que j’ai acquis de l’expérience sur un satellite, avec des personnes qui savaient beaucoup et prenaient le temps de transmettre. Je suis rentrée au Brésil avec bien plus qu’une ligne sur mon CV à raconter.",
+          "es": "Tener el CNES en mi currículum me abrió puertas. Lo noté en las oportunidades que llegaron después. Pero también fue donde adquirí experiencia trabajando en un satélite con personas que sabían mucho y querían enseñarnos. Volví a Brasil con mucho más que una línea en el currículum para explicar."
+        },
+        {
+          "en": "The next part of this story was my return to Brazil and Visiona. After speaking French every day and learning so much engineering in that language, even explaining my work in Portuguese took some getting used to. That story has its own page here.",
+          "pt": "A continuação dessa história foi a volta ao Brasil e a Visiona. Depois de falar francês todos os dias e aprender tanta engenharia nessa língua, até explicar meu trabalho em português exigiu uma adaptação. Essa história tem uma página só dela aqui.",
+          "fr": "La suite, c’était mon retour au Brésil et Visiona. Après avoir parlé français tous les jours et appris tant de choses techniques dans cette langue, même expliquer mon travail en portugais a demandé un temps d’adaptation. Cette histoire a sa propre page ici.",
+          "es": "La continuación fue la vuelta a Brasil y Visiona. Después de hablar francés todos los días y aprender tanta ingeniería en ese idioma, incluso explicar mi trabajo en portugués requirió adaptación. Esa historia tiene su propia página aquí."
         }
       ],
       "photos": [],

@@ -27,10 +27,10 @@
     "es": "Investigación del sector, invitaciones y conversaciones sobre el ámbito aeroespacial con profesionales del área."
   },
   "intro": {
-    "en": "At South Summit Brazil 2026, I organised and moderated conversations about the space sector. The work began with a suggestion from my mentor and involved research, invitations and preparing questions for the guests.",
-    "pt": "No South Summit Brazil 2026, organizei e mediei conversas sobre o setor espacial. O trabalho começou com uma sugestão da minha mentora e envolveu pesquisa, convites e preparação das perguntas para os convidados.",
-    "fr": "Au South Summit Brazil 2026, j’ai organisé et animé des échanges sur le secteur spatial. Le travail a commencé par une suggestion de ma mentore et a compris des recherches, des invitations et la préparation des questions.",
-    "es": "En South Summit Brazil 2026, organicé y moderé conversaciones sobre el sector espacial. El trabajo comenzó con una sugerencia de mi mentora e incluyó investigación, invitaciones y preparación de preguntas."
+    "en": "It started with a conversation with Verônica, my mentor. I told her I wanted to get closer to people in the space industry, hear about their work and understand the paths they had taken. I wasn’t imagining that this conversation would lead to organising and moderating a panel.",
+    "pt": "Começou numa conversa com a Verônica, minha mentora. Eu falei que queria me aproximar de pessoas do setor espacial, ouvir sobre o trabalho delas e entender os caminhos que tinham percorrido. Eu não estava imaginando que aquela conversa ia virar a organização e a mediação de um painel.",
+    "fr": "Tout a commencé par une conversation avec Verônica, ma mentore. Je lui ai dit que je voulais me rapprocher de personnes du secteur spatial, découvrir leur travail et comprendre leurs parcours. Je n’imaginais pas que cette conversation allait m’amener à organiser et animer une table ronde.",
+    "es": "Todo empezó en una conversación con Verônica, mi mentora. Le dije que quería acercarme a personas del sector espacial, conocer su trabajo y entender sus trayectorias. No imaginaba que esa conversación terminaría llevándome a organizar y moderar un panel."
   },
   "cover": [
     "palco",
@@ -129,16 +129,28 @@
       },
       "paragraphs": [
         {
-          "en": "I researched the sector, identified speakers and planned the topics for discussion. Coordinating invitations and availability was part of turning the proposal into a panel.",
-          "pt": "Pesquisei o setor, identifiquei convidados e planejei os assuntos da conversa. Conciliar os convites e a disponibilidade dos participantes fez parte do trabalho para transformar a proposta em um painel.",
-          "fr": "J’ai étudié le secteur, identifié les intervenants et préparé les sujets de discussion. Coordonner les invitations et les disponibilités faisait partie du travail pour concrétiser le panel.",
-          "es": "Investigué el sector, identifiqué invitados y preparé los temas de conversación. Coordinar las invitaciones y la disponibilidad de los participantes fue parte del trabajo para concretar el panel."
+          "en": "I started researching the sector, mapping out people I wanted to invite and thinking about the conversation I wanted to bring to the stage. Then came the messages and the introductions. Some people couldn’t take part, but there were two guests I especially hoped would say yes.",
+          "pt": "Comecei estudando o setor, mapeando quem eu queria convidar e pensando na conversa que queria levar para o palco. Depois vieram as mensagens e os contatos. Algumas pessoas não puderam participar, mas tinha dois convidados que eu queria muito que aceitassem.",
+          "fr": "J’ai commencé par étudier le secteur, repérer les personnes que je souhaitais inviter et réfléchir à la conversation que je voulais proposer sur scène. Puis sont venus les messages et les prises de contact. Certaines personnes ne pouvaient pas participer, mais j’espérais particulièrement un oui de deux invités.",
+          "es": "Empecé estudiando el sector, identificando a las personas que quería invitar y pensando en la conversación que quería llevar al escenario. Después vinieron los mensajes y los contactos. Algunas personas no pudieron participar, pero había dos invitados que esperaba especialmente que dijeran que sí."
         },
         {
-          "en": "The guests included Danilo Miranda, with experience in systems engineering and management of VCUB1 at Visiona and leadership of the RATO-14X project at Mac Jee, and Thais Cardoso Franco, cofounder of Quasar Space with a master’s degree and doctorate from ITA.",
-          "pt": "Os convidados incluíram Danilo Miranda, com experiência em engenharia de sistemas e gestão do VCUB1 na Visiona e liderança do projeto RATO-14X na Mac Jee, e Thais Cardoso Franco, cofundadora da Quasar Space, mestre e doutora pelo ITA.",
-          "fr": "Les invités comprenaient Danilo Miranda, avec une expérience en ingénierie système, en gestion du VCUB1 chez Visiona et à la tête du projet RATO-14X chez Mac Jee, ainsi que Thais Cardoso Franco, cofondatrice de Quasar Space, titulaire d’un master et d’un doctorat de l’ITA.",
-          "es": "Entre los invitados estaban Danilo Miranda, con experiencia en ingeniería de sistemas y gestión del VCUB1 en Visiona y dirección del proyecto RATO-14X en Mac Jee, y Thais Cardoso Franco, cofundadora de Quasar Space, con maestría y doctorado por el ITA."
+          "en": "One was Danilo Miranda. His work included systems engineering and project management on VCUB1 at Visiona, followed by leadership of the RATO-14X hypersonic launch vehicle project at Mac Jee.",
+          "pt": "Um deles era o Danilo Miranda. Sua trajetória inclui engenharia de sistemas e gestão do projeto VCUB1 na Visiona, seguida pela liderança do projeto do veículo lançador hipersônico RATO-14X na Mac Jee.",
+          "fr": "L’un d’eux était Danilo Miranda. Son parcours comprend l’ingénierie système et la gestion du projet VCUB1 chez Visiona, puis la direction du projet de véhicule lanceur hypersonique RATO-14X chez Mac Jee.",
+          "es": "Uno era Danilo Miranda. Su trayectoria incluye ingeniería de sistemas y gestión del proyecto VCUB1 en Visiona, y después la dirección del proyecto del vehículo lanzador hipersónico RATO-14X en Mac Jee."
+        },
+        {
+          "en": "The other was Thais Cardoso Franco, co-founder and CEO of Quasar Space, with a master’s and doctorate from ITA. I admired her technical knowledge and the story of building her startup with her own resources. I really wanted to hear from her.",
+          "pt": "A outra era a Thais Cardoso Franco, cofundadora e CEO da Quasar Space, mestre e doutora pelo ITA. Eu admirava muito o conhecimento técnico dela e a história de construir a startup com recursos próprios. Queria muito poder ouvi-la.",
+          "fr": "L’autre était Thais Cardoso Franco, cofondatrice et CEO de Quasar Space, titulaire d’un master et d’un doctorat de l’ITA. J’admirais ses connaissances techniques et son parcours de création d’une startup avec ses propres ressources. Je voulais vraiment l’écouter.",
+          "es": "La otra era Thais Cardoso Franco, cofundadora y CEO de Quasar Space, con máster y doctorado por ITA. Admiraba mucho sus conocimientos técnicos y la historia de construir su startup con recursos propios. Tenía muchas ganas de escucharla."
+        },
+        {
+          "en": "I wanted to get closer to the space sector, and organising the panel gave me a reason to reach out with something concrete. I needed to understand each person’s work and think about what they could bring to the conversation. The preparation itself was already a way of learning about the field.",
+          "pt": "Eu queria me aproximar do setor espacial, e organizar o painel me deu um motivo concreto pra entrar em contato. Precisava entender o trabalho de cada pessoa e pensar no que ela poderia trazer pra conversa. A própria preparação já era um jeito de aprender sobre o setor.",
+          "fr": "Je voulais me rapprocher du secteur spatial, et organiser la table ronde m’a donné une raison concrète de prendre contact. Il fallait comprendre le travail de chacun et réfléchir à ce qu’il pouvait apporter à la discussion. La préparation était déjà une façon d’apprendre à connaître le secteur.",
+          "es": "Quería acercarme al sector espacial, y organizar el panel me dio un motivo concreto para contactar con la gente. Necesitaba entender el trabajo de cada persona y pensar qué podía aportar a la conversación. La propia preparación ya era una forma de aprender sobre el sector."
         }
       ],
       "photos": [
@@ -175,16 +187,16 @@
       },
       "paragraphs": [
         {
-          "en": "I moderated the conversation with Thais Cardoso Franco and Danilo Miranda. Preparing the questions helped me connect their different experiences within the discussion.",
-          "pt": "Mediei a conversa com Thais Cardoso Franco e Danilo Miranda. A preparação das perguntas me ajudou a conectar as diferentes experiências dos convidados durante a discussão.",
-          "fr": "J’ai animé la discussion avec Thais Cardoso Franco et Danilo Miranda. La préparation des questions m’a aidée à relier leurs différentes expériences au fil de l’échange.",
-          "es": "Moderé la conversación con Thais Cardoso Franco y Danilo Miranda. Preparar las preguntas me ayudó a relacionar las diferentes experiencias de los invitados durante el debate."
+          "en": "They both accepted. There were some last-minute complications and, for a while, Danilo’s participation was uncertain. In the end, it worked out. Getting to moderate that conversation after all the preparation was very special.",
+          "pt": "Os dois aceitaram. Teve imprevisto antes do evento e, por um momento, a participação do Danilo ficou incerta. No fim, deu tudo certo. Poder mediar aquela conversa depois de toda a preparação foi muito especial.",
+          "fr": "Ils ont tous les deux accepté. Il y a eu des imprévus avant l’événement et, pendant un moment, la participation de Danilo était incertaine. Finalement, tout s’est bien passé. Animer cette conversation après toute la préparation a été un moment très spécial.",
+          "es": "Los dos aceptaron. Hubo imprevistos antes del evento y, durante un momento, la participación de Danilo estuvo en duda. Al final salió todo bien. Moderar esa conversación después de toda la preparación fue muy especial."
         },
         {
-          "en": "I also moderated “Aerospace Innovation Shaping New Markets” with Jorgito Stocchero from AEL Sistemas. These panels gave me practical experience in preparing and leading technical conversations for an event audience.",
-          "pt": "Também mediei “Aerospace Innovation Shaping New Markets”, com Jorgito Stocchero, da AEL Sistemas. Os painéis me deram experiência prática na preparação e condução de conversas técnicas para o público de um evento.",
-          "fr": "J’ai aussi animé “Aerospace Innovation Shaping New Markets” avec Jorgito Stocchero, d’AEL Sistemas. Ces panels m’ont apporté une expérience pratique de préparation et d’animation d’échanges techniques pour le public d’un événement.",
-          "es": "También moderé “Aerospace Innovation Shaping New Markets”, con Jorgito Stocchero, de AEL Sistemas. Los paneles me dieron experiencia práctica preparando y conduciendo conversaciones técnicas para el público de un evento."
+          "en": "My photos also capture the panel “Aerospace Innovation Shaping New Markets”, which I moderated with Jorgito Stocchero, from AEL Sistemas. Looking at those images brings back the feeling of being there, asking questions of people whose experience I wanted to learn from.",
+          "pt": "As fotos também guardam o painel “Aerospace Innovation Shaping New Markets”, que mediei com Jorgito Stocchero, da AEL Sistemas. Olhar esses registros me traz de volta a sensação de estar ali, fazendo perguntas para pessoas com quem eu queria aprender.",
+          "fr": "Mes photos gardent aussi une trace de la table ronde « Aerospace Innovation Shaping New Markets », que j’ai animée avec Jorgito Stocchero, d’AEL Sistemas. Ces images me rappellent ce que je ressentais en posant des questions à des personnes dont je voulais apprendre.",
+          "es": "Las fotos también guardan el panel «Aerospace Innovation Shaping New Markets», que moderé con Jorgito Stocchero, de AEL Sistemas. Mirarlas me devuelve la sensación de estar allí, haciendo preguntas a personas de las que quería aprender."
         }
       ],
       "photos": [
@@ -261,10 +273,10 @@
     }
   ],
   "closing": {
-    "en": "Preparing the panel involved research, invitations and help from my mentor. I enjoyed moderating the conversations and learning about the guests’ work. Some of those contacts continued after the event.",
-    "pt": "A preparação do painel envolveu pesquisa, convites e a ajuda da minha mentora. Gostei de mediar as conversas e conhecer melhor o trabalho dos convidados. Alguns desses contatos continuaram depois do evento.",
-    "fr": "La préparation du panel a réuni recherches, invitations et aide de ma mentore. J’ai aimé animer les échanges et découvrir le travail des invités. Certains de ces contacts se sont poursuivis après l’événement.",
-    "es": "Preparar el panel implicó investigación, invitaciones y la ayuda de mi mentora. Disfruté moderando las conversaciones y conociendo mejor el trabajo de los invitados. Algunos de esos contactos continuaron después del evento."
+    "en": "It all began with telling Verônica something I wanted to understand better. Her support opened a door, and then came the research, the invitations and the work of putting the panel together. That is what I take from this experience. Being specific about what I want to learn helps other people help me. And when an opportunity appears, I can start with the next concrete task, even before I feel completely ready.",
+    "pt": "Tudo começou contando pra Verônica uma coisa que eu queria entender melhor. O apoio dela abriu uma porta, e depois vieram a pesquisa, os convites e o trabalho de montar o painel. É isso que levo dessa experiência. Falar com clareza sobre o que quero aprender ajuda as pessoas a me ajudarem. E, quando aparece uma oportunidade, posso começar pela próxima tarefa concreta, mesmo antes de me sentir totalmente pronta.",
+    "fr": "Tout a commencé lorsque j’ai expliqué à Verônica ce que je voulais mieux comprendre. Son soutien m’a ouvert une porte, puis il a fallu faire les recherches, envoyer les invitations et préparer la table ronde. J’en retiens que dire précisément ce que je veux apprendre permet aux autres de mieux m’aider. Et lorsqu’une occasion se présente, je peux commencer par la prochaine tâche concrète, même sans me sentir tout à fait prête.",
+    "es": "Todo empezó al contarle a Verônica algo que quería entender mejor. Su apoyo abrió una puerta, y después vinieron la investigación, las invitaciones y el trabajo de preparar el panel. Eso me llevo. Explicar con claridad qué quiero aprender ayuda a otras personas a ayudarme. Y cuando aparece una oportunidad, puedo empezar por la siguiente tarea concreta, incluso antes de sentirme completamente preparada."
   },
   "photos": {
     "veronica-mariana": {

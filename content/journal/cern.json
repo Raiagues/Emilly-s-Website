@@ -21,10 +21,10 @@
     "es": "La selección para openlab, la investigación en aprendizaje automático para ATLAS y nueve semanas en un laboratorio internacional."
   },
   "intro": {
-    "en": "I joined CERN openlab in the summer of 2026, on my third application. My place was confirmed after a change to one of the projects. Here I share a little of the research, visits and life with friends during those nine weeks.",
-    "pt": "Participei do CERN openlab no verão de 2026, na minha terceira candidatura. A vaga foi confirmada depois de uma mudança em um dos projetos. Aqui conto um pouco da pesquisa, das visitas e da convivência com os amigos durante aquelas nove semanas.",
-    "fr": "J’ai participé au CERN openlab à l’été 2026, lors de ma troisième candidature. Ma place a été confirmée après une modification dans l’un des projets. Je raconte ici la recherche, les visites et les moments avec mes amis pendant ces neuf semaines.",
-    "es": "Participé en CERN openlab en el verano de 2026, en mi tercera candidatura. Mi plaza se confirmó tras un cambio en uno de los proyectos. Aquí cuento un poco de la investigación, las visitas y la convivencia con amigos durante esas nueve semanas."
+    "en": "When the CERN openlab email arrived, I thought it was another automatic message. I had already received a rejection in that selection round. Only when I started reading about the project did I realise I had been accepted. This is the story of the nine weeks that followed, in the lab and beyond it.",
+    "pt": "Quando chegou o e-mail do CERN openlab, achei que fosse mais uma mensagem automática. Eu já tinha recebido uma recusa naquela seleção. Só quando comecei a ler sobre o projeto percebi que tinha sido aprovada. Aqui conto as nove semanas que vieram depois, dentro e fora do laboratório.",
+    "fr": "Quand le courriel du CERN openlab est arrivé, j’ai cru à un nouveau message automatique. J’avais déjà reçu un refus pour cette sélection. C’est en lisant la description du projet que j’ai compris que j’étais acceptée. Voici le récit des neuf semaines qui ont suivi, au laboratoire et en dehors.",
+    "es": "Cuando llegó el correo del CERN openlab, pensé que era otro mensaje automático. Ya había recibido un rechazo en esa selección. Solo al empezar a leer sobre el proyecto entendí que me habían aceptado. Aquí cuento las nueve semanas que siguieron, dentro y fuera del laboratorio."
   },
   "cover": [
     "atlas",
@@ -280,10 +280,10 @@
       },
       "paragraphs": [
         {
-          "en": "The acceptance email confirmed that I had been selected from nearly 6,000 valid applications for nine weeks at CERN. The project was “Trigger Level Analysis Data Preparation through Co-processors”.",
-          "pt": "O e-mail de aprovação confirmou minha seleção entre quase 6.000 candidaturas válidas para nove semanas no CERN. O projeto era “Trigger Level Analysis Data Preparation through Co-processors”.",
-          "fr": "Le courriel d’admission confirmait ma sélection parmi près de 6 000 candidatures valides pour neuf semaines au CERN. Le projet s’intitulait “Trigger Level Analysis Data Preparation through Co-processors”.",
-          "es": "El correo de admisión confirmó mi selección entre casi 6.000 candidaturas válidas para nueve semanas en el CERN. El proyecto era “Trigger Level Analysis Data Preparation through Co-processors”."
+          "en": "On 30 April 2026, I woke up to an email from CERN openlab. I had just got up and, because I had already been rejected, I thought it was another automatic rejection message. It was only when I started reading about the project that I realised what had happened. I had been accepted.",
+          "pt": "Em 30 de abril de 2026, acordei com um e-mail do CERN openlab. Eu tinha acabado de acordar e, como já tinha recebido a recusa, achei que era mais uma mensagem automática. Só quando comecei a ler sobre o projeto é que me dei conta. Eu tinha sido aprovada.",
+          "fr": "Le 30 avril 2026, j’ai reçu un e-mail de CERN openlab au réveil. Comme j’avais déjà été refusée, j’ai pensé à un autre message automatique. Ce n’est qu’en lisant les détails du projet que j’ai compris . J’étais acceptée.",
+          "es": "El 30 de abril de 2026 me desperté con un correo de CERN openlab. Como ya había recibido el rechazo, pensé que era otro mensaje automático. Solo cuando empecé a leer sobre el proyecto me di cuenta. Me habían aceptado."
         },
         {
           "en": "I organised the trip with support from the programme team. Meeting participants from different countries was part of the experience from the start.",
@@ -353,10 +353,16 @@
       },
       "paragraphs": [
         {
-          "en": "I visited ATLAS, ALICE and the Antimatter Factory. Seeing the experiments in person helped put the research in context. The programme also included lectures, among them a class with the creator of C++.",
-          "pt": "Visitei o ATLAS, o ALICE e a Fábrica de Antimatéria. Conhecer os experimentos de perto ajudou a contextualizar a pesquisa. O programa também teve aulas, entre elas uma com o criador da linguagem C++.",
-          "fr": "J’ai visité ATLAS, ALICE et l’Usine d’antimatière. Voir les expériences sur place m’a aidée à situer la recherche. Le programme comprenait aussi des cours, dont un avec le créateur du C++.",
-          "es": "Visité ATLAS, ALICE y la Fábrica de Antimateria. Conocer los experimentos de cerca me ayudó a contextualizar la investigación. El programa también incluyó clases, entre ellas una con el creador de C++."
+          "en": "I visited ATLAS, the experiment my work was connected to. I also visited ALICE and the Antimatter Factory. These photos show very different corners of CERN, each with its own equipment and experiments.",
+          "pt": "Visitei o ATLAS, o experimento ao qual meu trabalho estava ligado. Também fui ao ALICE e à Fábrica de Antimatéria. Essas fotos mostram cantos bem diferentes do CERN, cada um com seus equipamentos e experimentos.",
+          "fr": "J’ai visité ATLAS, l’expérience à laquelle mon travail était lié, mais aussi ALICE et l’Usine d’antimatière. Ces photos montrent des endroits très différents du CERN, avec leurs équipements et leurs expériences.",
+          "es": "Visité ATLAS, el experimento al que estaba vinculado mi trabajo. También fui a ALICE y a la Fábrica de Antimateria. Estas fotos muestran lugares muy diferentes del CERN, cada uno con sus equipos y experimentos."
+        },
+        {
+          "en": "And yes, one of those classroom photos is from a lecture with the creator of C++. That definitely belongs in this diary.",
+          "pt": "E sim, uma dessas fotos de sala de aula é de uma aula com o criador da linguagem C++. Essa tinha que entrar no diário.",
+          "fr": "Et oui, une de ces photos a été prise pendant un cours avec le créateur du C++. Elle avait toute sa place dans ce journal.",
+          "es": "Y sí, una de esas fotos es de una clase con el creador de C++. Esa tenía que estar en este diario."
         }
       ],
       "photos": [
@@ -401,10 +407,16 @@
       },
       "paragraphs": [
         {
-          "en": "Working and spending time with students from different backgrounds was an important part of the summer. Conversations about our projects exposed me to research questions beyond my own and led to friendships I value.",
-          "pt": "Trabalhar e conviver com estudantes de diferentes formações foi uma parte importante do verão. As conversas sobre nossos projetos me aproximaram de outras perguntas de pesquisa e também renderam boas amizades.",
-          "fr": "Travailler et échanger avec des étudiants de formations différentes a beaucoup compté cet été-là. Les conversations sur nos projets m’ont fait découvrir d’autres questions de recherche et ont créé de belles amitiés.",
-          "es": "Trabajar y convivir con estudiantes de distintas formaciones fue una parte importante del verano. Las conversaciones sobre nuestros proyectos me acercaron a otras preguntas de investigación y también dieron lugar a buenas amistades."
+          "en": "I met incredible friends during the programme. There are photos at the table, on campus, out together and up in the mountains. I wanted those moments here too, alongside the report and the work. They are part of how I remember my time at CERN.",
+          "pt": "Conheci amigos incríveis durante o programa. Tem foto à mesa, no campus, nos passeios e nas montanhas. Quis colocar esses momentos aqui também, junto do relatório e do trabalho. Eles fazem parte de como eu lembro do meu período no CERN.",
+          "fr": "J’ai rencontré des amis incroyables pendant le programme. Il y a des photos à table, sur le campus, en sortie et dans les montagnes. Je voulais garder ces moments ici aussi, à côté du rapport et du travail. Ils font partie de mes souvenirs du CERN.",
+          "es": "Conocí amigos increíbles durante el programa. Hay fotos en la mesa, en el campus, de paseo y en las montañas. Quería incluir esos momentos aquí también, junto al informe y al trabajo. Son parte de cómo recuerdo mi tiempo en el CERN."
+        },
+        {
+          "en": "When I tell someone about CERN, it is easy to start with the experiments and the project. But I also want to remember who was around me during those weeks. The friends, the shared room and the trips belong in this story just as much as the work I went there to do.",
+          "pt": "Quando conto do CERN, é fácil começar pelos experimentos e pelo projeto. Mas também quero lembrar de quem estava comigo naquelas semanas. Os amigos, o quarto dividido e as viagens cabem nessa história tanto quanto o trabalho que fui fazer lá.",
+          "fr": "Quand je parle du CERN, je commence facilement par les expériences et le projet. Mais je veux aussi me souvenir des personnes présentes pendant ces semaines. Les amis, la chambre partagée et les voyages font autant partie de ce récit que le travail que j’y suis allée faire.",
+          "es": "Cuando hablo del CERN, es fácil empezar por los experimentos y el proyecto. Pero también quiero recordar a quienes estuvieron conmigo esas semanas. Los amigos, la habitación compartida y los viajes forman parte de esta historia tanto como el trabajo que fui a hacer."
         }
       ],
       "photos": [
@@ -425,10 +437,10 @@
     }
   },
   "closing": {
-    "en": "Those nine weeks brought a new research topic, visits to experiments and plenty of time with friends. I came back with more experience in machine learning for particle physics and good memories from outside the laboratory too.",
-    "pt": "Aquelas nove semanas reuniram um novo tema de pesquisa, visitas aos experimentos e muita convivência com os amigos. Voltei com mais experiência em aprendizado de máquina aplicado à física de partículas e boas lembranças também de fora do laboratório.",
-    "fr": "Ces neuf semaines ont réuni un nouveau sujet de recherche, des visites d’expériences et du temps avec mes amis. Je suis rentrée avec davantage d’expérience en apprentissage automatique appliqué à la physique des particules et de bons souvenirs en dehors du laboratoire.",
-    "es": "Esas nueve semanas reunieron un nuevo tema de investigación, visitas a los experimentos y tiempo con amigos. Volví con más experiencia en aprendizaje automático aplicado a la física de partículas y buenos recuerdos también fuera del laboratorio."
+    "en": "I still think about that email I almost overlooked. Preparing carefully did not guarantee a place. The acceptance also depended on a project change I could not control. What I could do was understand the work, ask questions and take the application seriously. I came back with research experience, but also with friends and memories that belong in the story just as much as the report.",
+    "pt": "Ainda penso naquele e-mail que quase deixei passar. Me preparar não garantia uma vaga. A aprovação também dependeu de uma mudança no projeto que eu não controlava. O que eu podia fazer era entender o trabalho, fazer perguntas e cuidar da candidatura. Voltei com experiência em pesquisa, mas também com amigos e lembranças que fazem parte dessa história tanto quanto o relatório.",
+    "fr": "Je repense encore à ce courriel que j’ai failli laisser passer. La préparation ne garantissait pas une place . L’acceptation dépendait aussi d’un changement de projet que je ne maîtrisais pas. Je pouvais en revanche comprendre le travail, poser des questions et soigner ma candidature. Je suis rentrée avec une expérience de recherche, mais aussi des amis et des souvenirs qui comptent autant dans cette histoire que le rapport.",
+    "es": "Todavía pienso en aquel correo que casi pasé por alto. Prepararme no garantizaba una plaza. La aceptación también dependió de un cambio en el proyecto que no controlaba. Lo que sí podía hacer era entender el trabajo, preguntar y cuidar la candidatura. Volví con experiencia en investigación, pero también con amigos y recuerdos que forman parte de esta historia tanto como el informe."
   },
   "series": {
     "en": "CERN openlab",

@@ -1,5 +1,18 @@
 # Redesign do portfólio
 
+## Diário em cartões-postais e recuperação da voz pessoal — 25/10/2026
+
+A home mostra duas histórias lado a lado, com as fotos de cada relato sobrepostas. As chamadas voltaram a usar a introdução em primeira pessoa, com acesso ao texto completo. As divisórias extras foram retiradas; o título mantém uma única linha discreta, conforme a referência. Projetos ganhou o acesso ao catálogo no cabeçalho da seção, três cartões e o painel do trabalho atual inteiramente clicável. O indicador no ar pulsa e respeita a preferência por movimento reduzido. Não há botões separados para abrir os projetos da home.
+
+O arquivo `journal.html` usa o modelo enviado em `All stories · postcard rack-html.zip`, adaptado ao gerador estático. A ilustração, os cartões de foto e texto, os selos e a ordenação por data foram incorporados com conteúdo real. O cabeçalho fixo e os quatro idiomas permanecem. A faixa de newsletter e o encerramento extra do ZIP foram omitidos. O arquivo mostra até 12 cartões por vez quando crescer; links para cartões específicos continuam funcionando.
+
+As páginas de leitura têm abertura com polaroids próximas, títulos de capítulos em serifa, coluna de texto consistente e álbuns com fotos proporcionais e alinhadas. Documentos ficam em cartões de consulta; as imagens completas continuam disponíveis. A navegação final usa uma lista de títulos com altura limitada e prévias ao passar o mouse ou focar pelo teclado. Links diretos funcionam sem JavaScript. A lista foi verificada com 100 entradas sem aumentar a altura da seção.
+
+Os relatos anteriores à revisão de tom, no commit `997edc7`, foram consultados para recuperar descobertas, pensamentos e conclusões já registrados. Trechos pessoais de oito histórias foram recuperados nos quatro idiomas, sem desfazer as remoções de detalhes financeiros privados ou alterar resultados técnicos, datas e documentos. As conclusões revisadas se apoiam nessas experiências. Não foram criados acontecimentos novos. As fotos e os textos completos continuam nas páginas de cada história.
+
+Validação desta revisão: build e verificador dos 171 HTMLs, com os 38 cenários de navegador cobertos e reexecução aprovada dos 12 cenários afetados pelos ajustes finais. Os dois testes da home passaram novamente após o ajuste das molduras. Foram conferidos navegação, ordenação, teclado, leitura sem JavaScript, proporção das fotos, acessibilidade automatizada e telas de computador e celular. Uma simulação adicional confirmou a paginação de 100 cartões e o acesso direto a uma história ainda não exibida. O histórico abaixo descreve as versões anteriores.
+
+
 ## Capa, navegação persistente e seções compactas — 25/10/2026
 
 A capa ocupa uma tela própria no computador, sem antecipar o título de Experiência. A tipografia de pôster ganhou a linha Portfólio, e a apresentação usa o texto solicitado sobre software de voo, processadores e FPGAs, traduzido nos quatro idiomas. Foto, post-it, cores, botões e lançamento animado permanecem. Telas de notebook recebem espaçamentos menores para manter todos os elementos da capa visíveis.

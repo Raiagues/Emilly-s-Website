@@ -86,11 +86,13 @@ def layout(path, lang, title, description, body, active='home'):
   <link rel="stylesheet" href="{asset('style/home.css')}">
 {f'<link rel="stylesheet" href="{asset("style/launch.css")}">' if redesigned_home else ''}
 {f'<link rel="stylesheet" href="{asset("style/media.css")}">' if redesigned_home else f'<link rel="stylesheet" href="{asset("style/inner.css")}">'}
+{f'<link rel="stylesheet" href="{asset("style/journal-design.css")}">' if post or path == 'journal.html' else ''}
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
   <script src="{asset('src/redesign.js')}" defer></script>
 {f'<script src="{asset("src/projects.js")}" defer></script>' if path == 'projects.html' else ''}
 {f'<script src="{asset("src/journal.js")}" defer></script>' if post else ''}
+{f'<script src="{asset("src/stories.js")}" defer></script>' if post or path == 'journal.html' else ''}
 </head>
 <body id="top" data-page="{active}"{' class="redesign-home"' if redesigned_home else ' class="redesign-inner"'}>
 <a class="skip-link" href="#main">{t('skip')}</a>
