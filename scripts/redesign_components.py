@@ -71,6 +71,8 @@ class Design:
         return clean.replace('<svg ', '<svg class="illustration" aria-hidden="true" ',1) + svg[len(opening):]
 
     def art(self, name, hero=False, item_id=None):
+        if item_id == 'damas-espaciais':
+            return f'<svg class="illustration damas-illustration" aria-hidden="true" viewBox="0 0 400 260"><rect width="400" height="260" fill="#E6DDEA"/><g transform="translate(78 8) rotate(-8 120 120)"><rect x="-8" y="-8" width="256" height="256" rx="12" fill="#1E3A3D"/><image href="{self.r("img/damas-espaciais/board.jpg")}" width="240" height="240"/><image href="{self.r("img/damas-espaciais/blue.png")}" x="30" y="0" width="30" height="30"/><image href="{self.r("img/damas-espaciais/blue.png")}" x="90" y="60" width="30" height="30"/><image href="{self.r("img/damas-espaciais/pink.png")}" x="150" y="180" width="30" height="30"/><image href="{self.r("img/damas-espaciais/pink-king.png")}" x="60" y="150" width="30" height="30"/><circle cx="135" cy="105" r="6" fill="#F1E2B2"/></g></svg>'
         if name == 'platform' and item_id != 'flight-platform':
             return self.b['art'](name)
         if hero and name == 'satellite': return self.drawing('project-pass')

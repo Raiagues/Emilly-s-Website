@@ -24,8 +24,8 @@ Revisão em 17/10/2026. As traduções reorganizam os fatos para leitura em um p
 
 ## Fontes fornecidas
 
-- `CV_Emilly.pdf`: PDF detalhado, gerado em 17/10/2026. Fonte principal para projetos técnicos, formação, tecnologias e experiência.
-- `Emilly_Rodrigues_Resume.pdf`: versão resumida, gerada em 13/09/2026. Complementa CERN, Visiona, CNES, a plataforma educacional e a aceitação no AIAA SciTech 2027.
+- Documentos pessoais fornecidos no início do projeto (`CV_Emilly.pdf` e `Emilly_Rodrigues_Resume.pdf`): usados como contexto editorial para a primeira versão. Os PDFs e todos os links de download foram retirados do repositório e da publicação em 25/10/2026, a pedido da autora. Esta nota registra a origem histórica dos textos; esses documentos não são fontes públicas de prêmios ou notícias.
+- Damas Espaciais: design fornecido, código original, testes e formação do professor registrados em [content/damas-espaciais/SOURCES.md](damas-espaciais/SOURCES.md).
 - Páginas originais deste repositório, preservadas em `archive-en.json`: Carancho, EP Aero, Webservatório e projetos acadêmicos.
 - A usuária confirmou **emillyraianerodrigues@gmail.com** para o site.
 - LinkedIn fornecido: https://www.linkedin.com/in/emilly-raiane-/ . A consulta pública foi limitada pelo LinkedIn; não foi usada como evidência de conteúdo que não foi possível ler.
@@ -39,7 +39,7 @@ Revisão em 17/10/2026. As traduções reorganizam os fatos para leitura em um p
 
 ## Divergências tratadas
 
-- **E-mail:** o PDF detalhado contém `emilyrayannerodrigues@gmail.com`; o resumido e a confirmação da usuária apontam para `emillyraianerodrigues@gmail.com`. O site usa o endereço confirmado. Os PDFs foram preservados sem modificação; o botão baixa o PDF detalhado. A proprietária deve revisar o endereço dentro dele.
+- **E-mail:** o PDF detalhado contém `emilyrayannerodrigues@gmail.com`; o resumido e a confirmação da usuária apontam para `emillyraianerodrigues@gmail.com`. O site usa o endereço confirmado. Os PDFs e os botões de download foram posteriormente retirados a pedido da proprietária.
 - **CERN:** o currículo detalhado informa julho de 2026–presente e mais de 7.000 candidatos; o resumido informa julho–setembro de 2026 e quase 6.000 candidatos. A primeira revisão adotou **2026** e **47 selecionados**, comuns aos currículos. Para o diário, o e-mail de aprovação fornecido posteriormente confirmou **quase 6.000 candidaturas válidas**. Não foi afirmado vínculo atual.
 - **CNES:** a imprensa descreve outros tempos de recuperação e duração do estágio. Os números técnicos no site seguem os currículos: sete horas para minutos; bloqueio de inicialização de mais de 40 s para menos de 5 s. Não foram misturados com os números da reportagem.
 - **TIMA:** adotado o escopo mais preciso do currículo resumido: redução de **uma etapa de verificação**, de 8,6 s para 0,014 s. Não é apresentada como aceleração de todo o experimento.

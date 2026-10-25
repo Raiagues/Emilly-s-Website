@@ -25,7 +25,7 @@ class Page(HTMLParser):
 pages={}
 errors=[]
 for file in ROOT.rglob('*.html'):
-    if any(p in {'node_modules','dist','.git','.runtime','portfolio-redesign'} for p in file.relative_to(ROOT).parts): continue
+    if any(p in {'node_modules','dist','.git','.runtime','local-reference','portfolio-redesign'} for p in file.relative_to(ROOT).parts): continue
     parsed=Page(); source=file.read_text(); parsed.feed(source); pages[file]=parsed
     if 'exemple' not in file.name and parsed.h1!=1: parsed.errors.append('expected one h1')
     if parsed.lang not in ['en','pt','fr','es']: parsed.errors.append('missing supported language')
@@ -42,7 +42,7 @@ for file,parsed in pages.items():
         if not target.exists(): errors.append(f'{file.relative_to(ROOT)}: missing {ref}')
         elif url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
             errors.append(f'{file.relative_to(ROOT)}: missing fragment {ref}')
-for bad in ['.git','content','scripts','tests','node_modules','.runtime','portfolio-redesign','portfolio-redesign.zip','setup','start','stop','.env','package.json']:
+for bad in ['.git','content','scripts','tests','node_modules','.runtime','local-reference','portfolio-redesign','portfolio-redesign.zip','CV_Emilly.pdf','Emilly_Rodrigues_Resume.pdf','doc/CV_RODRIGUES_Emilly.pdf','setup','start','stop','.env','package.json']:
     if (ROOT/'dist'/bad).exists(): errors.append(f'Unwanted build artifact: {bad}')
 if errors:
     print('\n'.join(errors)); sys.exit(1)

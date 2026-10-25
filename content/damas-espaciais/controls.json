@@ -1,0 +1,132 @@
+{
+  "text": {
+    "loading": "loading",
+    "error": "error",
+    "empty": "empty",
+    "blue": "blue",
+    "pink": "pink",
+    "blueKing": "blueKing",
+    "pinkKing": "pinkKing",
+    "blueName": "blueName",
+    "pinkName": "pinkName",
+    "selected": "selected",
+    "legal": "legal",
+    "turn": "turn",
+    "winner": "winner",
+    "winReason": "winReason",
+    "again": "again",
+    "selectOwn": "selectOwn",
+    "selection": "selection",
+    "move": "move",
+    "accepted": "accepted",
+    "rejected": "rejected",
+    "passed": "passed",
+    "cleared": "cleared",
+    "checkPass": "checkPass",
+    "checkFail": "checkFail",
+    "checkSkip": "checkSkip",
+    "checkIdle": "checkIdle",
+    "inside": "inside",
+    "owner": "owner",
+    "landing": "landing",
+    "emptyStep": "emptyStep",
+    "diagonal": "diagonal",
+    "direction": "direction",
+    "jump": "jump",
+    "artwork": "artwork",
+    "version2021": "version2021",
+    "version2026": "version2026",
+    "menuSub": "menuSub",
+    "playSub": "playSub",
+    "rulesSub": "rulesSub",
+    "menuText": "menuText",
+    "countText": "countText",
+    "winText": "winText",
+    "rulesText": "rulesText",
+    "menuAlt": "menuAlt",
+    "countAlt": "countAlt",
+    "winAlt": "winAlt",
+    "rulesAlt": "rulesAlt",
+    "start": "t045",
+    "initial": "t044"
+  },
+  "screens": {
+    "MENU": {
+      "sub": "menuSub",
+      "image": "menu.jpg",
+      "text": "menuText",
+      "alt": "menuAlt",
+      "col": 1,
+      "row": 1
+    },
+    "COUNTDOWN": {
+      "sub": "10 s",
+      "image": "countdown.jpg",
+      "text": "countText",
+      "alt": "countAlt",
+      "col": 2,
+      "row": 1
+    },
+    "PLAY": {
+      "sub": "playSub",
+      "image": "play.jpg",
+      "text": "t051",
+      "alt": "t120",
+      "col": 3,
+      "row": 1
+    },
+    "VICTORY": {
+      "sub": "sim / não",
+      "image": "victory.jpg",
+      "text": "winText",
+      "alt": "winAlt",
+      "col": 4,
+      "row": 1
+    },
+    "RULES": {
+      "sub": "rulesSub",
+      "image": "rules.jpg",
+      "text": "rulesText",
+      "alt": "rulesAlt",
+      "col": 1,
+      "row": 2
+    }
+  },
+  "steps": [
+    {
+      "key": "inside",
+      "label": "inside",
+      "code": "game_inside(row, col)"
+    },
+    {
+      "key": "owner",
+      "label": "owner",
+      "code": "game_owner(piece) == game->turn"
+    },
+    {
+      "key": "landing",
+      "label": "landing",
+      "code": "landing(game, row, col, &to_row, &to_col)"
+    },
+    {
+      "key": "empty",
+      "label": "emptyStep",
+      "code": "board[to_row][to_col] == EMPTY"
+    },
+    {
+      "key": "diagonal",
+      "label": "diagonal",
+      "code": "abs(dr) == abs(dc) && abs(dr) <= 2"
+    },
+    {
+      "key": "direction",
+      "label": "direction",
+      "code": "!(piece == BLUE && dr < 0)"
+    },
+    {
+      "key": "jump",
+      "label": "jump",
+      "code": "game_owner(middle) == 3 - game->turn"
+    }
+  ]
+}

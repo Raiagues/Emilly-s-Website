@@ -1,0 +1,1028 @@
+{
+  "t001": {
+    "en": "All projects",
+    "pt": "Todos os projetos",
+    "fr": "Tous les projets",
+    "es": "Todos los proyectos"
+  },
+  "t002": {
+    "en": "Projects · Software · 2021 and 2026",
+    "pt": "Projetos · Software · 2021 e 2026",
+    "fr": "Projets · Logiciel · 2021 et 2026",
+    "es": "Proyectos · Software · 2021 y 2026"
+  },
+  "t003": {
+    "en": "Mission patch · 2021",
+    "pt": "Insígnia da missão · 2021",
+    "fr": "Écusson de mission · 2021",
+    "es": "Emblema de misión · 2021"
+  },
+  "t004": {
+    "en": "Software · project · 2021",
+    "pt": "Software · projeto · 2021",
+    "fr": "Logiciel · projet · 2021",
+    "es": "Software · proyecto · 2021"
+  },
+  "t005": {
+    "en": "Damas Espaciais",
+    "pt": "Damas Espaciais",
+    "fr": "Damas Espaciais",
+    "es": "Damas Espaciais"
+  },
+  "t006": {
+    "en": "A space checkers game I wrote in C with the Allegro 5 library, where the pieces are rockets.",
+    "pt": "Um jogo de damas espaciais que escrevi em C com a biblioteca Allegro 5, em que as peças são foguetes.",
+    "fr": "Un jeu de dames spatial que j’ai écrit en C avec la bibliothèque Allegro 5, où les pièces sont des fusées.",
+    "es": "Un juego de damas espaciales que escribí en C con la biblioteca Allegro 5, donde las piezas son cohetes."
+  },
+  "t007": {
+    "en": "C99",
+    "pt": "C99",
+    "fr": "C99",
+    "es": "C99"
+  },
+  "t008": {
+    "en": "Allegro 5",
+    "pt": "Allegro 5",
+    "fr": "Allegro 5",
+    "es": "Allegro 5"
+  },
+  "t009": {
+    "en": "CMake",
+    "pt": "CMake",
+    "fr": "CMake",
+    "es": "CMake"
+  },
+  "t010": {
+    "en": "WebAssembly",
+    "pt": "WebAssembly",
+    "fr": "WebAssembly",
+    "es": "WebAssembly"
+  },
+  "t011": {
+    "en": "My role",
+    "pt": "Minha participação",
+    "fr": "Mon rôle",
+    "es": "Mi participación"
+  },
+  "t012": {
+    "en": "Logic, code and screens",
+    "pt": "Lógica, código e telas",
+    "fr": "Logique, code et écrans",
+    "es": "Lógica, código y pantallas"
+  },
+  "t013": {
+    "en": "Crew",
+    "pt": "Equipe",
+    "fr": "Équipe",
+    "es": "Equipo"
+  },
+  "t014": {
+    "en": "Just me",
+    "pt": "Só eu",
+    "fr": "Moi seule",
+    "es": "Solo yo"
+  },
+  "t015": {
+    "en": "Course professor",
+    "pt": "Professor da disciplina",
+    "fr": "Enseignant du cours",
+    "es": "Profesor de la asignatura"
+  },
+  "t016": {
+    "en": "Marcelo Serrano Zanetti",
+    "pt": "Marcelo Serrano Zanetti",
+    "fr": "Marcelo Serrano Zanetti",
+    "es": "Marcelo Serrano Zanetti"
+  },
+  "t017": {
+    "en": "Base",
+    "pt": "Instituição",
+    "fr": "Établissement",
+    "es": "Institución"
+  },
+  "t018": {
+    "en": "UFSM",
+    "pt": "UFSM",
+    "fr": "UFSM",
+    "es": "UFSM"
+  },
+  "t019": {
+    "en": "Course",
+    "pt": "Disciplina",
+    "fr": "Cours",
+    "es": "Asignatura"
+  },
+  "t020": {
+    "en": "Algorithms & Programming",
+    "pt": "Algoritmos e Programação",
+    "fr": "Algorithmique et programmation",
+    "es": "Algoritmos y programación"
+  },
+  "t021": {
+    "en": "Status",
+    "pt": "Situação",
+    "fr": "État",
+    "es": "Estado"
+  },
+  "t022": {
+    "en": "Restored 2026 · tested",
+    "pt": "Restaurado em 2026 · testado",
+    "fr": "Restauré en 2026 · testé",
+    "es": "Restaurado en 2026 · probado"
+  },
+  "t023": {
+    "en": "Departure",
+    "pt": "Partida",
+    "fr": "Départ",
+    "es": "Salida"
+  },
+  "t024": {
+    "en": "Next destination",
+    "pt": "Próximo destino",
+    "fr": "Prochaine destination",
+    "es": "Próximo destino"
+  },
+  "t025": {
+    "en": "EP Aero · 2022",
+    "pt": "EP Aero · 2022",
+    "fr": "EP Aero · 2022",
+    "es": "EP Aero · 2022"
+  },
+  "t026": {
+    "en": "See the code on GitHub",
+    "pt": "Ver o código no GitHub",
+    "fr": "Voir le code sur GitHub",
+    "es": "Ver el código en GitHub"
+  },
+  "t027": {
+    "en": "Build it yourself",
+    "pt": "Compile o jogo",
+    "fr": "Compiler le jeu",
+    "es": "Compila el juego"
+  },
+  "t028": {
+    "en": "The idea",
+    "pt": "A ideia",
+    "fr": "L’idée",
+    "es": "La idea"
+  },
+  "t029": {
+    "en": "Damas Espaciais was my final project for the Algorithms and Programming course at UFSM, in 2021. I chose checkers because the rules are simple and I already knew them well, so I could put my energy into learning C and the Allegro 5 library.",
+    "pt": "Damas Espaciais foi meu projeto final de Algoritmos e Programação na UFSM, em 2021. Escolhi damas porque as regras são simples e eu já as conhecia bem, então podia concentrar minha energia em aprender C e a biblioteca Allegro 5.",
+    "fr": "Damas Espaciais était mon projet de fin de cours en algorithmique et programmation à l’UFSM, en 2021. J’ai choisi les dames parce que les règles sont simples et que je les connaissais bien : je pouvais ainsi consacrer mon énergie à apprendre le C et la bibliothèque Allegro 5.",
+    "es": "Damas Espaciais fue mi proyecto final de Algoritmos y Programación en la UFSM, en 2021. Elegí las damas porque las reglas son sencillas y ya las conocía bien, así que podía concentrarme en aprender C y la biblioteca Allegro 5."
+  },
+  "t030": {
+    "en": "The starting point was a Pong game that Professor Marcelo Serrano Zanetti shared with the class. The board is an 8 by 8 matrix, and the pieces are blue and pink rockets on a purple board.",
+    "pt": "O ponto de partida foi um jogo de Pong que o professor Marcelo Serrano Zanetti compartilhou com a turma. O tabuleiro é uma matriz de 8 por 8, e as peças são foguetes azuis e rosas sobre um tabuleiro roxo.",
+    "fr": "Le point de départ était un jeu de Pong que le professeur Marcelo Serrano Zanetti avait partagé avec la classe. Le plateau est une matrice de 8 par 8, avec des fusées bleues et roses sur un fond violet.",
+    "es": "El punto de partida fue un juego de Pong que el profesor Marcelo Serrano Zanetti compartió con la clase. El tablero es una matriz de 8 por 8, con cohetes azules y rosas sobre un fondo morado."
+  },
+  "t031": {
+    "en": "In 2026 I came back to the code. I kept the 2021 version untouched in the repository and rebuilt the game with the rules in their own file, automated tests and a build that runs on Linux and Windows.",
+    "pt": "Em 2026, voltei ao código. Preservei a versão de 2021 no repositório e reconstruí o jogo com as regras em um arquivo próprio, testes automatizados e compilação para Linux e Windows.",
+    "fr": "En 2026, j’ai repris le code. J’ai conservé la version de 2021 dans le dépôt et reconstruit le jeu avec les règles dans un fichier séparé, des tests automatisés et une compilation pour Linux et Windows.",
+    "es": "En 2026 volví al código. Conservé la versión de 2021 en el repositorio y reconstruí el juego con las reglas en un archivo separado, pruebas automatizadas y compilación para Linux y Windows."
+  },
+  "t032": {
+    "en": "Play it here",
+    "pt": "Jogue aqui",
+    "fr": "Jouez ici",
+    "es": "Juega aquí"
+  },
+  "t033": {
+    "en": "Same rules as game.c",
+    "pt": "As mesmas regras de game.c",
+    "fr": "Les mêmes règles que game.c",
+    "es": "Las mismas reglas de game.c"
+  },
+  "t034": {
+    "en": "This board uses the restored game’s C rules, compiled to WebAssembly. Select a rocket, then choose its destination. The move inspector explains each check; the C engine decides whether the board changes. Play with someone on the same device, using the mouse, touch or arrow keys and Enter.",
+    "pt": "Este tabuleiro usa as regras em C do jogo restaurado, compiladas para WebAssembly. Selecione um foguete e depois seu destino. O inspetor explica cada verificação; o motor em C decide se o tabuleiro muda. Jogue com alguém no mesmo dispositivo, usando mouse, toque ou as setas do teclado e Enter.",
+    "fr": "Ce plateau utilise les règles en C du jeu restauré, compilées en WebAssembly. Sélectionnez une fusée puis sa destination. L’inspecteur explique chaque vérification ; le moteur C décide si le plateau change. Jouez à deux sur le même appareil, à la souris, au toucher ou avec les flèches et Entrée.",
+    "es": "Este tablero usa las reglas en C del juego restaurado, compiladas a WebAssembly. Selecciona un cohete y después su destino. El inspector explica cada comprobación; el motor C decide si cambia el tablero. Juega con alguien en el mismo dispositivo, con ratón, toque o las flechas del teclado y Enter."
+  },
+  "t035": {
+    "en": "Loading the game…",
+    "pt": "Carregando o jogo…",
+    "fr": "Chargement du jeu…",
+    "es": "Cargando el juego…"
+  },
+  "t036": {
+    "en": "Show the matrix",
+    "pt": "Mostrar a matriz",
+    "fr": "Afficher la matrice",
+    "es": "Mostrar la matriz"
+  },
+  "t037": {
+    "en": "Show legal moves",
+    "pt": "Mostrar jogadas válidas",
+    "fr": "Afficher les coups possibles",
+    "es": "Mostrar jugadas válidas"
+  },
+  "t038": {
+    "en": "Drop selection",
+    "pt": "Desmarcar peça",
+    "fr": "Annuler la sélection",
+    "es": "Quitar selección"
+  },
+  "t039": {
+    "en": "New game",
+    "pt": "Novo jogo",
+    "fr": "Nouvelle partie",
+    "es": "Nueva partida"
+  },
+  "t040": {
+    "en": "Click a selected rocket again to pass the turn, as in the original. In the desktop game the left button selects and the right button moves.",
+    "pt": "Clique novamente no foguete selecionado para passar a vez, como no original. No jogo para computador, o botão esquerdo seleciona e o direito move.",
+    "fr": "Cliquez à nouveau sur la fusée sélectionnée pour passer votre tour, comme dans l’original. Dans le jeu de bureau, le bouton gauche sélectionne et le droit déplace.",
+    "es": "Pulsa de nuevo el cohete seleccionado para pasar el turno, como en el original. En el juego de escritorio, el botón izquierdo selecciona y el derecho mueve."
+  },
+  "t041": {
+    "en": "The board needs JavaScript and WebAssembly. You can also play the standalone browser version or download the source code.",
+    "pt": "O tabuleiro precisa de JavaScript e WebAssembly. Você também pode abrir a versão independente para navegador ou baixar o código-fonte.",
+    "fr": "Le plateau nécessite JavaScript et WebAssembly. Vous pouvez aussi ouvrir la version autonome pour navigateur ou télécharger le code source.",
+    "es": "El tablero necesita JavaScript y WebAssembly. También puedes abrir la versión independiente para navegador o descargar el código fuente."
+  },
+  "t042": {
+    "en": "Open the browser game",
+    "pt": "Abrir o jogo no navegador",
+    "fr": "Ouvrir le jeu dans le navigateur",
+    "es": "Abrir el juego en el navegador"
+  },
+  "t043": {
+    "en": "Move inspector · game_can_move()",
+    "pt": "Inspetor de jogadas · game_can_move()",
+    "fr": "Inspecteur de coups · game_can_move()",
+    "es": "Inspector de jugadas · game_can_move()"
+  },
+  "t044": {
+    "en": "Select a rocket to start.",
+    "pt": "Selecione um foguete para começar.",
+    "fr": "Sélectionnez une fusée pour commencer.",
+    "es": "Selecciona un cohete para empezar."
+  },
+  "t045": {
+    "en": "Blue moves first, from the top of the board.",
+    "pt": "Azul começa, saindo do topo do tabuleiro.",
+    "fr": "Les bleus commencent, depuis le haut du plateau.",
+    "es": "Azul empieza desde la parte superior del tablero."
+  },
+  "t046": {
+    "en": "Five screens, one loop",
+    "pt": "Cinco telas, um laço",
+    "fr": "Cinq écrans, une boucle",
+    "es": "Cinco pantallas, un bucle"
+  },
+  "t047": {
+    "en": "State machine in main.c",
+    "pt": "Máquina de estados em main.c",
+    "fr": "Machine à états dans main.c",
+    "es": "Máquina de estados en main.c"
+  },
+  "t048": {
+    "en": "enum { MENU, RULES, COUNTDOWN, PLAY, VICTORY }",
+    "pt": "enum { MENU, RULES, COUNTDOWN, PLAY, VICTORY }",
+    "fr": "enum { MENU, RULES, COUNTDOWN, PLAY, VICTORY }",
+    "es": "enum { MENU, RULES, COUNTDOWN, PLAY, VICTORY }"
+  },
+  "t049": {
+    "en": "Sim goes back to the menu",
+    "pt": "Sim volta ao menu",
+    "fr": "Sim revient au menu",
+    "es": "Sim vuelve al menú"
+  },
+  "t050": {
+    "en": "PLAY",
+    "pt": "PLAY",
+    "fr": "PLAY",
+    "es": "PLAY"
+  },
+  "t051": {
+    "en": "A 30 Hz timer redraws the board. The window title shows whose turn it is, both piece counts and a hint after an invalid move.",
+    "pt": "Um temporizador de 30 Hz redesenha o tabuleiro. O título da janela mostra de quem é a vez, a contagem de peças e uma dica após uma jogada inválida.",
+    "fr": "Un minuteur à 30 Hz redessine le plateau. Le titre de la fenêtre indique le tour, le nombre de pièces de chaque camp et une indication après un coup invalide.",
+    "es": "Un temporizador de 30 Hz redibuja el tablero. El título de la ventana muestra el turno, el número de piezas y una pista después de una jugada inválida."
+  },
+  "t052": {
+    "en": "Original artwork · PLAY",
+    "pt": "Arte original · PLAY",
+    "fr": "Illustration originale · PLAY",
+    "es": "Arte original · PLAY"
+  },
+  "t053": {
+    "en": "From 2021 to 2026",
+    "pt": "De 2021 a 2026",
+    "fr": "De 2021 à 2026",
+    "es": "De 2021 a 2026"
+  },
+  "t054": {
+    "en": "How the code changed",
+    "pt": "Como o código mudou",
+    "fr": "L’évolution du code",
+    "es": "Cómo cambió el código"
+  },
+  "t055": {
+    "en": "Course version · legacy/",
+    "pt": "Versão da disciplina · legacy/",
+    "fr": "Version du cours · legacy/",
+    "es": "Versión de la asignatura · legacy/"
+  },
+  "t056": {
+    "en": "legacy/main.c",
+    "pt": "legacy/main.c",
+    "fr": "legacy/main.c",
+    "es": "legacy/main.c"
+  },
+  "t057": {
+    "en": "1,587 lines",
+    "pt": "1.587 linhas",
+    "fr": "1 587 lignes",
+    "es": "1.587 líneas"
+  },
+  "t058": {
+    "en": "Menus, drawing, input, sounds and every rule, with posicao_inicial_azul, posicao_final_azul, comer_azul and the same three for rosa",
+    "pt": "Menus, desenho, entrada, sons e todas as regras, com posicao_inicial_azul, posicao_final_azul, comer_azul e as mesmas três funções para rosa",
+    "fr": "Menus, dessin, entrées, sons et règles, avec posicao_inicial_azul, posicao_final_azul, comer_azul et les trois mêmes fonctions pour rosa",
+    "es": "Menús, dibujo, entrada, sonidos y todas las reglas, con posicao_inicial_azul, posicao_final_azul, comer_azul y las mismas tres funciones para rosa"
+  },
+  "t059": {
+    "en": "legacy/Damas Espaciais.cbp",
+    "pt": "legacy/Damas Espaciais.cbp",
+    "fr": "legacy/Damas Espaciais.cbp",
+    "es": "legacy/Damas Espaciais.cbp"
+  },
+  "t060": {
+    "en": "Code::Blocks 17.12",
+    "pt": "Code::Blocks 17.12",
+    "fr": "Code::Blocks 17.12",
+    "es": "Code::Blocks 17.12"
+  },
+  "t061": {
+    "en": "Project file that links Allegro 5.0.10 from C:/Allegro on one Windows machine",
+    "pt": "Arquivo de projeto que vincula Allegro 5.0.10 em C:/Allegro de uma máquina Windows",
+    "fr": "Fichier de projet liant Allegro 5.0.10 depuis C:/Allegro sur une machine Windows",
+    "es": "Archivo de proyecto que enlaza Allegro 5.0.10 desde C:/Allegro en una máquina Windows"
+  },
+  "t062": {
+    "en": "Everything lived in one file. The rules, the drawing, the mouse and the sounds shared global variables, and each colour had its own copy of the move functions.",
+    "pt": "Tudo ficava em um arquivo. As regras, o desenho, o mouse e os sons compartilhavam variáveis globais, e cada cor tinha sua própria cópia das funções de movimento.",
+    "fr": "Tout était dans un seul fichier. Les règles, le dessin, la souris et les sons partageaient des variables globales, et chaque couleur avait sa copie des fonctions de déplacement.",
+    "es": "Todo estaba en un archivo. Las reglas, el dibujo, el ratón y los sonidos compartían variables globales, y cada color tenía su propia copia de las funciones de movimiento."
+  },
+  "t063": {
+    "en": "Then",
+    "pt": "Antes",
+    "fr": "Avant",
+    "es": "Antes"
+  },
+  "t064": {
+    "en": "The code tried to capture two pieces in one jump, but did not handle it the same way in every case.",
+    "pt": "O código tentava capturar duas peças em um salto, mas não tratava isso da mesma forma em todos os casos.",
+    "fr": "Le code tentait de capturer deux pièces en un saut, sans traiter tous les cas de la même manière.",
+    "es": "El código intentaba capturar dos piezas en un salto, pero no lo trataba igual en todos los casos."
+  },
+  "t065": {
+    "en": "Kings were not counted as remaining pieces.",
+    "pt": "As damas não eram contadas entre as peças restantes.",
+    "fr": "Les dames n’étaient pas comptées parmi les pièces restantes.",
+    "es": "Las damas no se contaban entre las piezas restantes."
+  },
+  "t066": {
+    "en": "Some moves read squares outside the board before checking the coordinates.",
+    "pt": "Algumas jogadas liam casas fora do tabuleiro antes de verificar as coordenadas.",
+    "fr": "Certains coups lisaient des cases hors du plateau avant de vérifier les coordonnées.",
+    "es": "Algunas jugadas leían casillas fuera del tablero antes de comprobar las coordenadas."
+  },
+  "t067": {
+    "en": "Restored version · src/ and tests/",
+    "pt": "Versão restaurada · src/ e tests/",
+    "fr": "Version restaurée · src/ et tests/",
+    "es": "Versión restaurada · src/ y tests/"
+  },
+  "t068": {
+    "en": "src/game.c + game.h",
+    "pt": "src/game.c + game.h",
+    "fr": "src/game.c + game.h",
+    "es": "src/game.c + game.h"
+  },
+  "t069": {
+    "en": "Shared C engine",
+    "pt": "Motor compartilhado em C",
+    "fr": "Moteur C partagé",
+    "es": "Motor compartido en C"
+  },
+  "t070": {
+    "en": "Board, turns, moves, captures, promotion and victory",
+    "pt": "Tabuleiro, turnos, movimentos, capturas, promoção e vitória",
+    "fr": "Plateau, tours, déplacements, captures, promotion et victoire",
+    "es": "Tablero, turnos, movimientos, capturas, coronación y victoria"
+  },
+  "t071": {
+    "en": "src/main.c",
+    "pt": "src/main.c",
+    "fr": "src/main.c",
+    "es": "src/main.c"
+  },
+  "t072": {
+    "en": "Desktop interface",
+    "pt": "Interface para computador",
+    "fr": "Interface de bureau",
+    "es": "Interfaz de escritorio"
+  },
+  "t073": {
+    "en": "Allegro window, the five screens, input, rendering and audio",
+    "pt": "Janela Allegro, as cinco telas, entrada, renderização e áudio",
+    "fr": "Fenêtre Allegro, cinq écrans, entrées, rendu et audio",
+    "es": "Ventana Allegro, cinco pantallas, entrada, renderizado y audio"
+  },
+  "t074": {
+    "en": "tests/test_game.c",
+    "pt": "tests/test_game.c",
+    "fr": "tests/test_game.c",
+    "es": "tests/test_game.c"
+  },
+  "t075": {
+    "en": "5,446 checks",
+    "pt": "5.446 verificações",
+    "fr": "5 446 vérifications",
+    "es": "5.446 comprobaciones"
+  },
+  "t076": {
+    "en": "Rule tests that run without a display",
+    "pt": "Testes das regras que rodam sem tela",
+    "fr": "Tests des règles sans écran",
+    "es": "Pruebas de reglas sin pantalla"
+  },
+  "t077": {
+    "en": "CMakeLists.txt + build.yml",
+    "pt": "CMakeLists.txt + build.yml",
+    "fr": "CMakeLists.txt + build.yml",
+    "es": "CMakeLists.txt + build.yml"
+  },
+  "t078": {
+    "en": "Linux and Windows",
+    "pt": "Linux e Windows",
+    "fr": "Linux et Windows",
+    "es": "Linux y Windows"
+  },
+  "t079": {
+    "en": "Portable build and the CI pipeline",
+    "pt": "Compilação portátil e integração contínua",
+    "fr": "Compilation portable et intégration continue",
+    "es": "Compilación portátil e integración continua"
+  },
+  "t080": {
+    "en": "src/web.c + web/app.js",
+    "pt": "src/web.c + web/app.js",
+    "fr": "src/web.c + web/app.js",
+    "es": "src/web.c + web/app.js"
+  },
+  "t081": {
+    "en": "Browser interface",
+    "pt": "Interface para navegador",
+    "fr": "Interface pour navigateur",
+    "es": "Interfaz de navegador"
+  },
+  "t082": {
+    "en": "The same C rules compiled to WebAssembly, with mouse, keyboard and touch controls",
+    "pt": "As mesmas regras em C compiladas para WebAssembly, com controles por mouse, teclado e toque",
+    "fr": "Les mêmes règles C compilées en WebAssembly, avec commandes à la souris, au clavier et au toucher",
+    "es": "Las mismas reglas en C compiladas a WebAssembly, con controles por ratón, teclado y toque"
+  },
+  "t083": {
+    "en": "The rules moved to their own file with no Allegro code. The window, screens, input and audio stayed in main.c, and the tests talk to the rules directly.",
+    "pt": "As regras foram para um arquivo próprio, sem código do Allegro. Janela, telas, entrada e áudio ficaram em main.c, e os testes acessam as regras diretamente.",
+    "fr": "Les règles ont rejoint un fichier séparé, sans code Allegro. La fenêtre, les écrans, les entrées et l’audio sont restés dans main.c ; les tests accèdent directement aux règles.",
+    "es": "Las reglas pasaron a un archivo propio, sin código Allegro. La ventana, las pantallas, la entrada y el audio quedaron en main.c, y las pruebas acceden directamente a las reglas."
+  },
+  "t084": {
+    "en": "Fixed",
+    "pt": "Corrigido",
+    "fr": "Corrigé",
+    "es": "Corregido"
+  },
+  "t085": {
+    "en": "Coordinates are checked before the board is read, including the landing square of a capture.",
+    "pt": "As coordenadas são verificadas antes da leitura do tabuleiro, inclusive o destino de uma captura.",
+    "fr": "Les coordonnées sont vérifiées avant de lire le plateau, y compris la case d’arrivée d’une capture.",
+    "es": "Las coordenadas se comprueban antes de leer el tablero, incluido el destino de una captura."
+  },
+  "t086": {
+    "en": "A move is fully validated before anything changes, so an invalid move leaves the board and the turn as they were.",
+    "pt": "A jogada inteira é validada antes de qualquer mudança. Uma jogada inválida preserva o tabuleiro e o turno.",
+    "fr": "Un coup est entièrement validé avant toute modification. Un coup invalide préserve le plateau et le tour.",
+    "es": "La jugada se valida por completo antes de cambiar nada. Una jugada inválida conserva el tablero y el turno."
+  },
+  "t087": {
+    "en": "Kings count as pieces, keep their type when they capture, and promotion works for moves and captures.",
+    "pt": "Damas contam como peças, mantêm seu tipo ao capturar, e a promoção funciona em movimentos e capturas.",
+    "fr": "Les dames comptent comme pièces, conservent leur type lors des captures, et la promotion fonctionne en déplacement comme en capture.",
+    "es": "Las damas cuentan como piezas, conservan su tipo al capturar y la coronación funciona al mover y capturar."
+  },
+  "t088": {
+    "en": "Choice",
+    "pt": "Escolha",
+    "fr": "Choix",
+    "es": "Decisión"
+  },
+  "t089": {
+    "en": "One capture per turn, since the old double capture was not consistent. A player with no legal move now loses.",
+    "pt": "Uma captura por turno, já que a captura dupla antiga era inconsistente. Agora, quem fica sem jogada válida perde.",
+    "fr": "Une capture par tour, car l’ancienne double capture était incohérente. Un joueur sans coup possible perd désormais.",
+    "es": "Una captura por turno, porque la antigua captura doble era inconsistente. Ahora pierde quien se queda sin jugada válida."
+  },
+  "t090": {
+    "en": "Tested on every push",
+    "pt": "Testado a cada push",
+    "fr": "Testé à chaque push",
+    "es": "Probado en cada push"
+  },
+  "t091": {
+    "en": ".github/workflows/build.yml",
+    "pt": ".github/workflows/build.yml",
+    "fr": ".github/workflows/build.yml",
+    "es": ".github/workflows/build.yml"
+  },
+  "t092": {
+    "en": "Moves checked by one test that tries every piece type on every dark square in every direction",
+    "pt": "Casos verificados por um teste que combina cada tipo de peça, casa escura e direção",
+    "fr": "Cas vérifiés par un test combinant chaque type de pièce, case sombre et direction",
+    "es": "Casos comprobados por una prueba que combina cada tipo de pieza, casilla oscura y dirección"
+  },
+  "t093": {
+    "en": "Systems in the pipeline, Ubuntu 24.04 and Windows with MSYS2",
+    "pt": "Sistemas na integração contínua: Ubuntu 24.04 e Windows com MSYS2",
+    "fr": "Systèmes en intégration continue : Ubuntu 24.04 et Windows avec MSYS2",
+    "es": "Sistemas en integración continua: Ubuntu 24.04 y Windows con MSYS2"
+  },
+  "t094": {
+    "en": "Native rule checks, including the exhaustive square-and-direction cases",
+    "pt": "Verificações nativas das regras, incluindo os casos exaustivos de casas e direções",
+    "fr": "Vérifications natives des règles, y compris les cas exhaustifs de cases et directions",
+    "es": "Comprobaciones nativas de reglas, incluidos los casos exhaustivos de casillas y direcciones"
+  },
+  "t095": {
+    "en": "git push",
+    "pt": "git push",
+    "fr": "git push",
+    "es": "git push"
+  },
+  "t096": {
+    "en": "GitHub Actions starts two jobs",
+    "pt": "GitHub Actions inicia dois jobs",
+    "fr": "GitHub Actions lance deux tâches",
+    "es": "GitHub Actions inicia dos tareas"
+  },
+  "t097": {
+    "en": "Linux · Ubuntu 24.04",
+    "pt": "Linux · Ubuntu 24.04",
+    "fr": "Linux · Ubuntu 24.04",
+    "es": "Linux · Ubuntu 24.04"
+  },
+  "t098": {
+    "en": "Build with -Werror and sanitizers",
+    "pt": "Compilação com -Werror e sanitizadores",
+    "fr": "Compilation avec -Werror et sanitizers",
+    "es": "Compilación con -Werror y sanitizadores"
+  },
+  "t099": {
+    "en": "Rule tests",
+    "pt": "Testes das regras",
+    "fr": "Tests des règles",
+    "es": "Pruebas de reglas"
+  },
+  "t100": {
+    "en": "Desktop test in Xvfb",
+    "pt": "Teste da interface no Xvfb",
+    "fr": "Test de l’interface dans Xvfb",
+    "es": "Prueba de interfaz en Xvfb"
+  },
+  "t101": {
+    "en": "The desktop test opens the real game in a virtual screen and clicks through the menu, countdown, moves, captures, a restart and the exit.",
+    "pt": "O teste abre o jogo real em uma tela virtual e percorre menu, contagem regressiva, movimentos, capturas, reinício e saída.",
+    "fr": "Le test ouvre le vrai jeu sur un écran virtuel et parcourt le menu, le compte à rebours, les déplacements, les captures, le redémarrage et la sortie.",
+    "es": "La prueba abre el juego real en una pantalla virtual y recorre el menú, la cuenta atrás, los movimientos, las capturas, el reinicio y la salida."
+  },
+  "t102": {
+    "en": "Windows · MSYS2 UCRT64",
+    "pt": "Windows · MSYS2 UCRT64",
+    "fr": "Windows · MSYS2 UCRT64",
+    "es": "Windows · MSYS2 UCRT64"
+  },
+  "t103": {
+    "en": "Build with -Werror",
+    "pt": "Compilação com -Werror",
+    "fr": "Compilation avec -Werror",
+    "es": "Compilación con -Werror"
+  },
+  "t104": {
+    "en": "The rules have no Allegro code, so these tests run without a window or a sound card.",
+    "pt": "As regras não dependem do Allegro, então os testes rodam sem janela nem placa de som.",
+    "fr": "Les règles ne dépendent pas d’Allegro : les tests fonctionnent sans fenêtre ni carte son.",
+    "es": "Las reglas no dependen de Allegro, así que las pruebas se ejecutan sin ventana ni tarjeta de sonido."
+  },
+  "t105": {
+    "en": "From tests/test_game.c",
+    "pt": "Trecho de tests/test_game.c",
+    "fr": "Extrait de tests/test_game.c",
+    "es": "Fragmento de tests/test_game.c"
+  },
+  "t106": {
+    "en": "06 · What I learned",
+    "pt": "06 · O que aprendi",
+    "fr": "06 · Ce que j’ai appris",
+    "es": "06 · Lo que aprendí"
+  },
+  "t107": {
+    "en": "In 2021 I wrote the game in plain C first and added Allegro later, so I had to translate many lines of code. When I came back in 2026, I moved the rules out of the Allegro code, and that is what let me test every move without opening a window.",
+    "pt": "Em 2021, escrevi primeiro o jogo em C puro e só depois acrescentei o Allegro, então precisei adaptar muitas linhas de código. Quando voltei em 2026, separei as regras do código do Allegro. Foi isso que me permitiu testar cada jogada sem abrir uma janela.",
+    "fr": "En 2021, j’ai d’abord écrit le jeu en C pur, puis ajouté Allegro : j’ai dû adapter beaucoup de lignes de code. En reprenant le projet en 2026, j’ai séparé les règles du code Allegro. C’est ce qui m’a permis de tester chaque coup sans ouvrir de fenêtre.",
+    "es": "En 2021 escribí primero el juego en C puro y después añadí Allegro, por lo que tuve que adaptar muchas líneas. Al volver en 2026 separé las reglas del código Allegro. Eso me permitió probar cada jugada sin abrir una ventana."
+  },
+  "t108": {
+    "en": "Crew manifest",
+    "pt": "Quem fez parte",
+    "fr": "Équipe du projet",
+    "es": "Quiénes participaron"
+  },
+  "t109": {
+    "en": "Emilly Raiane Rodrigues",
+    "pt": "Emilly Raiane Rodrigues",
+    "fr": "Emilly Raiane Rodrigues",
+    "es": "Emilly Raiane Rodrigues"
+  },
+  "t110": {
+    "en": "Logic, code, screens and the 2026 restoration",
+    "pt": "Lógica, código, telas e restauração de 2026",
+    "fr": "Logique, code, écrans et restauration de 2026",
+    "es": "Lógica, código, pantallas y restauración de 2026"
+  },
+  "t111": {
+    "en": "Prof. Dr. Marcelo Serrano Zanetti",
+    "pt": "Prof. Dr. Marcelo Serrano Zanetti",
+    "fr": "Prof. Dr. Marcelo Serrano Zanetti",
+    "es": "Prof. Dr. Marcelo Serrano Zanetti"
+  },
+  "t112": {
+    "en": "Course professor · base Pong code",
+    "pt": "Professor da disciplina · código-base do Pong",
+    "fr": "Enseignant du cours · code initial du Pong",
+    "es": "Profesor de la asignatura · código base de Pong"
+  },
+  "t113": {
+    "en": "MSc in Computer Science and PhD in Complex Systems from ETH Zürich, Switzerland.",
+    "pt": "Mestre em Ciência da Computação e doutor em Sistemas Complexos pela ETH Zürich, Suíça.",
+    "fr": "Titulaire d’un master en informatique et d’un doctorat en systèmes complexes de l’ETH Zürich, en Suisse.",
+    "es": "Máster en Ciencias de la Computación y doctor en Sistemas Complejos por la ETH Zürich, Suiza."
+  },
+  "t114": {
+    "en": "Academic background · UFSM",
+    "pt": "Formação acadêmica · UFSM",
+    "fr": "Parcours universitaire · UFSM",
+    "es": "Formación académica · UFSM"
+  },
+  "t115": {
+    "en": "The game menu, with the title Damas Espaciais and the options Start and Rules over a starry sky",
+    "pt": "Menu do jogo, com o título Damas Espaciais e as opções Iniciar e Regras sobre um céu estrelado",
+    "fr": "Menu du jeu, avec le titre Damas Espaciais et les options de démarrage et de règles sur un ciel étoilé",
+    "es": "Menú del juego, con el título Damas Espaciais y las opciones de inicio y reglas sobre un cielo estrellado"
+  },
+  "t116": {
+    "en": "Play the rules",
+    "pt": "Jogue com as regras",
+    "fr": "Jouer avec les règles",
+    "es": "Juega con las reglas"
+  },
+  "t117": {
+    "en": "Checkers board",
+    "pt": "Tabuleiro de damas",
+    "fr": "Plateau de dames",
+    "es": "Tablero de damas"
+  },
+  "t118": {
+    "en": "Move inspector",
+    "pt": "Inspetor de jogadas",
+    "fr": "Inspecteur de coups",
+    "es": "Inspector de jugadas"
+  },
+  "t119": {
+    "en": "Screens and states",
+    "pt": "Telas e estados",
+    "fr": "Écrans et états",
+    "es": "Pantallas y estados"
+  },
+  "t120": {
+    "en": "The board during a game with a rocket being moved",
+    "pt": "Tabuleiro durante uma partida, com um foguete em movimento",
+    "fr": "Plateau pendant une partie, avec une fusée en déplacement",
+    "es": "Tablero durante una partida, con un cohete en movimiento"
+  },
+  "t121": {
+    "en": "Pick a version",
+    "pt": "Escolha uma versão",
+    "fr": "Choisir une version",
+    "es": "Elige una versión"
+  },
+  "t122": {
+    "en": "What I learned",
+    "pt": "O que aprendi",
+    "fr": "Ce que j’ai appris",
+    "es": "Lo que aprendí"
+  },
+  "loading": {
+    "en": "Loading the game…",
+    "pt": "Carregando o jogo…",
+    "fr": "Chargement du jeu…",
+    "es": "Cargando el juego…"
+  },
+  "error": {
+    "en": "The game could not load. Use the browser game link below or reload this page.",
+    "pt": "Não foi possível carregar o jogo. Use o link abaixo ou recarregue a página.",
+    "fr": "Le jeu n’a pas pu charger. Utilisez le lien ci-dessous ou rechargez la page.",
+    "es": "No se pudo cargar el juego. Usa el enlace de abajo o recarga la página."
+  },
+  "empty": {
+    "en": "empty",
+    "pt": "vazia",
+    "fr": "vide",
+    "es": "vacía"
+  },
+  "blue": {
+    "en": "Blue rocket",
+    "pt": "Foguete azul",
+    "fr": "Fusée bleue",
+    "es": "Cohete azul"
+  },
+  "pink": {
+    "en": "Pink rocket",
+    "pt": "Foguete rosa",
+    "fr": "Fusée rose",
+    "es": "Cohete rosa"
+  },
+  "blueKing": {
+    "en": "Blue king",
+    "pt": "Dama azul",
+    "fr": "Dame bleue",
+    "es": "Dama azul"
+  },
+  "pinkKing": {
+    "en": "Pink king",
+    "pt": "Dama rosa",
+    "fr": "Dame rose",
+    "es": "Dama rosa"
+  },
+  "blueName": {
+    "en": "Blue",
+    "pt": "Azul",
+    "fr": "Bleu",
+    "es": "Azul"
+  },
+  "pinkName": {
+    "en": "Pink",
+    "pt": "Rosa",
+    "fr": "Rose",
+    "es": "Rosa"
+  },
+  "selected": {
+    "en": "selected",
+    "pt": "selecionada",
+    "fr": "sélectionnée",
+    "es": "seleccionada"
+  },
+  "legal": {
+    "en": "legal destination",
+    "pt": "destino válido",
+    "fr": "destination possible",
+    "es": "destino válido"
+  },
+  "turn": {
+    "en": "{player}’s turn",
+    "pt": "Vez de {player}",
+    "fr": "Tour : {player}",
+    "es": "Turno de {player}"
+  },
+  "winner": {
+    "en": "{player} wins!",
+    "pt": "Vitória de {player}!",
+    "fr": "Victoire : {player} !",
+    "es": "¡Gana {player}!"
+  },
+  "winReason": {
+    "en": "The other side has no rockets or legal moves left.",
+    "pt": "O outro lado ficou sem foguetes ou jogadas válidas.",
+    "fr": "L’autre camp n’a plus de fusées ou de coups possibles.",
+    "es": "El otro bando no tiene cohetes o jugadas válidas."
+  },
+  "again": {
+    "en": "Play again",
+    "pt": "Jogar novamente",
+    "fr": "Rejouer",
+    "es": "Jugar de nuevo"
+  },
+  "selectOwn": {
+    "en": "Choose a rocket of the player in turn.",
+    "pt": "Escolha um foguete de quem está jogando.",
+    "fr": "Choisissez une fusée du joueur dont c’est le tour.",
+    "es": "Elige un cohete de quien tiene el turno."
+  },
+  "selection": {
+    "en": "Rocket {square} selected. Pick a destination.",
+    "pt": "Foguete {square} selecionado. Escolha o destino.",
+    "fr": "Fusée {square} sélectionnée. Choisissez sa destination.",
+    "es": "Cohete {square} seleccionado. Elige su destino."
+  },
+  "move": {
+    "en": "Move {from} → {to}",
+    "pt": "Jogada {from} → {to}",
+    "fr": "Coup {from} → {to}",
+    "es": "Jugada {from} → {to}"
+  },
+  "accepted": {
+    "en": "game_move() returned true. The board and turn changed.",
+    "pt": "game_move() retornou true. O tabuleiro e o turno mudaram.",
+    "fr": "game_move() a renvoyé true. Le plateau et le tour ont changé.",
+    "es": "game_move() devolvió true. Cambiaron el tablero y el turno."
+  },
+  "rejected": {
+    "en": "game_move() returned false. The board and turn stayed the same.",
+    "pt": "game_move() retornou false. O tabuleiro e o turno foram preservados.",
+    "fr": "game_move() a renvoyé false. Le plateau et le tour sont inchangés.",
+    "es": "game_move() devolvió false. El tablero y el turno no cambiaron."
+  },
+  "passed": {
+    "en": "Turn passed. The pieces stayed in place.",
+    "pt": "Vez passada. As peças continuam no lugar.",
+    "fr": "Tour passé. Les pièces restent en place.",
+    "es": "Turno pasado. Las piezas siguen en su sitio."
+  },
+  "cleared": {
+    "en": "Selection cleared. Choose another rocket.",
+    "pt": "Seleção desfeita. Escolha outro foguete.",
+    "fr": "Sélection annulée. Choisissez une autre fusée.",
+    "es": "Selección cancelada. Elige otro cohete."
+  },
+  "checkPass": {
+    "en": "passed",
+    "pt": "aprovado",
+    "fr": "validé",
+    "es": "aprobado"
+  },
+  "checkFail": {
+    "en": "failed",
+    "pt": "reprovado",
+    "fr": "refusé",
+    "es": "rechazado"
+  },
+  "checkSkip": {
+    "en": "not reached",
+    "pt": "não executado",
+    "fr": "non atteint",
+    "es": "no ejecutado"
+  },
+  "checkIdle": {
+    "en": "waiting",
+    "pt": "aguardando",
+    "fr": "en attente",
+    "es": "en espera"
+  },
+  "inside": {
+    "en": "Both squares are on the board",
+    "pt": "As duas casas estão no tabuleiro",
+    "fr": "Les deux cases sont sur le plateau",
+    "es": "Ambas casillas están en el tablero"
+  },
+  "owner": {
+    "en": "The rocket belongs to the player in turn",
+    "pt": "O foguete pertence a quem está jogando",
+    "fr": "La fusée appartient au joueur du tour",
+    "es": "El cohete pertenece a quien tiene el turno"
+  },
+  "landing": {
+    "en": "A click on an adjacent rival resolves to the square beyond it",
+    "pt": "Clicar no rival ao lado indica a casa depois dele",
+    "fr": "Cliquer sur un adversaire adjacent désigne la case au-delà",
+    "es": "Pulsar un rival adyacente indica la casilla detrás de él"
+  },
+  "emptyStep": {
+    "en": "The destination is empty and on the board",
+    "pt": "O destino está vazio e dentro do tabuleiro",
+    "fr": "La destination est vide et sur le plateau",
+    "es": "El destino está vacío y dentro del tablero"
+  },
+  "diagonal": {
+    "en": "It moves one or two squares diagonally",
+    "pt": "O movimento é diagonal, de uma ou duas casas",
+    "fr": "Le déplacement est diagonal, d’une ou deux cases",
+    "es": "El movimiento es diagonal, de una o dos casillas"
+  },
+  "direction": {
+    "en": "Normal rockets only go forward",
+    "pt": "Foguetes comuns só avançam",
+    "fr": "Les fusées ordinaires avancent uniquement",
+    "es": "Los cohetes normales solo avanzan"
+  },
+  "jump": {
+    "en": "A two-square move jumps over a rival",
+    "pt": "O salto de duas casas passa sobre um rival",
+    "fr": "Un saut de deux cases passe sur un adversaire",
+    "es": "El salto de dos casillas pasa sobre un rival"
+  },
+  "artwork": {
+    "en": "Original artwork",
+    "pt": "Arte original",
+    "fr": "Illustration originale",
+    "es": "Arte original"
+  },
+  "version2021": {
+    "en": "2021 · course version",
+    "pt": "2021 · versão da disciplina",
+    "fr": "2021 · version du cours",
+    "es": "2021 · versión de la asignatura"
+  },
+  "version2026": {
+    "en": "2026 · restored",
+    "pt": "2026 · restaurado",
+    "fr": "2026 · restauré",
+    "es": "2026 · restaurado"
+  },
+  "menuSub": {
+    "en": "start",
+    "pt": "início",
+    "fr": "début",
+    "es": "inicio"
+  },
+  "playSub": {
+    "en": "turns",
+    "pt": "turnos",
+    "fr": "tours",
+    "es": "turnos"
+  },
+  "rulesSub": {
+    "en": "back",
+    "pt": "voltar",
+    "fr": "retour",
+    "es": "volver"
+  },
+  "menuText": {
+    "en": "The first screen. Start begins the countdown and Rules opens the rules. Esc quits from here.",
+    "pt": "A primeira tela. Iniciar começa a contagem regressiva e Regras abre as instruções. Esc sai do jogo.",
+    "fr": "Le premier écran. Iniciar lance le compte à rebours et Regras ouvre les règles. Échap quitte le jeu.",
+    "es": "La primera pantalla. Iniciar comienza la cuenta atrás y Regras abre las reglas. Esc sale del juego."
+  },
+  "countText": {
+    "en": "In 2021 the countdown paused the whole program with al_rest. Now it reads elapsed time on each tick, so Esc and closing the window still work.",
+    "pt": "Em 2021, a contagem regressiva pausava o programa inteiro com al_rest. Agora ela lê o tempo a cada atualização, então Esc e o botão de fechar continuam funcionando.",
+    "fr": "En 2021, le compte à rebours suspendait tout le programme avec al_rest. Il lit désormais le temps écoulé à chaque tick : Échap et la fermeture de la fenêtre restent disponibles.",
+    "es": "En 2021 la cuenta atrás pausaba todo el programa con al_rest. Ahora lee el tiempo en cada actualización, así que Esc y el cierre de la ventana siguen funcionando."
+  },
+  "winText": {
+    "en": "Shown when a side has no rockets or legal moves left. Sim returns to the menu with a fresh board; Não closes the game.",
+    "pt": "Aparece quando um lado fica sem foguetes ou jogadas válidas. Sim volta ao menu com um tabuleiro novo; Não fecha o jogo.",
+    "fr": "Cet écran apparaît lorsqu’un camp n’a plus de fusées ou de coups possibles. Sim retourne au menu avec un nouveau plateau ; Não ferme le jeu.",
+    "es": "Aparece cuando un bando se queda sin cohetes o jugadas válidas. Sim vuelve al menú con un tablero nuevo; Não cierra el juego."
+  },
+  "rulesText": {
+    "en": "The seven rules from the original artwork, in Portuguese. Voltar goes back to the menu.",
+    "pt": "As sete regras da arte original, em português. Voltar retorna ao menu.",
+    "fr": "Les sept règles de l’illustration originale, en portugais. Voltar revient au menu.",
+    "es": "Las siete reglas del arte original, en portugués. Voltar vuelve al menú."
+  },
+  "menuAlt": {
+    "en": "The menu with Start highlighted",
+    "pt": "O menu com Iniciar destacado",
+    "fr": "Le menu avec Iniciar en surbrillance",
+    "es": "El menú con Iniciar resaltado"
+  },
+  "countAlt": {
+    "en": "A glowing number 3 over a starry sky",
+    "pt": "Um número 3 luminoso sobre um céu estrelado",
+    "fr": "Un chiffre 3 lumineux sur un ciel étoilé",
+    "es": "Un número 3 luminoso sobre un cielo estrellado"
+  },
+  "winAlt": {
+    "en": "The blue rocket’s victory screen with yes and no buttons",
+    "pt": "Tela de vitória do foguete azul, com botões Sim e Não",
+    "fr": "Écran de victoire de la fusée bleue, avec les boutons Sim et Não",
+    "es": "Pantalla de victoria del cohete azul, con botones Sim y Não"
+  },
+  "rulesAlt": {
+    "en": "The original screen listing seven rules",
+    "pt": "Tela original com as sete regras",
+    "fr": "Écran original présentant les sept règles",
+    "es": "Pantalla original con las siete reglas"
+  },
+  "cases": {
+    "en": "3,200",
+    "pt": "3.200",
+    "fr": "3 200",
+    "es": "3.200"
+  },
+  "checks": {
+    "en": "5,446",
+    "pt": "5.446",
+    "fr": "5 446",
+    "es": "5.446"
+  }
+}

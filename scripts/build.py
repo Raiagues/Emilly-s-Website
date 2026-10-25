@@ -24,6 +24,7 @@ POSTS = J['load_posts'](ROOT)
 ENTITIES = J['load_entities'](ROOT, POSTS)
 INNER = runpy.run_path(str(ROOT / 'scripts/inner_redesign.py'))
 CERN = runpy.run_path(str(ROOT / 'scripts/cern_redesign.py'))
+DAMAS = runpy.run_path(str(ROOT / 'scripts/damas_redesign.py'))
 DESIGN = runpy.run_path(str(ROOT / 'scripts/redesign_components.py'))
 JUI = json.loads((ROOT / 'content/journal/ui.json').read_text())
 UI['home'] = JUI['home']
@@ -72,6 +73,7 @@ def layout(path, lang, title, description, body, active='home'):
         structured.update({'@type': 'BlogPosting', 'headline': title, 'datePublished': post['date'], 'author': {'@type': 'Person', 'name': 'Emilly Rodrigues'}, 'image': [SITE_URL + '/' + post['photos'][key]['file'] for key in post['cover']]})
     redesigned_home = path == 'index.html'
     cern_report = path == 'pages/experience/cern.html'
+    damas_project = path == 'pages/projects/damas-espaciais.html'
     design = DESIGN['Design'](globals(), lang, path)
     return f'''<!doctype html>
 <html lang="{lang}">
@@ -91,7 +93,7 @@ def layout(path, lang, title, description, body, active='home'):
 {f'<link rel="stylesheet" href="{asset("style/journal-design.css")}">' if not cern_report and (post or path == 'journal.html' or path.startswith('pages/')) else ''}
   <link rel="stylesheet" href="{asset('style/components.css')}">
 {f'<link rel="stylesheet" href="{asset("style/work.css")}">' if not cern_report and (path in ('projects.html','experience.html','recognition.html','contact.html') or path.startswith('pages/')) else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/cern.css")}">' if cern_report else ''}
-  <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
+  <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>{chr(10) + f'<link rel="stylesheet" href="{asset("style/damas.css")}"><script src="{asset("src/damas.js")}" defer></script>' if damas_project else ''}
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
   <script src="{asset('src/redesign.js')}" defer></script>
 {f'<script src="{asset("src/projects.js")}" defer></script>' if path in ('projects.html','experience.html') else ''}
@@ -154,7 +156,7 @@ def about(lang):
     t = lambda x: txt(x, lang)
     evidence = ''.join(f'<article class="skill"><h3>{SKILLS[key][lang]}</h3><p>{copy[lang]}</p><a class="text-link" href="{href(current, detail(next(p for p in PROJECTS if p["id"] == id)), lang)}">{txt("case", lang)} </a></article>' for key, id, copy in D['EVIDENCE'])
     body = f'''<main id="main" class="container content-page">{heading(lang, t('about'))}
-<div class="about-layout"><div class="prose"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><a class="text-link" href="{href(current, 'pages/projects/project_17.html', lang)}">EP Aero </a></div><aside class="education"><h2>{t('education')}</h2><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p><a class="button button-soft" href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} </a></aside></div>
+<div class="about-layout"><div class="prose"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><a class="text-link" href="{href(current, 'pages/projects/project_17.html', lang)}">EP Aero </a></div><aside class="education"><h2>{t('education')}</h2><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p></aside></div>
 <section class="skills-section"><h2>{t('awards_title')}</h2><p>{t('awards_body')}</p><a class="button button-soft" href="{href(current, 'recognition.html', lang)}">{t('recognition')}</a></section><section class="skills-section"><h2>{t('skills_title')}</h2><p>{t('skills_body')}</p><div class="skills-grid">{evidence}</div></section></main>'''
     return layout('about.html', lang, t('about'), t('short_bio'), body, 'about')
 
@@ -171,7 +173,7 @@ def recognition(lang):
 
 def contact_panel(lang, current):
     t = lambda x: txt(x, lang)
-    return f'''<div class="contact-layout"><div class="contact-info"><div class="contact-postcard" aria-hidden="true">{DESIGN["Design"](globals(),lang,"contact.html").drawing("postcard-rack")}</div><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><div class="social-links">{social_links()}</div><a href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} </a></div>
+    return f'''<div class="contact-layout"><div class="contact-info"><div class="contact-postcard" aria-hidden="true">{DESIGN["Design"](globals(),lang,"contact.html").drawing("postcard-rack")}</div><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><div class="social-links">{social_links()}</div></div>
 <form class="contact-form" action="https://formsubmit.co/{EMAIL}" method="POST"><div class="form-row"><label>{t('name')}<input type="text" name="name" autocomplete="name" required maxlength="100"></label><label>{t('email')}<input type="email" name="email" autocomplete="email" required maxlength="254"></label></div><label>{t('subject')}<input type="text" name="subject" required maxlength="160"></label><label>{t('message')}<textarea name="message" rows="6" required maxlength="5000"></textarea></label><input type="hidden" name="_subject" value="Portfolio · Emilly Rodrigues"><input type="hidden" name="_template" value="table"><input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="button button-primary" type="submit">{t('send')} </button><p class="form-note">{t('form_note')} <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit </a></p></form></div>'''
 
 def contact(lang):
@@ -181,6 +183,8 @@ def contact(lang):
     return layout('contact.html', lang, t('contact'), t('contact_body'), body, 'contact')
 
 def project(p, lang):
+    if p['id'] == 'damas-espaciais':
+        return layout(detail(p), lang, p['title'][lang], p['summary'][lang], DAMAS['render'](globals(), p, lang), 'projects')
     if p['id'] == 'cern':
         body, title, description = CERN['render'](globals(), lang)
         return layout(detail(p), lang, title, description, body, 'experience')
@@ -230,8 +234,6 @@ def main():
         destination = dist / asset
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / asset, destination)
-    for name in ['CV_Emilly.pdf', 'Emilly_Rodrigues_Resume.pdf']:
-        shutil.copyfile(ROOT / name, dist / name)
     print(f'Built {len(PROJECTS)} case studies and {len(POSTS)} journal posts, plus 7 main pages × {len(LANGS)} languages.')
 
 if __name__ == '__main__':

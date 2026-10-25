@@ -1,0 +1,42 @@
+{
+  "blue-king.png": {
+    "sha256": "a770c6aaaefc2ba9900f630471e6a9d049994c343b5faa3fdb1c40c09baab5d6",
+    "bytes": 3642
+  },
+  "blue.png": {
+    "sha256": "83c1da820de3ed321596e93b15e8b6d379c5fa862cce5ad31f01572ad3491706",
+    "bytes": 3536
+  },
+  "board.jpg": {
+    "sha256": "e8459724e60b8e0145635a40f66f48b113557792f89a293a7e951bf1736f32c1",
+    "bytes": 75299
+  },
+  "countdown.jpg": {
+    "sha256": "d50c83513e6c5e74c24c4fc24f9e23b7d431c4b7349614433ff21dcdfbe1650b",
+    "bytes": 92910
+  },
+  "menu.jpg": {
+    "sha256": "7565a7373c9f6ebaaee70490836d08b62481170e1c9faa02da9aea63487acebb",
+    "bytes": 101426
+  },
+  "pink-king.png": {
+    "sha256": "ddb0f325c678a046ca31734a19d1dab79390d708d1f922c0f696c5c507eef791",
+    "bytes": 3509
+  },
+  "pink.png": {
+    "sha256": "924aa0a395e94608bc5fa4e3dec32782f4e5f320792543db6c286c9c61eb7337",
+    "bytes": 3886
+  },
+  "play.jpg": {
+    "sha256": "5d8c7b847150efafd39a08e612c181e99af62f17b354ea82017598ad789d3090",
+    "bytes": 102171
+  },
+  "rules.jpg": {
+    "sha256": "b62353b7a9daf7805591e909b827da84d2f1ab08aa16610edcf0f57db3b349ce",
+    "bytes": 120235
+  },
+  "victory.jpg": {
+    "sha256": "9dffa5f72131bc953caed4cdda1fa1ccdc714471006cdaf12e182ba9a8bf320f",
+    "bytes": 109853
+  }
+}
