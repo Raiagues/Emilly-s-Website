@@ -1,5 +1,17 @@
 # Redesign do portfólio
 
+## Catálogos, navegação e fontes públicas — 25/10/2026
+
+Projetos e experiências agora compartilham o catálogo com título de pôster em duas linhas, rota ilustrada animada, filtros e busca em campo arredondado. Os cartões inteiros são links, sem chamada extra Ver projeto; tecnologias e competências usam etiquetas com tipografia discreta e sem estrelas. Filtros e busca permanecem ao voltar de ambos os tipos de página.
+
+As páginas de projetos e experiências usam o explorador compacto do diário, com títulos visíveis, prévias ao passar o mouse ou focar pelo teclado e lista com altura limitada. O rodapé do conteúdo oferece o item anterior e seguinte, conforme a ordem cronológica, sem criar um destino depois do último item. Os retornos no topo têm círculo e seta à esquerda. O rodapé comum contém GitHub, LinkedIn e e-mail; o antigo atalho Voltar ao topo foi retirado.
+
+O cabeçalho compartilhado normaliza fontes, idioma e estado ativo nas páginas antigas. A página de contato usa o mesmo papel, ilustração e borda de correspondência da identidade atual. O formulário mantém validação e destino originais. A home mantém os três cartões de experiência coloridos, com datas e etiquetas em uma tipografia consistente, movimento suave de elevação e ilustrações ao interagir. Movimento reduzido é respeitado.
+
+Conquistas apresenta cinco cartões com selos e acesso direto às publicações fornecidas. AIAA SciTech e South Summit saíram da classificação de prêmios. A correção do CERN para quase 6.000 candidaturas vem da publicação oficial; detalhes e URLs estão em `content/SOURCES.md`.
+
+Validação: build e verificador dos 171 HTMLs aprovados. Os 40 cenários de navegador foram cobertos, com reexecução aprovada dos três cenários afetados pelos ajustes finais. Incluem as 104 páginas de projetos e experiências, acessibilidade automatizada, quatro idiomas, filtros persistentes, retorno com seta à esquerda, navegação por teclado, fontes públicas, formulário com entrega interceptada e ausência de rolagem horizontal. Houve conferência visual dos catálogos, cartões de experiência, conquistas, contato, rodapé e explorador compacto no computador e no celular.
+
 ## Diário em cartões-postais e recuperação da voz pessoal — 25/10/2026
 
 A home mostra duas histórias lado a lado, com as fotos de cada relato sobrepostas. As chamadas voltaram a usar a introdução em primeira pessoa, com acesso ao texto completo. As divisórias extras foram retiradas; o título mantém uma única linha discreta, conforme a referência. Projetos ganhou o acesso ao catálogo no cabeçalho da seção, três cartões e o painel do trabalho atual inteiramente clicável. O indicador no ar pulsa e respeita a preferência por movimento reduzido. Não há botões separados para abrir os projetos da home.

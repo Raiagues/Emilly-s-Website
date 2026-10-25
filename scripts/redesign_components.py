@@ -4,6 +4,7 @@ import re
 
 E = html.escape
 ARROW = '<span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>'
+BACK_ARROW = '<span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m5-5-5 5 5 5"/></svg></span>'
 STAR = '<span class="spark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 0C21 14 26 19 40 20C26 21 21 26 20 40C19 26 14 21 0 20C14 19 19 14 20 0Z" fill="currentColor"/></svg></span>'
 LABELS = {
  'departure': ('Departure','Partida','Départ','Salida'),
@@ -26,6 +27,20 @@ LABELS = {
  'about_nav': ('About','Sobre','À propos','Sobre mí'),
  'home_nav': ('Home','Início','Accueil','Inicio'),
  'portfolio': ('Portfolio','Portfólio','Portfolio','Portafolio'),
+ 'all_projects_prefix': ('All','Todos os','Tous les','Todos los'),
+ 'all_experience_prefix': ('All','Todas as','Toutes les','Todas las'),
+ 'experiences': ('Experience','Experiências','Expériences','Experiencias'),
+ 'continue': ('Keep exploring','Continue explorando','Continuez à explorer','Sigue explorando'),
+ 'hover_preview': ('Hover or focus to preview','Passe o mouse ou use o teclado','Survolez ou utilisez le clavier','Pasa el cursor o usa el teclado'),
+ 'previous_experience': ('Previous experience','Experiência anterior','Expérience précédente','Experiencia anterior'),
+ 'next_experience': ('Next experience','Próxima experiência','Expérience suivante','Experiencia siguiente'),
+ 'older': ('Earlier entries','Itens anteriores','Éléments précédents','Elementos anteriores'),
+ 'newer': ('Later entries','Próximos itens','Éléments suivants','Elementos siguientes'),
+ 'footer_line': ('Engineering, projects and stories along the way.','Engenharia, projetos e histórias pelo caminho.','Ingénierie, projets et récits au fil du chemin.','Ingeniería, proyectos e historias por el camino.'),
+ 'elsewhere': ('Find me elsewhere','Vamos nos conectar','Retrouvez-moi aussi','Conectemos'),
+ 'search_experience': ('Search experiences or technologies','Buscar experiências ou tecnologias','Rechercher expériences ou technologies','Buscar experiencias o tecnologías'),
+ 'experience_results': ('experiences found','experiências encontradas','expériences trouvées','experiencias encontradas'),
+ 'no_experience': ('No matching experience. Try another term.','Nenhuma experiência encontrada. Tente outro termo.','Aucune expérience trouvée. Essayez un autre terme.','No se encontró ninguna experiencia. Prueba otro término.'),
 }
 
 
@@ -63,11 +78,11 @@ class Design:
         choices={'platform':'flight-console','satellite':'project-satellite','chip':'project-chip','outreach':'project-outreach','rover':'project-rover','aircraft':'project-aircraft','code':'project-code','detector':'experience-detector'}
         return self.drawing(choices[name]) if name in choices else self.b['art'](name)
 
-    def button(self, label, url, solid=False, attrs=''):
-        return f'<a class="btn {"btn-solid" if solid else ""}" href="{E(url,quote=True)}" {attrs}>{label}{ARROW}</a>'
+    def button(self, label, url, solid=False, attrs='', back=False):
+        return f'<a class="btn {"btn-solid" if solid else ""} {"btn-back" if back else ""}" href="{E(url,quote=True)}" {attrs}>{BACK_ARROW if back else ""}{label}{"" if back else ARROW}</a>'
 
     def keywords(self, values):
-        return '<div class="keywords">' + STAR.join(f'<span>{E(v)}</span>' for v in values) + '</div>'
+        return '<div class="keywords tags">' + ''.join(f'<span>{E(v)}</span>' for v in values) + '</div>'
 
     def language_selector(self):
         locales = [('en','English'),('pt','Português'),('fr','Français'),('es','Español')]
@@ -82,7 +97,8 @@ class Design:
         return f'<header class="home-header"><div class="airmail-line" aria-hidden="true"></div><div class="wrap navigation"><a class="brand" href="{self.link("index.html#top")}"><span class="brand-icon">{self.drawing("guide-projects")}</span><span>Emilly Rodrigues<small>{self.u("portfolio")}</small></span></a><nav id="main-nav" aria-label="{self.t("menu")}">{nav}</nav>{self.language_selector()}</div></header>'
 
     def footer(self):
-        return f'<footer class="wrap footer"><span>© 2026 Emilly Rodrigues · {self.t("footer_note")}</span><a href="#top">{self.t("top")}{ARROW}</a></footer>'
+        links = ''.join(f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name}<span aria-hidden="true">↗</span></a>' for name,url in [('GitHub',self.b['D']['GITHUB']),('LinkedIn',self.b['D']['LINKEDIN'])])
+        return f'<footer class="wrap footer portfolio-footer"><div class="footer-person"><a href="{self.link("index.html#top")}">Emilly Rodrigues</a><p>{self.u("footer_line")}</p><small>© 2026 · {self.u("portfolio")}</small></div><div class="footer-connect"><p>{self.u("elsewhere")}</p><nav aria-label="{self.t("contact")}">{links}<a href="mailto:{self.b["EMAIL"]}">{self.t("contact")}<span aria-hidden="true">↗</span></a></nav><a class="footer-email" href="mailto:{self.b["EMAIL"]}">{self.b["EMAIL"]}</a></div></footer>'
 
     def boarding(self, p, compact=False):
         peers=chronological([q for q in self.b['PROJECTS'] if q['kind']==p['kind']])
@@ -94,19 +110,15 @@ class Design:
         return f'<header class="case-boarding {"experience-boarding" if p["kind"]=="experience" else "project-boarding"}" data-case-id="{p["id"]}"><div class="boarding-art" aria-hidden="true">{self.art(p["art"],True,p["id"])}<span class="mono">{self.u("pass")}</span></div><div class="boarding-copy"><p class="eyebrow">{self.t(p["category"])} · {E(p["date"])}</p><h1>{p["title"][self.lang]}</h1><p class="boarding-summary">{p["summary"][self.lang]}</p>{self.keywords(p["tech"])}{meta}</div><div class="boarding-stub"><div><span class="mono">{self.u("departure")}</span><strong>{year}</strong></div>{destination}<span class="barcode" aria-hidden="true"></span></div></header>'
 
     def flight_path(self, items, current_id, kind):
-        """All real stops, ordered by event date; native links work without JS."""
-        columns=min(7,len(items))
-        rows=(len(items)+columns-1)//columns
-        stops=[]; panels=[]; curves=[]
-        for row in range(rows):
-            curves.append(f'<path d="M4 {row*135+83} Q{100/columns/2} {row*135+15} {100/columns+4} {row*135+83} T{100/columns*2+4} {row*135+83} T{100/columns*3+4} {row*135+83} T{100/columns*4+4} {row*135+83} T{100/columns*5+4} {row*135+83} T{100/columns*6+4} {row*135+83}"/>')
-        for i,item in enumerate(items):
-            here=item['id']==current_id
-            row,col=divmod(i,columns)
-            x=(col+.5)*100/columns
-            y=row*135+(46 if col%2 else 88)
-            panel=f'flight-preview-{i}'
-            stops.append(f'<a class="flight-stop" data-flight-stop data-preview="{panel}" data-date="{E(item["date"])}" href="{E(item["url"],quote=True)}" aria-label="{E(item["title"],quote=True)}" {"aria-current=\"page\"" if here else ""} style="--stop-x:{x:.3f}%;--stop-y:{y}px"><span class="flight-dot" aria-hidden="true">{STAR if here else ""}</span><span class="flight-code">{i+1:02} · {E(item["year"])}</span></a>')
-            state=f'<span class="flight-here">{STAR}{self.u("here")}</span>' if here else self.button(self.u('open'),item['url'],True)
-            panels.append(f'<article class="flight-preview" id="{panel}" {"" if here else "hidden"}><div><p class="eyebrow">{E(item["meta"])}</p><h3>{E(item["title"])}</h3><p>{E(item["summary"])}</p>{state}</div><div class="flight-preview-stub"><span class="mono">{self.u("period")}</span><strong>{E(item["year"])}</strong><span class="barcode" aria-hidden="true"></span></div></article>')
-        return f'<section class="flight-path flight-{kind}" aria-labelledby="flight-title"><div class="flight-heading"><div><p class="eyebrow">{self.u("route")}</p><h2 id="flight-title">{self.u("route_"+kind)}</h2></div><p class="mono">{self.u("preview")}</p></div><nav class="flight-map" aria-label="{self.u("route")}" style="--route-height:{rows*135}px"><svg viewBox="0 0 100 {rows*135}" preserveAspectRatio="none" aria-hidden="true">{"".join(curves)}</svg>{"".join(stops)}</nav><div class="flight-previews" aria-live="polite">{"".join(panels)}</div></section>'
+        """Bounded title rail with native links and previews on hover or focus."""
+        stops, panels = [], []
+        for i, item in enumerate(items):
+            here = item['id'] == current_id
+            panel = 'flight-preview-' + item['id']
+            current = 'aria-current="page"' if here else ''
+            stops.append(f'<a class="flight-stop story-stop" data-flight-stop data-preview="{panel}" data-date="{E(item["date"])}" href="{E(item["url"],quote=True)}" {current}><span class="mono">{E(item["date"])}</span><strong>{E(item["title"])}</strong></a>')
+            action = f'<span class="flight-here">{self.u("here")}</span>' if here else f'<a class="explorer-open" href="{E(item["url"],quote=True)}">{self.u("open")}{ARROW}</a>'
+            hidden = '' if here else 'hidden'
+            panels.append(f'<article class="flight-preview story-explorer-preview" id="{panel}" {hidden}><div class="explorer-photo explorer-art" aria-hidden="true">{item["art"]}</div><div class="explorer-copy"><p class="eyebrow">{E(item["meta"])}</p><h3>{E(item["title"])}</h3><p>{E(item["summary"])}</p>{action}</div></article>')
+        all_label = self.t('all_projects' if kind == 'projects' else 'all_experience')
+        return f'<section class="flight-path story-explorer case-explorer flight-{kind}" aria-labelledby="flight-title"><div class="explorer-heading"><div><p class="eyebrow">{self.t(kind)}</p><h2 id="flight-title">{self.u("continue")}</h2></div>{self.button(all_label+f" · {len(items)}",self.link(kind+".html"))}</div><div class="explorer-layout"><div class="explorer-stops"><p class="mono explorer-hint">{self.u("hover_preview")}</p><nav class="flight-map" aria-label="{self.u("route")}">{"".join(stops)}</nav><div class="explorer-controls" hidden><button type="button" data-story-prev aria-label="{self.u("older")}">↑</button><button type="button" data-story-next aria-label="{self.u("newer")}">↓</button></div></div><div class="flight-previews">{"".join(panels)}</div></div></section>'

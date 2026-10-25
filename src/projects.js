@@ -9,7 +9,7 @@
   const reset = document.querySelector('#reset-filters');
   const empty = document.querySelector('#empty-state');
   const categories = new Set(filters.map(button => button.dataset.filter));
-  const storageKey = `emilly-projects:${new URL('../', document.currentScript.src).pathname}`;
+  const storageKey = `emilly-${document.querySelector('[data-directory-kind]').dataset.directoryKind}:${new URL('../', document.currentScript.src).pathname}`;
   const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   let category = 'all';
 

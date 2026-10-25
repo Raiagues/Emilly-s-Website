@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220" fill="none">
+ <path class="catalogue-trail" d="M25 185C93 181 102 82 172 81S271 145 333 112Q380 86 409 30" stroke="#4E7F7B" stroke-width="2" stroke-dasharray="7 7"/>
+ <g fill="#F4EEE2" stroke="#1F4A4F" stroke-width="2.5"><circle cx="25" cy="185" r="7"/><circle cx="107" cy="121" r="7"/><circle cx="172" cy="81" r="7"/><circle cx="298" cy="125" r="7"/></g>
+ <circle class="catalogue-beacon" cx="409" cy="30" r="17" fill="#D9694E" fill-opacity=".16"/>
+ <circle cx="409" cy="30" r="10" fill="#D9694E" stroke="#1F4A4F" stroke-width="2.5"/>
+</svg>

@@ -1,0 +1,93 @@
+/* Catalogues use the supplied poster hierarchy and native whole-card links. */
+.poster-heading { grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr); gap:40px; }
+.poster-heading h1 { margin:10px 0 22px; color:#C85B43; overflow-wrap:normal; }
+.poster-heading h1>span { display:block; color:var(--teal); font:400 clamp(40px,4.5vw,64px)/1 var(--font-poster); letter-spacing:.08em; }
+.poster-heading h1>strong { display:block; font:800 clamp(70px,9.5vw,136px)/.95 var(--font-poster); }
+.poster-heading p:not(.eyebrow) { max-width:600px; font:22px/1.45 var(--font-serif); }
+.catalogue-route { align-self:end; padding-bottom:12px; }
+.catalogue-route>div { display:flex; justify-content:space-between; padding-inline:16px; font:11px/1.5 var(--font-mono); }
+.catalogue-trail { animation:route-travel 14s linear infinite; }
+.catalogue-beacon { transform-box:fill-box; transform-origin:center; animation:route-beacon 3s ease-in-out infinite; }
+@keyframes route-travel { to { stroke-dashoffset:-140; } }
+@keyframes route-beacon { 50% { transform:scale(1.3); opacity:.5; } }
+.project-tools { gap:14px 24px; padding-block:18px; margin-top:4px; }
+.project-tools .filters { width:auto; flex:1 1 650px; gap:8px; }
+.project-tools .chip { min-height:40px; font-size:10px; }
+.catalogue-utility { display:flex; gap:18px; align-items:center; justify-content:space-between; flex:1 1 100%; }
+.search-label { flex:0 1 320px; display:flex; flex-wrap:nowrap; align-items:center; gap:10px; padding:0 14px; background:#FBF8F1; border:1px solid var(--line); border-radius:999px; }
+.search-label:focus-within { border-color:var(--teal); outline:2px solid #A9CBC5; outline-offset:2px; }
+.search-label svg { width:17px; height:17px; flex-shrink:0; }
+.search-label input { width:100%; padding:9px 0; min-height:40px; border:0; border-radius:0; background:none; outline:none; font:13px/1.5 var(--font-sans); text-transform:none; }
+.search-label input::placeholder { color:#596762; }
+.filter-status { font:11px/1.5 var(--font-sans); color:var(--muted); gap:10px; }
+.catalogue-grid { gap:44px 28px; }
+.catalogue-item .project-card { padding:0 0 18px; gap:12px; border-radius:9px; transition:transform .3s; }
+.catalogue-item .project-card:hover,.catalogue-item .project-card:focus-visible { color:var(--ink); transform:translateY(-5px); }
+.catalogue-item .project-card:hover h2 { color:var(--coral-text); }
+.catalogue-item .art { border-radius:7px; aspect-ratio:400/210; }
+.catalogue-item .art svg { transition:transform .65s var(--ease); }
+.catalogue-item .project-card:hover .art svg { transform:scale(1.045); }
+.catalogue-item h2 { font-size:29px; }
+.catalogue-item p:not(.eyebrow) { font:15px/1.65 var(--font-sans); }
+.catalogue-item .keywords { margin-top:auto; padding-top:4px; }
+.catalogue-item .keywords>span { font-size:11px; }
+.case-boarding .tags { margin-top:8px; }
+.case-skills .tags { margin-top:18px; }
+.case-skills .tags>span { background:var(--sand); padding:8px 14px; }
+.case-explorer .explorer-layout { grid-template-columns:300px minmax(0,1fr); }
+.case-explorer .story-explorer-preview { grid-template-columns:minmax(120px,.8fr) minmax(0,1.4fr); }
+.case-explorer .story-explorer-preview>.explorer-art { display:flex; align-items:center; justify-content:center; padding:16px; background:#EADFC859; }
+.explorer-art>svg { width:100%; max-height:230px; transition:transform .5s; }
+.case-explorer .explorer-copy h3 { font-size:28px; }
+.case-explorer .explorer-open { display:flex; gap:10px; align-items:center; font:12px/1.5 var(--font-sans); color:var(--coral-text); }
+.case-explorer .explorer-open .arr { width:24px; }
+.case-pagination { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.case-neighbour { display:flex; align-items:center; gap:18px; padding:24px; border-radius:12px; background:var(--sand); transition:background .25s,transform .25s; }
+.case-neighbour>span:not(.arr) { display:flex; flex-direction:column; gap:8px; }
+.case-neighbour small { font:11px/1.5 var(--font-sans); color:var(--muted); }
+.case-neighbour strong { font:400 25px/1.15 var(--font-serif); }
+.case-neighbour .arr { width:38px; height:38px; border-radius:50%; background:var(--teal); color:var(--paper-light); }
+.neighbour-next { grid-column:2; flex-direction:row-reverse; text-align:right; }
+.case-neighbour:hover { background:#E3D1A6; transform:translateY(-3px); color:var(--ink); }
+.recognition-heading h1,.contact-heading h1 { font:400 clamp(48px,6vw,78px)/1.05 var(--font-serif); margin:10px 0 22px; }
+.recognition-heading>p:last-child,.contact-heading>p:last-child { max-width:720px; font:22px/1.5 var(--font-serif); }
+.recognition-heading { min-width:0; }
+.recognition-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; }
+.recognition-card { display:flex; flex-direction:column; align-items:center; gap:24px; padding:28px 24px; border-radius:12px; background:#FBF8F180; transition:transform .3s,background .3s; }
+.recognition-card .stamp { width:190px; height:226px; flex-shrink:0; }
+.recognition-card .stamp-inner { height:100%; }
+.recognition-card .stamp-year { font-size:27px; }
+.recognition-card .stamp-name { font-size:9px; }
+.recognition-card .stamp svg { width:100%; height:100%; }
+.recognition-copy { display:flex; flex-direction:column; align-items:flex-start; gap:12px; flex:1; width:100%; }
+.recognition-copy h2 { font-size:29px; }
+.recognition-copy p:not(.eyebrow) { font:15px/1.65 var(--font-sans); }
+.publication-link { display:flex; justify-content:space-between; align-items:center; gap:12px; width:100%; margin-top:auto; padding-top:16px; font:13px/1.5 var(--font-sans); }
+.publication-link>span { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--sand); }
+.recognition-card:hover { color:var(--ink); background:var(--paper-light); transform:translateY(-4px); }
+.recognition-card:hover .publication-link { color:var(--coral-text); }
+.contact-layout { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:64px; align-items:start; }
+.contact-info { display:flex; flex-direction:column; align-items:flex-start; gap:20px; }
+.contact-postcard { width:270px; max-width:80%; margin-bottom:8px; }
+.contact-info h2 { font:400 28px/1.2 var(--font-serif); }
+.email-address { font:19px/1.5 var(--font-sans); color:var(--coral-text); overflow-wrap:anywhere; max-width:100%; }
+.contact-form { position:relative; padding:36px; border:0; border-radius:14px; background:var(--paper-light); box-shadow:0 8px 28px #1F4A4F0C; }
+.contact-form:before { content:''; position:absolute; top:0; left:12px; right:12px; height:6px; border-radius:8px; background:repeating-linear-gradient(-45deg,var(--coral) 0 12px,var(--paper-light) 12px 20px,var(--teal-mid) 20px 32px,var(--paper-light) 32px 40px); }
+.form-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.contact-form label { display:block; margin-bottom:22px; font:500 14px/1.5 var(--font-sans); }
+.contact-form input:not([type=hidden]),.contact-form textarea { width:100%; display:block; min-height:46px; margin-top:8px; padding:12px; border:1px solid var(--line); border-radius:7px; background:var(--paper); color:var(--ink); font:16px/1.5 var(--font-sans); }
+.contact-form textarea { resize:vertical; min-height:160px; }
+.contact-form .honeypot { display:none!important; }
+.contact-page .button { display:inline-flex; justify-content:center; align-items:center; border:0; border-radius:999px; padding:13px 20px; background:var(--sand); color:var(--ink); font:11px/1.5 var(--font-mono); text-transform:uppercase; }
+.contact-page .button-primary { background:var(--teal); color:var(--paper-light); }
+.contact-page .button:hover { background:var(--coral-text); color:var(--paper-light); }
+.contact-page .form-note { margin-top:20px; font:12px/1.6 var(--font-sans); color:var(--muted); }
+.contact-page .form-note a { text-decoration:underline; }
+.contact-page .social-links { display:flex; gap:12px; }
+.contact-page .social-links a { width:42px; height:42px; padding:11px; border-radius:50%; background:var(--sand); }
+.contact-page .social-links svg { width:20px; height:20px; }
+@media(max-width:1000px) { .poster-heading { grid-template-columns:minmax(0,1.5fr) minmax(160px,.7fr); gap:22px; } .poster-heading h1>strong { font-size:clamp(65px,9vw,100px); } .recognition-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .case-explorer .explorer-layout { grid-template-columns:240px minmax(0,1fr); } .case-explorer .story-explorer-preview { grid-template-columns:1fr; } .case-explorer .story-explorer-preview>.explorer-art { display:none; } .case-explorer .explorer-copy { padding:24px; } .contact-layout { gap:32px; } }
+@media(max-width:800px) { .catalogue-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .case-explorer .explorer-layout { grid-template-columns:1fr; } .case-explorer .story-explorer-preview { grid-template-columns:160px minmax(0,1fr); } .case-explorer .story-explorer-preview>.explorer-art { display:flex; } .contact-layout { grid-template-columns:1fr; } .contact-info { gap:16px; } .contact-postcard { display:none; } }
+@media(max-width:560px) { .poster-heading { grid-template-columns:minmax(0,1fr); } .poster-heading h1>strong { font-size:clamp(62px,15vw,84px); } .poster-heading h1>span { font-size:42px; } .poster-heading p:not(.eyebrow) { font-size:21px; } .catalogue-route { display:none; } .catalogue-utility { flex-direction:column; align-items:stretch; gap:12px; } .search-label { flex:auto; } .filter-status { justify-content:space-between; } .catalogue-grid,.recognition-grid { grid-template-columns:minmax(0,1fr); } .catalogue-item .project-card { padding-bottom:4px; } .case-pagination { grid-template-columns:1fr; gap:14px; } .neighbour-next { grid-column:1; } .case-neighbour { padding:20px; } .case-neighbour strong { font-size:23px; } .case-explorer .story-explorer-preview { grid-template-columns:1fr; } .case-explorer .story-explorer-preview>.explorer-art { display:none; } .recognition-card { padding:26px 22px; } .contact-form { padding:28px 20px; } .form-row { grid-template-columns:1fr; gap:0; } }
+@media(prefers-reduced-motion:reduce) { .catalogue-trail,.catalogue-beacon { animation:none; } .catalogue-item .project-card:hover,.catalogue-item .project-card:focus-visible,.catalogue-item .project-card:hover .art svg,.case-neighbour:hover,.recognition-card:hover { transform:none; } }
+@media(max-width:560px) { .recognition-heading h1 { font-size:clamp(34px,10vw,48px); } }

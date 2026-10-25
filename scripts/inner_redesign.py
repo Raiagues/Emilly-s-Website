@@ -9,7 +9,7 @@ Design, chronological, E, ARROW, STAR=(C[k] for k in ('Design','chronological','
 
 
 def route_items(d, peers):
-    return [dict(id=q['id'],date=q['date'],year=q['date'],meta=q['place']+' · '+q['date'],title=q['title'][d.lang],summary=q['summary'][d.lang],url=d.link(d.b['detail'](q))) for q in chronological(peers)]
+    return [dict(id=q['id'],date=q['date'],year=q['date'],meta=q['place']+' · '+q['date'],title=q['title'][d.lang],summary=q['summary'][d.lang],url=d.link(d.b['detail'](q)),art=d.art(q['art'],item_id=q['id'])) for q in chronological(peers)]
 
 
 def photo_frame(d, photo, eager=False):
@@ -20,7 +20,7 @@ def photo_frame(d, photo, eager=False):
 def case(b, p, lang):
     d=Design(b,lang,b['detail'](p))
     peers=[q for q in b['PROJECTS'] if q['kind']==p['kind']]
-    back=d.button(d.t('back_results') if p['kind']=='projects' else d.t('experience'), d.link(p['kind']+'.html'), attrs=f'data-back-results="{p["id"]}"' if p['kind']=='projects' else '')
+    back=d.button(d.t('all_projects') if p['kind']=='projects' else d.t('all_experience'), d.link(p['kind']+'.html'), attrs=f'data-back-results="{p["id"]}" data-directory-kind="{p["kind"]}"', back=True)
     links=''.join(d.button(d.t(label),url,i==0,attrs='target="_blank" rel="noopener noreferrer"') for i,(label,url) in enumerate(p['links']))
     related=next((post for post in b['POSTS'] if post.get('technical_path')==b['detail'](p)),None)
     journal_link=''
@@ -45,29 +45,48 @@ def case(b, p, lang):
 {f'<section class="case-photo-slots" aria-label="{d.local(b["JUI"]["photo"])}">{photos}</section>' if photos else ''}
 <section id="results" class="lesson-envelope"><div><div><p class="eyebrow">02 · {d.t('outcome')}</p><h2 class="visually-hidden">{d.t('outcome')}</h2><p>{p['outcome'][lang]}</p></div></div></section>{journal_link}
 {f'<section id="resources" class="case-resources"><h2>{d.t("links")}</h2><div class="actions">{links}</div></section>' if links else ''}
-{d.flight_path(route_items(d,peers),p['id'],p['kind'])}<div class="detail-bottom">{back}{d.button(d.t('contact'),d.link('contact.html'))}</div></main>'''
+{d.flight_path(route_items(d,peers),p['id'],p['kind'])}{case_pagination(d,p,peers)}</main>'''
     return body
 
 
-def projects(b,lang):
-    d=Design(b,lang,'projects.html')
-    work=list(reversed(chronological([p for p in b['PROJECTS'] if p['kind']=='projects'])))
-    categories=['all','space','hardware','control','software','outreach']
+def case_pagination(d, p, peers):
+    ordered = chronological(peers)
+    index = ordered.index(p)
+    links = []
+    for offset, direction in [(-1,'previous'),(1,'next')]:
+        if not 0 <= index + offset < len(ordered):
+            continue
+        target = ordered[index+offset]
+        label = d.t(direction) if p['kind']=='projects' else d.u(direction+'_experience')
+        arrow = C['BACK_ARROW'] if offset < 0 else ARROW
+        links.append(f'<a class="case-neighbour neighbour-{direction}" rel="{"prev" if offset < 0 else "next"}" href="{d.link(d.b["detail"](target))}">{arrow}<span><small>{label}</small><strong>{E(target["title"][d.lang])}</strong></span></a>')
+    return f'<nav class="case-pagination" aria-label="{d.u("continue")}">{"".join(links)}</nav>'
+
+
+def directory(b,lang,kind):
+    d=Design(b,lang,kind+'.html')
+    work=list(reversed(chronological([p for p in b['PROJECTS'] if p['kind']==kind])))
+    categories=['all']+[key for key in ['space','hardware','control','software','outreach'] if any(p['category']==key for p in work)]
     filters=''.join(f'<button type="button" class="chip" data-filter="{key}" aria-pressed="{str(key=="all").lower()}">{d.t(key)} <span>{sum(key=="all" or p["category"]==key for p in work)}</span></button>' for key in categories)
     cards=[]
     for p in work:
         search=' '.join([p['title'][lang],p['summary'][lang],p['place'],*p['tech'],*[b['SKILLS'][key][lang] for key in p['skills']]])
-        cards.append(f'<article class="catalogue-item" id="{p["id"]}" data-project data-category="{p["category"]}" data-search="{E(search,quote=True)}"><a class="project-card" href="{d.link(b["detail"](p))}" data-result-link><div class="art">{d.art(p["art"],item_id=p["id"])}<span class="art-date">{p["date"]}</span></div><p class="eyebrow">{d.t(p["category"])}</p><h2>{p["title"][lang]}</h2><p>{p["summary"][lang]}</p>{d.keywords(p["tech"])}<span class="more">{d.t("case")}{ARROW}</span></a></article>')
-    return f'''<main id="main" class="wrap inner-content project-directory"><div class="inner-breadcrumb">{d.button(d.u('home'),d.link('index.html'))}<span class="mono">{d.u('logbook')}</span></div><header class="catalogue-heading"><div><p class="eyebrow">{d.u('logbook')}</p><h1>{d.t('all_projects')}</h1><p>{d.t('work_body')}</p></div><div class="catalogue-drawing" aria-hidden="true">{d.drawing('project-pass')}</div></header><div class="project-tools" data-project-tools hidden><div class="filters" role="group" aria-label="{d.t('filter_label')}">{filters}</div><label class="search-label" for="project-search">{d.t('search')}<input id="project-search" type="search" placeholder="{d.t('search_short')}" autocomplete="off" maxlength="120"></label><div class="filter-status"><p id="results-count" aria-live="polite" data-label="{d.t('results')}"></p><button class="chip" id="reset-filters" type="button">{d.t('reset')}</button></div></div><div id="project-grid" class="catalogue-grid">{''.join(cards)}</div><div id="empty-state" hidden><h2>{d.t('empty')}</h2></div></main>'''
+        cards.append(f'<article class="catalogue-item" id="{p["id"]}" data-project data-category="{p["category"]}" data-search="{E(search,quote=True)}"><a class="project-card" href="{d.link(b["detail"](p))}" data-result-link aria-labelledby="title-{p["id"]}"><div class="art">{d.art(p["art"],item_id=p["id"])}<span class="art-date">{p["date"]}</span></div><p class="eyebrow">{d.t(p["category"]) if kind=="projects" else E(p["place"])}</p><h2 id="title-{p["id"]}">{p["title"][lang]}</h2><p>{p["summary"][lang]}</p>{d.keywords(p["tech"][:4])}</a></article>')
+    search_label=d.t('search') if kind=='projects' else d.u('search_experience')
+    result_label=d.t('results') if kind=='projects' else d.u('experience_results')
+    description=d.t('work_body' if kind=='projects' else 'exp_body')
+    title=d.t('projects') if kind=='projects' else d.u('experiences')
+    prefix=d.u('all_projects_prefix' if kind=='projects' else 'all_experience_prefix')
+    empty=d.t('empty') if kind=='projects' else d.u('no_experience')
+    return f'''<main id="main" class="wrap inner-content project-directory" data-directory-kind="{kind}"><div class="inner-breadcrumb">{d.button(d.u('home'),d.link('index.html#'+('current-work' if kind=='projects' else 'experience')),back=True)}<span class="mono">{d.t(kind)}</span></div><header class="catalogue-heading poster-heading"><div><p class="eyebrow">{d.u('logbook')}</p><h1><span>{prefix}</span><strong>{title}</strong></h1><p>{description}</p></div><div class="catalogue-route" aria-hidden="true">{d.drawing('catalogue-route')}<div><span>{E(work[-1]['date'])}</span><span>{E(work[0]['date'])}</span></div></div></header><div class="project-tools" data-project-tools hidden><div class="filters" role="group" aria-label="{d.t('filter_label')}">{filters}</div><div class="catalogue-utility"><label class="search-label" for="project-search"><span class="visually-hidden">{search_label}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="project-search" type="search" placeholder="{d.t('search_short')}" autocomplete="off" maxlength="120"></label><div class="filter-status"><p id="results-count" aria-live="polite" data-label="{result_label}"></p><button class="chip" id="reset-filters" type="button">{d.t('reset')}</button></div></div></div><div id="project-grid" class="catalogue-grid">{''.join(cards)}</div><div id="empty-state" hidden><h2>{empty}</h2></div></main>'''
+
+
+def projects(b,lang):
+    return directory(b,lang,'projects')
 
 
 def experience(b,lang):
-    d=Design(b,lang,'experience.html')
-    items=list(reversed(chronological([p for p in b['PROJECTS'] if p['kind']=='experience'])))
-    passes=[]
-    for p in items:
-        passes.append(f'<a class="boarding-pass" href="{d.link(b["detail"](p))}"><div class="art" aria-hidden="true">{d.art(p["art"],item_id=p["id"])}</div><div class="pass-copy"><p class="eyebrow">{E(p["place"])}</p><h2>{p["title"][lang]}</h2><p>{p["outcome"][lang]}</p>{d.keywords(p["tech"])}</div><div class="pass-stub"><div><span class="mono">{d.u("departure")}</span><strong>{p["date"]}</strong></div><span class="more">{d.t("read")}{ARROW}</span></div></a>')
-    return f'<main id="main" class="wrap inner-content"><div class="inner-breadcrumb">{d.button(d.u("home"),d.link("index.html"))}</div><header class="catalogue-heading"><div><p class="eyebrow">{d.u("pass")}</p><h1>{d.t("experience")}</h1><p>{d.t("exp_body")}</p></div></header><div class="boarding-passes">{"".join(passes)}</div></main>'
+    return directory(b,lang,'experience')
 
 
 def story(b,post,lang):
@@ -84,4 +103,4 @@ def story(b,post,lang):
     place = archive['place_for'](post,lang) or archive['date_of'](post)[:4]
     trip=f'<div class="story-ticket"><div><span class="mono">{d.u("story")}</span><strong>{E(place)}</strong><span class="mono">{d.local(post["period"])}</span></div><span>{d.drawing("guide-experience")}</span></div>'
     dialog=f'<dialog class="photo-dialog" aria-label="{jt("photo")}" data-photo-label="{jt("photo")}" data-of-label="{jt("of")}"><div class="photo-dialog-bar"><p id="photo-counter" role="status"></p><button type="button" class="photo-close" autofocus>{jt("close")} ×</button></div><figure><img alt="" width="1280" height="1280"><figcaption id="photo-caption"></figcaption></figure><div class="photo-controls"><button type="button" data-photo-prev aria-label="{jt("previous_photo")}">{b["icon"]("previous")}</button><button type="button" data-photo-next aria-label="{jt("next_photo")}">{b["icon"]("next")}</button></div></dialog>'
-    return f'''<main id="main" class="wrap inner-content story-page"><div class="inner-breadcrumb">{d.button(jt('back'),d.link('journal.html'))}</div><article><header class="story-opening"><div class="story-opening-copy"><p class="eyebrow">{d.local(post.get('series',''))} · {d.local(post['period'])}</p><h1>{d.local(post['title'])}</h1><p class="story-subtitle">{d.local(post['subtitle'])}</p></div><div class="story-opening-photos">{''.join(covers)}{trip}</div></header><details class="story-contents"><summary>{jt('chapters')}</summary><nav aria-label="{jt('chapters')}">{parts['contents']}</nav></details><div class="journal-body"><div class="journal-prose journal-intro"><p>{d.local(post['intro'])}</p>{parts['technical']}</div>{parts['chapters']}{f'<div class="case-photo-slots">{extra}</div>' if extra else ''}<section class="lesson-envelope journal-closing"><div><div><h2 class="eyebrow">Par avion · {d.u('learned')}</h2><p>{d.local(post['closing'])}</p></div></div></section></div></article>{archive['explorer'](b,d,post['slug'])}{dialog}</main>'''
+    return f'''<main id="main" class="wrap inner-content story-page"><div class="inner-breadcrumb">{d.button(jt('back'),d.link('journal.html'),back=True)}</div><article><header class="story-opening"><div class="story-opening-copy"><p class="eyebrow">{d.local(post.get('series',''))} · {d.local(post['period'])}</p><h1>{d.local(post['title'])}</h1><p class="story-subtitle">{d.local(post['subtitle'])}</p></div><div class="story-opening-photos">{''.join(covers)}{trip}</div></header><details class="story-contents"><summary>{jt('chapters')}</summary><nav aria-label="{jt('chapters')}">{parts['contents']}</nav></details><div class="journal-body"><div class="journal-prose journal-intro"><p>{d.local(post['intro'])}</p>{parts['technical']}</div>{parts['chapters']}{f'<div class="case-photo-slots">{extra}</div>' if extra else ''}<section class="lesson-envelope journal-closing"><div><div><h2 class="eyebrow">Par avion · {d.u('learned')}</h2><p>{d.local(post['closing'])}</p></div></div></section></div></article>{archive['explorer'](b,d,post['slug'])}{dialog}</main>'''

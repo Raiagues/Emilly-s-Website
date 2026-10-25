@@ -335,7 +335,7 @@ test('home redesign loads even with a previous stylesheet cached', async () => {
 });
 
 
-test('US diary is reachable from the feed and award, with translations and all 15 photos', async () => {
+test('US diary is reachable from the feed and archive, with translations and all 15 photos', async () => {
   const {page,errors}=await visit('pt/');
   await openArchive(page);
   await expect(page.locator('.story-archive>ol>li>a')).toHaveCount(9);
@@ -365,7 +365,8 @@ test('US diary is reachable from the feed and award, with translations and all 1
   }
   await page.locator('#main-nav a[href="../about.html"]').click();
   await page.locator('main a[href="recognition.html"]').click();
-  await page.locator('.award a[href="journal/estados-unidos.html"]').click();
+  await page.locator('#main-nav a[href="journal.html"]').click();
+  await page.locator('.postcard-card[href="journal/estados-unidos.html"]').click();
   await expect(page.locator('h1')).toHaveText('Minha primeira vez nos Estados Unidos');
   await page.locator('[data-gallery]').first().click();
   await expect(page.locator('#photo-counter')).toHaveText('Foto 1 de 15');
@@ -490,8 +491,8 @@ test('email screenshots are real image links and sender-address masks are baked 
 
 test('China diary connects to its award, loads all 26 photos and keeps chapter navigation usable in four languages', async () => {
   for(const prefix of ['', 'pt/', 'fr/', 'es/']) {
-    const {page,errors}=await visit(prefix+'recognition.html',{reducedMotion:'reduce',viewport:{width:390,height:844}});
-    await page.locator('.award a[href="journal/china.html"]').click();
+    const {page,errors}=await visit(prefix+'journal.html',{reducedMotion:'reduce',viewport:{width:390,height:844}});
+    await page.locator('.postcard-card[href="journal/china.html"]').click();
     await expect(page.locator('.journal-chapter')).toHaveCount(8);
     await expect(page.locator('[data-gallery]')).toHaveCount(26);
     await expect(page.locator('.journal-intro a[href="premio-na-pratica.html"]')).toHaveCount(1);
@@ -522,10 +523,9 @@ test('China diary connects to its award, loads all 26 photos and keeps chapter n
 
 test('award story connects China and US diaries, keeps both award links, and loads its photos in every language', async () => {
   for(const prefix of ['', 'pt/', 'fr/', 'es/']) {
-    const {page,errors}=await visit(prefix+'recognition.html',{reducedMotion:'reduce',viewport:{width:390,height:844}});
-    const award=page.locator('.award').filter({has:page.locator('a[href="journal/premio-na-pratica.html"]')});
-    await expect(award.locator('a[href="journal/china.html"]')).toHaveCount(1);
-    await award.locator('a[href="journal/premio-na-pratica.html"]').click();
+    const {page,errors}=await visit(prefix+'journal.html',{reducedMotion:'reduce',viewport:{width:390,height:844}});
+    await expect(page.locator('.postcard-card[href="journal/china.html"]')).toHaveCount(1);
+    await page.locator('.postcard-card[href="journal/premio-na-pratica.html"]').click();
     await expect(page.locator('.journal-chapter')).toHaveCount(6);
     await expect(page.locator('[data-gallery]')).toHaveCount(14);
     await expect(page.locator('.journal-intro a[href="../recognition.html"]')).toHaveCount(1);
@@ -592,9 +592,9 @@ test('home preview follows the new section order with official content in four l
 test('three featured experiences link to the full list and the inactive newsletter behaves honestly', async () => {
   const {page,errors}=await visit('');
   const passes=page.locator('.boarding-pass');
-  await expect(passes.first().locator('.next-destination')).toHaveCount(0);
-  await expect(passes.nth(1).locator('.next-destination')).toHaveText('CERN · GVA');
-  await expect(passes.nth(2).locator('.next-destination')).toHaveText('VISIONA · BR');
+  await expect(passes.locator('.next-destination')).toHaveCount(0);
+  await expect(passes.locator('.tags')).toHaveCount(3);
+  await expect(passes.locator('.tags .spark')).toHaveCount(0);
   await expect(page.locator('.experience-filters,[data-experience-filter]')).toHaveCount(0);
   await expect(page.locator('#experience .section-heading .btn')).toContainText('6');
   await expect(page.locator('#experience .section-heading .btn')).toHaveAttribute('href','experience.html');
@@ -723,8 +723,8 @@ test('Fundação Estudar joins the award and story paths, with nine photos and h
   const markers={en:'did not complete the programme',pt:'não concluí o programa',fr:'sans terminer le programme',es:'no terminé el programa'};
   for(const lang of ['en','pt','fr','es']) {
     const prefix=lang==='en'?'':lang+'/';
-    const {page,errors}=await visit(prefix+'recognition.html',{viewport:{width:390,height:844},reducedMotion:'reduce'});
-    await page.locator('.award a[href="journal/fundacao-estudar.html"]').click();
+    const {page,errors}=await visit(prefix+'journal.html',{viewport:{width:390,height:844},reducedMotion:'reduce'});
+    await page.locator('.postcard-card[href="journal/fundacao-estudar.html"]').click();
     await expect(page.locator('.journal-chapter')).toHaveCount(7);
     await expect(page.locator('[data-gallery]')).toHaveCount(9);
     await expect(page.locator('#limites')).toContainText(markers[lang]);
@@ -778,8 +778,8 @@ test('every project and experience has a clickable original illustration; motion
   await satellite.locator('svg.illustration').click();
   await expect(page.locator('h1')).toContainText('CubeSat');
   await page.goto(base+'pt/experience.html');
-  await expect(page.locator('.boarding-pass .art svg.illustration')).toHaveCount(6);
-  const experience=page.locator('.boarding-pass').first();
+  await expect(page.locator('.catalogue-item .art svg.illustration')).toHaveCount(6);
+  const experience=page.locator('.catalogue-item a').first();
   await experience.focus();
   await page.keyboard.press('Enter');
   await expect(page.locator('.boarding-art svg')).toHaveCount(1);
@@ -795,8 +795,10 @@ test('case flight paths preview every chronological stop with keyboard and link 
     assert.deepEqual(dates,[...dates].sort());
     const current=await page.locator('.flight-stop[aria-current=page]').getAttribute('href');
     await stops.first().focus();
-    await page.keyboard.press('Space');
-    await expect(stops.first()).toHaveAttribute('aria-pressed','true');
+    await expect(stops.first()).toHaveAttribute('data-preview-active','true');
+    await stops.nth(1).hover();
+    await expect(stops.nth(1)).toHaveAttribute('data-preview-active','true');
+    assert.ok(await page.locator('.flight-map').evaluate(el=>el.clientHeight<=260));
     await expect(page.locator('.flight-preview:visible')).toHaveCount(1);
     await expect(page.locator('.flight-stop[aria-current=page]')).toHaveAttribute('href',current);
     for(const width of [320,360,768]) {
@@ -808,7 +810,6 @@ test('case flight paths preview every chronological stop with keyboard and link 
     if (expected) await expect(next).toHaveAttribute('href',expected);
     await stops.first().focus();
     await page.keyboard.press('Enter');
-    await page.locator('.flight-preview:visible .btn').click();
     await expect(page.locator('.case-boarding')).toHaveCount(1);
     await page.close();
   }
@@ -952,8 +953,8 @@ test('BRAFITEC has translated chapters, proportionate photographs and an accessi
   await expect(page.locator('#photo-counter')).toHaveText('Foto 23 de 23');
   await page.keyboard.press('Escape');
   await expect(first).toBeFocused();
-  await page.goto(base+'pt/recognition.html');
-  await page.locator('.award a[href="journal/brafitec.html"]').click();
+  await page.goto(base+'pt/journal.html');
+  await page.locator('.postcard-card[href="journal/brafitec.html"]').click();
   await expect(page.locator('h1')).toHaveText('O caminho até Grenoble');
   assert.deepEqual(errors,[]);
   await page.close();
@@ -1023,4 +1024,58 @@ test('home projects are whole-card links and the on-air indicator respects reduc
   await page.locator('.current-panel').click();
   await expect(page.locator('.case-boarding h1')).toBeVisible();
   await page.close();
+});
+
+test('recognition cards open the five supplied publications and do not classify talks or papers as awards', async () => {
+  const publications=[
+    'https://exame.com/revista-exame/um-olhar-para-o-futuro/',
+    'https://www.youtube.com/watch?v=X4XIryqAPn8',
+    'https://www.ufsm.br/app/uploads/sites/402/2023/03/Divulgacao-dos-Alunos-Selecionados-FINAL.pdf',
+    'https://openlab.cern/highlights-from-2026-cern-openlab-summer-student-programme/',
+    'https://www.estudarfora.org.br/brazil-at-silicon-valley-2026/',
+  ];
+  const {page,errors}=await visit('pt/recognition.html');
+  for(const prefix of ['','pt/','fr/','es/']) {
+    await page.goto(base+prefix+'recognition.html');
+    assert.deepEqual(await page.locator('.recognition-card').evaluateAll(cards=>cards.map(a=>a.href)),publications);
+    await expect(page.locator('.recognition-card[href*="CV"],main .text-link')).toHaveCount(0);
+    await expect(page.locator('main')).not.toContainText('AIAA SciTech');
+    await expect(page.locator('main')).not.toContainText('South Summit');
+    await expect(page.locator('.recognition-card[href*="openlab.cern"]')).toContainText('47');
+    assert.match(await page.locator('.recognition-card[href*="openlab.cern"]').textContent(),/6[., ]000/);
+  }
+  await page.goto(base+'pt/journal/cern.html');
+  await expect(page.locator('#application')).toContainText('quase 6.000');
+  await expect(page.locator('#application a[href*="highlights-from-2026"]')).toHaveCount(1);
+  assert.deepEqual(errors,[]);await page.close();
+});
+
+test('shared controls have left-facing returns, consistent headers and useful footer destinations', async () => {
+  const {page,errors}=await visit('pt/',{viewport:{width:1440,height:900},reducedMotion:'reduce'});
+  const menuStyle=()=>page.locator('#main-nav a[aria-current]').evaluate(el=>{const s=getComputedStyle(el);return [s.fontFamily,s.fontSize,s.fontWeight,s.backgroundColor,getComputedStyle(el,'::after').display];});
+  const reference=await menuStyle();
+  for(const path of ['projects.html','experience.html','about.html','recognition.html','contact.html','journal.html','pages/projects/project_9.html','pages/experience/cnes.html','journal/cern.html']) {
+    await page.goto(base+'pt/'+path);
+    assert.deepEqual(await menuStyle(),reference,`${path} header matches the home`);
+    await expect(page.locator('footer a[href="#top"]')).toHaveCount(0);
+    await expect(page.locator('footer a[href="https://github.com/Raiagues"]')).toHaveCount(1);
+    await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(2);
+    if(path!=='about.html') {
+      const back=page.locator('.inner-breadcrumb .btn-back');
+      await expect(back).toHaveCount(1);
+      assert.equal(await back.evaluate(el=>el.firstElementChild.className),'arr');
+      await expect(back.locator('path')).toHaveAttribute('d','M19 12H5m5-5-5 5 5 5');
+    }
+  }
+  await page.goto(base+'pt/experience.html');
+  await page.locator('#project-search').fill('CERN');
+  await expect(page.locator('[data-project]:visible')).toHaveCount(1);
+  await expect(page.locator('.catalogue-item .more,.tags .spark')).toHaveCount(0);
+  await page.locator('[data-project]:visible a').click();
+  await expect(page.locator('.case-pagination [rel=prev]')).toHaveCount(1);
+  await expect(page.locator('.case-pagination [rel=next]')).toHaveCount(0);
+  await expect(page.locator('.detail-bottom')).toHaveCount(0);
+  await page.locator('[data-back-results]').click();
+  await expect(page.locator('#project-search')).toHaveValue('CERN');
+  assert.deepEqual(errors,[]);await page.close();
 });

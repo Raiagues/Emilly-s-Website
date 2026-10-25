@@ -105,7 +105,7 @@ def render(b, lang):
         return f'<a class="btn {"btn-solid" if solid else ""}" href="{E(target, quote=True)}" {extra}>{label}{arrow}</a>'
 
     def keywords(values):
-        return '<div class="keywords">' + ''.join(f'<span>{E(v)}</span>' for v in values) + '</div>'
+        return '<div class="keywords tags">' + ''.join(f'<span>{E(v)}</span>' for v in values) + '</div>'
 
     def section_heading(title, extra=''):
         return f'<div class="section-heading"><h2>{title}</h2>{extra}</div>'
@@ -147,13 +147,9 @@ def render(b, lang):
     current_work = f'''<section id="current-work">{section_heading(t('projects'), button(t('all_projects') + f" · {len(projects)}", link('projects.html')))}<a class="current-panel" href="{link(b['detail'](featured))}" aria-labelledby="current-project-title"><div class="current-copy"><p class="eyebrow"><span class="live-dot" aria-hidden="true"></span>{u('on_air')} · {featured['date']}</p><h3 id="current-project-title">{t('current_title')}</h3><p>{featured['summary'][lang]}</p><div class="current-status"><span>{u('development')}</span><span>{u('accepted')}</span></div></div>{item_image(featured, 'current-art')}</a><div class="project-grid">{cards}</div></section>'''
 
     passes = []
-    stops = {'cern': 'CERN · GVA', 'visiona': 'VISIONA · BR', 'cnes': 'CNES · TLS', 'experience_1': 'TIMA · GRENOBLE', 'experience_2': 'ITA · BR', 'experience_3': 'DAFITI · BR'}
-    for i, p in list(reversed(list(enumerate(experiences))))[:3]:
-        successor = experiences[i+1] if i+1 < len(experiences) else None
+    for p in list(reversed(experiences))[:3]:
         departure_year = re.sub(r'(\d{4})–\d{2}(\d{2})', r'\1–\2', E(p['date']))
-        # Use the next real experience. The newest pass has no invented future stop.
-        destination = f'<div><span class="mono">{u("destination")}</span><strong class="next-destination">{E(stops.get(successor["id"], successor["place"]))}</strong></div>' if successor else ''
-        passes.append(f'''<a class="boarding-pass" data-experience-id="{p['id']}" data-experience="{p['category']}" href="{link(b['detail'](p))}">{item_image(p)}<div class="pass-copy"><p class="eyebrow">{E(p['place'])}</p><h3>{p['title'][lang].split(' · ', 1)[-1]}</h3><p>{p['summary'][lang]}</p>{keywords(p['tech'][:3])}</div><div class="pass-stub"><div><span class="mono">{u('departure')}</span><strong>{departure_year}</strong></div>{destination}<span class="more">{u('details')}{arrow}</span></div></a>''')
+        passes.append(f'''<a class="boarding-pass" data-experience-id="{p['id']}" data-experience="{p['category']}" href="{link(b['detail'](p))}">{item_image(p)}<div class="pass-copy"><p class="eyebrow">{E(p['place'])}</p><h3>{p['title'][lang].split(' · ', 1)[-1]}</h3><p>{p['summary'][lang]}</p>{keywords(p['tech'][:3])}</div><div class="pass-stub"><div><span class="mono">{u('departure')}</span><strong>{departure_year}</strong></div><span class="more" aria-hidden="true">{arrow}</span></div></a>''')
     experience = f'<section id="experience">{section_heading(t("experience"), button(t("all_experience") + f" · {len(experiences)}", link("experience.html")))}<div class="boarding-passes">{"".join(passes)}</div></section>'
 
     about = f'''<section id="my-story" aria-labelledby="about-title"><div class="envelope"><div class="envelope-sheet"><div class="envelope-copy"><p class="eyebrow">Par avion · {t('about')}</p><h2 id="about-title">{u('personal_title')}</h2><p>{u('personal_body')}</p><div class="letter-lines"><p>{u('from')} · Jaru, Rondônia</p><p>{u('to')} · {u('personal_destination')}</p></div>{button(t('more_about'), link('about.html'))}</div><div class="about-aside"><figure class="portrait-stamp"><div class="portrait-stamp-inner"><div class="portrait-paper"><img src="{r('img/portrait-lab.jpeg')}" alt="{t('portrait')}" width="1150" height="1280" loading="lazy"></div></div></figure>{postmark('JARU · RONDÔNIA · BRASIL', 'PAR AVION')}</div></div></div></section>'''
@@ -185,5 +181,5 @@ def render(b, lang):
 
     contact = f'''<section id="say-hello" class="contact-section"><div><h2><span>{u('contact_destination')}</span><strong>{u('contact_inbox')}</strong></h2><p>{u('contact_line')}</p><div class="actions">{button(t('send'), 'mailto:' + d['EMAIL'], True)}<a class="btn btn-plain" href="{d['LINKEDIN']}" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="btn btn-plain" href="{d['GITHUB']}" target="_blank" rel="noopener noreferrer">GitHub</a><a class="btn btn-plain" href="{r('CV_Emilly.pdf')}" download>CV · PDF</a></div></div><div class="tag-holder"><svg class="tag-string" viewBox="0 0 160 80" aria-hidden="true"><path d="M4 70C40 10 90 80 150 44" fill="none" stroke="#B04A32" stroke-width="2"/></svg><div class="luggage-tag"><span class="tag-hole" aria-hidden="true"></span><div class="tag-heading">{u('luggage')}</div><dl><div><dt>{u('currently')}</dt><dd>{u('currently_body')}</dd></div><div><dt>{u('looking_for')}</dt><dd>{u('looking_body')}</dd></div></dl></div></div></section>'''
 
-    footer = f'<footer class="wrap footer"><span>© 2026 Emilly Rodrigues · {t("footer_note")}</span><a href="#top">{t("top")}{arrow}</a></footer>'
+    footer = b['DESIGN']['Design'](b,lang,'index.html').footer()
     return top + '<main id="main" class="wrap home-content">' + hero + experience + current_work + about + awards + media + diary + newsletter + contact + '</main>' + footer

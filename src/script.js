@@ -15,12 +15,13 @@ for (const link of document.querySelectorAll('.languages a')) {
 }
 // A project opened from filtered results returns to those results, also across languages.
 try {
-  const saved = new URLSearchParams(sessionStorage.getItem(`emilly-projects:${scriptRoot}`) || '');
   const allowedAreas = ['space','hardware','control','software','outreach'];
-  const safe = new URLSearchParams();
-  if (allowedAreas.includes(saved.get('area'))) safe.set('area', saved.get('area'));
-  if (saved.get('q')) safe.set('q', saved.get('q').slice(0,120));
   for (const link of document.querySelectorAll('[data-back-results]')) {
+    const kind = link.dataset.directoryKind === 'experience' ? 'experience' : 'projects';
+    const saved = new URLSearchParams(sessionStorage.getItem(`emilly-${kind}:${scriptRoot}`) || '');
+    const safe = new URLSearchParams();
+    if (allowedAreas.includes(saved.get('area'))) safe.set('area', saved.get('area'));
+    if (saved.get('q')) safe.set('q', saved.get('q').slice(0,120));
     const target = new URL(link.href);
     target.search = safe.toString();
     target.hash = link.dataset.backResults;

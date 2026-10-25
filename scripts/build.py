@@ -81,18 +81,20 @@ def layout(path, lang, title, description, body, active='home'):
   <link rel="canonical" href="{SITE_URL}/{current}">{alternates}<link rel="alternate" hreflang="x-default" href="{SITE_URL}/{path}">
   <meta property="og:title" content="{E(title, quote=True)} — Emilly Rodrigues"><meta property="og:description" content="{E(description, quote=True)}">
   <meta property="og:type" content="website"><meta property="og:url" content="{SITE_URL}/{current}"><meta property="og:image" content="{SITE_URL}/img/me.png">
-{f'<link rel="stylesheet" href="{asset("style/style.css")}">' if path in ('about.html', 'recognition.html', 'contact.html') else ''}
+{f'<link rel="stylesheet" href="{asset("style/style.css")}">' if path == 'about.html' else ''}
   <link rel="stylesheet" href="{asset('style/fonts.css')}">
   <link rel="stylesheet" href="{asset('style/home.css')}">
 {f'<link rel="stylesheet" href="{asset("style/launch.css")}">' if redesigned_home else ''}
 {f'<link rel="stylesheet" href="{asset("style/media.css")}">' if redesigned_home else f'<link rel="stylesheet" href="{asset("style/inner.css")}">'}
-{f'<link rel="stylesheet" href="{asset("style/journal-design.css")}">' if post or path == 'journal.html' else ''}
+{f'<link rel="stylesheet" href="{asset("style/journal-design.css")}">' if post or path == 'journal.html' or path.startswith('pages/') else ''}
+  <link rel="stylesheet" href="{asset('style/components.css')}">
+{f'<link rel="stylesheet" href="{asset("style/work.css")}">' if path in ('projects.html','experience.html','recognition.html','contact.html') or path.startswith('pages/') else ''}
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
   <script src="{asset('src/redesign.js')}" defer></script>
-{f'<script src="{asset("src/projects.js")}" defer></script>' if path == 'projects.html' else ''}
+{f'<script src="{asset("src/projects.js")}" defer></script>' if path in ('projects.html','experience.html') else ''}
 {f'<script src="{asset("src/journal.js")}" defer></script>' if post else ''}
-{f'<script src="{asset("src/stories.js")}" defer></script>' if post or path == 'journal.html' else ''}
+{f'<script src="{asset("src/stories.js")}" defer></script>' if post or path == 'journal.html' or path.startswith('pages/') else ''}
 </head>
 <body id="top" data-page="{active}"{' class="redesign-home"' if redesigned_home else ' class="redesign-inner"'}>
 <a class="skip-link" href="#main">{t('skip')}</a>
@@ -155,25 +157,25 @@ def about(lang):
     return layout('about.html', lang, t('about'), t('short_bio'), body, 'about')
 
 def recognition(lang):
-    current = loc('recognition.html', lang)
-    t = lambda x: txt(x, lang)
-    related = {}
-    for post in POSTS:
-        if post.get('related_award'):
-            related[post['related_award']] = related.get(post['related_award'], '') + f'<p><a class="text-link" href="{href(current, J["path"](post), lang)}">{E(J["text"](post.get("award_link_label", post["title"]), lang))} </a></p>'
-    awards = ''.join(f'<article class="award"><span class="award-year">{date}</span><div><h2>{E(name)}</h2><p>{desc[lang]}</p>{related.get(name, "")}</div><a class="text-link" href="{url or relative(current, "CV_Emilly.pdf")}" aria-label="{E(t("source") + ": " + name, quote=True)}" {"target=\"_blank\" rel=\"noopener noreferrer\"" if url else ""}>{t("source")} </a></article>' for date, name, desc, url in D['AWARDS'])
-    body = f'''<main id="main" class="container content-page">{heading(lang, t('awards_title'), t('awards_body'))}<div class="awards-list">{awards}</div>
-<article class="press-panel"><div><p class="role-label">Exame</p><h2>{t('press_title')}</h2><p>{t('press_body')}</p></div><a class="button button-primary" href="{D['EXAME']}" target="_blank" rel="noopener noreferrer">{t('article')} </a></article></main>'''
-    return layout('recognition.html', lang, t('awards_title'), t('awards_body'), body, 'recognition')
+    d = DESIGN['Design'](globals(),lang,'recognition.html')
+    cards=[]
+    for i,(date,name,description,url) in enumerate(D['AWARDS']):
+        publisher = D['AWARD_SOURCES'][name][0]
+        stamp = d.drawing('stamp-'+['rocket','satellite','star','planet','satellite'][i])
+        cards.append(f'<a class="recognition-card" href="{E(url,quote=True)}" target="_blank" rel="noopener noreferrer"><div class="stamp stamp-{i%4}"><div class="stamp-inner"><span class="stamp-year">{E(date)}</span>{stamp}<span class="stamp-name">{E(name)}</span></div></div><div class="recognition-copy"><p class="eyebrow">{E(date)}</p><h2>{E(name)}</h2><p>{description[lang]}</p><span class="publication-link">{E(publisher)}<span aria-hidden="true">↗</span></span></div></a>')
+    body=f'<main id="main" class="wrap inner-content recognition-page"><div class="inner-breadcrumb">{d.button(d.u("home"),d.link("index.html#recognition"),back=True)}</div><header class="recognition-heading"><p class="eyebrow">{d.t("awards_title")}</p><h1>{d.t("recognition")}</h1><p>{d.t("awards_body")}</p></header><div class="recognition-grid">{"".join(cards)}</div></main>'
+    return layout('recognition.html', lang, d.t('awards_title'), d.t('awards_body'), body, 'recognition')
+
 
 def contact_panel(lang, current):
     t = lambda x: txt(x, lang)
-    return f'''<div class="contact-layout"><div class="contact-info"><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><div class="social-links">{social_links()}</div><a href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} </a></div>
+    return f'''<div class="contact-layout"><div class="contact-info"><div class="contact-postcard" aria-hidden="true">{DESIGN["Design"](globals(),lang,"contact.html").drawing("postcard-rack")}</div><h2>{t('direct')}</h2><a class="email-address" href="mailto:{EMAIL}">{EMAIL}</a><button class="button button-soft" type="button" id="copy-email" data-email="{EMAIL}" data-success="{t('copied')}" data-error="{t('copy_error')}" hidden>{t('copy')}</button><p id="copy-status" role="status"></p><div class="social-links">{social_links()}</div><a href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} </a></div>
 <form class="contact-form" action="https://formsubmit.co/{EMAIL}" method="POST"><div class="form-row"><label>{t('name')}<input type="text" name="name" autocomplete="name" required maxlength="100"></label><label>{t('email')}<input type="email" name="email" autocomplete="email" required maxlength="254"></label></div><label>{t('subject')}<input type="text" name="subject" required maxlength="160"></label><label>{t('message')}<textarea name="message" rows="6" required maxlength="5000"></textarea></label><input type="hidden" name="_subject" value="Portfolio · Emilly Rodrigues"><input type="hidden" name="_template" value="table"><input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="button button-primary" type="submit">{t('send')} </button><p class="form-note">{t('form_note')} <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit </a></p></form></div>'''
 
 def contact(lang):
     t = lambda x: txt(x, lang)
-    body = f'<main id="main" class="container content-page">{heading(lang, t("contact_title"), t("contact_body"))}{contact_panel(lang, loc("contact.html", lang))}</main>'
+    d = DESIGN['Design'](globals(),lang,'contact.html')
+    body = f'<main id="main" class="wrap inner-content contact-page"><div class="inner-breadcrumb">{d.button(d.u("home"),d.link("index.html#say-hello"),back=True)}</div><header class="contact-heading"><p class="eyebrow">Par avion</p><h1>{t("contact_title")}</h1><p>{t("contact_body")}</p></header>{contact_panel(lang, loc("contact.html", lang))}</main>'
     return layout('contact.html', lang, t('contact'), t('contact_body'), body, 'contact')
 
 def project(p, lang):

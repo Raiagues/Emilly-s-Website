@@ -252,6 +252,12 @@
           "pt": "A primeira resposta, em 2 de abril de 2026, foi negativa. Em 30 de abril, após uma mudança em um dos projetos, o CERN confirmou minha vaga.",
           "fr": "La première réponse, le 2 avril 2026, était négative. Le 30 avril, après une modification dans l’un des projets, le CERN a confirmé ma place.",
           "es": "La primera respuesta, el 2 de abril de 2026, fue negativa. El 30 de abril, tras un cambio en uno de los proyectos, el CERN confirmó mi plaza."
+        },
+        {
+          "en": "The 2026 programme selected 47 students from almost 6,000 applicants worldwide, according to CERN openlab.",
+          "pt": "Segundo o CERN openlab, o programa de 2026 selecionou 47 estudantes entre quase 6.000 candidaturas de todo o mundo.",
+          "fr": "Selon CERN openlab, le programme de 2026 a sélectionné 47 étudiants parmi près de 6 000 candidatures dans le monde.",
+          "es": "Según CERN openlab, el programa de 2026 seleccionó a 47 estudiantes entre casi 6.000 candidaturas de todo el mundo."
         }
       ],
       "photos": [],
@@ -268,6 +274,17 @@
       },
       "documents": [
         "email-rejection"
+      ],
+      "links": [
+        {
+          "url": "https://openlab.cern/highlights-from-2026-cern-openlab-summer-student-programme/",
+          "label": {
+            "en": "The 2026 programme, on CERN openlab",
+            "pt": "O programa de 2026, no CERN openlab",
+            "fr": "Le programme de 2026, sur CERN openlab",
+            "es": "El programa de 2026, en CERN openlab"
+          }
+        }
       ]
     },
     {

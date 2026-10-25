@@ -1,5 +1,17 @@
 # Fontes e decisões editoriais
 
+## Correção das fontes públicas — 25/10/2026
+
+Os cartões de conquistas abrem diretamente a publicação ou o documento indicado pela proprietária. Não existe fallback para o currículo. Artigo aceito no AIAA SciTech e apresentação no South Summit não são classificados como prêmios; continuam documentados no projeto e no diário, respectivamente.
+
+- Prêmio Protagonismo Universitário: [Exame, Um olhar para o futuro](https://exame.com/revista-exame/um-olhar-para-o-futuro/), publicado em 27/11/2025. A matéria identifica Emilly e os seis premiados.
+- Líderes Estudar: [Fellows Estudar 2025](https://www.youtube.com/watch?v=X4XIryqAPn8), vídeo indicado pela proprietária. Título e canal Fundação Estudar conferidos pelo oEmbed do YouTube; não foi inferido conteúdo não acessível do vídeo.
+- CAPES–BRAFITEC: [resultado final da UFSM](https://www.ufsm.br/app/uploads/sites/402/2023/03/Divulgacao-dos-Alunos-Selecionados-FINAL.pdf), de 14/04/2023. Emilly Raiane aparece entre os selecionados.
+- CERN openlab: [retrospectiva do programa de 2026](https://openlab.cern/highlights-from-2026-cern-openlab-summer-student-programme/). Confirma 47 estudantes, 27 nacionalidades e quase 6.000 candidaturas. O número corrigido aparece no cartão da conquista e no relato do CERN, com link para a publicação.
+- Brazil at Silicon Valley: [Estudar Fora, experiências de uma semana que aproxima o Brasil do Vale do Silício](https://www.estudarfora.org.br/brazil-at-silicon-valley-2026/), publicado em 04/05/2026. Cita Emilly entre os fellows que participaram com a Fundação Estudar. A conquista se chama Brazil at Silicon Valley e usa o ano 2026.
+
+Os registros abaixo preservam o histórico editorial e as fontes usadas anteriormente para os dados técnicos.
+
 Revisão em 17/10/2026. As traduções reorganizam os fatos para leitura em um portfólio; não acrescentam cargos, resultados ou credenciais.
 
 ## Fontes fornecidas

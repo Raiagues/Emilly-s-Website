@@ -1,0 +1,41 @@
+/* Shared navigation and controls on every page, including older content. */
+.home-header #main-nav a,.home-header .languages a { font:400 10px/1.5 var(--font-mono); text-decoration:none; border:0; letter-spacing:0; }
+.home-header #main-nav a::after { display:none; }
+.home-header #main-nav a[aria-current] { background:var(--coral-text); color:var(--paper-light); font-weight:400; }
+.home-header .languages { border-left:0; }
+.home-header .languages a { width:auto; min-width:34px; height:34px; min-height:34px; }
+.home-header .languages a[aria-current] { background:var(--teal); color:var(--paper-light); text-decoration:none; }
+.btn-back { padding:6px 20px 6px 6px; }
+.btn-back:hover .arr { transform:translateX(-3px); }
+.keywords.tags { display:flex; flex-wrap:wrap; gap:7px; font:400 12px/1.4 var(--font-sans); text-transform:none; letter-spacing:0; color:var(--teal); }
+.keywords.tags>span { padding:5px 10px; border:1px solid #1F4A4F1C; border-radius:999px; background:#FBF8F170; }
+.portfolio-footer { display:flex; align-items:center; justify-content:space-between; gap:32px; padding-block:42px; border-top:1px solid var(--line); text-transform:none; letter-spacing:0; }
+.portfolio-footer .footer-person>a { font:400 29px/1.2 var(--font-serif); }
+.footer-person>p { font:14px/1.6 var(--font-sans); margin-top:8px; }
+.footer-person small { display:block; margin-top:16px; font:10px/1.5 var(--font-mono); color:var(--muted); }
+.footer-connect>p { font:13px/1.6 var(--font-sans); margin-bottom:12px; }
+.footer-connect nav { display:flex; flex-wrap:wrap; gap:10px; }
+.footer-connect nav a { display:flex; align-items:center; gap:16px; padding:9px 14px; border-radius:999px; background:var(--sand); font:13px/1.4 var(--font-sans); transition:background .2s,transform .2s; }
+.footer-connect nav a:hover { color:var(--paper-light); background:var(--teal); transform:translateY(-2px); }
+.footer-connect .footer-email { display:inline-block; margin-top:14px; font:12px/1.6 var(--font-sans); overflow-wrap:anywhere; }
+/* The same type and tags carry through the three featured experiences. */
+#experience .boarding-pass { grid-template-columns:160px minmax(0,1fr) 138px; border-radius:14px; overflow:hidden; transition:transform .35s var(--ease),box-shadow .35s; }
+#experience .boarding-pass:hover,#experience .boarding-pass:focus-visible { transform:translateY(-4px); box-shadow:0 12px 26px #1F4A4F18; color:var(--ink); }
+#experience .boarding-pass .art { overflow:hidden; }
+#experience .boarding-pass .art svg { transition:transform .7s var(--ease); }
+#experience .boarding-pass:hover .art svg,#experience .boarding-pass:focus-visible .art svg { transform:rotate(-5deg) scale(1.08); }
+#experience .pass-copy { padding:24px 26px; }
+#experience .pass-copy .eyebrow { font:600 11px/1.5 var(--font-sans); letter-spacing:.05em; }
+#experience .pass-copy h3 { font-size:31px; line-height:1.13; }
+#experience .pass-copy>p:not(.eyebrow) { font:15px/1.6 var(--font-sans); }
+#experience .pass-copy .keywords { margin-top:3px; }
+#experience .pass-copy .tags>span { font:400 11px/1.4 var(--font-sans); border-radius:999px; padding:4px 9px; background:#FBF8F170; }
+#experience .pass-stub { border-left:1px solid #1F4A4F24; padding:22px; justify-content:space-between; }
+#experience .pass-stub .mono { display:none; }
+#experience .pass-stub strong { font:500 22px/1.3 var(--font-sans); }
+#experience .pass-stub .more { justify-content:flex-end; }
+#experience .pass-stub .arr { width:34px; height:34px; border:0; background:#FBF8F190; }
+#experience .boarding-pass:hover .pass-stub .arr { background:var(--teal); color:var(--paper-light); }
+@media(max-width:800px) { #experience .boarding-pass { grid-template-columns:110px minmax(0,1fr); } #experience .pass-stub { grid-column:2; flex-direction:row; border:0; padding:0 24px 18px; } #experience .pass-copy { padding:22px 24px 12px; } #experience .boarding-pass .art { grid-row:1/3; } #experience .pass-copy h3 { font-size:28px; } }
+@media(max-width:560px) { .portfolio-footer { flex-direction:column; align-items:flex-start; padding-block:30px; } .footer-connect { width:100%; } #experience .boarding-pass { grid-template-columns:76px minmax(0,1fr); } #experience .pass-copy { padding:18px 16px 10px; } #experience .pass-copy h3 { font-size:25px; } #experience .pass-copy>p:not(.eyebrow) { font-size:14px; } #experience .pass-copy .tags { gap:5px; } #experience .pass-stub { padding:0 16px 18px; } #experience .pass-stub strong { font-size:19px; } }
+@media(prefers-reduced-motion:reduce) { .btn-back:hover .arr,#experience .boarding-pass:hover,#experience .boarding-pass:focus-visible,#experience .boarding-pass:hover .art svg,#experience .boarding-pass:focus-visible .art svg,.footer-connect nav a:hover { transform:none; } }
