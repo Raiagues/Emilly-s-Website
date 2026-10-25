@@ -226,7 +226,7 @@ def main():
         dest = dist / path
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / path, dest)
-    for folder in ['style', 'src', 'img', 'doc']:
+    for folder in ['style', 'src', 'img']:
         shutil.copytree(ROOT / folder, dist / folder, dirs_exist_ok=True)
     assets = {photo['file'] for post in POSTS for photo in post['photos'].values()}
     assets.update(post['resource']['file'] for post in POSTS if post.get('resource'))
