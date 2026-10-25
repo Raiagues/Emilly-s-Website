@@ -1,5 +1,15 @@
 # Redesign do portfólio
 
+## Simplificação da abertura — 25/10/2026
+
+A abertura agora usa duas colunas, com o nome e uma apresentação curta à esquerda e a foto à direita. No celular, o texto vem antes da foto. O nome aparece uma única vez na primeira tela, em uma linha e com um único estilo. O hero ocupa a altura disponível da tela, e os três cards começam depois, com espaçamento próprio.
+
+Foram retirados o subtítulo da marca, a saudação repetida, “Portfolio”, o Guia de voo, as tags de formação, os dois botões da abertura, a faixa superior de última parada e a animação do foguete. A última experiência continua no card abaixo. Estrelas e fundos pontilhados foram removidos; a listra de correio aéreo e as fitas permanecem, com superfícies em bege e tons claros de terracota.
+
+O menu tem cinco itens, com Conquistas acessível por Sobre e a mídia pelo Diário. Os idiomas usam um controle compacto com links nativos, operável por teclado e sem JavaScript. O cabeçalho das páginas internas usa a mesma navegação. As versões EN, PT, FR e ES mantêm seus endereços.
+
+Inspeção visual em 1440, 390 e 320 px. Treze cenários direcionados de navegador aprovados, incluindo navegação, idiomas, teclado, ausência de rolagem horizontal, acesso às conquistas por Sobre e acessibilidade das páginas principais e das 36 histórias. A seção abaixo registra o redesign anterior.
+
 Revisão de 18/10/2026 na branch `redesign/home-preview`.
 
 A home e as páginas internas usam os cinco modelos de `portfolio-redesign/design/`, adaptados ao gerador Python existente. As instruções e a paleta de `DESIGN_NOTES.md` e `tokens.css` continuam sendo a referência.

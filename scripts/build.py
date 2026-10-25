@@ -84,7 +84,7 @@ def layout(path, lang, title, description, body, active='home'):
 {f'<link rel="stylesheet" href="{asset("style/style.css")}">' if path in ('about.html', 'recognition.html', 'contact.html') else ''}
   <link rel="stylesheet" href="{asset('style/fonts.css')}">
   <link rel="stylesheet" href="{asset('style/home.css')}">
-{f'<link rel="stylesheet" href="{asset("style/launch.css")}"><link rel="stylesheet" href="{asset("style/media.css")}">' if redesigned_home else f'<link rel="stylesheet" href="{asset("style/inner.css")}">'}
+{f'<link rel="stylesheet" href="{asset("style/media.css")}">' if redesigned_home else f'<link rel="stylesheet" href="{asset("style/inner.css")}">'}
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
   <script src="{asset('src/redesign.js')}" defer></script>
@@ -144,7 +144,7 @@ def about(lang):
     evidence = ''.join(f'<article class="skill"><h3>{SKILLS[key][lang]}</h3><p>{copy[lang]}</p><a class="text-link" href="{href(current, detail(next(p for p in PROJECTS if p["id"] == id)), lang)}">{txt("case", lang)} </a></article>' for key, id, copy in D['EVIDENCE'])
     body = f'''<main id="main" class="container content-page">{heading(lang, t('about'))}
 <div class="about-layout"><div class="prose"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><a class="text-link" href="{href(current, 'pages/projects/project_17.html', lang)}">EP Aero </a></div><aside class="education"><h2>{t('education')}</h2><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p><a class="button button-soft" href="{relative(current, 'CV_Emilly.pdf')}" download>{t('cv')} </a></aside></div>
-<section class="skills-section"><h2>{t('skills_title')}</h2><p>{t('skills_body')}</p><div class="skills-grid">{evidence}</div></section></main>'''
+<section class="skills-section"><h2>{t('awards_title')}</h2><p>{t('awards_body')}</p><a class="button button-soft" href="{href(current, 'recognition.html', lang)}">{t('recognition')}</a></section><section class="skills-section"><h2>{t('skills_title')}</h2><p>{t('skills_body')}</p><div class="skills-grid">{evidence}</div></section></main>'''
     return layout('about.html', lang, t('about'), t('short_bio'), body, 'about')
 
 def recognition(lang):
