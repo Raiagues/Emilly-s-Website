@@ -9,7 +9,7 @@
 .redesign-home #my-story .about-aside { padding-top:4px; min-height:300px; }
 .redesign-home #my-story .portrait-stamp { position:relative; width:210px; padding:10px; transform:rotate(4deg); }
 .redesign-home #my-story .portrait-paper { height:250px; }
-.redesign-home #my-story .portrait-paper img { height:100%; object-fit:contain; object-position:50% 100%; }
+.redesign-home #my-story .portrait-paper img { height:100%; object-fit:cover; object-position:center; }
 .portrait-number { position:absolute; z-index:2; left:20px; top:14px; font:800 26px/1 var(--font-poster); }
 .redesign-home #my-story .about-aside .postmark { top:200px; left:-84px; width:260px; }
 .media-shelf { display:grid; grid-template-columns:230px minmax(0,1.12fr) minmax(0,1fr); gap:28px; align-items:start; }

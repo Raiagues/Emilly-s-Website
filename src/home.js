@@ -39,17 +39,21 @@
     });
   }
 
-  // Preserve archive links even when a browser opens a fragment inside details.
-  function revealArchiveTarget() {
-    let fragment;
-    try { fragment = decodeURIComponent(location.hash.slice(1)); } catch { return; }
-    const target = document.getElementById(fragment);
-    const archive = target?.closest('details');
-    if (archive) {
-      archive.open = true;
-      target.scrollIntoView();
+  const motion = document.querySelector('.motion-toggle');
+  if (motion) {
+    motion.hidden = false;
+    motion.addEventListener('click', () => {
+      const paused = document.body.classList.toggle('motion-paused');
+      motion.setAttribute('aria-pressed', String(paused));
+      motion.textContent = paused ? motion.dataset.play : motion.dataset.pause;
+    });
+  }
+  // Keep previously shared links to archive entries working after the move.
+  function redirectArchive() {
+    if (location.hash.startsWith('#archive-')) {
+      location.replace(new URL('journal.html' + location.hash, location.href).href);
     }
   }
-  window.addEventListener('hashchange', revealArchiveTarget);
-  revealArchiveTarget();
+  window.addEventListener('hashchange', redirectArchive);
+  redirectArchive();
 })();

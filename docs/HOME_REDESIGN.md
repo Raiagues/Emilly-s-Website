@@ -1,14 +1,20 @@
 # Redesign do portfólio
 
-## Simplificação da abertura — 25/10/2026
+## Restauração visual e nova organização — 25/10/2026
 
-A abertura agora usa duas colunas, com o nome e uma apresentação curta à esquerda e a foto à direita. No celular, o texto vem antes da foto. O nome aparece uma única vez na primeira tela, em uma linha e com um único estilo. O hero ocupa a altura disponível da tela, e os três cards começam depois, com espaçamento próprio.
+A abertura voltou ao modelo ilustrado: foto em polaroid com fita, Guia de voo em post-it, nome em tipografia de pôster, botões e planeta com lançamento animado. A paleta original de verde-petróleo, verde-água, pêssego, lilás e terracota foi recuperada. A animação tem controle de pausa e respeita movimento reduzido. A foto indicada pela proprietária, `fotominha.jpeg`, foi incorporada como `img/portrait-lab.jpeg`.
 
-Foram retirados o subtítulo da marca, a saudação repetida, “Portfolio”, o Guia de voo, as tags de formação, os dois botões da abertura, a faixa superior de última parada e a animação do foguete. A última experiência continua no card abaixo. Estrelas e fundos pontilhados foram removidos; a listra de correio aéreo e as fitas permanecem, com superfícies em bege e tons claros de terracota.
+A ordem depois da abertura é Experiência, Projetos, Sobre mim, Conquistas, mídia, Diário, Cartas de bordo e Contato. Os três cards de resumo foram retirados. Os títulos não têm ícones nem números. O menu compacto e o seletor de quatro idiomas permanecem.
 
-O menu tem cinco itens, com Conquistas acessível por Sobre e a mídia pelo Diário. Os idiomas usam um controle compacto com links nativos, operável por teclado e sem JavaScript. O cabeçalho das páginas internas usa a mesma navegação. As versões EN, PT, FR e ES mantêm seus endereços.
+As experiências usam cartões de embarque coloridos, com as ilustrações do modelo, até três tecnologias e período abreviado. As conquistas mostram quatro selos ilustrados: Prêmio Protagonismo Universitário, Líderes Estudar, CAPES–BRAFITEC e CERN openlab. Um botão abre a página com todas as conquistas.
 
-Inspeção visual em 1440, 390 e 320 px. Treze cenários direcionados de navegador aprovados, incluindo navegação, idiomas, teclado, ausência de rolagem horizontal, acesso às conquistas por Sobre e acessibilidade das páginas principais e das 36 histórias. A seção abaixo registra o redesign anterior.
+Sobre mim usa o envelope e o retrato em selo, com texto pessoal breve, origem em Jaru, Rondônia, e um destino aberto a novas ideias, projetos e lugares. Formação e idiomas continuam na página completa. A mídia mantém revista, entrevistas, vídeos e notícias; as publicações sociais em celulares foram retiradas.
+
+O Diário mostra duas histórias com polaroids, botões verde-petróleo e setas terracota, sem palavras-chave. O botão junto ao título abre `journal.html`, com as nove histórias e a cronologia. Essa página existe nos quatro idiomas e funciona sem JavaScript. Links antigos com fragmentos `#archive-…` encaminham à nova página.
+
+Cartas de bordo segue o cartão postal em três painéis do modelo. O cadastro permanece desativado e explicado na própria seção, pois não há serviço de newsletter conectado. O contato usa o título de destino, botão de e-mail, LinkedIn, GitHub, currículo e etiqueta de bagagem.
+
+Validação: 171 HTMLs aprovados, 35 cenários de navegador cobertos, com correção de contraste e reexecução dos seis testes afetados. Conferência visual de computador e celular, quatro idiomas, teclado, pausa de animação, ausência de rolagem horizontal, navegação sem JavaScript e acessibilidade automatizada. Os registros abaixo descrevem versões anteriores.
 
 Revisão de 18/10/2026 na branch `redesign/home-preview`.
 

@@ -33,7 +33,4 @@ def render(root, lang, relative, drawing, arrow):
             lines = '<div class="newspaper-lines" aria-hidden="true">' + '<div><i></i><i></i><i></i></div>' * 2 + '</div>'
             clips.append(f'<a class="newspaper-clip {"clip-small" if i else ""}" href="{item["url"]}" {external}><div class="torn-paper"><div class="newspaper-meta"><span>{E(item["outlet"])}</span><time datetime="{item["date"]}">{item["date"]}</time></div><h3 lang="pt">{E(item["title"])}</h3>{lines if not i else ""}<span class="more">{u("read")}{arrow}</span></div></a>')
         papers.append(f'<div class="clipping-pair" data-carousel-item>{"".join(clips)}</div>')
-    phones = []
-    for i, item in enumerate(data['social'], 1):
-        phones.append(f'<a class="media-phone" href="{item["url"]}" {external} aria-label="{u("social")} · {item["platform"]} · {i}"><span class="phone-screen"><span class="phone-platform">{item["platform"]}</span><span class="phone-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m7 4 13 8-13 8z" fill="currentColor"/></svg></span></span></a>')
-    return f'<div class="media-shelf">{magazine}<div class="tape-player" data-carousel>{"".join(tapes)}{controls()}</div><div class="press-clippings" data-carousel>{"".join(papers)}{controls()}</div></div><div class="media-social"><p class="eyebrow">{u("social")} · Instagram · LinkedIn</p><div class="phone-row">{"".join(phones)}</div></div>'
+    return f'<div class="media-shelf">{magazine}<div class="tape-player" data-carousel>{"".join(tapes)}{controls()}</div><div class="press-clippings" data-carousel>{"".join(papers)}{controls()}</div></div>'

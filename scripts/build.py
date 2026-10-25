@@ -84,6 +84,7 @@ def layout(path, lang, title, description, body, active='home'):
 {f'<link rel="stylesheet" href="{asset("style/style.css")}">' if path in ('about.html', 'recognition.html', 'contact.html') else ''}
   <link rel="stylesheet" href="{asset('style/fonts.css')}">
   <link rel="stylesheet" href="{asset('style/home.css')}">
+{f'<link rel="stylesheet" href="{asset("style/launch.css")}">' if redesigned_home else ''}
 {f'<link rel="stylesheet" href="{asset("style/media.css")}">' if redesigned_home else f'<link rel="stylesheet" href="{asset("style/inner.css")}">'}
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
@@ -129,6 +130,10 @@ def journal(post, lang):
     current = loc(path, lang)
     body = INNER['story'](globals(), post, lang)
     return layout(path, lang, J['text'](post['title'], lang), J['text'](post['subtitle'], lang), body)
+
+def journal_archive(lang):
+    body = runpy.run_path(str(ROOT / 'scripts/journal_archive.py'))['render'](globals(), lang)
+    return layout('journal.html', lang, J['text'](JUI['home'], lang), J['text'](JUI['bio'], lang), body, 'stories')
 
 def projects(lang):
     return layout('projects.html', lang, txt('projects', lang), txt('work_body', lang), INNER['projects'](globals(), lang), 'projects')
@@ -188,7 +193,7 @@ def main():
             for old in folder.glob('*.html'):
                 old.unlink()
     for lang in LANGS:
-        for path, render in [('index.html', home), ('projects.html', projects), ('experience.html', experience), ('about.html', about), ('recognition.html', recognition), ('contact.html', contact)]:
+        for path, render in [('index.html', home), ('projects.html', projects), ('experience.html', experience), ('about.html', about), ('recognition.html', recognition), ('journal.html', journal_archive), ('contact.html', contact)]:
             write(loc(path, lang), render(lang))
         for post in POSTS:
             write(loc(J['path'](post), lang), journal(post, lang))
@@ -218,7 +223,7 @@ def main():
         shutil.copyfile(ROOT / asset, destination)
     for name in ['CV_Emilly.pdf', 'Emilly_Rodrigues_Resume.pdf']:
         shutil.copyfile(ROOT / name, dist / name)
-    print(f'Built {len(PROJECTS)} case studies and {len(POSTS)} journal posts, plus 6 main pages × {len(LANGS)} languages.')
+    print(f'Built {len(PROJECTS)} case studies and {len(POSTS)} journal posts, plus 7 main pages × {len(LANGS)} languages.')
 
 if __name__ == '__main__':
     main()
