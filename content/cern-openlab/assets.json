@@ -1,0 +1,72 @@
+[
+  {
+    "source": "assets/7476306419630fa2e27de9910cb5a18c.png",
+    "file": "img/cern-openlab/detector-signatures.png",
+    "sha256": "3190ddcfaae1f028eadba6cf2cd6ee5edbbd0ddc0b3edc14a64a97e8e0b03931"
+  },
+  {
+    "source": "assets/7213bfffd646523c4a568852d550de10.png",
+    "file": "img/cern-openlab/atlas-trigger-chain.png",
+    "sha256": "7aae06a23628dc851b2afa80a274cc2f8e0ab04e32e585e7a1d609481725bae7"
+  },
+  {
+    "source": "assets/2d3938123acb8f663bd7f6ca05b8c7b9.png",
+    "file": "img/cern-openlab/calorimeter-channels.png",
+    "sha256": "6c07ea318d229fde4f26895697a6ca1083872ba27130fb3178d6ba14caea8640"
+  },
+  {
+    "source": "assets/6ddfbed8be497064956222882174fdd6.png",
+    "file": "img/cern-openlab/peak-finder-efficiency-purity.png",
+    "sha256": "c5faaed3a3c6feb6b796b40df1c112cbf57428f629c2a385fef381c4ed6ec77e"
+  },
+  {
+    "source": "assets/cddab104e3b57b6603fe5027af7fac5e.png",
+    "file": "img/cern-openlab/candidate-slots.png",
+    "sha256": "c3ad6aadf7e1b245a5fce4b63431e7aed0f6e50dc53206fc4d2839bd8d207c08"
+  },
+  {
+    "source": "assets/017b7b72c11769a240f3aefdace39c88.png",
+    "file": "img/cern-openlab/baseline-architecture.png",
+    "sha256": "4fb913ad57a485883a4a9a2e92759f83a61ebf93b403de8498e26ffc52bea1f0"
+  },
+  {
+    "source": "assets/405b361468c4157b7306515fee9a0c4e.png",
+    "file": "img/cern-openlab/baseline-efficiency.png",
+    "sha256": "b8e347895d59d81bf76b1cdcc7610d3196f5d0ba8ca4af9d0ba248fdac3ce5af"
+  },
+  {
+    "source": "assets/8c874ccc8a28d3a9d7bf0c87fd65dfe9.png",
+    "file": "img/cern-openlab/attention-architecture.png",
+    "sha256": "164133593b154d3d14a99af9b9cf834174c72df6510e677e465746d0776e8021"
+  },
+  {
+    "source": "assets/663af22e6c3fb49ae7ab59a0802ded8d.png",
+    "file": "img/cern-openlab/attention-efficiency.png",
+    "sha256": "f82f3a30a3bcd2f60fa616c66ab9037cb8cb90ef9454584d7fc4b707a32d0035"
+  },
+  {
+    "source": "assets/089634a232fa541379edf4f1c6b9d3fc.png",
+    "file": "img/cern-openlab/attention-variants.png",
+    "sha256": "142ce1a323be6eb123e2414c629d40c2a0688cb45ba7d1209854d44560357a79"
+  },
+  {
+    "source": "assets/bd07d16aeec7684cccb04cd42da40f90.png",
+    "file": "img/cern-openlab/jet-multiplicity.png",
+    "sha256": "68880afee8f21ed3939d81a1c62e29dbf7116c869f055fe9dcb6e60522c19063"
+  },
+  {
+    "source": "assets/4d41b7648a445a4c9bb08a56899e39ac.png",
+    "file": "img/cern-openlab/pileup-comparison.png",
+    "sha256": "bc95064ccec9b7792b61eca853d3958c94e21b001ef4fc128e2e15d306462e18"
+  },
+  {
+    "source": "assets/5caf162266fb28628ac9ea5111b33495.png",
+    "file": "img/cern-openlab/visibility-0.png",
+    "sha256": "32655bbacfa94824ac8da3d40fbe17fc3028c485fc3720eda7d02e965e7be422"
+  },
+  {
+    "source": "assets/02d2c8fbc061e4b1376af32558411f08.png",
+    "file": "img/cern-openlab/visibility-3.png",
+    "sha256": "a7fc1675bf2923c47c3ec914b3c05e1cd1c03d7c8445dd1116d2f927f5e54841"
+  }
+]

@@ -212,10 +212,16 @@ test('all 104 case studies load, show results and fit mobile under a repository 
         const response=await page.goto(`${base}${lang}pages/${kind}/${name}`);
         assert.equal(response.status(),200,name);
         await expect(page.locator('h1')).toHaveCount(1);
-        await expect(page.locator('#results')).toBeVisible();
-        await expect(page.locator('.case-boarding')).toHaveCount(1);
-        await expect(page.locator('.flight-stop')).toHaveCount(kind==='projects'?20:6);
-        await expect(page.locator('.flight-stop[aria-current=page]')).toHaveCount(1);
+        if (kind === 'experience' && name === 'cern.html') {
+          await expect(page.locator('.cern-report #attention')).toBeVisible();
+          await expect(page.locator('.cern-report .pass')).toHaveCount(1);
+          await expect(page.locator('.cern-report #documents a')).toHaveCount(2);
+        } else {
+          await expect(page.locator('#results')).toBeVisible();
+          await expect(page.locator('.case-boarding')).toHaveCount(1);
+          await expect(page.locator('.flight-stop')).toHaveCount(kind==='projects'?20:6);
+          await expect(page.locator('.flight-stop[aria-current=page]')).toHaveCount(1);
+        }
         await expect(page.locator('#main-nav a[aria-current]')).toHaveAttribute('href',new RegExp(`${kind}.html$`));
         await page.setViewportSize({width:320,height:844});
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang}${name} overflows`);
@@ -309,6 +315,8 @@ test('journal pages have no automated WCAG A/AA violations', async () => {
   for(const path of ['journal/cern.html','journal/cnes.html','journal/estados-unidos.html','journal/visiona.html','journal/south-summit.html','journal/china.html','journal/premio-na-pratica.html','journal/fundacao-estudar.html','journal/brafitec.html']) {
     for(const prefix of ['','pt/','fr/','es/']) {
       const {page}=await visit(prefix+path,{viewport:{width:390,height:844}});
+      // Measure the readable state, after the preview's short entrance fade.
+      await page.locator('.story-explorer-preview:visible').evaluateAll(nodes=>Promise.all(nodes.flatMap(node=>node.getAnimations()).map(animation=>animation.finished)));
       const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
       assert.deepEqual(result.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[],prefix+path);
       await page.close();
@@ -782,7 +790,7 @@ test('every project and experience has a clickable original illustration; motion
   const experience=page.locator('.catalogue-item a').first();
   await experience.focus();
   await page.keyboard.press('Enter');
-  await expect(page.locator('.boarding-art svg')).toHaveCount(1);
+  await expect(page.locator('.cern-report [data-atlas]')).toHaveCount(1);
   await page.close();
 });
 
@@ -1054,17 +1062,17 @@ test('shared controls have left-facing returns, consistent headers and useful fo
   const {page,errors}=await visit('pt/',{viewport:{width:1440,height:900},reducedMotion:'reduce'});
   const menuStyle=()=>page.locator('#main-nav a[aria-current]').evaluate(el=>{const s=getComputedStyle(el);return [s.fontFamily,s.fontSize,s.fontWeight,s.backgroundColor,getComputedStyle(el,'::after').display];});
   const reference=await menuStyle();
-  for(const path of ['projects.html','experience.html','about.html','recognition.html','contact.html','journal.html','pages/projects/project_9.html','pages/experience/cnes.html','journal/cern.html']) {
+  for(const path of ['projects.html','experience.html','about.html','recognition.html','contact.html','journal.html','pages/projects/project_9.html','pages/experience/cnes.html','pages/experience/cern.html','journal/cern.html']) {
     await page.goto(base+'pt/'+path);
     assert.deepEqual(await menuStyle(),reference,`${path} header matches the home`);
     await expect(page.locator('footer a[href="#top"]')).toHaveCount(0);
     await expect(page.locator('footer a[href="https://github.com/Raiagues"]')).toHaveCount(1);
     await expect(page.locator('footer a[href^="mailto:"]')).toHaveCount(2);
     if(path!=='about.html') {
-      const back=page.locator('.inner-breadcrumb .btn-back');
+      const back=page.locator(path==='pages/experience/cern.html'?'.cern-report .btn-back':'.inner-breadcrumb .btn-back');
       await expect(back).toHaveCount(1);
       assert.equal(await back.evaluate(el=>el.firstElementChild.className),'arr');
-      await expect(back.locator('path')).toHaveAttribute('d','M19 12H5m5-5-5 5 5 5');
+      await expect(back.locator('path')).toHaveAttribute('d',path==='pages/experience/cern.html'?'M19 12H5M11 6l-6 6 6 6':'M19 12H5m5-5-5 5 5 5');
     }
   }
   await page.goto(base+'pt/experience.html');
@@ -1072,10 +1080,130 @@ test('shared controls have left-facing returns, consistent headers and useful fo
   await expect(page.locator('[data-project]:visible')).toHaveCount(1);
   await expect(page.locator('.catalogue-item .more,.tags .spark')).toHaveCount(0);
   await page.locator('[data-project]:visible a').click();
-  await expect(page.locator('.case-pagination [rel=prev]')).toHaveCount(1);
-  await expect(page.locator('.case-pagination [rel=next]')).toHaveCount(0);
+  await expect(page.locator('.cern-report #documents a')).toHaveCount(2);
+  await expect(page.locator('.cern-report nav [data-back-results]')).toHaveCount(1);
   await expect(page.locator('.detail-bottom')).toHaveCount(0);
-  await page.locator('[data-back-results]').click();
+  await page.locator('[data-back-results]').first().click();
   await expect(page.locator('#project-search')).toHaveValue('CERN');
   assert.deepEqual(errors,[]);await page.close();
+});
+
+test('CERN report preserves its chapters and supplied documents in four responsive languages', async () => {
+  const report='https://zenodo.org/records/23164381';
+  const slides='https://indico.cern.ch/event/1707614/contributions/7181959/attachments/3327941/5960411/Emilly_PowerPoint.pptx%20(3).pdf';
+  for(const lang of ['en','pt','fr','es']) {
+    const prefix=lang==='en'?'':lang+'/';
+    const {page,errors}=await visit(prefix+'pages/experience/cern.html',{viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('#main-nav a[aria-current]')).toHaveAttribute('href','../../experience.html');
+    for(const id of ['context','problem','calorimeter','baseline','attention','pileup','fpga','next']) {
+      await expect(page.locator('.cern-report #'+id+' h2')).toHaveCount(1);
+      await expect(page.locator(`.cern-report a[href="#${id}"]`)).toHaveCount(1);
+    }
+    for(const link of [report,slides]) {
+      await expect(page.locator(`.cern-report a[href="${link}"]`)).toHaveCount(2);
+      for(const anchor of await page.locator(`.cern-report a[href="${link}"]`).all()) await expect(anchor).toHaveAttribute('rel',/noopener/);
+    }
+    await expect(page.locator('.cern-report a[href="#"],.cern-report sc-for')).toHaveCount(0);
+    assert.doesNotMatch(await page.locator('main').textContent(),/\{\{|\[The lesson|Watch the presentation/);
+    for(const width of [320,390,768,1024,1440]) {
+      await page.setViewportSize({width,height:1000});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${lang} ${width}px overflows`);
+    }
+    await page.locator('a[href="#attention"]').click();
+    await expect(page.locator('#attention h2')).toBeInViewport();
+    assert.ok(await page.locator('#attention h2').evaluate(el=>el.getBoundingClientRect().top)>=await page.locator('.home-header').evaluate(el=>el.getBoundingClientRect().bottom));
+    for(const img of await page.locator('.cern-report img').all()) {
+      await img.scrollIntoViewIfNeeded();
+      await img.evaluate(el=>el.decode());
+      assert.ok(await img.evaluate(el=>Math.abs(el.clientWidth/el.clientHeight-el.naturalWidth/el.naturalHeight)<.02));
+    }
+    assert.deepEqual(errors,[]);
+    await page.close();
+  }
+});
+
+test('CERN detector layers toggle with keyboard, rotation pauses and reduced motion is respected', async () => {
+  const {page,errors}=await visit('pages/experience/cern.html',{viewport:{width:1440,height:1000},reducedMotion:'no-preference'});
+  const atlas=page.locator('[data-atlas]');
+  assert.equal(await atlas.evaluate(el=>getComputedStyle(el).animationPlayState),'running');
+  await page.locator('[data-atlas-scene]').hover();
+  assert.equal(await atlas.evaluate(el=>getComputedStyle(el).animationPlayState),'paused');
+  await page.mouse.move(0,0);
+  for(const key of ['inner','em','had','muon','tracks']) {
+    const button=page.locator(`[data-layer=${key}]`);
+    await button.focus();await page.keyboard.press('Enter');
+    await expect(button).toHaveAttribute('aria-pressed','true');
+    await expect(page.locator('[data-layer][aria-pressed=true]')).toHaveCount(1);
+    assert.ok(await page.locator(`[data-atlas-layer=${key}]`).first().evaluate(el=>el.style.opacity==='1'));
+    assert.equal(await page.locator('[data-atlas-layer=beam]').first().evaluate(el=>el.style.opacity),'0.06');
+    await page.keyboard.press('Enter');
+    await expect(button).toHaveAttribute('aria-pressed','false');
+    assert.equal(await page.locator('[data-atlas-layer=beam]').first().evaluate(el=>el.style.opacity),'0.9');
+  }
+  await page.locator('[data-atlas-pause]').click();
+  await page.locator('h1').click();await page.mouse.move(0,0);
+  assert.equal(await atlas.evaluate(el=>getComputedStyle(el).animationPlayState),'paused');
+  await page.locator('[data-atlas-pause]').click();
+  await page.locator('h1').click();await page.mouse.move(0,0);
+  assert.equal(await atlas.evaluate(el=>getComputedStyle(el).animationPlayState),'running');
+  await page.emulateMedia({reducedMotion:'reduce'});
+  assert.equal(await atlas.evaluate(el=>getComputedStyle(el).animationName),'none');
+  await expect(page.locator('[data-atlas-pause]')).toBeHidden();
+  assert.deepEqual(errors,[]);await page.close();
+});
+
+test('CERN threshold, five model comparisons and figure viewer retain the exact supplied data', async () => {
+  const {page,errors}=await visit('pt/pages/experience/cern.html',{viewport:{width:390,height:844},reducedMotion:'reduce'});
+  await page.locator('[data-visibility="3"]').click();
+  await expect(page.locator('[data-cern-value=visFound]')).toHaveText('3 de 4');
+  await expect(page.locator('[data-cern-value=visExtra]')).toHaveText('17');
+  await expect(page.locator('[data-visibility-image]')).toHaveAttribute('src',/visibility-3.png$/);
+  await page.locator('[data-visibility-link]').click();
+  await expect(page.locator('.photo-dialog')).toBeVisible();
+  await expect(page.locator('.photo-dialog img')).toHaveAttribute('src',/visibility-3.png$/);
+  await expect(page.locator('#photo-caption')).toContainText('17');
+  await page.keyboard.press('ArrowRight');
+  await expect(page.locator('.photo-dialog img')).toHaveAttribute('src',/peak-finder-efficiency-purity.png$/);
+  await page.keyboard.press('Escape');
+  await expect(page.locator('[data-visibility-link]')).toBeFocused();
+  await page.locator('[data-visibility="0"]').click();
+  await expect(page.locator('[data-cern-value=visFound]')).toHaveText('4 de 4');
+  await expect(page.locator('[data-cern-value=visExtra]')).toHaveText('58');
+  for(const [key,params,eff,pur,acc,sel,auc,dr,mae] of [
+    ['base','708','77.3%','78.0%','95.3%','81.1%','0.934','0.044','17.3 GeV'],
+    ['v0','42 021','80.5%','80.7%','95.9%','83.9%','0.950','0.046','16.0 GeV'],
+    ['v1','9 639','80.3%','80.5%','95.4%','84.2%','0.950','0.049','17.4 GeV'],
+    ['v2','1 155','79.5%','79.6%','95.2%','83.5%','0.946','0.043','17.6 GeV'],
+    ['mu0','42 021','94.2%','94.3%','99.0%','95.2%','0.997','0.040','12.1 GeV']
+  ]) {
+    await page.locator(`[data-model=${key}]`).click();
+    await expect(page.locator('[data-model][aria-pressed=true]')).toHaveCount(1);
+    for(const [field,value] of Object.entries({params,eff,pur,acc,sel,auc,dr,mae})) await expect(page.locator(`[data-cern-value="cm.${field}"]`)).toHaveText(value);
+    const proportion=await page.locator('[data-model-bar=effW]').evaluate(el=>el.getBoundingClientRect().width/el.parentElement.getBoundingClientRect().width);
+    assert.ok(Math.abs(proportion-parseFloat(eff)/100)<.01);
+  }
+  assert.deepEqual(errors,[]);await page.close();
+});
+
+test('CERN report is readable without scripts, with every model and both threshold figures', async () => {
+  const {page}=await visit('pages/experience/cern.html',{javaScriptEnabled:false,viewport:{width:320,height:844},reducedMotion:'reduce'});
+  await expect(page.locator('[data-cern-controls]:visible')).toHaveCount(0);
+  await expect(page.locator('.cern-fallback tbody tr')).toHaveCount(5);
+  await expect(page.locator('.cern-fallback figure')).toHaveCount(2);
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
+  await page.locator('a[href="#fpga"]').click();
+  await expect(page.locator('#fpga h2')).toBeInViewport();
+  await page.locator('[data-visibility-link]').click();
+  assert.ok(page.url().endsWith('/img/cern-openlab/visibility-0.png'));
+  await page.close();
+});
+
+test('CERN report passes accessibility checks in every language', async () => {
+  for(const lang of ['','pt/','fr/','es/']) {
+    const {page}=await visit(lang+'pages/experience/cern.html',{reducedMotion:'reduce'});
+    const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+    assert.deepEqual(result.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))})),[]);
+    await page.close();
+  }
 });

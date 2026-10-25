@@ -1,0 +1,1646 @@
+{
+  "t001": {
+    "en": "All experience",
+    "pt": "Todas as experiências",
+    "fr": "Toutes les expériences",
+    "es": "Todas las experiencias"
+  },
+  "t002": {
+    "en": "Experience · Mission report · CERN openlab 2026",
+    "pt": "Experiência · Relatório de missão · CERN openlab 2026",
+    "fr": "Expérience · Rapport de mission · CERN openlab 2026",
+    "es": "Experiencia · Informe de misión · CERN openlab 2026"
+  },
+  "t003": {
+    "en": "Mission report · ATLAS · Next-Generation Triggers",
+    "pt": "Relatório de missão · ATLAS · Next-Generation Triggers",
+    "fr": "Rapport de mission · ATLAS · Next-Generation Triggers",
+    "es": "Informe de misión · ATLAS · Next-Generation Triggers"
+  },
+  "t004": {
+    "en": "Trigger-Level Analysis data preparation through co-processors",
+    "pt": "Preparação de dados para Trigger-Level Analysis com coprocessadores",
+    "fr": "Préparation des données pour la Trigger-Level Analysis avec des coprocesseurs",
+    "es": "Preparación de datos para Trigger-Level Analysis con coprocesadores"
+  },
+  "t005": {
+    "en": "Can a very small neural network inside the ATLAS trigger turn the whole calorimeter image of a collision into a short list of jets?",
+    "pt": "Uma rede neural muito pequena, dentro do trigger do ATLAS, consegue transformar toda a imagem calorimétrica de uma colisão em uma lista curta de jatos?",
+    "fr": "Un tout petit réseau neuronal dans le déclenchement d’ATLAS peut-il transformer l’image calorimétrique entière d’une collision en une courte liste de jets ?",
+    "es": "¿Puede una red neuronal muy pequeña dentro del trigger de ATLAS transformar toda la imagen calorimétrica de una colisión en una lista corta de jets?"
+  },
+  "t006": {
+    "en": "Machine learning",
+    "pt": "Aprendizado de máquina",
+    "fr": "Apprentissage automatique",
+    "es": "Aprendizaje automático"
+  },
+  "t007": {
+    "en": "Self-attention",
+    "pt": "Autoatenção",
+    "fr": "Auto-attention",
+    "es": "Autoatención"
+  },
+  "t008": {
+    "en": "FPGA",
+    "pt": "FPGA",
+    "fr": "FPGA",
+    "es": "FPGA"
+  },
+  "t009": {
+    "en": "Calorimeter",
+    "pt": "Calorímetro",
+    "fr": "Calorimètre",
+    "es": "Calorímetro"
+  },
+  "t010": {
+    "en": "HL-LHC",
+    "pt": "HL-LHC",
+    "fr": "HL-LHC",
+    "es": "HL-LHC"
+  },
+  "t011": {
+    "en": "ATLAS · stylised, not to scale",
+    "pt": "ATLAS · ilustração fora de escala",
+    "fr": "ATLAS · illustration hors échelle",
+    "es": "ATLAS · ilustración fuera de escala"
+  },
+  "t012": {
+    "en": "Beam axis ↔",
+    "pt": "Eixo do feixe ↔",
+    "fr": "Axe du faisceau ↔",
+    "es": "Eje del haz ↔"
+  },
+  "t013": {
+    "en": "Boarding pass · GVA",
+    "pt": "Cartão de embarque · GVA",
+    "fr": "Carte d’embarquement · GVA",
+    "es": "Tarjeta de embarque · GVA"
+  },
+  "t014": {
+    "en": "19 200 VALUES",
+    "pt": "19 200 VALORES",
+    "fr": "19 200 VALEURS",
+    "es": "19 200 VALORES"
+  },
+  "t015": {
+    "en": "JET LIST · 20×4",
+    "pt": "LISTA DE JATOS · 20×4",
+    "fr": "LISTE DE JETS · 20×4",
+    "es": "LISTA DE JETS · 20×4"
+  },
+  "t016": {
+    "en": "01  pT  η  φ  s",
+    "pt": "01  pT  η  φ  s",
+    "fr": "01  pT  η  φ  s",
+    "es": "01  pT  η  φ  s"
+  },
+  "t017": {
+    "en": "02  pT  η  φ  s",
+    "pt": "02  pT  η  φ  s",
+    "fr": "02  pT  η  φ  s",
+    "es": "02  pT  η  φ  s"
+  },
+  "t018": {
+    "en": "03  pT  η  φ  s",
+    "pt": "03  pT  η  φ  s",
+    "fr": "03  pT  η  φ  s",
+    "es": "03  pT  η  φ  s"
+  },
+  "t019": {
+    "en": "04  pT  η  φ  s",
+    "pt": "04  pT  η  φ  s",
+    "fr": "04  pT  η  φ  s",
+    "es": "04  pT  η  φ  s"
+  },
+  "t020": {
+    "en": "05  pT  η  φ  s",
+    "pt": "05  pT  η  φ  s",
+    "fr": "05  pT  η  φ  s",
+    "es": "05  pT  η  φ  s"
+  },
+  "t021": {
+    "en": "80 VALUES",
+    "pt": "80 VALORES",
+    "fr": "80 VALEURS",
+    "es": "80 VALORES"
+  },
+  "t022": {
+    "en": "CERN · Geneva, Switzerland",
+    "pt": "CERN · Genebra, Suíça",
+    "fr": "CERN · Genève, Suisse",
+    "es": "CERN · Ginebra, Suiza"
+  },
+  "t023": {
+    "en": "Selected for the CERN openlab Summer Student Programme, I studied jet reconstruction from ATLAS calorimeter data within the bandwidth and FPGA limits of a future Trigger-Level Analysis system.",
+    "pt": "Selecionada para o CERN openlab Summer Student Programme, estudei a reconstrução de jatos a partir de dados do calorímetro ATLAS, dentro dos limites de banda e FPGA de um futuro sistema de Trigger-Level Analysis.",
+    "fr": "Sélectionnée pour le CERN openlab Summer Student Programme, j’ai étudié la reconstruction des jets à partir des données du calorimètre ATLAS, dans les limites de bande passante et de FPGA d’un futur système de Trigger-Level Analysis.",
+    "es": "Seleccionada para el CERN openlab Summer Student Programme, estudié la reconstrucción de jets a partir de datos del calorímetro ATLAS, dentro de los límites de ancho de banda y FPGA de un futuro sistema de Trigger-Level Analysis."
+  },
+  "t024": {
+    "en": "Passenger",
+    "pt": "Passageira",
+    "fr": "Passagère",
+    "es": "Pasajera"
+  },
+  "t025": {
+    "en": "Emilly R. Rodrigues",
+    "pt": "Emilly R. Rodrigues",
+    "fr": "Emilly R. Rodrigues",
+    "es": "Emilly R. Rodrigues"
+  },
+  "t026": {
+    "en": "Program",
+    "pt": "Programa",
+    "fr": "Programme",
+    "es": "Programa"
+  },
+  "t027": {
+    "en": "CERN openlab",
+    "pt": "CERN openlab",
+    "fr": "CERN openlab",
+    "es": "CERN openlab"
+  },
+  "t028": {
+    "en": "Experiment",
+    "pt": "Experimento",
+    "fr": "Expérience",
+    "es": "Experimento"
+  },
+  "t029": {
+    "en": "ATLAS",
+    "pt": "ATLAS",
+    "fr": "ATLAS",
+    "es": "ATLAS"
+  },
+  "t030": {
+    "en": "Supervisors",
+    "pt": "Orientadores",
+    "fr": "Encadrants",
+    "es": "Supervisores"
+  },
+  "t031": {
+    "en": "I. Xiotidis · N. Clarke Hall",
+    "pt": "I. Xiotidis · N. Clarke Hall",
+    "fr": "I. Xiotidis · N. Clarke Hall",
+    "es": "I. Xiotidis · N. Clarke Hall"
+  },
+  "t032": {
+    "en": "Work package",
+    "pt": "Pacote de trabalho",
+    "fr": "Lot de travaux",
+    "es": "Paquete de trabajo"
+  },
+  "t033": {
+    "en": "NGT WP2.1",
+    "pt": "NGT WP2.1",
+    "fr": "NGT WP2.1",
+    "es": "NGT WP2.1"
+  },
+  "t034": {
+    "en": "Built with",
+    "pt": "Feito com",
+    "fr": "Réalisé avec",
+    "es": "Desarrollado con"
+  },
+  "t035": {
+    "en": "TensorFlow",
+    "pt": "TensorFlow",
+    "fr": "TensorFlow",
+    "es": "TensorFlow"
+  },
+  "t036": {
+    "en": "View the final presentation",
+    "pt": "Ver a apresentação final",
+    "fr": "Voir la présentation finale",
+    "es": "Ver la presentación final"
+  },
+  "t037": {
+    "en": "Read the final report",
+    "pt": "Ler o relatório final",
+    "fr": "Lire le rapport final",
+    "es": "Leer el informe final"
+  },
+  "t038": {
+    "en": "Departure",
+    "pt": "Partida",
+    "fr": "Départ",
+    "es": "Salida"
+  },
+  "t039": {
+    "en": "Next destination",
+    "pt": "Próximo destino",
+    "fr": "Prochaine destination",
+    "es": "Próximo destino"
+  },
+  "t040": {
+    "en": "? · Coming soon",
+    "pt": "? · Em breve",
+    "fr": "? · À venir",
+    "es": "? · Próximamente"
+  },
+  "t041": {
+    "en": "Values per event",
+    "pt": "Valores por evento",
+    "fr": "Valeurs par événement",
+    "es": "Valores por evento"
+  },
+  "t042": {
+    "en": "A list 240 times smaller than the calorimeter image",
+    "pt": "Uma lista 240 vezes menor que a imagem do calorímetro",
+    "fr": "Une liste 240 fois plus petite que l’image du calorimètre",
+    "es": "Una lista 240 veces menor que la imagen del calorímetro"
+  },
+  "t043": {
+    "en": "First model",
+    "pt": "Primeiro modelo",
+    "fr": "Premier modèle",
+    "es": "Primer modelo"
+  },
+  "t044": {
+    "en": "Trainable parameters, about 2.8 kB",
+    "pt": "Parâmetros treináveis, cerca de 2,8 kB",
+    "fr": "Paramètres entraînables, environ 2,8 ko",
+    "es": "Parámetros entrenables, unos 2,8 kB"
+  },
+  "t045": {
+    "en": "With attention",
+    "pt": "Com atenção",
+    "fr": "Avec attention",
+    "es": "Con atención"
+  },
+  "t046": {
+    "en": "Of real jets recovered at 200 pile-up",
+    "pt": "Dos jatos reais recuperados com 200 colisões de pile-up",
+    "fr": "Des jets réels retrouvés avec 200 collisions d’empilement",
+    "es": "De los jets reales recuperados con 200 colisiones de pile-up"
+  },
+  "t047": {
+    "en": "Bandwidth",
+    "pt": "Largura de banda",
+    "fr": "Bande passante",
+    "es": "Ancho de banda"
+  },
+  "t048": {
+    "en": "2.1 Gb/s",
+    "pt": "2.1 Gb/s",
+    "fr": "2.1 Gb/s",
+    "es": "2.1 Gb/s"
+  },
+  "t049": {
+    "en": "Per board, against a 20 Gb/s budget",
+    "pt": "Por placa, para um limite de 20 Gb/s",
+    "fr": "Par carte, pour un budget de 20 Gb/s",
+    "es": "Por placa, frente a un límite de 20 Gb/s"
+  },
+  "t050": {
+    "en": "Without pile-up",
+    "pt": "Sem pile-up",
+    "fr": "Sans empilement",
+    "es": "Sin pile-up"
+  },
+  "t051": {
+    "en": "Same model, control test",
+    "pt": "Mesmo modelo, teste de controle",
+    "fr": "Même modèle, test de contrôle",
+    "es": "Mismo modelo, prueba de control"
+  },
+  "t052": {
+    "en": "Flight plan · jump to a chapter",
+    "pt": "Plano de voo · vá para um capítulo",
+    "fr": "Plan de vol · aller à un chapitre",
+    "es": "Plan de vuelo · ve a un capítulo"
+  },
+  "t053": {
+    "en": "Context",
+    "pt": "Contexto",
+    "fr": "Contexte",
+    "es": "Contexto"
+  },
+  "t054": {
+    "en": "The problem",
+    "pt": "O problema",
+    "fr": "Le problème",
+    "es": "El problema"
+  },
+  "t055": {
+    "en": "Calorimeter alone",
+    "pt": "Só o calorímetro",
+    "fr": "Le calorimètre seul",
+    "es": "Solo el calorímetro"
+  },
+  "t056": {
+    "en": "Attention",
+    "pt": "Atenção",
+    "fr": "Attention",
+    "es": "Atención"
+  },
+  "t057": {
+    "en": "Pile-up test",
+    "pt": "Teste de pile-up",
+    "fr": "Test d’empilement",
+    "es": "Prueba de pile-up"
+  },
+  "t058": {
+    "en": "Bandwidth · FPGA",
+    "pt": "Banda · FPGA",
+    "fr": "Débit · FPGA",
+    "es": "Banda · FPGA"
+  },
+  "t059": {
+    "en": "Next steps",
+    "pt": "Próximos passos",
+    "fr": "Prochaines étapes",
+    "es": "Próximos pasos"
+  },
+  "t060": {
+    "en": "Why jets, and why the trigger",
+    "pt": "Por que jatos, e por que o trigger",
+    "fr": "Pourquoi les jets, et pourquoi le déclenchement",
+    "es": "Por qué jets, y por qué el trigger"
+  },
+  "t061": {
+    "en": "When protons collide at the LHC, quarks and gluons cannot be seen on their own. They break up into a narrow spray of particles called a jet, which travels roughly in the direction of the original quark or gluon. The direction and momentum of a jet tell physicists what happened in the collision, so jets are useful even at the very first stage of selecting events.",
+    "pt": "Quando prótons colidem no LHC, quarks e glúons não podem ser observados isoladamente. Eles dão origem a um feixe estreito de partículas chamado jato, que segue aproximadamente a direção do quark ou glúon original. A direção e o momento de um jato ajudam os físicos a entender o que aconteceu na colisão, por isso os jatos são úteis já na primeira etapa de seleção dos eventos.",
+    "fr": "Lorsque des protons entrent en collision au LHC, les quarks et les gluons ne peuvent pas être observés isolément. Ils donnent naissance à un faisceau étroit de particules appelé jet, qui suit approximativement la direction du quark ou du gluon initial. La direction et l’impulsion d’un jet renseignent les physiciens sur la collision : les jets sont donc utiles dès la première étape de sélection des événements.",
+    "es": "Cuando los protones colisionan en el LHC, los quarks y los gluones no pueden observarse por separado. Dan lugar a un haz estrecho de partículas llamado jet, que sigue aproximadamente la dirección del quark o gluón original. Su dirección y su momento ayudan a los físicos a entender qué ocurrió en la colisión, así que los jets resultan útiles desde la primera etapa de selección de eventos."
+  },
+  "t062": {
+    "en": "A jet is harder to rebuild than a single particle. It contains many particles, and each one leaves its own shower in the calorimeter, so the energy ends up spread over many cells and several layers of the detector.",
+    "pt": "Reconstruir um jato é mais difícil do que reconstruir uma única partícula. Ele contém muitas partículas, e cada uma produz sua própria cascata no calorímetro. A energia acaba espalhada por muitas células e várias camadas do detector.",
+    "fr": "Reconstruire un jet est plus difficile que reconstruire une particule seule. Il contient de nombreuses particules, chacune produisant sa propre gerbe dans le calorimètre. L’énergie se répartit donc entre de nombreuses cellules et plusieurs couches du détecteur.",
+    "es": "Reconstruir un jet es más difícil que reconstruir una sola partícula. Contiene muchas partículas, y cada una deja su propia cascada en el calorímetro. La energía termina repartida entre muchas celdas y varias capas del detector."
+  },
+  "t063": {
+    "en": "Fig. 01 · Each particle leaves its own signature, and a jet arrives as many hadrons at once",
+    "pt": "Fig. 01 · Cada partícula deixa sua assinatura; um jato chega como vários hádrons ao mesmo tempo",
+    "fr": "Fig. 01 · Chaque particule laisse sa signature ; un jet apporte plusieurs hadrons à la fois",
+    "es": "Fig. 01 · Cada partícula deja su firma; un jet llega como varios hadrones a la vez"
+  },
+  "t064": {
+    "en": "Field note · pile-up",
+    "pt": "Nota de campo · pile-up",
+    "fr": "Note de terrain · empilement",
+    "es": "Nota de campo · pile-up"
+  },
+  "t065": {
+    "en": "Each bunch crossing holds more than one proton collision. The interesting one is called the hard scatter, and the extra ones are called pile-up. A calorimeter cell cannot tell which collision its energy came from, so the jets we care about sit on top of a diffuse background.",
+    "pt": "Em cada cruzamento de feixes ocorre mais de uma colisão entre prótons. A colisão de interesse é chamada de hard scatter, e as adicionais, de pile-up. Uma célula do calorímetro não consegue dizer de qual colisão veio a energia que recebeu, então os jatos que queremos estudar ficam sobre um fundo difuso.",
+    "fr": "Chaque croisement des faisceaux produit plusieurs collisions de protons. Celle qui nous intéresse est appelée interaction dure, et les autres constituent l’empilement, ou pile-up. Une cellule du calorimètre ne sait pas de quelle collision provient son énergie : les jets recherchés se superposent donc à un fond diffus.",
+    "es": "Cada cruce de haces produce más de una colisión entre protones. La de interés se llama hard scatter, y las adicionales forman el pile-up. Una celda del calorímetro no puede saber de qué colisión procede su energía, por lo que los jets que buscamos se superponen a un fondo difuso."
+  },
+  "t066": {
+    "en": "Field note · the trigger",
+    "pt": "Nota de campo · o trigger",
+    "fr": "Note de terrain · déclenchement",
+    "es": "Nota de campo · el trigger"
+  },
+  "t067": {
+    "en": "Bunches cross about 40 million times per second, and the detector cannot record all of them. The trigger decides in real time which events to keep. At the High-Luminosity LHC, up to about 200 collisions will happen in each crossing.",
+    "pt": "Os feixes se cruzam cerca de 40 milhões de vezes por segundo, e o detector não consegue registrar tudo. O trigger decide em tempo real quais eventos guardar. No LHC de Alta Luminosidade, haverá até cerca de 200 colisões em cada cruzamento.",
+    "fr": "Les faisceaux se croisent environ 40 millions de fois par seconde, et le détecteur ne peut pas tout enregistrer. Le système de déclenchement choisit en temps réel les événements à conserver. Au LHC à haute luminosité, chaque croisement produira jusqu’à environ 200 collisions.",
+    "es": "Los haces se cruzan unos 40 millones de veces por segundo, y el detector no puede registrarlo todo. El trigger decide en tiempo real qué eventos conservar. En el LHC de Alta Luminosidad habrá hasta unas 200 colisiones en cada cruce."
+  },
+  "t068": {
+    "en": "Fig. 02 · The ATLAS trigger planned for the HL-LHC",
+    "pt": "Fig. 02 · O trigger do ATLAS planejado para o HL-LHC",
+    "fr": "Fig. 02 · Le déclenchement d’ATLAS prévu pour le HL-LHC",
+    "es": "Fig. 02 · El trigger de ATLAS previsto para el HL-LHC"
+  },
+  "t069": {
+    "en": "In the new design, a hardware Level-0 trigger reduces the 40 MHz input to up to 1 MHz, and a software Event Filter brings it down to about 10 kHz for storage.",
+    "pt": "No novo desenho, um trigger de hardware de nível 0 reduz a entrada de 40 MHz para até 1 MHz, e um filtro de eventos em software a reduz para cerca de 10 kHz para armazenamento.",
+    "fr": "Dans la nouvelle conception, un déclenchement matériel de niveau 0 réduit l’entrée de 40 MHz à au plus 1 MHz. Un filtre d’événements logiciel la ramène ensuite à environ 10 kHz pour le stockage.",
+    "es": "En el nuevo diseño, un trigger de hardware de nivel 0 reduce la entrada de 40 MHz a un máximo de 1 MHz, y un filtro de eventos por software la baja a unos 10 kHz para almacenamiento."
+  },
+  "t070": {
+    "en": "The Global Trigger is part of Level-0 and sees the calorimeter at full detail. Its FPGAs and AI Engines may have room to do some reconstruction before the data leaves the board. That opportunity is what this project explored.",
+    "pt": "O Global Trigger faz parte do nível 0 e vê o calorímetro com todos os seus detalhes. Suas FPGAs e AI Engines podem ter capacidade para fazer parte da reconstrução antes de os dados saírem da placa. Foi essa possibilidade que o projeto explorou.",
+    "fr": "Le Global Trigger fait partie du niveau 0 et voit le calorimètre dans tous ses détails. Ses FPGA et AI Engines pourraient permettre une partie de la reconstruction avant que les données quittent la carte. C’est cette possibilité que le projet a explorée.",
+    "es": "El Global Trigger forma parte del nivel 0 y ve el calorímetro con todo su detalle. Sus FPGAs y AI Engines podrían permitir parte de la reconstrucción antes de que los datos salgan de la placa. Esa es la posibilidad que exploró este proyecto."
+  },
+  "t071": {
+    "en": "40 MHz",
+    "pt": "40 MHz",
+    "fr": "40 MHz",
+    "es": "40 MHz"
+  },
+  "t072": {
+    "en": "1 MHz",
+    "pt": "1 MHz",
+    "fr": "1 MHz",
+    "es": "1 MHz"
+  },
+  "t073": {
+    "en": "10 kHz",
+    "pt": "10 kHz",
+    "fr": "10 kHz",
+    "es": "10 kHz"
+  },
+  "t074": {
+    "en": "Fitting an event into the luggage limit",
+    "pt": "Fazer um evento caber no limite de bagagem",
+    "fr": "Faire entrer un événement dans la franchise bagages",
+    "es": "Hacer que un evento quepa en el límite de equipaje"
+  },
+  "t075": {
+    "en": "The goal was to take the calorimeter image of an event and turn it, inside the trigger, into a short list of jets. Each jet is described by its transverse momentum, its position in the detector and a score that says how likely it is to be real.",
+    "pt": "O objetivo era transformar, dentro do trigger, a imagem calorimétrica de um evento em uma lista curta de jatos. Cada jato é descrito pelo momento transverso, pela posição no detector e por uma pontuação que indica a probabilidade de ser real.",
+    "fr": "L’objectif était de transformer, dans le système de déclenchement, l’image calorimétrique d’un événement en une courte liste de jets. Chaque jet est décrit par son impulsion transverse, sa position dans le détecteur et un score indiquant sa probabilité d’être réel.",
+    "es": "El objetivo era convertir, dentro del trigger, la imagen calorimétrica de un evento en una lista corta de jets. Cada jet se describe mediante su momento transverso, su posición en el detector y una puntuación que indica la probabilidad de que sea real."
+  },
+  "t076": {
+    "en": "The events are simulations of Higgs boson pairs, with both Higgs bosons decaying into b quarks and about 200 pile-up collisions in each crossing. The 24 sampling regions of the ATLAS calorimeter are grouped by depth into six channels, and each channel becomes a 50 by 64 grid. That gives 19 200 values per event.",
+    "pt": "Os eventos são simulações de pares de bósons de Higgs, com ambos decaindo em quarks b e cerca de 200 colisões de pile-up por cruzamento. As 24 regiões de amostragem do calorímetro ATLAS são agrupadas por profundidade em seis canais, e cada canal vira uma grade de 50 por 64. Isso resulta em 19 200 valores por evento.",
+    "fr": "Les événements sont des simulations de paires de bosons de Higgs, tous deux se désintégrant en quarks b, avec environ 200 collisions d’empilement par croisement. Les 24 régions d’échantillonnage du calorimètre ATLAS sont regroupées en profondeur en six canaux, chacun formant une grille de 50 par 64 : soit 19 200 valeurs par événement.",
+    "es": "Los eventos son simulaciones de pares de bosones de Higgs, ambos decayendo en quarks b, con unas 200 colisiones de pile-up por cruce. Las 24 regiones de muestreo del calorímetro ATLAS se agrupan por profundidad en seis canales, y cada canal forma una cuadrícula de 50 por 64. Esto da 19 200 valores por evento."
+  },
+  "t077": {
+    "en": "50 × 64 × 6 · 19 200 values",
+    "pt": "50 × 64 × 6 · 19 200 valores",
+    "fr": "50 × 64 × 6 · 19 200 valeurs",
+    "es": "50 × 64 × 6 · 19 200 valores"
+  },
+  "t078": {
+    "en": "Jet list · 20 × 4",
+    "pt": "Lista de jatos · 20 × 4",
+    "fr": "Liste de jets · 20 × 4",
+    "es": "Lista de jets · 20 × 4"
+  },
+  "t079": {
+    "en": "01 · pT η φ score",
+    "pt": "01 · pT η φ pontuação",
+    "fr": "01 · pT η φ score",
+    "es": "01 · pT η φ puntuación"
+  },
+  "t080": {
+    "en": "02 · pT η φ score",
+    "pt": "02 · pT η φ pontuação",
+    "fr": "02 · pT η φ score",
+    "es": "02 · pT η φ puntuación"
+  },
+  "t081": {
+    "en": "03 · pT η φ score",
+    "pt": "03 · pT η φ pontuação",
+    "fr": "03 · pT η φ score",
+    "es": "03 · pT η φ puntuación"
+  },
+  "t082": {
+    "en": "… up to 20",
+    "pt": "… até 20",
+    "fr": "… jusqu’à 20",
+    "es": "… hasta 20"
+  },
+  "t083": {
+    "en": "Fig. 03 · One event seen through the six depth channels at 200 pile-up",
+    "pt": "Fig. 03 · Um evento visto pelos seis canais de profundidade, com 200 colisões de pile-up",
+    "fr": "Fig. 03 · Un événement vu dans les six canaux de profondeur, avec un empilement de 200",
+    "es": "Fig. 03 · Un evento visto por los seis canales de profundidad, con 200 colisiones de pile-up"
+  },
+  "t084": {
+    "en": "The bandwidth limit",
+    "pt": "O limite de banda",
+    "fr": "La limite de bande passante",
+    "es": "El límite de ancho de banda"
+  },
+  "t085": {
+    "en": "The Global Trigger uses 49 processing boards, so each board handles about 816 000 events per second. With about 20 Gb/s per board, there is room for roughly 24 500 bits per event, or about 766 values at 32-bit precision. Sending the full calorimeter image would need about 502 Gb/s per board, around 25 times the budget.",
+    "pt": "O Global Trigger usa 49 placas de processamento, então cada placa recebe cerca de 816 000 eventos por segundo. Com aproximadamente 20 Gb/s por placa, cabem cerca de 24 500 bits por evento, ou 766 valores com precisão de 32 bits. Enviar a imagem completa do calorímetro exigiria cerca de 502 Gb/s por placa, aproximadamente 25 vezes o limite.",
+    "fr": "Le Global Trigger utilise 49 cartes de traitement, chacune recevant environ 816 000 événements par seconde. Avec environ 20 Gb/s par carte, on dispose de quelque 24 500 bits par événement, soit environ 766 valeurs en précision 32 bits. Envoyer l’image calorimétrique complète nécessiterait environ 502 Gb/s par carte, soit 25 fois le budget.",
+    "es": "El Global Trigger utiliza 49 placas de procesamiento, por lo que cada una recibe unos 816 000 eventos por segundo. Con unos 20 Gb/s por placa, caben aproximadamente 24 500 bits por evento, o unos 766 valores con precisión de 32 bits. Enviar la imagen completa requeriría unos 502 Gb/s por placa, cerca de 25 veces el límite."
+  },
+  "t086": {
+    "en": "Checked in",
+    "pt": "Bagagem despachada",
+    "fr": "Bagages enregistrés",
+    "es": "Equipaje facturado"
+  },
+  "t087": {
+    "en": "19 200 values",
+    "pt": "19 200 valores",
+    "fr": "19 200 valeurs",
+    "es": "19 200 valores"
+  },
+  "t088": {
+    "en": "Allowance",
+    "pt": "Franquia",
+    "fr": "Franchise",
+    "es": "Franquicia"
+  },
+  "t089": {
+    "en": "≈ 766 values",
+    "pt": "≈ 766 valores",
+    "fr": "≈ 766 valeurs",
+    "es": "≈ 766 valores"
+  },
+  "t090": {
+    "en": "Overweight · 25×",
+    "pt": "Excesso de peso · 25×",
+    "fr": "Excédent · 25×",
+    "es": "Exceso de peso · 25×"
+  },
+  "t091": {
+    "en": "What the calorimeter shows on its own",
+    "pt": "O que o calorímetro mostra sozinho",
+    "fr": "Ce que le calorimètre montre à lui seul",
+    "es": "Lo que el calorímetro muestra por sí solo"
+  },
+  "t092": {
+    "en": "Before training any network, I measured how far a very simple method could go. A jet usually leaves a local peak of energy, so the six channels were summed, averaged over 2 by 2 blocks, and every cell brighter than its eight neighbours was kept as a candidate. Nothing in this method is learned.",
+    "pt": "Antes de treinar qualquer rede, medi até onde um método muito simples conseguiria chegar. Um jato costuma deixar um pico local de energia. Somei os seis canais, fiz a média em blocos de 2 por 2 e mantive como candidata cada célula com mais energia que suas oito vizinhas. Nada nesse método é aprendido.",
+    "fr": "Avant d’entraîner un réseau, j’ai mesuré les possibilités d’une méthode très simple. Un jet laisse généralement un maximum local d’énergie. Les six canaux sont additionnés, moyennés par blocs de 2 sur 2, puis chaque cellule plus intense que ses huit voisines devient candidate. Rien n’est appris dans cette méthode.",
+    "es": "Antes de entrenar una red, medí hasta dónde podía llegar un método muy sencillo. Un jet suele dejar un máximo local de energía. Sumé los seis canales, calculé la media en bloques de 2 por 2 y conservé como candidata cada celda más intensa que sus ocho vecinas. Este método no aprende nada."
+  },
+  "t093": {
+    "en": "Each peak gets a visibility score that compares its energy with the median and the largest peak of the event. Raising the visibility threshold removes false peaks, but it also starts to lose real jets.",
+    "pt": "Cada pico recebe uma pontuação de visibilidade que compara sua energia com a mediana e com o maior pico do evento. Aumentar o limiar de visibilidade remove picos falsos, mas também começa a eliminar jatos reais.",
+    "fr": "Chaque maximum reçoit un score de visibilité comparant son énergie à la médiane et au plus grand maximum de l’événement. Augmenter le seuil de visibilité élimine des faux maxima, mais commence aussi à éliminer des jets réels.",
+    "es": "Cada máximo recibe una puntuación de visibilidad que compara su energía con la mediana y con el máximo más intenso del evento. Elevar el umbral elimina máximos falsos, pero también empieza a descartar jets reales."
+  },
+  "t094": {
+    "en": "Field glossary",
+    "pt": "Glossário de campo",
+    "fr": "Glossaire de terrain",
+    "es": "Glosario de campo"
+  },
+  "t095": {
+    "en": "Efficiency",
+    "pt": "Eficiência",
+    "fr": "Efficacité",
+    "es": "Eficiencia"
+  },
+  "t096": {
+    "en": "The share of real jets that were found.",
+    "pt": "A fração dos jatos reais que foram encontrados.",
+    "fr": "La proportion des jets réels retrouvés.",
+    "es": "La proporción de jets reales encontrados."
+  },
+  "t097": {
+    "en": "Purity",
+    "pt": "Pureza",
+    "fr": "Pureté",
+    "es": "Pureza"
+  },
+  "t098": {
+    "en": "The share of kept candidates that are real jets.",
+    "pt": "A fração dos candidatos mantidos que são jatos reais.",
+    "fr": "La proportion des candidats conservés qui sont des jets réels.",
+    "es": "La proporción de candidatos conservados que son jets reales."
+  },
+  "t099": {
+    "en": "AUC",
+    "pt": "AUC",
+    "fr": "AUC",
+    "es": "AUC"
+  },
+  "t100": {
+    "en": "How well the score separates real candidates from false ones. 1 is perfect and 0.5 is a coin toss.",
+    "pt": "Quão bem a pontuação separa candidatos reais dos falsos. 1 é perfeito e 0,5 equivale a jogar uma moeda.",
+    "fr": "La capacité du score à distinguer les candidats réels des faux. 1 est parfait ; 0,5 équivaut au hasard.",
+    "es": "Qué tan bien separa la puntuación a los candidatos reales de los falsos. 1 es perfecto y 0,5 equivale al azar."
+  },
+  "t101": {
+    "en": "Matching",
+    "pt": "Correspondência",
+    "fr": "Appariement",
+    "es": "Emparejamiento"
+  },
+  "t102": {
+    "en": "A candidate counts as a real jet only within ΔR < 0.4 of one, with a one-to-one assignment from the Hungarian algorithm.",
+    "pt": "Um candidato só conta como jato real se estiver a ΔR < 0,4 de um deles, com uma associação um a um pelo algoritmo húngaro.",
+    "fr": "Un candidat ne compte comme jet réel que s’il se trouve à ΔR < 0,4 de celui-ci, avec un appariement un à un par l’algorithme hongrois.",
+    "es": "Un candidato solo cuenta como jet real si está a ΔR < 0,4 de uno, con una asignación uno a uno mediante el algoritmo húngaro."
+  },
+  "t103": {
+    "en": "Try the threshold",
+    "pt": "Experimente o limiar",
+    "fr": "Essayez le seuil",
+    "es": "Prueba el umbral"
+  },
+  "t104": {
+    "en": "Fig. 04 · Event 50 in 3D · green real jets found · yellow missed · grey extra peaks",
+    "pt": "Fig. 04 · Evento 50 em 3D · verde: jatos reais encontrados · amarelo: perdidos · cinza: picos extras",
+    "fr": "Fig. 04 · Événement 50 en 3D · vert : jets retrouvés · jaune : manqués · gris : maxima supplémentaires",
+    "es": "Fig. 04 · Evento 50 en 3D · verde: jets encontrados · amarillo: perdidos · gris: máximos extra"
+  },
+  "t105": {
+    "en": "real jets found",
+    "pt": "jatos reais encontrados",
+    "fr": "jets réels retrouvés",
+    "es": "jets reales encontrados"
+  },
+  "t106": {
+    "en": "extra peaks kept",
+    "pt": "picos extras mantidos",
+    "fr": "maxima supplémentaires conservés",
+    "es": "máximos extra conservados"
+  },
+  "t107": {
+    "en": "At 3% one real jet is already lost, while several false peaks are still brighter than it. Some jets are simply not clear in the calorimeter. That gave me a reference for how well a network could reasonably be expected to do.",
+    "pt": "Com 3%, um jato real já é perdido, enquanto vários picos falsos ainda têm mais energia que ele. Alguns jatos simplesmente não aparecem com clareza no calorímetro. Isso me deu uma referência do que seria razoável esperar de uma rede.",
+    "fr": "À 3 %, un jet réel est déjà perdu, tandis que plusieurs faux maxima restent plus intenses que lui. Certains jets ne sont tout simplement pas clairement visibles dans le calorimètre. Cela m’a donné une référence sur les performances raisonnablement attendues d’un réseau.",
+    "es": "Con un 3 %, ya se pierde un jet real, mientras varios máximos falsos siguen siendo más intensos. Algunos jets simplemente no se distinguen con claridad en el calorímetro. Esto me dio una referencia de lo que razonablemente podía esperar de una red."
+  },
+  "t108": {
+    "en": "Fig. 05 · Efficiency against purity as the threshold changes",
+    "pt": "Fig. 05 · Eficiência versus pureza ao variar o limiar",
+    "fr": "Fig. 05 · Efficacité et pureté selon le seuil",
+    "es": "Fig. 05 · Eficiencia frente a pureza al cambiar el umbral"
+  },
+  "t109": {
+    "en": "A first model with 708 parameters",
+    "pt": "Um primeiro modelo com 708 parâmetros",
+    "fr": "Un premier modèle à 708 paramètres",
+    "es": "Un primer modelo con 708 parámetros"
+  },
+  "t110": {
+    "en": "The model always returns 20 candidate slots. Each slot has a transverse momentum, a position and a score between 0 and 1, and only the slots above a threshold are kept. A fixed output can then describe events with different numbers of jets, which in this sample was usually four to six and at most eleven.",
+    "pt": "O modelo sempre devolve 20 posições candidatas. Cada uma tem momento transverso, posição e pontuação entre 0 e 1, e só são mantidas as que passam de um limiar. Assim, uma saída de tamanho fixo descreve eventos com diferentes quantidades de jatos: nesta amostra, normalmente quatro a seis, e no máximo onze.",
+    "fr": "Le modèle produit toujours 20 emplacements candidats. Chacun possède une impulsion transverse, une position et un score entre 0 et 1 ; seuls ceux dépassant un seuil sont conservés. Une sortie de taille fixe peut ainsi décrire des événements contenant un nombre variable de jets : généralement quatre à six dans cet échantillon, et onze au maximum.",
+    "es": "El modelo siempre devuelve 20 posiciones candidatas. Cada una tiene momento transverso, posición y puntuación entre 0 y 1, y solo se conservan las que superan un umbral. Así, una salida de tamaño fijo describe eventos con distintos números de jets: en esta muestra, normalmente de cuatro a seis, y once como máximo."
+  },
+  "t111": {
+    "en": "Fig. 06 · Always 20 slots, only the jets above the threshold are kept",
+    "pt": "Fig. 06 · Sempre 20 posições; só ficam os jatos acima do limiar",
+    "fr": "Fig. 06 · Toujours 20 emplacements ; seuls les jets au-dessus du seuil sont gardés",
+    "es": "Fig. 06 · Siempre 20 posiciones; solo quedan los jets por encima del umbral"
+  },
+  "t112": {
+    "en": "Fig. 07 · The baseline model in two stages",
+    "pt": "Fig. 07 · O modelo de referência em duas etapas",
+    "fr": "Fig. 07 · Le modèle de référence en deux étapes",
+    "es": "Fig. 07 · El modelo de referencia en dos etapas"
+  },
+  "t113": {
+    "en": "Two small convolutions read the calorimeter image and produce three maps over the detector. One gives the score, one the energy and one a small correction to the position inside each cell. The 20 strongest local peaks of the score map become the candidates. The whole model holds 708 parameters, about 2.8 kB.",
+    "pt": "Duas convoluções pequenas leem a imagem do calorímetro e produzem três mapas do detector. Um dá a pontuação, outro a energia e o terceiro uma pequena correção da posição dentro de cada célula. Os 20 máximos locais mais fortes do mapa de pontuação viram candidatos. O modelo inteiro tem 708 parâmetros, cerca de 2,8 kB.",
+    "fr": "Deux petites convolutions lisent l’image calorimétrique et produisent trois cartes du détecteur : le score, l’énergie et une petite correction de position à l’intérieur de chaque cellule. Les 20 maxima locaux les plus élevés de la carte de score deviennent les candidats. Le modèle entier contient 708 paramètres, soit environ 2,8 ko.",
+    "es": "Dos convoluciones pequeñas leen la imagen calorimétrica y generan tres mapas del detector: uno de puntuación, otro de energía y otro con una pequeña corrección de posición dentro de cada celda. Los 20 máximos locales más fuertes del mapa de puntuación se convierten en candidatos. El modelo completo tiene 708 parámetros, unos 2,8 kB."
+  },
+  "t114": {
+    "en": "Positions came out very precise, with median errors of 0.029 in η and 0.022 in φ, smaller than one cell of the grid. The transverse momentum was less precise, with a median error of 11.4 GeV.",
+    "pt": "As posições ficaram muito precisas, com erros medianos de 0,029 em η e 0,022 em φ, menores que uma célula da grade. O momento transverso foi menos preciso, com erro mediano de 11,4 GeV.",
+    "fr": "Les positions sont très précises, avec des erreurs médianes de 0,029 en η et de 0,022 en φ, inférieures à une cellule de la grille. L’impulsion transverse est moins précise, avec une erreur médiane de 11,4 GeV.",
+    "es": "Las posiciones fueron muy precisas, con errores medianos de 0,029 en η y 0,022 en φ, menores que una celda de la cuadrícula. El momento transverso fue menos preciso, con un error mediano de 11,4 GeV."
+  },
+  "t115": {
+    "en": "Score cut",
+    "pt": "Corte na pontuação",
+    "fr": "Seuil de score",
+    "es": "Corte de puntuación"
+  },
+  "t116": {
+    "en": "Fig. 08 · Where the jets are lost, by jet energy",
+    "pt": "Fig. 08 · Onde os jatos são perdidos, por energia",
+    "fr": "Fig. 08 · Où les jets sont perdus, selon leur énergie",
+    "es": "Fig. 08 · Dónde se pierden los jets, según su energía"
+  },
+  "t117": {
+    "en": "Where the jets are lost",
+    "pt": "Onde os jatos são perdidos",
+    "fr": "Où les jets sont perdus",
+    "es": "Dónde se pierden los jets"
+  },
+  "t118": {
+    "en": "About 95% of the real jets already had a candidate nearby. Most of the loss came afterwards, when the score had to separate weak jets from pile-up. Above 70 GeV the efficiency passed 97%, while many low-energy jets were rejected by the score cut.",
+    "pt": "Cerca de 95% dos jatos reais já tinham um candidato por perto. A maior parte da perda veio depois, quando a pontuação precisou separar jatos fracos de pile-up. Acima de 70 GeV, a eficiência passou de 97%, enquanto muitos jatos de baixa energia foram rejeitados pelo corte.",
+    "fr": "Environ 95 % des jets réels avaient déjà un candidat à proximité. L’essentiel des pertes survenait ensuite, lorsque le score devait distinguer les jets faibles de l’empilement. Au-dessus de 70 GeV, l’efficacité dépassait 97 %, tandis que beaucoup de jets de basse énergie étaient rejetés au seuil.",
+    "es": "Alrededor del 95 % de los jets reales ya tenían un candidato cerca. La mayor parte de las pérdidas llegó después, al separar jets débiles del pile-up mediante la puntuación. Por encima de 70 GeV, la eficiencia superó el 97 %, mientras muchos jets de baja energía fueron rechazados por el corte."
+  },
+  "t119": {
+    "en": "The clue that led to attention",
+    "pt": "A pista que levou à atenção",
+    "fr": "L’indice qui a mené à l’attention",
+    "es": "La pista que llevó a la atención"
+  },
+  "t120": {
+    "en": "Of the 8 209 real jets that had a candidate but failed the score cut, 1 971 were still among the top candidates of their own event. Their score was low in absolute terms but high compared with the rest of the event. The baseline could not use this, because it scores each candidate on its own.",
+    "pt": "Dos 8 209 jatos reais que tinham um candidato, mas não passavam no corte, 1 971 ainda estavam entre os melhores candidatos de seu próprio evento. A pontuação era baixa em termos absolutos, mas alta em comparação com o restante do evento. O modelo de referência não conseguia usar essa informação, pois pontuava cada candidato isoladamente.",
+    "fr": "Parmi les 8 209 jets réels ayant un candidat mais échouant au seuil, 1 971 figuraient pourtant parmi les meilleurs candidats de leur événement. Leur score était faible dans l’absolu, mais élevé par rapport au reste de l’événement. Le modèle de référence ne pouvait pas exploiter cela : il attribuait un score à chaque candidat isolément.",
+    "es": "De los 8 209 jets reales con candidato que no pasaban el corte, 1 971 seguían entre los mejores candidatos de su propio evento. Su puntuación era baja en términos absolutos, pero alta frente al resto del evento. El modelo de referencia no podía aprovechar esto porque puntuaba cada candidato por separado."
+  },
+  "t121": {
+    "en": "of the rejected real jets",
+    "pt": "dos jatos reais rejeitados",
+    "fr": "des jets réels rejetés",
+    "es": "de los jets reales rechazados"
+  },
+  "t122": {
+    "en": "Letting candidates compare with each other",
+    "pt": "Deixar os candidatos se compararem",
+    "fr": "Permettre aux candidats de se comparer",
+    "es": "Dejar que los candidatos se comparen"
+  },
+  "t123": {
+    "en": "The next model keeps the same idea and adds a comparison step. The 32 strongest peaks become candidates, each described by 22 values. One self-attention block with four heads lets every candidate look at the others before its score is corrected. Attention only changes the score, while energy and position still come from the convolutional stage.",
+    "pt": "O modelo seguinte mantém a mesma ideia e acrescenta uma etapa de comparação. Os 32 picos mais fortes viram candidatos, cada um descrito por 22 valores. Um bloco de autoatenção com quatro cabeças permite que cada candidato observe os outros antes de sua pontuação ser corrigida. A atenção só altera a pontuação: energia e posição continuam vindo da etapa convolucional.",
+    "fr": "Le modèle suivant conserve la même idée et ajoute une comparaison. Les 32 maxima les plus élevés deviennent des candidats décrits par 22 valeurs chacun. Un bloc d’auto-attention à quatre têtes permet à chacun d’observer les autres avant la correction de son score. L’attention ne modifie que le score : énergie et position proviennent toujours de l’étape convolutive.",
+    "es": "El siguiente modelo mantiene la idea y añade una comparación. Los 32 máximos más fuertes se convierten en candidatos, cada uno descrito por 22 valores. Un bloque de autoatención con cuatro cabezas permite a cada candidato observar a los demás antes de corregir su puntuación. La atención solo modifica la puntuación: energía y posición siguen viniendo de la etapa convolucional."
+  },
+  "t124": {
+    "en": "Fig. 09 · The attention model, with a candidate transformer before the final selection",
+    "pt": "Fig. 09 · O modelo de atenção, com um transformer de candidatos antes da seleção final",
+    "fr": "Fig. 09 · Le modèle d’attention, avec un transformer de candidats avant la sélection finale",
+    "es": "Fig. 09 · Modelo de atención, con un transformer de candidatos antes de la selección final"
+  },
+  "t125": {
+    "en": "Efficiency rose from 77.3% to 80.5% and the AUC from 0.934 to 0.950, with the largest gains at low and intermediate energies. The number of real jets lost while ranked near the top of their event fell from 1 971 to 1 577.",
+    "pt": "A eficiência subiu de 77,3% para 80,5%, e a AUC, de 0,934 para 0,950, com os maiores ganhos nas energias baixas e intermediárias. O número de jatos reais perdidos apesar de estarem entre os melhores do evento caiu de 1 971 para 1 577.",
+    "fr": "L’efficacité est passée de 77,3 % à 80,5 %, et l’AUC de 0,934 à 0,950, avec les gains les plus importants aux énergies basses et intermédiaires. Le nombre de jets réels perdus malgré un bon classement dans leur événement est passé de 1 971 à 1 577.",
+    "es": "La eficiencia subió del 77,3 % al 80,5 %, y la AUC de 0,934 a 0,950, con las mayores mejoras en energías bajas e intermedias. Los jets reales perdidos pese a estar entre los mejores del evento bajaron de 1 971 a 1 577."
+  },
+  "t126": {
+    "en": "This model also has a wider convolutional stage, so the gain cannot be credited to attention alone. The lighter versions below helped separate the two.",
+    "pt": "Esse modelo também tem uma etapa convolucional mais larga, então não dá para atribuir o ganho apenas à atenção. As versões mais leves abaixo ajudaram a separar os dois efeitos.",
+    "fr": "Ce modèle possède aussi une étape convolutive plus large : le gain ne peut donc pas être attribué à l’attention seule. Les versions allégées ci-dessous ont aidé à séparer ces deux effets.",
+    "es": "Este modelo también tiene una etapa convolucional más ancha, así que la mejora no puede atribuirse solo a la atención. Las versiones más ligeras siguientes ayudaron a separar ambos efectos."
+  },
+  "t127": {
+    "en": "Fig. 10 · Baseline and attention against the peak-finder reference",
+    "pt": "Fig. 10 · Modelo de referência e atenção comparados ao detector de picos",
+    "fr": "Fig. 10 · Référence et attention comparées à la recherche de maxima",
+    "es": "Fig. 10 · Referencia y atención frente al buscador de máximos"
+  },
+  "t128": {
+    "en": "Hangar · compare the models",
+    "pt": "Hangar · compare os modelos",
+    "fr": "Hangar · comparez les modèles",
+    "es": "Hangar · compara los modelos"
+  },
+  "t129": {
+    "en": "How small can it be?",
+    "pt": "Quão pequeno ele pode ser?",
+    "fr": "Jusqu’où peut-on le réduire ?",
+    "es": "¿Qué tan pequeño puede ser?"
+  },
+  "t130": {
+    "en": "Pick a model",
+    "pt": "Escolha um modelo",
+    "fr": "Choisissez un modèle",
+    "es": "Elige un modelo"
+  },
+  "t131": {
+    "en": "Acceptance",
+    "pt": "Aceitação",
+    "fr": "Acceptation",
+    "es": "Aceptación"
+  },
+  "t132": {
+    "en": "Selection",
+    "pt": "Seleção",
+    "fr": "Sélection",
+    "es": "Selección"
+  },
+  "t133": {
+    "en": "Parameters",
+    "pt": "Parâmetros",
+    "fr": "Paramètres",
+    "es": "Parámetros"
+  },
+  "t134": {
+    "en": "Median ΔR",
+    "pt": "ΔR mediano",
+    "fr": "ΔR médian",
+    "es": "ΔR mediano"
+  },
+  "t135": {
+    "en": "pT mean abs. error",
+    "pt": "Erro absoluto médio de pT",
+    "fr": "Erreur absolue moyenne de pT",
+    "es": "Error absoluto medio de pT"
+  },
+  "t136": {
+    "en": "V1 went back to the small four-channel convolutions but kept the full attention block, and with 9 639 parameters it reached 80.3%. V2 also shrank the attention block and reached 79.5% with 1 155 parameters. Comparing candidates mattered more for telling jets apart than a wide convolutional stage did.",
+    "pt": "A V1 voltou às convoluções pequenas de quatro canais, mas manteve o bloco completo de atenção. Com 9 639 parâmetros, chegou a 80,3%. A V2 também reduziu o bloco de atenção e chegou a 79,5% com 1 155 parâmetros. Comparar candidatos foi mais importante para distinguir os jatos do que ter uma etapa convolucional larga.",
+    "fr": "V1 revient aux petites convolutions à quatre canaux, mais conserve le bloc d’attention complet. Avec 9 639 paramètres, elle atteint 80,3 %. V2 réduit aussi le bloc d’attention et atteint 79,5 % avec 1 155 paramètres. Comparer les candidats compte davantage pour distinguer les jets qu’une étape convolutive large.",
+    "es": "V1 volvió a las convoluciones pequeñas de cuatro canales, manteniendo el bloque completo de atención. Con 9 639 parámetros alcanzó el 80,3 %. V2 redujo también el bloque de atención y llegó al 79,5 % con 1 155 parámetros. Comparar candidatos fue más importante para distinguir jets que una etapa convolucional ancha."
+  },
+  "t137": {
+    "en": "Fig. 11 · The three attention versions by jet energy",
+    "pt": "Fig. 11 · As três versões de atenção por energia do jato",
+    "fr": "Fig. 11 · Les trois versions d’attention selon l’énergie du jet",
+    "es": "Fig. 11 · Las tres versiones de atención según la energía del jet"
+  },
+  "t138": {
+    "en": "A side effect worth knowing",
+    "pt": "Um efeito colateral importante",
+    "fr": "Un effet secondaire à connaître",
+    "es": "Un efecto secundario importante"
+  },
+  "t139": {
+    "en": "With attention, events with three to five jets kept their weakest real jet more often, but events with seven jets lost about 17 points. The model pulled every event towards the usual number of jets in the sample, and the correlation between predicted and true jet counts dropped from 0.543 to 0.512.",
+    "pt": "Com atenção, os eventos com três a cinco jatos preservaram seu jato real mais fraco com mais frequência, mas os eventos com sete jatos perderam cerca de 17 pontos. O modelo puxou os eventos para a quantidade de jatos mais comum na amostra, e a correlação entre as contagens previstas e reais caiu de 0,543 para 0,512.",
+    "fr": "Avec l’attention, les événements à trois à cinq jets conservent plus souvent leur jet réel le plus faible, mais ceux à sept jets perdent environ 17 points. Le modèle ramène chaque événement vers le nombre de jets habituel de l’échantillon, et la corrélation entre les nombres prédits et réels baisse de 0,543 à 0,512.",
+    "es": "Con atención, los eventos de tres a cinco jets conservaron con más frecuencia su jet real más débil, pero los de siete jets perdieron unos 17 puntos. El modelo acercaba cada evento al número de jets habitual en la muestra, y la correlación entre los recuentos predichos y reales bajó de 0,543 a 0,512."
+  },
+  "t140": {
+    "en": "Fig. 12 · How the number of jets per event affects the selection",
+    "pt": "Fig. 12 · Como a quantidade de jatos por evento afeta a seleção",
+    "fr": "Fig. 12 · Comment le nombre de jets par événement affecte la sélection",
+    "es": "Fig. 12 · Cómo influye el número de jets por evento en la selección"
+  },
+  "t141": {
+    "en": "The same model without pile-up",
+    "pt": "O mesmo modelo sem pile-up",
+    "fr": "Le même modèle sans empilement",
+    "es": "El mismo modelo sin pile-up"
+  },
+  "t142": {
+    "en": "To find out whether the limit came from the model or from the data, I retrained the same attention model on events with no pile-up. This is only a control test, since the HL-LHC will run at high pile-up.",
+    "pt": "Para entender se o limite vinha do modelo ou dos dados, treinei novamente o mesmo modelo de atenção em eventos sem pile-up. É apenas um teste de controle, já que o HL-LHC vai operar com muito pile-up.",
+    "fr": "Pour savoir si la limite venait du modèle ou des données, j’ai réentraîné le même modèle d’attention sur des événements sans empilement. Il s’agit uniquement d’un contrôle, puisque le HL-LHC fonctionnera avec un empilement élevé.",
+    "es": "Para entender si el límite venía del modelo o de los datos, volví a entrenar el mismo modelo de atención con eventos sin pile-up. Es solo una prueba de control, ya que el HL-LHC funcionará con un pile-up elevado."
+  },
+  "t143": {
+    "en": "The jump was much larger than anything the changes to the architecture gave. Most of the ambiguity comes from the calorimeter information itself under high pile-up, and not from the size of the network. Even without pile-up, the lowest energy bin reached only 62.2% efficiency with 95.4% acceptance, so part of the difficulty remains.",
+    "pt": "O salto foi muito maior do que qualquer ganho obtido mudando a arquitetura. A maior parte da ambiguidade vem da própria informação calorimétrica sob alto pile-up, e não do tamanho da rede. Mesmo sem pile-up, a faixa de menor energia chegou a apenas 62,2% de eficiência com 95,4% de aceitação, então parte da dificuldade permanece.",
+    "fr": "Le gain est bien plus grand que ceux obtenus en changeant l’architecture. L’ambiguïté vient surtout de l’information calorimétrique sous fort empilement, et non de la taille du réseau. Même sans empilement, la tranche d’énergie la plus basse n’atteint que 62,2 % d’efficacité pour 95,4 % d’acceptation : une partie de la difficulté subsiste.",
+    "es": "La mejora fue mucho mayor que la obtenida cambiando la arquitectura. La mayor parte de la ambigüedad viene de la información calorimétrica bajo mucho pile-up, no del tamaño de la red. Incluso sin pile-up, la franja de menor energía alcanzó solo el 62,2 % de eficiencia con un 95,4 % de aceptación, por lo que parte de la dificultad permanece."
+  },
+  "t144": {
+    "en": "Efficiency · μ 200",
+    "pt": "Eficiência · μ 200",
+    "fr": "Efficacité · μ 200",
+    "es": "Eficiencia · μ 200"
+  },
+  "t145": {
+    "en": "AUC · μ 200",
+    "pt": "AUC · μ 200",
+    "fr": "AUC · μ 200",
+    "es": "AUC · μ 200"
+  },
+  "t146": {
+    "en": "AUC 15–25 GeV · μ 200",
+    "pt": "AUC 15–25 GeV · μ 200",
+    "fr": "AUC 15–25 GeV · μ 200",
+    "es": "AUC 15–25 GeV · μ 200"
+  },
+  "t147": {
+    "en": "Fig. 13 · All models side by side, with and without pile-up",
+    "pt": "Fig. 13 · Todos os modelos lado a lado, com e sem pile-up",
+    "fr": "Fig. 13 · Tous les modèles côte à côte, avec et sans empilement",
+    "es": "Fig. 13 · Todos los modelos juntos, con y sin pile-up"
+  },
+  "t148": {
+    "en": "Bandwidth, and the road to an FPGA",
+    "pt": "Largura de banda e o caminho até uma FPGA",
+    "fr": "Bande passante et chemin vers un FPGA",
+    "es": "Ancho de banda y el camino hacia una FPGA"
+  },
+  "t149": {
+    "en": "Baggage check · Gb/s per board",
+    "pt": "Controle de bagagem · Gb/s por placa",
+    "fr": "Contrôle des bagages · Gb/s par carte",
+    "es": "Control de equipaje · Gb/s por placa"
+  },
+  "t150": {
+    "en": "Which representation fits through the gate",
+    "pt": "Qual representação passa pelo portão",
+    "fr": "Quelle représentation passe la porte",
+    "es": "Qué representación pasa por la puerta"
+  },
+  "t151": {
+    "en": "Log scale · 32 bits per value",
+    "pt": "Escala logarítmica · 32 bits por valor",
+    "fr": "Échelle logarithmique · 32 bits par valeur",
+    "es": "Escala logarítmica · 32 bits por valor"
+  },
+  "t152": {
+    "en": "20 Gb/s budget",
+    "pt": "Limite de 20 Gb/s",
+    "fr": "Budget de 20 Gb/s",
+    "es": "Límite de 20 Gb/s"
+  },
+  "t153": {
+    "en": "32-channel feature map",
+    "pt": "Mapa de características de 32 canais",
+    "fr": "Carte de caractéristiques à 32 canaux",
+    "es": "Mapa de características de 32 canales"
+  },
+  "t154": {
+    "en": "Calorimeter input",
+    "pt": "Entrada do calorímetro",
+    "fr": "Entrée du calorimètre",
+    "es": "Entrada del calorímetro"
+  },
+  "t155": {
+    "en": "4-channel feature map",
+    "pt": "Mapa de características de 4 canais",
+    "fr": "Carte de caractéristiques à 4 canaux",
+    "es": "Mapa de características de 4 canales"
+  },
+  "t156": {
+    "en": "Single spatial map",
+    "pt": "Um único mapa espacial",
+    "fr": "Une seule carte spatiale",
+    "es": "Un solo mapa espacial"
+  },
+  "t157": {
+    "en": "Final jet list · 20 × 4",
+    "pt": "Lista final de jatos · 20 × 4",
+    "fr": "Liste finale des jets · 20 × 4",
+    "es": "Lista final de jets · 20 × 4"
+  },
+  "t158": {
+    "en": "The final list of 20 jets with four values each holds 80 values per event. That is about 2.09 Gb/s per board, well below the 20 Gb/s budget.",
+    "pt": "A lista final de 20 jatos, com quatro valores por jato, tem 80 valores por evento. Isso corresponde a cerca de 2,09 Gb/s por placa, bem abaixo do limite de 20 Gb/s.",
+    "fr": "La liste finale de 20 jets à quatre valeurs chacun contient 80 valeurs par événement. Cela représente environ 2,09 Gb/s par carte, bien en dessous du budget de 20 Gb/s.",
+    "es": "La lista final de 20 jets con cuatro valores cada uno contiene 80 valores por evento. Esto supone unos 2,09 Gb/s por placa, muy por debajo del límite de 20 Gb/s."
+  },
+  "t159": {
+    "en": "Bandwidth answers only half of the question. The models were built in TensorFlow, and some of their parts do not convert directly with the standard hls4ml flow. Resource use and latency can only be measured after rewriting those parts and running synthesis on the target FPGA.",
+    "pt": "A largura de banda responde só a metade da pergunta. Os modelos foram feitos em TensorFlow, e algumas partes não são convertidas diretamente pelo fluxo padrão do hls4ml. O uso de recursos e a latência só podem ser medidos depois de reescrever essas partes e executar a síntese na FPGA de destino.",
+    "fr": "La bande passante ne répond qu’à la moitié de la question. Les modèles ont été développés dans TensorFlow, et certaines parties ne se convertissent pas directement avec le flux standard de hls4ml. L’utilisation des ressources et la latence ne pourront être mesurées qu’après leur réécriture et la synthèse sur le FPGA cible.",
+    "es": "El ancho de banda responde solo a la mitad de la pregunta. Los modelos se desarrollaron en TensorFlow, y algunas partes no se convierten directamente con el flujo estándar de hls4ml. El uso de recursos y la latencia solo podrán medirse tras reescribirlas y ejecutar la síntesis en la FPGA de destino."
+  },
+  "t160": {
+    "en": "Pre-flight checklist · hls4ml",
+    "pt": "Checklist antes do voo · hls4ml",
+    "fr": "Liste de contrôle avant le vol · hls4ml",
+    "es": "Lista de comprobación antes del vuelo · hls4ml"
+  },
+  "t161": {
+    "en": "Status",
+    "pt": "Situação",
+    "fr": "État",
+    "es": "Estado"
+  },
+  "t162": {
+    "en": "Convolutions, dense layers, pooling and residual additions",
+    "pt": "Convoluções, camadas densas, pooling e somas residuais",
+    "fr": "Convolutions, couches denses, pooling et additions résiduelles",
+    "es": "Convoluciones, capas densas, pooling y sumas residuales"
+  },
+  "t163": {
+    "en": "Supported",
+    "pt": "Suportado",
+    "fr": "Pris en charge",
+    "es": "Compatible"
+  },
+  "t164": {
+    "en": "Candidate selection with local maxima and top-K",
+    "pt": "Seleção de candidatos com máximos locais e top-K",
+    "fr": "Sélection des candidats par maxima locaux et top-K",
+    "es": "Selección de candidatos con máximos locales y top-K"
+  },
+  "t165": {
+    "en": "Rewrite",
+    "pt": "Reescrever",
+    "fr": "Réécrire",
+    "es": "Reescribir"
+  },
+  "t166": {
+    "en": "Coordinate processing, φ wrapping and log of pT",
+    "pt": "Processamento de coordenadas, periodicidade de φ e log de pT",
+    "fr": "Traitement des coordonnées, périodicité de φ et log de pT",
+    "es": "Procesamiento de coordenadas, periodicidad de φ y log de pT"
+  },
+  "t167": {
+    "en": "Multi-head self-attention",
+    "pt": "Autoatenção com múltiplas cabeças",
+    "fr": "Auto-attention à plusieurs têtes",
+    "es": "Autoatención con múltiples cabezas"
+  },
+  "t168": {
+    "en": "Reformulate",
+    "pt": "Reformular",
+    "fr": "Reformuler",
+    "es": "Reformular"
+  },
+  "t169": {
+    "en": "Layer normalization",
+    "pt": "Normalização por camada",
+    "fr": "Normalisation par couche",
+    "es": "Normalización por capa"
+  },
+  "t170": {
+    "en": "Validate",
+    "pt": "Validar",
+    "fr": "Valider",
+    "es": "Validar"
+  },
+  "t171": {
+    "en": "Detector-specific padding and tower layers",
+    "pt": "Padding e camadas de torres específicos do detector",
+    "fr": "Padding et couches de tours propres au détecteur",
+    "es": "Padding y capas de torres específicos del detector"
+  },
+  "t172": {
+    "en": "Custom",
+    "pt": "Personalizar",
+    "fr": "Sur mesure",
+    "es": "A medida"
+  },
+  "t173": {
+    "en": "Next destinations",
+    "pt": "Próximos destinos",
+    "fr": "Prochaines destinations",
+    "es": "Próximos destinos"
+  },
+  "t174": {
+    "en": "From the report's next steps",
+    "pt": "Próximos passos do relatório",
+    "fr": "Les prochaines étapes du rapport",
+    "es": "Próximos pasos del informe"
+  },
+  "t175": {
+    "en": "Understand the false candidates",
+    "pt": "Entender os candidatos falsos",
+    "fr": "Comprendre les faux candidats",
+    "es": "Entender los candidatos falsos"
+  },
+  "t176": {
+    "en": "Find out whether they are pile-up fluctuations or real jets from other collisions.",
+    "pt": "Descobrir se são flutuações de pile-up ou jatos reais de outras colisões.",
+    "fr": "Déterminer s’il s’agit de fluctuations d’empilement ou de vrais jets d’autres collisions.",
+    "es": "Averiguar si son fluctuaciones del pile-up o jets reales de otras colisiones."
+  },
+  "t177": {
+    "en": "Choose per event",
+    "pt": "Escolher por evento",
+    "fr": "Choisir par événement",
+    "es": "Elegir por evento"
+  },
+  "t178": {
+    "en": "Replace one global threshold with an event-level choice, such as predicting how many jets to keep.",
+    "pt": "Trocar um limiar global por uma decisão por evento, como prever quantos jatos manter.",
+    "fr": "Remplacer le seuil global par une décision par événement, par exemple en prédisant le nombre de jets à garder.",
+    "es": "Sustituir el umbral global por una decisión por evento, como predecir cuántos jets conservar."
+  },
+  "t179": {
+    "en": "Redesign the loss",
+    "pt": "Reformular a função de perda",
+    "fr": "Revoir la fonction de perte",
+    "es": "Rediseñar la función de pérdida"
+  },
+  "t180": {
+    "en": "Train with the same one-to-one matching that is used for evaluation.",
+    "pt": "Treinar com a mesma associação um a um usada na avaliação.",
+    "fr": "Entraîner avec le même appariement un à un que celui utilisé pour l’évaluation.",
+    "es": "Entrenar con el mismo emparejamiento uno a uno usado en la evaluación."
+  },
+  "t181": {
+    "en": "Tune everything together",
+    "pt": "Ajustar tudo em conjunto",
+    "fr": "Tout régler ensemble",
+    "es": "Ajustarlo todo en conjunto"
+  },
+  "t182": {
+    "en": "Search all architecture choices jointly, for example with Optuna.",
+    "pt": "Buscar todas as escolhas de arquitetura em conjunto, por exemplo com Optuna.",
+    "fr": "Explorer conjointement tous les choix d’architecture, par exemple avec Optuna.",
+    "es": "Buscar conjuntamente todas las decisiones de arquitectura, por ejemplo con Optuna."
+  },
+  "t183": {
+    "en": "Mix pile-up in training",
+    "pt": "Misturar pile-up no treinamento",
+    "fr": "Mélanger l’empilement à l’entraînement",
+    "es": "Mezclar pile-up en el entrenamiento"
+  },
+  "t184": {
+    "en": "Train on a controlled mix of events with and without pile-up.",
+    "pt": "Treinar com uma mistura controlada de eventos com e sem pile-up.",
+    "fr": "Entraîner sur un mélange contrôlé d’événements avec et sans empilement.",
+    "es": "Entrenar con una mezcla controlada de eventos con y sin pile-up."
+  },
+  "t185": {
+    "en": "Add timing",
+    "pt": "Acrescentar informação de tempo",
+    "fr": "Ajouter le temps",
+    "es": "Añadir información temporal"
+  },
+  "t186": {
+    "en": "Use when the energy arrived to tell the main collision apart from pile-up.",
+    "pt": "Usar o instante em que a energia chegou para separar a colisão principal do pile-up.",
+    "fr": "Utiliser le moment d’arrivée de l’énergie pour distinguer la collision principale de l’empilement.",
+    "es": "Usar el momento de llegada de la energía para distinguir la colisión principal del pile-up."
+  },
+  "t187": {
+    "en": "Build it on an FPGA",
+    "pt": "Implementar em FPGA",
+    "fr": "Implémenter sur un FPGA",
+    "es": "Implementarlo en una FPGA"
+  },
+  "t188": {
+    "en": "Start from Attention V1, quantize it and run synthesis on the target device.",
+    "pt": "Partir da Attention V1, quantizá-la e executar a síntese no dispositivo de destino.",
+    "fr": "Partir d’Attention V1, la quantifier et lancer la synthèse sur le composant cible.",
+    "es": "Partir de Attention V1, cuantizarla y ejecutar la síntesis en el dispositivo de destino."
+  },
+  "t189": {
+    "en": "Test other processes",
+    "pt": "Testar outros processos",
+    "fr": "Tester d’autres processus",
+    "es": "Probar otros procesos"
+  },
+  "t190": {
+    "en": "Check the model on physics processes other than Higgs boson pairs.",
+    "pt": "Avaliar o modelo em processos físicos além de pares de bósons de Higgs.",
+    "fr": "Évaluer le modèle sur d’autres processus physiques que les paires de bosons de Higgs.",
+    "es": "Evaluar el modelo en procesos físicos distintos de los pares de bosones de Higgs."
+  },
+  "t191": {
+    "en": "Crew manifest",
+    "pt": "Lista da tripulação",
+    "fr": "Liste de l’équipage",
+    "es": "Lista de la tripulación"
+  },
+  "t192": {
+    "en": "Flight GVA·26",
+    "pt": "Voo GVA·26",
+    "fr": "Vol GVA·26",
+    "es": "Vuelo GVA·26"
+  },
+  "t193": {
+    "en": "Ioannis Xiotidis",
+    "pt": "Ioannis Xiotidis",
+    "fr": "Ioannis Xiotidis",
+    "es": "Ioannis Xiotidis"
+  },
+  "t194": {
+    "en": "Supervisor",
+    "pt": "Orientador",
+    "fr": "Encadrant",
+    "es": "Supervisor"
+  },
+  "t195": {
+    "en": "Noah Clarke Hall",
+    "pt": "Noah Clarke Hall",
+    "fr": "Noah Clarke Hall",
+    "es": "Noah Clarke Hall"
+  },
+  "t196": {
+    "en": "Emilly Raiane Rodrigues",
+    "pt": "Emilly Raiane Rodrigues",
+    "fr": "Emilly Raiane Rodrigues",
+    "es": "Emilly Raiane Rodrigues"
+  },
+  "t197": {
+    "en": "openlab summer student",
+    "pt": "Estudante de verão do openlab",
+    "fr": "Étudiante d’été openlab",
+    "es": "Estudiante de verano de openlab"
+  },
+  "t198": {
+    "en": "Par avion · What I learned at CERN",
+    "pt": "Par avion · O que aprendi no CERN",
+    "fr": "Par avion · Ce que j’ai appris au CERN",
+    "es": "Par avion · Lo que aprendí en el CERN"
+  },
+  "t199": {
+    "en": "A small output solves the bandwidth problem, but it does not prove that a model is ready for an FPGA. The pile-up control also shows why improving the architecture alone is not enough.",
+    "pt": "Uma saída pequena resolve o problema de banda, mas não comprova que um modelo está pronto para uma FPGA. O teste de controle com pile-up também mostra por que melhorar só a arquitetura não basta.",
+    "fr": "Une petite sortie résout le problème de débit, mais ne prouve pas qu’un modèle est prêt pour un FPGA. Le contrôle de l’empilement montre aussi pourquoi améliorer uniquement l’architecture ne suffit pas.",
+    "es": "Una salida pequeña resuelve el problema de ancho de banda, pero no demuestra que el modelo esté listo para una FPGA. El control de pile-up también muestra por qué mejorar solo la arquitectura no basta."
+  },
+  "t200": {
+    "en": "Flight documents",
+    "pt": "Documentos de voo",
+    "fr": "Documents de vol",
+    "es": "Documentos de vuelo"
+  },
+  "t201": {
+    "en": "This page follows the interim report",
+    "pt": "Esta página acompanha o relatório intermediário",
+    "fr": "Cette page suit le rapport intermédiaire",
+    "es": "Esta página sigue el informe intermedio"
+  },
+  "t202": {
+    "en": "CERN Indico · PDF",
+    "pt": "CERN Indico · PDF",
+    "fr": "CERN Indico · PDF",
+    "es": "CERN Indico · PDF"
+  },
+  "t203": {
+    "en": "Final presentation",
+    "pt": "Apresentação final",
+    "fr": "Présentation finale",
+    "es": "Presentación final"
+  },
+  "t204": {
+    "en": "Open the slides · PDF",
+    "pt": "Abrir os slides · PDF",
+    "fr": "Ouvrir les diapositives · PDF",
+    "es": "Abrir las diapositivas · PDF"
+  },
+  "t205": {
+    "en": "Zenodo · final report",
+    "pt": "Zenodo · relatório final",
+    "fr": "Zenodo · rapport final",
+    "es": "Zenodo · informe final"
+  },
+  "t206": {
+    "en": "Trigger Level Analysis data preparation through co-processors",
+    "pt": "Trigger Level Analysis data preparation through co-processors",
+    "fr": "Trigger Level Analysis data preparation through co-processors",
+    "es": "Trigger Level Analysis data preparation through co-processors"
+  },
+  "t207": {
+    "en": "Final report",
+    "pt": "Relatório final",
+    "fr": "Rapport final",
+    "es": "Informe final"
+  },
+  "t208": {
+    "en": "Read on Zenodo",
+    "pt": "Ler no Zenodo",
+    "fr": "Lire sur Zenodo",
+    "es": "Leer en Zenodo"
+  },
+  "t209": {
+    "en": "About this page",
+    "pt": "Sobre esta página",
+    "fr": "À propos de cette page",
+    "es": "Sobre esta página"
+  },
+  "t210": {
+    "en": "The explanations and figures here come from my detailed interim report. The final report is available on Zenodo, and the final presentation slides are on CERN Indico.",
+    "pt": "As explicações e figuras aqui vêm do meu relatório intermediário detalhado. O relatório final está disponível no Zenodo, e os slides da apresentação final estão no CERN Indico.",
+    "fr": "Les explications et figures proviennent de mon rapport intermédiaire détaillé. Le rapport final est disponible sur Zenodo, et les diapositives de la présentation finale sur CERN Indico.",
+    "es": "Las explicaciones y figuras proceden de mi informe intermedio detallado. El informe final está disponible en Zenodo, y las diapositivas de la presentación final están en CERN Indico."
+  },
+  "t211": {
+    "en": "← Back",
+    "pt": "← Voltar",
+    "fr": "← Retour",
+    "es": "← Volver"
+  },
+  "t212": {
+    "en": "All boarding passes",
+    "pt": "Todos os cartões de embarque",
+    "fr": "Toutes les cartes d’embarquement",
+    "es": "Todas las tarjetas de embarque"
+  },
+  "t213": {
+    "en": "Rotating 3D illustration of the ATLAS detector, with the beam pipe, inner detector, electromagnetic and hadronic calorimeters and the muon system with eight toroid magnets, and particle tracks leaving a collision at the centre",
+    "pt": "Ilustração 3D em rotação do detector ATLAS, com tubo do feixe, detector interno, calorímetros eletromagnético e hadrônico, sistema de múons com oito ímãs toroidais e trajetórias de partículas saindo de uma colisão no centro",
+    "fr": "Illustration 3D en rotation du détecteur ATLAS, avec le tube du faisceau, le détecteur interne, les calorimètres électromagnétique et hadronique, le système à muons à huit aimants toroïdaux et les trajectoires issues d’une collision au centre",
+    "es": "Ilustración 3D en rotación del detector ATLAS, con el tubo del haz, detector interno, calorímetros electromagnético y hadrónico, sistema de muones con ocho imanes toroidales y trayectorias de partículas saliendo de una colisión central"
+  },
+  "t214": {
+    "en": "Highlight a part of the detector",
+    "pt": "Destaque uma parte do detector",
+    "fr": "Mettez en évidence une partie du détecteur",
+    "es": "Destaca una parte del detector"
+  },
+  "t215": {
+    "en": "Mission in numbers",
+    "pt": "A missão em números",
+    "fr": "La mission en chiffres",
+    "es": "La misión en cifras"
+  },
+  "t216": {
+    "en": "Report chapters",
+    "pt": "Capítulos do relatório",
+    "fr": "Chapitres du rapport",
+    "es": "Capítulos del informe"
+  },
+  "t217": {
+    "en": "Diagram of a layered collider detector showing how photons, electrons, charged and neutral hadrons, muons and jets leave different signatures in the tracker, the electromagnetic and hadronic calorimeters and the muon system",
+    "pt": "Diagrama de um detector em camadas mostrando como fótons, elétrons, hádrons carregados e neutros, múons e jatos deixam assinaturas diferentes no rastreador, nos calorímetros eletromagnético e hadrônico e no sistema de múons",
+    "fr": "Schéma d’un détecteur en couches montrant les signatures des photons, électrons, hadrons chargés et neutres, muons et jets dans le trajectographe, les calorimètres électromagnétique et hadronique et le système à muons",
+    "es": "Diagrama de un detector por capas que muestra las firmas de fotones, electrones, hadrones cargados y neutros, muones y jets en el rastreador, los calorímetros electromagnético y hadrónico y el sistema de muones"
+  },
+  "t218": {
+    "en": "The ATLAS trigger chain planned for the HL-LHC. Collisions at 40 MHz go to the Global Trigger with FPGAs, which passes up to 1 MHz to the software Event Filter, which keeps about 10 kHz for permanent storage",
+    "pt": "Cadeia de trigger do ATLAS planejada para o HL-LHC. Colisões a 40 MHz chegam ao Global Trigger com FPGAs, que passa até 1 MHz ao filtro de eventos em software, que guarda cerca de 10 kHz para armazenamento permanente",
+    "fr": "Chaîne de déclenchement d’ATLAS prévue pour le HL-LHC. Les collisions à 40 MHz arrivent au Global Trigger à FPGA, qui transmet jusqu’à 1 MHz au filtre logiciel ; celui-ci garde environ 10 kHz pour le stockage permanent",
+    "es": "Cadena de trigger de ATLAS prevista para el HL-LHC. Las colisiones a 40 MHz llegan al Global Trigger con FPGAs, que pasa hasta 1 MHz al filtro de eventos por software, que conserva unos 10 kHz para almacenamiento permanente"
+  },
+  "t219": {
+    "en": "Six heat maps of one simulated event in the eta and phi plane, one for each calorimeter depth channel, from the presampler through three electromagnetic layers to the hadronic layers, at a pile-up of 200",
+    "pt": "Seis mapas de calor de um evento simulado no plano eta e phi, um por canal de profundidade do calorímetro, do pré-amostrador às três camadas eletromagnéticas e às camadas hadrônicas, com pile-up de 200",
+    "fr": "Six cartes de chaleur d’un événement simulé dans le plan eta-phi, une par canal de profondeur, du pré-échantillonneur aux trois couches électromagnétiques et aux couches hadroniques, avec un empilement de 200",
+    "es": "Seis mapas de calor de un evento simulado en el plano eta-phi, uno por canal de profundidad del calorímetro, desde el premuestreador hasta las tres capas electromagnéticas y las hadrónicas, con pile-up de 200"
+  },
+  "t220": {
+    "en": "Visibility threshold",
+    "pt": "Limiar de visibilidade",
+    "fr": "Seuil de visibilité",
+    "es": "Umbral de visibilidad"
+  },
+  "t221": {
+    "en": "3D view of event 50 at visibility 0 percent. All four real jets appear as green bars, surrounded by 58 grey extra peaks",
+    "pt": "Visão 3D do evento 50 com visibilidade de 0%. Os quatro jatos reais aparecem como barras verdes, cercados por 58 picos extras cinza",
+    "fr": "Vue 3D de l’événement 50 avec une visibilité de 0 %. Les quatre jets réels sont des barres vertes, entourées de 58 maxima supplémentaires gris",
+    "es": "Vista 3D del evento 50 con visibilidad del 0 %. Los cuatro jets reales aparecen como barras verdes, rodeados de 58 máximos extra grises"
+  },
+  "t222": {
+    "en": "Curve of efficiency against purity for the peak finder as the visibility threshold goes from 1 to 100 percent. At 3 percent efficiency is 0.867 and purity 0.322",
+    "pt": "Curva de eficiência versus pureza do detector de picos, com limiar de visibilidade de 1% a 100%. Com 3%, a eficiência é 0,867 e a pureza é 0,322",
+    "fr": "Courbe d’efficacité et de pureté de la recherche de maxima pour un seuil de visibilité de 1 à 100 %. À 3 %, l’efficacité vaut 0,867 et la pureté 0,322",
+    "es": "Curva de eficiencia frente a pureza del buscador de máximos, con umbrales de visibilidad del 1 al 100 %. Al 3 %, la eficiencia es 0,867 y la pureza 0,322"
+  },
+  "t223": {
+    "en": "Twenty candidate slots sorted by score with a threshold line after slot five, and an arrow to a list of the five jets kept in this event",
+    "pt": "Vinte posições candidatas ordenadas por pontuação, com uma linha de corte após a quinta e uma seta para a lista dos cinco jatos mantidos neste evento",
+    "fr": "Vingt emplacements candidats classés par score, avec un seuil après le cinquième et une flèche vers la liste des cinq jets gardés dans cet événement",
+    "es": "Veinte posiciones candidatas ordenadas por puntuación, con un umbral tras la quinta y una flecha hacia la lista de cinco jets conservados en este evento"
+  },
+  "t224": {
+    "en": "Baseline architecture. The calorimeter image goes through a shared small convolutional network that produces a proposal map, a transverse momentum map and an offset map. Local maxima of the proposal map are ranked and the top 20 become the selected jet candidates",
+    "pt": "Arquitetura do modelo de referência. A imagem do calorímetro passa por uma pequena rede convolucional compartilhada que gera mapas de proposta, momento transverso e deslocamento. Os máximos locais da proposta são ordenados e os 20 primeiros viram candidatos a jatos",
+    "fr": "Architecture de référence. L’image calorimétrique passe dans un petit réseau convolutif partagé produisant les cartes de proposition, d’impulsion transverse et de décalage. Les maxima locaux sont classés, et les 20 premiers deviennent candidats",
+    "es": "Arquitectura de referencia. La imagen calorimétrica pasa por una pequeña red convolucional compartida que genera mapas de propuesta, momento transverso y desplazamiento. Los máximos locales se ordenan y los 20 primeros se convierten en candidatos"
+  },
+  "t225": {
+    "en": "Jet efficiency against truth transverse momentum, split into candidate acceptance, which stays high, and survival after the score cut, which is low at low momentum and rises above 97 percent above 70 GeV",
+    "pt": "Eficiência de jatos em função do momento transverso real, separada entre aceitação de candidatos, que permanece alta, e sobrevivência ao corte na pontuação, baixa em pequenos momentos e acima de 97% a partir de 70 GeV",
+    "fr": "Efficacité des jets selon l’impulsion transverse réelle, décomposée en acceptation des candidats, qui reste élevée, et survie au seuil de score, faible à basse impulsion et supérieure à 97 % au-dessus de 70 GeV",
+    "es": "Eficiencia de jets según el momento transverso real, separada en aceptación de candidatos, que sigue alta, y supervivencia al corte de puntuación, baja en momentos pequeños y superior al 97 % por encima de 70 GeV"
+  },
+  "t226": {
+    "en": "Attention model architecture. The convolutional stage produces proposal, transverse momentum, offset and 16 local feature maps. The 32 strongest local maxima become candidates with 22 features each, a candidate transformer with four-head attention refines their scores, and the top 20 by score are the final jets",
+    "pt": "Arquitetura do modelo de atenção. A etapa convolucional produz mapas de proposta, momento transverso, deslocamento e 16 características locais. Os 32 máximos locais mais fortes viram candidatos com 22 características; um transformer com quatro cabeças refina as pontuações e os 20 melhores viram os jatos finais",
+    "fr": "Architecture du modèle d’attention. L’étape convolutive produit des cartes de proposition, d’impulsion transverse, de décalage et 16 caractéristiques locales. Les 32 maxima deviennent des candidats à 22 caractéristiques ; un transformer à quatre têtes affine les scores et les 20 meilleurs sont les jets finaux",
+    "es": "Arquitectura del modelo de atención. La etapa convolucional produce mapas de propuesta, momento transverso, desplazamiento y 16 características locales. Los 32 máximos forman candidatos con 22 características; un transformer de cuatro cabezas refina sus puntuaciones y los 20 mejores son los jets finales"
+  },
+  "t227": {
+    "en": "Efficiency against truth transverse momentum for the baseline, the attention model and the local peak reference. Attention sits above the baseline at intermediate momentum and both approach the reference above 50 GeV",
+    "pt": "Eficiência versus momento transverso real para o modelo de referência, o de atenção e a referência de picos locais. A atenção supera o modelo de referência nas energias intermediárias, e ambos se aproximam da referência de picos acima de 50 GeV",
+    "fr": "Efficacité selon l’impulsion transverse réelle pour la référence, l’attention et les maxima locaux. L’attention dépasse la référence aux impulsions intermédiaires ; les deux approchent la limite des maxima au-dessus de 50 GeV",
+    "es": "Eficiencia frente al momento transverso real para referencia, atención y máximos locales. La atención supera a la referencia en momentos intermedios y ambos se acercan al límite de máximos por encima de 50 GeV"
+  },
+  "t228": {
+    "en": "Models",
+    "pt": "Modelos",
+    "fr": "Modèles",
+    "es": "Modelos"
+  },
+  "t229": {
+    "en": "Efficiency against truth transverse momentum for attention versions V0, V1 and V2 and the local peak reference. The three versions are close, with V2 slightly lower at low momentum",
+    "pt": "Eficiência versus momento transverso real para as versões de atenção V0, V1 e V2 e a referência de picos locais. As três versões ficam próximas, com a V2 um pouco abaixo nas energias baixas",
+    "fr": "Efficacité selon l’impulsion transverse réelle pour les versions V0, V1, V2 et les maxima locaux. Les versions sont proches, V2 étant légèrement en retrait à basse énergie",
+    "es": "Eficiencia frente al momento transverso real para las versiones V0, V1 y V2 y los máximos locales. Las tres son cercanas, con V2 algo por debajo a bajas energías"
+  },
+  "t230": {
+    "en": "Two panels. Left, the fraction of events where the lowest ranked real jet survives the score cut, by number of true jets, for baseline and attention. Right, the mean number of jets the model reports against the true number of jets",
+    "pt": "Dois painéis. À esquerda, a fração de eventos em que o jato real de menor pontuação passa no corte, por quantidade de jatos reais, para referência e atenção. À direita, a quantidade média de jatos prevista pelo modelo versus a quantidade real",
+    "fr": "Deux panneaux. À gauche, proportion d’événements dont le jet réel le moins bien classé franchit le seuil, selon le nombre de jets réels, pour référence et attention. À droite, nombre moyen de jets prédits selon le nombre réel",
+    "es": "Dos paneles. Izquierda: proporción de eventos donde el jet real peor puntuado supera el corte, según el número de jets reales, para referencia y atención. Derecha: número medio de jets predichos frente al número real"
+  },
+  "t231": {
+    "en": "Two panels against truth transverse momentum. Left, reconstruction efficiency for the baseline and attention at pile-up 200, attention at pile-up 0, and the local peak limits at both pile-ups. Right, the objectness AUC, which stays close to 1 at pile-up 0 at all energies",
+    "pt": "Dois painéis em função do momento transverso real. À esquerda, eficiência de reconstrução da referência e da atenção com pile-up 200, atenção com pile-up 0 e os limites dos picos locais em ambos. À direita, AUC da classificação, que fica próxima de 1 sem pile-up em todas as energias",
+    "fr": "Deux panneaux selon l’impulsion transverse réelle. À gauche, efficacité de référence et d’attention avec empilement 200, attention sans empilement et limites des maxima locaux dans les deux cas. À droite, AUC du score, proche de 1 sans empilement à toutes les énergies",
+    "es": "Dos paneles según el momento transverso real. Izquierda: eficiencia de referencia y atención con pile-up 200, atención sin pile-up y límites de máximos locales en ambos casos. Derecha: AUC de clasificación, cercana a 1 sin pile-up en todas las energías"
+  },
+  "t232": {
+    "en": "Crew and what I learned",
+    "pt": "Tripulação e o que aprendi",
+    "fr": "Équipage et enseignements",
+    "es": "Tripulación y aprendizajes"
+  },
+  "t233": {
+    "en": "Keep exploring",
+    "pt": "Continue explorando",
+    "fr": "Poursuivre l’exploration",
+    "es": "Sigue explorando"
+  },
+  "t234": {
+    "en": "Inner detector",
+    "pt": "Detector interno",
+    "fr": "Détecteur interne",
+    "es": "Detector interno"
+  },
+  "t235": {
+    "en": "Inner detector · measures the tracks of charged particles close to the collision.",
+    "pt": "Detector interno · mede as trajetórias das partículas carregadas perto da colisão.",
+    "fr": "Détecteur interne · mesure les trajectoires des particules chargées près de la collision.",
+    "es": "Detector interno · mide las trayectorias de partículas cargadas cerca de la colisión."
+  },
+  "t236": {
+    "en": "EM calorimeter",
+    "pt": "Calorímetro EM",
+    "fr": "Calorimètre EM",
+    "es": "Calorímetro EM"
+  },
+  "t237": {
+    "en": "Electromagnetic calorimeter · stops electrons and photons and measures their energy.",
+    "pt": "Calorímetro eletromagnético · para elétrons e fótons e mede sua energia.",
+    "fr": "Calorimètre électromagnétique · arrête les électrons et les photons et mesure leur énergie.",
+    "es": "Calorímetro electromagnético · detiene electrones y fotones y mide su energía."
+  },
+  "t238": {
+    "en": "Hadronic calorimeter",
+    "pt": "Calorímetro hadrônico",
+    "fr": "Calorimètre hadronique",
+    "es": "Calorímetro hadrónico"
+  },
+  "t239": {
+    "en": "Hadronic calorimeter · stops hadrons, so this is where most of a jet ends up.",
+    "pt": "Calorímetro hadrônico · para hádrons, então é aqui que termina a maior parte de um jato.",
+    "fr": "Calorimètre hadronique · arrête les hadrons ; c’est là que se dépose l’essentiel d’un jet.",
+    "es": "Calorímetro hadrónico · detiene hadrones, por lo que aquí se deposita la mayor parte de un jet."
+  },
+  "t240": {
+    "en": "Muon system",
+    "pt": "Sistema de múons",
+    "fr": "Système à muons",
+    "es": "Sistema de muones"
+  },
+  "t241": {
+    "en": "Muon system · eight large toroid magnets and chambers that measure muons, the only charged particles that cross everything.",
+    "pt": "Sistema de múons · oito grandes ímãs toroidais e câmaras que medem múons, as únicas partículas carregadas que atravessam tudo.",
+    "fr": "Système à muons · huit grands aimants toroïdaux et des chambres mesurant les muons, seules particules chargées à tout traverser.",
+    "es": "Sistema de muones · ocho grandes imanes toroidales y cámaras que miden muones, las únicas partículas cargadas que lo atraviesan todo."
+  },
+  "t242": {
+    "en": "Collision",
+    "pt": "Colisão",
+    "fr": "Collision",
+    "es": "Colisión"
+  },
+  "t243": {
+    "en": "Collision · two jets, two softer sprays and two muons leaving the interaction point.",
+    "pt": "Colisão · dois jatos, dois feixes de menor energia e dois múons saindo do ponto de interação.",
+    "fr": "Collision · deux jets, deux gerbes moins énergétiques et deux muons quittant le point d’interaction.",
+    "es": "Colisión · dos jets, dos haces de menor energía y dos muones saliendo del punto de interacción."
+  },
+  "t244": {
+    "en": "Stylised illustration of the ATLAS detector, not to scale. Hover to pause, or pick a part to see it on its own.",
+    "pt": "Ilustração do detector ATLAS, fora de escala. Passe o mouse para pausar ou escolha uma parte para vê-la em destaque.",
+    "fr": "Illustration d’ATLAS, hors échelle. Survolez pour arrêter la rotation, ou sélectionnez une partie pour la mettre en évidence.",
+    "es": "Ilustración de ATLAS, fuera de escala. Pasa el cursor para pausar o elige una parte para destacarla."
+  },
+  "t245": {
+    "en": "Pause detector rotation",
+    "pt": "Pausar a rotação do detector",
+    "fr": "Suspendre la rotation du détecteur",
+    "es": "Pausar la rotación del detector"
+  },
+  "t246": {
+    "en": "Resume detector rotation",
+    "pt": "Retomar a rotação do detector",
+    "fr": "Reprendre la rotation du détecteur",
+    "es": "Reanudar la rotación del detector"
+  },
+  "t247": {
+    "en": "All models and visibility thresholds",
+    "pt": "Todos os modelos e limiares de visibilidade",
+    "fr": "Tous les modèles et seuils de visibilité",
+    "es": "Todos los modelos y umbrales de visibilidad"
+  },
+  "t248": {
+    "en": "Figure",
+    "pt": "Figura",
+    "fr": "Figure",
+    "es": "Figura"
+  },
+  "t249": {
+    "en": "of",
+    "pt": "de",
+    "fr": "sur",
+    "es": "de"
+  },
+  "t250": {
+    "en": "Close",
+    "pt": "Fechar",
+    "fr": "Fermer",
+    "es": "Cerrar"
+  },
+  "t251": {
+    "en": "Previous figure",
+    "pt": "Figura anterior",
+    "fr": "Figure précédente",
+    "es": "Figura anterior"
+  },
+  "t252": {
+    "en": "Next figure",
+    "pt": "Próxima figura",
+    "fr": "Figure suivante",
+    "es": "Figura siguiente"
+  },
+  "t253": {
+    "en": "Visibility 0%",
+    "pt": "Visibilidade 0%",
+    "fr": "Visibilité 0 %",
+    "es": "Visibilidad 0 %"
+  },
+  "t254": {
+    "en": "4 of 4",
+    "pt": "4 de 4",
+    "fr": "4 sur 4",
+    "es": "4 de 4"
+  },
+  "t255": {
+    "en": "Every real jet is found, but the event is crowded with false peaks.",
+    "pt": "Todos os jatos reais são encontrados, mas o evento está cheio de picos falsos.",
+    "fr": "Tous les jets réels sont retrouvés, mais l’événement contient beaucoup de faux maxima.",
+    "es": "Se encuentran todos los jets reales, pero el evento está lleno de máximos falsos."
+  },
+  "t256": {
+    "en": "Visibility 3%",
+    "pt": "Visibilidade 3%",
+    "fr": "Visibilité 3 %",
+    "es": "Visibilidad 3 %"
+  },
+  "t257": {
+    "en": "3D view of event 50 at visibility 3 percent. Three real jets are green, one missed jet is yellow, and 17 grey extra peaks remain",
+    "pt": "Visão 3D do evento 50 com visibilidade de 3%. Três jatos reais estão em verde, um jato perdido está em amarelo e restam 17 picos extras cinza",
+    "fr": "Vue 3D de l’événement 50 à une visibilité de 3 %. Trois jets réels sont verts, un jet manqué est jaune et 17 maxima supplémentaires gris subsistent",
+    "es": "Vista 3D del evento 50 con visibilidad del 3 %. Tres jets reales están en verde, uno perdido está en amarillo y quedan 17 máximos extra grises"
+  },
+  "t258": {
+    "en": "3 of 4",
+    "pt": "3 de 4",
+    "fr": "3 sur 4",
+    "es": "3 de 4"
+  },
+  "t259": {
+    "en": "Most false peaks are gone, and one real jet is gone with them.",
+    "pt": "A maioria dos picos falsos desaparece, e um jato real vai junto.",
+    "fr": "La plupart des faux maxima disparaissent, avec un jet réel.",
+    "es": "Desaparece la mayoría de los máximos falsos, junto con un jet real."
+  },
+  "t260": {
+    "en": "Baseline",
+    "pt": "Referência",
+    "fr": "Référence",
+    "es": "Referencia"
+  },
+  "t261": {
+    "en": "Chapter 04 · μ 200",
+    "pt": "Capítulo 04 · μ 200",
+    "fr": "Chapitre 04 · μ 200",
+    "es": "Capítulo 04 · μ 200"
+  },
+  "t262": {
+    "en": "Two small convolutions and three prediction maps. Each candidate is scored on its own.",
+    "pt": "Duas convoluções pequenas e três mapas de previsão. Cada candidato recebe uma pontuação isoladamente.",
+    "fr": "Deux petites convolutions et trois cartes de prédiction. Chaque candidat reçoit son score isolément.",
+    "es": "Dos convoluciones pequeñas y tres mapas de predicción. Cada candidato se puntúa por separado."
+  },
+  "t263": {
+    "en": "Attention V0",
+    "pt": "Attention V0",
+    "fr": "Attention V0",
+    "es": "Attention V0"
+  },
+  "t264": {
+    "en": "Chapter 05 · μ 200",
+    "pt": "Capítulo 05 · μ 200",
+    "fr": "Chapitre 05 · μ 200",
+    "es": "Capítulo 05 · μ 200"
+  },
+  "t265": {
+    "en": "A wider convolutional stage, 16 proposal features and a self-attention block that compares 32 candidates.",
+    "pt": "Uma etapa convolucional mais larga, 16 características de proposta e um bloco de autoatenção que compara 32 candidatos.",
+    "fr": "Une étape convolutive plus large, 16 caractéristiques de proposition et un bloc d’auto-attention comparant 32 candidats.",
+    "es": "Una etapa convolucional más ancha, 16 características de propuesta y un bloque de autoatención que compara 32 candidatos."
+  },
+  "t266": {
+    "en": "Attention V1",
+    "pt": "Attention V1",
+    "fr": "Attention V1",
+    "es": "Attention V1"
+  },
+  "t267": {
+    "en": "Control · μ 200",
+    "pt": "Controle · μ 200",
+    "fr": "Contrôle · μ 200",
+    "es": "Control · μ 200"
+  },
+  "t268": {
+    "en": "The four-channel convolutions of the baseline with one proposal feature, and the full attention block.",
+    "pt": "As convoluções de quatro canais do modelo de referência, com uma característica de proposta e o bloco completo de atenção.",
+    "fr": "Les convolutions à quatre canaux de la référence, une caractéristique de proposition et le bloc d’attention complet.",
+    "es": "Las convoluciones de cuatro canales de la referencia, con una característica de propuesta y el bloque completo de atención."
+  },
+  "t269": {
+    "en": "Attention V2",
+    "pt": "Attention V2",
+    "fr": "Attention V2",
+    "es": "Attention V2"
+  },
+  "t270": {
+    "en": "Same as V1, with the attention reduced to an 8-dimensional token and a single head.",
+    "pt": "Igual à V1, com a atenção reduzida a um token de oito dimensões e uma única cabeça.",
+    "fr": "Comme V1, avec une attention réduite à un token de dimension 8 et une seule tête.",
+    "es": "Como V1, con la atención reducida a un token de ocho dimensiones y una sola cabeza."
+  },
+  "t271": {
+    "en": "V0 · no pile-up",
+    "pt": "V0 · sem pile-up",
+    "fr": "V0 · sans empilement",
+    "es": "V0 · sin pile-up"
+  },
+  "t272": {
+    "en": "Chapter 06 · control test · μ 0",
+    "pt": "Capítulo 06 · teste de controle · μ 0",
+    "fr": "Chapitre 06 · contrôle · μ 0",
+    "es": "Capítulo 06 · prueba de control · μ 0"
+  },
+  "t273": {
+    "en": "Attention V0 without pile-up",
+    "pt": "Attention V0 sem pile-up",
+    "fr": "Attention V0 sans empilement",
+    "es": "Attention V0 sin pile-up"
+  },
+  "t274": {
+    "en": "The full attention model retrained on events with no pile-up. Not a real HL-LHC condition.",
+    "pt": "O modelo completo de atenção treinado novamente em eventos sem pile-up. Não é uma condição real do HL-LHC.",
+    "fr": "Le modèle d’attention complet réentraîné sans empilement. Ce n’est pas une condition réelle du HL-LHC.",
+    "es": "El modelo completo de atención entrenado de nuevo sin pile-up. No es una condición real del HL-LHC."
+  }
+}

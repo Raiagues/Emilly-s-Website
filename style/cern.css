@@ -1,0 +1,381 @@
+/* Values and illustrations from the supplied CERN openlab design. */
+.cern-report{margin:0;background:#F4EEE2;color:#1E3A3D;font:16px/1.6 'Instrument Sans',sans-serif;--effW:80.5%;--purW:80.7%;--accW:95.9%;--selW:83.9%}
+.cern-report,.cern-report *{box-sizing:content-box;min-width:0}
+.cern-report h1,.cern-report h2,.cern-report h3,.cern-report p{text-wrap:wrap}
+.cern-report button{box-sizing:border-box}
+.cern-report .btn{line-height:1.6;justify-content:initial}
+.cern-report .btn .arr{flex-shrink:0}
+.cern-report [id]{scroll-margin-top:calc(var(--header-height,90px) + 24px)}
+.cern-report a{color:#1E3A3D}
+.cern-report a:hover{color:#B04A32}
+.cern-report .btn{display:inline-flex;align-items:center;gap:12px;min-height:46px;padding:0 6px 0 20px;border:0;border-radius:999px;background:#EADFC8;color:#1E3A3D;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;transition:background .25s,color .25s,transform .25s,box-shadow .25s;cursor:pointer}
+.cern-report .btn:hover{background:#E3D1A6;color:#1E3A3D;transform:translateY(-2px);box-shadow:0 10px 20px rgba(30,58,61,.12)}
+.cern-report .btn .arr{width:34px;height:34px;border-radius:50%;background:#1F4A4F;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.cern-report .btn:hover .arr{transform:translateX(4px)}
+.cern-report .btn-solid{background:#1F4A4F;color:#F4EEE2}
+.cern-report .btn-solid .arr{background:#D9694E}
+.cern-report .btn-solid:hover{background:#2B5C61;color:#F4EEE2}
+.cern-report .btn-back{padding:0 20px 0 6px}
+.cern-report .btn-back:hover .arr{transform:translateX(-4px)}
+.cern-report .navlink{transition:background .2s}
+.cern-report .navlink:hover{background:#E3D1A6;color:#1E3A3D}
+.cern-report .pass{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.cern-report .pass:hover{transform:rotate(-.3deg) translateY(-3px)}
+.cern-report .print{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.cern-report .print:hover{transform:rotate(0deg) translateY(-4px)!important;box-shadow:0 18px 36px rgba(30,58,61,.16)!important}
+.cern-report .stop{transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.cern-report .stop:hover{transform:translateY(-4px)}
+.cern-report .stop:hover .sdot{background:#D9694E!important}
+.cern-report .chip{transition:transform .2s,box-shadow .2s}
+.cern-report .chip:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(30,58,61,.12)}
+.cern-report .chip:focus-visible,.cern-report .stop:focus-visible{outline:3px solid #D9694E;outline-offset:3px}
+.cern-report .tkt{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.cern-report .tkt:hover{transform:translateY(-5px) rotate(-1deg)}
+.cern-report .dest{transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s}
+.cern-report .dest:hover{transform:translateY(-4px);background:#FFFDF8}
+.cern-report .dest:hover .dn{background:#D9694E!important;color:#FFFDF8!important}
+.cern-report .doc{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.cern-report .doc:hover{transform:rotate(0deg) translateY(-6px)!important}
+.cern-report .bar{transform-origin:0 50%;animation:cern-grow 1.4s cubic-bezier(.2,.8,.2,1) both}
+.cern-report .twinkle{animation:cern-tw 2.6s ease-in-out infinite}
+.cern-report .blink{animation:cern-tw 1.2s steps(2) infinite}
+.cern-report .dash{animation:cern-dash 1.4s linear infinite}
+.cern-report .float{animation:cern-float 4.5s ease-in-out infinite}
+@keyframes cern-tw{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes cern-dash{to{stroke-dashoffset:-18}}
+@keyframes cern-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes cern-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.cern-report .scene{perspective:1100px;perspective-origin:50% 40%}
+.cern-report .atlas{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-14deg) rotateY(-32deg);animation:cern-spiny 40s linear infinite}
+.cern-report .atlas span{transition:opacity .4s}
+.cern-report .scene:hover .atlas{animation-play-state:paused}
+.cern-report .lg{transition:transform .2s,background .2s}
+.cern-report .lg:hover{transform:translateY(-2px)}
+.cern-report .lg:focus-visible{outline:3px solid #D9694E;outline-offset:2px}
+@keyframes cern-spiny{from{transform:rotateX(-14deg) rotateY(-32deg)}to{transform:rotateX(-14deg) rotateY(328deg)}}
+.cern-report.cern-s001,.cern-report .cern-s001{max-width: 1240px; margin: 0 auto; padding: 28px 24px 80px; display: flex; flex-direction: column; gap: 96px}
+.cern-report.cern-s002,.cern-report .cern-s002{display: flex; flex-direction: column; gap: 40px}
+.cern-report.cern-s003,.cern-report .cern-s003{display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px}
+.cern-report.cern-s004,.cern-report .cern-s004{font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; color: #55605E}
+.cern-report.cern-s005,.cern-report .cern-s005{display: flex; flex-direction: column; gap: 28px}
+.cern-report.cern-s006,.cern-report .cern-s006{display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px}
+.cern-report.cern-s007,.cern-report .cern-s007{flex: 1.3 1 520px; display: flex; flex-direction: column; gap: 14px}
+.cern-report.cern-s008,.cern-report .cern-s008{font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #B04A32}
+.cern-report.cern-s009,.cern-report .cern-s009{margin: 0; font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(44px, 5.2vw, 76px); line-height: 1.02}
+.cern-report.cern-s010,.cern-report .cern-s010{margin: 0; max-width: 760px; font-family: 'Newsreader', serif; font-style: italic; font-size: clamp(21px, 2vw, 26px); line-height: 1.4; color: #3D4F50}
+.cern-report.cern-s011,.cern-report .cern-s011{display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E5A86}
+.cern-report.cern-s012,.cern-report .cern-s012{flex: 1 1 400px; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px}
+.cern-report.cern-s013,.cern-report .cern-s013{position: relative; width: 100%; max-width: 480px; height: 400px; border-radius: 22px; background: #1F4A4F; overflow: hidden}
+.cern-report.cern-s014,.cern-report .cern-s014{position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(244,238,226,0.5) 1px, transparent 1.5px); background-size: 46px 46px; background-position: 12px 18px; opacity: 0.45}
+.cern-report.cern-s015,.cern-report .cern-s015{position: absolute; left: 16px; top: 14px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; color: #F2CBAE}
+.cern-report.cern-s016,.cern-report .cern-s016{position: absolute; right: 16px; top: 14px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; color: #DCE9E6}
+.cern-report.cern-s017,.cern-report .cern-s017{display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 480px}
+.cern-report.cern-s018,.cern-report .cern-s018{max-width: 480px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; line-height: 1.6; color: #55605E; text-align: center}
+.cern-report.cern-s019,.cern-report .cern-s019{display: flex; flex-wrap: wrap; background: #E6DDEA; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 30px rgba(30,58,61,0.08)}
+.cern-report.cern-s020,.cern-report .cern-s020{flex: 1 1 360px; min-height: 300px; background: #3B3049; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box}
+.cern-report.cern-s021,.cern-report .cern-s021{position: absolute; left: 18px; top: 16px; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #D8CCE0}
+.cern-report.cern-s022,.cern-report .cern-s022{width: 100%; max-width: 420px; height: auto}
+.cern-report.cern-s023,.cern-report .cern-s023{flex: 1.3 1 440px; padding: clamp(22px, 3vw, 36px); display: flex; flex-direction: column; gap: 16px}
+.cern-report.cern-s024,.cern-report .cern-s024{font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #B04A32}
+.cern-report.cern-s025,.cern-report .cern-s025{margin: 0; font-family: 'Newsreader', serif; font-size: 21px; line-height: 1.5}
+.cern-report.cern-s026,.cern-report .cern-s026{display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; border-top: 1.5px dashed #A891B3; padding-top: 16px; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase}
+.cern-report.cern-s027,.cern-report .cern-s027{display: flex; flex-direction: column; gap: 2px}
+.cern-report.cern-s028,.cern-report .cern-s028{color: #55605E}
+.cern-report.cern-s029,.cern-report .cern-s029{font-size: 13px; font-weight: 700}
+.cern-report.cern-s030,.cern-report .cern-s030{display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px}
+.cern-report.cern-s031,.cern-report .cern-s031{flex: 0 0 180px; border-left: 2px dashed #A891B3; padding: 26px 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase}
+.cern-report.cern-s032,.cern-report .cern-s032{display: flex; flex-direction: column}
+.cern-report.cern-s033,.cern-report .cern-s033{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 44px; line-height: 1}
+.cern-report.cern-s034,.cern-report .cern-s034{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 28px; line-height: 1; color: #B04A32}
+.cern-report.cern-s035,.cern-report .cern-s035{height: 40px; background: repeating-linear-gradient(90deg, #1E3A3D 0 2px, transparent 2px 4px, #1E3A3D 4px 5px, transparent 5px 8px, #1E3A3D 8px 11px, transparent 11px 13px)}
+.cern-report.cern-s036,.cern-report .cern-s036{display: flex; flex-wrap: wrap; gap: 16px}
+.cern-report.cern-s037,.cern-report .cern-s037{flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; background: #FBF8F1; border-radius: 12px; padding: 18px 20px; box-shadow: 0 8px 20px rgba(30,58,61,0.06)}
+.cern-report.cern-s038,.cern-report .cern-s038{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #55605E}
+.cern-report.cern-s039,.cern-report .cern-s039{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; color: #1F4A4F}
+.cern-report.cern-s040,.cern-report .cern-s040{font-size: 14px; color: #3D4F50}
+.cern-report.cern-s041,.cern-report .cern-s041{flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; background: #F2CBAE; border-radius: 12px; padding: 18px 20px}
+.cern-report.cern-s042,.cern-report .cern-s042{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase}
+.cern-report.cern-s043,.cern-report .cern-s043{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 40px; line-height: 1}
+.cern-report.cern-s044,.cern-report .cern-s044{font-size: 14px}
+.cern-report.cern-s045,.cern-report .cern-s045{flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; background: #D8CCE0; border-radius: 12px; padding: 18px 20px}
+.cern-report.cern-s046,.cern-report .cern-s046{flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; background: #A9CBC5; border-radius: 12px; padding: 18px 20px}
+.cern-report.cern-s047,.cern-report .cern-s047{flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; background: #1F4A4F; color: #F4EEE2; border-radius: 12px; padding: 18px 20px}
+.cern-report.cern-s048,.cern-report .cern-s048{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #F2CBAE}
+.cern-report.cern-s049,.cern-report .cern-s049{font-size: 14px; color: #C9DAD6}
+.cern-report.cern-s050,.cern-report .cern-s050{position: relative; background: #DCE7DD; border-radius: 18px; padding: 22px clamp(16px, 3vw, 32px) 18px}
+.cern-report.cern-s051,.cern-report .cern-s051{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #55605E}
+.cern-report.cern-s052,.cern-report .cern-s052{position: relative; margin-top: 14px}
+.cern-report.cern-s053,.cern-report .cern-s053{position: absolute; left: 4%; right: 4%; top: 15px; border-top: 2px dashed #4E7F7B}
+.cern-report.cern-s054,.cern-report .cern-s054{position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 6px}
+.cern-report.cern-s055,.cern-report .cern-s055{flex: 1 1 110px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; text-align: center}
+.cern-report.cern-s056,.cern-report .cern-s056{width: 30px; height: 30px; border-radius: 50%; background: #1F4A4F; color: #F4EEE2; display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-size: 11px; box-shadow: 0 0 0 5px #DCE7DD}
+.cern-report.cern-s057,.cern-report .cern-s057{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; line-height: 1.3}
+.cern-report.cern-s058,.cern-report .cern-s058{width: 30px; height: 30px; border-radius: 50%; background: #F4EEE2; color: #B04A32; display: flex; align-items: center; justify-content: center; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 16px; box-shadow: 0 0 0 2px #4E7F7B, 0 0 0 5px #DCE7DD}
+.cern-report.cern-s059,.cern-report .cern-s059{display: flex; flex-direction: column; gap: 36px}
+.cern-report.cern-s060,.cern-report .cern-s060{display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; border-bottom: 1px solid #D9CDB6; padding-bottom: 16px}
+.cern-report.cern-s061,.cern-report .cern-s061{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #F2CBAE; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s062,.cern-report .cern-s062{font-family: 'Space Mono', monospace; font-size: 13px; color: #B04A32}
+.cern-report.cern-s063,.cern-report .cern-s063{margin: 0; font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1}
+.cern-report.cern-s064,.cern-report .cern-s064{display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start}
+.cern-report.cern-s065,.cern-report .cern-s065{flex: 1 1 380px; display: flex; flex-direction: column; gap: 18px; font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.65; color: #2E4446}
+.cern-report.cern-s066,.cern-report .cern-s066{margin: 0}
+.cern-report.cern-s067,.cern-report .cern-s067{flex: 1.3 1 480px; margin: 0; background: #FFFFFF; padding: 16px 16px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(0.6deg); position: relative}
+.cern-report.cern-s068,.cern-report .cern-s068{position: absolute; left: 50%; top: -12px; width: 96px; height: 24px; margin-left: -48px; background: #A9CBC5; opacity: 0.85; transform: rotate(-3deg)}
+.cern-report.cern-s069,.cern-report .cern-s069{width: 100%; height: auto; display: block}
+.cern-report.cern-s070,.cern-report .cern-s070{margin-top: 10px; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #55605E}
+.cern-report.cern-s071,.cern-report .cern-s071{display: flex; flex-wrap: wrap; gap: 24px}
+.cern-report.cern-s072,.cern-report .cern-s072{flex: 1 1 340px; background: #FBF8F1; border-radius: 16px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 8px 20px rgba(30,58,61,0.06)}
+.cern-report.cern-s073,.cern-report .cern-s073{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #B04A32}
+.cern-report.cern-s074,.cern-report .cern-s074{margin: 0; font-family: 'Newsreader', serif; font-size: 19px; line-height: 1.6}
+.cern-report.cern-s075,.cern-report .cern-s075{display: flex; flex-wrap: wrap; gap: 40px; align-items: center}
+.cern-report.cern-s076,.cern-report .cern-s076{flex: 1.4 1 520px; margin: 0; background: #FFFFFF; padding: 16px 16px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(-0.6deg); position: relative}
+.cern-report.cern-s077,.cern-report .cern-s077{position: absolute; left: 18%; top: -12px; width: 96px; height: 24px; background: #F2CBAE; opacity: 0.85; transform: rotate(4deg)}
+.cern-report.cern-s078,.cern-report .cern-s078{flex: 1 1 340px; display: flex; flex-direction: column; gap: 18px; font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.65; color: #2E4446}
+.cern-report.cern-s079,.cern-report .cern-s079{display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 28px; line-height: 1}
+.cern-report.cern-s080,.cern-report .cern-s080{background: #D9694E; color: #FFFDF8; border-radius: 999px; padding: 8px 14px}
+.cern-report.cern-s081,.cern-report .cern-s081{color: #4E7F7B}
+.cern-report.cern-s082,.cern-report .cern-s082{background: #F2CBAE; border-radius: 999px; padding: 8px 14px}
+.cern-report.cern-s083,.cern-report .cern-s083{background: #A9CBC5; border-radius: 999px; padding: 8px 14px}
+.cern-report.cern-s084,.cern-report .cern-s084{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #A9CBC5; display: flex; align-items: center; justify-content: center; transform: rotate(7deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s085,.cern-report .cern-s085{flex: 1 1 440px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px; padding: 10px 0}
+.cern-report.cern-s086,.cern-report .cern-s086{position: relative; width: 190px; height: 170px}
+.cern-report.cern-s087,.cern-report .cern-s087{position: absolute; left: 30px; top: 0; width: 150px; height: 130px; border-radius: 6px; background-color: #CFDCC6; background-image: linear-gradient(rgba(31,74,79,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(31,74,79,0.18) 1px, transparent 1px); background-size: 10px 10px}
+.cern-report.cern-s088,.cern-report .cern-s088{position: absolute; left: 15px; top: 14px; width: 150px; height: 130px; border-radius: 6px; background-color: #F1E2B2; background-image: linear-gradient(rgba(31,74,79,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(31,74,79,0.18) 1px, transparent 1px); background-size: 10px 10px}
+.cern-report.cern-s089,.cern-report .cern-s089{position: absolute; left: 0; top: 28px; width: 150px; height: 130px; border-radius: 6px; background-color: #F2CBAE; background-image: linear-gradient(rgba(31,74,79,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(31,74,79,0.22) 1px, transparent 1px); background-size: 10px 10px}
+.cern-report.cern-s090,.cern-report .cern-s090{position: absolute; left: 40px; top: 68px; width: 20px; height: 20px; background: #D9694E}
+.cern-report.cern-s091,.cern-report .cern-s091{position: absolute; left: 100px; top: 108px; width: 20px; height: 10px; background: #D9694E}
+.cern-report.cern-s092,.cern-report .cern-s092{position: absolute; left: 0; bottom: -18px; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase}
+.cern-report.cern-s093,.cern-report .cern-s093{width: 170px; background: #FBF8F1; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 20px rgba(30,58,61,0.10); font-family: 'Space Mono', monospace; font-size: 11px}
+.cern-report.cern-s094,.cern-report .cern-s094{background: #1F4A4F; color: #F4EEE2; padding: 8px 12px; text-transform: uppercase}
+.cern-report.cern-s095,.cern-report .cern-s095{padding: 6px 12px; border-bottom: 1px dashed #D9CDB6}
+.cern-report.cern-s096,.cern-report .cern-s096{padding: 6px 12px; color: #8A8576}
+.cern-report.cern-s097,.cern-report .cern-s097{margin: 0; background: #FFFFFF; padding: 18px 18px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); position: relative; max-width: 980px; align-self: center; width: 100%; box-sizing: border-box}
+.cern-report.cern-s098,.cern-report .cern-s098{position: absolute; right: 12%; top: -12px; width: 96px; height: 24px; background: #D8CCE0; opacity: 0.9; transform: rotate(-4deg)}
+.cern-report.cern-s099,.cern-report .cern-s099{display: flex; flex-wrap: wrap; gap: 0; background: #FBF8F1; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 30px rgba(30,58,61,0.08)}
+.cern-report.cern-s100,.cern-report .cern-s100{flex: 1.4 1 440px; padding: clamp(22px, 3.5vw, 40px); display: flex; flex-direction: column; gap: 14px}
+.cern-report.cern-s101,.cern-report .cern-s101{margin: 0; font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.65; color: #2E4446}
+.cern-report.cern-s102,.cern-report .cern-s102{flex: 1 1 320px; background: #F3ECDD; border-left: 2px dashed #D9CDB6; padding: clamp(22px, 3.5vw, 40px); display: flex; flex-direction: column; justify-content: center; gap: 18px}
+.cern-report.cern-s103,.cern-report .cern-s103{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 54px; line-height: 0.95; color: #B04A32}
+.cern-report.cern-s104,.cern-report .cern-s104{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 54px; line-height: 0.95; color: #1F4A4F}
+.cern-report.cern-s105,.cern-report .cern-s105{align-self: flex-start; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; background: #D9694E; color: #FFFDF8; border-radius: 999px; padding: 6px 12px; transform: rotate(-3deg)}
+.cern-report.cern-s106,.cern-report .cern-s106{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #F1E2B2; display: flex; align-items: center; justify-content: center; transform: rotate(-6deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s107,.cern-report .cern-s107{flex: 1 1 340px; background: #E6DDEA; border-radius: 16px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px}
+.cern-report.cern-s108,.cern-report .cern-s108{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #3B3049}
+.cern-report.cern-s109,.cern-report .cern-s109{margin: 0; display: flex; flex-direction: column; gap: 10px}
+.cern-report.cern-s110,.cern-report .cern-s110{font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; text-transform: uppercase}
+.cern-report.cern-s111,.cern-report .cern-s111{margin: 0; font-size: 15px}
+.cern-report.cern-s112,.cern-report .cern-s112{display: flex; flex-wrap: wrap; gap: 28px; align-items: stretch; background: #FBF8F1; border-radius: 18px; padding: clamp(18px, 3vw, 32px); box-shadow: 0 12px 30px rgba(30,58,61,0.08)}
+.cern-report.cern-s113,.cern-report .cern-s113{flex: 1.2 1 420px; display: flex; flex-direction: column; gap: 12px}
+.cern-report.cern-s114,.cern-report .cern-s114{display: flex; flex-wrap: wrap; gap: 10px; align-items: center}
+.cern-report.cern-s115,.cern-report .cern-s115{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #55605E; margin-right: 6px}
+.cern-report.cern-s116,.cern-report .cern-s116{width: 100%; height: auto; display: block; border-radius: 6px; background: #FFFFFF}
+.cern-report.cern-s117,.cern-report .cern-s117{flex: 1 1 260px; display: flex; flex-direction: column; justify-content: center; gap: 18px; border-left: 2px dashed #D9CDB6; padding-left: clamp(0px, 2vw, 28px)}
+.cern-report.cern-s118,.cern-report .cern-s118{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 56px; line-height: 0.95; color: #1F4A4F}
+.cern-report.cern-s119,.cern-report .cern-s119{font-size: 15px}
+.cern-report.cern-s120,.cern-report .cern-s120{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 56px; line-height: 0.95; color: #B04A32}
+.cern-report.cern-s121,.cern-report .cern-s121{margin: 0; font-family: 'Newsreader', serif; font-size: 18px; line-height: 1.5}
+.cern-report.cern-s122,.cern-report .cern-s122{flex: 1 1 360px; display: flex; flex-direction: column; gap: 18px; font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.65; color: #2E4446}
+.cern-report.cern-s123,.cern-report .cern-s123{flex: 0 1 460px; margin: 0; background: #FFFFFF; padding: 16px 16px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(1deg); position: relative}
+.cern-report.cern-s124,.cern-report .cern-s124{position: absolute; left: 40%; top: -12px; width: 90px; height: 24px; background: #F1E2B2; opacity: 0.9; transform: rotate(-3deg)}
+.cern-report.cern-s125,.cern-report .cern-s125{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #CFDCC6; display: flex; align-items: center; justify-content: center; transform: rotate(8deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s126,.cern-report .cern-s126{flex: 1.3 1 480px; margin: 0; background: #FFFFFF; padding: 16px 16px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(-0.8deg); position: relative}
+.cern-report.cern-s127,.cern-report .cern-s127{position: absolute; left: 12%; top: -12px; width: 96px; height: 24px; background: #F2CBAE; opacity: 0.85; transform: rotate(3deg)}
+.cern-report.cern-s128,.cern-report .cern-s128{margin: 0; background: #FFFFFF; padding: 20px 20px 14px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); position: relative}
+.cern-report.cern-s129,.cern-report .cern-s129{position: absolute; left: 50%; top: -12px; width: 110px; height: 24px; margin-left: -55px; background: #A9CBC5; opacity: 0.85; transform: rotate(-2deg)}
+.cern-report.cern-s130,.cern-report .cern-s130{flex: 1.3 1 420px; display: flex; flex-direction: column; gap: 18px; font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.65; color: #2E4446}
+.cern-report.cern-s131,.cern-report .cern-s131{flex: 1 1 320px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px}
+.cern-report.cern-s132,.cern-report .cern-s132{background: #FBF8F1; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column}
+.cern-report.cern-s133,.cern-report .cern-s133{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #1F4A4F}
+.cern-report.cern-s134,.cern-report .cern-s134{display: flex; flex-wrap: wrap-reverse; gap: 40px; align-items: center}
+.cern-report.cern-s135,.cern-report .cern-s135{flex: 1.2 1 460px; margin: 0; background: #FFFFFF; padding: 16px 16px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(0.8deg); position: relative}
+.cern-report.cern-s136,.cern-report .cern-s136{position: absolute; right: 18%; top: -12px; width: 96px; height: 24px; background: #D8CCE0; opacity: 0.9; transform: rotate(-3deg)}
+.cern-report.cern-s137,.cern-report .cern-s137{flex: 1 1 360px; display: flex; flex-direction: column; gap: 18px}
+.cern-report.cern-s138,.cern-report .cern-s138{margin: 0; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: #B04A32}
+.cern-report.cern-s139,.cern-report .cern-s139{position: relative; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; background: #1F4A4F; color: #F4EEE2; border-radius: 18px; padding: clamp(22px, 3.5vw, 40px); overflow: hidden}
+.cern-report.cern-s140,.cern-report .cern-s140{position: absolute; inset: 0; background-image: linear-gradient(rgba(169,203,197,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(169,203,197,0.07) 1px, transparent 1px); background-size: 32px 32px}
+.cern-report.cern-s141,.cern-report .cern-s141{position: relative; flex: 1.4 1 420px; display: flex; flex-direction: column; gap: 12px}
+.cern-report.cern-s142,.cern-report .cern-s142{display: flex; align-items: center; gap: 10px; font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #F2CBAE}
+.cern-report.cern-s143,.cern-report .cern-s143{width: 8px; height: 8px; border-radius: 50%; background: #E58C70}
+.cern-report.cern-s144,.cern-report .cern-s144{margin: 0; font-family: 'Newsreader', serif; font-size: 22px; line-height: 1.55}
+.cern-report.cern-s145,.cern-report .cern-s145{position: relative; flex: 1 1 240px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px}
+.cern-report.cern-s146,.cern-report .cern-s146{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 96px; line-height: 0.9; color: #F2CBAE}
+.cern-report.cern-s147,.cern-report .cern-s147{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #C9DAD6}
+.cern-report.cern-s148,.cern-report .cern-s148{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #D8CCE0; display: flex; align-items: center; justify-content: center; transform: rotate(-7deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s149,.cern-report .cern-s149{margin: 0; max-width: 820px; font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.65; color: #2E4446}
+.cern-report.cern-s150,.cern-report .cern-s150{position: absolute; left: 30%; top: -12px; width: 110px; height: 24px; background: #F1E2B2; opacity: 0.9; transform: rotate(2deg)}
+.cern-report.cern-s151,.cern-report .cern-s151{flex: 1.2 1 480px; margin: 0; background: #FFFFFF; padding: 16px 16px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(-0.8deg); position: relative}
+.cern-report.cern-s152,.cern-report .cern-s152{position: absolute; left: 14%; top: -12px; width: 96px; height: 24px; background: #A9CBC5; opacity: 0.85; transform: rotate(-3deg)}
+.cern-report.cern-s153,.cern-report .cern-s153{display: flex; flex-direction: column; gap: 20px; background: #E6DDEA; border-radius: 18px; padding: clamp(20px, 3.5vw, 40px)}
+.cern-report.cern-s154,.cern-report .cern-s154{display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 24px}
+.cern-report.cern-s155,.cern-report .cern-s155{display: flex; flex-direction: column; gap: 4px}
+.cern-report.cern-s156,.cern-report .cern-s156{margin: 0; font-family: 'Newsreader', serif; font-weight: 400; font-size: 36px; line-height: 1.1}
+.cern-report.cern-s157,.cern-report .cern-s157{display: flex; flex-wrap: wrap; gap: 10px}
+.cern-report.cern-s158,.cern-report .cern-s158{display: flex; flex-wrap: wrap; background: #FBF8F1; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(30,58,61,0.08)}
+.cern-report.cern-s159,.cern-report .cern-s159{flex: 1.2 1 380px; padding: 24px 26px; display: flex; flex-direction: column; gap: 16px}
+.cern-report.cern-s160,.cern-report .cern-s160{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #6E5A86}
+.cern-report.cern-s161,.cern-report .cern-s161{font-family: 'Newsreader', serif; font-size: 30px; line-height: 1.1}
+.cern-report.cern-s162,.cern-report .cern-s162{font-size: 15px; color: #3D4F50}
+.cern-report.cern-s163,.cern-report .cern-s163{display: flex; flex-direction: column; gap: 10px; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase}
+.cern-report.cern-s164,.cern-report .cern-s164{display: flex; align-items: center; gap: 12px}
+.cern-report.cern-s165,.cern-report .cern-s165{flex: 0 0 96px}
+.cern-report.cern-s166,.cern-report .cern-s166{flex: 1 1 auto; height: 12px; border-radius: 999px; background: #EADFC8; overflow: hidden}
+.cern-report.cern-s167,.cern-report .cern-s167{display: block; height: 100%; width: var(--effW); background: #1F4A4F; border-radius: 999px; transition: width .5s cubic-bezier(.2,.8,.2,1)}
+.cern-report.cern-s168,.cern-report .cern-s168{flex: 0 0 52px; text-align: right; font-weight: 700}
+.cern-report.cern-s169,.cern-report .cern-s169{display: block; height: 100%; width: var(--purW); background: #4E7F7B; border-radius: 999px; transition: width .5s cubic-bezier(.2,.8,.2,1)}
+.cern-report.cern-s170,.cern-report .cern-s170{display: block; height: 100%; width: var(--accW); background: #A9CBC5; border-radius: 999px; transition: width .5s cubic-bezier(.2,.8,.2,1)}
+.cern-report.cern-s171,.cern-report .cern-s171{display: block; height: 100%; width: var(--selW); background: #D9694E; border-radius: 999px; transition: width .5s cubic-bezier(.2,.8,.2,1)}
+.cern-report.cern-s172,.cern-report .cern-s172{flex: 0 1 260px; border-left: 2px dashed #D9CDB6; background: #F3ECDD; padding: 24px 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 14px; align-content: center; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase}
+.cern-report.cern-s173,.cern-report .cern-s173{display: flex; flex-direction: column; grid-column: span 2}
+.cern-report.cern-s174,.cern-report .cern-s174{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #B04A32}
+.cern-report.cern-s175,.cern-report .cern-s175{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 30px; line-height: 1}
+.cern-report.cern-s176,.cern-report .cern-s176{margin: 0; max-width: 860px; font-family: 'Newsreader', serif; font-size: 19px; line-height: 1.6; color: #2E4446}
+.cern-report.cern-s177,.cern-report .cern-s177{display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start}
+.cern-report.cern-s178,.cern-report .cern-s178{flex: 1 1 360px; margin: 0; background: #FFFFFF; padding: 16px 16px 12px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(-1deg); position: relative}
+.cern-report.cern-s179,.cern-report .cern-s179{position: absolute; left: 30%; top: -12px; width: 90px; height: 24px; background: #F2CBAE; opacity: 0.85; transform: rotate(3deg)}
+.cern-report.cern-s180,.cern-report .cern-s180{flex: 1.3 1 460px; display: flex; flex-direction: column; gap: 14px}
+.cern-report.cern-s181,.cern-report .cern-s181{margin: 0; background: #FFFFFF; padding: 14px 14px 10px; border-radius: 4px; box-shadow: 0 10px 28px rgba(30,58,61,0.10); transform: rotate(0.6deg)}
+.cern-report.cern-s182,.cern-report .cern-s182{margin-top: 8px; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #55605E}
+.cern-report.cern-s183,.cern-report .cern-s183{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #F2CBAE; display: flex; align-items: center; justify-content: center; transform: rotate(6deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s184,.cern-report .cern-s184{flex: 1.2 1 420px; display: flex; flex-direction: column; gap: 18px; font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.65; color: #2E4446}
+.cern-report.cern-s185,.cern-report .cern-s185{flex: 1 1 340px; display: flex; flex-direction: column; gap: 14px}
+.cern-report.cern-s186,.cern-report .cern-s186{display: flex; align-items: stretch; background: #FBF8F1; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(30,58,61,0.06)}
+.cern-report.cern-s187,.cern-report .cern-s187{flex: 1 1 0; padding: 16px 18px; display: flex; flex-direction: column}
+.cern-report.cern-s188,.cern-report .cern-s188{font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #4E7F7B}
+.cern-report.cern-s189,.cern-report .cern-s189{flex: 1 1 0; padding: 16px 18px; display: flex; flex-direction: column; background: #1F4A4F; color: #F4EEE2}
+.cern-report.cern-s190,.cern-report .cern-s190{position: absolute; left: 50%; top: -12px; width: 110px; height: 24px; margin-left: -55px; background: #D8CCE0; opacity: 0.9; transform: rotate(-2deg)}
+.cern-report.cern-s191,.cern-report .cern-s191{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #A9CBC5; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s192,.cern-report .cern-s192{display: flex; flex-direction: column; gap: 18px; background: #FBF8F1; border-radius: 18px; padding: clamp(20px, 3.5vw, 40px); box-shadow: 0 12px 30px rgba(30,58,61,0.08)}
+.cern-report.cern-s193,.cern-report .cern-s193{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 8px 24px}
+.cern-report.cern-s194,.cern-report .cern-s194{margin: 0; font-family: 'Newsreader', serif; font-weight: 400; font-size: 32px; line-height: 1.1}
+.cern-report.cern-s195,.cern-report .cern-s195{position: relative; display: flex; flex-direction: column; gap: 14px; padding-top: 22px}
+.cern-report.cern-s196,.cern-report .cern-s196{position: absolute; top: 0; bottom: 0; left: calc(220px + (100% - 300px) * 0.434); border-left: 2px dashed #B04A32}
+.cern-report.cern-s197,.cern-report .cern-s197{position: absolute; top: -2px; left: 6px; white-space: nowrap; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; color: #B04A32}
+.cern-report.cern-s198,.cern-report .cern-s198{display: flex; align-items: center; gap: 0; font-family: 'Space Mono', monospace; font-size: 12px}
+.cern-report.cern-s199,.cern-report .cern-s199{flex: 0 0 220px; padding-right: 12px; box-sizing: border-box}
+.cern-report.cern-s200,.cern-report .cern-s200{flex: 1 1 auto; height: 22px}
+.cern-report.cern-s201,.cern-report .cern-s201{display: block; height: 100%; width: 94.2%; background: #E58C70; border-radius: 0 999px 999px 0}
+.cern-report.cern-s202,.cern-report .cern-s202{flex: 0 0 80px; text-align: right; font-weight: 700}
+.cern-report.cern-s203,.cern-report .cern-s203{display: block; height: 100%; width: 90%; background: #E58C70; border-radius: 0 999px 999px 0; animation-delay: .1s}
+.cern-report.cern-s204,.cern-report .cern-s204{display: block; height: 100%; width: 64.1%; background: #F2CBAE; border-radius: 0 999px 999px 0; animation-delay: .2s}
+.cern-report.cern-s205,.cern-report .cern-s205{display: block; height: 100%; width: 44%; background: #F1E2B2; border-radius: 0 999px 999px 0; animation-delay: .3s}
+.cern-report.cern-s206,.cern-report .cern-s206{flex: 0 0 220px; padding-right: 12px; box-sizing: border-box; font-weight: 700}
+.cern-report.cern-s207,.cern-report .cern-s207{display: block; height: 100%; width: 10.7%; background: #1F4A4F; border-radius: 0 999px 999px 0; animation-delay: .4s}
+.cern-report.cern-s208,.cern-report .cern-s208{flex: 0 0 80px; text-align: right; font-weight: 700; color: #1F4A4F}
+.cern-report.cern-s209,.cern-report .cern-s209{margin: 6px 0 0; max-width: 820px; font-family: 'Newsreader', serif; font-size: 19px; line-height: 1.6; color: #2E4446}
+.cern-report.cern-s210,.cern-report .cern-s210{flex: 1.2 1 440px; background: #FBF8F1; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(30,58,61,0.06)}
+.cern-report.cern-s211,.cern-report .cern-s211{background: #1F4A4F; color: #F4EEE2; padding: 12px 20px; display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em}
+.cern-report.cern-s212,.cern-report .cern-s212{color: #F2CBAE}
+.cern-report.cern-s213,.cern-report .cern-s213{list-style: none; margin: 0; padding: 0}
+.cern-report.cern-s214,.cern-report .cern-s214{display: flex; align-items: center; gap: 14px; padding: 13px 20px; border-bottom: 1px dashed #D9CDB6}
+.cern-report.cern-s215,.cern-report .cern-s215{flex: 0 0 24px; height: 24px; border-radius: 50%; background: #4E7F7B; color: #FFFDF8; display: flex; align-items: center; justify-content: center; font-size: 13px}
+.cern-report.cern-s216,.cern-report .cern-s216{flex: 1 1 auto; font-size: 15px}
+.cern-report.cern-s217,.cern-report .cern-s217{font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; color: #4E7F7B}
+.cern-report.cern-s218,.cern-report .cern-s218{flex: 0 0 24px; height: 24px; border-radius: 50%; border: 2px solid #D9694E; box-sizing: border-box}
+.cern-report.cern-s219,.cern-report .cern-s219{font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; color: #B04A32}
+.cern-report.cern-s220,.cern-report .cern-s220{display: flex; align-items: center; gap: 14px; padding: 13px 20px}
+.cern-report.cern-s221,.cern-report .cern-s221{display: flex; flex-direction: column; gap: 32px}
+.cern-report.cern-s222,.cern-report .cern-s222{flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; background: #F1E2B2; display: flex; align-items: center; justify-content: center; transform: rotate(7deg); box-shadow: inset 0 0 0 3px #F4EEE2, inset 0 0 0 4px rgba(31,74,79,0.35)}
+.cern-report.cern-s223,.cern-report .cern-s223{margin-left: auto; font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; color: #55605E}
+.cern-report.cern-s224,.cern-report .cern-s224{display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px}
+.cern-report.cern-s225,.cern-report .cern-s225{display: flex; gap: 14px; background: #FBF8F1; border-radius: 14px; padding: 18px 20px; border: 1px solid #E3D9C5}
+.cern-report.cern-s226,.cern-report .cern-s226{flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; background: #EADFC8; display: flex; align-items: center; justify-content: center; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 16px; transition: background .25s, color .25s}
+.cern-report.cern-s227,.cern-report .cern-s227{display: flex; flex-wrap: wrap; gap: 28px; align-items: stretch}
+.cern-report.cern-s228,.cern-report .cern-s228{flex: 1 1 320px; background: #FBF8F1; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 24px rgba(30,58,61,0.07)}
+.cern-report.cern-s229,.cern-report .cern-s229{background: #1F4A4F; color: #F4EEE2; padding: 14px 20px; display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em}
+.cern-report.cern-s230,.cern-report .cern-s230{display: flex; align-items: center; gap: 14px; padding: 14px 20px; border-bottom: 1px dashed #D9CDB6}
+.cern-report.cern-s231,.cern-report .cern-s231{flex: 0 0 38px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 20px; color: #B04A32}
+.cern-report.cern-s232,.cern-report .cern-s232{display: flex; flex-direction: column; line-height: 1.3}
+.cern-report.cern-s233,.cern-report .cern-s233{font-family: 'Newsreader', serif; font-size: 20px}
+.cern-report.cern-s234,.cern-report .cern-s234{display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #F2CBAE}
+.cern-report.cern-s235,.cern-report .cern-s235{flex: 0 0 38px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 20px}
+.cern-report.cern-s236,.cern-report .cern-s236{flex: 1.6 1 460px; background: #FBF8F1; padding: 10px; border-radius: 4px; box-shadow: 0 2px 14px rgba(30,58,61,0.10)}
+.cern-report.cern-s237,.cern-report .cern-s237{height: 100%; box-sizing: border-box; background: repeating-linear-gradient(-45deg, #D9694E 0 16px, #FBF8F1 16px 24px, #4E7F7B 24px 40px, #FBF8F1 40px 48px); padding: 10px}
+.cern-report.cern-s238,.cern-report .cern-s238{height: 100%; box-sizing: border-box; background: #FBF8F1; padding: clamp(22px, 3.5vw, 36px); display: flex; flex-direction: column; justify-content: center; gap: 12px}
+.cern-report.cern-s239,.cern-report .cern-s239{margin: 0; font-family: 'Newsreader', serif; font-size: 26px; line-height: 1.4}
+.cern-report.cern-s240,.cern-report .cern-s240{display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 24px; border-bottom: 1px solid #D9CDB6; padding-bottom: 16px}
+.cern-report.cern-s241,.cern-report .cern-s241{margin: 0; font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(40px, 5vw, 60px); line-height: 1}
+.cern-report.cern-s242,.cern-report .cern-s242{flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transform: rotate(-1.5deg)}
+.cern-report.cern-s243,.cern-report .cern-s243{position: relative; aspect-ratio: 16 / 10; border-radius: 10px; overflow: hidden; background: #1F4A4F; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 28px rgba(30,58,61,0.16)}
+.cern-report.cern-s244,.cern-report .cern-s244{position: absolute; inset: 0; background-image: linear-gradient(rgba(169,203,197,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(169,203,197,0.08) 1px, transparent 1px); background-size: 24px 24px}
+.cern-report.cern-s245,.cern-report .cern-s245{position: relative; width: 64px; height: 64px; border-radius: 50%; background: #F2CBAE; display: flex; align-items: center; justify-content: center}
+.cern-report.cern-s246,.cern-report .cern-s246{position: absolute; left: 14px; top: 12px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; color: #F2CBAE}
+.cern-report.cern-s247,.cern-report .cern-s247{font-family: 'Newsreader', serif; font-size: 26px; line-height: 1.15; color: #1E3A3D}
+.cern-report.cern-s248,.cern-report .cern-s248{font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; color: #B04A32}
+.cern-report.cern-s249,.cern-report .cern-s249{flex: 1 1 240px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transform: rotate(1.5deg)}
+.cern-report.cern-s250,.cern-report .cern-s250{position: relative; aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center}
+.cern-report.cern-s251,.cern-report .cern-s251{position: absolute; left: 18%; right: 18%; top: 0; bottom: 0; background: #FFFFFF; border-radius: 4px; box-shadow: 0 14px 28px rgba(30,58,61,0.16); transform: rotate(4deg)}
+.cern-report.cern-s252,.cern-report .cern-s252{position: relative; left: 0; width: 64%; height: 100%; box-sizing: border-box; background: #FFFFFF; border-radius: 4px; padding: 16px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 6px 14px rgba(30,58,61,0.10)}
+.cern-report.cern-s253,.cern-report .cern-s253{font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; color: #4E7F7B}
+.cern-report.cern-s254,.cern-report .cern-s254{font-family: 'Newsreader', serif; font-size: 14px; line-height: 1.2; color: #1E3A3D}
+.cern-report.cern-s255,.cern-report .cern-s255{height: 4px; background: #E3D9C5; margin-top: 4px}
+.cern-report.cern-s256,.cern-report .cern-s256{height: 4px; background: #E3D9C5}
+.cern-report.cern-s257,.cern-report .cern-s257{height: 4px; width: 70%; background: #E3D9C5}
+.cern-report.cern-s258,.cern-report .cern-s258{flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px; background: #F3ECDD; border-radius: 14px; padding: 22px}
+.cern-report.cern-s259,.cern-report .cern-s259{margin: 0; font-family: 'Newsreader', serif; font-size: 18px; line-height: 1.55}
+.cern-report.cern-s260,.cern-report .cern-s260{display: flex; flex-wrap: wrap; gap: 24px; border-top: 1.5px solid #1E3A3D; padding-top: 40px}
+.cern-report.cern-s261,.cern-report .cern-s261{flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; background: #FBF8F1; border-radius: 12px; padding: 22px 24px; border: 1px solid #E3D9C5}
+.cern-report.cern-s262,.cern-report .cern-s262{font-family: 'Newsreader', serif; font-size: 28px; line-height: 1.15}
+.cern-report.cern-s263,.cern-report .cern-s263{flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; background: #1F4A4F; color: #F4EEE2; border-radius: 12px; padding: 22px 24px; text-align: right}
+.cern-report.cern-s264,.cern-report .cern-s264{font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; color: #F2CBAE}
+
+/* Static HTML equivalents of the prototype's interactive controls. */
+.cern-report .atlas span{position:absolute;left:0;top:0;box-sizing:border-box;backface-visibility:visible}
+.cern-report .atlas{scale:var(--atlas-scale,1);animation-play-state:paused}
+.cern-report[data-ready] .atlas{animation-play-state:running}
+.cern-report .scene:hover .atlas,.cern-report .scene:focus-within .atlas,.cern-report .scene[data-paused="true"] .atlas{animation-play-state:paused}
+.cern-report .cern-layer{min-height:36px;padding:0 12px 0 8px;border:0;border-radius:999px;background:#EADFC8;color:#1E3A3D;font:10px/1.6 'Space Mono',monospace;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.cern-report .cern-layer>span{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.cern-report .cern-layer[aria-pressed="true"],.cern-report [data-visibility][aria-pressed="true"]{background:#1F4A4F;color:#F4EEE2}
+.cern-report .cern-choice{min-height:42px;padding:0 18px;border:0;border-radius:999px;background:#EADFC8;color:#1E3A3D;font:12px/1.6 'Space Mono',monospace;text-transform:uppercase}
+.cern-report [data-model]{min-height:44px;background:#FBF8F1}
+.cern-report [data-model][aria-pressed="true"]{background:#3B3049;color:#F4EEE2}
+.cern-report .cern-pause{position:absolute;right:14px;bottom:14px;display:grid;place-items:center;width:36px;height:36px;border:1px solid #A9CBC5;border-radius:50%;background:#1F4A4F;color:#F4EEE2;font-size:18px;line-height:1}
+.cern-report .cern-pause:focus-visible{outline-color:#F2CBAE}
+.cern-report .cern-figure-link{display:block;cursor:zoom-in;border-radius:2px}
+.cern-report .cern-figure-link:focus-visible{outline-offset:6px}
+.cern-report .cern-table-scroll{overflow:auto;max-width:100%}
+.cern-report .cern-fallback{display:flex;flex-direction:column;gap:24px}
+.cern-report .cern-fallback table{border-collapse:collapse;font-size:14px;width:100%;white-space:nowrap}
+.cern-report .cern-fallback th,.cern-report .cern-fallback td{padding:10px 14px;border-bottom:1px solid #D9CDB6;text-align:left}
+.cern-report .cern-fallback figure{max-width:600px}
+.cern-report .cern-fallback img{max-width:100%;height:auto}
+@media(max-width:700px){
+ .cern-report.cern-s001{gap:64px;padding:24px 20px 56px}
+ .cern-report .cern-s009{overflow-wrap:anywhere}
+ .cern-report .cern-s031{flex:1 1 auto;border-left:0;border-top:2px dashed #A891B3;flex-direction:row;align-items:center;flex-wrap:wrap}
+ .cern-report .cern-s031 .cern-s035{width:110px}
+ .cern-report .cern-s063{flex:1 1 100%;font-size:40px;line-height:1.1}
+ .cern-report .cern-s053{display:none}
+ .cern-report .cern-s054{gap:20px 8px}
+ .cern-report .cern-s026{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cern-report .cern-s172{flex:1 1 auto;border-left:0;border-top:2px dashed #D9CDB6}
+ .cern-report .cern-s199,.cern-report .cern-s206{flex-basis:110px;font-size:10px}
+ .cern-report .cern-s202,.cern-report .cern-s208{flex-basis:56px;font-size:11px}
+ .cern-report .cern-s196{left:calc(110px + (100% - 166px)*.434)}
+ .cern-report .cern-s197{left:-8px;transform:translateX(-50%);font-size:9px}
+ .cern-report .cern-s224{grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))}
+ .cern-report .cern-s214,.cern-report .cern-s220{gap:10px;padding-inline:14px}
+ .cern-report .cern-s217,.cern-report .cern-s219{max-width:82px;overflow-wrap:anywhere}
+}
+@media(max-width:430px){
+ .cern-report .cern-s013{height:300px}
+ .cern-report .atlas{--atlas-scale:.6}
+ .cern-report .cern-s016{top:34px;right:auto;left:16px}
+ .cern-report .cern-s023{padding:22px 18px}
+ .cern-report .cern-s029{font-size:11px;overflow-wrap:anywhere}
+ .cern-report .cern-s159{padding:22px 16px}
+ .cern-report .cern-s164{gap:6px;flex-wrap:wrap}
+ .cern-report .cern-s165{flex-basis:100%}
+ .cern-report .cern-s166{flex-basis:50%}
+ .cern-report .cern-s225{padding:18px 16px}
+ .cern-report .cern-s011{font-size:10px;gap:6px}
+ .cern-report .cern-s254{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .cern-report *{animation:none!important;transition:none!important}
+}
+/* Small-label contrast corrections retain the prototype's color families. */
+.cern-report .cern-s024,.cern-report .cern-s153 .cern-s073{color:#A0442F}
+.cern-report .cern-s096{color:#6B675D}
+.cern-report .cern-s105{background:#B04A32}
+.cern-report .cern-s217{color:#497773}

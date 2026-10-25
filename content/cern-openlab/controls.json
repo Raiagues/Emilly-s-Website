@@ -1,0 +1,133 @@
+{
+  "layers": [
+    {
+      "key": "inner",
+      "label": "t234",
+      "color": "#F1E2B2",
+      "note": "t235"
+    },
+    {
+      "key": "em",
+      "label": "t236",
+      "color": "#E58C70",
+      "note": "t237"
+    },
+    {
+      "key": "had",
+      "label": "t238",
+      "color": "#A9CBC5",
+      "note": "t239"
+    },
+    {
+      "key": "muon",
+      "label": "t240",
+      "color": "#6E5A86",
+      "note": "t241"
+    },
+    {
+      "key": "tracks",
+      "label": "t242",
+      "color": "#F2CBAE",
+      "note": "t243"
+    }
+  ],
+  "atlasNote": "t244",
+  "pause": "t245",
+  "play": "t246",
+  "comparison": "t247",
+  "figure": "t248",
+  "of": "t249",
+  "close": "t250",
+  "previous": "t251",
+  "next": "t252",
+  "visibility": {
+    "0": {
+      "label": "t253",
+      "img": "visibility-0.png",
+      "alt": "t221",
+      "found": "t254",
+      "extra": "58",
+      "note": "t255"
+    },
+    "3": {
+      "label": "t256",
+      "img": "visibility-3.png",
+      "alt": "t257",
+      "found": "t258",
+      "extra": "17",
+      "note": "t259"
+    }
+  },
+  "models": {
+    "base": {
+      "label": "t260",
+      "tag": "t261",
+      "name": "t260",
+      "desc": "t262",
+      "params": "708",
+      "eff": 77.3,
+      "pur": 78.0,
+      "acc": 95.3,
+      "sel": 81.1,
+      "auc": "0.934",
+      "dr": "0.044",
+      "mae": "17.3 GeV"
+    },
+    "v0": {
+      "label": "t263",
+      "tag": "t264",
+      "name": "t263",
+      "desc": "t265",
+      "params": "42 021",
+      "eff": 80.5,
+      "pur": 80.7,
+      "acc": 95.9,
+      "sel": 83.9,
+      "auc": "0.950",
+      "dr": "0.046",
+      "mae": "16.0 GeV"
+    },
+    "v1": {
+      "label": "t266",
+      "tag": "t267",
+      "name": "t266",
+      "desc": "t268",
+      "params": "9 639",
+      "eff": 80.3,
+      "pur": 80.5,
+      "acc": 95.4,
+      "sel": 84.2,
+      "auc": "0.950",
+      "dr": "0.049",
+      "mae": "17.4 GeV"
+    },
+    "v2": {
+      "label": "t269",
+      "tag": "t267",
+      "name": "t269",
+      "desc": "t270",
+      "params": "1 155",
+      "eff": 79.5,
+      "pur": 79.6,
+      "acc": 95.2,
+      "sel": 83.5,
+      "auc": "0.946",
+      "dr": "0.043",
+      "mae": "17.6 GeV"
+    },
+    "mu0": {
+      "label": "t271",
+      "tag": "t272",
+      "name": "t273",
+      "desc": "t274",
+      "params": "42 021",
+      "eff": 94.2,
+      "pur": 94.3,
+      "acc": 99.0,
+      "sel": 95.2,
+      "auc": "0.997",
+      "dr": "0.040",
+      "mae": "12.1 GeV"
+    }
+  }
+}

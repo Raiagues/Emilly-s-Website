@@ -1,5 +1,13 @@
 # Fontes e decisões editoriais
 
+## Página técnica do CERN openlab — 25/10/2026
+
+O conteúdo, o design, os resultados dos cinco modelos e os 14 PNGs vêm do arquivo `CERN openlab · project deep dive-html.zip`, enviado pela proprietária. Os gráficos foram copiados sem alteração; o manifesto de origem e hashes está em `content/cern-openlab/assets.json`. Os textos foram traduzidos para PT, FR e ES sem alterar os resultados ou apresentar síntese em FPGA como trabalho concluído.
+
+O [relatório final no Zenodo](https://zenodo.org/records/23164381) e os [slides finais no CERN Indico](https://indico.cern.ch/event/1707614/contributions/7181959/attachments/3327941/5960411/Emilly_PowerPoint.pptx%20(3).pdf) são os endereços fornecidos diretamente pela proprietária. Substituem os links de exemplo do modelo. O texto continua identificando o relatório intermediário como origem das explicações e figuras, conforme o HTML recebido. A consulta automatizada aos documentos finais foi bloqueada (403 no Zenodo e desafio anti-bot no Indico), portanto não foram atribuídas a eles afirmações novas nem publicada uma suposta cópia baixada.
+
+O campo vazio de aprendizado recebeu uma conclusão apoiada no próprio conteúdo: caber na banda não equivale a estar implementado em FPGA, e a ambiguidade causada por pile-up não é resolvida apenas aumentando a arquitetura. O diário pessoal do CERN continua sendo uma página separada.
+
 ## Correção das fontes públicas — 25/10/2026
 
 Os cartões de conquistas abrem diretamente a publicação ou o documento indicado pela proprietária. Não existe fallback para o currículo. Artigo aceito no AIAA SciTech e apresentação no South Summit não são classificados como prêmios; continuam documentados no projeto e no diário, respectivamente.

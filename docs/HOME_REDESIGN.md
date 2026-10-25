@@ -1,5 +1,15 @@
 # Redesign do portfólio
 
+## Relatório técnico do CERN openlab — 25/10/2026
+
+`pages/experience/cern.html` e suas versões PT, FR e ES agora seguem o arquivo `CERN openlab · project deep dive-html.zip`. A abertura com ATLAS em 3D, passagem lilás, indicadores, plano de voo, oito capítulos, gráficos em papel, comparador de modelos, controle de banda, equipe e documentos mantêm a composição do modelo. O cabeçalho fixo, o seletor de idiomas e o rodapé são os componentes compartilhados do site.
+
+As cinco camadas do detector podem ser destacadas e a rotação pode ser pausada. O limiar alterna entre 0% e 3%, atualizando gráfico, legenda e contagens. O comparador apresenta os cinco modelos com os números originais. Gráficos abrem no visualizador com setas, Escape e retorno de foco. Movimento reduzido, teclado e conteúdo sem JavaScript são suportados; nesse último caso, uma tabela reúne os cinco modelos e as duas imagens de limiar continuam disponíveis.
+
+O relatório final e os slides usam os links fornecidos pela proprietária. Não há runtime do exportador, React, imagens externas de exemplo ou botões sem destino. Os 14 PNGs são idênticos aos do ZIP. O arquivo original e os materiais pessoais não selecionados continuam fora de `dist`.
+
+Validação: build e verificador aprovados nos 171 HTMLs; 45 cenários de navegador cobertos, com 43 aprovados na execução completa e reexecução aprovada dos dois cenários ajustados (retorno específico do CERN e espera pelo término da animação de entrada antes de medir contraste no diário). Os cinco cenários novos conferem quatro idiomas, larguras de 320 a 1440 px, links finais, oito capítulos, métricas, detector, ampliação, teclado, conteúdo sem JavaScript e WCAG A/AA. A comparação visual com o HTML enviado confirmou as mesmas medidas da abertura no desktop.
+
 ## Catálogos, navegação e fontes públicas — 25/10/2026
 
 Projetos e experiências agora compartilham o catálogo com título de pôster em duas linhas, rota ilustrada animada, filtros e busca em campo arredondado. Os cartões inteiros são links, sem chamada extra Ver projeto; tecnologias e competências usam etiquetas com tipografia discreta e sem estrelas. Filtros e busca permanecem ao voltar de ambos os tipos de página.
