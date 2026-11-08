@@ -1,6 +1,18 @@
 # Validação do diário e da execução local
 
-## Flight Studio e kernel interativos — novembro de 2026
+## Flight Studio: infraestrutura e percurso dos dados — 7 de novembro de 2026
+
+- Página refeita nos quatro idiomas em cinco capítulos: sinal sintético, placa QEMU, partições e aplicações, drivers e locais de edição. Diagramas vetoriais substituem a galeria de telas e o inspetor de pacotes.
+- A senoide permite ajustar temperatura inicial, amplitude, período e instante. Uma amostra com seu valor percorre Python → QMP → TMP105 → Linux → bibliotecas → aplicação → Software Bus/TO_LAB → Flight Studio. Há pausa, avanço por conexão, seleção direta e suporte a movimento reduzido.
+- Placa configurável com periféricos e endereço I²C, argumentos QEMU atualizados e interrupção do percurso quando o TMP105 está desconectado. O desenho do SD explica bootfs, rootfs, `/cf` e carregamento das aplicações; o caminho do código C até a instalação por SSH é explícito.
+- A pesquisa confirmou a topologia, os arquivos de boot, a DTB, as partições da imagem QCOW2 e o comportamento dos drivers no repositório fornecido. O percurso é identificado como modelo didático calculado; a captura anterior comprova a injeção QMP, sem comprovar leitura e telemetria de uma app de sensor.
+- **13 testes aprovados**: dez testes de navegador/dados das páginas de engenharia e três do modelo matemático. Incluem movimento visível da amostra e pausa, valores, configuração da placa, partições, drivers, teclado, leitura sem JavaScript, hashes das 44 capturas preservadas e regressão das seis atividades do kernel. Auditoria axe WCAG A/AA aprovada nas duas páginas nos quatro idiomas, com estados alternativos no celular.
+- Layouts conferidos em 320, 390, 768 e 1440 px. Diagramas, estados selecionados e textos revisados visualmente em desktop e celular. As figuras grandes têm rolagem interna em telas estreitas; a página não apresenta overflow horizontal.
+- **Três regressões direcionadas aprovadas**: carregamento dos 112 estudos de caso, 76 redirecionamentos antigos e destaques NASA cFS/kernel/CubeSat/RISC-V nos quatro idiomas. Build e verificador estático aprovados: **255 HTMLs válidos**. A página do kernel mantém o conteúdo anterior.
+
+Prévias: [abertura](preview-flight-studio-infrastructure.png), [percurso da temperatura](preview-flight-studio-flow.png), [placa](preview-flight-studio-board.png), [partições](preview-flight-studio-storage.png) e [fluxo no celular](preview-flight-studio-flow-mobile.png).
+
+## Versão anterior: Flight Studio e kernel interativos — novembro de 2026
 
 - Páginas NASA cFS e kernel refeitas a partir da composição visual do CERN: papel creme, títulos com serifa, diagramas vetoriais, capítulos e painéis técnicos. Textos e legendas em EN/PT/FR/ES.
 - Flight Studio: 12 capturas reais da aplicação, duas figuras originais do TCC, arquitetura selecionável, camadas cFS, reprodução do percurso NOOP, inspetor dos bytes CMD/HK antes e depois, geração de aplicações e curva interativa da função de temperatura. cFS nativo e ARM64/QEMU chegaram a OPERATIONAL; evento e contador 0→1 confirmam o NOOP nativo. QMP confirmou a injeção de sensores; o percurso de leitura I²C até telemetria é explicitamente separado do que foi observado.

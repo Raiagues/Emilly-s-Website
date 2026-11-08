@@ -2,6 +2,8 @@
 
 ## Flight Studio e kernel OS — novembro de 2026
 
+Após a revisão solicitada pela proprietária, a página do Flight Studio concentra-se na infraestrutura e no fluxo dos dados. O código local, a DTB e a imagem QCOW2 foram consultados para confirmar as partições, os caminhos de instalação, a configuração dos periféricos, o controle QMP e os drivers. [Referências detalhadas](flight-studio/infrastructure-notes.md) e [dados estruturados](flight-studio/infrastructure-evidence.json). Os novos desenhos são esquemas vetoriais da arquitetura; `thermal_app` é uma aplicação ilustrativa. O percurso interativo calcula os valores no navegador e distingue esse modelo da injeção observada na execução local. A resolução padrão do TMP105 segue a fonte oficial QEMU v11.1.2, referenciada nas notas.
+
 O novo `TCC.zip`, fornecido pela proprietária, fundamenta contexto, arquitetura e plano de avaliação do Flight Studio. Foram preservadas as duas figuras técnicas, os capítulos relevantes e as referências em `content/flight-studio/`. O documento contém metas, não medições concluídas; os capítulos de desenvolvimento e conclusão estão vazios.
 
 A proprietária também indicou [Raiagues/cfs_emulator](https://github.com/Raiagues/cfs_emulator) e a instalação local `~/Documents/raspi/pi4-emulator/boot_cfs`. Uma cópia foi executada para produzir 12 capturas reais e verificar o NOOP completo, cFS nativo e ARM64/QEMU, além da injeção de sensores por QMP. [Origem e limites da execução](flight-studio/runtime/README.md), incluindo o submódulo com alterações locais, dados capturados e a distinção entre injeção QMP e leitura pela aplicação. O repositório indicado substitui o link antigo para o perfil GitHub.

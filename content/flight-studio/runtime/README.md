@@ -15,6 +15,8 @@ A interface usa JSON sobre HTTP e polling de 1500 ms, conforme `interface/static
 
 ## Reprodução no portfólio
 
-O site oferece sequências de evidências, um inspetor de bytes e uma exploração matemática da função de temperatura. Esses controles atuam localmente no navegador: não iniciam QEMU nem enviam comandos a um sistema de voo. As figuras conceituais são SVGs separados das capturas reais. Todas as imagens e explicações permanecem disponíveis sem JavaScript.
+A página pública explica a infraestrutura com diagramas: sinal Python, injeção QMP, sensor virtual, Linux, bibliotecas, aplicação e retorno da telemetria. Os controles calculam uma amostra e percorrem suas conexões no navegador. A placa permite selecionar periféricos e endereço I²C; o mapa do SD relaciona partições, pasta da missão e carregamento pelo cFE. As explicações permanecem disponíveis sem JavaScript.
+
+O percurso é identificado como modelo didático, com `thermal_app` como nome ilustrativo. Não executa QEMU nem representa uma medição de ponta a ponta da missão capturada. As referências do código, da DTB e da imagem de disco estão em [infrastructure-notes.md](../infrastructure-notes.md) e [infrastructure-evidence.json](../infrastructure-evidence.json). As capturas desta pasta permanecem como evidência técnica, embora a galeria e o inspetor de bytes tenham sido retirados da apresentação pública.
 
 A instalação original foi preservada e os runtimes temporários foram encerrados após as capturas. Os arquivos do site não dependem da instalação em `/tmp`, de Docker ou do ZIP para o build. `locales.json` contém títulos e legendas nas quatro línguas; saídas e código capturados permanecem originais.

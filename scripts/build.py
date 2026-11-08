@@ -104,13 +104,13 @@ def layout(path, lang, title, description, body, active='home'):
   <link rel="stylesheet" href="{asset('style/components.css')}">
 {f'<link rel="stylesheet" href="{asset("style/project-reports.css")}">' if project_report else ''}
 {f'<link rel="stylesheet" href="{asset("style/work.css")}">' if not cern_report and (path in ('projects.html','experience.html','recognition.html','contact.html') or path.startswith('pages/')) else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/cern.css")}">' if cern_report else ''}
-{f'<link rel="stylesheet" href="{asset("style/engineering.css")}">' if engineering_project else ''}
+{f'<link rel="stylesheet" href="{asset("style/engineering.css")}">' if engineering_project else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/flight-studio.css")}">' if path == 'pages/projects/nasa-cfs-platform.html' else ''}
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>{chr(10) + f'<link rel="stylesheet" href="{asset("style/damas.css")}"><script src="{asset("src/damas.js")}" defer></script>' if damas_project else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/wingbox.css")}"><script src="{asset("src/wingbox.js")}" defer></script>' if wingbox_project else ''}
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
   <script src="{asset('src/redesign.js')}" defer></script>{chr(10) + f'<link rel="stylesheet" href="{asset("style/formation.css")}"><script type="module" src="{asset("src/formation.js")}"></script>' if formation_experience else ''}
 {f'<script src="{asset("src/projects.js")}" defer></script>' if path in ('projects.html','experience.html') else ''}
 {f'<script src="{asset("src/journal.js")}" defer></script>' if post or cern_report or project_report or engineering_project else ''}{chr(10) + f'<script src="{asset("src/cern.js")}" defer></script>' if cern_report else ''}
-{f'<script src="{asset("src/engineering.js")}" defer></script>' if engineering_project else ''}
+{f'<script src="{asset("src/engineering.js")}" defer></script>' if engineering_project else ''}{chr(10) + f'<script type="module" src="{asset("src/flight-infrastructure.js")}"></script>' if path == 'pages/projects/nasa-cfs-platform.html' else ''}
 {f'<script src="{asset("src/project-reports.js")}" defer></script>' if project_report else ''}
 {f'<script src="{asset("src/stories.js")}" defer></script>' if not cern_report and (post or path == 'journal.html' or path.startswith('pages/')) else ''}
 </head>

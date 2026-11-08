@@ -98,6 +98,9 @@ Requer **Python 3.12 ou mais recente** para gerar as páginas. O site publicado 
 | `content/project_reports.py`, `content/project_visuals.py`, `content/project-reports/` | Textos, diagramas, fontes e legendas de RISC-V, carrinho autônomo e injeção de falhas |
 | `content/engineering_cases.py`, `content/flight-studio/`, `content/kernel-os/` | Textos, código, capturas e evidências do Flight Studio e do kernel |
 | `scripts/engineering_redesign.py`, `scripts/engineering_drawings.py`, `style/engineering.css`, `src/engineering.js` | Páginas técnicas, diagramas, reprodução de capturas e explorações interativas |
+| `content/flight_infrastructure.py`, `content/flight-studio/infrastructure-*` | Textos traduzidos e referências da infraestrutura do Flight Studio |
+| `scripts/flight_studio_redesign.py`, `scripts/flight_infrastructure_drawings.py`, `style/flight-studio.css` | Página do Flight Studio, placa virtual e mapa das partições |
+| `src/flight-infrastructure.js`, `src/flight-infrastructure-model.mjs` | Onda sintética, percurso animado da amostra e configuração didática do QEMU |
 | `content/damas-espaciais/` | Design e textos do projeto Damas Espaciais nos quatro idiomas |
 | `scripts/damas_redesign.py`, `style/damas.css`, `src/damas.js` | Página, tabuleiro jogável, inspetor e comparações de Damas Espaciais |
 | `src/damas-engine/` | Motor original em C, licença e módulo WebAssembly reproduzível |
@@ -189,6 +192,8 @@ Os três relatórios fornecidos em novembro de 2026 fundamentam o conteúdo téc
 
 ### Flight Studio e kernel OS
 
-As páginas NASA cFS e kernel seguem a composição do CERN, com capas vetoriais, capítulos, diagramas e figuras ampliáveis. O Flight Studio inclui 12 telas reais da execução local, camadas do cFS, percurso NOOP, inspeção de pacotes e sensores. O kernel oferece seis atividades com código e QEMU lado a lado, 32 capturas, tabela de processos lida da RAM, mapa de memória, cálculo de endereços, bitmaps da fonte e pilhas.
+As páginas NASA cFS e kernel seguem a composição do CERN, com capas vetoriais, capítulos e diagramas. O Flight Studio explica a infraestrutura em cinco partes: caminho de uma temperatura, placa QEMU, partições e aplicações, drivers e locais de edição. Os controles alteram a função Python, mostram a amostra percorrendo as conexões e configuram os periféricos de uma placa ilustrada. O desenho do SD relaciona boot, rootfs, `/cf` e carregamento das aplicações pelo cFE.
 
-As fontes estão em [Flight Studio](content/flight-studio/runtime/README.md) e [kernel OS](content/kernel-os/README.md). As capturas são verificadas por SHA256; títulos e legendas têm quatro idiomas. O site reproduz evidências e diagramas no navegador, sem precisar iniciar os emuladores. `tests/engineering.test.mjs` verifica dados, controles, imagens, teclado, responsividade, acessibilidade e leitura sem JavaScript.
+Os valores do percurso são calculados no navegador a partir da função sintética e da resolução padrão do TMP105. A página identifica esse modelo didático e a aplicação ilustrativa `thermal_app`. A execução anterior comprovou a injeção QMP, mas não incluiu uma aplicação lendo o sensor e publicando sua telemetria. As 12 capturas continuam preservadas como evidência; a página pública concentra a explicação nos diagramas. Veja as [referências da infraestrutura](content/flight-studio/infrastructure-notes.md) e a [origem das capturas](content/flight-studio/runtime/README.md).
+
+O kernel oferece seis atividades com código e QEMU lado a lado, 32 capturas, tabela de processos lida da RAM, mapa de memória, cálculo de endereços, bitmaps da fonte e pilhas. As fontes estão em [kernel OS](content/kernel-os/README.md). `tests/engineering.test.mjs` verifica as duas páginas nos quatro idiomas, valores, animação e pausa, controles, teclado, responsividade, acessibilidade e leitura sem JavaScript. `tests/flight-infrastructure-model.test.mjs` verifica a função do sinal, conversões da temperatura e configuração dos dispositivos.

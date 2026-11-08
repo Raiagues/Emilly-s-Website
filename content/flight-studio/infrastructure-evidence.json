@@ -1,0 +1,873 @@
+{
+  "repository": "https://github.com/Raiagues/cfs_emulator",
+  "commit": "f9b21e76e04915ec1c401585be115f024bdc3597",
+  "researched_at": "2026-11-08T00:48:26.652045+00:00",
+  "method": "Leitura estática do repositório; parsing somente leitura de QCOW2/MBR/ext4 e DTB; consulta da fonte oficial QEMU v11.1.2 via GitHub. Nenhuma execução da instalação.",
+  "public_focus": "Como o usuário define o ambiente, como a placa virtual e o Linux são preparados, onde a missão vive e como uma medida percorre sensores, drivers, cFS e UI.",
+  "disk": {
+    "method": "Read-only parsing of QCOW2 mappings, MBR, FAT boot sector and ext4 inodes; no VM, mount or repository code executed.",
+    "source": "board/raspios.qcow2",
+    "qcow_version": 3,
+    "virtual_size_bytes": 4294967296,
+    "virtual_size_gib": 4.0,
+    "partitions": [
+      {
+        "partition": 1,
+        "type_hex": "0xc",
+        "start_sector": 16384,
+        "sectors": 1048576,
+        "offset_bytes": 8388608,
+        "size_bytes": 536870912,
+        "size_mib": 512.0,
+        "filesystem": "FAT32",
+        "label": "bootfs",
+        "guest_device": "/dev/mmcblk1p1",
+        "mountpoint": "/boot/firmware"
+      },
+      {
+        "partition": 2,
+        "type_hex": "0x83",
+        "start_sector": 1064960,
+        "sectors": 4947968,
+        "offset_bytes": 545259520,
+        "size_bytes": 2533359616,
+        "size_mib": 2416.0,
+        "filesystem": "ext4",
+        "label": "rootfs",
+        "block_size": 4096,
+        "guest_device": "/dev/mmcblk1p2",
+        "mountpoint": "/"
+      }
+    ],
+    "fstab": "proc            /proc           proc    defaults          0       0\nPARTUUID=27b94958-01  /boot/firmware  vfat    defaults          0       2\nPARTUUID=27b94958-02  /               ext4    defaults,noatime  0       1\n",
+    "os_release": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.7\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+    "kernel_module_directories": [
+      "6.18.50+rpt-rpi-2712",
+      "6.18.50+rpt-rpi-v8"
+    ],
+    "i2c_module_aliases": {
+      "6.18.50+rpt-rpi-2712": [
+        "alias platform:i2c-bcm2835 i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2835-i2cC* i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2835-i2c i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2711-i2cC* i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2711-i2c i2c_bcm2835"
+      ],
+      "6.18.50+rpt-rpi-v8": [
+        "alias platform:i2c-bcm2835 i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2835-i2cC* i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2835-i2c i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2711-i2cC* i2c_bcm2835",
+        "alias of:N*T*Cbrcm,bcm2711-i2c i2c_bcm2835"
+      ]
+    },
+    "i2c_kernel_modules": {
+      "6.18.50+rpt-rpi-2712": [
+        "i2c-bcm2708.ko.xz",
+        "i2c-bcm2835.ko.xz"
+      ],
+      "6.18.50+rpt-rpi-v8": [
+        "i2c-bcm2708.ko.xz",
+        "i2c-bcm2835.ko.xz"
+      ]
+    },
+    "internal_note": "O disco virtual tem 4 GiB, mas a rootfs local ocupa 2416 MiB: redimensionar QCOW2 não ampliou a partição. No desenho público, simplificar em bootfs e rootfs; evitar proporções incorretas.",
+    "refs": [
+      {
+        "path": "Dockerfile",
+        "line": 26,
+        "note": "Extração de kernel/DTB/initramfs da primeira partição FAT",
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/Dockerfile#L26"
+      },
+      {
+        "path": "Dockerfile",
+        "line": 40,
+        "note": "Conversão para QCOW2; resize do disco para 4G; rootfs montada como /dev/sda2 pelo guestfish",
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/Dockerfile#L40"
+      },
+      {
+        "path": "scripts/emulator.sh",
+        "line": 32,
+        "note": "No Linux emulado a raiz é /dev/mmcblk1p2",
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/scripts/emulator.sh#L32"
+      }
+    ],
+    "binary_refs": [
+      {
+        "path": "board/raspios.qcow2",
+        "location": "MBR virtual, entradas de partição 1 e 2",
+        "method": "Read-only parsing of QCOW2 mappings, MBR, FAT boot sector and ext4 inodes; no VM, mount or repository code executed."
+      },
+      {
+        "path": "board/raspios.qcow2",
+        "virtual_path": "/etc/fstab",
+        "lines": [
+          2,
+          3
+        ],
+        "note": "Define /boot/firmware e / por PARTUUID."
+      },
+      {
+        "path": "board/bcm2711-rpi-4-b.dtb",
+        "property_path": "/soc/i2c@7e804000",
+        "method": "Parsing somente leitura da estrutura DTB."
+      }
+    ]
+  },
+  "launch": {
+    "id": "launch",
+    "title": "A configuração da missão vira uma placa virtual",
+    "explanation": "O catálogo define o perfil Raspberry Pi 4B, o compilador ARM64 e os modelos aceitos. Ao iniciar QEMU, runtime.py converte cada sensor de project/config.json em argumentos -device. O script mantém o disco persistente e entrega kernel, árvore de dispositivos e initramfs diretamente ao QEMU.",
+    "refs": [
+      {
+        "path": "project/boards/raspi4b.json",
+        "line": 14,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/boards/raspi4b.json#L14"
+      },
+      {
+        "path": "project/boards/raspi4b.json",
+        "line": 74,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/boards/raspi4b.json#L74"
+      },
+      {
+        "path": "sensors/runtime.py",
+        "line": 35,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/runtime.py#L35"
+      },
+      {
+        "path": "scripts/emulator.sh",
+        "line": 4,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/scripts/emulator.sh#L4"
+      },
+      {
+        "path": "scripts/emulator.sh",
+        "line": 28,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/scripts/emulator.sh#L28"
+      }
+    ],
+    "machine": "raspi4b",
+    "kernel": "board/kernel8.img",
+    "dtb": "board/bcm2711-rpi-4-b.dtb",
+    "initramfs": "board/initramfs8",
+    "disk": "board/raspios.qcow2",
+    "qmp_socket": "board/qmp.sock",
+    "args": [
+      [
+        "-M",
+        "raspi4b"
+      ],
+      [
+        "-kernel",
+        "board/kernel8.img"
+      ],
+      [
+        "-dtb",
+        "board/bcm2711-rpi-4-b.dtb"
+      ],
+      [
+        "-initrd",
+        "board/initramfs8"
+      ],
+      [
+        "-drive",
+        "file=board/raspios.qcow2,if=sd,format=qcow2"
+      ],
+      [
+        "-append",
+        "console=ttyAMA1 root=/dev/mmcblk1p2 rw rootwait watchdog_disarm=0"
+      ],
+      [
+        "-qmp",
+        "unix:/work/board/qmp.sock,server=on,wait=off"
+      ],
+      [
+        "-device",
+        "tmp105,id=tmp105,bus=i2c-bus.1,address=0x48"
+      ],
+      [
+        "-device",
+        "lsm303dlhc_mag,id=lsm303dlhc_mag,bus=i2c-bus.1,address=0x1e"
+      ]
+    ],
+    "topology_requires_reboot": true,
+    "dtb_modifications": [
+      "I²C em /soc/i2c@7e804000 habilitado",
+      "Bluetooth associado à serial desabilitado",
+      "USB configurado como host com compatible brcm,bcm2835-usb"
+    ],
+    "dtb_modification_ref": {
+      "path": "Dockerfile",
+      "line": 26,
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/Dockerfile#L26"
+    },
+    "overlay_note": "O pipeline edita a DTB com fdtput. Nenhum carregamento de overlays .dtbo ou processamento do config.txt da Raspberry Pi foi encontrado nesse caminho de boot direto. Sensores são criados com -device e lidos pela interface Linux i2c-dev; não há um novo nó TMP105 adicionado à DTB por sensor."
+  },
+  "storage": {
+    "id": "storage",
+    "title": "Código no host; módulos instalados na rootfs",
+    "explanation": "O editor altera as fontes no host. Build produz binários ARM64. Run envia a pasta completa por SSH para uma área temporária no convidado, troca a instalação e inicia cfs.service. O cFE encontra os módulos em /cf, que o PSP mapeia para ./cf relativo ao diretório do serviço.",
+    "refs": [
+      {
+        "path": "scripts/build-cfs.sh",
+        "line": 34,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/scripts/build-cfs.sh#L34"
+      },
+      {
+        "path": "hardware/manager.py",
+        "line": 760,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/hardware/manager.py#L760"
+      },
+      {
+        "path": "cfs.service",
+        "line": 7,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/cfs.service#L7"
+      },
+      {
+        "path": "cFS/psp/fsw/pc-linux/src/cfe_psp_start.c",
+        "line": 375
+      },
+      {
+        "path": "cFS/sample_defs/default_pspconfig.cmake",
+        "line": 50
+      },
+      {
+        "path": "project/appgen/README.md",
+        "line": 9,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/appgen/README.md#L9"
+      },
+      {
+        "path": "cFS/cfe/modules/es/fsw/inc/cfe_es_internal_cfg.h",
+        "line": 366,
+        "note": "Startup não volátil padrão: /cf/cfe_es_startup.scr."
+      }
+    ],
+    "paths": [
+      {
+        "where": "Host · fontes da missão",
+        "path": "cFS/apps/<app>/fsw/src/",
+        "contains": "C da aplicação; <app>_user.c para inicialização e lógica periódica."
+      },
+      {
+        "where": "Host · bibliotecas",
+        "path": "cFS/libs/<library>/",
+        "contains": "Fontes C e cabeçalhos públicos de drivers e bibliotecas da missão."
+      },
+      {
+        "where": "Host · definição da aplicação",
+        "path": "project/apps/<app>.json",
+        "contains": "Manifest do gerador: componentes, requisitos e configuração."
+      },
+      {
+        "where": "Host · hardware",
+        "path": "project/config.json",
+        "contains": "Placa, sistema, modelos de sensores, IDs, barramentos, endereços e valores iniciais."
+      },
+      {
+        "where": "Host · sinais",
+        "path": "sensors/<model>.py + sensors/signals.py",
+        "contains": "Funções Python, parâmetros e seleção/intervalo da sessão."
+      },
+      {
+        "where": "Host · startup editável",
+        "path": "cFS/sample_defs/cpu1_cfe_es_startup.scr",
+        "contains": "Bibliotecas e apps que o cFE carrega, suas funções de entrada, prioridades e stacks."
+      },
+      {
+        "where": "Host · artefatos ARM64",
+        "path": "cFS/build-flight/exe/cpu1/",
+        "contains": "core-cpu1 e subdiretório cf/ com .so, .tbl e cfe_es_startup.scr."
+      },
+      {
+        "where": "Host · cartão SD persistente",
+        "path": "board/raspios.qcow2",
+        "contains": "Disco com bootfs/rootfs do Linux convidado; permanece após desligar QEMU."
+      },
+      {
+        "where": "Contêiner QEMU · montagem do host",
+        "path": "/work/board/",
+        "contains": "Acesso ao mesmo disco e socket QMP do host. project/ e sensors/ são montados somente leitura."
+      },
+      {
+        "where": "Convidado Linux · programa principal",
+        "path": "/opt/cFS/build-rpi_linux/exe/cpu1/core-cpu1",
+        "contains": "Executável iniciado pelo serviço cfs.service."
+      },
+      {
+        "where": "Convidado Linux · módulos/tabelas/startup",
+        "path": "/opt/cFS/build-rpi_linux/exe/cpu1/cf/",
+        "contains": "sample_app.so, tmp105_lib.so, outros .so, tabelas .tbl e cfe_es_startup.scr."
+      },
+      {
+        "where": "Dentro do cFE · nome virtual",
+        "path": "/cf",
+        "contains": "Mapeia para ./cf, relativo ao WorkingDirectory acima; pertence à rootfs."
+      }
+    ],
+    "build_is_separate_from_boot": true,
+    "host_sources_mounted_in_guest": false,
+    "source_note": "O contêiner de compilação monta cFS em /cFS. O convidado recebe o pacote compilado por SSH; não há montagem direta de cFS/apps no Linux convidado."
+  },
+  "sensor_flow": [
+    {
+      "id": "python",
+      "title": "1. Definir o ambiente",
+      "explanation": "O usuário escolhe uma temperatura inicial e uma função do tempo. O Python calcula um valor físico em graus Celsius a cada passo.",
+      "refs": [
+        {
+          "path": "sensors/tmp105.py",
+          "line": 6,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/tmp105.py#L6"
+        },
+        {
+          "path": "sensors/tmp105.py",
+          "line": 17,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/tmp105.py#L17"
+        },
+        {
+          "path": "sensors/session.py",
+          "line": 242,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/session.py#L242"
+        }
+      ],
+      "place": "Host",
+      "inputs": [
+        "initial",
+        "amplitude",
+        "period",
+        "seconds"
+      ],
+      "output": "Temperatura em °C"
+    },
+    {
+      "id": "qmp",
+      "title": "2. Alterar o sensor virtual",
+      "explanation": "O runner converte a amostra para milésimos de grau e envia qom-set ao socket QMP. O modelo TMP105 recebe esse valor como estado do sensor.",
+      "refs": [
+        {
+          "path": "sensors/simulator.py",
+          "line": 75,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/simulator.py#L75"
+        },
+        {
+          "path": "sensors/simulator.py",
+          "line": 180,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/simulator.py#L180"
+        },
+        {
+          "path": "sensors/qmp.py",
+          "line": 12,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/qmp.py#L12"
+        }
+      ],
+      "place": "Host → QEMU",
+      "object_path": "/machine/peripheral/tmp105",
+      "property": "temperature",
+      "units": "m°C"
+    },
+    {
+      "id": "i2c",
+      "title": "3. O software pede uma leitura",
+      "explanation": "A aplicação solicita uma leitura. O controlador I²C emulado acessa o TMP105 no endereço 0x48, no barramento i2c-bus.1. O sensor devolve a temperatura conforme sua resolução.",
+      "refs": [
+        {
+          "path": "project/boards/raspi4b.json",
+          "line": 14,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/boards/raspi4b.json#L14"
+        },
+        {
+          "path": "project/config.json",
+          "line": 5,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/config.json#L5"
+        },
+        {
+          "path": "project/drivers/tmp105_lib/fsw/src/tmp105_lib.c",
+          "line": 24,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/tmp105_lib/fsw/src/tmp105_lib.c#L24"
+        }
+      ],
+      "place": "QEMU / placa virtual",
+      "request_direction": "app → bibliotecas → /dev/i2c-1 → controlador → sensor",
+      "data_direction": "sensor → controlador → Linux → bibliotecas → app"
+    },
+    {
+      "id": "linux",
+      "title": "4. Passar pela interface Linux",
+      "explanation": "A DTB identifica o controlador Broadcom. O driver de controlador i2c_bcm2835 e a interface i2c-dev permitem acessar o barramento por /dev/i2c-1. O backend prepara i2c-dev antes de executar a missão.",
+      "refs": [
+        {
+          "path": "sensors/runtime.py",
+          "line": 106,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/runtime.py#L106"
+        },
+        {
+          "path": "project/boards/raspi4b.json",
+          "line": 15,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/boards/raspi4b.json#L15"
+        }
+      ],
+      "place": "Linux convidado",
+      "driver": "i2c_bcm2835",
+      "character_device": "/dev/i2c-1",
+      "binary_evidence": "DTB compatible brcm,bcm2711-i2c / brcm,bcm2835-i2c e aliases correspondentes em /usr/lib/modules/*/modules.alias do disco local."
+    },
+    {
+      "id": "libraries",
+      "title": "5. Interpretar a leitura",
+      "explanation": "linux_i2c_lib abre o dispositivo e executa a transação I²C. tmp105_lib seleciona o registro de temperatura, confere o retorno e entrega um valor com sinal em milésimos de grau à aplicação.",
+      "refs": [
+        {
+          "path": "project/drivers/linux_i2c_lib/fsw/src/linux_i2c_lib.c",
+          "line": 22,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/linux_i2c_lib/fsw/src/linux_i2c_lib.c#L22"
+        },
+        {
+          "path": "project/drivers/tmp105_lib/fsw/src/tmp105_lib.c",
+          "line": 13,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/tmp105_lib/fsw/src/tmp105_lib.c#L13"
+        }
+      ],
+      "place": "Processo cFS no convidado"
+    },
+    {
+      "id": "app",
+      "title": "6. Transformar a medida em informação da missão",
+      "explanation": "Um componente de sensor vinculado à aplicação é chamado no wakeup. Ele atualiza valor, validade, status e contadores, então publica o resultado no Software Bus do cFS.",
+      "refs": [
+        {
+          "path": "project/appgen/render.py",
+          "line": 115,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/appgen/render.py#L115"
+        },
+        {
+          "path": "project/appgen/templates/sensor.c.in",
+          "line": 49,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/appgen/templates/sensor.c.in#L49"
+        }
+      ],
+      "place": "Aplicação cFS",
+      "prerequisite": "Criar/vincular um componente de sensor à aplicação, compilar e executar essa missão."
+    },
+    {
+      "id": "ui",
+      "title": "7. Mostrar o resultado ao usuário",
+      "explanation": "TO_LAB encaminha a telemetria da missão ao host. Ground Station decodifica os campos e o navegador atualiza a interface via HTTP. O painel Synthetic data acompanha o valor enviado pelo Python; Ground Station acompanha o valor publicado pela aplicação.",
+      "refs": [
+        {
+          "path": "ground_station/README.md",
+          "line": 119,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/ground_station/README.md#L119"
+        },
+        {
+          "path": "interface/static/app.js",
+          "line": 769,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/app.js#L769"
+        },
+        {
+          "path": "interface/static/simulation.js",
+          "line": 28,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/simulation.js#L28"
+        }
+      ],
+      "place": "cFS → host → navegador",
+      "transport": "UDP entre alvo e Ground Station; HTTP JSON entre backend e navegador"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "linux_i2c_lib",
+      "title": "Transporte I²C",
+      "explanation": "Biblioteca cFE que usa open, ioctl(I2C_RDWR) e close sobre /dev/i2c-*; suporta escrita/leitura combinadas e leitura de registro.",
+      "refs": [
+        {
+          "path": "project/drivers/linux_i2c_lib/fsw/src/linux_i2c_lib.c",
+          "line": 22,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/linux_i2c_lib/fsw/src/linux_i2c_lib.c#L22"
+        }
+      ],
+      "status": "Implementada e carregada na missão local"
+    },
+    {
+      "id": "tmp105_lib",
+      "title": "Temperatura TMP105",
+      "explanation": "Leitura do registro de temperatura e conversão para m°C com sinal; registra erro quando a transferência ou o formato recebido é inválido.",
+      "refs": [
+        {
+          "path": "project/drivers/tmp105_lib/fsw/src/tmp105_lib.c",
+          "line": 13,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/tmp105_lib/fsw/src/tmp105_lib.c#L13"
+        }
+      ],
+      "status": "Implementada e carregada; depende de linux_i2c_lib"
+    },
+    {
+      "id": "lsm303dlhc_mag_lib",
+      "title": "Magnetômetro LSM303DLHC",
+      "explanation": "Configura modo/ganho, espera dado pronto e lê os três eixos; converte o campo para milésimos de microtesla.",
+      "refs": [
+        {
+          "path": "project/drivers/lsm303dlhc_mag_lib/fsw/src/lsm303dlhc_mag_lib.c",
+          "line": 13,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/lsm303dlhc_mag_lib/fsw/src/lsm303dlhc_mag_lib.c#L13"
+        },
+        {
+          "path": "project/drivers/lsm303dlhc_mag_lib/fsw/src/lsm303dlhc_mag_lib.c",
+          "line": 35,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/lsm303dlhc_mag_lib/fsw/src/lsm303dlhc_mag_lib.c#L35"
+        }
+      ],
+      "status": "Implementada e carregada; componente magnético, não acelerômetro completo"
+    },
+    {
+      "id": "linux_uart_lib",
+      "title": "Transporte UART",
+      "explanation": "Biblioteca cFE com termios, leitura/escrita não bloqueantes e poll; a aplicação escolhe dispositivo e parâmetros. Carregar a biblioteca não configura pinos nem abre automaticamente uma porta.",
+      "refs": [
+        {
+          "path": "project/drivers/linux_uart_lib/README.md",
+          "line": 6,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/linux_uart_lib/README.md#L6"
+        },
+        {
+          "path": "project/drivers/linux_uart_lib/fsw/src/linux_uart_lib.c",
+          "line": 21,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/linux_uart_lib/fsw/src/linux_uart_lib.c#L21"
+        }
+      ],
+      "status": "Implementada no catálogo; ausente do startup atual",
+      "baud_rates": [
+        1200,
+        2400,
+        4800,
+        9600,
+        19200,
+        38400,
+        57600,
+        115200
+      ]
+    }
+  ],
+  "console_and_channels": {
+    "id": "console",
+    "title": "UART, I²C e os terminais têm funções diferentes",
+    "explanation": "A UART ttyAMA1 transporta o console de boot do Linux para o stdio/log do QEMU. Sensores TMP105 e magnetômetro usam I²C. O cFS escreve no journal do systemd, que o backend acompanha por SSH; o terminal de sinais acompanha o processo Python do host.",
+    "refs": [
+      {
+        "path": "scripts/emulator.sh",
+        "line": 33,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/scripts/emulator.sh#L33"
+      },
+      {
+        "path": "cfs.service",
+        "line": 9,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/cfs.service#L9"
+      },
+      {
+        "path": "hardware/manager.py",
+        "line": 870,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/hardware/manager.py#L870"
+      },
+      {
+        "path": "hardware/manager.py",
+        "line": 878,
+        "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/hardware/manager.py#L878"
+      }
+    ],
+    "paths": [
+      {
+        "name": "Boot Linux",
+        "flow": [
+          "Linux console ttyAMA1",
+          "serial emulada",
+          "QEMU stdio / logfile",
+          "logs/latest.log",
+          "terminal do boot na UI"
+        ]
+      },
+      {
+        "name": "Saída cFS",
+        "flow": [
+          "cFS stdout/stderr",
+          "systemd journal",
+          "SSH journalctl -u cfs.service",
+          "backend Python",
+          "terminal cFS na UI"
+        ]
+      },
+      {
+        "name": "Sensor",
+        "flow": [
+          "TMP105",
+          "I²C",
+          "/dev/i2c-1",
+          "bibliotecas C",
+          "app cFS",
+          "telemetria",
+          "Ground Station"
+        ]
+      },
+      {
+        "name": "Sinal enviado",
+        "flow": [
+          "Python no host",
+          "QMP",
+          "modelo QEMU",
+          "amostra do job no backend",
+          "Synthetic data na UI"
+        ]
+      }
+    ]
+  },
+  "ui_editing": [
+    {
+      "id": "hardware",
+      "title": "Hardware / Add sensor / configurações do sensor",
+      "explanation": "Escolhe modelo, ID, barramento e endereço; um sensor existente permite editar bus/endereço. Salvar atualiza project/config.json e regenera bindings dos leitores; a topologia nova passa a valer após reiniciar QEMU.",
+      "refs": [
+        {
+          "path": "interface/static/app.js",
+          "line": 327,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/app.js#L327"
+        },
+        {
+          "path": "interface/static/app.js",
+          "line": 393,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/app.js#L393"
+        },
+        {
+          "path": "interface/backend/hardware_settings.py",
+          "line": 21,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/backend/hardware_settings.py#L21"
+        }
+      ],
+      "files": [
+        "project/config.json",
+        "configurações geradas dos leitores de sensor em cFS/apps/<app>/"
+      ]
+    },
+    {
+      "id": "signals_widgets",
+      "title": "Synthetic data / Widgets",
+      "explanation": "Escolhe sensores ativos, intervalo, valor inicial e função. Sine expõe amplitude/período; Ramp expõe taxa; Python sample() e função custom abrem o código. A UI grava os mesmos arquivos Python usados pelo runner.",
+      "refs": [
+        {
+          "path": "interface/static/simulation.js",
+          "line": 9,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/simulation.js#L9"
+        },
+        {
+          "path": "sensors/session.py",
+          "line": 189,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/session.py#L189"
+        }
+      ],
+      "files": [
+        "sensors/signals.py: SESSION",
+        "sensors/<model>.py: SIGNALS e eventuais INSTANCES"
+      ]
+    },
+    {
+      "id": "signals_code",
+      "title": "Synthetic data / Code",
+      "explanation": "Edita sample(seconds, initial), funções próprias e configurações do modelo. Save grava o arquivo; Test code executa oito amostras sem enviar dados; Start envia os valores ao QEMU.",
+      "refs": [
+        {
+          "path": "interface/static/app.js",
+          "line": 144,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/app.js#L144"
+        },
+        {
+          "path": "interface/static/app.js",
+          "line": 185,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/app.js#L185"
+        },
+        {
+          "path": "interface/static/app.js",
+          "line": 198,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/app.js#L198"
+        }
+      ],
+      "files": [
+        "sensors/tmp105.py",
+        "sensors/lsm303dlhc_mag.py",
+        "sensors/signals.py"
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Architecture / Edit / New app e componentes",
+      "explanation": "Define prioridade, stack e frequências; liga um componente de sensor ao dispositivo configurado. As fontes ficam editáveis no host, e as mudanças de software passam por Build cFS e Run cFS.",
+      "refs": [
+        {
+          "path": "interface/README.md",
+          "line": 48,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/README.md#L48"
+        },
+        {
+          "path": "project/README.md",
+          "line": 60,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/README.md#L60"
+        },
+        {
+          "path": "project/appgen/README.md",
+          "line": 9,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/appgen/README.md#L9"
+        }
+      ],
+      "files": [
+        "project/apps/<app>.json",
+        "cFS/apps/<app>/",
+        "cFS/sample_defs/cpu1_cfe_es_startup.scr",
+        "cFS/sample_defs/generated/"
+      ]
+    }
+  ],
+  "tmp105_quantization": {
+    "source_url": "https://github.com/qemu/qemu/blob/v11.1.2/hw/sensor/tmp105.c",
+    "qemu_version": "11.1.2",
+    "repo_build_ref": {
+      "path": "Dockerfile",
+      "line": 72,
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/Dockerfile#L72"
+    },
+    "source_lines": {
+      "set_temperature": 117,
+      "temperature_register_read": 135,
+      "reset_config_zero": 288
+    },
+    "assumption": "Configuração padrão após reset; driver TMP105 local só lê temperatura e não muda a resolução. Outra aplicação pode reconfigurar o sensor.",
+    "public_explanation": "O sensor virtual entrega leituras em passos de 0,5 °C na configuração padrão. O valor enviado e o valor lido podem ser diferentes.",
+    "steps": [
+      {
+        "stage": "Python",
+        "rule": "milliC = round(celsius * 1000), com semântica round do Python: empates para inteiro par.",
+        "ref": {
+          "path": "sensors/simulator.py",
+          "line": 102,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/simulator.py#L102"
+        }
+      },
+      {
+        "stage": "QEMU",
+        "rule": "fixed = trunc_toward_zero(milliC * 256 / 1000); etapa inteira com resolução interna 1/256 °C."
+      },
+      {
+        "stage": "Leitura I²C padrão",
+        "rule": "driverC = floor(fixed / 128) * 0.5; equivalente à máscara do modelo na configuração padrão."
+      },
+      {
+        "stage": "Biblioteca C",
+        "rule": "tmp105_lib converte a leitura assinada para m°C; para passos de 0,5 °C, o resultado é um múltiplo exato de 500 m°C.",
+        "ref": {
+          "path": "project/drivers/tmp105_lib/fsw/src/tmp105_lib.c",
+          "line": 31,
+          "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/drivers/tmp105_lib/fsw/src/tmp105_lib.c#L31"
+        }
+      }
+    ],
+    "javascript_for_integer_qmp_input": "const fixed = Math.trunc(milliC * 256 / 1000); const driverC = Math.floor(fixed / 128) * 0.5;",
+    "warning": "Não substituir pela fórmula floor(T*2)/2: a conversão inteira anterior altera casos negativos próximos das fronteiras. Essa é uma reprodução derivada do código, não uma nova medição de runtime nesta pesquisa.",
+    "examples": [
+      {
+        "injected_millic": 23500,
+        "injected_c": 23.5,
+        "driver_c": 23.5
+      },
+      {
+        "injected_millic": 27216,
+        "injected_c": 27.216,
+        "driver_c": 27.0
+      },
+      {
+        "injected_millic": 27830,
+        "injected_c": 27.83,
+        "driver_c": 27.5
+      },
+      {
+        "injected_millic": -1,
+        "injected_c": -0.001,
+        "driver_c": 0.0
+      },
+      {
+        "injected_millic": -3,
+        "injected_c": -0.003,
+        "driver_c": 0.0
+      },
+      {
+        "injected_millic": -4,
+        "injected_c": -0.004,
+        "driver_c": -0.5
+      },
+      {
+        "injected_millic": -499,
+        "injected_c": -0.499,
+        "driver_c": -0.5
+      },
+      {
+        "injected_millic": -500,
+        "injected_c": -0.5,
+        "driver_c": -0.5
+      },
+      {
+        "injected_millic": -501,
+        "injected_c": -0.501,
+        "driver_c": -0.5
+      },
+      {
+        "injected_millic": -503,
+        "injected_c": -0.503,
+        "driver_c": -0.5
+      },
+      {
+        "injected_millic": -504,
+        "injected_c": -0.504,
+        "driver_c": -1.0
+      },
+      {
+        "injected_millic": -23501,
+        "injected_c": -23.501,
+        "driver_c": -23.5
+      },
+      {
+        "injected_millic": -23504,
+        "injected_c": -23.504,
+        "driver_c": -24.0
+      }
+    ]
+  },
+  "support_limits": [
+    "A configuração local contém dois sensores e apps:[]; bibliotecas de driver estão no startup, porém não há aplicação gerada lendo esses sensores nesta missão.",
+    "O percurso app→driver→sensor→telemetria existe no gerador e nos drivers. Sua execução requer vincular um leitor a uma aplicação; apenas adicionar um dispositivo não cria automaticamente esse leitor.",
+    "O catálogo de placa contém Raspberry Pi 4B/Raspberry Pi OS, TMP105 e magnetômetro LSM303DLHC. Linux UART existe como biblioteca, sem sensor UART ou topologia UART configurados nesta missão.",
+    "Os drivers CFE do projeto são bibliotecas de espaço de usuário; i2c-dev e i2c_bcm2835 pertencem ao kernel Linux da imagem.",
+    "Os modelos Python são funções de estímulo. O modelo de hardware QEMU é código C; a aba Code da UI não edita nem recompila esse modelo C.",
+    "Os fios do desenho 3D representam a conexão de barramento, sem afirmar pinagem física; board.js:304 diz isso explicitamente.",
+    "Nenhuma VM, serviço, compilação ou script da instalação foi executado nesta pesquisa. Leitura de disco/DTB foi feita offline, somente leitura.",
+    "As capacidades gerais do QEMU não equivalem às capacidades integradas pelo Flight Studio. Novo sensor requer catálogo, driver nativo, adapter e modelo QEMU correspondente."
+  ],
+  "dtb_observed": {
+    "i2c_node": {
+      "compatible": "brcm,bcm2711-i2c\u0000brcm,bcm2835-i2c",
+      "reg": "7e80400000001000",
+      "interrupts": "000000000000007500000004",
+      "clocks": "0000000800000014",
+      "#address-cells": "00000001",
+      "#size-cells": "",
+      "status": "okay",
+      "pinctrl-names": "default",
+      "pinctrl-0": "00000015",
+      "clock-frequency": "000186a0",
+      "phandle": "\u0000\u0000\u0000H"
+    },
+    "i2c1_alias": "/soc/i2c@7e804000"
+  },
+  "verification": {
+    "local_reference_paths_and_line_numbers_checked": true,
+    "original_git_status_unchanged": " M cFS",
+    "source_installation_executed": false,
+    "source_installation_modified": false,
+    "disk_mounted": false,
+    "disk_or_vm_started": false,
+    "disk_read_mode": "rb",
+    "official_qemu_source_checked": "v11.1.2/hw/sensor/tmp105.c"
+  }
+}

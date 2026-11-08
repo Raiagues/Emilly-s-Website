@@ -70,80 +70,8 @@ class Case:
         return f'<dialog class="photo-dialog" aria-label="{t("figure")}" data-photo-label="{t("figure")}" data-of-label="{t("of")}"><div class="photo-dialog-bar"><p id="photo-counter" role="status"></p><button class="photo-close" autofocus>{t("close")} ×</button></div><figure><img alt="" width="1280" height="720"><figcaption id="photo-caption"></figcaption></figure><div class="photo-controls"><button data-photo-prev aria-label="{t("previous")}">← {t("previous")}</button><button data-photo-next aria-label="{t("next")}">{t("next")} →</button></div></dialog>'
 
     def flight_page(self):
-        t=self.text
-        repo='https://github.com/Raiagues/cfs_emulator'
-        hero=self.drawings['flight_hero']({k:self.strings[k][self.lang] for k in ['web','backend','flight']} | {'commands':{'en':'COMMAND','pt':'COMANDO','fr':'COMMANDE','es':'COMANDO'}[self.lang], 'telemetry':{'en':'TELEMETRY','pt':'TELEMETRIA','fr':'TÉLÉMESURE','es':'TELEMETRÍA'}[self.lang]})
-        runtime=self.flight_screens()
-        first=1 if runtime else 0
-        views=[]
-        for code,label,detail,tech in [('web','web','web_detail','BROWSER / HTTP'),('backend','backend','backend_detail','PYTHON / API'),('flight','flight','flight_detail','cFS / UDP')]:
-            views.append((t(label),f'<div class="eng-component-detail" data-arch-detail="{code}"><span class="eng-component-symbol" aria-hidden="true">{self.component_icon(code)}</span><div><p class="eyebrow">{tech}</p>{self.paragraph(detail)}</div></div>'))
-        architecture=f'<div class="eng-architecture-route" aria-hidden="true"><span>WEB</span><i>HTTP / REST ⇄</i><span>PYTHON</span><i>UDP ⇄</i><span>cFS</span></div>'+self.select('architecture',views,'eng-component-selector')
-        original=self.figure('img/flight-studio/platform-architecture-original.png',t('original'),t('architecture'),1510,260)
-        architecture+=f'<details class="eng-original"><summary>{t("original")} · TCC</summary>{original}</details>'
-        chapters=self.chapter(1,'flight-screens','screens',runtime,'screens_body') if runtime else ''
-        chapters+=self.chapter(1+first,'architecture','architecture',architecture,'architecture_body')
-        # An annotated cFS stack follows the documented application/service/port layers.
-        stack=''.join(f'<div class="eng-layer eng-layer-{i}" data-stack-layer="{i}"><span>{label}</span><small>{sub}</small></div>' for i,(label,sub) in enumerate([('APPS','CI_LAB · TO_LAB · SCH_LAB'),('cFE','ES · SB · EVS · TBL · TIME'),('OSAL','API'),('PSP','LINUX / PLATFORM')]))
-        layers=self.select('layers',[(t(key),self.paragraph(key+'_detail')) for key in ['apps','cfe','osal','psp']],'eng-layer-selector')
-        layers=f'<div class="eng-layer-lab"><div class="eng-layer-stack" aria-hidden="true">{stack}<span class="eng-stack-base">HARDWARE / LINUX</span></div>{layers}</div>'
-        original=self.figure('img/flight-studio/cfs-layered-architecture.png',t('original')+' · NASA cFS',t('original_layers_caption'),1245,867)
-        layers+=f'<details class="eng-original"><summary>{t("original")} · NASA cFS</summary>{original}</details>'
-        chapters+=self.chapter(2+first,'cfs-layers','layers',layers,'layers_body')
-        steps=self.copy['FLIGHT_STEPS']
-        self.config['flightSteps']=[{'id':key,'title':title[self.lang],'body':body[self.lang]} for key,title,body in steps]
-        nodes=''.join(f'<a href="#message-step-{i}" data-step-select="{i}"><span class="eng-step-dot">{i+1:02}</span><strong>{label}</strong></a>' for i,(_,label,_) in enumerate([('','WEB',''),('','PYTHON',''),('','CI_LAB',''),('','SB → APP',''),('','TO_LAB',''),('','TELEMETRY','')]))
-        details=''.join(f'<div id="message-step-{i}" data-step-view="{i}"><span class="eng-step-big" aria-hidden="true">{i+1:02}</span><div><h3>{self.local(title)}</h3><p>{self.local(body)}</p></div></div>' for i,(_,title,body) in enumerate(steps))
-        journey=f'<div class="eng-message-lab" data-message-lab><div class="eng-message-top"><span class="mono">COMMAND → cFS → TELEMETRY</span><span class="eng-signal" aria-hidden="true"></span></div><nav class="eng-message-route" aria-label="{t("step")}">{nodes}</nav><div class="eng-step-views">{details}</div><div class="eng-player-controls" data-message-controls hidden><button type="button" data-message-prev aria-label="{t("previous")}">←</button><button type="button" data-message-play data-play-label="{t("play")}" data-pause-label="{t("pause")}">▶ {t("play")}</button><button type="button" data-message-next aria-label="{t("next")}">→</button><span data-message-count class="mono">1 / 6</span></div><p class="eng-disclosure">{t("journey_note")}</p></div>'
-        chapters+=self.chapter(3+first,'message-flow','journey',journey+self.packet_inspector(),'journey_body')
-        automation='<div class="eng-automation-grid">'+''.join(f'<article><div class="eng-workflow-art" aria-hidden="true">{self.automation_art(i)}</div><p class="eyebrow">0{i+1}</p><h3>{t(key)}</h3>{self.paragraph(key+"_body")}</article>' for i,key in enumerate(['create','discover','explain']))+'</div>'
-        chapters+=self.chapter(4+first,'automation','automation',automation,'automation_body')
-        chapters+=self.chapter(5+first,'virtual-sensors','sensors',self.sensor_lab(),'sensors_body')
-        labels={key:self.strings[key][self.lang] for key in ['objective','application','command','telemetry']}
-        mission=f'<div class="eng-mission-drawing" tabindex="0" role="group" aria-label="{t("mission")}">{self.drawings["mission_diagram"](labels)}</div><ol class="eng-mission-text">'+''.join(f'<li><span>0{i+1}</span>{t(key)}</li>' for i,key in enumerate(labels))+'</ol>'
-        chapters+=self.chapter(6+first,'mission-planning','mission',mission,'mission_body')
-        cards=[]
-        for kind,items in self.copy['VALIDATION'].items():
-            body='<div class="eng-criteria">'
-            for value,label,description in items:
-                val=self.local(self.copy['L'](value)) if ' | ' in value else E(value)
-                body+=f'<article><span class="eyebrow">{t("target")}</span><strong>{val}</strong><h4>{self.local(self.copy["L"](label))}</h4><p>{self.local(self.copy["L"](description))}</p></article>'
-            cards.append((t(kind),body+'</div>'))
-        chapters+=self.chapter(7+first,'validation','validation',self.select('validation',cards),'validation_body')
-        roadmap='<ol class="eng-roadmap">'+''.join(f'<li><span>{i+1:02}</span><h3>{t(key)}</h3><p>{t("documented" if i<3 else "implemented" if i==3 else "planned")}</p></li>' for i,key in enumerate(['research','analysis','design','implementation','evaluation']))+'</ol>'
-        chapters+=self.chapter(8+first,'development','roadmap',roadmap)
-        nav=[('architecture',t('design')),('cfs-layers','cFS'),('message-flow','CMD / TLM'),('automation',t('create')),('virtual-sensors',t('sensors_short')),('mission-planning',t('mission'))]
-        if runtime:nav.insert(0,('flight-screens',t('screens_short')))
-        nav.extend([('validation',t('evaluation')),('development',t('roadmap'))])
-        snapshot=json.loads((self.b['ROOT']/'content/flight-studio/runtime/evidence.json').read_text())
-        footer=self.paragraph('source_note')+f'<p class="mono">COMMIT {snapshot["commit"][:12]} · cFS / NATIVE / QEMU ARM64</p>'+self.source_link(repo,'GitHub · Flight Studio')
-        footer+=''.join(self.source_link(ref['url'],E(ref['path'])) for ref in snapshot['source_refs'] if ref.get('url') and ref['path'] in ['ground_station/catalog.py','interface/backend/architecture_details.py','interface/static/app.js'])
-        return self.shell(chapters,nav,hero,t('scope'),[('NASA cFS','CORE FLIGHT SYSTEM'),('Python + Web','UDP / HTTP'),('Linux','DESKTOP / RASPBERRY PI')],footer)
-
-    def sensor_lab(self):
-        import math
-        t=self.text
-        # Redraw the supplied sample() function; these are calculated values,
-        # distinct from the preserved QMP capture shown in the evidence card.
-        points=' '.join(f'{30+second*16:.1f},{135-65*math.sin(2*math.pi*second/30):.1f}' for second in [i/4 for i in range(121)])
-        source=json.loads((self.b['ROOT']/'content/flight-studio/runtime/temperature-source.json').read_text())
-        chart=f'''<div class="eng-signal-chart"><div class="eng-window-bar"><span>TMP105 · sample(t)</span><span>°C</span></div><svg viewBox="0 0 540 250" role="img" aria-label="{t('signal')}"><g stroke="#4E7F7B" stroke-width=".7" opacity=".5"><path d="M30 70H510M30 135H510M30 200H510M30 40V215M270 40V215M510 40V215"/></g><g fill="#D9E4DD" font-family="monospace" font-size="11"><text x="35" y="60">28.5</text><text x="35" y="125">23.5</text><text x="35" y="190">18.5</text><text x="30" y="238">0 s</text><text x="258" y="238">15 s</text><text x="484" y="238">30 s</text></g><polyline points="{points}" fill="none" stroke="#F2CBAE" stroke-width="3"/><path d="M110 40V215" stroke="#A9CBC5" stroke-dasharray="4 5" data-signal-guide/><circle cx="110" cy="78.7" r="7" fill="#D9694E" stroke="#FBF8F1" stroke-width="2" data-signal-dot/></svg><div class="eng-signal-values"><div><span>Python · °C</span><output data-signal-c>27.830</output></div><b aria-hidden="true">× 1000 →</b><div><span>QMP · m°C</span><output data-signal-mc>27830</output></div></div></div>'''
-        control=f'<div class="eng-signal-copy"><h3>{t("signal")}</h3>{self.paragraph("signal_body")}<div class="eng-signal-slider" data-signal-controls hidden><label for="sensor-seconds">{t("elapsed")} <output data-signal-seconds>5.00 s</output></label><input id="sensor-seconds" data-signal-time type="range" min="0" max="30" step=".25" value="5"></div><code>23.5 + 5 × sin(2π × t / 30)</code><p class="eng-disclosure">{t("signal_note")}</p></div>'
-        views=[(name,self.paragraph(key)) for name,key in [('Python','sensor_python'),('QMP / TMP105','sensor_qmp'),('I²C / Linux','sensor_i2c'),('cFS / Telemetry','sensor_cfs')]]
-        route='<div class="eng-sensor-route" aria-hidden="true">'+''.join(f'<div data-sensor-node="{i}"><span>0{i+1}</span><strong>{name}</strong><code>{detail}</code></div>' for i,(name,detail) in enumerate([('PYTHON','sample(t) · °C'),('QMP','qom-set · m°C'),('I²C','bus 1 · 0x48'),('cFS','APP → SB → TO')]))+'</div>'
-        body=f'<div class="eng-sensor-lab" data-sensor-lab><div class="eng-signal-lab">{chart}{control}</div>{route}{self.select("sensor-path",views,"eng-sensor-selector")}<aside class="eng-sensor-evidence"><span class="eng-qmp-ok">QMP · OK</span><div><h3>{t("observed")}</h3>{self.paragraph("sensor_evidence")}</div></aside><details class="eng-original"><summary>{t("code")} · sample()</summary>{self.code_block(source)}</details></div>'
-        return body
-
-    def component_icon(self, name):
-        paths={'web':'<rect x="5" y="9" width="54" height="38" rx="3"/><path d="M5 19h54M21 56h22M32 47v9M12 14h1m5 0h1m5 0h1"/>','backend':'<rect x="12" y="4" width="40" height="16" rx="3"/><rect x="12" y="25" width="40" height="16" rx="3"/><rect x="12" y="46" width="40" height="14" rx="3"/><path d="M20 12h1m7 0h16M20 33h1m7 0h16M20 53h1m7 0h16"/>','flight':'<rect x="18" y="18" width="28" height="28" rx="3"/><path d="M24 18V7m8 11V7m8 11V7M24 46v11m8-11v11m8-11v11M18 24H7m11 8H7m11 8H7m39-16h11M46 32h11M46 40h11"/>'}
-        return f'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">{paths[name]}</svg>'
-
-    def automation_art(self,i):
-        if i==0:
-            return '<svg viewBox="0 0 280 150"><g fill="#FBF8F1" stroke="#1F4A4F" stroke-width="1.5"><path d="M30 26h66l17 17v83H30z"/><path d="M96 26v19h17"/><path d="M165 36h65l17 17v83h-82z"/></g><g stroke="#4E7F7B" stroke-width="3"><path d="M44 63h44M44 77h30M44 91h39M180 72h45M180 86h27M180 100h37"/></g><path d="M119 80h36m-8-8 8 8-8 8" fill="none" stroke="#B04A32" stroke-width="2"/><text x="47" y="117" font-size="13" fill="#1F4A4F">APP</text></svg>'
-        if i==1:
-            return '<svg viewBox="0 0 280 150"><rect x="20" y="28" width="100" height="96" rx="5" fill="#1F4A4F"/><g stroke="#A9CBC5" stroke-width="3"><path d="M34 49h61M34 64h37M44 80h59M44 95h44"/></g><path d="M127 77h30m-7-7 7 7-7 7" fill="none" stroke="#B04A32" stroke-width="2"/><g fill="#FBF8F1" stroke="#1F4A4F"><rect x="168" y="28" width="92" height="25" rx="4"/><rect x="168" y="63" width="92" height="25" rx="4"/><rect x="168" y="98" width="92" height="25" rx="4"/></g><g font-size="12" fill="#1F4A4F"><text x="181" y="45">MSG ID</text><text x="181" y="80">CMD CODE</text><text x="181" y="115">PAYLOAD</text></g></svg>'
-        return '<svg viewBox="0 0 280 150"><rect x="20" y="30" width="116" height="90" rx="5" fill="#FBF8F1" stroke="#1F4A4F"/><path d="M36 54h80M36 72h55M36 90h67" stroke="#4E7F7B" stroke-width="3"/><circle cx="213" cy="73" r="35" fill="#F2CBAE" stroke="#1F4A4F"/><path d="M202 64a11 11 0 1 1 15 10c-5 3-5 4-5 8m0 9v1M145 75h25" fill="none" stroke="#1F4A4F" stroke-width="3" stroke-linecap="round"/></svg>'
+        renderer=runpy.run_path(str(self.b['ROOT']/'scripts/flight_studio_redesign.py'))
+        return renderer['render'](self)
 
     def code_block(self, source):
         import re
@@ -236,38 +164,6 @@ class Case:
         footer=f'<p>{t("source_note")}</p><p class="mono">COMMIT {evidence["commit"][:12]} · GCC 11.1.0 · QEMU CEP 6.2.50</p>{self.source_link(evidence["commit_url"],"GitHub · OS")}{self.source_link(evidence["provenance"]["license_url"],"GPL-2.0 / credits")}'
         return self.shell(chapters,nav,hero,t('runtime'),[('6',t('activities')),('32 KiB',t('stack')),('20 Hz',t('timer'))],footer)
 
-    def packet_inspector(self):
-        path=self.b['ROOT']/'content/flight-studio/runtime/evidence.json'
-        if not path.exists(): return ''
-        flow=json.loads(path.read_text())['command_flow']
-        t=self.text
-        fields=[('MID',0,2,'packet_mid'),('SEQ',2,2,'packet_seq'),('LENGTH',4,2,'packet_length'),('CC',6,1,'packet_cc'),('XOR',7,1,'packet_checksum')]
-        hk_fields=[('MID',0,2,'packet_mid'),('SEQ',2,2,'packet_seq'),('LENGTH',4,2,'packet_length'),('TIME',6,10,'packet_time'),('CommandCounter',16,1,'packet_counter'),('CommandErrorCounter',17,1,'packet_error')]
-        options=[('command','noop',flow['command_hex'],fields),('before','hk_before',flow['telemetry_hex_before'],hk_fields),('after','hk_after',flow['telemetry_hex_after'],hk_fields)]
-        self.config['packets']=[{'id':key,'label':self.strings[label][self.lang],'hex':raw,'fields':[{'name':name,'start':start,'size':size,'description':self.strings[description][self.lang]} for name,start,size,description in cols]} for key,label,raw,cols in options]
-        all_packets=''
-        for key,label,raw,cols in options:
-            cells=''.join(f'<span data-byte="{i//2}"><small>{i//2:02}</small><b>{raw[i:i+2].upper()}</b></span>' for i in range(0,len(raw),2))
-            fields_html=''.join(f'<button type="button" data-packet-field="{i}" aria-pressed="{str(i==0).lower()}">{name}</button>' for i,(name,_,_,_) in enumerate(cols))
-            descriptions=''.join(f'<div data-packet-explanation="{i}"><strong>{name}</strong><p>{t(description)}</p></div>' for i,(name,_,_,description) in enumerate(cols))
-            all_packets+=f'<section data-packet-view="{key}"><h4>{t(label)}</h4><div class="eng-packet-bytes">{cells}</div><div class="eng-choices" data-packet-fields hidden>{fields_html}</div><div class="eng-packet-explanations">{descriptions}</div></section>'
-        options_html=''.join(f'<button type="button" data-packet-kind="{key}" aria-pressed="{str(i==0).lower()}">{t(label)}</button>' for i,(key,label,_,_) in enumerate(options))
-        return f'<div class="eng-packet-inspector" data-packet-inspector><div class="eng-packet-heading"><p class="eyebrow">CCSDS / CFE · {t("replay")}</p><h3>{t("packet_title")}</h3><p>{t("packet_body")}</p></div><div class="eng-choices" data-packet-kinds hidden>{options_html}</div>{all_packets}</div>'
-
-    def flight_screens(self):
-        # The runtime capture is populated after launching the user's local app.
-        path=self.b['ROOT']/'content/flight-studio/runtime/evidence.json'
-        if not path.exists():return ''
-        data=json.loads(path.read_text())
-        locale_path=path.with_name('locales.json')
-        locales=json.loads(locale_path.read_text()) if locale_path.exists() else {}
-        items=[]
-        for screen in data.get('screenshots',[]):
-            translation=locales.get(Path(screen['file']).stem,{})
-            title=self.local(translation.get('title',screen.get('title',screen.get('label','Flight Studio'))))
-            caption=self.local(translation.get('caption',screen.get('caption',screen.get('description',title))))
-            items.append((title,self.figure(screen['file'],title,caption,screen.get('width',1440),screen.get('height',1000))))
-        return self.select('screens',items,'eng-screen-gallery') if items else ''
 
 
 def render(b, project, lang):

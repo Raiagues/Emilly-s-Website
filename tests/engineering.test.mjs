@@ -71,72 +71,105 @@ test('both engineering pages fit four languages and all mobile/desktop widths',a
     }
     // Check alternate content, where long labels, code and arrays can overflow.
     await page.setViewportSize({width:320,height:900});
-    const groups=slug==='nasa-cfs-platform'?['screens','architecture','layers','sensor-path']:['kernel-activities','memory','states'];
+    const groups=slug==='nasa-cfs-platform'?[]:['kernel-activities','memory','states'];
     for(const group of groups) for(const button of await tabs(page,group).all()) {
       await button.click();
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${slug} ${lang} ${group} ${await button.textContent()}`);
+    }
+    if(slug==='nasa-cfs-platform') for(const button of await page.locator('[data-fs-node],[data-fs-part],[data-fs-driver]').all()) {
+      await button.click();
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${slug} ${lang}: ${await button.textContent()}`);
     }
     assert.deepEqual(errors,[]);await page.close();
   }
 });
 
-test('Flight Studio shows all twelve real screens with keyboard tabs and photo zoom',async()=>{
-  const {page,errors}=await visit('nasa-cfs-platform');
-  const buttons=tabs(page,'screens');await expect(buttons).toHaveCount(12);
-  for(let i=0;i<flight.screenshots.length;i++){
-    await buttons.nth(i).click();
-    const img=page.locator('#screens-view-'+i+' img');
-    await img.evaluate(img=>img.decode());
-    assert.equal(await img.evaluate(img=>img.naturalWidth),1728);
-    assert.ok((await img.getAttribute('src')).endsWith(flight.screenshots[i].file));
-  }
-  await buttons.last().focus();await page.keyboard.press('Home');
-  await expect(buttons.first()).toBeFocused();
-  await page.keyboard.press('ArrowRight');await expect(buttons.nth(1)).toHaveAttribute('aria-selected','true');
-  const link=page.locator('#screens-view-1 [data-gallery]');await link.click();
-  await expect(page.locator('.photo-dialog')).toBeVisible();
-  await expect(page.locator('.photo-dialog img')).toHaveAttribute('src',/native-cfs-operational.png$/);
-  await page.keyboard.press('Escape');await expect(link).toBeFocused();
+test('Flight Studio edits the synthetic signal and follows a sample through the infrastructure',async()=>{
+  const {page,errors}=await visit('nasa-cfs-platform');await page.clock.install();
+  await expect(page.locator('.eng-packet-inspector,.eng-screen-gallery')).toHaveCount(0);
+  await expect(page.locator('[data-fs-node]')).toHaveCount(8);
+  await expect(page.locator('[data-fs-path]')).toHaveCount(7);
+  await expect(page.locator('[data-fs-source-value]')).toHaveText('27.830 °C');
+  await expect(page.locator('[data-fs-read-value]')).toHaveText('27.5 °C');
+  await page.locator('[data-fs-param="initial"]').fill('24');
+  await page.locator('[data-fs-param="amplitude"]').fill('8');
+  await page.locator('[data-fs-param="time"]').fill('7.5');
+  await expect(page.locator('[data-fs-source-value]')).toHaveText('32.000 °C');
+  await page.locator('[data-fs-param="period"]').fill('60');
+  await expect(page.locator('[data-fs-source-value]')).toHaveText('29.657 °C');
+  await expect(page.locator('[data-fs-read-value]')).toHaveText('29.5 °C');
+  await expect(page.locator('.fs-function')).toContainText('seconds / 60');
+  await page.locator('[data-fs-param="mode"]').selectOption('constant');
+  await expect(page.locator('[data-fs-source-value]')).toHaveText('24.000 °C');
+  await expect(page.locator('[data-fs-param="amplitude"]')).toBeDisabled();
+  await page.locator('[data-fs-param="mode"]').selectOption('sine');
+  await page.locator('[data-fs-follow]').click();await page.clock.fastForward(1200);
+  await expect(page.locator('[data-fs-node="2"]')).toHaveAttribute('aria-pressed','true');
+  await page.locator('[data-fs-follow]').click();await page.clock.fastForward(4000);
+  await expect(page.locator('[data-fs-node="2"]')).toHaveAttribute('aria-pressed','true');
+  await page.locator('[data-fs-next]').click();await expect(page.locator('#fs-explain-3')).toBeVisible();
+  await page.locator('[data-fs-node="5"]').click();await expect(page.locator('#fs-explain-5')).toContainText('thermal_app');
+  await page.locator('[data-fs-reset]').click();await expect(page.locator('#fs-explain-0')).toBeVisible();
   assert.deepEqual(errors,[]);await page.close();
 });
 
-test('command replay and packet inspector connect NOOP to the observed counter change',async()=>{
+test('board controls change the diagram and generated QEMU devices without contacting a backend',async()=>{
   const {page,errors}=await visit('nasa-cfs-platform');
-  await page.clock.install();
-  await expect(page.locator('[data-message-count]')).toHaveText('1 / 6');
-  await page.locator('[data-message-play]').click();await page.clock.fastForward(2300);
-  await expect(page.locator('[data-message-count]')).toHaveText('2 / 6');
-  await page.locator('[data-message-play]').click();await page.clock.fastForward(7000);
-  await expect(page.locator('[data-message-count]')).toHaveText('2 / 6');
-  await page.locator('[data-step-select="5"]').click();
-  await expect(page.locator('[data-step-view="5"]')).toContainText('CommandCounter');
-  const command=page.locator('[data-packet-view="command"]');
-  const bytes=await command.locator('[data-byte] b').allTextContents();
-  assert.equal(bytes.join('').toLowerCase(),flight.command_flow.command_hex);
-  assert.equal(bytes.reduce((a,v)=>a^parseInt(v,16),0),255);
-  await command.locator('[data-packet-field="4"]').click();
-  await expect(command.locator('.is-selected b')).toHaveText('A4');
-  for(const [id,value] of [['before','00'],['after','01']]) {
-    await page.locator(`[data-packet-kind="${id}"]`).click();
-    const packet=page.locator(`[data-packet-view="${id}"]`);
-    await packet.locator('[data-packet-field="4"]').click();
-    await expect(packet.locator('.is-selected')).toHaveCount(1);
-    await expect(packet.locator('.is-selected b')).toHaveText(value);
-    await expect(packet.locator('[data-byte="17"] b')).toHaveText('00');
-  }
+  const apiRequests=[];page.on('request',request=>{if(new URL(request.url()).pathname.includes('/api/'))apiRequests.push(request.url());});
+  await page.locator('[data-fs-address]').selectOption('0x49');
+  await expect(page.locator('[data-board-address]')).toHaveText('0x49');
+  await expect(page.locator('[data-fs-qemu-args]')).toContainText('address=0x49');
+  await expect(page.locator('[data-fs-node="2"] strong')).toContainText('0x49');
+  await page.locator('[data-fs-device="tmp105"]').uncheck();
+  await expect(page.locator('[data-fs-follow]')).toBeDisabled();
+  await expect(page.locator('[data-fs-read-value]')).toHaveText('—');
+  await expect(page.locator('[data-fs-qemu-args]')).not.toContainText('-device tmp105');
+  await expect(page.locator('[data-board-devicegroup="sensor"]')).toHaveClass(/is-off/);
+  await page.locator('[data-fs-device="mag"]').uncheck();
+  await expect(page.locator('[data-fs-qemu-args]')).toHaveText('-M raspi4b');
+  await page.locator('[data-fs-device="tmp105"]').check();
+  await expect(page.locator('[data-fs-follow]')).toBeEnabled();
+  await expect(page.locator('[data-fs-read-value]')).toHaveText('27.5 °C');
+  assert.deepEqual(apiRequests,[]);assert.deepEqual(errors,[]);await page.close();
+});
+
+test('the animated sample visibly travels with its value and stops when paused',async()=>{
+  const {page,errors}=await visit('nasa-cfs-platform','pt',{reducedMotion:'no-preference'});
+  await page.clock.install({time:new Date('2026-11-07T12:00:00Z')});
+  await page.clock.pauseAt(new Date('2026-11-07T12:00:01Z'));
+  const sample=page.locator('[data-fs-traveller]');
+  await page.locator('[data-fs-follow]').click();await page.clock.runFor(300);
+  await expect(sample).not.toHaveAttribute('hidden');
+  await expect(sample.locator('text')).toHaveText('27.830 °C');
+  const firstPosition=await sample.getAttribute('transform');
+  await page.clock.runFor(200);
+  assert.notEqual(await sample.getAttribute('transform'),firstPosition);
+  await page.locator('[data-fs-follow]').click();
+  await expect(sample).toHaveAttribute('hidden','');
+  const pausedPosition=await sample.getAttribute('transform');
+  await page.clock.runFor(4000);
+  assert.equal(await sample.getAttribute('transform'),pausedPosition);
+  await expect(page.locator('[data-fs-node="0"]')).toHaveAttribute('aria-pressed','true');
+  await page.locator('[data-fs-node="3"]').click();
+  await page.locator('[data-fs-follow]').click();await page.clock.runFor(300);
+  await expect(sample.locator('text')).toHaveText('27.5 °C');
   assert.deepEqual(errors,[]);await page.close();
 });
 
-test('sensor explorer evaluates the source waveform and distinguishes QMP injection from app reading',async()=>{
+test('storage and driver diagrams explain application placement and separate I²C, UART and telemetry',async()=>{
   const {page,errors}=await visit('nasa-cfs-platform');
-  for(const [time,celsius,millic] of [[0,'23.500','23500'],[7.5,'28.500','28500'],[22.5,'18.500','18500'],[30,'23.500','23500']]) {
-    await page.locator('[data-signal-time]').fill(String(time));
-    await expect(page.locator('[data-signal-c]')).toHaveText(celsius);
-    await expect(page.locator('[data-signal-mc]')).toHaveText(millic);
+  for(const [part,text] of [[0,'/boot/firmware'],[1,'root=/dev/mmcblk1p2'],[2,'ARINC 653']]) {
+    await page.locator(`[data-fs-part="${part}"]`).click();
+    await expect(page.locator(`[data-fs-part-detail="${part}"]`)).toContainText(text);
+    await expect(page.locator(`[data-storage-region="${part}"]`)).toHaveClass(/is-selected/);
   }
-  await tabs(page,'sensor-path').last().click();
-  await expect(page.locator('#sensor-path-view-3')).toContainText('não tinha uma app de leitura');
-  await expect(page.locator('.eng-sensor-evidence')).toContainText('27830');
+  await expect(page.locator('.fs-mount-map')).toContainText('/opt/cFS/build-rpi_linux/exe/cpu1/cf/');
+  await page.locator('[data-fs-driver="1"]').focus();await page.keyboard.press('Enter');
+  await expect(page.locator('#fs-driver-1')).toBeVisible();
+  await expect(page.locator('#fs-driver-1')).toContainText('ttyAMA1');
+  await expect(page.locator('.fs-channel-note')).toContainText('journal');
+  await page.locator('[data-fs-driver="0"]').click();
+  await expect(page.locator('#fs-driver-0')).toContainText('I2C_RDWR');
   assert.deepEqual(errors,[]);await page.close();
 });
 
@@ -193,7 +226,7 @@ test('memory explorer computes valid addresses and draws the repository font byt
 });
 
 test('engineering case studies remain complete and images link directly without JavaScript',async()=>{
-  for(const [slug,count] of [['nasa-cfs-platform',14],['operating-system-kernel',32]]) {
+  for(const [slug,count] of [['nasa-cfs-platform',0],['operating-system-kernel',32]]) {
     const {page}=await visit(slug,'pt',{javaScriptEnabled:false,viewport:{width:390,height:844}});
     await expect(page.locator('[data-gallery]')).toHaveCount(count);
     await expect(page.locator('[data-choices]:visible')).toHaveCount(0);
@@ -203,8 +236,8 @@ test('engineering case studies remain complete and images link directly without 
       assert.ok(await img.evaluate(img=>img.naturalWidth>0));
     }
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-    const link=page.locator('[data-gallery]').first();
-    assert.equal((await page.request.get(new URL(await link.getAttribute('href'),page.url()).href)).status(),200);
+    if(count){const link=page.locator('[data-gallery]').first();assert.equal((await page.request.get(new URL(await link.getAttribute('href'),page.url()).href)).status(),200);}
+    else {await expect(page.locator('[data-fs-explain]:visible')).toHaveCount(8);await expect(page.locator('[data-fs-part-detail]:visible')).toHaveCount(3);await expect(page.locator('[data-fs-driver-detail]:visible')).toHaveCount(2);await expect(page.locator('[data-fs-controls]:visible')).toHaveCount(0);}
     await page.close();
   }
 });
@@ -222,7 +255,7 @@ test('engineering pages and alternate interactive states pass automated WCAG A/A
       if(slug==='operating-system-kernel') {
         await tabs(page,'kernel-activities').last().click();await tabs(page,'memory').last().click();
       } else {
-        await tabs(page,'screens').last().click();await page.locator('[data-packet-kind="after"]').click();
+        await page.locator('[data-fs-part="2"]').click();await page.locator('[data-fs-driver="1"]').click();await page.locator('[data-fs-node="7"]').click();
       }
       await check('alternate mobile');
     }
