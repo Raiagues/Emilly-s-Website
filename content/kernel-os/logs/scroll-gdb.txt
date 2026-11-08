@@ -1,0 +1,19 @@
+entry () at src/crt0.S:6
+6	    csrw mie, zero
+Temporary breakpoint 1 at 0x2060: file src/main.c, line 15.
+
+Temporary breakpoint 1, kernel_start () at src/main.c:15
+15	        printf("line %02u\n", i);
+Temporary breakpoint 2 at 0x2060: file src/main.c, line 15.
+
+Temporary breakpoint 2, kernel_start () at src/main.c:15
+15	        printf("line %02u\n", i);
+Temporary breakpoint 3 at 0x2060: file src/main.c, line 15.
+
+Temporary breakpoint 3, kernel_start () at src/main.c:15
+15	        printf("line %02u\n", i);
+Temporary breakpoint 4 at 0x2078: file src/cpu.h, line 7.
+
+Temporary breakpoint 4, hlt () at src/cpu.h:7
+7	    __asm__ volatile("wfi" ::: "memory");
+[Inferior 1 (process 1) killed]

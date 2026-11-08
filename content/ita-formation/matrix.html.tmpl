@@ -1,0 +1,26 @@
+
+<div class="fm-s25"><span class="fm-s26">03 /</span><h2 class="fm-s27" id="matrix-title">{{text.t051}}</h2><span class="fm-s67">{{text.t052}}</span></div>
+<div class="fm-s68">
+<div class="fm-s29">
+<p class="fm-s30">{{text.t053}}</p>
+<p class="fm-s30">{{text.t054}}</p>
+<div class="fm-s69"><div aria-label="{{text.t134}}" class="fm-s33" role="group"><sc-for as="o" list="{{dynBtns}}"><button aria-pressed="{{o.pressed}}" class="seg tog fm-s49" data-control="{{o.key}}" data-value="{{o.value}}" style="background: {{o.bg}};color: {{o.fg}}" type="button">{{o.label}}</button></sc-for></div></div>
+</div>
+<div class="fm-s70">
+<div class="paper fm-s71">
+<div class="fm-s72"><span class="fm-s73">{{text.t055}}</span><span class="fm-s15">{{matStats}}</span></div>
+<div class="mgrid fm-s74" style="grid-template-columns: {{gridCols}}">
+<span></span><sc-for as="h" list="{{colHeads}}"><span class="fm-s75">{{h.t}}</span></sc-for>
+<sc-for as="row" list="{{mRows}}"><span class="fm-s76">{{row.h}}</span><sc-for as="c" list="{{row.cells}}"><button aria-label="{{c.aria}}" aria-pressed="{{c.pressed}}" class="mcell fm-s77" data-control="{{c.key}}" data-value="{{c.value}}" style="border: 1px solid {{c.bd}};background: {{c.bg}};color: {{c.fg}}" tabindex="{{c.tab}}" type="button">{{c.t}}</button></sc-for></sc-for>
+</div>
+<div class="fm-s78"><span class="fm-s57"><span class="fm-s79"></span>{{text.t056}}</span><span class="fm-s57"><span class="fm-s80"></span>{{text.t057}}</span><span class="fm-s57"><span class="fm-s81"></span>{{text.t058}}</span></div>
+</div>
+<div class="night fm-s82">
+<span class="fm-s83">{{text.t059}}</span>
+<span class="fm-s84">{{cellInfo.title}}</span>
+<span class="fm-s85">{{text.t060}}</span>
+<div class="fm-s86"><span class="fm-s87">{{text.t061}}</span><span class="fm-s88">{{cellInfo.val}}</span></div>
+<span class="fm-s89">{{cellInfo.note}}</span>
+</div>
+</div>
+</div>

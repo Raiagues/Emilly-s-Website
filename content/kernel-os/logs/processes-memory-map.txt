@@ -1,0 +1,25 @@
+address-space: memory
+  0000000000000000-ffffffffffffffff (prio 0, i/o): system
+    0000000000001000-0000000002000fff (prio 0, ram): riscv.cep.ram
+    0000000002000000-000000000200ffff (prio 0, i/o): riscv.cep.clint
+    000000000c000000-000000000fffffff (prio 0, i/o): riscv.sifive.plic
+    0000000010000000-0000000010000fff (prio 0, i/o): riscv.sifive.test
+    0000000010013000-000000001001301f (prio 0, i/o): riscv.sifive.uart
+    0000000030000000-000000003000001f (prio 0, i/o): riscv_cep_periph
+    0000000070000000-0000000070000007 (prio 0, i/o): riscv_cep_fb_ctrl
+    0000000080000000-00000000807e8fff (prio 0, ram): riscv_cep_fb_vram
+
+address-space: I/O
+  0000000000000000-000000000000ffff (prio 0, i/o): io
+
+address-space: cpu-memory-0
+  0000000000000000-ffffffffffffffff (prio 0, i/o): system
+    0000000000001000-0000000002000fff (prio 0, ram): riscv.cep.ram
+    0000000002000000-000000000200ffff (prio 0, i/o): riscv.cep.clint
+    000000000c000000-000000000fffffff (prio 0, i/o): riscv.sifive.plic
+    0000000010000000-0000000010000fff (prio 0, i/o): riscv.sifive.test
+    0000000010013000-000000001001301f (prio 0, i/o): riscv.sifive.uart
+    0000000030000000-000000003000001f (prio 0, i/o): riscv_cep_periph
+    0000000070000000-0000000070000007 (prio 0, i/o): riscv_cep_fb_ctrl
+    0000000080000000-00000000807e8fff (prio 0, ram): riscv_cep_fb_vram
+

@@ -72,7 +72,7 @@ test('directory shows every project and filters, search and reset compose correc
   await page.locator('#reset-filters').click();
   await expect(visible).toHaveCount(22);
   assert.equal(new URL(page.url()).search,'');
-  await page.locator('#project-search').fill('STM32');
+  await page.locator('#project-search').fill('NASA cFS');
   await expect(visible).toHaveCount(1);
   assert.deepEqual(errors,[]);
   await page.close();
@@ -106,7 +106,7 @@ test('language switching preserves the case study and section links point to ded
     await chooseLanguage(page, lang);
     await expect(page.locator('html')).toHaveAttribute('lang',lang);
     await expect(page.locator('h1')).toHaveText(title);
-    assert.ok(page.url().endsWith('pages/projects/project_9.html'));
+    assert.ok(page.url().endsWith('pages/projects/cubesat-embedded-software.html'));
   }
   await page.goto(base+'recognition.html');
   await chooseLanguage(page, 'pt');
@@ -207,7 +207,7 @@ test('all 112 case studies load, show results and fit mobile under a repository 
   const {page,errors}=await visit();
   for(const lang of ['','pt/','fr/','es/']) {
     for(const kind of ['projects','experience']) {
-      const names=(await readdir(`dist/${lang}pages/${kind}`)).filter(x=>x.endsWith('.html')&&!x.includes('exemple'));
+      const names=(await readdir(`dist/${lang}pages/${kind}`)).filter(x=>x.endsWith('.html')&&!x.includes('exemple')&&!/^project_\d+\.html$/.test(x)&&x!=='flight-platform.html');
       for(const name of names) {
         const response=await page.goto(`${base}${lang}pages/${kind}/${name}`);
         assert.equal(response.status(),200,name);
@@ -218,7 +218,7 @@ test('all 112 case studies load, show results and fit mobile under a repository 
           await expect(page.locator('.cern-report #documents a')).toHaveCount(2);
         } else {
           await expect(page.locator('#results')).toBeVisible();
-          await expect(page.locator('.damas-pass,.wingbox-pass,.case-boarding')).toHaveCount(1);
+          await expect(page.locator('.damas-pass,.wingbox-pass,.formation-pass,.case-boarding')).toHaveCount(1);
           await expect(page.locator('.flight-stop')).toHaveCount(kind==='projects'?22:6);
           await expect(page.locator('.flight-stop[aria-current=page]')).toHaveCount(1);
         }
@@ -818,7 +818,7 @@ test('case flight paths preview every chronological stop with keyboard and link 
     if (expected) await expect(next).toHaveAttribute('href',expected);
     await stops.first().focus();
     await page.keyboard.press('Enter');
-    await expect(page.locator('.damas-pass,.wingbox-pass,.case-boarding')).toHaveCount(1);
+    await expect(page.locator('.damas-pass,.wingbox-pass,.formation-pass,.case-boarding')).toHaveCount(1);
     await page.close();
   }
 });
@@ -1023,7 +1023,7 @@ test('postcard rack sorts, keeps a fixed header and previews stories on hover an
 
 test('home projects are whole-card links and the on-air indicator respects reduced motion', async () => {
   const {page}=await visit('pt/',{viewport:{width:1440,height:900},reducedMotion:'no-preference'});
-  await expect(page.locator('.current-panel')).toHaveAttribute('href','pages/projects/flight-platform.html');
+  await expect(page.locator('.current-panel')).toHaveAttribute('href','pages/projects/nasa-cfs-platform.html');
   await expect(page.locator('.current-panel .btn,.current-panel button,.project-grid .more')).toHaveCount(0);
   await expect(page.locator('#current-work .section-heading a')).toContainText('22');
   assert.ok(await page.locator('.current-panel .live-dot').evaluate(el=>el.getAnimations({subtree:true}).length)>0);
@@ -1216,5 +1216,142 @@ test('CERN rotation resumes after tapping the control on a touch screen', async 
   await button.tap();assert.equal(await state(),'running');
   await button.focus();await page.keyboard.press('Space');assert.equal(await state(),'paused');
   await page.keyboard.press('Space');assert.equal(await state(),'running');
+  await page.close();
+});
+
+test('descriptive project URLs redirect all legacy pages while preserving language, query and section', async () => {
+  const {page,errors}=await visit();
+  const sitemap=await readFile('dist/sitemap.xml','utf8');
+  for (const prefix of ['', 'pt/', 'fr/', 'es/']) {
+    const files=await readdir(`dist/${prefix}pages/projects`);
+    const aliases=files.filter(file=>/^project_\d+\.html$/.test(file)||file==='flight-platform.html');
+    assert.equal(aliases.length,19);
+    for (const file of aliases) {
+      const source=await readFile(`dist/${prefix}pages/projects/${file}`,'utf8');
+      const slug=source.match(/data-redirect="([a-z0-9-]+\.html)"/)?.[1];
+      assert.ok(slug, file);
+      assert.ok(!sitemap.includes(`/${prefix}pages/projects/${file}</loc>`));
+      await page.goto(`${base}${prefix}pages/projects/${file}?area=hardware&q=RISC-V#results`);
+      await expect(page).toHaveURL(`${base}${prefix}pages/projects/${slug}?area=hardware&q=RISC-V#results`);
+      await expect(page.locator('[rel=canonical]')).toHaveAttribute('href',`https://raiagues.github.io/Emilly-s-Website/${prefix}pages/projects/${slug}`);
+      await expect(page.locator('#results')).toBeVisible();
+    }
+  }
+  assert.deepEqual(errors,[]);
+  await page.close();
+  const fallback=await visit('pt/pages/projects/project_2.html',{javaScriptEnabled:false});
+  await expect(fallback.page).toHaveURL(base+'pt/pages/projects/riscv-128bit-validation.html');
+  await expect(fallback.page.locator('.project-report')).toBeVisible();
+  await fallback.page.close();
+});
+
+test('NASA cFS, kernel, CubeSat and RISC-V are featured consistently in every language', async () => {
+  const {page}=await visit();
+  const ids=['flight-platform','project_1','project_9','project_2'];
+  for (const prefix of ['', 'pt/', 'fr/', 'es/']) {
+    await page.goto(base+prefix);
+    await expect(page.locator('.current-panel')).toHaveAttribute('href','pages/projects/nasa-cfs-platform.html');
+    await expect(page.locator('.current-panel')).toContainText('NASA cFS');
+    assert.deepEqual(await page.locator('[data-featured-project]').evaluateAll(nodes=>nodes.map(el=>el.dataset.featuredProject)),ids.slice(1));
+    await page.goto(base+prefix+'projects.html');
+    assert.deepEqual(await page.locator('[data-project]').evaluateAll(nodes=>nodes.slice(0,4).map(el=>el.id)),ids);
+    await expect(page.locator('.featured-label')).toHaveCount(4);
+    await page.locator('#project-search').fill('CVA6');
+    await expect(page.locator('[data-project]:visible')).toHaveCount(1);
+    await expect(page.locator('[data-project]:visible a')).toHaveAttribute('href','pages/projects/riscv-128bit-validation.html');
+    await page.locator('[data-project]:visible a').click();
+    await page.locator('[data-back-results]').first().click();
+    await expect(page.locator('#project-search')).toHaveValue('CVA6');
+  }
+  await page.close();
+});
+
+test('report-based projects keep original figures, accessible results and responsive layouts in four languages', async () => {
+  const {createHash}=await import('node:crypto');
+  const assets=JSON.parse(await readFile('content/project-reports/assets.json','utf8'));
+  for (const asset of assets) {
+    assert.match(asset.file,/^img\/projects\/[a-z0-9-]+\/[a-z0-9-]+\.(png|jpeg)$/);
+    assert.equal(createHash('sha256').update(await readFile('dist/'+asset.file)).digest('hex'),asset.sha256);
+  }
+  const {page,errors}=await visit();
+  for (const prefix of ['', 'pt/', 'fr/', 'es/']) {
+    for (const [slug,sections,figures] of [['riscv-128bit-validation',6,14],['autonomous-vehicle-control',3,9],['memory-fault-injection',3,7]]) {
+      await page.goto(`${base}${prefix}pages/projects/${slug}.html`);
+      await expect(page.locator('.report-section')).toHaveCount(sections);
+      await expect(page.locator('.report-figure')).toHaveCount(figures);
+      await page.locator('.report-figure img').evaluateAll(images=>images.forEach(img=>{img.loading='eager';}));
+      for (const img of await page.locator('.report-figure img').all()) {
+        await img.evaluate(el=>el.decode());
+        assert.ok(await img.evaluate(el=>el.naturalWidth>0));
+        assert.ok((await img.getAttribute('alt')).length>20);
+      }
+      for (const width of [320,390,768,1440]) {
+        await page.setViewportSize({width,height:900});
+        assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,`${prefix}${slug} overflows at ${width}`);
+      }
+      if (slug==='riscv-128bit-validation') {
+        await page.locator('.report-table summary').click();
+        await expect(page.locator('.report-table tbody tr').last()).toHaveText('128 bits242246');
+        await expect(page.locator('#test-automation')).toContainText('ADD');
+      }
+      if (prefix==='pt/') {
+        const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+        assert.deepEqual(result.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[],slug);
+      }
+    }
+  }
+  assert.deepEqual(errors,[]);
+  await page.close();
+  const fallback=await visit('pt/pages/projects/riscv-128bit-validation.html',{javaScriptEnabled:false});
+  await fallback.page.locator('.report-contents a[href="#memory-debugging"]').click();
+  await expect(fallback.page.locator('#memory-debugging')).toBeInViewport();
+  await expect(fallback.page.locator('#instruction-formats [data-report-panel]:visible')).toHaveCount(6);
+  const imageLink=fallback.page.locator('#memory-debugging .report-figure a[href$="load-unit-offset-fix.png"]');
+  const target=await imageLink.getAttribute('href');
+  await imageLink.click();
+  assert.ok(fallback.page.url().endsWith('/img/projects/riscv-128bit/load-unit-offset-fix.png'),target);
+  await fallback.page.close();
+});
+
+
+test('original project diagrams switch with keyboard and open in the accessible figure viewer', async () => {
+  const {page,errors}=await visit('pt/pages/projects/riscv-128bit-validation.html',{viewport:{width:1440,height:1000}});
+  for (const [slug,section,count] of [['riscv-128bit-validation','instruction-formats',6],['autonomous-vehicle-control','camera-perception',4],['memory-fault-injection','tcl-campaign',2]]) {
+    await page.goto(base+'pt/pages/projects/'+slug+'.html');
+    const group=page.locator('#'+section+' [data-report-switcher]');
+    const tabs=group.getByRole('tab');
+    await expect(tabs).toHaveCount(count);
+    await tabs.first().focus();
+    await page.keyboard.press('End');
+    await expect(tabs.last()).toBeFocused();
+    await expect(tabs.last()).toHaveAttribute('aria-selected','true');
+    await expect(group.getByRole('tabpanel')).toHaveCount(1);
+    await page.keyboard.press('ArrowRight');
+    await expect(tabs.first()).toBeFocused();
+    await page.keyboard.press('ArrowLeft');
+    await expect(tabs.last()).toBeFocused();
+    for (let i=0;i<count;i++) {
+      await tabs.nth(i).click();
+      await expect(group.getByRole('tabpanel')).toHaveCount(1);
+      const image=group.getByRole('tabpanel').locator('img');
+      await image.evaluate(el=>el.decode());
+      assert.ok(await image.evaluate(el=>el.naturalWidth>0));
+    }
+    const link=group.getByRole('tabpanel').locator('[data-gallery]');
+    const href=await link.getAttribute('href');
+    await link.click();
+    await expect(page.locator('.photo-dialog')).toBeVisible();
+    await expect(page.locator('.photo-dialog img')).toHaveAttribute('src',new RegExp(href.split('/').at(-1).replaceAll('.','\\.')));
+    await page.keyboard.press('ArrowRight');
+    await expect(page.locator('.photo-dialog img')).not.toHaveAttribute('src',new RegExp(href.split('/').at(-1).replaceAll('.','\\.')));
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.photo-dialog')).not.toBeVisible();
+    await expect(link).toBeFocused();
+    await page.setViewportSize({width:320,height:800});
+    await tabs.first().click();
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
+    await page.setViewportSize({width:1440,height:1000});
+  }
+  assert.deepEqual(errors,[]);
   await page.close();
 });

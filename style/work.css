@@ -1,4 +1,6 @@
 /* Catalogues use the supplied poster hierarchy and native whole-card links. */
+.catalogue-item .art { position:relative; }
+.featured-label { position:absolute; top:12px; left:12px; padding:6px 10px; border-radius:999px; background:var(--teal); color:var(--paper-light); font:10px/1.5 var(--font-mono); }
 .poster-heading { grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr); gap:40px; }
 .poster-heading h1 { margin:10px 0 22px; color:#C85B43; overflow-wrap:normal; }
 .poster-heading h1>span { display:block; color:var(--teal); font:400 clamp(40px,4.5vw,64px)/1 var(--font-poster); letter-spacing:.08em; }

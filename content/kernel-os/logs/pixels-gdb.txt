@@ -1,0 +1,23 @@
+entry () at src/crt0.S:6
+6	    csrw mie, zero
+Temporary breakpoint 1 at 0x1938: file src/main.c, line 33.
+
+Temporary breakpoint 1, kernel_start () at src/main.c:33
+33	    color_text(2, characters, 0x0000ff00);
+Temporary breakpoint 2 at 0x1950: file src/main.c, line 34.
+
+Temporary breakpoint 2, kernel_start () at src/main.c:34
+34	    color_text(3, characters, 0x000000ff);
+Temporary breakpoint 3 at 0x1964: file src/main.c, line 35.
+
+Temporary breakpoint 3, kernel_start () at src/main.c:35
+35	    color_text(4, characters, BLANC);
+Temporary breakpoint 4 at 0x19d0: file src/main.c, line 39.
+
+Temporary breakpoint 4, kernel_start () at src/main.c:39
+39	    place_curseur(6, 0);
+Temporary breakpoint 5 at 0x19f4: file src/cpu.h, line 7.
+
+Temporary breakpoint 5, hlt () at src/cpu.h:7
+7	    __asm__ volatile("wfi" ::: "memory");
+[Inferior 1 (process 1) killed]

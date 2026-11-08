@@ -1,0 +1,29 @@
+
+<div class="fm-s25"><span class="fm-s26">02 /</span><h2 class="fm-s27" id="models-title">{{text.t039}}</h2></div>
+<div class="fm-s1"><div aria-label="{{text.t134}}" class="fm-s33" role="group"><sc-for as="o" list="{{dynBtns}}"><button aria-pressed="{{o.pressed}}" class="seg tog fm-s34" data-control="{{o.key}}" data-value="{{o.value}}" style="background: {{o.bg}};color: {{o.fg}}" type="button">{{o.label}}</button></sc-for></div><span class="fm-s35">{{text.t040}}</span></div>
+<div class="fm-s36">
+<div class="fm-s37">
+<p class="fm-s38">{{model.text}}</p>
+<div class="paper fm-s39">
+<span class="fm-s40">{{text.t041}}</span>
+<div class="fm-s41"><sc-for as="e" list="{{model.eqs}}"><span>{{e}}</span></sc-for></div>
+<span class="fm-s42">{{model.eqNote}}</span>
+<div class="fm-s43"><span class="fm-s44">{{text.t042}}</span><sc-for as="c" list="{{stateChips}}"><span class="fm-s45" style="background: {{c.bg}}">{{c.t}}</span></sc-for></div>
+</div>
+</div>
+<figure class="fm-s46">
+<div class="night vwrap formation-viewer-shell fm-s47">
+<svg class="formation-static-orbit" viewBox="0 0 520 360" aria-hidden="true"><path d="{{plot.tru}}" fill="none" stroke="#F4EEE2" stroke-width="2" stroke-dasharray="5 5"/><circle cx="260" cy="180" r="7" fill="#F1E2B2"/></svg><canvas aria-describedby="formation-view-help" aria-label="{{text.t135}}" class="viewer fm-s6" role="img" tabindex="0">{{text.t043}}</canvas>
+<div class="fm-s48"><div aria-label="{{text.t136}}" class="fm-s33" role="group"><sc-for as="o" list="{{viewBtns}}"><button aria-pressed="{{o.pressed}}" class="seg tog fm-s49" data-control="{{o.key}}" data-value="{{o.value}}" style="background: {{o.bg}};color: {{o.fg}}" type="button">{{o.label}}</button></sc-for></div></div>
+<div class="fm-s50"><button aria-label="{{text.t137}}" class="vbtn3 fm-s51" data-control="zoomIn" type="button">+</button><button aria-label="{{text.t138}}" class="vbtn3 fm-s51" data-control="zoomOut" type="button">−</button></div>
+<div class="fm-s52"><sc-for as="v" list="{{views}}"><button class="vbtn3 fm-s53" data-control="{{v.key}}" data-value="{{v.value}}" type="button">{{v.label}}</button></sc-for></div>
+<span class="fm-s54">{{text.t044}}</span>
+<button aria-pressed="false" class="formation-pause vbtn3" data-control="pause" type="button">{{text.t045}}</button></div><span class="visually-hidden" id="formation-view-help">{{text.t046}}</span>
+<figcaption class="fm-s55">
+<div class="fm-s56"><span class="fm-s57"><span class="fm-s58"></span>{{text.t047}}</span><span class="fm-s57"><span class="fm-s59"></span>{{text.t048}}</span><span class="fm-s57"><span class="fm-s60"></span>{{text.t049}}</span></div>
+<span class="fm-s61">{{viewNote}}</span>
+</figcaption>
+</figure>
+</div>
+<div class="paper fm-s62"><div class="fm-s63"><sc-for as="v" list="{{modelFacts}}"><div class="fm-s64"><span class="fm-s65">{{v.k}}</span><span class="fm-s66">{{v.v}}</span></div></sc-for></div></div>
+<p class="formation-note">{{text.t050}}</p>

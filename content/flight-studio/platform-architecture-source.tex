@@ -1,0 +1,12 @@
+% Original TikZ from TCC.zip/secoes/metodologia.tex, lines 22–32.
+\begin{tikzpicture}[
+  font=\footnotesize,
+  comp/.style={draw,rectangle,minimum width=3.6cm,minimum height=2.0cm,align=center,fill=gray!8},
+  seta/.style={<->,>=Latex,thick},
+]
+\node[comp] (cfs) {Processo cFS\\ (Linux)\\[2pt] \scriptsize aplicações e\\ \scriptsize serviços do cFE};
+\node[comp,right=2.4cm of cfs] (back) {Serviço de\\ retaguarda\\[2pt] \scriptsize decodificação,\\ \scriptsize comandos, análise\\ \scriptsize de código, suporte};
+\node[comp,right=2.4cm of back] (web) {Interface web\\[2pt] \scriptsize comandos,\\ \scriptsize telemetria,\\ \scriptsize planejamento\\ \scriptsize de missão};
+\draw[seta] (cfs) -- node[above,align=center]{\scriptsize comando e}node[below]{\scriptsize telemetria (UDP)} (back);
+\draw[seta] (back) -- node[above]{\scriptsize HTTP}node[below]{\scriptsize REST} (web);
+\end{tikzpicture}

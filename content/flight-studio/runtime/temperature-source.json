@@ -1,0 +1,9 @@
+{
+  "path": "sensors/tmp105.py",
+  "start_line": 13,
+  "end_line": 20,
+  "language": "Python",
+  "code": "def configure(device):\n    return Sensor.from_device(device, (Signal(\"temperature\", \"°C\", 1000),))\n\n\ndef sample(seconds, initial_c):\n    \"\"\"Return one temperature in °C; seconds is time since this run started.\"\"\"\n    angle = 2 * math.pi * seconds / PERIOD_SECONDS\n    return initial_c + AMPLITUDE_C * math.sin(angle)",
+  "sha256": "1333870cfe8975a617d71f5dca96027cdbd9f7c4824ad8766a00590fa2e9c533",
+  "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/tmp105.py#L13-L20"
+}

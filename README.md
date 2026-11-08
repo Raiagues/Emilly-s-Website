@@ -94,11 +94,15 @@ Requer **Python 3.12 ou mais recente** para gerar as páginas. O site publicado 
 | `content/journal/*.json` | Histórias, capítulos, fotos e legendas do diário |
 | `scripts/journal.py` | Geração das páginas de histórias |
 | `src/journal.js` | Ampliação de fotos, teclado e retorno do foco |
-| `content/data.py` | Textos nos quatro idiomas, projetos, experiências, conquistas, e-mail e links |
+| `content/data.py` | Textos nos quatro idiomas, projetos, slugs, ordem dos destaques, experiências, conquistas e links |
+| `content/project_reports.py`, `content/project_visuals.py`, `content/project-reports/` | Textos, diagramas, fontes e legendas de RISC-V, carrinho autônomo e injeção de falhas |
+| `content/engineering_cases.py`, `content/flight-studio/`, `content/kernel-os/` | Textos, código, capturas e evidências do Flight Studio e do kernel |
+| `scripts/engineering_redesign.py`, `scripts/engineering_drawings.py`, `style/engineering.css`, `src/engineering.js` | Páginas técnicas, diagramas, reprodução de capturas e explorações interativas |
 | `content/damas-espaciais/` | Design e textos do projeto Damas Espaciais nos quatro idiomas |
 | `scripts/damas_redesign.py`, `style/damas.css`, `src/damas.js` | Página, tabuleiro jogável, inspetor e comparações de Damas Espaciais |
 | `src/damas-engine/` | Motor original em C, licença e módulo WebAssembly reproduzível |
 | `content/wing-box/` | Design, resultados originais e textos de Wing box analysis nos quatro idiomas |
+| `content/ita-formation/` | Design e textos da experiência ITA, com modelos orbitais, EKF, controle e fontes dos resultados |
 | `scripts/wingbox_redesign.py`, `style/wingbox.css`, `src/wingbox.js` | Página da asa, vistas 3D e comparações de cargas, torção e flambagem |
 | `scripts/build.py` | Estrutura das páginas e configuração de publicação |
 | `style/style.css` | Cores, tipografia, botões e layout responsivo |
@@ -107,7 +111,7 @@ Requer **Python 3.12 ou mais recente** para gerar as páginas. O site publicado 
 | `src/script.js` | Altura do menu, links antigos, retorno aos resultados e copiar e-mail |
 | `content/SOURCES.md` | Origem das informações e notas de verificação |
 
-Os textos usam a ordem **inglês, português, francês e espanhol**, separados por ` | ` na função `L(...)`. Cada projeto usa a função `P(...)`. Mantenha identificadores existentes para preservar seus links.
+Os textos usam a ordem **inglês, português, francês e espanhol**, separados por ` | ` na função `L(...)`. Cada projeto usa a função `P(...)`. Mantenha os identificadores existentes para preservar âncoras e filtros. `PROJECT_SLUGS` define os nomes públicos das páginas; o gerador mantém redirecionamentos a partir dos IDs originais. `FEATURED_PROJECT_IDS` define os destaques da página inicial e a prioridade no catálogo.
 
 Depois de editar:
 
@@ -152,7 +156,7 @@ A auditoria automática não substitui avaliação manual por pessoas com defici
 
 ## Imagens e conteúdo
 
-- `img/me.png`: retrato original fornecido no repositório.
+- `img/emilly-rodrigues-portrait.png`: retrato original fornecido no repositório.
 - `portifolio/cern/`: 16 fotos do álbum pessoal e o relatório fornecidos pela proprietária, usados na história do CERN.
 - `img/illustrations/`: ilustrações conceituais da versão anterior, preservadas no repositório. O catálogo de projetos volta a usar essas ilustrações como capas; as fotos do diário são as imagens pessoais fornecidas.
 - As páginas técnicas dão prioridade ao conteúdo e aos links de demonstrações. Os vídeos externos não forneceram miniaturas públicas acessíveis; não foram substituídos por imagens que poderiam parecer fotografias dos projetos.
@@ -163,6 +167,28 @@ A auditoria automática não substitui avaliação manual por pessoas com defici
 
 ## Editar a página inicial e o diário
 
-A página inicial reúne apresentação, projeto em andamento, três projetos selecionados, experiências, história pessoal, diário e formulário. Os textos pessoais e os rótulos ficam em `content/data.py`; o projeto em destaque usa os dados de `flight-platform`, inclusive seu estado de desenvolvimento. A composição está em `scripts/build.py`.
+A página inicial reúne apresentação, projeto em andamento, três projetos selecionados, experiências, história pessoal, diário e formulário. Os textos pessoais e os rótulos ficam em `content/data.py`; o painel principal usa os dados de `flight-platform` (NASA cFS), inclusive seu estado de desenvolvimento. Os outros três destaques são kernel de sistema operacional, CubeSat e RISC-V de 128 bits. A composição está em `scripts/build.py`.
 
 As histórias ficam em `content/journal/*.json`. Edite `closing` para a reflexão final e `sections` para os capítulos; a numeração e o índice são gerados automaticamente. A primeira foto de cada capítulo aparece junto ao texto, e as demais formam o álbum abaixo. Prints de documentos continuam separados das fotos. Não é preciso editar o HTML de cada idioma: depois de alterar os dados, execute `npm run build`.
+
+## URLs e relatórios dos projetos
+
+As páginas usam nomes descritivos, iguais nos quatro idiomas. Exemplos:
+
+- `pages/projects/nasa-cfs-platform.html`
+- `pages/projects/operating-system-kernel.html`
+- `pages/projects/cubesat-embedded-software.html`
+- `pages/projects/riscv-128bit-validation.html`
+- `pages/projects/autonomous-vehicle-control.html`
+- `pages/projects/memory-fault-injection.html`
+
+Os 18 endereços `project_N.html` e o antigo `flight-platform.html` redirecionam para as novas páginas em cada idioma. Com JavaScript, o redirecionamento preserva parâmetros de busca e a seção da URL; sem JavaScript, há redirecionamento HTML e link direto. Canonical, hreflang, cartões, navegação entre projetos e sitemap usam as novas URLs. Os IDs dos cartões permanecem estáveis para conservar filtros e links de retorno.
+
+Os três relatórios fornecidos em novembro de 2026 fundamentam o conteúdo técnico e as figuras: [fontes e limites dos resultados](content/project-reports/SOURCES.md). As 30 imagens selecionadas (29 PNGs e uma foto JPEG) têm nomes descritivos e hashes de origem em `content/project-reports/assets.json`. As páginas apresentam os diagramas junto das explicações, com seleção dos formatos de instrução, etapas da câmera, comparação de falhas e ampliação acessível. `scripts/project_report_design.py`, `style/project-reports.css` e `src/project-reports.js` compõem essas páginas; sem JavaScript, todas as figuras continuam visíveis. Os ZIPs não são necessários para gerar o site.
+
+
+### Flight Studio e kernel OS
+
+As páginas NASA cFS e kernel seguem a composição do CERN, com capas vetoriais, capítulos, diagramas e figuras ampliáveis. O Flight Studio inclui 12 telas reais da execução local, camadas do cFS, percurso NOOP, inspeção de pacotes e sensores. O kernel oferece seis atividades com código e QEMU lado a lado, 32 capturas, tabela de processos lida da RAM, mapa de memória, cálculo de endereços, bitmaps da fonte e pilhas.
+
+As fontes estão em [Flight Studio](content/flight-studio/runtime/README.md) e [kernel OS](content/kernel-os/README.md). As capturas são verificadas por SHA256; títulos e legendas têm quatro idiomas. O site reproduz evidências e diagramas no navegador, sem precisar iniciar os emuladores. `tests/engineering.test.mjs` verifica dados, controles, imagens, teclado, responsividade, acessibilidade e leitura sem JavaScript.

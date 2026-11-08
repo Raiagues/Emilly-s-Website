@@ -27,7 +27,7 @@ def render(b, p, lang):
     for step, key in zip(config['steps'], step_keys):
         step['key'] = key
     config['engine'] = b['asset_url'](d.current, 'src/damas-engine/game.wasm')
-    config['pieces'] = ['', *[d.r('img/damas-espaciais/' + name + '.png') for name in ['blue', 'pink', 'blue-king', 'pink-king']]]
+    config['pieces'] = ['', *[d.r('img/damas-espaciais/' + name + '.png') for name in ['blue-piece', 'pink-piece', 'blue-king', 'pink-king']]]
     for screen in config['screens'].values():
         screen['image'] = d.r('img/damas-espaciais/' + screen['image'])
     names = [config['text'][key] for key in ['empty', 'blue', 'pink', 'blueKing', 'pinkKing']]

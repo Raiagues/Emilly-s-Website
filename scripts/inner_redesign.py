@@ -66,12 +66,15 @@ def case_pagination(d, p, peers):
 def directory(b,lang,kind):
     d=Design(b,lang,kind+'.html')
     work=list(reversed(chronological([p for p in b['PROJECTS'] if p['kind']==kind])))
+    featured = b['D']['FEATURED_PROJECT_IDS'] if kind == 'projects' else ()
+    work.sort(key=lambda p: featured.index(p['id']) if p['id'] in featured else len(featured))
     categories=['all']+[key for key in ['space','hardware','control','software','structures','outreach'] if any(p['category']==key for p in work)]
     filters=''.join(f'<button type="button" class="chip" data-filter="{key}" aria-pressed="{str(key=="all").lower()}">{d.t(key)} <span>{sum(key=="all" or p["category"]==key for p in work)}</span></button>' for key in categories)
     cards=[]
     for p in work:
+        badge = f'<span class="featured-label">{d.t("featured")}</span>' if p['id'] in featured else ''
         search=' '.join([p['title'][lang],p['summary'][lang],p['place'],*p['tech'],*[b['SKILLS'][key][lang] for key in p['skills']]])
-        cards.append(f'<article class="catalogue-item" id="{p["id"]}" data-project data-category="{p["category"]}" data-search="{E(search,quote=True)}"><a class="project-card" href="{d.link(b["detail"](p))}" data-result-link aria-labelledby="title-{p["id"]}"><div class="art">{d.art(p["art"],item_id=p["id"])}<span class="art-date">{p["date"]}</span></div><p class="eyebrow">{d.t(p["category"]) if kind=="projects" else E(p["place"])}</p><h2 id="title-{p["id"]}">{p["title"][lang]}</h2><p>{p["summary"][lang]}</p>{d.keywords(p["tech"][:4])}</a></article>')
+        cards.append(f'<article class="catalogue-item" id="{p["id"]}" data-project data-category="{p["category"]}" data-search="{E(search,quote=True)}"><a class="project-card" href="{d.link(b["detail"](p))}" data-result-link aria-labelledby="title-{p["id"]}"><div class="art">{d.art(p["art"],item_id=p["id"])}<span class="art-date">{p["date"]}</span>{badge}</div><p class="eyebrow">{d.t(p["category"]) if kind=="projects" else E(p["place"])}</p><h2 id="title-{p["id"]}">{p["title"][lang]}</h2><p>{p["summary"][lang]}</p>{d.keywords(p["tech"][:4])}</a></article>')
     search_label=d.t('search') if kind=='projects' else d.u('search_experience')
     result_label=d.t('results') if kind=='projects' else d.u('experience_results')
     description=d.t('work_body' if kind=='projects' else 'exp_body')

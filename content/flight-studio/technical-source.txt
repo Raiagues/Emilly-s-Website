@@ -1,0 +1,384 @@
+===== secoes/conclusao.tex =====
+\chapter{Conclusão}
+
+% Capítulo a ser desenvolvido. Reúne as conclusões do projeto a partir dos
+% resultados da validação e aponta os trabalhos futuros.
+
+
+===== secoes/cronograma.tex =====
+\chapter{Cronograma}
+
+O projeto é conduzido ao longo de 2026 e reúne as etapas de pesquisa, desenvolvimento e validação descritas na metodologia. A primeira metade do ano concentra a revisão bibliográfica, a definição do escopo e o início do desenvolvimento. A segunda metade concentra a implementação dos módulos restantes, a validação técnica e educacional e a redação final. O Quadro~\ref{quadro:crono} apresenta a distribuição das atividades ao longo dos meses de 2026.
+
+\begin{quadro}
+\caption{\label{quadro:crono}Cronograma de atividades do projeto em 2026.}
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{6.0cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Atividade} & \textbf{Mar} & \textbf{Abr} & \textbf{Mai} & \textbf{Jun} & \textbf{Jul} & \textbf{Ago} & \textbf{Set} & \textbf{Out} & \textbf{Nov} & \textbf{Dez} \\
+\hline
+Revisão bibliográfica & X & X & X & X & & & & & & \\
+\hline
+Análise de trabalhos relacionados & & X & X & X & & & & & & \\
+\hline
+Definição da arquitetura e requisitos & & & X & X & X & & & & & \\
+\hline
+Implementação da automação de aplicações & & & & X & X & X & & & & \\
+\hline
+Geração de interfaces e planejamento de missão & & & & & X & X & X & & & \\
+\hline
+Integração da interface web e suporte à depuração & & & & & & X & X & X & & \\
+\hline
+Execução e testes em Raspberry Pi & & & & & & & X & X & & \\
+\hline
+Validação técnica & & & & & & & & X & X & \\
+\hline
+Avaliação educacional & & & & & & & & & X & X \\
+\hline
+Redação e revisão final & & & & X & & & & X & X & X \\
+\hline
+\end{tabular}
+\fonte{Próprio autor.}
+\end{quadro}
+
+
+===== secoes/desenvolvimento.tex =====
+\chapter{Desenvolvimento}
+
+% Capítulo a ser desenvolvido. Reúne a implementação dos módulos da plataforma,
+% a integração com o cFS e os resultados da validação técnica e educacional.
+
+
+===== secoes/fundamentacao.tex =====
+\chapter{Fundamentação teórica}
+
+Este capítulo reúne os conceitos que sustentam o trabalho. Ele começa pelas funções recorrentes de um satélite, trata do software embarcado e da sua condição de software crítico, discute a modularidade de software e a forma como a NASA a aplica no cFS, passa pela engenharia de sistemas espaciais e pelos sistemas de tempo real e encerra com o movimento New Space, o contexto de países emergentes e a avaliação de software educacional.
+
+\section{Funções recorrentes de um satélite}
+
+Apesar da variedade de missões, a maioria dos satélites repete um mesmo conjunto de funções básicas. Essas funções costumam ser agrupadas em subsistemas que se repetem de projeto para projeto, o que abre espaço para reutilizar soluções de software entre missões diferentes \cite{fortescue2011, wertz2011}. Entender essas funções ajuda a ver por que um framework de software de voo organiza suas aplicações da forma como organiza.
+
+O suprimento e o gerenciamento de energia controlam a geração por painéis solares, o armazenamento em baterias e a distribuição para os demais subsistemas. O controle de atitude e órbita mantém a orientação do veículo e processa dados de sensores e atuadores. O controle térmico mantém os componentes dentro de faixas seguras de temperatura. A comunicação trata do enlace com o segmento solo, recebendo comandos e enviando telemetria \cite{fortescue2011, eickhoff2012}.
+
+Do lado do software de bordo, algumas funções aparecem em praticamente toda missão. A telemetria de manutenção, conhecida como housekeeping, coleta de forma periódica o estado dos subsistemas e o envia ao solo. O tratamento de comandos recebe, valida e executa as instruções enviadas pela estação terrena. O armazenamento de dados grava em memória as medidas que não podem ser transmitidas em tempo real. O agendamento de tarefas dispara atividades em instantes definidos. O gerenciamento de falhas monitora a saúde do sistema e reage a condições anormais \cite{eickhoff2012, mccomas2015}. Como essas funções se repetem, elas formam a base do conjunto de aplicações que um framework como o cFS oferece pronto para uso.
+
+\section{Software embarcado em satélites}
+
+O software embarcado de um satélite executa em um computador de bordo com recursos limitados de processamento, memória e energia. Ele precisa manter o veículo operacional de forma autônoma, já que a comunicação com o solo é intermitente e sujeita a atraso \cite{eickhoff2012}. Entre suas funções estão o tratamento de comandos enviados pelo segmento solo, a geração de telemetria, o controle de atitude e órbita, o gerenciamento de energia e o tratamento de falhas. A interrupção dessas funções pode comprometer a missão inteira, o que coloca o software de voo na categoria de software crítico \cite{leveson1995, eickhoff2012}.
+
+A arquitetura do software de voo evoluiu de programas monolíticos para arquiteturas modulares organizadas em camadas. A ideia de decompor um sistema em módulos não é nova e remonta ao trabalho de Parnas, que em 1972 propôs separar um sistema segundo as decisões de projeto que cada módulo esconde, e não segundo a sequência de execução \cite{parnas1972}. Esse princípio de ocultação de informação reduz o acoplamento e permite que componentes sejam desenvolvidos, testados e integrados de forma independente \cite{parnas1972, sommerville2011}. No software de voo, essa decomposição aparece na forma de uma camada de abstração que isola o software de aplicação do hardware e do sistema operacional, o que aumenta a portabilidade e a reutilização entre missões \cite{eickhoff2012, mccomas2015}. A reutilização de componentes com herança de voo é um fator central de confiabilidade, porque reduz a quantidade de código novo e não verificado que precisa operar em órbita \cite{mccomas2015, miranda2019survey}.
+
+O crescimento da complexidade do software embarcado é uma tendência documentada. O estudo da NASA sobre complexidade de software de voo mostrou que o número de linhas de código de bordo cresceu por ordens de magnitude entre as primeiras missões e os veículos modernos, e que esse crescimento ampliou o esforço de verificação e o risco associado ao software \cite{dvorak2009}. Esse mesmo crescimento motivou a adoção de arquiteturas baseadas em frameworks reutilizáveis, que buscam conter a complexidade por meio de serviços comuns e interfaces padronizadas \cite{dvorak2009, mccomas2015}.
+
+A confiabilidade do software embarcado depende também do tratamento sistemático de falhas. Mecanismos de detecção, isolamento e recuperação permitem que o sistema reaja a erros sem perder o controle do veículo, prática conhecida como gerenciamento de falhas \cite{eickhoff2012}. A combinação de modularidade, abstração de hardware, reutilização e gerenciamento de falhas é o que caracteriza as arquiteturas modernas de software de voo.
+
+\section{Sistemas críticos e confiabilidade}
+
+Software de voo é um exemplo de software crítico, no qual uma falha pode causar a perda da missão ou de ativos de alto valor. Nesse domínio, a engenharia de segurança busca identificar condições perigosas e tratar suas causas ainda na fase de projeto, em vez de apenas reagir a falhas durante a operação \cite{leveson1995}. Essa abordagem preventiva é parte do que distingue o desenvolvimento de software espacial do desenvolvimento de software convencional.
+
+A criticidade do software costuma ser classificada de acordo com a severidade das consequências de suas falhas. A norma europeia ECSS-E-ST-40C, que define os processos de engenharia de software espacial, organiza o software em categorias de criticidade e adapta o rigor das atividades de verificação conforme essa categoria \cite{ecss2025}. A categoria atribuída a um produto de software corresponde à função mais crítica que ele implementa, o que orienta o nível de esforço exigido em cada fase \cite{ecss2025}. Em paralelo, padrões usados na indústria aeroespacial classificam o software em níveis de garantia de projeto segundo a gravidade de uma eventual falha, prática que reforça a ideia de adequar o esforço de verificação ao risco \cite{ecss2025}.
+
+A verificação e a validação são atividades centrais para a confiabilidade. A verificação confirma que o sistema foi construído de acordo com os requisitos, enquanto a validação confirma que o sistema atende à necessidade real da missão \cite{nasaSEhandbook, ecss2025}. Esses processos enfatizam a rastreabilidade entre requisitos, projeto, código e testes, além da gestão de configuração, e formam a base sobre a qual se constrói a confiança no software de voo \cite{nasaSEhandbook, ecss2025}.
+
+\section{Engenharia de sistemas espaciais}
+
+A engenharia de sistemas espaciais trata o satélite como um sistema composto por subsistemas que interagem, como estrutura, suprimento de energia, controle de atitude, comunicação e computador de bordo \cite{fortescue2011, wertz2011}. O software de voo se insere nesse sistema como o elemento que coordena os demais subsistemas e implementa a lógica da missão, o que exige que seu projeto considere as restrições do veículo como um todo \cite{eickhoff2012, fortescue2011}.
+
+O desenvolvimento segue um ciclo de vida com fases bem definidas, que vão da definição de requisitos ao projeto, à implementação, à verificação, à validação e à operação \cite{nasaSEhandbook}. Cada fase encerra com revisões que avaliam a maturidade do projeto antes de autorizar a passagem à fase seguinte, o que reduz o risco de propagar erros para etapas mais caras \cite{nasaSEhandbook}. Para software espacial, a norma ECSS-E-ST-40C detalha os processos de engenharia e os requisitos de qualidade associados a cada fase do ciclo de vida \cite{ecss2025}. Esse encadeamento de fases e revisões é o que permite gerenciar a complexidade de um sistema espacial ao longo do tempo.
+
+\section{Sistemas de tempo real e sistemas operacionais embarcados}
+
+Software de voo é um exemplo de sistema de tempo real, no qual a correção depende não apenas do resultado lógico, mas também do instante em que o resultado é produzido \cite{liu2000, kopetz2011}. Tarefas de controle e de aquisição de dados precisam respeitar prazos, e o não cumprimento de um prazo pode ser tão grave quanto um resultado incorreto. Distingue-se o tempo real rígido, no qual a perda de prazo é inaceitável, do tempo real brando, no qual a perda ocasional é tolerável com degradação de desempenho \cite{liu2000, burns2009}.
+
+Para garantir o comportamento temporal, o computador de bordo executa um sistema operacional de tempo real, ou RTOS. Um RTOS oferece escalonamento preditível, gerência de tarefas concorrentes e mecanismos de sincronização com latência limitada \cite{kopetz2011, burns2009}. A previsibilidade temporal, e não apenas o desempenho médio, é o critério dominante nesse domínio \cite{kopetz2011}. Em software de voo, sistemas como VxWorks, RTEMS e FreeRTOS são amplamente empregados, e a escolha depende dos requisitos de criticidade e da plataforma de hardware \cite{mccomas2015, cudmore2017, wu2026}. O RTEMS, em particular, é um RTOS de código aberto com herança de voo, que oferece interface compatível com o padrão POSIX e suporte a diversas arquiteturas de processador usadas no espaço \cite{rtems2024}. Em plataformas de baixo custo baseadas em microcontroladores, sistemas leves como o FreeRTOS permitem executar software de voo em ambientes com pouca memória, ao preço de adaptações na camada de abstração e no sistema de arquivos \cite{wu2026}.
+
+\section{NASA core Flight System}
+
+O core Flight System é um framework de software de voo de código aberto desenvolvido no NASA Goddard Space Flight Center \cite{mccomas2015}. Sua organização em camadas separa o software de aplicação das particularidades do hardware e do sistema operacional, o que é a base de sua portabilidade \cite{mccomas2015}. As três camadas principais são o pacote de suporte à plataforma, a camada de abstração do sistema operacional e o núcleo executivo de voo, conhecido como cFE \cite{mccomas2015}.
+
+A camada de abstração do sistema operacional, chamada OSAL, expõe uma interface única para serviços de sistema operacional, o que permite executar o mesmo conjunto de aplicações sobre diferentes RTOS \cite{mccomas2015, wu2026}. O pacote de suporte à plataforma isola o acesso ao hardware específico. O núcleo cFE oferece serviços essenciais como gerenciamento do ciclo de vida de aplicações, comunicação por barramento de software, registro de eventos, serviços de tempo e gerenciamento de tabelas \cite{mccomas2015}. A funcionalidade específica de missão é implementada como aplicações independentes que se comunicam por troca de mensagens padronizadas no barramento de software, o que permite compor e integrar o sistema de forma modular e escalável \cite{mccomas2015, miranda2019survey}. A Figura~\ref{fig:cfs} resume essa organização em camadas.
+
+\begin{figure}[ht]
+\caption{\label{fig:cfs}Arquitetura em camadas do NASA cFS.}
+\centering
+\includegraphics[scale=0.35]{figuras/cfs_layers_conv.png}
+\fonte{Adaptado de \citeonline{mccomas2015}.}
+\end{figure}
+
+A comunicação de comando e telemetria do cFS segue o padrão de empacotamento definido pelo CCSDS, em particular o Space Packet Protocol \cite{ccsds2003}. Cada aplicação publica e assina mensagens identificadas por um identificador de mensagem, e os pacotes de comando e telemetria são construídos e decodificados a partir dessas definições \cite{mccomas2015, ccsds2003}. Essa padronização aproxima o cFS da prática real de operação de satélites e é uma das razões de seu valor educacional \cite{wilmot2021, eshaq2025}.
+
+O framework tem ampla herança de voo e disponibilidade aberta, o que o torna uma referência para missões de baixo custo e para projetos acadêmicos \cite{mccomas2015, miranda2019survey}. Versões recentes do cFS dão suporte a múltiplos sistemas operacionais, incluindo Linux, RTEMS, VxWorks e, em adições mais novas, plataformas adicionais voltadas a sistemas críticos \cite{mccomas2015, wu2026}. A possibilidade de executar o cFS sobre Linux em um computador comum é especialmente útil para desenvolvimento e ensino, porque permite trabalhar com o software de voo real sem necessidade de hardware embarcado dedicado \cite{cudmore2017, wilmot2021}. Pesquisas recentes investigam ainda a execução do cFS em microcontroladores de baixo custo, o que amplia seu alcance para nanossatélites com recursos restritos e reforça a relevância do framework no contexto de New Space \cite{wu2026}.
+
+\subsection{Aplicações e serviços do cFS}
+
+A funcionalidade do cFS é distribuída entre os serviços do núcleo cFE e um conjunto de aplicações reutilizáveis mantidas pela NASA \cite{mccomas2015, nasa_cfs_repo}. Cada aplicação trata de uma das funções recorrentes descritas no início deste capítulo, o que torna o conjunto um catálogo prático das tarefas comuns de software de voo. O Quadro~\ref{quadro:apps} reúne os principais componentes e suas funções.
+
+\begin{quadro}
+\caption{\label{quadro:apps}Principais serviços e aplicações do cFS.}
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{3.8cm}|>{\centering\arraybackslash}m{11.4cm}|}
+\hline
+\textbf{Componente} & \textbf{Função principal} \\
+\hline
+cFE (ES, SB, EVS, TBL, TIME) & Serviços de núcleo, com gerência de aplicações, barramento de software, eventos, tabelas e tempo \\
+\hline
+CI\_LAB e TO\_LAB & Recepção de comandos e envio de telemetria pelo segmento solo, em versões de laboratório sobre UDP \\
+\hline
+SCH\_LAB & Agendamento periódico de tarefas \\
+\hline
+HK & Coleta e montagem da telemetria de manutenção (housekeeping) \\
+\hline
+HS & Monitoramento de saúde e segurança do sistema \\
+\hline
+SC & Execução de sequências de comandos armazenadas \\
+\hline
+DS e FM & Armazenamento de dados em arquivos e gerência do sistema de arquivos \\
+\hline
+SAMPLE\_APP & Aplicação de exemplo usada como modelo para novas aplicações \\
+\hline
+\end{tabular}
+\fonte{Adaptado de \citeonline{mccomas2015} e \citeonline{nasa_cfs_repo}.}
+\end{quadro}
+
+Nem todas as aplicações têm o mesmo peso em um projeto iniciante. Para estudantes que dão os primeiros passos, as aplicações de laboratório CI\_LAB e TO\_LAB são as mais usadas, porque permitem enviar comandos e receber telemetria sem montar um segmento solo completo, e a SAMPLE\_APP serve de ponto de partida para criar aplicações próprias \cite{wilmot2021, nasa_cfs_repo}. O agendador SCH\_LAB e a aplicação de housekeeping completam o mínimo necessário para colocar um fluxo de telemetria em funcionamento.
+
+Para o contexto brasileiro, o foco inicial deste trabalho, as funções mais relevantes são as que sustentam missões científicas de pequeno porte como as do programa NANOSATC-BR, voltado a medir grandezas físicas e a enviá-las ao solo \cite{schuch2017}. Nesse perfil, a telemetria de manutenção, o tratamento de comandos, o armazenamento de dados e a execução de comandos armazenados cobrem boa parte das necessidades, já que permitem coletar medidas, guardá-las quando não há contato com o solo e operar o satélite de forma autônoma. Concentrar a plataforma nesse subconjunto reduz a complexidade apresentada ao iniciante sem afastá-lo das tarefas que realmente aparecem em um satélite estudantil.
+
+\section{New Space e democratização do acesso ao espaço}
+
+O termo New Space descreve a transformação do setor espacial impulsionada pela entrada de empresas privadas, pela redução de custos de lançamento e fabricação e pelo uso intensivo de componentes comerciais de prateleira \cite{oecd2023, swartwout2013}. A padronização do formato CubeSat foi um marco desse movimento, porque permitiu que universidades e pequenas organizações desenvolvessem satélites com orçamento reduzido \cite{swartwout2013, kulu2024}. Levantamentos do banco de dados de nanossatélites mostram que o ritmo de lançamentos acelerou de forma acentuada, com a marca de dois mil CubeSats lançados sendo ultrapassada em poucos anos, contra cerca de uma década e meia para os primeiros mil \cite{kulu2024}.
+
+A dimensão econômica acompanha esse crescimento. Relatórios do setor estimam a economia espacial global em cerca de 570 bilhões de dólares em 2023, com participação comercial em torno de 78\% \cite{spacefoundation2023}. A OCDE registra que os orçamentos públicos de espaço dos países membros somaram dezenas de bilhões de dólares por ano e destaca que a redução de custos e a disseminação de tecnologias abertas ampliam a base de países e organizações capazes de participar da cadeia de valor espacial \cite{oecd2023}. Projeções do Fórum Econômico Mundial e da McKinsey apontam que o setor pode alcançar 1,8 trilhão de dólares até 2035, com boa parte do crescimento vindo de serviços habilitados por satélite \cite{wef2024}. Esse conjunto de dados mostra que software de voo acessível deixou de ser apenas uma questão técnica e passou a ter relevância econômica e estratégica.
+
+\section{Países emergentes e independência tecnológica}
+
+Para países emergentes, o desenvolvimento de capacidade própria em software de voo está ligado à independência tecnológica e à redução da dependência de fornecedores externos \cite{miranda2019, miranda2019survey}. O uso de frameworks abertos como o cFS reduz o custo de entrada e permite formar pessoal qualificado em ambiente próximo do real, sem a necessidade de licenças de software proprietário \cite{miranda2019, sanchez2021}. A experiência de aplicação do cFS em um programa de graduação no México ilustra esse caminho, ao mostrar que o framework pode ser usado como base de formação em missões aeroespaciais, ainda que com esforço inicial relevante de configuração \cite{sanchez2021}.
+
+No Brasil, o programa espacial é coordenado pela Agência Espacial Brasileira e tem entre seus objetivos o domínio de tecnologias críticas e a formação de recursos humanos \cite{aeb_pnae}. O programa NANOSATC-BR, conduzido pelo Centro Regional Sul de Pesquisas Espaciais do INPE em parceria com a UFSM, é um exemplo de iniciativa que envolve estudantes no desenvolvimento de pequenos satélites e que tem entre suas metas a capacitação de uma nova geração de engenheiros e cientistas \cite{schuch2017}. Esse cenário reforça a importância de ferramentas que facilitem o primeiro contato com software de voo e que apoiem a formação de equipes em universidades brasileiras, em linha com os objetivos do programa espacial nacional.
+
+\section{Avaliação de software educacional e de usabilidade}
+
+Como o objetivo da plataforma é reduzir a barreira de entrada, sua avaliação não se limita ao desempenho técnico e precisa medir também o efeito sobre o usuário. A engenharia de software trata esse tipo de avaliação por meio de experimentos controlados, nos quais participantes executam tarefas equivalentes em condições diferentes para isolar o efeito de uma ferramenta \cite{wohlin2012}. O planejamento de um experimento desse tipo envolve a definição de variáveis, a escolha de um desenho experimental e a coleta de medidas objetivas e subjetivas, o que dá base para comparar a ferramenta proposta com um fluxo de referência \cite{wohlin2012}.
+
+Entre as medidas subjetivas, a usabilidade é um critério central para ferramentas voltadas a iniciantes. Um instrumento amplamente usado para medir usabilidade percebida é a System Usability Scale, ou SUS, um questionário curto de dez itens que produz uma pontuação de 0 a 100 \cite{brooke1996}. A literatura associa valores acima de aproximadamente 68 pontos a uma usabilidade acima da média, o que fornece um critério de referência objetivo para julgar o resultado \cite{brooke1996}. A combinação de medidas objetivas de desempenho com instrumentos padronizados de usabilidade permite avaliar de forma quantitativa se a plataforma de fato reduz o esforço inicial do usuário, e é a base do plano de validação descrito no Capítulo 4.
+
+
+===== secoes/introducao.tex =====
+\chapter{Introdução}
+
+O setor espacial passa por uma transformação profunda desde o início dos anos 2000. A entrada de empresas privadas, a queda do custo de lançamento e o uso intensivo de componentes comerciais de prateleira deram origem ao que se convencionou chamar de New Space \cite{oecd2023, swartwout2013}. O efeito econômico é expressivo. A economia espacial global movimentou cerca de 570 bilhões de dólares em 2023, com crescimento próximo de 7,4\% em relação ao ano anterior e participação comercial em torno de 78\% do total \cite{spacefoundation2023}. Estudos prospectivos do Fórum Econômico Mundial e da McKinsey estimam que esse mercado pode triplicar e alcançar 1,8 trilhão de dólares até 2035, crescendo acima do produto interno bruto mundial \cite{wef2024}. Essa expansão é acompanhada por um aumento acentuado no número de pequenos satélites. Apenas em 2023 foram lançados cerca de 390 nanossatélites, e o total acumulado de CubeSats ultrapassou a marca de dois mil unidades lançadas no início daquele ano \cite{kulu2024}.
+
+% % % FIGURA OPCIONAL: crescimento de nanossatelites.
+% % % Baixe a imagem conforme IMAGENS.md, salve em figuras/cubesats_crescimento.png
+% % % e descomente o bloco abaixo.
+% \begin{figure}[ht]
+% \caption{\label{fig:cubesats}Nanossatélites lançados por ano.}
+% \centering
+% \includegraphics[width=0.8\textwidth]{figuras/cubesats_crescimento.png}
+% \fonte{Adaptado de \citeonline{kulu2024}.}
+% \end{figure}
+
+A padronização do formato CubeSat foi um dos fatores que viabilizaram essa mudança. Ao definir dimensões e interfaces de referência, o padrão permitiu que universidades e organizações de pequeno porte desenvolvessem satélites com orçamento reduzido, o que ampliou de forma significativa a base de instituições capazes de chegar à órbita \cite{swartwout2013, kulu2024}. Boa parte das primeiras missões CubeSat teve origem acadêmica, o que confirma o papel da formação de estudantes na expansão do acesso ao espaço \cite{swartwout2013}.
+
+Nesse cenário, o software de voo se tornou um dos componentes mais exigentes de um satélite. Ele integra o tratamento de comando e telemetria, a arquitetura de barramento de software, os serviços de tempo, o gerenciamento de falhas e a abstração de hardware em um único sistema crítico que precisa operar de forma autônoma após o lançamento \cite{dvorak2009, eickhoff2012}. À medida que as missões ganham capacidade, o esforço de engenharia associado ao software embarcado cresce mais rápido do que o esforço associado ao hardware, e passa a concentrar boa parte do risco e do custo do projeto \cite{dvorak2009}. Estudo conduzido na NASA sobre complexidade de software de voo mostrou que o tamanho e a complexidade do código de bordo cresceram por ordens de magnitude ao longo de décadas, o que tornou o domínio dessa área um pré-requisito difícil para novos projetos \cite{dvorak2009}.
+
+Esse acúmulo de pré-requisitos faz do software de voo uma das áreas mais difíceis para quem inicia em engenharia de sistemas espaciais. Antes de implementar uma lógica de missão simples, o novo usuário precisa entender sistemas de construção, registro de aplicações, troca de mensagens em barramento de software, estruturas de pacotes e a interação com o segmento solo \cite{mccomas2015, sanchez2021, eshaq2025}. Em estudos de caso recentes de desenvolvimento de software de voo para CubeSats, autores relatam que parte expressiva do tempo de projeto é consumida na configuração de ambiente e na compreensão da infraestrutura, e não na implementação da lógica de missão em si \cite{eshaq2025, sanchez2021}.
+
+O NASA core Flight System, ou cFS, é um dos frameworks de software de voo de código aberto mais usados atualmente \cite{mccomas2015}. Desenvolvido no NASA Goddard Space Flight Center, ele oferece uma arquitetura modular baseada em serviços reutilizáveis e em aplicações específicas de missão que se comunicam por um barramento de software \cite{mccomas2015}. O framework tem herança de voo comprovada em missões como a Global Precipitation Measurement e a Lunar Atmosphere and Dust Environment Explorer, e versões recentes são empregadas em programas de grande porte como o Gateway lunar do programa Artemis \cite{mccomas2015, cudmore2017}. Por ser aberto, modular e próximo da prática real de engenharia aeroespacial, o cFS é uma plataforma atraente para o ensino e para projetos de satélites estudantis \cite{wilmot2021, miranda2019survey}. A mesma proximidade com sistemas reais que o torna interessante, porém, traz uma curva de aprendizado acentuada para quem o utiliza pela primeira vez.
+
+\section{Problema}
+
+O problema central deste trabalho é a barreira de entrada no desenvolvimento de software de voo. Em ambientes acadêmicos e em equipes estudantis de satélites, o tempo disponível é curto e a rotatividade de membros é alta. Nesse contexto, a necessidade de instalar múltiplos pacotes, configurar ambientes por linha de comando e construir manualmente as interfaces de comando e telemetria reduz a eficiência do aprendizado e desestimula a participação \cite{wilmot2021, sanchez2021}. Ferramentas educacionais como o OpenSatKit atenuam parte dessa complexidade ao integrar o cFS a softwares de apoio, mas ainda exigem instalação local de vários componentes e familiaridade com a linha de comando \cite{wilmot2021, mccomas2018}.
+
+A barreira se torna mais crítica em países emergentes. O acesso a infraestrutura computacional dedicada, a software comercial de segmento solo e a formação especializada costuma ser limitado, o que aumenta a dependência de soluções abertas e de baixo custo \cite{miranda2019, miranda2019survey, sanchez2021}. Reduzir o esforço operacional sem esconder os conceitos de engenharia é portanto um requisito relevante para a democratização do acesso ao desenvolvimento de software espacial.
+
+\section{Justificativa}
+
+Três motivos sustentam a escolha do tema. O cFS é um framework de software de voo com herança real, o que coloca o estudante diante de artefatos parecidos com os de missões operacionais, e não de exemplos simplificados \cite{mccomas2015, miranda2019survey}. Além disso, a literatura aponta uma lacuna educacional, já que falta um ambiente integrado e de baixa barreira que automatize a configuração sem trocar o núcleo real por uma abstração \cite{wilmot2021, sanchez2021, eshaq2025}. Por fim, o avanço do New Space e a democratização do acesso ao espaço abrem espaço para novos atores, entre eles universidades e empresas de países emergentes, que dependem de soluções abertas e de baixo custo \cite{swartwout2013, oecd2023, wef2024}.
+
+A Universidade Federal de Santa Maria participa de programas de pequenos satélites, como o NANOSATC-BR, conduzido em conjunto com o Centro Regional Sul de Pesquisas Espaciais do INPE \cite{schuch2017}. Esse programa nasceu com objetivo declarado de formação de recursos humanos e de envolvimento de estudantes em todas as fases de uma missão CubeSat \cite{schuch2017}. O contexto institucional reforça a utilidade de uma plataforma que facilite o primeiro contato de estudantes com software de voo real e que possa apoiar projetos de satélites estudantis na universidade.
+
+\section{Objetivos}
+
+\subsection{Objetivo geral}
+
+Desenvolver e validar uma plataforma interativa baseada na web que reduza a barreira de entrada no desenvolvimento de software de voo com o NASA cFS, automatizando tarefas de configuração e preservando a interação direta com o núcleo real de software de voo.
+
+\subsection{Objetivos específicos}
+
+\begin{itemize}
+	\item Levantar e organizar os fundamentos de software embarcado em satélites, engenharia de sistemas espaciais, sistemas de tempo real e o movimento New Space, situando o trabalho no contexto da democratização do acesso ao espaço.
+	\item Analisar frameworks e ferramentas educacionais de software de voo existentes e identificar a lacuna que justifica a proposta.
+	\item Definir a arquitetura da plataforma, com automação do ciclo de vida de aplicações cFS, geração de interfaces de comando e telemetria, planejamento de missão e suporte à depuração.
+	\item Implementar os módulos da plataforma e integrá-los ao cFS executado em ambiente Linux.
+	\item Validar a plataforma do ponto de vista técnico, com execução em computador de mesa e em uma plataforma de baixo custo do tipo Raspberry Pi.
+	\item Avaliar o efeito da plataforma na redução da barreira de entrada por meio de um estudo com um grupo real de usuários, com métricas e critérios de sucesso definidos.
+\end{itemize}
+
+\section{Organização do trabalho}
+
+O texto está organizado em sete capítulos. Este capítulo apresentou o contexto, o problema, a justificativa e os objetivos. O Capítulo 2 reúne a fundamentação teórica sobre software embarcado em satélites, sistemas críticos, engenharia de sistemas espaciais, sistemas de tempo real, o framework cFS, o movimento New Space e a avaliação de software educacional. O Capítulo 3 discute os frameworks e as ferramentas educacionais relacionadas e posiciona a proposta diante da literatura. O Capítulo 4 descreve a metodologia de pesquisa e desenvolvimento, a arquitetura da plataforma proposta e o plano de validação. O Capítulo 5 apresenta o cronograma do projeto. O Capítulo 6 reúne o desenvolvimento da plataforma. O Capítulo 7 traz a conclusão.
+
+
+===== secoes/metodologia.tex =====
+\chapter{Metodologia}
+
+Este capítulo descreve a metodologia de pesquisa e de desenvolvimento, a arquitetura da plataforma proposta e o plano de validação. O trabalho combina uma etapa de pesquisa, voltada à fundamentação e à identificação da lacuna, com uma etapa de desenvolvimento, voltada à construção da plataforma e à sua validação técnica e educacional.
+
+\section{Classificação da pesquisa}
+
+Quanto à natureza, a pesquisa é aplicada, porque busca uma solução para um problema concreto de barreira de entrada no desenvolvimento de software de voo. Quanto aos objetivos, é exploratória e descritiva, já que levanta o estado da arte e descreve o projeto e a construção de uma plataforma. Quanto aos procedimentos, combina pesquisa bibliográfica com pesquisa de desenvolvimento, na qual o artefato de software é o objeto central de estudo e a base para a avaliação, e adota um experimento controlado para medir o efeito da ferramenta sobre o usuário \cite{sommerville2011, wohlin2012}.
+
+\section{Etapas do trabalho}
+
+O trabalho foi organizado em cinco etapas. A primeira é a revisão bibliográfica, que reúne fontes sobre software embarcado em satélites, engenharia de sistemas espaciais, sistemas de tempo real, o framework cFS e o movimento New Space. As fontes priorizam livros técnicos, relatórios da NASA, normas de engenharia de software espacial e artigos acadêmicos revisados por pares.
+
+A segunda etapa é a análise de frameworks e ferramentas educacionais de software de voo, com foco na identificação da lacuna que justifica a proposta. A terceira etapa é a definição da arquitetura da plataforma e dos requisitos, derivados das dificuldades relatadas na literatura e da experiência com o uso do cFS. A quarta etapa é a implementação e a integração dos módulos da plataforma com o cFS. A quinta etapa é a validação, que reúne uma avaliação técnica e uma avaliação educacional com um grupo real de usuários.
+
+\section{Arquitetura da plataforma proposta}
+
+A plataforma integra o NASA cFS a um ambiente web que automatiza tarefas de configuração e mantém a interação direta com o núcleo real de software de voo. O sistema é organizado em três componentes principais. O primeiro é o processo do cFS, que executa em Linux e se comunica por interfaces de comando e telemetria sobre UDP, no modelo usado em ambientes educacionais baseados em cFS \cite{mccomas2015, wilmot2021}. O segundo é um serviço de retaguarda, responsável pela decodificação de telemetria, pela construção de pacotes de comando, pela análise de código-fonte e pela integração com o suporte assistido. O terceiro é uma interface web, que reúne em um único ambiente o envio de comandos, a visualização de telemetria, o planejamento de missão e a visualização da arquitetura do sistema. A Figura~\ref{fig:plataforma} mostra a relação entre esses componentes.
+
+\begin{figure}[ht]
+\caption{\label{fig:plataforma}Componentes da plataforma proposta e suas interfaces.}
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  comp/.style={draw,rectangle,minimum width=3.6cm,minimum height=2.0cm,align=center,fill=gray!8},
+  seta/.style={<->,>=Latex,thick},
+]
+\node[comp] (cfs) {Processo cFS\\ (Linux)\\[2pt] \scriptsize aplicações e\\ \scriptsize serviços do cFE};
+\node[comp,right=2.4cm of cfs] (back) {Serviço de\\ retaguarda\\[2pt] \scriptsize decodificação,\\ \scriptsize comandos, análise\\ \scriptsize de código, suporte};
+\node[comp,right=2.4cm of back] (web) {Interface web\\[2pt] \scriptsize comandos,\\ \scriptsize telemetria,\\ \scriptsize planejamento\\ \scriptsize de missão};
+\draw[seta] (cfs) -- node[above,align=center]{\scriptsize comando e}node[below]{\scriptsize telemetria (UDP)} (back);
+\draw[seta] (back) -- node[above]{\scriptsize HTTP}node[below]{\scriptsize REST} (web);
+\end{tikzpicture}
+\fonte{Próprio autor.}
+\end{figure}
+
+A automação cobre os pontos que a literatura aponta como mais custosos para iniciantes. Criar uma aplicação cFS, no fluxo convencional, exige copiar modelos, renomear arquivos, ajustar arquivos de construção e registrar identificadores de mensagem \cite{mccomas2015, sanchez2021}. Montar as interfaces de comando e telemetria depende de inspeção manual do código-fonte para localizar identificadores, códigos de comando e estruturas de carga útil \cite{ccsds2003}. Interpretar as mensagens de registro de eventos durante a depuração costuma exigir familiaridade com o comportamento interno do framework \cite{wilmot2021}. A plataforma trata esses três pontos de forma automática.
+
+Além da automação, a plataforma inclui um módulo de planejamento de missão. Esse módulo permite descrever o contexto da missão e relacionar as aplicações e os comandos a objetivos de missão, o que ajuda o usuário a entender por que cada componente existe, e não apenas como ele funciona. A intenção é ligar a interação de baixo nível com comandos e telemetria a uma visão de mais alto nível do propósito do sistema, aproximando a experiência do estudante do raciocínio de engenharia de sistemas espaciais \cite{nasaSEhandbook, fortescue2011}.
+
+A proposta não substitui o cFS por uma abstração simplificada. As aplicações geradas permanecem integradas ao sistema de construção nativo, e a comunicação continua a ocorrer pelas interfaces reais de comando e telemetria. Dessa forma, o estudante continua exposto aos mecanismos usados em operações reais de software de voo \cite{wilmot2021, miranda2019survey, eshaq2025}. Essa orientação difere de ferramentas centradas em simulação de hardware, como o NOS3, que reduzem o custo de teste mas mantêm o esforço de configuração das interfaces \cite{geletko2019}, e busca complementar o ecossistema existente atacando o esforço inicial de preparação do sistema.
+
+\section{Requisitos da plataforma}
+
+Os requisitos funcionais derivam dos objetivos e das dificuldades levantadas na revisão. A plataforma deve gerar e integrar aplicações cFS a partir de dados informados pelo usuário, construir e decodificar pacotes de comando e telemetria de forma automática, exibir a telemetria recebida em tempo próximo do real, oferecer um módulo de planejamento de missão e fornecer suporte à interpretação de mensagens de evento. Como requisitos não funcionais, a plataforma deve manter a interação direta com o cFS nativo, operar em ambiente Linux de mesa e ser capaz de executar em uma plataforma de baixo custo do tipo Raspberry Pi, o que está alinhado ao uso de hardware acessível no contexto de New Space \cite{wu2026, oecd2023}.
+
+\section{Materiais e ferramentas}
+
+O desenvolvimento utiliza o NASA cFS como núcleo de software de voo, executado em ambiente Linux. O serviço de retaguarda é desenvolvido em Python, e a interface web é desenvolvida com tecnologias web correntes. A comunicação de comando e telemetria segue o empacotamento CCSDS usado pelo cFS \cite{ccsds2003, mccomas2015}. Para a validação da integração com sensores, prevê-se o uso de componentes comerciais de prateleira de baixo custo conectados ao computador hospedeiro, o que permite verificar o fluxo de dados de ponta a ponta sem alterar o núcleo do framework. A execução em uma Raspberry Pi serve para confirmar a viabilidade da plataforma em hardware de baixo custo, condição relevante para equipes com recursos limitados.
+
+\section{Plano de validação}
+
+A validação é organizada em duas frentes. A primeira é a avaliação técnica, que caracteriza o desempenho e a responsividade da plataforma em fluxos típicos de uso. A segunda é a avaliação educacional, que mede o efeito da plataforma sobre o usuário iniciante. Cada métrica é acompanhada de uma forma de medição e de um critério de sucesso, de modo que o resultado possa ser julgado de forma objetiva.
+
+\subsection{Avaliação técnica}
+
+A avaliação técnica usa métricas objetivas, definidas a partir das operações com que o usuário interage de forma direta. Cada métrica é medida por instrumentação do sistema, com registro de tempo nos pontos de interesse, e os valores são obtidos pela média ou pelo percentil sobre várias execuções. As mesmas medidas são repetidas na Raspberry Pi para verificar o comportamento em hardware de baixo custo. O Quadro~\ref{quadro:metricas} apresenta as métricas, a forma de medição e o critério de sucesso.
+
+\begin{quadro}
+\caption{\label{quadro:metricas}Métricas técnicas, forma de medição e critério de sucesso.}
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{3.4cm}|>{\centering\arraybackslash}m{7.6cm}|>{\centering\arraybackslash}m{4.0cm}|}
+\hline
+\textbf{Métrica} & \textbf{Forma de medição} & \textbf{Critério de sucesso} \\
+\hline
+Tempo de criação de aplicação & Cronometragem do pedido até a aplicação compilada e integrada, média de várias execuções & Build completa abaixo de 90 s \\
+\hline
+Tempo de varredura de código & Tempo para extrair as interfaces de comando e telemetria do código-fonte & Poucos segundos por árvore de aplicações \\
+\hline
+Latência de telemetria & Diferença entre a recepção do pacote UDP e a exibição na interface, percentil 95 & Abaixo de 100 ms no computador de mesa \\
+\hline
+Tempo de resposta do suporte & Tempo da análise local de mensagens de evento & Poucos segundos por consulta \\
+\hline
+Execução em Raspberry Pi & Repetição das medidas anteriores no hardware de baixo custo & Plataforma funcional e responsiva \\
+\hline
+\end{tabular}
+\fonte{Próprio autor.}
+\end{quadro}
+
+\subsection{Avaliação educacional}
+
+A avaliação educacional usa um experimento controlado para medir se a plataforma reduz o esforço inicial do usuário \cite{wohlin2012}. O estudo é conduzido com um grupo real de usuários iniciantes, como uma turma escolar ou uma equipe de competição de satélites, perfil próximo do público que a plataforma busca atender. Os participantes realizam uma tarefa equivalente de desenvolvimento de software de voo em duas condições, o fluxo convencional do cFS por linha de comando e o fluxo assistido pela plataforma. A comparação entre as duas condições isola o efeito da automação e da interface integrada.
+
+As medidas combinam indicadores objetivos de desempenho com instrumentos padronizados. Entre os indicadores objetivos estão o tempo até o primeiro pacote de telemetria recebido com sucesso, o número de erros de construção até a execução correta e o número de consultas à documentação durante a tarefa. Entre os instrumentos padronizados estão a System Usability Scale, que mede a usabilidade percebida, e um questionário de confiança aplicado antes e depois da tarefa \cite{brooke1996}. O Quadro~\ref{quadro:metricasedu} apresenta essas métricas, a forma de medição e o critério de sucesso.
+
+\begin{quadro}
+\caption{\label{quadro:metricasedu}Métricas educacionais, forma de medição e critério de sucesso.}
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{3.4cm}|>{\centering\arraybackslash}m{7.6cm}|>{\centering\arraybackslash}m{4.0cm}|}
+\hline
+\textbf{Métrica} & \textbf{Forma de medição} & \textbf{Critério de sucesso} \\
+\hline
+Tempo até a primeira telemetria & Cronometragem até o primeiro pacote recebido com sucesso & Redução frente ao fluxo convencional \\
+\hline
+Erros de build até a execução & Contagem nos registros do sistema & Redução frente ao fluxo convencional \\
+\hline
+Consultas à documentação & Observação durante a realização da tarefa & Redução frente ao fluxo convencional \\
+\hline
+Conclusão da tarefa guiada & Proporção de participantes que concluem a tarefa & Maioria dos participantes conclui \\
+\hline
+Usabilidade percebida & Questionário System Usability Scale ao final & Pontuação acima de 68 \\
+\hline
+Confiança do usuário & Questionário aplicado antes e depois da tarefa & Aumento após o uso \\
+\hline
+\end{tabular}
+\fonte{Próprio autor, com base em \citeonline{brooke1996} e \citeonline{wohlin2012}.}
+\end{quadro}
+
+\section{Critérios de validação}
+
+O sistema é considerado válido se cumprir critérios técnicos e educacionais. Do ponto de vista técnico, exige-se a integração correta, verificada quando as aplicações geradas pela plataforma são construídas e executadas no cFS sem modificação manual posterior, a fidelidade das interfaces, verificada quando os comandos enviados e a telemetria decodificada correspondem às definições reais extraídas do código-fonte, e o atendimento às metas de desempenho do Quadro~\ref{quadro:metricas}, inclusive na execução em Raspberry Pi. A validação técnica segue a distinção entre verificação e validação adotada na engenharia de sistemas espaciais, na qual se confirma tanto a conformidade com os requisitos quanto a adequação ao uso pretendido \cite{nasaSEhandbook, ecss2025}.
+
+Do ponto de vista educacional, o sucesso é definido pelo atendimento aos critérios do Quadro~\ref{quadro:metricasedu}. Espera-se uma redução nos indicadores objetivos de esforço no fluxo assistido em relação ao fluxo convencional, uma pontuação de usabilidade acima do valor de referência e um aumento na confiança autorrelatada dos participantes. O conjunto desses resultados permite afirmar, de forma objetiva, se a plataforma reduz a barreira de entrada no desenvolvimento de software de voo.
+
+
+===== secoes/trabalhos_relacionados.tex =====
+\chapter{Trabalhos relacionados}
+
+Este capítulo apresenta os frameworks de software de voo de código aberto mais usados em projetos educacionais e em missões de pequeno porte, descreve as ferramentas e os ambientes que buscam facilitar o uso do cFS e fecha com a lacuna que motiva a proposta.
+
+\section{Frameworks de software de voo de código aberto}
+
+Vários frameworks de software de voo estão disponíveis para o desenvolvimento de satélites. Além do cFS, destacam-se o F Prime, o KubOS, o CubedOS e o NanoSat MO Framework \cite{miranda2019survey, nasajpl_fprime}. Eles diferem na linguagem de implementação, na filosofia de arquitetura, na herança de voo, nos requisitos de hardware e na complexidade educacional, e essas diferenças afetam sua adequação ao ensino e a projetos estudantis \cite{miranda2019survey, eshaq2025}.
+
+O F Prime, desenvolvido pelo NASA Jet Propulsion Laboratory, é escrito em C++ e foi usado em missões de destaque, entre elas o helicóptero Ingenuity em Marte \cite{nasajpl_fprime}. O KubOS adota uma combinação de C e Rust e foi concebido especificamente para o mundo CubeSat, com foco em portabilidade e em um pacote de software pronto para uso \cite{miranda2019survey}. O CubedOS, desenvolvido em SPARK e Ada, prioriza a verificação formal, enquanto o NanoSat MO Framework, em Java, segue os serviços de operação de missão padronizados pelo CCSDS \cite{miranda2019survey}. Levantamentos comparativos que avaliam esses frameworks com base em requisitos de seleção apontam o cFS, o KubOS e a arquitetura SAVOIR/COrDeT como as opções que atendem à maior parte dos critérios para missões New Space \cite{miranda2019survey}.
+
+Entre essas alternativas, o cFS se mantém atraente para uso educacional por ser aberto, modular, ter herança de voo e se apoiar na linguagem C, comum em currículos de engenharia \cite{mccomas2015, miranda2019survey}. Estudos de caso recentes de desenvolvimento de software de voo para CubeSats discutem a escolha entre frameworks consolidados e implementações próprias, e reconhecem que frameworks como o cFS oferecem realismo arquitetural ao custo de uma curva de aprendizado mais acentuada \cite{eshaq2025}. O Quadro~\ref{quadro:frameworks} resume as principais características desses frameworks.
+
+\begin{quadro}
+\caption{\label{quadro:frameworks}Comparação de frameworks de software de voo de código aberto.}
+\centering
+\begin{tabular}{| l | c | c | c |}
+\hline
+\textbf{Framework} & \textbf{Linguagem} & \textbf{Herança de voo} & \textbf{Complexidade} \\
+\hline
+NASA cFS & C & Alta & Média \\
+\hline
+KubOS & C/Rust & Limitada & Média \\
+\hline
+CubedOS & SPARK/Ada & Limitada & Alta \\
+\hline
+NASA F Prime & C++ & Ingenuity (Marte) & Alta \\
+\hline
+NanoSat MO & Java & ESA OPS-SAT & Alta \\
+\hline
+\end{tabular}
+\fonte{Adaptado de \citeonline{miranda2019survey} e \citeonline{nasajpl_fprime}.}
+\end{quadro}
+
+\section{Ambientes e ferramentas de apoio ao cFS}
+
+O OpenSatKit é uma das ferramentas mais conhecidas construídas em torno do cFS \cite{wilmot2021, mccomas2018}. Ele integra o cFS a softwares de apoio, como o sistema de segmento solo COSMOS e um simulador de dinâmica de voo, e oferece um ambiente mais acessível para experimentação \cite{wilmot2021}. Essa integração reduz parte do esforço inicial e fornece um ambiente de aprendizado mais rico. Apesar dessas vantagens, o OpenSatKit ainda exige a instalação local de múltiplos pacotes, interação por linha de comando e a configuração de vários componentes independentes \cite{wilmot2021, mccomas2018}.
+
+Outra linha de apoio ao cFS está nos simuladores. O NASA Operational Simulator for Small Satellites, conhecido como NOS3, fornece um ambiente de simulação apenas por software que cria representações virtuais dos componentes de hardware de voo e integra o cFS, o que permite desenvolver e testar software de bordo sem o hardware físico \cite{geletko2019}. O NOS3 foi aplicado no desenvolvimento do CubeSat STF-1 e mostra como a simulação reduz o custo e o risco das primeiras etapas de um projeto \cite{geletko2019}. Ferramentas desse tipo facilitam a verificação, mas mantêm o foco na simulação de hardware, e não na redução do esforço de configuração e de construção das interfaces de comando e telemetria.
+
+Trabalhos que aplicaram o cFS em cursos de graduação também relataram barreiras práticas de configuração ao adotar o framework em ambiente acadêmico \cite{sanchez2021}. Em conjunto, essas experiências indicam que o ecossistema do cFS dispõe de ferramentas de integração e de simulação, mas ainda carece de um ambiente que ataque de forma direta o esforço inicial de preparação do sistema para o usuário iniciante.
+
+\section{Lacuna identificada}
+
+A literatura indica que o desafio educacional recorrente não é a ausência de frameworks de software de voo, e sim a falta de um ambiente integrado e de baixa barreira que automatize tarefas comuns de configuração sem esconder a arquitetura real \cite{wilmot2021, sanchez2021, eshaq2025}. Em ambientes de ensino, boa parte do esforço dos estudantes é gasta com a instalação de software, a compreensão do sistema de construção e a montagem manual das interfaces de comando e telemetria, atividades que estão apenas indiretamente ligadas aos objetivos de aprendizado \cite{sanchez2021, eshaq2025}.
+
+A proposta deste trabalho se posiciona nessa lacuna. Em vez de substituir o fluxo nativo do cFS por uma abstração simplificada, busca-se reduzir o esforço operacional por meio de automação e de uma interface web unificada, mantendo a interação direta com o núcleo real de software de voo. Essa orientação preserva o valor educacional do cFS, aproveita o ecossistema de ferramentas existente e ataca de forma direta a barreira de entrada descrita ao longo deste capítulo.

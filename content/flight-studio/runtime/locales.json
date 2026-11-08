@@ -1,0 +1,170 @@
+{
+  "mission-workspace": {
+    "title": {
+      "en": "Mission code and architecture",
+      "pt": "Código e arquitetura da missão",
+      "fr": "Code et architecture de la mission",
+      "es": "Código y arquitectura de la misión"
+    },
+    "caption": {
+      "en": "The real interface running locally. The CPU1 startup file appears alongside the cFS applications and libraries, with the Native target selected.",
+      "pt": "Interface real em execução local. O arquivo de inicialização CPU1 aparece ao lado das aplicações cFS e das bibliotecas, com o alvo Native selecionado.",
+      "fr": "L’interface réelle en exécution locale. Le fichier de démarrage CPU1 apparaît à côté des applications cFS et des bibliothèques, avec la cible Native sélectionnée.",
+      "es": "La interfaz real en ejecución local. El archivo de inicio CPU1 aparece junto a las aplicaciones cFS y las bibliotecas, con el destino Native seleccionado."
+    }
+  },
+  "native-cfs-operational": {
+    "title": {
+      "en": "cFS reaches the operational state",
+      "pt": "cFS em estado operacional",
+      "fr": "cFS en état opérationnel",
+      "es": "cFS en estado operativo"
+    },
+    "caption": {
+      "en": "Actual native execution: the terminal records CFE_ES_Main entering OPERATIONAL state, CI_LAB on UDP 1234 and TO_LAB subscriptions.",
+      "pt": "Execução nativa real: o terminal registra CFE_ES_Main entering OPERATIONAL state, CI_LAB em UDP 1234 e assinaturas de TO_LAB.",
+      "fr": "Exécution native réelle : le terminal indique CFE_ES_Main entering OPERATIONAL state, CI_LAB sur UDP 1234 et les abonnements de TO_LAB.",
+      "es": "Ejecución nativa real: el terminal registra CFE_ES_Main entering OPERATIONAL state, CI_LAB en UDP 1234 y suscripciones de TO_LAB."
+    }
+  },
+  "noop-command": {
+    "title": {
+      "en": "A command defined by the build",
+      "pt": "Um comando com definição extraída do build",
+      "fr": "Une commande définie à partir du build",
+      "es": "Un comando cuya definición procede del build"
+    },
+    "caption": {
+      "en": "The real Ground Station connected to native cFS. SAMPLE_APP_NOOP_CC uses MID 0x1882, command code 0 and an 8-byte packet, with no parameters.",
+      "pt": "Ground Station real conectado ao cFS nativo. SAMPLE_APP_NOOP_CC usa MID 0x1882, código 0 e pacote de 8 bytes, sem parâmetros.",
+      "fr": "La Ground Station réelle connectée au cFS natif. SAMPLE_APP_NOOP_CC utilise le MID 0x1882, le code de commande 0 et un paquet de 8 octets, sans paramètres.",
+      "es": "La Ground Station real conectada al cFS nativo. SAMPLE_APP_NOOP_CC utiliza MID 0x1882, código de comando 0 y un paquete de 8 bytes, sin parámetros."
+    }
+  },
+  "noop-event-confirmation": {
+    "title": {
+      "en": "The event confirms processing",
+      "pt": "O evento confirma o processamento",
+      "fr": "L’événement confirme le traitement",
+      "es": "El evento confirma el procesamiento"
+    },
+    "caption": {
+      "en": "After the actual NOOP is sent, the activity feed receives the SAMPLE: NOOP command v7.0.2-rc1-oss event from SAMPLE_APP. Sent alone confirms only that the datagram was sent.",
+      "pt": "Depois do envio real do NOOP, a atividade recebe o evento SAMPLE: NOOP command v7.0.2-rc1-oss da SAMPLE_APP. Sent sozinho apenas confirma o envio do datagrama.",
+      "fr": "Après l’envoi réel du NOOP, le fil d’activité reçoit l’événement SAMPLE: NOOP command v7.0.2-rc1-oss de SAMPLE_APP. Sent confirme uniquement l’envoi du datagramme.",
+      "es": "Tras el envío real del NOOP, el panel de actividad recibe el evento SAMPLE: NOOP command v7.0.2-rc1-oss de SAMPLE_APP. Sent por sí solo confirma únicamente el envío del datagrama."
+    }
+  },
+  "telemetry-before-command": {
+    "title": {
+      "en": "Before NOOP: the counter is zero",
+      "pt": "Antes do NOOP: contador em zero",
+      "fr": "Avant le NOOP : compteur à zéro",
+      "es": "Antes del NOOP: contador en cero"
+    },
+    "caption": {
+      "en": "Actual SAMPLE_APP housekeeping, after RESET_COUNTERS and before the observed NOOP: CommandCounter = 0 and CommandErrorCounter = 0.",
+      "pt": "Housekeeping real da SAMPLE_APP, depois do comando RESET_COUNTERS e antes do NOOP observado: CommandCounter = 0 e CommandErrorCounter = 0.",
+      "fr": "Télémétrie de maintenance réelle de SAMPLE_APP, après la commande RESET_COUNTERS et avant le NOOP observé : CommandCounter = 0 et CommandErrorCounter = 0.",
+      "es": "Housekeeping real de SAMPLE_APP, después del comando RESET_COUNTERS y antes del NOOP observado: CommandCounter = 0 y CommandErrorCounter = 0."
+    }
+  },
+  "telemetry-code-and-counter": {
+    "title": {
+      "en": "Code and decoded telemetry",
+      "pt": "O código e a telemetria decodificada",
+      "fr": "Le code et la télémétrie décodée",
+      "es": "El código y la telemetría decodificada"
+    },
+    "caption": {
+      "en": "After NOOP, the received telemetry shows CommandCounter = 1. The editor opens the corresponding C structure; the packet bytes can also be inspected.",
+      "pt": "Depois do NOOP, a telemetria recebida mostra CommandCounter = 1. O editor abre a estrutura C correspondente; os bytes do pacote também podem ser inspecionados.",
+      "fr": "Après le NOOP, la télémétrie reçue indique CommandCounter = 1. L’éditeur ouvre la structure C correspondante ; les octets du paquet peuvent aussi être inspectés.",
+      "es": "Después del NOOP, la telemetría recibida muestra CommandCounter = 1. El editor abre la estructura C correspondiente; también se pueden inspeccionar los bytes del paquete."
+    }
+  },
+  "sample-app-command-routes": {
+    "title": {
+      "en": "Routes derived from the C code",
+      "pt": "Rotas derivadas do código C",
+      "fr": "Routes dérivées du code C",
+      "es": "Rutas derivadas del código C"
+    },
+    "caption": {
+      "en": "The running interface maps Software Bus subscriptions, command codes, handlers and telemetry publication from the source code. Selecting a handler opens its implementation.",
+      "pt": "A aplicação em execução desenha assinaturas do Software Bus, códigos de comando, handlers e publicação de telemetria a partir dos fontes. A seleção do handler abre sua implementação.",
+      "fr": "L’interface en cours d’exécution représente les abonnements au Software Bus, les codes de commande, les gestionnaires et la publication de télémétrie à partir du code source. Sélectionner un gestionnaire ouvre son implémentation.",
+      "es": "La interfaz en ejecución representa suscripciones al Software Bus, códigos de comando, manejadores y publicación de telemetría a partir del código fuente. Seleccionar un manejador abre su implementación."
+    }
+  },
+  "communication-observed-packets": {
+    "title": {
+      "en": "Observed communication",
+      "pt": "Comunicação realmente observada",
+      "fr": "Communications observées",
+      "es": "Comunicación observada"
+    },
+    "caption": {
+      "en": "The Communication view counts commands sent and telemetry received by the station; selecting an application lets you inspect recent packets. It does not represent all internal Software Bus messages.",
+      "pt": "A vista Communication conta os comandos enviados e as telemetrias recebidas pela estação; selecionar uma aplicação permite inspecionar os pacotes recentes. Não representa todas as mensagens internas do Software Bus.",
+      "fr": "La vue Communication compte les commandes envoyées et la télémétrie reçue par la station ; sélectionner une application permet d’inspecter les paquets récents. Elle ne représente pas tous les messages internes du Software Bus.",
+      "es": "La vista Communication cuenta los comandos enviados y la telemetría recibida por la estación; seleccionar una aplicación permite inspeccionar los paquetes recientes. No representa todos los mensajes internos del Software Bus."
+    }
+  },
+  "application-generator-preview": {
+    "title": {
+      "en": "Application generator with preview",
+      "pt": "Gerador de aplicações com prévia",
+      "fr": "Générateur d’applications avec aperçu",
+      "es": "Generador de aplicaciones con vista previa"
+    },
+    "caption": {
+      "en": "An actual preview for creating orbit_lab, prepared only in the isolated copy for this demonstration. The generator shows parameters, routes and files before writing them. This capture documents the preview only.",
+      "pt": "Prévia real da criação de orbit_lab, preparada apenas na cópia isolada para esta demonstração. O gerador mostra parâmetros, rotas e arquivos antes de gravar. Esta captura documenta apenas a prévia.",
+      "fr": "Aperçu réel de la création d’orbit_lab, préparé uniquement dans la copie isolée pour cette démonstration. Le générateur montre les paramètres, les routes et les fichiers avant leur écriture. Cette capture documente uniquement l’aperçu.",
+      "es": "Vista previa real de la creación de orbit_lab, preparada solo en la copia aislada para esta demostración. El generador muestra parámetros, rutas y archivos antes de guardarlos. Esta captura documenta únicamente la vista previa."
+    }
+  },
+  "qemu-cfs-operational": {
+    "title": {
+      "en": "cFS running on the emulated Raspberry Pi",
+      "pt": "cFS executado no Raspberry Pi emulado",
+      "fr": "cFS exécuté sur le Raspberry Pi émulé",
+      "es": "cFS ejecutado en la Raspberry Pi emulada"
+    },
+    "caption": {
+      "en": "The real interface and terminal during cFS execution in the ARM64 Linux guest on QEMU’s emulated Raspberry Pi 4B. The cFE log confirms the OPERATIONAL state.",
+      "pt": "Aplicação e terminal reais durante execução de cFS no Linux ARM64 convidado do QEMU Raspberry Pi 4B. O log cFE confirma o estado OPERATIONAL.",
+      "fr": "Interface et terminal réels pendant l’exécution de cFS dans le système invité Linux ARM64 du Raspberry Pi 4B émulé par QEMU. Le journal cFE confirme l’état OPERATIONAL.",
+      "es": "Interfaz y terminal reales durante la ejecución de cFS en el Linux ARM64 invitado de la Raspberry Pi 4B emulada por QEMU. El registro cFE confirma el estado OPERATIONAL."
+    }
+  },
+  "qemu-hardware-sensors": {
+    "title": {
+      "en": "Signals sent to the emulated sensors",
+      "pt": "Sinais enviados aos sensores emulados",
+      "fr": "Signaux envoyés aux capteurs émulés",
+      "es": "Señales enviadas a los sensores emulados"
+    },
+    "caption": {
+      "en": "Actual synthetic-data execution with Raspberry Pi 4B, TMP105 and a magnetometer: values are sent through QMP and acknowledged with OK in the terminal. The screen shows 27.830 °C and a Y-axis magnetic field of 17.321 µT. This mission has no sensor-reading application; the capture confirms QMP acceptance, not a sensor-to-telemetry path.",
+      "pt": "Execução real de dados sintéticos: Raspberry Pi 4B, TMP105 e magnetômetro; os valores são enviados por QMP e confirmados com OK no terminal. A tela mostra temperatura de 27,830 °C e campo magnético Y de 17,321 µT. Esta missão não tem aplicação leitora de sensores; a captura confirma a aceitação por QMP, não o percurso do sensor até a telemetria.",
+      "fr": "Exécution réelle de données synthétiques avec Raspberry Pi 4B, TMP105 et magnétomètre : les valeurs sont envoyées par QMP et acquittées par OK dans le terminal. L’écran indique 27,830 °C et un champ magnétique sur l’axe Y de 17,321 µT. Cette mission ne comporte pas d’application de lecture des capteurs ; la capture confirme l’acceptation par QMP, pas le parcours du capteur jusqu’à la télémétrie.",
+      "es": "Ejecución real de datos sintéticos con Raspberry Pi 4B, TMP105 y magnetómetro: los valores se envían por QMP y se confirman con OK en el terminal. La pantalla muestra 27,830 °C y un campo magnético en el eje Y de 17,321 µT. Esta misión no incluye una aplicación de lectura de sensores; la captura confirma la aceptación por QMP, no el recorrido del sensor hasta la telemetría."
+    }
+  },
+  "synthetic-data-preview": {
+    "title": {
+      "en": "Synthetic data defined in Python",
+      "pt": "Dados sintéticos definidos em Python",
+      "fr": "Données synthétiques définies en Python",
+      "es": "Datos sintéticos definidos en Python"
+    },
+    "caption": {
+      "en": "The real synthetic-data view showing the sensor’s Python function and test-mode samples. Test mode does not send values to QEMU.",
+      "pt": "Vista real de dados sintéticos com a função Python do sensor e amostras do modo de teste. O modo de teste não envia valores ao QEMU.",
+      "fr": "Vue réelle des données synthétiques présentant la fonction Python du capteur et les échantillons du mode test. Le mode test n’envoie aucune valeur à QEMU.",
+      "es": "Vista real de datos sintéticos con la función Python del sensor y muestras del modo de prueba. El modo de prueba no envía valores a QEMU."
+    }
+  }
+}

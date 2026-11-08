@@ -1,0 +1,54 @@
+
+<div class="fm-s25"><span class="fm-s26">07 /</span><h2 class="fm-s27" id="control-title">{{text.t106}}</h2><span class="fm-s67">{{text.t107}}</span></div>
+<div class="fm-s68">
+<div class="fm-s29">
+<p class="fm-s30">{{text.t108}}</p>
+<p class="fm-s30">{{text.t109}}</p>
+</div>
+<figure class="paper fm-s143"><svg aria-label="{{text.t142}}" class="fm-s144" role="img" viewbox="0 0 860 230">
+<defs><marker id="arC" markerheight="6" markerwidth="6" orient="auto" refx="8" refy="5" viewbox="0 0 10 10"><path d="M0 0 L10 5 L0 10 Z" fill="#1F4A4F"></path></marker></defs>
+<g fill="none" marker-end="url(#arC)" stroke="#1F4A4F" stroke-width="1.8">
+<path d="M104 80 H140"></path><path d="M172 80 H204"></path><path d="M330 80 H372"></path><path d="M500 80 H542"></path><path d="M670 80 H730"></path>
+<path d="M700 80 V170 H660"></path><path d="M540 170 H500"></path><path d="M380 170 H267 V108"></path><path d="M156 170 V96"></path>
+</g>
+<line stroke="#1F4A4F" stroke-width="1.8" x1="267" x2="156" y1="170" y2="170"></line>
+<g font-family="'Space Mono', monospace" font-size="13" text-anchor="middle">
+<rect fill="#EADFC8" height="44" rx="10" width="96" x="8" y="58"></rect><text fill="#1E3A3D" x="56" y="78">{{text.t110}}</text><text fill="#8A8576" font-size="10.5" x="56" y="94">{{text.t111}}</text>
+<circle cx="156" cy="80" fill="#FBF8F1" r="16" stroke="#1F4A4F" stroke-width="1.8"></circle><text fill="#1E3A3D" x="156" y="85">Σ</text>
+<rect fill="#1F4A4F" height="56" rx="10" width="126" x="204" y="52"></rect><text fill="#F4EEE2" x="267" y="77">{{text.t112}}</text><text fill="#A9CBC5" font-size="10.5" x="267" y="95">{{text.t113}}</text>
+<rect fill="#FBF8F1" height="56" rx="10" stroke="#B04A32" stroke-width="2" width="128" x="372" y="52"></rect><text fill="#1E3A3D" x="436" y="77">{{text.t114}}</text><text fill="#B04A32" font-size="10.5" x="436" y="95">{{text.t115}}</text>
+<rect fill="#4E7F7B" height="56" rx="10" width="128" x="542" y="52"></rect><text fill="#FFFFFF" x="606" y="77">{{text.t116}}</text><text fill="#DCE7DD" font-size="10.5" x="606" y="95">{{text.t117}}</text>
+<text fill="#1E3A3D" x="780" y="85">{{text.t118}}</text>
+<rect fill="#EADFC8" height="44" rx="10" width="120" x="540" y="148"></rect><text fill="#1E3A3D" x="600" y="175">GPS</text>
+<rect fill="#D9694E" height="44" rx="10" width="120" x="380" y="148"></rect><text fill="#FFFFFF" x="440" y="175">{{text.t119}}</text>
+<text fill="#8A8576" font-size="10.5" x="214" y="192">{{text.t120}}</text>
+<text fill="#8A8576" font-size="10.5" x="606" y="36">{{text.t121}}</text><path d="M606 40 V50" marker-end="url(#arC)" stroke="#8A8576" stroke-width="1.4"></path>
+</g>
+</svg></figure>
+</div>
+<div class="paper fm-s145">
+<div class="fm-s146">
+<div class="fm-s147"><span class="fm-s40">{{text.t122}}</span><span class="fm-s148">{{text.t123}}</span></div>
+<div aria-label="{{text.t143}}" class="fm-s33" role="group"><sc-for as="o" list="{{thrBtns}}"><button aria-pressed="{{o.pressed}}" class="seg tog fm-s49" data-control="{{o.key}}" data-value="{{o.value}}" style="background: {{o.bg}};color: {{o.fg}}" type="button">{{o.label}}</button></sc-for></div>
+</div>
+<div class="fm-s149">
+<sc-for as="ch" list="{{ctrlCharts}}">
+<figure aria-label="{{ch.title}} · {{ch.unit}}" class="fm-s112" role="group">
+<div class="fm-s113"><span class="fm-s73">{{ch.title}}</span><span class="fm-s15">{{ch.unit}}</span></div>
+<div class="fm-s114">
+<svg aria-hidden="true" class="fm-s32" viewbox="0 0 440 200">
+<g stroke="#E3D8C3" stroke-dasharray="3 4" stroke-width="1"><sc-for as="g" list="{{ch.grid}}"><line x1="52" x2="428" y1="{{g.y}}" y2="{{g.y}}"></line></sc-for></g>
+<sc-for as="b" list="{{ch.bands}}"><line stroke="{{b.c}}" stroke-dasharray="6 4" stroke-width="1.4" x1="52" x2="428" y1="{{b.y}}" y2="{{b.y}}"></line></sc-for>
+<sc-for as="p" list="{{ch.paths}}"><path d="{{p.d}}" fill="none" opacity="{{p.op}}" stroke="{{p.c}}" stroke-dasharray="{{p.dash}}" stroke-linecap="round" stroke-linejoin="round" stroke-width="{{p.w}}"></path></sc-for>
+</svg>
+<sc-for as="t" list="{{ch.labels}}"><span class="fm-s115" style="left: {{t.l}};top: {{t.t2}}">{{t.t}}</span></sc-for>
+</div>
+<div class="fm-s116"><sc-for as="lg" list="{{ch.legend}}"><span class="fm-s57"><span class="fm-s117" style="border-top: 2.5px {{lg.st}} {{lg.c}}"></span>{{lg.t}}</span></sc-for></div>
+</figure>
+</sc-for>
+</div>
+<div class="fm-s150"><sc-for as="v" list="{{ctrlVals}}"><div class="fm-s64"><span class="fm-s65">{{v.k}}</span><span class="fm-s151" style="color: {{v.c}}">{{v.v}}</span></div></sc-for></div>
+<p class="fm-s152">{{ctrlText}}</p>
+</div>
+<p class="fm-s95">{{text.t124}}</p>
+<p class="formation-note">{{text.t125}}</p>

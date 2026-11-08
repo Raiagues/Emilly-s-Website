@@ -1,0 +1,487 @@
+{
+  "repository": "https://github.com/Raiagues/cfs_emulator",
+  "commit": "f9b21e76e04915ec1c401585be115f024bdc3597",
+  "cfs_commit": "88d7c6d6a333176cb6ad7d83ed8721798cbd65d6",
+  "source_note": "Cópia da instalação fornecida pela usuária; o submódulo cFS tem alterações locais. Fontes e missão preservadas. Builds, execução nativa, disco QEMU, comandos e demonstrações ocorreram somente em /tmp/emilly-flight-runtime/studio.",
+  "captured_at": "2026-11-08T00:04:20.385027+00:00",
+  "capture_target": "Native Linux x86_64 e QEMU Raspberry Pi 4B com Linux ARM64",
+  "screenshots": [
+    {
+      "file": "img/flight-studio/screens/mission-workspace.png",
+      "title": "Código e arquitetura da missão",
+      "caption": "Interface real em execução local. O arquivo de inicialização CPU1 aparece ao lado das aplicações cFS e das bibliotecas, com o alvo Native selecionado.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "7e64e1eb866e8d979900261973a660270f092b0acfa50efc9187b682effa6a3f",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:47:08.071649+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/native-cfs-operational.png",
+      "title": "cFS em estado operacional",
+      "caption": "Execução nativa real: o terminal registra CFE_ES_Main entering OPERATIONAL state, CI_LAB em UDP 1234 e assinaturas de TO_LAB.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "acc1453c3cfc3da5126a74c893be1028ce89286b3414d1f1a498046abb63a234",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:47:18.014048+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/noop-command.png",
+      "title": "Um comando com definição extraída do build",
+      "caption": "Ground Station real conectado ao cFS nativo. SAMPLE_APP_NOOP_CC usa MID 0x1882, código 0 e pacote de 8 bytes, sem parâmetros.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "bf66d0dae8f5fc41dd42c6effbbd9ee61716e92ceb6d6bab1f19df94802b2d78",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:49:23.642497+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/noop-event-confirmation.png",
+      "title": "O evento confirma o processamento",
+      "caption": "Depois do envio real do NOOP, a atividade recebe o evento SAMPLE: NOOP command v7.0.2-rc1-oss da SAMPLE_APP. Sent sozinho apenas confirma o envio do datagrama.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "f18ba04fbcdf8a4d5e897cc5649059afbb728be2ce5c3e5278f7aa93fd27f218",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:49:29.396238+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/telemetry-before-command.png",
+      "title": "Antes do NOOP: contador em zero",
+      "caption": "Housekeeping real da SAMPLE_APP, depois do comando RESET_COUNTERS e antes do NOOP observado: CommandCounter = 0 e CommandErrorCounter = 0.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "c8e491130d5914dfc0bcbca79b006bff79c0f1cd3f59462e38741420fcd53257",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:49:23.392508+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/telemetry-code-and-counter.png",
+      "title": "O código e a telemetria decodificada",
+      "caption": "Depois do NOOP, a telemetria recebida mostra CommandCounter = 1. O editor abre a estrutura C correspondente; os bytes do pacote também podem ser inspecionados.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "5e9348c86731d382f0e4e56f7392bbf17d48caf88988245b5711b41c7b8398a0",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:50:51.337909+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/sample-app-command-routes.png",
+      "title": "Rotas derivadas do código C",
+      "caption": "A aplicação em execução desenha assinaturas do Software Bus, códigos de comando, handlers e publicação de telemetria a partir dos fontes. A seleção do handler abre sua implementação.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "2da50ff2ff6672f78b30b826044dcfd0ef171f7bed609f1e0600c5dd82c7aa5e",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:50:52.181877+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/communication-observed-packets.png",
+      "title": "Comunicação realmente observada",
+      "caption": "A vista Communication conta os comandos enviados e as telemetrias recebidas pela estação; selecionar uma aplicação permite inspecionar os pacotes recentes. Não representa todas as mensagens internas do Software Bus.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "9ae393d6cc59f86b54213d3da8d45b9e4439c53e93a698463934f7c78875274b",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:50:52.421869+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/application-generator-preview.png",
+      "title": "Gerador de aplicações com prévia",
+      "caption": "Prévia real da criação de orbit_lab, preparada apenas na cópia isolada para esta demonstração. O gerador mostra parâmetros, rotas e arquivos antes de gravar.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "a8cadcf4d420abfad751dc15339134aa6d6c2cac4982cc96e1cdc31e247d9a27",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:54:36.562495+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/qemu-hardware-sensors.png",
+      "title": "Sinais enviados aos sensores emulados",
+      "caption": "Execução real de dados sintéticos: Raspberry Pi 4B, TMP105 e magnetômetro; os valores são enviados por QMP e confirmados com OK no terminal. A tela mostra temperatura de 27,830 °C e campo magnético Y de 17,321 µT.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "8d72b2d23f46bd304a9e0eb51ab61a4853a2b689e00d4bdcda9c1009aed2f2d8",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-08T00:02:35.836114+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/qemu-cfs-operational.png",
+      "title": "cFS executado no Raspberry Pi emulado",
+      "caption": "Aplicação e terminal reais durante execução de cFS no Linux convidado do QEMU Raspberry Pi 4B.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "3ee6b306c07359fa185481b4b3341cd5be59c070e2c4d55ccda461491a63146d",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-08T00:02:28.380144+00:00"
+    },
+    {
+      "file": "img/flight-studio/screens/synthetic-data-preview.png",
+      "title": "Dados sintéticos definidos em Python",
+      "caption": "Vista real de dados sintéticos com a função Python do sensor e amostras do modo de teste. O modo de teste não envia valores ao QEMU.",
+      "width": 1728,
+      "height": 1080,
+      "sha256": "5793f1e202fe80512d235d64acb34dca8ae8d859264898a22942cb2bc57616d5",
+      "origin": "Playwright screenshot of locally executed Flight Studio",
+      "captured_at": "2026-11-07T23:58:27.914877+00:00"
+    }
+  ],
+  "commands": [
+    "python3 start --no-ui profile --native",
+    "python3 start --no-ui build",
+    "python3 start --ui --port 8765",
+    "UI: Run cFS → Ground Station Connect → SAMPLE_APP_RESET_COUNTERS_CC → SAMPLE_APP_NOOP_CC",
+    "python3 start --no-ui stop --target native",
+    "python3 start --no-ui profile --board raspi4b --os raspios",
+    "python3 start --no-ui build --target qemu",
+    "python3 start --no-ui boot --target qemu",
+    "UI: selecionar Emulator → Run cFS → confirmar serviço ativo e OPERATIONAL",
+    "UI: Synthetic data → Widgets → Start → respostas QMP OK → Stop"
+  ],
+  "implemented_features": [
+    "Editor de fontes C e startup CPU1",
+    "Arquitetura derivada do C com links para funções, comandos, campos e bibliotecas",
+    "Geração e integração de apps e bibliotecas",
+    "Alvos Native, QEMU Raspberry Pi 4B e Raspberry Pi físico",
+    "Ground Station com módulos NASA, catálogo do build, UDP e decodificação",
+    "Vista Communication com tráfego observado",
+    "Configuração de dispositivos I²C e drivers",
+    "Sinais sintéticos Python, prévia e envio QMP ao emulador"
+  ],
+  "web_transport": {
+    "protocol": "HTTP JSON GET/POST, mesma origem local",
+    "poll_interval_ms": 1500,
+    "source": "interface/static/app.js:769",
+    "mutations": "X-Studio-Token de sessão",
+    "no_websocket": true
+  },
+  "architecture": {
+    "ui": "interface/static/ (JavaScript sem build)",
+    "server": "interface/server.py (Python, 127.0.0.1)",
+    "mission": "interface/backend/ + project/",
+    "execution": "hardware/manager.py",
+    "ground": "ground_station/ com NASA cFS-GroundSystem",
+    "sensor": "sensors/ → QMP qom-set → QEMU sensor → Linux I²C → driver → app → SB → TO_LAB → UDP"
+  },
+  "command_flow": {
+    "target": "native",
+    "command_id": "SAMPLE_APP_NOOP_CC",
+    "mid": "0x1882",
+    "command_code": 0,
+    "command_bytes": 8,
+    "command_hex": "1882c000000100a4",
+    "sent_at": 1794095363.6759026,
+    "telemetry_id": "SAMPLE_APP_HK_TLM_MID",
+    "telemetry_type": "SAMPLE_APP_HkTlm_t",
+    "telemetry_mid": "0x0883",
+    "telemetry_bytes": 18,
+    "telemetry_hex_before": "0883c017000b000f46a4b32f000000000000",
+    "telemetry_hex_after": "0883c018000b000f46aa198e000000000100",
+    "counter_before": 0,
+    "counter_after": 1,
+    "error_counter": 0,
+    "counter_offset": 16,
+    "error_counter_offset": 17,
+    "event": "SAMPLE: NOOP command v7.0.2-rc1-oss",
+    "before_received_at": 1794095362.7234344,
+    "after_received_at": 1794095368.1248333,
+    "stages": [
+      {
+        "local": "Browser",
+        "action": "POST /api/ground/send",
+        "capture": "noop-command.png",
+        "ref": "interface/server.py:380",
+        "payload": {
+          "command_id": "SAMPLE_APP_NOOP_CC",
+          "values": {},
+          "target": "native"
+        }
+      },
+      {
+        "local": "Python / MiniCmdUtil",
+        "action": "Construir e enviar 1882c000000100a4 por UDP para 127.0.0.1:1234",
+        "ref": "ground_station/official.py:85",
+        "mid": "0x1882",
+        "command_code": 0,
+        "payload_hex": "1882c000000100a4",
+        "bytes": 8
+      },
+      {
+        "local": "CI_LAB / Software Bus",
+        "action": "Roteamento ao assinante de SAMPLE_APP_CMD_MID (0x1882)",
+        "ref": "cFS/apps/sample_app/fsw/src/sample_app_dispatch.c:88"
+      },
+      {
+        "local": "SAMPLE_APP_NoopCmd",
+        "action": "CommandCounter += 1; publicar evento NOOP",
+        "capture": "sample-app-command-routes.png",
+        "ref": "cFS/apps/sample_app/fsw/src/sample_app_cmds.c:79"
+      },
+      {
+        "local": "cFE EVS / TO_LAB",
+        "action": "Transmitir evento e housekeeping por UDP (porta 2234)",
+        "capture": "noop-event-confirmation.png",
+        "mid": "0x0883",
+        "bytes": 18,
+        "event_mid": "0x0808",
+        "ref": "hardware/ground_link.py:104"
+      },
+      {
+        "local": "RoutingService / GenericTelemetry / UI",
+        "action": "Decodificar campos e atualizar interface via polling HTTP",
+        "capture": "telemetry-code-and-counter.png",
+        "ref": "interface/static/app.js:769"
+      }
+    ],
+    "event_mid": "0x0808",
+    "event_bytes": 176,
+    "event_id": 3,
+    "event_received_at": 1794095364.0202844,
+    "event_hex": "0808c02c00a9000f46a5ffc70000000053414d504c455f415050000000000000000000000000000003000200420000000100000053414d504c453a204e4f4f5020636f6d6d616e642076372e302e322d7263312d6f73730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "timestamps_utc": {
+      "before_received_at": "2026-11-07T23:49:22.723434+00:00",
+      "sent_at": "2026-11-07T23:49:23.675903+00:00",
+      "event_received_at": "2026-11-07T23:49:24.020284+00:00",
+      "after_received_at": "2026-11-07T23:49:28.124833+00:00"
+    },
+    "measurement_note": "Horários da captura local; não representam benchmark de latência. O housekeeping tem sua própria cadência de publicação.",
+    "command_fields": [
+      {
+        "offset": 0,
+        "length": 2,
+        "hex": "1882",
+        "name": "Packet ID / MID",
+        "decoded": "CCSDS versão 0, comando, cabeçalho secundário presente, APID 0x082; MID 0x1882"
+      },
+      {
+        "offset": 2,
+        "length": 2,
+        "hex": "c000",
+        "name": "Sequence control",
+        "decoded": "Flags 11 (pacote não segmentado), contador de sequência 0"
+      },
+      {
+        "offset": 4,
+        "length": 2,
+        "hex": "0001",
+        "name": "Packet length",
+        "decoded": "Campo 1 → tamanho total 1 + 7 = 8 bytes"
+      },
+      {
+        "offset": 6,
+        "length": 1,
+        "hex": "00",
+        "name": "Command code",
+        "decoded": "CC 0 → SAMPLE_APP_NOOP_CC"
+      },
+      {
+        "offset": 7,
+        "length": 1,
+        "hex": "a4",
+        "name": "Checksum",
+        "decoded": "XOR de todos os 8 bytes = 0xFF, como usado por MiniCmdUtil"
+      }
+    ],
+    "command_payload": "Sem parâmetros: apenas cabeçalhos, total 8 bytes.",
+    "telemetry_fields": [
+      {
+        "offset": 0,
+        "length": 2,
+        "hex": "0883",
+        "name": "Packet ID / MID",
+        "decoded": "Telemetria SAMPLE_APP_HK_TLM_MID; MID 0x0883"
+      },
+      {
+        "offset": 2,
+        "length": 2,
+        "hex": "c018",
+        "name": "Sequence control",
+        "decoded": "Pacote não segmentado; sequência 24 na captura após o comando"
+      },
+      {
+        "offset": 4,
+        "length": 2,
+        "hex": "000b",
+        "name": "Packet length",
+        "decoded": "Campo 11 → tamanho total 11 + 7 = 18 bytes"
+      },
+      {
+        "offset": 6,
+        "length": 10,
+        "hex": "000f46aa198e00000000",
+        "name": "Restante do cabeçalho de telemetria",
+        "decoded": "Bytes reais do cabeçalho cFE compilado; payload começa no offset 16"
+      },
+      {
+        "offset": 16,
+        "length": 1,
+        "hex": "01",
+        "name": "CommandCounter",
+        "decoded": "uint8: 1, incrementou de 0 para 1"
+      },
+      {
+        "offset": 17,
+        "length": 1,
+        "hex": "00",
+        "name": "CommandErrorCounter",
+        "decoded": "uint8: 0"
+      }
+    ],
+    "capture_note": "O JSON preserva o primeiro housekeeping confirmado após o comando. O screenshot mostra um pacote posterior com o mesmo CommandCounter = 1; a sequência e o tempo do cabeçalho naturalmente mudam."
+  },
+  "demonstrated_behaviors": [
+    "cFS compilado e em OPERATIONAL",
+    "UDP conectado e pacotes recebidos",
+    "NOOP real com evento e contador 0→1",
+    "Navegação da arquitetura para fonte C",
+    "Inspeção de bytes de telemetria e tráfego por app",
+    "Prévia de geração de aplicativo orbit_lab com startup, prioridades, stack e scheduler",
+    "Prévia real de 8 amostras Python do TMP105 sem envio a QEMU",
+    "cFS ARM64 compilado e executado no Raspberry Pi 4B emulado",
+    "Valores físicos de TMP105 e magnetômetro enviados ao QEMU por QMP com resposta OK"
+  ],
+  "limitations": [
+    "Metas de desempenho e avaliação educacional do TCC não foram medidas nesta captura.",
+    "A captura principal usa execução nativa, não é evidência de validação em placa física.",
+    "A interpretação assistida por IA citada no TCC não foi localizada como integração de modelo nestes módulos; não anunciar como validada.",
+    "A análise de C é textual: formas de dispatch não reconhecidas são marcadas como unresolved.",
+    "A missão capturada não contém aplicativo de leitura dos sensores; a execução sintética confirma QMP, mas não valida nesta sessão o percurso I²C→app→telemetria de sensor.",
+    "Datas cFE exibidas no terminal são o relógio de missão. Os timestamps received_at e sent_at são do host da captura."
+  ],
+  "source_refs": [
+    {
+      "path": "interface/server.py",
+      "line": 321,
+      "note": "Inicia receptor e conecta a estação ao build em execução.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/server.py#L321"
+    },
+    {
+      "path": "interface/server.py",
+      "line": 380,
+      "note": "POST de comando entrega ID e parâmetros à GroundStation.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/server.py#L380"
+    },
+    {
+      "path": "interface/static/app.js",
+      "line": 769,
+      "note": "Polling HTTP de jobs e Ground Station a cada 1500 ms.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/static/app.js#L769"
+    },
+    {
+      "path": "ground_station/official.py",
+      "line": 85,
+      "note": "Integra os módulos oficiais MiniCmdUtil, RoutingService e GenericTelemetry.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/ground_station/official.py#L85"
+    },
+    {
+      "path": "ground_station/catalog.py",
+      "line": 30,
+      "note": "Extrai valores e layouts usando o compilador do build.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/ground_station/catalog.py#L30"
+    },
+    {
+      "path": "interface/backend/architecture_details.py",
+      "line": 23,
+      "note": "Extrai relações da arquitetura a partir do C.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/interface/backend/architecture_details.py#L23"
+    },
+    {
+      "path": "sensors/tmp105.py",
+      "line": 17,
+      "note": "Função de temperatura sintética em graus Celsius.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/sensors/tmp105.py#L17"
+    },
+    {
+      "path": "project/appgen/README.md",
+      "line": 7,
+      "note": "Arquivos do usuário preservados e integração de build gerada.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/project/appgen/README.md#L7"
+    },
+    {
+      "path": "ground_station/README.md",
+      "line": 54,
+      "note": "Semântica de Sent, evento e contador.",
+      "url": "https://github.com/Raiagues/cfs_emulator/blob/f9b21e76e04915ec1c401585be115f024bdc3597/ground_station/README.md#L54"
+    },
+    {
+      "path": "cFS/apps/sample_app/fsw/src/sample_app_cmds.c",
+      "line": 79,
+      "note": "Handler real do NOOP: incrementa CommandCounter e emite evento EVS."
+    },
+    {
+      "path": "cFS/tools/cFS-GroundSystem/Subsystems/cmdGui/MiniCmdUtil.py",
+      "line": 74,
+      "note": "Formação do cabeçalho CCSDS: MID, sequência 0xC000 e tamanho total menos7."
+    },
+    {
+      "path": "cFS/tools/cFS-GroundSystem/Subsystems/cmdGui/MiniCmdUtil.py",
+      "line": 125,
+      "note": "Function code e checksum XOR do pacote de comando."
+    },
+    {
+      "path": "cFS/apps/sample_app/config/default_sample_app_msgstruct.h",
+      "line": 79,
+      "note": "SAMPLE_APP_HkTlm_t: cabeçalho e payload; offsets obtidos do build, não inferidos."
+    },
+    {
+      "path": "hardware/ground_link.py",
+      "line": 104,
+      "note": "Endereços de comandos e retorno: loopback nativo; bridge do Docker e encaminhamento QEMU no alvo emulado."
+    },
+    {
+      "path": "sensors/simulator.py",
+      "line": 175,
+      "note": "Unidades físicas, conversão, qom-set, resposta e amostras ao vivo."
+    },
+    {
+      "path": "sensors/qmp.py",
+      "line": 12,
+      "note": "Cliente QMP JSON sobre socket Unix board/qmp.sock."
+    },
+    {
+      "path": "sensors/runtime.py",
+      "line": 88,
+      "note": "Confere modelo, bus e endereço QOM dos sensores emulados."
+    }
+  ],
+  "qemu_verification": {
+    "linux_ready": true,
+    "flight_running": true,
+    "native_running_at_capture": false,
+    "build_fingerprint": "a108f2129a1af03ada5272f0444eb95d2451967d29e552cbf3bc2ee0985a7ded",
+    "synthetic_data_sent": true,
+    "qmp_result": "OK",
+    "tmp105_sample_c": 27.83,
+    "tmp105_qmp_value_millic": 27830,
+    "mag_y_sample_microtesla": 17.321,
+    "mag_y_qmp_value_nanotesla": 17321,
+    "capture": "qemu-hardware-sensors.png",
+    "observed_file": "qemu-observed.json",
+    "guest_machine": "aarch64",
+    "binary_matches_build": true,
+    "current_invocation_operational": true,
+    "sha256": "6d4248434a6e543da6142a5633e00654b5110bcfad83edcfb899e01e1cb5cf2b"
+  },
+  "verification": {
+    "screenshots_verified": 12,
+    "screenshot_bytes": 2651375,
+    "png_dimensions": "1728×1080",
+    "hashes_match": true,
+    "command_xor_checksum": "0xFF",
+    "command_counter_observed": [
+      0,
+      1
+    ],
+    "qemu_binary_matches_local_build": true,
+    "active_qemu_invocation_operational": true,
+    "original_checkout_status_matches_initial": " M cFS",
+    "cleanup": {
+      "synthetic_session_stopped": true,
+      "native_cfs_stopped": true,
+      "qemu_powered_down_cleanly": true,
+      "temporary_ui_stopped": true
+    },
+    "verified_at": "2026-11-08T00:06:29.466996+00:00"
+  }
+}

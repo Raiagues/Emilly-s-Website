@@ -1,0 +1,28 @@
+[
+  {
+    "file": "img/flight-studio/cfs-layered-architecture.png",
+    "original": "figuras/cfs_layers_conv.png",
+    "sha256": "f63ff15c9d8a82ff68f9013e8e5f9eb06fe257964ae699729065da019199dc41",
+    "source_sha256": "f63ff15c9d8a82ff68f9013e8e5f9eb06fe257964ae699729065da019199dc41",
+    "width": 1245,
+    "height": 867,
+    "kind": "original-copy",
+    "caption_pt": "Arquitetura em camadas do NASA cFS, reproduzida no TCC como adaptação de McComas, Strege e Wilmot (2015)."
+  },
+  {
+    "file": "img/flight-studio/platform-architecture-original.png",
+    "original": "main.pdf",
+    "sha256": "813210097a1fdf0f3d51ff9c45715292852a0911264872a5236eb313674ba04c",
+    "source_sha256": "0ee8daeca16d53fd7348b6f33c08ec8df8a5611309e468e000def7bf5d67db76",
+    "width": 1510,
+    "height": 260,
+    "kind": "original-pdf-figure-render",
+    "caption_pt": "Componentes e interfaces da plataforma proposta, desenho original do TCC.",
+    "render": {
+      "page": 28,
+      "printed_page": 27,
+      "method": "pdftocairo -f 28 -l 28 -r 240 -x 280 -y 1135 -W 1510 -H 260 -png -singlefile",
+      "description": "Rasterização e recorte da Figura 2; conteúdo gráfico original preservado."
+    }
+  }
+]

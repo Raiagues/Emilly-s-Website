@@ -1,5 +1,35 @@
 # Validação do diário e da execução local
 
+## Flight Studio e kernel interativos — novembro de 2026
+
+- Páginas NASA cFS e kernel refeitas a partir da composição visual do CERN: papel creme, títulos com serifa, diagramas vetoriais, capítulos e painéis técnicos. Textos e legendas em EN/PT/FR/ES.
+- Flight Studio: 12 capturas reais da aplicação, duas figuras originais do TCC, arquitetura selecionável, camadas cFS, reprodução do percurso NOOP, inspetor dos bytes CMD/HK antes e depois, geração de aplicações e curva interativa da função de temperatura. cFS nativo e ARM64/QEMU chegaram a OPERATIONAL; evento e contador 0→1 confirmam o NOOP nativo. QMP confirmou a injeção de sensores; o percurso de leitura I²C até telemetria é explicitamente separado do que foi observado.
+- Kernel: seis atividades compiladas/executadas no QEMU CEP e kernel completo, com 32 capturas reais. Código e saída lado a lado, reprodução controlada, tabela de processos capturada, mapa MMIO/ELF, cálculo de endereços de pixels, bitmaps da fonte, interrupções e pilhas. Código e framebuffer não foram simulados para os prints; os desenhos didáticos são identificados separadamente.
+- **Nove testes novos aprovados**, com hashes de todos os 44 screenshots, leitura das imagens, títulos/legendas, teclado, pausa/avanço/zoom, pacotes reais, valores calculados, estados dos processos e leitura sem JavaScript. Auditoria axe WCAG A/AA aprovada nas duas páginas nos quatro idiomas e em estados alternativos no celular. Layouts conferidos em 320, 390, 768 e 1440 px, incluindo todas as abas de capturas e atividades.
+- **Sete regressões direcionadas aprovadas**, incluindo todos os 112 estudos de caso, 76 redirecionamentos antigos, destaques, busca/filtros/idiomas, as três páginas dos relatórios e seus diagramas. Na primeira rodada foram detectados um cartão francês largo e um teste que ainda buscava a tecnologia STM32 removida do Flight Studio; ambos foram corrigidos e os testes afetados passaram na reexecução. Não foi necessária uma nova execução integral de todas as suítes independentes.
+- Build e verificador estático: **255 HTMLs válidos**; links, fragmentos, imagens e limites do pacote conferidos. `git diff --check` sem erros. O ZIP do TCC foi removido depois da integração, mantendo as fontes usadas, figuras e metadados. A geração não depende dos ZIPs, QEMU ou da instalação local do Flight Studio.
+- Instalações originais preservadas. Os runtimes de captura foram encerrados. Resultado preparado localmente, sem publicação no GitHub Pages.
+
+Prévias: [Flight Studio](preview-flight-studio.png), [sensores](preview-flight-studio-sensors.png), [kernel](preview-kernel-os.png), [código e execução](preview-kernel-execution.png), [memória no celular](preview-kernel-memory-mobile.png).
+
+## Revisão visual dos relatórios — 07/11/2026
+
+- As três páginas agora têm capa com desenho/foto original, contexto sobre a importância do projeto, contribuições, capítulos com figuras junto das explicações e resultados. Foram selecionadas 30 imagens: 14 de RISC-V, 9 do carrinho e 7 de injeção de falhas. Os hashes confirmam que as imagens mantêm os arquivos de origem.
+- RISC-V inclui arquitetura CPU/cache/memória, seis formatos de instrução selecionáveis, fluxo de testes, formas de onda, extensão de sinal, investigação do alinhamento e correção do offset. Os resultados manuais também aparecem em barras, mantendo as contagens completas em tabela acessível.
+- O carrinho apresenta PWM e geometria das rodas, quatro etapas da câmera e tratamento das curvas. A injeção apresenta o circuito, comparação com/sem falha e espaço bit × ciclo. Figuras abrem no visualizador com navegação por teclado e retorno de foco; sem JavaScript, todas permanecem disponíveis.
+- Sete testes de navegador direcionados passaram: imagens e hashes, EN/PT/FR/ES em 320/390/768/1440 px, axe nas três páginas PT, seleção por clique/teclado, visualizador, redirecionamentos, destaques, filtros/idiomas e carregamento das 112 páginas canônicas de projetos e experiências. Nenhum erro de JavaScript ou overflow foi observado nesses testes.
+- `python3 scripts/build.py` e `python3 scripts/check.py`: 255 HTMLs válidos, incluindo redirecionamentos. Prévia local em `http://127.0.0.1:8000/pt/`; esta revisão não publicou no GitHub Pages.
+
+## URLs, imagens e relatórios dos projetos — 07/11/2026
+
+- Nomes descritivos para os 18 projetos numerados e para NASA cFS. Os 76 endereços antigos nos quatro idiomas redirecionam para as páginas canônicas; teste de navegador confirma preservação de parâmetros e fragmentos. Fallback sem JavaScript também verificado.
+- NASA cFS, kernel, CubeSat e RISC-V são os quatro destaques na home e os primeiros itens do catálogo. Busca, filtros, idioma e retorno aos resultados continuam funcionando.
+- RISC-V, carrinho autônomo e injeção de falhas receberam conteúdo em EN/PT/FR/ES e oito figuras originais. Arquivos, hashes e limites dos resultados estão em `content/project-reports/`. Sete PNGs existentes foram renomeados; nomes publicados usam minúsculas e hífens.
+- Revisão visual em desktop e celular; páginas dos relatórios verificadas em 320, 390, 768 e 1440 px, com figuras carregadas, links para o tamanho original e navegação sem JavaScript. Auditoria axe WCAG A/AA aprovada nas três páginas em português; os demais testes de acessibilidade existentes também passaram.
+- Regressão executada com Chrome local: `BROWSER_EXECUTABLE=/usr/bin/google-chrome node --test --test-concurrency=1 tests/*.test.mjs`. A execução completa aprovou 71 de 72 testes e identificou uma comparação incorreta de coordenadas SVG no teste orbital já existente. Corrigido o teste para considerar a escala automática; a reexecução do teste afetado passou. A invariância dos dados físicos entre ruídos e níveis de confiança foi adicionada aos testes do modelo, que também passaram. Nenhuma falha ficou pendente.
+- Os três ZIPs da raiz foram apagados após a validação. Uma nova execução de `python3 scripts/build.py` e `python3 scripts/check.py`, sem os ZIPs, passou com **255 HTMLs**, incluindo redirecionamentos. `git diff --check` sem erros.
+- Alterações preparadas localmente; esta revisão não realizou publicação no GitHub Pages.
+
 ## Wing box analysis — 25/10/2026
 
 - Projeto integrado a partir do ZIP fornecido, mantendo o cartão, os seis capítulos, o CAD, os gráficos e a composição visual. EN/PT/FR/ES, categoria Estruturas, cabeçalho persistente, filtro preservado no retorno e links reais para repositório, laboratório e projetos vizinhos.

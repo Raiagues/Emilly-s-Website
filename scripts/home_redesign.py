@@ -95,7 +95,7 @@ def render(b, lang):
         return drawing(original[name]) if name in original else b['art'](name)
     projects = [p for p in b['PROJECTS'] if p['kind'] == 'projects']
     featured = next(p for p in projects if p['id'] == 'flight-platform')
-    selected = [p for p in projects if p != featured][:3]
+    selected = [next(p for p in projects if p['id'] == id) for id in d['FEATURED_PROJECT_IDS'] if id != featured['id']]
     experiences = sorted((p for p in b['PROJECTS'] if p['kind'] == 'experience'),
                          key=lambda p: tuple(int(x) for x in re.findall(r'\d{4}', p['date'])))
     arrow = '<span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>'

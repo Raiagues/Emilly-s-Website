@@ -1,0 +1,201 @@
+{
+  "command": {
+    "id": "SAMPLE_APP_NOOP_CC",
+    "app": "sample_app",
+    "mid": 6274,
+    "code": 0,
+    "values": {},
+    "sent_at": 1794095363.6759026,
+    "bytes": 8,
+    "status": "sent",
+    "hex": "1882c000000100a4",
+    "automatic": false,
+    "event_id": 233
+  },
+  "before": {
+    "mid": 2179,
+    "sequence": 23,
+    "bytes": 18,
+    "name": "SAMPLE_APP_HkTlm_t",
+    "app": "sample_app",
+    "source": "cFS/apps/sample_app/config/default_sample_app_msgstruct.h",
+    "values": {
+      "CommandCounter": 0,
+      "CommandErrorCounter": 0
+    },
+    "errors": [],
+    "hex": "0883c017000b000f46a4b32f000000000000",
+    "received_at": 1794095362.7234344,
+    "count": 12,
+    "event_id": 229
+  },
+  "after": {
+    "mid": 2179,
+    "sequence": 24,
+    "bytes": 18,
+    "name": "SAMPLE_APP_HkTlm_t",
+    "app": "sample_app",
+    "source": "cFS/apps/sample_app/config/default_sample_app_msgstruct.h",
+    "values": {
+      "CommandCounter": 1,
+      "CommandErrorCounter": 0
+    },
+    "errors": [],
+    "hex": "0883c018000b000f46aa198e000000000100",
+    "received_at": 1794095368.1248333,
+    "count": 13,
+    "event_id": 248
+  },
+  "events": [
+    {
+      "mid": 2056,
+      "sequence": 42,
+      "bytes": 176,
+      "name": "CFE_EVS_LongEventTlm_t",
+      "app": "cfe_evs",
+      "source": "cFS/cfe/modules/evs/config/default_cfe_evs_msgstruct.h",
+      "values": {
+        "PacketID.AppName": "SAMPLE_APP",
+        "PacketID.EventID": 3,
+        "PacketID.EventType": 2,
+        "PacketID.SpacecraftID": 66,
+        "PacketID.ProcessorID": 1,
+        "Message": "SAMPLE: NOOP command v7.0.2-rc1-oss",
+        "Padding": [
+          0,
+          0
+        ]
+      },
+      "errors": [],
+      "hex": "0808c02a00a9000f46697db50000000053414d504c455f415050000000000000000000000000000003000200420000000100000053414d504c453a204e4f4f5020636f6d6d616e642076372e302e322d7263312d6f73730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "received_at": 1794095303.512936,
+      "count": 12,
+      "event_id": 42
+    },
+    {
+      "mid": 2056,
+      "sequence": 43,
+      "bytes": 176,
+      "name": "CFE_EVS_LongEventTlm_t",
+      "app": "cfe_evs",
+      "source": "cFS/cfe/modules/evs/config/default_cfe_evs_msgstruct.h",
+      "values": {
+        "PacketID.AppName": "SAMPLE_APP",
+        "PacketID.EventID": 4,
+        "PacketID.EventType": 2,
+        "PacketID.SpacecraftID": 66,
+        "PacketID.ProcessorID": 1,
+        "Message": "SAMPLE: RESET command",
+        "Padding": [
+          0,
+          0
+        ]
+      },
+      "errors": [],
+      "hex": "0808c02b00a9000f46a1ff670000000053414d504c455f415050000000000000000000000000000004000200420000000100000053414d504c453a20524553455420636f6d6d616e6400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "received_at": 1794095360.0188904,
+      "count": 13,
+      "event_id": 218
+    },
+    {
+      "mid": 2056,
+      "sequence": 44,
+      "bytes": 176,
+      "name": "CFE_EVS_LongEventTlm_t",
+      "app": "cfe_evs",
+      "source": "cFS/cfe/modules/evs/config/default_cfe_evs_msgstruct.h",
+      "values": {
+        "PacketID.AppName": "SAMPLE_APP",
+        "PacketID.EventID": 3,
+        "PacketID.EventType": 2,
+        "PacketID.SpacecraftID": 66,
+        "PacketID.ProcessorID": 1,
+        "Message": "SAMPLE: NOOP command v7.0.2-rc1-oss",
+        "Padding": [
+          0,
+          0
+        ]
+      },
+      "errors": [],
+      "hex": "0808c02c00a9000f46a5ffc70000000053414d504c455f415050000000000000000000000000000003000200420000000100000053414d504c453a204e4f4f5020636f6d6d616e642076372e302e322d7263312d6f73730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "received_at": 1794095364.0202844,
+      "count": 14,
+      "event_id": 235
+    }
+  ],
+  "command_definition": {
+    "id": "SAMPLE_APP_NOOP_CC",
+    "name": "SAMPLE_APP_NoopCmd_t",
+    "app": "sample_app",
+    "struct": "SAMPLE_APP_NoopCmd_t",
+    "fields": [],
+    "kind": "command",
+    "dispatch": "function_code",
+    "mid": 6274,
+    "size": 8,
+    "code": 0,
+    "source": "cFS/apps/sample_app/config/default_sample_app_msgstruct.h",
+    "locations": {
+      "packet": {
+        "path": "cFS/apps/sample_app/config/default_sample_app_msgstruct.h",
+        "line": 48,
+        "end_line": 51,
+        "symbol": "SAMPLE_APP_NoopCmd_t"
+      },
+      "identifier": {
+        "path": "cFS/apps/sample_app/fsw/inc/sample_app_fcncodes.h",
+        "line": 40,
+        "end_line": 40,
+        "symbol": "SAMPLE_APP_NOOP_CC"
+      },
+      "dispatch": {
+        "path": "cFS/apps/sample_app/fsw/src/sample_app_dispatch.c",
+        "line": 88,
+        "end_line": 88,
+        "symbol": "SAMPLE_APP_NOOP_CC"
+      }
+    }
+  },
+  "telemetry_definition": {
+    "id": "SAMPLE_APP_HK_TLM_MID",
+    "name": "SAMPLE_APP_HkTlm_t",
+    "app": "sample_app",
+    "struct": "SAMPLE_APP_HkTlm_t",
+    "fields": [
+      {
+        "name": "CommandCounter",
+        "type": "uint8",
+        "format": "B",
+        "count": 1,
+        "offset": 16,
+        "size": 1
+      },
+      {
+        "name": "CommandErrorCounter",
+        "type": "uint8",
+        "format": "B",
+        "count": 1,
+        "offset": 17,
+        "size": 1
+      }
+    ],
+    "kind": "telemetry",
+    "mid": 2179,
+    "size": 18,
+    "source": "cFS/apps/sample_app/config/default_sample_app_msgstruct.h",
+    "locations": {
+      "identifier": {
+        "path": "cFS/apps/sample_app/config/default_sample_app_msgids.h",
+        "line": 31,
+        "end_line": 31,
+        "symbol": "SAMPLE_APP_HK_TLM_MID"
+      },
+      "packet": {
+        "path": "cFS/apps/sample_app/config/default_sample_app_msgstruct.h",
+        "line": 79,
+        "end_line": 83,
+        "symbol": "SAMPLE_APP_HkTlm_t"
+      }
+    }
+  }
+}

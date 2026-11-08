@@ -1,5 +1,15 @@
 # Fontes e decisões editoriais
 
+## Flight Studio e kernel OS — novembro de 2026
+
+O novo `TCC.zip`, fornecido pela proprietária, fundamenta contexto, arquitetura e plano de avaliação do Flight Studio. Foram preservadas as duas figuras técnicas, os capítulos relevantes e as referências em `content/flight-studio/`. O documento contém metas, não medições concluídas; os capítulos de desenvolvimento e conclusão estão vazios.
+
+A proprietária também indicou [Raiagues/cfs_emulator](https://github.com/Raiagues/cfs_emulator) e a instalação local `~/Documents/raspi/pi4-emulator/boot_cfs`. Uma cópia foi executada para produzir 12 capturas reais e verificar o NOOP completo, cFS nativo e ARM64/QEMU, além da injeção de sensores por QMP. [Origem e limites da execução](flight-studio/runtime/README.md), incluindo o submódulo com alterações locais, dados capturados e a distinção entre injeção QMP e leitura pela aplicação. O repositório indicado substitui o link antigo para o perfil GitHub.
+
+Para o kernel, foi usado [Raiagues/OS](https://github.com/Raiagues/OS), commit `920d3c9d93e0cda928e48c6cd77ea239a054976b`. As seis atividades e o kernel completo foram compilados sem modificar o código e executados no QEMU CEP RV64. São 32 capturas reais do framebuffer, código com linhas/URLs fixas, logs UART, endereços do ELF e estados de processos lidos da RAM. [Método de captura e créditos](kernel-os/README.md).
+
+Os novos diagramas e controles explicam relações documentadas no código. Não representam screenshots sintéticos nem execução do emulador dentro do portfólio. A metodologia acadêmica, a execução observada e os próximos testes são identificados nas páginas em EN/PT/FR/ES.
+
 ## Página técnica do CERN openlab — 25/10/2026
 
 O conteúdo, o design, os resultados dos cinco modelos e os 14 PNGs vêm do arquivo `CERN openlab · project deep dive-html.zip`, enviado pela proprietária. Os gráficos foram copiados sem alteração; o manifesto de origem e hashes está em `content/cern-openlab/assets.json`. Os textos foram traduzidos para PT, FR e ES sem alterar os resultados ou apresentar síntese em FPGA como trabalho concluído.
@@ -44,7 +54,7 @@ Revisão em 17/10/2026. As traduções reorganizam os fatos para leitura em um p
 - **CNES:** a imprensa descreve outros tempos de recuperação e duração do estágio. Os números técnicos no site seguem os currículos: sete horas para minutos; bloqueio de inicialização de mais de 40 s para menos de 5 s. Não foram misturados com os números da reportagem.
 - **TIMA:** adotado o escopo mais preciso do currículo resumido: redução de **uma etapa de verificação**, de 8,6 s para 0,014 s. Não é apresentada como aceleração de todo o experimento.
 - **ITA:** o currículo arredonda a melhoria para 82%, enquanto o site original registra 81,7% de redução de ruído de medição. O texto explicita o indicador e a origem do valor original, sem tratá-lo como métrica genérica de precisão.
-- **CVA6:** a página antiga descrevia o trabalho como em andamento. Foi atualizada para validação concluída e depuração de offsets, conforme o currículo detalhado.
+- **CVA6:** a revisão inicial seguiu o currículo detalhado. O relatório SEOC fornecido em novembro de 2026 esclareceu que a validação de 128 bits foi parcial (24/46 testes manuais aprovados) e que o gerador automático cobria ADD. A página agora segue o relatório e distingue essas duas frentes.
 - **Veículo autônomo:** o site antigo citava FreeRTOS; o currículo atualizado descreve bare-metal. Adotado o currículo atualizado.
 - **CubeSat:** datas antigas conflitavam; o site agora indica 2024, conforme ambos os currículos. Os vídeos do CubeSat e do veículo foram extraídos dos links dos PDFs.
 - **EP Aero:** o período de atuação original (2022–2024), os cursos para mais de 200 participantes e o alcance coletivo posterior de quase 3.000 alunos não são tratados como a mesma métrica.
@@ -192,3 +202,7 @@ Não foi identificada de forma independente a empresa mencionada na lembrança s
 As nove fotos de `portifolio/fundacao estudar/` foram fornecidas pela autora e inspecionadas antes da publicação. As legendas se limitam ao relato e ao que aparece nas imagens. Não foi inferida a identidade de outras pessoas nas fotos.
 
 As relações têm contexto explícito: Fundação → divulgação do prêmio; prêmio → China; Fundação → financiamento da participação no BSV; Brasil Project permanece autofinanciado; Fundação → descoberta da Lyfe; Lyfe → mentoria da Verônica → painel no South Summit. Os quatro caminhos do último capítulo e o link direto do South Summit para `#lyfe` ajudam a percorrer essas histórias. As novas reflexões são elaboração editorial em primeira pessoa a partir das memórias da autora, com versões em EN/PT/FR/ES.
+
+## Relatórios técnicos fornecidos em novembro de 2026
+
+RISC-V/CVA6, carrinho autônomo e injeção de falhas foram ampliados a partir dos três ZIPs da raiz. A [rastreabilidade dos textos e figuras](project-reports/SOURCES.md) documenta os capítulos consultados, as contribuições individuais, os resultados parciais e as correções em relação ao conteúdo anterior. O controle final do carrinho é integral, conforme o relatório; a extensão do saboteur para todos os bits não foi concluída. A plataforma educacional passa a identificar explicitamente NASA cFS, conforme o pedido da proprietária, mantendo o estado em desenvolvimento.

@@ -16,6 +16,8 @@ SITE_URL = os.environ.get('SITE_URL', 'https://raiagues.github.io/Emilly-s-Websi
 E = html.escape
 EMAIL = D['EMAIL']
 ALL_PATHS = []
+REDIRECT_PATHS = set()
+REPORTS = runpy.run_path(str(ROOT / 'content/project_reports.py'))['REPORTS']
 icon = runpy.run_path(str(ROOT / 'scripts/icons.py'))['icon']
 ART = runpy.run_path(str(ROOT / 'scripts/illustrations.py'))
 art = lambda name: ART['illustration'](ROOT, name)
@@ -26,6 +28,9 @@ INNER = runpy.run_path(str(ROOT / 'scripts/inner_redesign.py'))
 CERN = runpy.run_path(str(ROOT / 'scripts/cern_redesign.py'))
 DAMAS = runpy.run_path(str(ROOT / 'scripts/damas_redesign.py'))
 WINGBOX = runpy.run_path(str(ROOT / 'scripts/wingbox_redesign.py'))
+ENGINEERING = runpy.run_path(str(ROOT / 'scripts/engineering_redesign.py'))
+PROJECT_REPORT = runpy.run_path(str(ROOT / 'scripts/project_report_design.py'))
+FORMATION = runpy.run_path(str(ROOT / 'scripts/formation_redesign.py'))
 DESIGN = runpy.run_path(str(ROOT / 'scripts/redesign_components.py'))
 JUI = json.loads((ROOT / 'content/journal/ui.json').read_text())
 UI['home'] = JUI['home']
@@ -47,7 +52,7 @@ def asset_url(current, path):
     return relative(current, path) + '?v=' + asset_version(path)
 
 def detail(p):
-    return f'pages/{p["kind"]}/{p["id"]}.html'
+    return f'pages/{p["kind"]}/{p["slug"]}.html'
 
 def txt(key, lang):
     return UI[key][lang]
@@ -76,6 +81,9 @@ def layout(path, lang, title, description, body, active='home'):
     cern_report = path == 'pages/experience/cern.html'
     damas_project = path == 'pages/projects/damas-espaciais.html'
     wingbox_project = path == 'pages/projects/wing-box-analysis.html'
+    formation_experience = path == 'pages/experience/experience_2.html'
+    engineering_project = path in ('pages/projects/nasa-cfs-platform.html', 'pages/projects/operating-system-kernel.html')
+    project_report = any(detail(p) == path and p['id'] in REPORTS for p in PROJECTS)
     design = DESIGN['Design'](globals(), lang, path)
     return f'''<!doctype html>
 <html lang="{lang}">
@@ -86,7 +94,7 @@ def layout(path, lang, title, description, body, active='home'):
   <link rel="icon" href="{asset('img/favicon.svg')}" type="image/svg+xml">
   <link rel="canonical" href="{SITE_URL}/{current}">{alternates}<link rel="alternate" hreflang="x-default" href="{SITE_URL}/{path}">
   <meta property="og:title" content="{E(title, quote=True)} — Emilly Rodrigues"><meta property="og:description" content="{E(description, quote=True)}">
-  <meta property="og:type" content="website"><meta property="og:url" content="{SITE_URL}/{current}"><meta property="og:image" content="{SITE_URL}/img/me.png">
+  <meta property="og:type" content="website"><meta property="og:url" content="{SITE_URL}/{current}"><meta property="og:image" content="{SITE_URL}/img/emilly-rodrigues-portrait.png">
 {f'<link rel="stylesheet" href="{asset("style/style.css")}">' if path == 'about.html' else ''}
   <link rel="stylesheet" href="{asset('style/fonts.css')}">
   <link rel="stylesheet" href="{asset('style/home.css')}">
@@ -94,12 +102,16 @@ def layout(path, lang, title, description, body, active='home'):
 {f'<link rel="stylesheet" href="{asset("style/media.css")}">' if redesigned_home else f'<link rel="stylesheet" href="{asset("style/inner.css")}">'}
 {f'<link rel="stylesheet" href="{asset("style/journal-design.css")}">' if not cern_report and (post or path == 'journal.html' or path.startswith('pages/')) else ''}
   <link rel="stylesheet" href="{asset('style/components.css')}">
+{f'<link rel="stylesheet" href="{asset("style/project-reports.css")}">' if project_report else ''}
 {f'<link rel="stylesheet" href="{asset("style/work.css")}">' if not cern_report and (path in ('projects.html','experience.html','recognition.html','contact.html') or path.startswith('pages/')) else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/cern.css")}">' if cern_report else ''}
+{f'<link rel="stylesheet" href="{asset("style/engineering.css")}">' if engineering_project else ''}
   <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>{chr(10) + f'<link rel="stylesheet" href="{asset("style/damas.css")}"><script src="{asset("src/damas.js")}" defer></script>' if damas_project else ''}{chr(10) + f'<link rel="stylesheet" href="{asset("style/wingbox.css")}"><script src="{asset("src/wingbox.js")}" defer></script>' if wingbox_project else ''}
   <script src="{asset('src/home.js') if redesigned_home else asset('src/script.js')}" defer></script>
-  <script src="{asset('src/redesign.js')}" defer></script>
+  <script src="{asset('src/redesign.js')}" defer></script>{chr(10) + f'<link rel="stylesheet" href="{asset("style/formation.css")}"><script type="module" src="{asset("src/formation.js")}"></script>' if formation_experience else ''}
 {f'<script src="{asset("src/projects.js")}" defer></script>' if path in ('projects.html','experience.html') else ''}
-{f'<script src="{asset("src/journal.js")}" defer></script>' if post or cern_report else ''}{chr(10) + f'<script src="{asset("src/cern.js")}" defer></script>' if cern_report else ''}
+{f'<script src="{asset("src/journal.js")}" defer></script>' if post or cern_report or project_report or engineering_project else ''}{chr(10) + f'<script src="{asset("src/cern.js")}" defer></script>' if cern_report else ''}
+{f'<script src="{asset("src/engineering.js")}" defer></script>' if engineering_project else ''}
+{f'<script src="{asset("src/project-reports.js")}" defer></script>' if project_report else ''}
 {f'<script src="{asset("src/stories.js")}" defer></script>' if not cern_report and (post or path == 'journal.html' or path.startswith('pages/')) else ''}
 </head>
 <body id="top" data-page="{active}"{' class="redesign-home"' if redesigned_home else ' class="redesign-inner"'}>
@@ -158,7 +170,7 @@ def about(lang):
     t = lambda x: txt(x, lang)
     evidence = ''.join(f'<article class="skill"><h3>{SKILLS[key][lang]}</h3><p>{copy[lang]}</p><a class="text-link" href="{href(current, detail(next(p for p in PROJECTS if p["id"] == id)), lang)}">{txt("case", lang)} </a></article>' for key, id, copy in D['EVIDENCE'])
     body = f'''<main id="main" class="container content-page">{heading(lang, t('about'))}
-<div class="about-layout"><div class="prose"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><a class="text-link" href="{href(current, 'pages/projects/project_17.html', lang)}">EP Aero </a></div><aside class="education"><h2>{t('education')}</h2><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p></aside></div>
+<div class="about-layout"><div class="prose"><p>{t('about_p1')}</p><p>{t('about_p2')}</p><a class="text-link" href="{href(current, 'pages/projects/ep-aero.html', lang)}">EP Aero </a></div><aside class="education"><h2>{t('education')}</h2><p><strong>{t('degree1')}</strong><span>{t('degree1_date')}</span></p><p><strong>{t('degree2')}</strong><span>{t('degree2_date')}</span></p><p class="language-levels">{t('languages')}</p></aside></div>
 <section class="skills-section"><h2>{t('awards_title')}</h2><p>{t('awards_body')}</p><a class="button button-soft" href="{href(current, 'recognition.html', lang)}">{t('recognition')}</a></section><section class="skills-section"><h2>{t('skills_title')}</h2><p>{t('skills_body')}</p><div class="skills-grid">{evidence}</div></section></main>'''
     return layout('about.html', lang, t('about'), t('short_bio'), body, 'about')
 
@@ -185,6 +197,12 @@ def contact(lang):
     return layout('contact.html', lang, t('contact'), t('contact_body'), body, 'contact')
 
 def project(p, lang):
+    if p['id'] in ('flight-platform', 'project_1'):
+        return layout(detail(p), lang, p['title'][lang], p['summary'][lang], ENGINEERING['render'](globals(), p, lang), 'projects')
+    if p['id'] in REPORTS:
+        return layout(detail(p), lang, p['title'][lang], p['summary'][lang], PROJECT_REPORT['render'](globals(), p, lang), 'projects')
+    if p['id'] == 'experience_2':
+        return layout(detail(p), lang, p['title'][lang], p['summary'][lang], FORMATION['render'](globals(), p, lang), 'experience')
     if p['id'] == 'wing-box-analysis':
         return layout(detail(p), lang, p['title'][lang], p['summary'][lang], WINGBOX['render'](globals(), p, lang), 'projects')
     if p['id'] == 'damas-espaciais':
@@ -202,6 +220,18 @@ def write(path, content):
     target.write_text(content, encoding='utf-8')
     ALL_PATHS.append(path)
 
+def redirect(old, target, lang, title):
+    current = loc(old, lang)
+    destination = relative(current, loc(target, lang))
+    REDIRECT_PATHS.add(current)
+    write(current, f'''<!doctype html>
+<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><link rel="canonical" href="{SITE_URL}/{loc(target,lang)}">
+<title>{E(title)} — Emilly Rodrigues</title>
+<script src="{asset_url(current,'src/redirect.js')}" data-redirect="{destination}" defer></script>
+<noscript><meta http-equiv="refresh" content="0;url={destination}"></noscript>
+</head><body><main><h1>{E(title)}</h1><a href="{destination}">{E(title)} →</a></main></body></html>''')
+
 def main():
     # Only generated journal pages are removed; unpublished entries stay out of the site.
     for lang in LANGS:
@@ -216,12 +246,15 @@ def main():
             write(loc(J['path'](post), lang), journal(post, lang))
         for p in PROJECTS:
             write(loc(detail(p), lang), project(p, lang))
+            old = f'pages/{p["kind"]}/{p["id"]}.html'
+            if old != detail(p):
+                redirect(old, detail(p), lang, p['title'][lang])
     for old in ['pages/projects/projects_exemple.html', 'pages/experience/experience_exemple.html']:
         write(old, '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=../../projects.html"><title>Projects — Emilly Rodrigues</title><a href="../../projects.html">Projects</a></html>')
     base = SITE_URL + '/'
     write('404.html', f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found — Emilly Rodrigues</title><link rel="stylesheet" href="{base}style/style.css?v={asset_version("style/style.css")}"><main class="container content-page"><h1>Page not found.</h1><p><a class="button button-primary" href="{base}">Home </a></p></main></html>')
     write('.nojekyll', '')
-    write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE_URL}/{p}</loc></url>' for p in ALL_PATHS if p.endswith('.html') and 'exemple' not in p and p != '404.html') + '</urlset>')
+    write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE_URL}/{p}</loc></url>' for p in ALL_PATHS if p.endswith('.html') and 'exemple' not in p and p != '404.html' and p not in REDIRECT_PATHS) + '</urlset>')
     dist = ROOT / 'dist'
     if dist.exists():
         shutil.rmtree(dist)

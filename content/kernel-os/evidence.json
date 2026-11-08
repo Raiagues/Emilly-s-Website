@@ -1,0 +1,1116 @@
+{
+  "repository": "https://github.com/Raiagues/OS",
+  "commit": "920d3c9d93e0cda928e48c6cd77ea239a054976b",
+  "commit_url": "https://github.com/Raiagues/OS/tree/920d3c9d93e0cda928e48c6cd77ea239a054976b",
+  "captured_at": "2026-11-07",
+  "platform": {
+    "machine": "CEP",
+    "architecture": "RISC-V RV64IMA",
+    "privilege": "machine mode",
+    "harts": 1,
+    "ram_bytes": 33554432,
+    "compiler": "riscv64-unknown-elf-gcc 11.1.0",
+    "qemu": "6.2.50 (v6.2.0-238-g8b39174f19-dirty), custom CEP",
+    "gdb": "gdb-multiarch",
+    "build_optimization": "-O2",
+    "framebuffer": {
+      "width": 1280,
+      "height": 720,
+      "base": "0x80000000",
+      "bytes_per_pixel": 4,
+      "row_bytes": 5120,
+      "bytes_per_text_row": 40960,
+      "font_width": 8,
+      "font_height": 8,
+      "text_columns": 160,
+      "text_rows": 90
+    }
+  },
+  "capture": {
+    "method": "Execução real do código sem modificações. A VRAM 0x80000000..0x80384000 foi exportada do QEMU e codificada sem perda em PNG RGB, a partir dos pixels BGRX little-endian.",
+    "static": "As quatro primeiras atividades foram pausadas em breakpoints do programa original por GDB. time registra o tempo do host, incluindo captura; playback_time sugere intervalos didáticos de 2 s e não representa desempenho.",
+    "timed": "Timer e processos foram executados continuamente e pausados brevemente pelo QMP para capturar VRAM e registradores de estado na RAM. time é tempo do host; observed.kernel_seconds vem do contador ticks do kernel.",
+    "screen_note": "O screendump padrão deste QEMU custom seleciona a superfície de controle/logo CEP. Por isso os PNGs são exportações dos pixels reais da VRAM do convidado, não screenshots da janela do host.",
+    "source_changes": false
+  },
+  "activities": [
+    {
+      "id": "pixels",
+      "title": "Pixels e fontes",
+      "description": "Um endereço de memória vira um pixel; oito bytes do bitmap formam cada glifo de 8 × 8.",
+      "source": {
+        "path": "examples/01-pixels/src/console.c",
+        "start_line": 12,
+        "end_line": 32,
+        "code": "void pixel(uint32_t column, uint32_t ligne, uint32_t couleur)\n{\n    if (column >= DISPLAY_WIDTH || ligne >= DISPLAY_HEIGHT) return;\n    volatile uint32_t *adresse = (volatile uint32_t*)ADRESSE_INITIAL + (column + ligne*DISPLAY_WIDTH);\n    (*adresse) = couleur;\n}\n\nvoid ecrit_car(uint32_t ligne, uint32_t column, char character)\n{\n    for (int pixel_h = 0; pixel_h < BITS; pixel_h++)\n    {\n        char char_element = font8x8_basic[(uint8_t)character][pixel_h];\n        for (int pixel_v = 0; pixel_v < BITS; pixel_v++)\n        {\n            if((char_element >> pixel_v)&1)\n            {\n                pixel(BITS*column + pixel_v, BITS*ligne + pixel_h, BLANC);\n            }\n        }\n    }\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/01-pixels/src/console.c#L12-L32"
+      },
+      "focus_rect": [
+        0,
+        0,
+        512,
+        112
+      ],
+      "notes": [
+        "O cálculo usa um ponteiro uint32_t: cada posição avança 4 bytes.",
+        "As cores e o texto foram escritos pelo programa original de demonstração."
+      ],
+      "command": "sh scripts/course-env.sh /matieres/4MMPCSEA/xinul/bin/qemu-system-riscv64 -machine cep -bios none -kernel build/cep/kernel.elf -m 32M -smp 1 -display none -monitor none -serial file:/tmp/emilly-kernel-evidence/captures/pixels-uart.txt -no-user-config -S -gdb stdio",
+      "build_command": "sh scripts/course-env.sh make -j2",
+      "working_directory": "examples/01-pixels",
+      "capture_kind": "gdb-breakpoints",
+      "source_sha256": "b95fb6570f39a2e32d64fb1df3512e3e67f3a364045ca355b4c7e100edece673",
+      "demo_source": {
+        "path": "examples/01-pixels/src/main.c",
+        "start_line": 1,
+        "end_line": 44,
+        "code": "#include \"console.h\"\n#include \"font.h\"\n\n/* Keep each glyph at 8x8; choose its ink color when writing the font bits. */\nstatic void color_text(uint32_t row, const char *text, uint32_t color)\n{\n    for (uint32_t col = 0; text[col]; ++col) {\n        if (color == BLANC) {\n            ecrit_car(row, col, text[col]);\n            continue;\n        }\n        for (uint32_t y = 0; y < 8; ++y) {\n            for (uint32_t x = 0; x < 8; ++x) {\n                int bit = ((unsigned char)font8x8_basic[(unsigned char)text[col]][y] >> x) & 1;\n                pixel(col * 8 + x, row * 8 + y, bit ? color : NOIR);\n            }\n        }\n    }\n}\n\nvoid kernel_start(void)\n{\n    init_uart();\n    efface_ecran();\n    const char banner[] = \"OS / RISC-V RV64 / QEMU CEP\\n\";\n    console_putbytes(banner, sizeof(banner) - 1);\n    console_putbytes(\"\\f\", 1);\n    console_putbytes(\"\", 0);\n    char characters[96];\n    for (unsigned int i = 0; i < 95; ++i) characters[i] = (char)(32 + i);\n    characters[95] = '\\0';\n    color_text(1, characters, 0x00ff0000);\n    color_text(2, characters, 0x0000ff00);\n    color_text(3, characters, 0x000000ff);\n    color_text(4, characters, BLANC);\n\n    /* Write beyond the last column to observe automatic wrapping. */\n    const char text[] = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 \";\n    place_curseur(6, 0);\n    for (int i = 0; i < 4; ++i) {\n        console_putbytes(text, sizeof(text) - 1);\n    }\n    for (;;) hlt();\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/01-pixels/src/main.c#L1-L44"
+      },
+      "frames": [
+        {
+          "file": "img/kernel-os/pixels-01.png",
+          "time": 2.285,
+          "label": "Primeira linha de glifos: pixels vermelhos",
+          "breakpoint": "src/main.c:33",
+          "pc": "0x1938 <kernel_start+192>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\f",
+          "playback_time": 0,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\n"
+        },
+        {
+          "file": "img/kernel-os/pixels-02.png",
+          "time": 4.278,
+          "label": "Segunda linha: pixels verdes",
+          "breakpoint": "src/main.c:34",
+          "pc": "0x1950 <kernel_start+216>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\f",
+          "playback_time": 2,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\n"
+        },
+        {
+          "file": "img/kernel-os/pixels-03.png",
+          "time": 6.227,
+          "label": "Terceira linha: pixels azuis",
+          "breakpoint": "src/main.c:35",
+          "pc": "0x1964 <kernel_start+236>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\f",
+          "playback_time": 4,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\n"
+        },
+        {
+          "file": "img/kernel-os/pixels-04.png",
+          "time": 8.191,
+          "label": "Quarta linha: caracteres brancos",
+          "breakpoint": "src/main.c:39",
+          "pc": "0x19d0 <kernel_start+344>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\f",
+          "playback_time": 6,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\n"
+        },
+        {
+          "file": "img/kernel-os/pixels-05.png",
+          "time": 10.185,
+          "label": "Texto ultrapassa a última coluna e continua na linha seguinte",
+          "breakpoint": "*0x00000000000019f4",
+          "pc": "0x19f4 <kernel_start+380>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ",
+          "playback_time": 8,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 "
+        }
+      ],
+      "preview_frame": 4,
+      "log_file": "content/kernel-os/logs/pixels-uart.txt",
+      "log_text": "OS / RISC-V RV64 / QEMU CEP\n\fABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ",
+      "log_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 "
+    },
+    {
+      "id": "console",
+      "title": "Console e cursor",
+      "description": "Cada byte seleciona uma ação: desenhar um glifo, mover o cursor, voltar uma coluna ou limpar a tela.",
+      "source": {
+        "path": "examples/02-console/src/console.c",
+        "start_line": 109,
+        "end_line": 140,
+        "code": "    switch(c)\n    {\n        case '\\b': // Retour en arrière (backspace)\n            if(colonne_actuel > 0)\n            {\n                place_curseur(ligne_actuel, colonne_actuel - 1);\n            }\n            break;\n        case '\\t': { // Tabulation\n            uint32_t tab = 8;\n            if(colonne_actuel + (tab - colonne_actuel % tab) >= DISPLAY_WIDTH/BITS)\n            {\n                place_curseur(ligne_actuel + 1, 0);\n            }\n            else\n            {\n                uint32_t rest_tabulation = tab - (colonne_actuel%tab);\n                place_curseur(ligne_actuel, colonne_actuel + rest_tabulation);\n            }\n            break;\n        }\n        case '\\n': // Nouvelle ligne\n            place_curseur(ligne_actuel + 1, 0);\n            break;\n        case '\\f': // Effacement de l'écran\n            efface_ecran();\n            start = 0;\n            place_curseur(1, 0);\n            break;\n        case '\\r': // Retour au début de la ligne\n            place_curseur(ligne_actuel, 0);\n            break;",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/02-console/src/console.c#L109-L140"
+      },
+      "focus_rect": [
+        0,
+        0,
+        512,
+        128
+      ],
+      "notes": [
+        "LF, BS, CR e HT são comandos do console, não desenhos pré-renderizados.",
+        "O fluxo UART contém os bytes de controle; ele não reproduz as chamadas diretas a place_curseur."
+      ],
+      "command": "sh scripts/course-env.sh /matieres/4MMPCSEA/xinul/bin/qemu-system-riscv64 -machine cep -bios none -kernel build/cep/kernel.elf -m 32M -smp 1 -display none -monitor none -serial file:/tmp/emilly-kernel-evidence/captures/console-uart.txt -no-user-config -S -gdb stdio",
+      "build_command": "sh scripts/course-env.sh make -j2",
+      "working_directory": "examples/02-console",
+      "capture_kind": "gdb-breakpoints",
+      "source_sha256": "b95fb6570f39a2e32d64fb1df3512e3e67f3a364045ca355b4c7e100edece673",
+      "demo_source": {
+        "path": "examples/02-console/src/main.c",
+        "start_line": 1,
+        "end_line": 26,
+        "code": "#include \"console.h\"\n#include \"stdio.h\"\n\nvoid kernel_start(void)\n{\n    init_uart();\n    efface_ecran();\n    const char banner[] = \"OS / RISC-V RV64 / QEMU CEP\\n\";\n    console_putbytes(banner, sizeof(banner) - 1);\n    console_putbytes(\"\\f\", 1);\n    console_putbytes(\"\", 0);\n    place_curseur(40, 0);\n    printf(\"This line will be removed by FF.\");\n    console_putbytes(\"\\f\", 1);\n    printf(\"Console controls (8x8 characters)\\n\");\n    printf(\"AB\\nCD\\n\");\n    printf(\"AB\\bC\\n\");\n    printf(\"ABC\\rZ\");\n    place_curseur(6, 0);\n    printf(\"A\\tB\\n\");\n    place_curseur(8, 158);\n    console_putbytes(\"\\tZ\", 2);\n    place_curseur(11, 0);\n    printf(\"Rows 2-6: LF, BS, CR, HT. Row 9: tab at the right edge.\\n\");\n    for (;;) hlt();\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/02-console/src/main.c#L1-L26"
+      },
+      "frames": [
+        {
+          "file": "img/kernel-os/console-01.png",
+          "time": 2.393,
+          "label": "LF: AB e CD aparecem em linhas diferentes",
+          "breakpoint": "src/main.c:17",
+          "pc": "0x2060 <kernel_start+212>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fThis line will be removed by FF.\fConsole controls (8x8 characters)\nAB\nCD\n",
+          "playback_time": 0,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nThis line will be removed by FF.⟦FF⟧\nConsole controls (8x8 characters)\nAB\nCD\n"
+        },
+        {
+          "file": "img/kernel-os/console-02.png",
+          "time": 4.345,
+          "label": "BS: o cursor volta e C substitui B",
+          "breakpoint": "src/main.c:18",
+          "pc": "0x2070 <kernel_start+228>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fThis line will be removed by FF.\fConsole controls (8x8 characters)\nAB\nCD\nAB\bC\n",
+          "playback_time": 2,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nThis line will be removed by FF.⟦FF⟧\nConsole controls (8x8 characters)\nAB\nCD\nAB⟦BS⟧C\n"
+        },
+        {
+          "file": "img/kernel-os/console-03.png",
+          "time": 6.282,
+          "label": "CR: Z substitui A no início da linha",
+          "breakpoint": "src/main.c:19",
+          "pc": "0x2080 <kernel_start+244>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fThis line will be removed by FF.\fConsole controls (8x8 characters)\nAB\nCD\nAB\bC\nABC\rZ",
+          "playback_time": 4,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nThis line will be removed by FF.⟦FF⟧\nConsole controls (8x8 characters)\nAB\nCD\nAB⟦BS⟧C\nABC⟦CR⟧Z"
+        },
+        {
+          "file": "img/kernel-os/console-04.png",
+          "time": 8.254,
+          "label": "HT: B aparece no próximo ponto de tabulação",
+          "breakpoint": "src/main.c:21",
+          "pc": "0x20a0 <kernel_start+276>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fThis line will be removed by FF.\fConsole controls (8x8 characters)\nAB\nCD\nAB\bC\nABC\rZA\tB\n",
+          "playback_time": 6,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nThis line will be removed by FF.⟦FF⟧\nConsole controls (8x8 characters)\nAB\nCD\nAB⟦BS⟧C\nABC⟦CR⟧ZA⟦HT⟧B\n"
+        },
+        {
+          "file": "img/kernel-os/console-05.png",
+          "time": 10.241,
+          "label": "Tabulação próxima da borda leva Z à próxima linha",
+          "breakpoint": "src/main.c:23",
+          "pc": "0x20c4 <kernel_start+312>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fThis line will be removed by FF.\fConsole controls (8x8 characters)\nAB\nCD\nAB\bC\nABC\rZA\tB\n\tZ",
+          "playback_time": 8,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nThis line will be removed by FF.⟦FF⟧\nConsole controls (8x8 characters)\nAB\nCD\nAB⟦BS⟧C\nABC⟦CR⟧ZA⟦HT⟧B\n⟦HT⟧Z"
+        },
+        {
+          "file": "img/kernel-os/console-06.png",
+          "time": 12.207,
+          "label": "Console completo, com cursor e explicação dos testes",
+          "breakpoint": "*0x00000000000020e4",
+          "pc": "0x20e4 <kernel_start+344>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fThis line will be removed by FF.\fConsole controls (8x8 characters)\nAB\nCD\nAB\bC\nABC\rZA\tB\n\tZRows 2-6: LF, BS, CR, HT. Row 9: tab at the right edge.\n",
+          "playback_time": 10,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nThis line will be removed by FF.⟦FF⟧\nConsole controls (8x8 characters)\nAB\nCD\nAB⟦BS⟧C\nABC⟦CR⟧ZA⟦HT⟧B\n⟦HT⟧ZRows 2-6: LF, BS, CR, HT. Row 9: tab at the right edge.\n"
+        }
+      ],
+      "preview_frame": 5,
+      "log_file": "content/kernel-os/logs/console-uart.txt",
+      "log_text": "OS / RISC-V RV64 / QEMU CEP\n\fThis line will be removed by FF.\fConsole controls (8x8 characters)\nAB\nCD\nAB\bC\nABC\rZA\tB\n\tZRows 2-6: LF, BS, CR, HT. Row 9: tab at the right edge.\n",
+      "log_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nThis line will be removed by FF.⟦FF⟧\nConsole controls (8x8 characters)\nAB\nCD\nAB⟦BS⟧C\nABC⟦CR⟧ZA⟦HT⟧B\n⟦HT⟧ZRows 2-6: LF, BS, CR, HT. Row 9: tab at the right edge.\n"
+    },
+    {
+      "id": "scroll",
+      "title": "Rolagem da tela",
+      "description": "Quando a área de texto acaba, memmove desloca regiões sobrepostas da VRAM e a última linha é limpa.",
+      "source": {
+        "path": "examples/03-scroll/src/console.c",
+        "start_line": 78,
+        "end_line": 95,
+        "code": "void defilement(void)\n{\n    // Calcul des adresses de destination et source pour le défilement\n    uint32_t largeur_pixel = BITS*DISPLAY_WIDTH;\n    uint32_t *destination = (uint32_t*)ADRESSE_INITIAL + largeur_pixel;\n    uint32_t *source = (uint32_t*)ADRESSE_INITIAL + 2*largeur_pixel;\n\n    // Calcul de la taille en octets de la zone de mémoire à déplacer\n    uint32_t size = DISPLAY_WIDTH*(DISPLAY_HEIGHT - 2*BITS)*sizeof(uint32_t);\n\n    // Mise à jour du curseur après le défilement vers le haut\n    place_curseur(DISPLAY_HEIGHT/BITS - 2, colonne_actuel);\n\n    // Déplacement du contenu de l'écran vers le haut (défilement)\n    memmove(destination, source, size);\n    memset((uint32_t*)ADRESSE_INITIAL + DISPLAY_WIDTH*(DISPLAY_HEIGHT - BITS),\n           0, DISPLAY_WIDTH*BITS*sizeof(uint32_t));\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/03-scroll/src/console.c#L78-L95"
+      },
+      "focus_rect": [
+        0,
+        0,
+        320,
+        240
+      ],
+      "notes": [
+        "A primeira faixa de 8 pixels é preservada para o cabeçalho.",
+        "O programa imprime 100 linhas numeradas; o teste não é um shell interativo."
+      ],
+      "command": "sh scripts/course-env.sh /matieres/4MMPCSEA/xinul/bin/qemu-system-riscv64 -machine cep -bios none -kernel build/cep/kernel.elf -m 32M -smp 1 -display none -monitor none -serial file:/tmp/emilly-kernel-evidence/captures/scroll-uart.txt -no-user-config -S -gdb stdio",
+      "build_command": "sh scripts/course-env.sh make -j2",
+      "working_directory": "examples/03-scroll",
+      "capture_kind": "gdb-breakpoints",
+      "source_sha256": "b95fb6570f39a2e32d64fb1df3512e3e67f3a364045ca355b4c7e100edece673",
+      "demo_source": {
+        "path": "examples/03-scroll/src/main.c",
+        "start_line": 1,
+        "end_line": 17,
+        "code": "#include \"console.h\"\n#include \"stdio.h\"\n\nvoid kernel_start(void)\n{\n    init_uart();\n    efface_ecran();\n    const char banner[] = \"OS / RISC-V RV64 / QEMU CEP\\n\";\n    console_putbytes(banner, sizeof(banner) - 1);\n    console_putbytes(\"\\f\", 1);\n    console_putbytes(\"\", 0);\n    const char *header = \"Scrolling: 100 numbered lines\";\n    for (uint32_t col = 0; header[col]; ++col) ecrit_car(0, col, header[col]);\n    for (uint32_t i = 0; i < 100; ++i)\n        printf(\"line %02u\\n\", i);\n    for (;;) hlt();\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/03-scroll/src/main.c#L1-L17"
+      },
+      "frames": [
+        {
+          "file": "img/kernel-os/scroll-01.png",
+          "time": 2.239,
+          "label": "20 linhas escritas; ainda há espaço na tela",
+          "breakpoint": "src/main.c:15 if i == 20",
+          "pc": "0x2060 <kernel_start+212>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\n",
+          "playback_time": 0,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\n"
+        },
+        {
+          "file": "img/kernel-os/scroll-02.png",
+          "time": 4.242,
+          "label": "80 linhas escritas; o cursor se aproxima da borda inferior",
+          "breakpoint": "src/main.c:15 if i == 80",
+          "pc": "0x2060 <kernel_start+212>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\n",
+          "playback_time": 2,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\n",
+          "focus_rect": [
+            0,
+            480,
+            320,
+            240
+          ]
+        },
+        {
+          "file": "img/kernel-os/scroll-03.png",
+          "time": 6.49,
+          "label": "A rolagem desloca o corpo da tela e preserva o cabeçalho",
+          "breakpoint": "src/main.c:15 if i == 90",
+          "pc": "0x2060 <kernel_start+212>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\nline 80\nline 81\nline 82\nline 83\nline 84\nline 85\nline 86\nline 87\nline 88\nline 89\n",
+          "playback_time": 4,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\nline 80\nline 81\nline 82\nline 83\nline 84\nline 85\nline 86\nline 87\nline 88\nline 89\n",
+          "focus_rect": [
+            0,
+            480,
+            320,
+            240
+          ]
+        },
+        {
+          "file": "img/kernel-os/scroll-04.png",
+          "time": 9.933,
+          "label": "100 linhas escritas; as primeiras saíram da área visível",
+          "breakpoint": "*0x0000000000002078",
+          "pc": "0x2078 <kernel_start+236>",
+          "uart": "OS / RISC-V RV64 / QEMU CEP\n\fline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\nline 80\nline 81\nline 82\nline 83\nline 84\nline 85\nline 86\nline 87\nline 88\nline 89\nline 90\nline 91\nline 92\nline 93\nline 94\nline 95\nline 96\nline 97\nline 98\nline 99\n",
+          "playback_time": 6,
+          "uart_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\nline 80\nline 81\nline 82\nline 83\nline 84\nline 85\nline 86\nline 87\nline 88\nline 89\nline 90\nline 91\nline 92\nline 93\nline 94\nline 95\nline 96\nline 97\nline 98\nline 99\n",
+          "focus_rect": [
+            0,
+            480,
+            320,
+            240
+          ]
+        }
+      ],
+      "preview_frame": 3,
+      "log_file": "content/kernel-os/logs/scroll-uart.txt",
+      "log_text": "OS / RISC-V RV64 / QEMU CEP\n\fline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\nline 80\nline 81\nline 82\nline 83\nline 84\nline 85\nline 86\nline 87\nline 88\nline 89\nline 90\nline 91\nline 92\nline 93\nline 94\nline 95\nline 96\nline 97\nline 98\nline 99\n",
+      "log_display": "OS / RISC-V RV64 / QEMU CEP\n⟦FF⟧\nline 00\nline 01\nline 02\nline 03\nline 04\nline 05\nline 06\nline 07\nline 08\nline 09\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\nline 60\nline 61\nline 62\nline 63\nline 64\nline 65\nline 66\nline 67\nline 68\nline 69\nline 70\nline 71\nline 72\nline 73\nline 74\nline 75\nline 76\nline 77\nline 78\nline 79\nline 80\nline 81\nline 82\nline 83\nline 84\nline 85\nline 86\nline 87\nline 88\nline 89\nline 90\nline 91\nline 92\nline 93\nline 94\nline 95\nline 96\nline 97\nline 98\nline 99\n"
+    },
+    {
+      "id": "uart",
+      "title": "Transmissão UART",
+      "description": "O kernel consulta o bit de ocupação do FIFO e escreve bytes no registrador de transmissão.",
+      "source": {
+        "path": "examples/04-uart/src/uart.c",
+        "start_line": 1,
+        "end_line": 14,
+        "code": "#include \"uart.h\"\n\n/* SiFive UART used by the course's custom machine. */\nstatic volatile uint32_t *const uart = (volatile uint32_t *)0x10013000;\nvoid init_uart(void)\n{\n    uart[6] = UART_CLOCK_FREQ / UART_BAUD_RATE - 1;\n    uart[2] = 1;\n}\nvoid traite_car_uart(char c)\n{\n    while (uart[0] & 0x80000000U) { }\n    uart[0] = (uint8_t)c;\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/04-uart/src/uart.c#L1-L14"
+      },
+      "focus_rect": [
+        0,
+        0,
+        512,
+        112
+      ],
+      "notes": [
+        "UART only aparece no log serial e não na tela.",
+        "console_putbytes envia a mesma mensagem para o framebuffer e para a UART."
+      ],
+      "command": "sh scripts/course-env.sh /matieres/4MMPCSEA/xinul/bin/qemu-system-riscv64 -machine cep -bios none -kernel build/cep/kernel.elf -m 32M -smp 1 -display none -monitor none -serial file:/tmp/emilly-kernel-evidence/captures/uart-uart.txt -no-user-config -S -gdb stdio",
+      "build_command": "sh scripts/course-env.sh make -j2",
+      "working_directory": "examples/04-uart",
+      "capture_kind": "gdb-breakpoints",
+      "source_sha256": "b100da71eafcd921530798cb0869032745e825c4c6141ae9a5911ba1f5367b75",
+      "demo_source": {
+        "path": "examples/04-uart/src/main.c",
+        "start_line": 1,
+        "end_line": 29,
+        "code": "#include \"console.h\"\n#include \"uart.h\"\n#include \"cpu.h\"\n\n/* This path only sends bytes. It never calls the graphical console. */\nstatic void serial_text(const char *text)\n{\n    while (*text) traite_car_uart(*text++);\n}\n\nvoid kernel_start(void)\n{\n    disable_it();\n    init_uart();\n    console_putbytes(\"\\f\", 1);\n    console_putbytes(\"\", 0);\n    const char *title = \"UART TX example\\n\";\n    console_putbytes(title, (int)strlen(title));\n\n    serial_text(\"UART only\\n\");\n\n    place_curseur(4, 0);\n    const char *mirrored = \"Console and UART\\n\";\n    console_putbytes(mirrored, (int)strlen(mirrored));\n    const char *note = \"The first message was sent directly to the serial terminal.\\n\";\n    console_putbytes(note, (int)strlen(note));\n\n    for (;;) hlt();\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/04-uart/src/main.c#L1-L29"
+      },
+      "frames": [
+        {
+          "file": "img/kernel-os/uart-01.png",
+          "time": 2.164,
+          "label": "Título enviado para a tela e para a UART",
+          "breakpoint": "src/main.c:20",
+          "pc": "0x1718 <kernel_start+100>",
+          "uart": "\fUART TX example\n",
+          "playback_time": 0,
+          "uart_display": "⟦FF⟧\nUART TX example\n"
+        },
+        {
+          "file": "img/kernel-os/uart-02.png",
+          "time": 4.093,
+          "label": "UART only aparece só no fluxo serial",
+          "breakpoint": "src/main.c:22",
+          "pc": "0x1738 <kernel_start+132>",
+          "uart": "\fUART TX example\nUART only\n",
+          "playback_time": 2,
+          "uart_display": "⟦FF⟧\nUART TX example\nUART only\n"
+        },
+        {
+          "file": "img/kernel-os/uart-03.png",
+          "time": 6.05,
+          "label": "Console and UART aparece nos dois destinos",
+          "breakpoint": "src/main.c:25",
+          "pc": "0x176c <kernel_start+184>",
+          "uart": "\fUART TX example\nUART only\nConsole and UART\n",
+          "playback_time": 4,
+          "uart_display": "⟦FF⟧\nUART TX example\nUART only\nConsole and UART\n"
+        },
+        {
+          "file": "img/kernel-os/uart-04.png",
+          "time": 7.985,
+          "label": "Saída final: transmissão direta e saída espelhada",
+          "breakpoint": "*0x0000000000001790",
+          "pc": "0x1790 <kernel_start+220>",
+          "uart": "\fUART TX example\nUART only\nConsole and UART\nThe first message was sent directly to the serial terminal.\n",
+          "playback_time": 6,
+          "uart_display": "⟦FF⟧\nUART TX example\nUART only\nConsole and UART\nThe first message was sent directly to the serial terminal.\n"
+        }
+      ],
+      "preview_frame": 3,
+      "log_file": "content/kernel-os/logs/uart-uart.txt",
+      "log_text": "\fUART TX example\nUART only\nConsole and UART\nThe first message was sent directly to the serial terminal.\n",
+      "log_display": "⟦FF⟧\nUART TX example\nUART only\nConsole and UART\nThe first message was sent directly to the serial terminal.\n"
+    },
+    {
+      "id": "timer",
+      "title": "Timer e interrupções",
+      "description": "mtime chega ao prazo de mtimecmp, a CPU entra no tratador e o kernel conta 20 interrupções por segundo.",
+      "source": {
+        "path": "examples/05-clock/src/time.c",
+        "start_line": 6,
+        "end_line": 23,
+        "code": "static void programme_timer(void)\n{\n    *((volatile uint64_t *)CLINT_TIMER_CMP) =\n        *((volatile uint64_t *)CLINT_TIMER) + TIMER_FREQ / ITFREQ;\n}\n\nvoid handle_time_interrupt(void)\n{\n    programme_timer();\n    ++ticks;\n    if (ticks % ITFREQ == 0) {\n        uint32_t secondes = nbr_secondes();\n        char timer[9];\n        snprintf(timer, sizeof(timer), \"%02u:%02u:%02u\",\n                 (secondes / 3600) % 100, (secondes / 60) % 60, secondes % 60);\n        ecrit_car_en_haut(timer, 8);\n    }\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/05-clock/src/time.c#L6-L23"
+      },
+      "focus_rect": [
+        0,
+        0,
+        512,
+        112
+      ],
+      "notes": [
+        "O contador de hardware roda a 10 MHz; o próximo prazo fica 500.000 incrementos adiante.",
+        "O relógio do kernel conta interrupções tratadas e pode ficar atrás do tempo real se o tratamento atrasar.",
+        "O relógio no canto direito é visível na opção de tela completa; os logs também registram os segundos."
+      ],
+      "command": "sh scripts/course-env.sh /matieres/4MMPCSEA/xinul/bin/qemu-system-riscv64 -machine cep -bios none -kernel build/cep/kernel.elf -m 32M -smp 1 -display none -qmp stdio -serial file:/tmp/emilly-kernel-evidence/captures/timer-uart.txt -no-user-config",
+      "build_command": "sh scripts/course-env.sh make -j2",
+      "working_directory": "examples/05-clock",
+      "capture_kind": "timed-run",
+      "source_sha256": "0eb16e4a51a120a144e12bcdece7e29bf64477eafb7b455918019275bdd44291",
+      "demo_source": {
+        "path": "examples/05-clock/src/main.c",
+        "start_line": 1,
+        "end_line": 24,
+        "code": "#include \"console.h\"\n#include \"uart.h\"\n#include \"time.h\"\n\nvoid kernel_start(void)\n{\n    disable_it();\n    init_uart();\n    console_putbytes(\"\\f\", 1);\n    console_putbytes(\"\", 0);\n    printf(\"Clock and timer: 20 interrupts per second.\\n\");\n    init_traitant_timer(mon_traitant);\n    enable_timer();\n\n    uint32_t previous = 0xffffffffU;\n    for (;;) {\n        uint32_t seconds = nbr_secondes();\n        if (seconds != previous) {\n            printf(\"clock = %u s\\n\", seconds);\n            previous = seconds;\n        }\n        hlt();\n    }\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/05-clock/src/main.c#L1-L24"
+      },
+      "frames": [
+        {
+          "file": "img/kernel-os/timer-01.png",
+          "time": 0.31,
+          "label": "Execução real: 0 s no relógio do kernel",
+          "uart": "\fClock and timer: 20 interrupts per second.\nclock = 0 s\n",
+          "observed": {
+            "ticks": 3,
+            "kernel_seconds": 0
+          },
+          "playback_time": 0.31,
+          "uart_display": "⟦FF⟧\nClock and timer: 20 interrupts per second.\nclock = 0 s\n"
+        },
+        {
+          "file": "img/kernel-os/timer-02.png",
+          "time": 1.204,
+          "label": "Execução real: 1 s no relógio do kernel",
+          "uart": "\fClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\n",
+          "observed": {
+            "ticks": 20,
+            "kernel_seconds": 1
+          },
+          "playback_time": 1.204,
+          "uart_display": "⟦FF⟧\nClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\n"
+        },
+        {
+          "file": "img/kernel-os/timer-03.png",
+          "time": 2.33,
+          "label": "Execução real: 1 s no relógio do kernel",
+          "uart": "\fClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\n",
+          "observed": {
+            "ticks": 39,
+            "kernel_seconds": 1
+          },
+          "playback_time": 2.33,
+          "uart_display": "⟦FF⟧\nClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\n"
+        },
+        {
+          "file": "img/kernel-os/timer-04.png",
+          "time": 3.404,
+          "label": "Execução real: 3 s no relógio do kernel",
+          "uart": "\fClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\nclock = 2 s\nclock = 3 s\n",
+          "observed": {
+            "ticks": 60,
+            "kernel_seconds": 3
+          },
+          "playback_time": 3.404,
+          "uart_display": "⟦FF⟧\nClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\nclock = 2 s\nclock = 3 s\n"
+        },
+        {
+          "file": "img/kernel-os/timer-05.png",
+          "time": 4.504,
+          "label": "Execução real: 4 s no relógio do kernel",
+          "uart": "\fClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\nclock = 2 s\nclock = 3 s\nclock = 4 s\n",
+          "observed": {
+            "ticks": 81,
+            "kernel_seconds": 4
+          },
+          "playback_time": 4.504,
+          "uart_display": "⟦FF⟧\nClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\nclock = 2 s\nclock = 3 s\nclock = 4 s\n"
+        }
+      ],
+      "preview_frame": 4,
+      "log_file": "content/kernel-os/logs/timer-uart.txt",
+      "log_text": "\fClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\nclock = 2 s\nclock = 3 s\nclock = 4 s\n",
+      "log_display": "⟦FF⟧\nClock and timer: 20 interrupts per second.\nclock = 0 s\nclock = 1 s\nclock = 2 s\nclock = 3 s\nclock = 4 s\n"
+    },
+    {
+      "id": "processes",
+      "title": "Processos e troca de contexto",
+      "description": "Três tarefas têm pilhas próprias, dormem por 2, 3 e 4 segundos e dividem uma CPU com idle.",
+      "source": {
+        "path": "examples/06-processes/src/processus.c",
+        "start_line": 69,
+        "end_line": 99,
+        "code": "void ordonnance(void)\n{\n    unsigned long flags = irq_save();\n    processus_t *ancien = actif;\n    uint32_t maintenant = nbr_secondes();\n\n    for (int i = 1; i < n_proc; ++i) {\n        processus_t *p = &table_des_processus[i];\n        if (p->state == WAIT && (int32_t)(maintenant - p->hour_wake_up) >= 0) {\n            p->state = RUNNABLE;\n            printf(\"Fin du sommeil de %u s du processus %d\\n\", p->temp_sommeil, p->pid);\n        }\n    }\n\n    if (ancien->state == RUN) {\n        ancien->state = RUNNABLE;\n    }\n    /* Le tour inclut la tâche actuelle : idle reste disponible si tout dort. */\n    for (int distance = 1; distance <= n_proc; ++distance) {\n        processus_t *suivant = &table_des_processus[(ancien->pid + distance) % n_proc];\n        if (suivant->state == RUNNABLE) {\n            suivant->state = RUN;\n            actif = suivant;\n            if (suivant != ancien) {\n                ctx_sw(ancien->reg, suivant->reg);\n            }\n            break;\n        }\n    }\n    irq_restore(flags);\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/06-processes/src/processus.c#L69-L99"
+      },
+      "focus_rect": [
+        0,
+        0,
+        512,
+        256
+      ],
+      "notes": [
+        "As tarefas compartilham o mesmo espaço de endereços e os privilégios de machine mode.",
+        "Os estados são 0 RUN, 1 RUNNABLE, 2 WAIT e 3 DIE. O painel gráfico é atualizado uma vez por segundo.",
+        "A tabela possui 4 entradas, incluindo idle; posições terminadas não são reutilizadas."
+      ],
+      "command": "sh scripts/course-env.sh /matieres/4MMPCSEA/xinul/bin/qemu-system-riscv64 -machine cep -bios none -kernel build/cep/kernel.elf -m 32M -smp 1 -display none -qmp stdio -serial file:/tmp/emilly-kernel-evidence/captures/processes-uart.txt -no-user-config",
+      "build_command": "sh scripts/course-env.sh make -j2",
+      "working_directory": "examples/06-processes",
+      "capture_kind": "timed-run",
+      "source_sha256": "372aeacfae1fdd49125da3b117a8e9c095f888cafb9e9486ded57596a7064573",
+      "demo_source": {
+        "path": "examples/06-processes/src/main.c",
+        "start_line": 1,
+        "end_line": 57,
+        "code": "#include \"console.h\"\n#include \"processus.h\"\n#include \"time.h\"\n#include \"uart.h\"\n\nvoid proc1(void)\n{\n    for (int i = 0; i < 2; ++i) {\n        printf(\"[temps = %u s] processus %s pid = %i\\n\", nbr_secondes(), mon_nom(), mon_pid());\n        dors(2);\n    }\n    /* Returning reaches fin_processus() through proc_launcher(). */\n}\n\nvoid proc2(void)\n{\n    for (int i = 0; i < 2; ++i) {\n        printf(\"[temps = %u s] processus %s pid = %i\\n\", nbr_secondes(), mon_nom(), mon_pid());\n        dors(3);\n    }\n    fin_processus();\n}\n\nvoid proc3(void)\n{\n    for (int i = 0; i < 2; ++i) {\n        printf(\"[temps = %u s] processus %s pid = %i\\n\", nbr_secondes(), mon_nom(), mon_pid());\n        dors(4);\n    }\n    /* This task also terminates by returning. */\n}\n\nvoid idle(void)\n{\n    printf(\"[idle] pid = %i\\n\", mon_pid());\n    for (;;) {\n        enable_it();\n        hlt();\n    }\n}\n\nvoid kernel_start(void)\n{\n    disable_it();\n    init_uart();\n    efface_ecran();\n    printf(\"RISC-V kernel\\n\");\n\n    /* Set up every task before the first timer interrupt can run. */\n    init_proc();\n    init_traitant_timer(mon_traitant);\n    cree_processus(proc1, \"proc1\");\n    cree_processus(proc2, \"proc2\");\n    cree_processus(proc3, \"proc3\");\n    enable_timer();\n    idle();\n}",
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/examples/06-processes/src/main.c#L1-L57"
+      },
+      "frames": [
+        {
+          "file": "img/kernel-os/processes-01.png",
+          "time": 0.412,
+          "label": "Execução real: 0 s no relógio do kernel",
+          "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\n",
+          "observed": {
+            "ticks": 5,
+            "kernel_seconds": 0,
+            "processes": [
+              {
+                "pid": 0,
+                "name": "idle",
+                "state": 0,
+                "state_label": "RUN",
+                "saved_sp": "0x27fc0",
+                "wake_at": 0
+              },
+              {
+                "pid": 1,
+                "name": "proc1",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x13e40",
+                "wake_at": 2
+              },
+              {
+                "pid": 2,
+                "name": "proc2",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x1bf10",
+                "wake_at": 3
+              },
+              {
+                "pid": 3,
+                "name": "proc3",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x23fe0",
+                "wake_at": 4
+              }
+            ]
+          },
+          "playback_time": 0.412,
+          "uart_display": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\n"
+        },
+        {
+          "file": "img/kernel-os/processes-02.png",
+          "time": 1.404,
+          "label": "Execução real: 1 s no relógio do kernel",
+          "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\n",
+          "observed": {
+            "ticks": 24,
+            "kernel_seconds": 1,
+            "processes": [
+              {
+                "pid": 0,
+                "name": "idle",
+                "state": 0,
+                "state_label": "RUN",
+                "saved_sp": "0x27fc0",
+                "wake_at": 0
+              },
+              {
+                "pid": 1,
+                "name": "proc1",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x13e40",
+                "wake_at": 2
+              },
+              {
+                "pid": 2,
+                "name": "proc2",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x1bf10",
+                "wake_at": 3
+              },
+              {
+                "pid": 3,
+                "name": "proc3",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x23fe0",
+                "wake_at": 4
+              }
+            ]
+          },
+          "playback_time": 1.404,
+          "uart_display": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\n"
+        },
+        {
+          "file": "img/kernel-os/processes-03.png",
+          "time": 2.504,
+          "label": "Execução real: 2 s no relógio do kernel",
+          "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n",
+          "observed": {
+            "ticks": 45,
+            "kernel_seconds": 2,
+            "processes": [
+              {
+                "pid": 0,
+                "name": "idle",
+                "state": 0,
+                "state_label": "RUN",
+                "saved_sp": "0x27fc0",
+                "wake_at": 0
+              },
+              {
+                "pid": 1,
+                "name": "proc1",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x13e60",
+                "wake_at": 4
+              },
+              {
+                "pid": 2,
+                "name": "proc2",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x1bf10",
+                "wake_at": 3
+              },
+              {
+                "pid": 3,
+                "name": "proc3",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x23fe0",
+                "wake_at": 4
+              }
+            ]
+          },
+          "playback_time": 2.504,
+          "uart_display": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n"
+        },
+        {
+          "file": "img/kernel-os/processes-04.png",
+          "time": 4.606,
+          "label": "Execução real: 4 s no relógio do kernel",
+          "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\n",
+          "observed": {
+            "ticks": 86,
+            "kernel_seconds": 4,
+            "processes": [
+              {
+                "pid": 0,
+                "name": "idle",
+                "state": 0,
+                "state_label": "RUN",
+                "saved_sp": "0x27fc0",
+                "wake_at": 0
+              },
+              {
+                "pid": 1,
+                "name": "proc1",
+                "state": 3,
+                "state_label": "DIE",
+                "saved_sp": "0x13e70",
+                "wake_at": 4
+              },
+              {
+                "pid": 2,
+                "name": "proc2",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x1bf10",
+                "wake_at": 6
+              },
+              {
+                "pid": 3,
+                "name": "proc3",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x24000",
+                "wake_at": 8
+              }
+            ]
+          },
+          "playback_time": 4.606,
+          "uart_display": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\n"
+        },
+        {
+          "file": "img/kernel-os/processes-05.png",
+          "time": 6.81,
+          "label": "Execução real: 6 s no relógio do kernel",
+          "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\n",
+          "observed": {
+            "ticks": 129,
+            "kernel_seconds": 6,
+            "processes": [
+              {
+                "pid": 0,
+                "name": "idle",
+                "state": 0,
+                "state_label": "RUN",
+                "saved_sp": "0x27fc0",
+                "wake_at": 0
+              },
+              {
+                "pid": 1,
+                "name": "proc1",
+                "state": 3,
+                "state_label": "DIE",
+                "saved_sp": "0x13e70",
+                "wake_at": 4
+              },
+              {
+                "pid": 2,
+                "name": "proc2",
+                "state": 3,
+                "state_label": "DIE",
+                "saved_sp": "0x1bf20",
+                "wake_at": 6
+              },
+              {
+                "pid": 3,
+                "name": "proc3",
+                "state": 2,
+                "state_label": "WAIT",
+                "saved_sp": "0x24000",
+                "wake_at": 8
+              }
+            ]
+          },
+          "playback_time": 6.81,
+          "uart_display": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\n"
+        },
+        {
+          "file": "img/kernel-os/processes-06.png",
+          "time": 9.41,
+          "label": "Execução real: 8 s no relógio do kernel",
+          "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\nFin du sommeil de 4 s du processus 3\nFin du processus 3\n",
+          "observed": {
+            "ticks": 179,
+            "kernel_seconds": 8,
+            "processes": [
+              {
+                "pid": 0,
+                "name": "idle",
+                "state": 0,
+                "state_label": "RUN",
+                "saved_sp": "0x27fc0",
+                "wake_at": 0
+              },
+              {
+                "pid": 1,
+                "name": "proc1",
+                "state": 3,
+                "state_label": "DIE",
+                "saved_sp": "0x13e70",
+                "wake_at": 4
+              },
+              {
+                "pid": 2,
+                "name": "proc2",
+                "state": 3,
+                "state_label": "DIE",
+                "saved_sp": "0x1bf20",
+                "wake_at": 6
+              },
+              {
+                "pid": 3,
+                "name": "proc3",
+                "state": 3,
+                "state_label": "DIE",
+                "saved_sp": "0x24010",
+                "wake_at": 8
+              }
+            ]
+          },
+          "playback_time": 9.41,
+          "uart_display": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\nFin du sommeil de 4 s du processus 3\nFin du processus 3\n"
+        }
+      ],
+      "preview_frame": 5,
+      "log_file": "content/kernel-os/logs/processes-uart.txt",
+      "log_text": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\nFin du sommeil de 4 s du processus 3\nFin du processus 3\n",
+      "log_display": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\nFin du sommeil de 4 s du processus 3\nFin du processus 3\n"
+    }
+  ],
+  "complete_kernel_run": {
+    "folder": ".",
+    "kind": "timed-run",
+    "command": "sh scripts/course-env.sh /matieres/4MMPCSEA/xinul/bin/qemu-system-riscv64 -machine cep -bios none -kernel build/cep/kernel.elf -m 32M -smp 1 -display none -qmp stdio -serial file:/tmp/emilly-kernel-evidence/captures/complete-kernel-uart.txt -no-user-config",
+    "frames": [
+      {
+        "file": "img/kernel-os/complete-kernel-01.png",
+        "time": 1.408,
+        "label": "Execução real: 1.4 s após iniciar a captura",
+        "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\n"
+      },
+      {
+        "file": "img/kernel-os/complete-kernel-02.png",
+        "time": 9.403,
+        "label": "Execução real: 9.4 s após iniciar a captura",
+        "uart": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\nFin du sommeil de 4 s du processus 3\nFin du processus 3\n"
+      }
+    ],
+    "log_file": "content/kernel-os/logs/complete-kernel-uart.txt",
+    "log_text": "RISC-V kernel\nProcessus: proc1 cree avec pid 1\nProcessus: proc2 cree avec pid 2\nProcessus: proc3 cree avec pid 3\n[idle] pid = 0\n[temps = 0 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\n[temps = 0 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\n[temps = 0 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 2 s du processus 1\n[temps = 2 s] processus proc1 pid = 1\nDebut du sommeil de 2 s du processus 1\nFin du sommeil de 3 s du processus 2\n[temps = 3 s] processus proc2 pid = 2\nDebut du sommeil de 3 s du processus 2\nFin du sommeil de 2 s du processus 1\nFin du sommeil de 4 s du processus 3\nFin du processus 1\n[temps = 4 s] processus proc3 pid = 3\nDebut du sommeil de 4 s du processus 3\nFin du sommeil de 3 s du processus 2\nFin du processus 2\nFin du sommeil de 4 s du processus 3\nFin du processus 3\n"
+  },
+  "memory": [
+    {
+      "id": "ram",
+      "name": "RAM do kernel",
+      "address": "0x00001000",
+      "end": "0x02001000",
+      "size": 33554432,
+      "purpose": "Memória principal da máquina CEP com -m 32M; o ELF começa em 0x1000.",
+      "source": {
+        "path": "Makefile",
+        "line": 22,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/Makefile#L22"
+      }
+    },
+    {
+      "id": "kernel-text",
+      "name": ".text",
+      "address": "0x00001000",
+      "end": "0x000031ac",
+      "size": 8620,
+      "purpose": "Instruções do kernel deste build GCC 11.1.0, -O2.",
+      "source": {
+        "path": "src/kernel.lds",
+        "line": 13,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/kernel.lds#L13"
+      }
+    },
+    {
+      "id": "kernel-rodata",
+      "name": ".rodata",
+      "address": "0x000031b0",
+      "end": "0x00003540",
+      "size": 912,
+      "purpose": "Constantes e strings somente de leitura neste ELF.",
+      "source": {
+        "path": "src/kernel.lds",
+        "line": 17,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/kernel.lds#L17"
+      }
+    },
+    {
+      "id": "kernel-data",
+      "name": ".data",
+      "address": "0x00003540",
+      "end": "0x00003d48",
+      "size": 2056,
+      "purpose": "Dados inicializados; inclui os bitmaps de caracteres.",
+      "source": {
+        "path": "src/kernel.lds",
+        "line": 18,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/kernel.lds#L18"
+      }
+    },
+    {
+      "id": "kernel-bss",
+      "name": ".bss",
+      "address": "0x00003d50",
+      "end": "0x000280d0",
+      "size": 148352,
+      "purpose": "Dados inicialmente zerados: tabela de processos, estado global e pilha de boot.",
+      "source": {
+        "path": "src/kernel.lds",
+        "line": 22,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/kernel.lds#L22"
+      }
+    },
+    {
+      "id": "timer-cmp",
+      "name": "mtimecmp",
+      "address": "0x02004000",
+      "end": "0x02004008",
+      "size": 8,
+      "purpose": "Prazo do próximo timer; acesso MMIO de 64 bits.",
+      "source": {
+        "path": "src/cep_platform.h",
+        "line": 33,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/cep_platform.h#L33"
+      }
+    },
+    {
+      "id": "timer",
+      "name": "mtime",
+      "address": "0x0200bff8",
+      "end": "0x0200c000",
+      "size": 8,
+      "purpose": "Contador de hardware a 10 MHz; acesso MMIO.",
+      "source": {
+        "path": "src/cep_platform.h",
+        "line": 36,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/cep_platform.h#L36"
+      }
+    },
+    {
+      "id": "uart",
+      "name": "UART",
+      "address": "0x10013000",
+      "end": "0x10013020",
+      "size": 32,
+      "purpose": "Registradores de TX/RX, controle, interrupção e divisor; TXFIFO está no offset 0.",
+      "source": {
+        "path": "src/uart.c",
+        "line": 4,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/uart.c#L4"
+      }
+    },
+    {
+      "id": "framebuffer-control",
+      "name": "Controle do framebuffer",
+      "address": "0x70000000",
+      "end": "0x70000008",
+      "size": 8,
+      "purpose": "Registradores da plataforma para modo e endereço do framebuffer.",
+      "source": {
+        "path": "src/cep_platform.h",
+        "line": 16,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/cep_platform.h#L16"
+      }
+    },
+    {
+      "id": "framebuffer",
+      "name": "Framebuffer ativo",
+      "address": "0x80000000",
+      "end": "0x80384000",
+      "size": 3686400,
+      "purpose": "1280 × 720 pixels de 4 bytes. O dispositivo reserva uma VRAM maior, até 0x807e9000.",
+      "source": {
+        "path": "src/console.h",
+        "line": 11,
+        "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/console.h#L11"
+      }
+    }
+  ],
+  "context": {
+    "task_limit": 4,
+    "stack_words": 4096,
+    "word_bytes": 8,
+    "task_stack_bytes": 32768,
+    "boot_stack_bytes": 16384,
+    "process_record_bytes": 32976,
+    "table_bytes": 131904,
+    "register_count": 18,
+    "context_bytes": 144,
+    "interrupt_frame_bytes": 128,
+    "registers": [
+      "ra",
+      "sp",
+      "gp",
+      "tp",
+      "s0",
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9",
+      "s10",
+      "s11",
+      "mepc",
+      "mstatus"
+    ],
+    "task_table_address": "0x3d70",
+    "boot_stack_start": "0x240d0",
+    "boot_stack_end": "0x280d0",
+    "stacks": [
+      {
+        "pid": 1,
+        "name": "proc1",
+        "start": "0xbf00",
+        "end": "0x13f00",
+        "sleep_seconds": 2
+      },
+      {
+        "pid": 2,
+        "name": "proc2",
+        "start": "0x13fd0",
+        "end": "0x1bfd0",
+        "sleep_seconds": 3
+      },
+      {
+        "pid": 3,
+        "name": "proc3",
+        "start": "0x1c0a0",
+        "end": "0x240a0",
+        "sleep_seconds": 4
+      }
+    ],
+    "switch_source": {
+      "path": "src/ctxt.S",
+      "start_line": 1,
+      "end_line": 54,
+      "code": "\n.global ctx_sw\n.text\n/* void ctx_sw(uint64_t *ctxt_de_sauvegarde, uint64_t *ctxt_a_restaurer)\n    ctxt_de_sauvegarde : registre a0\n    ctxt_a_restaurer   : registre a1\n*/\nctx_sw:\n    sd ra,   0*8(a0)\n    sd sp,   1*8(a0)\n    sd gp,   2*8(a0)\n    sd tp,   3*8(a0)\n    sd s0,   4*8(a0)\n    sd s1,   5*8(a0)\n    sd s2,   6*8(a0)\n    sd s3,   7*8(a0)\n    sd s4,   8*8(a0)\n    sd s5,   9*8(a0)\n    sd s6,  10*8(a0)\n    sd s7,  11*8(a0)\n    sd s8,  12*8(a0)\n    sd s9,  13*8(a0)\n    sd s10, 14*8(a0)\n    sd s11, 15*8(a0)\n    csrrs s1,mepc,zero\n    sd s1, 16*8(a0)\n    csrr s1,mstatus\n    sd s1, 17*8(a0)\n\n    # MIE reste à zéro pendant le changement de pile et de registres.\n    # L'appelant (ou proc_launcher) rétablit ensuite son état d'interruption.\n    ld s1, 17*8(a1)\n    andi s1, s1, -9\n    csrw mstatus,s1\n    ld s1, 16*8(a1)\n    csrrw zero,mepc,s1\n    ld ra,   0*8(a1)\n    ld sp,   1*8(a1)\n    ld gp,   2*8(a1)\n    ld tp,   3*8(a1)\n    ld s0,   4*8(a1)\n    ld s1,   5*8(a1)\n    ld s2,   6*8(a1)\n    ld s3,   7*8(a1)\n    ld s4,   8*8(a1)\n    ld s5,   9*8(a1)\n    ld s6,  10*8(a1)\n    ld s7,  11*8(a1)\n    ld s8,  12*8(a1)\n    ld s9,  13*8(a1)\n    ld s10, 14*8(a1)\n    ld s11, 15*8(a1)\n    mv a0,  s1\n    ret",
+      "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/ctxt.S#L1-L54"
+    },
+    "task_record_source": {
+      "path": "src/processus.h",
+      "start_line": 6,
+      "end_line": 22,
+      "code": "/* Quatre tâches au total, dont idle ; chaque pile contient 4096 mots de 64 bits. */\n#define N 4\n#define TAILLE_PILLE 4096\n\nenum { RUN, RUNNABLE, WAIT, DIE };\n\ntypedef struct {\n    int pid;\n    char name[32];\n    int state;\n    /* ra, sp, gp, tp, s0..s11, mepc, mstatus (voir ctxt.S). */\n    uint64_t reg[18];\n    _Alignas(16) uint64_t pille[TAILLE_PILLE];\n    uint32_t hour_wake_up;\n    uint32_t temp_sommeil;\n} processus_t;\n",
+      "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/processus.h#L6-L22"
+    },
+    "sleep_source": {
+      "path": "src/processus.c",
+      "start_line": 101,
+      "end_line": 116,
+      "code": "void dors(uint32_t nbr_secs)\n{\n    unsigned long flags = irq_save();\n    if (actif->pid != 0 && nbr_secs != 0) {\n        /* Les échéances signées doivent rester dans une demi-plage uint32_t. */\n        if (nbr_secs > 0x7fffffffU) {\n            nbr_secs = 0x7fffffffU;\n        }\n        actif->hour_wake_up = nbr_secondes() + nbr_secs;\n        actif->temp_sommeil = nbr_secs;\n        actif->state = WAIT;\n        printf(\"Debut du sommeil de %u s du processus %d\\n\", nbr_secs, actif->pid);\n    }\n    ordonnance();\n    irq_restore(flags);\n}",
+      "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/processus.c#L101-L116"
+    },
+    "exit_source": {
+      "path": "src/processus.c",
+      "start_line": 118,
+      "end_line": 137,
+      "code": "_Noreturn void fin_processus(void)\n{\n    disable_it();\n    if (actif->pid != 0) {\n        actif->state = DIE;\n        printf(\"Fin du processus %d\\n\", actif->pid);\n        ordonnance();\n    }\n    /* Une tâche DIE ne doit jamais reprendre, et idle ne peut pas terminer. */\n    printf(\"PANIC: retour d'un processus termine\\n\");\n    for (;;) { hlt(); }\n}\n\nvoid proc_launcher(void (*proc)(void))\n{\n    /* Une tâche choisie depuis une interruption doit pouvoir être préemptée. */\n    enable_it();\n    proc();\n    fin_processus();\n}",
+      "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/processus.c#L118-L137"
+    },
+    "trap_source": {
+      "path": "src/traitant.S",
+      "start_line": 1,
+      "end_line": 43,
+      "code": "    .global mon_traitant\n    .text\n    .balign 4\nmon_traitant:\n    addi sp,sp,-16*8\n    sd ra,  0*8(sp)\n    sd a0,  1*8(sp)\n    sd a1,  2*8(sp)\n    sd a2,  3*8(sp)\n    sd a3,  4*8(sp)\n    sd a4,  5*8(sp)\n    sd a5,  6*8(sp)\n    sd a6,  7*8(sp)\n    sd a7,  8*8(sp)\n    sd t0,  9*8(sp)\n    sd t1, 10*8(sp)\n    sd t2, 11*8(sp)\n    sd t3, 12*8(sp)\n    sd t4, 13*8(sp)\n    sd t5, 14*8(sp)\n    sd t6, 15*8(sp)\n    csrr a0,mcause\n    csrr a1,mie\n    csrr a2,mip\n    jal trap_handler\n    ld ra,  0*8(sp)\n    ld a0,  1*8(sp)\n    ld a1,  2*8(sp)\n    ld a2,  3*8(sp)\n    ld a3,  4*8(sp)\n    ld a4,  5*8(sp)\n    ld a5,  6*8(sp)\n    ld a6,  7*8(sp)\n    ld a7,  8*8(sp)\n    ld t0,  9*8(sp)\n    ld t1, 10*8(sp)\n    ld t2, 11*8(sp)\n    ld t3, 12*8(sp)\n    ld t4, 13*8(sp)\n    ld t5, 14*8(sp)\n    ld t6, 15*8(sp)\n    addi sp,sp,16*8\n    mret",
+      "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/traitant.S#L1-L43"
+    },
+    "notes": [
+      "Os endereços internos acima foram medidos no ELF deste build; podem mudar após recompilação.",
+      "sp aponta para a pilha da tarefa atual; ctx_sw troca o ponteiro, sem copiar os 32 KiB de cada pilha.",
+      "O frame de interrupção salva ra, a0..a7 e t0..t6. O contexto de troca salva registradores preservados, sp e CSRs.",
+      "Não há MMU, paginação, heap dinâmico, filesystem, teclado ou isolamento em user mode implementados neste repositório."
+    ]
+  },
+  "font_example": {
+    "character": "A",
+    "codepoint": 65,
+    "rows": [
+      12,
+      30,
+      51,
+      51,
+      63,
+      51,
+      51,
+      0
+    ],
+    "bit_order": "LSB first: pixel x tests (row_byte >> x) & 1",
+    "source": {
+      "path": "src/font.c",
+      "line": 89,
+      "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/font.c#L89"
+    }
+  },
+  "scroll": {
+    "destination": "0x8000a000",
+    "source": "0x80014000",
+    "bytes_moved": 3604480,
+    "clear_start": "0x8037a000",
+    "bytes_cleared": 40960,
+    "source_code": {
+      "path": "src/console.c",
+      "start_line": 84,
+      "end_line": 100,
+      "code": "{\n    // Calcul des adresses de destination et source pour le défilement\n    uint32_t largeur_pixel = BITS*DISPLAY_WIDTH;\n    uint32_t *destination = (uint32_t*)ADRESSE_INITIAL + largeur_pixel;\n    uint32_t *source = (uint32_t*)ADRESSE_INITIAL + 2*largeur_pixel;\n\n    // Calcul de la taille en octets de la zone de mémoire à déplacer\n    uint32_t size = DISPLAY_WIDTH*(DISPLAY_HEIGHT - 2*BITS)*sizeof(uint32_t);\n\n    // Mise à jour du curseur après le défilement vers le haut\n    place_curseur(DISPLAY_HEIGHT/BITS - 2, colonne_actuel);\n\n    // Déplacement du contenu de l'écran vers le haut (défilement)\n    memmove(destination, source, size);\n    memset((uint32_t*)ADRESSE_INITIAL + DISPLAY_WIDTH*(DISPLAY_HEIGHT - BITS),\n           0, DISPLAY_WIDTH*BITS*sizeof(uint32_t));\n}",
+      "url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/src/console.c#L84-L100"
+    }
+  },
+  "provenance": {
+    "course_period": "September–December 2023",
+    "activity_note": "As pastas examples separam mecanismos em programas executáveis e incluem correções posteriores; não são cópias inalteradas das entregas originais.",
+    "credits": "Emilly Raiane Rodrigues — projeto do curso. Boot/plataforma: Sébastien Viardot. Runtime: Flux/OSKit, CMU/Mach, klibc. Fontes: Daniel Hepper, Marcel Sondaar e IBM.",
+    "license_url": "https://github.com/Raiagues/OS/blob/920d3c9d93e0cda928e48c6cd77ea239a054976b/COPYING.GPL-2"
+  }
+}

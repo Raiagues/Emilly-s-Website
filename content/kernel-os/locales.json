@@ -1,0 +1,374 @@
+{
+  "pixels": {
+    "title": {
+      "en": "Pixels and fonts",
+      "pt": "Pixels e fontes",
+      "fr": "Pixels et polices de caractères",
+      "es": "Píxeles y fuentes"
+    },
+    "description": {
+      "en": "A memory address maps to a pixel; eight bitmap bytes form each 8 × 8 glyph.",
+      "pt": "Um endereço de memória vira um pixel; oito bytes do bitmap formam cada glifo de 8 × 8.",
+      "fr": "Une adresse mémoire correspond à un pixel ; huit octets du bitmap forment chaque glyphe de 8 × 8.",
+      "es": "Una dirección de memoria corresponde a un píxel; ocho bytes del mapa de bits forman cada glifo de 8 × 8."
+    },
+    "notes": {
+      "en": "The calculation uses a uint32_t pointer: each position advances by 4 bytes. The colors and text were written by the original demonstration program. Frames were captured at GDB breakpoints. Host time includes capture time; the playback intervals are educational and are not a performance measurement.",
+      "pt": "O cálculo usa um ponteiro uint32_t: cada posição avança 4 bytes. As cores e o texto foram escritos pelo programa original de demonstração. Os quadros foram capturados em breakpoints do GDB. O tempo do host inclui a captura; os intervalos da reprodução são didáticos e não medem desempenho.",
+      "fr": "Le calcul utilise un pointeur uint32_t : chaque position avance de 4 octets. Les couleurs et le texte ont été écrits par le programme de démonstration original. Les images ont été capturées aux points d’arrêt GDB. Le temps hôte inclut la capture ; les intervalles de lecture sont pédagogiques et ne mesurent pas les performances.",
+      "es": "El cálculo utiliza un puntero uint32_t: cada posición avanza 4 bytes. El programa de demostración original escribió los colores y el texto. Los fotogramas se capturaron en puntos de interrupción de GDB. El tiempo del host incluye la captura; los intervalos de reproducción son didácticos y no miden el rendimiento."
+    },
+    "frames": [
+      {
+        "label": {
+          "en": "First row of glyphs: red pixels",
+          "pt": "Primeira linha de glifos: pixels vermelhos",
+          "fr": "Première ligne de glyphes : pixels rouges",
+          "es": "Primera fila de glifos: píxeles rojos"
+        }
+      },
+      {
+        "label": {
+          "en": "Second row: green pixels",
+          "pt": "Segunda linha: pixels verdes",
+          "fr": "Deuxième ligne : pixels verts",
+          "es": "Segunda fila: píxeles verdes"
+        }
+      },
+      {
+        "label": {
+          "en": "Third row: blue pixels",
+          "pt": "Terceira linha: pixels azuis",
+          "fr": "Troisième ligne : pixels bleus",
+          "es": "Tercera fila: píxeles azules"
+        }
+      },
+      {
+        "label": {
+          "en": "Fourth row: white characters",
+          "pt": "Quarta linha: caracteres brancos",
+          "fr": "Quatrième ligne : caractères blancs",
+          "es": "Cuarta fila: caracteres blancos"
+        }
+      },
+      {
+        "label": {
+          "en": "Text passes the last column and continues on the next row",
+          "pt": "Texto ultrapassa a última coluna e continua na linha seguinte",
+          "fr": "Le texte dépasse la dernière colonne et continue sur la ligne suivante",
+          "es": "El texto rebasa la última columna y continúa en la línea siguiente"
+        }
+      }
+    ]
+  },
+  "console": {
+    "title": {
+      "en": "Console and cursor",
+      "pt": "Console e cursor",
+      "fr": "Console et curseur",
+      "es": "Consola y cursor"
+    },
+    "description": {
+      "en": "Each byte selects an action: draw a glyph, move the cursor, go back one column or clear the screen.",
+      "pt": "Cada byte seleciona uma ação: desenhar um glifo, mover o cursor, voltar uma coluna ou limpar a tela.",
+      "fr": "Chaque octet sélectionne une action : dessiner un glyphe, déplacer le curseur, reculer d’une colonne ou effacer l’écran.",
+      "es": "Cada byte selecciona una acción: dibujar un glifo, mover el cursor, retroceder una columna o borrar la pantalla."
+    },
+    "notes": {
+      "en": "LF, BS, CR and HT are console commands, not pre-rendered drawings. The UART stream contains the control bytes; it does not reproduce direct calls to place_curseur. Frames were captured at GDB breakpoints. Host time includes capture time; the playback intervals are educational and are not a performance measurement.",
+      "pt": "LF, BS, CR e HT são comandos do console, não desenhos pré-renderizados. O fluxo UART contém os bytes de controle; ele não reproduz as chamadas diretas a place_curseur. Os quadros foram capturados em breakpoints do GDB. O tempo do host inclui a captura; os intervalos da reprodução são didáticos e não medem desempenho.",
+      "fr": "LF, BS, CR et HT sont des commandes de console, pas des dessins précalculés. Le flux UART contient les octets de contrôle ; il ne reproduit pas les appels directs à place_curseur. Les images ont été capturées aux points d’arrêt GDB. Le temps hôte inclut la capture ; les intervalles de lecture sont pédagogiques et ne mesurent pas les performances.",
+      "es": "LF, BS, CR y HT son comandos de la consola, no dibujos prerenderizados. El flujo UART contiene los bytes de control; no reproduce las llamadas directas a place_curseur. Los fotogramas se capturaron en puntos de interrupción de GDB. El tiempo del host incluye la captura; los intervalos de reproducción son didácticos y no miden el rendimiento."
+    },
+    "frames": [
+      {
+        "label": {
+          "en": "LF: AB and CD appear on different rows",
+          "pt": "LF: AB e CD aparecem em linhas diferentes",
+          "fr": "LF : AB et CD apparaissent sur des lignes différentes",
+          "es": "LF: AB y CD aparecen en líneas distintas"
+        }
+      },
+      {
+        "label": {
+          "en": "BS: the cursor moves back and C replaces B",
+          "pt": "BS: o cursor volta e C substitui B",
+          "fr": "BS : le curseur recule et C remplace B",
+          "es": "BS: el cursor retrocede y C sustituye a B"
+        }
+      },
+      {
+        "label": {
+          "en": "CR: Z replaces A at the start of the row",
+          "pt": "CR: Z substitui A no início da linha",
+          "fr": "CR : Z remplace A en début de ligne",
+          "es": "CR: Z sustituye a A al principio de la línea"
+        }
+      },
+      {
+        "label": {
+          "en": "HT: B appears at the next tab stop",
+          "pt": "HT: B aparece no próximo ponto de tabulação",
+          "fr": "HT : B apparaît au prochain taquet de tabulation",
+          "es": "HT: B aparece en la siguiente posición de tabulación"
+        }
+      },
+      {
+        "label": {
+          "en": "A tab near the edge moves Z to the next row",
+          "pt": "Tabulação próxima da borda leva Z à próxima linha",
+          "fr": "Une tabulation près du bord place Z sur la ligne suivante",
+          "es": "Una tabulación cerca del borde lleva Z a la siguiente línea"
+        }
+      },
+      {
+        "label": {
+          "en": "Complete console, with cursor and test descriptions",
+          "pt": "Console completo, com cursor e explicação dos testes",
+          "fr": "Console complète, avec curseur et explication des tests",
+          "es": "Consola completa, con cursor y explicación de las pruebas"
+        }
+      }
+    ]
+  },
+  "scroll": {
+    "title": {
+      "en": "Screen scrolling",
+      "pt": "Rolagem da tela",
+      "fr": "Défilement de l’écran",
+      "es": "Desplazamiento de la pantalla"
+    },
+    "description": {
+      "en": "When the text area fills up, memmove shifts overlapping regions of VRAM and the last row is cleared.",
+      "pt": "Quando a área de texto acaba, memmove desloca regiões sobrepostas da VRAM e a última linha é limpa.",
+      "fr": "Lorsque la zone de texte est pleine, memmove déplace des régions de VRAM qui se chevauchent et la dernière ligne est effacée.",
+      "es": "Cuando se llena el área de texto, memmove desplaza regiones superpuestas de la VRAM y se borra la última línea."
+    },
+    "notes": {
+      "en": "The first 8-pixel band is preserved for the header. The program prints 100 numbered lines; this test is not an interactive shell. Frames were captured at GDB breakpoints. Host time includes capture time; the playback intervals are educational and are not a performance measurement.",
+      "pt": "A primeira faixa de 8 pixels é preservada para o cabeçalho. O programa imprime 100 linhas numeradas; o teste não é um shell interativo. Os quadros foram capturados em breakpoints do GDB. O tempo do host inclui a captura; os intervalos da reprodução são didáticos e não medem desempenho.",
+      "fr": "La première bande de 8 pixels est réservée à l’en-tête. Le programme affiche 100 lignes numérotées ; ce test n’est pas un shell interactif. Les images ont été capturées aux points d’arrêt GDB. Le temps hôte inclut la capture ; les intervalles de lecture sont pédagogiques et ne mesurent pas les performances.",
+      "es": "La primera franja de 8 píxeles se conserva para la cabecera. El programa imprime 100 líneas numeradas; la prueba no es un shell interactivo. Los fotogramas se capturaron en puntos de interrupción de GDB. El tiempo del host incluye la captura; los intervalos de reproducción son didácticos y no miden el rendimiento."
+    },
+    "frames": [
+      {
+        "label": {
+          "en": "20 lines written; there is still room on the screen",
+          "pt": "20 linhas escritas; ainda há espaço na tela",
+          "fr": "20 lignes écrites ; il reste de la place à l’écran",
+          "es": "20 líneas escritas; todavía queda espacio en la pantalla"
+        }
+      },
+      {
+        "label": {
+          "en": "80 lines written; the cursor approaches the bottom edge",
+          "pt": "80 linhas escritas; o cursor se aproxima da borda inferior",
+          "fr": "80 lignes écrites ; le curseur approche du bord inférieur",
+          "es": "80 líneas escritas; el cursor se acerca al borde inferior"
+        }
+      },
+      {
+        "label": {
+          "en": "Scrolling shifts the body of the screen and preserves the header",
+          "pt": "A rolagem desloca o corpo da tela e preserva o cabeçalho",
+          "fr": "Le défilement déplace le corps de l’écran et préserve l’en-tête",
+          "es": "El desplazamiento mueve el cuerpo de la pantalla y conserva la cabecera"
+        }
+      },
+      {
+        "label": {
+          "en": "100 lines written; the first lines have left the visible area",
+          "pt": "100 linhas escritas; as primeiras saíram da área visível",
+          "fr": "100 lignes écrites ; les premières ont quitté la zone visible",
+          "es": "100 líneas escritas; las primeras han salido del área visible"
+        }
+      }
+    ]
+  },
+  "uart": {
+    "title": {
+      "en": "UART transmission",
+      "pt": "Transmissão UART",
+      "fr": "Transmission UART",
+      "es": "Transmisión UART"
+    },
+    "description": {
+      "en": "The kernel checks the FIFO busy bit and writes bytes to the transmit register.",
+      "pt": "O kernel consulta o bit de ocupação do FIFO e escreve bytes no registrador de transmissão.",
+      "fr": "Le noyau consulte le bit d’occupation de la FIFO et écrit des octets dans le registre de transmission.",
+      "es": "El kernel consulta el bit de ocupación del FIFO y escribe bytes en el registro de transmisión."
+    },
+    "notes": {
+      "en": "UART only appears in the serial log, not on the screen. console_putbytes sends the same message to the framebuffer and the UART. Frames were captured at GDB breakpoints. Host time includes capture time; the playback intervals are educational and are not a performance measurement.",
+      "pt": "UART only aparece no log serial e não na tela. console_putbytes envia a mesma mensagem para o framebuffer e para a UART. Os quadros foram capturados em breakpoints do GDB. O tempo do host inclui a captura; os intervalos da reprodução são didáticos e não medem desempenho.",
+      "fr": "UART only apparaît dans le journal série, pas à l’écran. console_putbytes envoie le même message au framebuffer et à l’UART. Les images ont été capturées aux points d’arrêt GDB. Le temps hôte inclut la capture ; les intervalles de lecture sont pédagogiques et ne mesurent pas les performances.",
+      "es": "UART only aparece en el registro serie, no en la pantalla. console_putbytes envía el mismo mensaje al framebuffer y a la UART. Los fotogramas se capturaron en puntos de interrupción de GDB. El tiempo del host incluye la captura; los intervalos de reproducción son didácticos y no miden el rendimiento."
+    },
+    "frames": [
+      {
+        "label": {
+          "en": "Title sent to the screen and the UART",
+          "pt": "Título enviado para a tela e para a UART",
+          "fr": "Titre envoyé à l’écran et à l’UART",
+          "es": "Título enviado a la pantalla y a la UART"
+        }
+      },
+      {
+        "label": {
+          "en": "UART only appears only in the serial stream",
+          "pt": "UART only aparece só no fluxo serial",
+          "fr": "UART only apparaît uniquement dans le flux série",
+          "es": "UART only aparece solo en el flujo serie"
+        }
+      },
+      {
+        "label": {
+          "en": "Console and UART appears at both destinations",
+          "pt": "Console and UART aparece nos dois destinos",
+          "fr": "Console and UART apparaît aux deux destinations",
+          "es": "Console and UART aparece en ambos destinos"
+        }
+      },
+      {
+        "label": {
+          "en": "Final output: direct transmission and mirrored output",
+          "pt": "Saída final: transmissão direta e saída espelhada",
+          "fr": "Sortie finale : transmission directe et sortie dupliquée",
+          "es": "Salida final: transmisión directa y salida duplicada"
+        }
+      }
+    ]
+  },
+  "timer": {
+    "title": {
+      "en": "Timer and interrupts",
+      "pt": "Timer e interrupções",
+      "fr": "Temporisateur et interruptions",
+      "es": "Temporizador e interrupciones"
+    },
+    "description": {
+      "en": "mtime reaches the mtimecmp deadline, the CPU enters the handler and the kernel counts 20 interrupts per second.",
+      "pt": "mtime chega ao prazo de mtimecmp, a CPU entra no tratador e o kernel conta 20 interrupções por segundo.",
+      "fr": "mtime atteint l’échéance de mtimecmp, le processeur entre dans le gestionnaire et le noyau compte 20 interruptions par seconde.",
+      "es": "mtime alcanza el plazo de mtimecmp, la CPU entra en el manejador y el kernel cuenta 20 interrupciones por segundo."
+    },
+    "notes": {
+      "en": "The hardware counter runs at 10 MHz; the next deadline is 500,000 increments ahead. The kernel clock counts handled interrupts and can fall behind real time if handling is delayed. The clock at the right edge is visible in the full-screen view; the logs also record seconds. Execution was continuous except for brief capture pauses. Host elapsed time and the kernel clock are separate measurements.",
+      "pt": "O contador de hardware roda a 10 MHz; o próximo prazo fica 500.000 incrementos adiante. O relógio do kernel conta interrupções tratadas e pode ficar atrás do tempo real se o tratamento atrasar. O relógio no canto direito é visível na opção de tela completa; os logs também registram os segundos. A execução foi contínua, com pausas breves para captura. O tempo decorrido no host e o relógio do kernel são medidas distintas.",
+      "fr": "Le compteur matériel fonctionne à 10 MHz ; la prochaine échéance se situe 500 000 incréments plus loin. L’horloge du noyau compte les interruptions traitées et peut prendre du retard sur le temps réel si leur traitement est retardé. L’horloge à droite est visible dans la vue plein écran ; les journaux indiquent aussi les secondes. L’exécution a été continue, avec de brèves pauses de capture. Le temps écoulé sur l’hôte et l’horloge du noyau sont des mesures distinctes.",
+      "es": "El contador de hardware funciona a 10 MHz; el siguiente plazo está 500.000 incrementos más adelante. El reloj del kernel cuenta las interrupciones atendidas y puede retrasarse respecto al tiempo real si se demora su atención. El reloj del lado derecho se ve en la vista de pantalla completa; los registros también muestran los segundos. La ejecución fue continua, con pausas breves para la captura. El tiempo transcurrido en el host y el reloj del kernel son medidas distintas."
+    },
+    "frames": [
+      {
+        "label": {
+          "en": "Real execution: 0 s on the kernel clock",
+          "pt": "Execução real: 0 s no relógio do kernel",
+          "fr": "Exécution réelle : 0 s sur l’horloge du noyau",
+          "es": "Ejecución real: 0 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 1 s on the kernel clock",
+          "pt": "Execução real: 1 s no relógio do kernel",
+          "fr": "Exécution réelle : 1 s sur l’horloge du noyau",
+          "es": "Ejecución real: 1 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 1 s on the kernel clock",
+          "pt": "Execução real: 1 s no relógio do kernel",
+          "fr": "Exécution réelle : 1 s sur l’horloge du noyau",
+          "es": "Ejecución real: 1 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 3 s on the kernel clock",
+          "pt": "Execução real: 3 s no relógio do kernel",
+          "fr": "Exécution réelle : 3 s sur l’horloge du noyau",
+          "es": "Ejecución real: 3 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 4 s on the kernel clock",
+          "pt": "Execução real: 4 s no relógio do kernel",
+          "fr": "Exécution réelle : 4 s sur l’horloge du noyau",
+          "es": "Ejecución real: 4 s en el reloj del kernel"
+        }
+      }
+    ]
+  },
+  "processes": {
+    "title": {
+      "en": "Processes and context switching",
+      "pt": "Processos e troca de contexto",
+      "fr": "Processus et changement de contexte",
+      "es": "Procesos y cambio de contexto"
+    },
+    "description": {
+      "en": "Three tasks have their own stacks, sleep for 2, 3 and 4 seconds, and share one CPU with idle.",
+      "pt": "Três tarefas têm pilhas próprias, dormem por 2, 3 e 4 segundos e dividem uma CPU com idle.",
+      "fr": "Trois tâches possèdent leur propre pile, dorment pendant 2, 3 et 4 secondes et partagent un processeur avec idle.",
+      "es": "Tres tareas tienen sus propias pilas, duermen durante 2, 3 y 4 segundos y comparten una CPU con idle."
+    },
+    "notes": {
+      "en": "The tasks share one address space and machine-mode privileges. The states are 0 RUN, 1 RUNNABLE, 2 WAIT and 3 DIE. The graphical panel refreshes once per second. The table has 4 entries, including idle; terminated slots are not reused. Execution was continuous except for brief capture pauses. Host elapsed time and the kernel clock are separate measurements.",
+      "pt": "As tarefas compartilham o mesmo espaço de endereços e os privilégios de machine mode. Os estados são 0 RUN, 1 RUNNABLE, 2 WAIT e 3 DIE. O painel gráfico é atualizado uma vez por segundo. A tabela possui 4 entradas, incluindo idle; posições terminadas não são reutilizadas. A execução foi contínua, com pausas breves para captura. O tempo decorrido no host e o relógio do kernel são medidas distintas.",
+      "fr": "Les tâches partagent le même espace d’adressage et les privilèges du mode machine. Les états sont 0 RUN, 1 RUNNABLE, 2 WAIT et 3 DIE. Le panneau graphique est actualisé une fois par seconde. La table comporte 4 entrées, dont idle ; les emplacements terminés ne sont pas réutilisés. L’exécution a été continue, avec de brèves pauses de capture. Le temps écoulé sur l’hôte et l’horloge du noyau sont des mesures distinctes.",
+      "es": "Las tareas comparten el mismo espacio de direcciones y los privilegios de modo máquina. Los estados son 0 RUN, 1 RUNNABLE, 2 WAIT y 3 DIE. El panel gráfico se actualiza una vez por segundo. La tabla tiene 4 entradas, incluida idle; las posiciones terminadas no se reutilizan. La ejecución fue continua, con pausas breves para la captura. El tiempo transcurrido en el host y el reloj del kernel son medidas distintas."
+    },
+    "frames": [
+      {
+        "label": {
+          "en": "Real execution: 0 s on the kernel clock",
+          "pt": "Execução real: 0 s no relógio do kernel",
+          "fr": "Exécution réelle : 0 s sur l’horloge du noyau",
+          "es": "Ejecución real: 0 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 1 s on the kernel clock",
+          "pt": "Execução real: 1 s no relógio do kernel",
+          "fr": "Exécution réelle : 1 s sur l’horloge du noyau",
+          "es": "Ejecución real: 1 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 2 s on the kernel clock",
+          "pt": "Execução real: 2 s no relógio do kernel",
+          "fr": "Exécution réelle : 2 s sur l’horloge du noyau",
+          "es": "Ejecución real: 2 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 4 s on the kernel clock",
+          "pt": "Execução real: 4 s no relógio do kernel",
+          "fr": "Exécution réelle : 4 s sur l’horloge du noyau",
+          "es": "Ejecución real: 4 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 6 s on the kernel clock",
+          "pt": "Execução real: 6 s no relógio do kernel",
+          "fr": "Exécution réelle : 6 s sur l’horloge du noyau",
+          "es": "Ejecución real: 6 s en el reloj del kernel"
+        }
+      },
+      {
+        "label": {
+          "en": "Real execution: 8 s on the kernel clock",
+          "pt": "Execução real: 8 s no relógio do kernel",
+          "fr": "Exécution réelle : 8 s sur l’horloge du noyau",
+          "es": "Ejecución real: 8 s en el reloj del kernel"
+        }
+      }
+    ]
+  }
+}

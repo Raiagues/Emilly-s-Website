@@ -1,0 +1,19 @@
+entry () at src/crt0.S:6
+6	    csrw mie, zero
+Temporary breakpoint 1 at 0x1718: file src/main.c, line 20.
+
+Temporary breakpoint 1, kernel_start () at src/main.c:8
+8	    while (*text) traite_car_uart(*text++);
+Temporary breakpoint 2 at 0x1738: file src/main.c, line 22.
+
+Temporary breakpoint 2, kernel_start () at src/main.c:22
+22	    place_curseur(4, 0);
+Temporary breakpoint 3 at 0x176c: file src/main.c, line 25.
+
+Temporary breakpoint 3, kernel_start () at src/main.c:26
+26	    console_putbytes(note, (int)strlen(note));
+Temporary breakpoint 4 at 0x1790: file src/cpu.h, line 7.
+
+Temporary breakpoint 4, hlt () at src/cpu.h:7
+7	   __asm__ __volatile__("wfi":::"memory");
+[Inferior 1 (process 1) killed]

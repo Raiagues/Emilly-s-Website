@@ -1,0 +1,734 @@
+{
+  "identity": {
+    "project_name": "Flight Studio",
+    "project_name_source": "Identificação explícita da usuária na conversa; não aparece nominalmente no TCC.",
+    "title_pt": "Plataforma interativa para reduzir a barreira de entrada no desenvolvimento de software de voo para satélites",
+    "title_en": "An interactive platform to lower the entry barrier to satellite flight software development",
+    "author": "Emilly Raiane Rodrigues",
+    "institution": "Universidade Federal de Santa Maria",
+    "course": "Engenharia Aeroespacial",
+    "year": 2026,
+    "document_type": "Projeto Final de Curso / TCC 1, com proposta e plano de validação",
+    "source_zip": "TCC.zip",
+    "source_zip_sha256": "ff2df184f41ec1d62d0e34500727021c56737ba0c5630729f95a38b15fcf7165",
+    "source_pdf_sha256": "0ee8daeca16d53fd7348b6f33c08ec8df8a5611309e468e000def7bf5d67db76",
+    "document_pages": 37,
+    "reference": {
+      "file": "main.tex",
+      "line_start": 29,
+      "line_end": 57
+    }
+  },
+  "evidence_status": {
+    "supported": [
+      "Fundamentação e levantamento bibliográfico",
+      "Análise de frameworks e da lacuna educacional",
+      "Arquitetura proposta de três componentes",
+      "Requisitos funcionais e não funcionais",
+      "Plano de desenvolvimento para 2026",
+      "Métricas e critérios planejados de validação técnica e educacional"
+    ],
+    "not_in_archive": [
+      "Código-fonte do Flight Studio",
+      "Telas ou gravações reais da interface",
+      "Resultados de execução integrada com cFS",
+      "Valores medidos de latência ou tempo de build",
+      "Resultados da avaliação com usuários",
+      "Execução comprovada em Raspberry Pi",
+      "Implementação de interfaces de sensores"
+    ],
+    "explicit_placeholders": [
+      {
+        "file": "secoes/desenvolvimento.tex",
+        "line_start": 1,
+        "line_end": 4
+      },
+      {
+        "file": "secoes/conclusao.tex",
+        "line_start": 1,
+        "line_end": 4
+      }
+    ],
+    "readme_statement": "Os capítulos de Desenvolvimento e Conclusão foram deixados como placeholders para serem preenchidos com o trabalho a ser realizado.",
+    "editorial_rule": "Apresentar a proposta e as escolhas técnicas com clareza; distinguir diagramas didáticos da plataforma de capturas de implementação. Não converter metas em resultados.",
+    "uncertain": [
+      "Detalhes exatos do framework web",
+      "APIs, endpoints, portas UDP e identificadores de mensagem específicos",
+      "Formato de bytes de exemplos concretos",
+      "Modelo de Raspberry Pi",
+      "Sensor específico",
+      "Mecanismo do suporte assistido; RAG aparece só na lista de siglas, não como implementação especificada",
+      "Completude do trabalho posterior ao documento fornecido"
+    ]
+  },
+  "problem": {
+    "summary": "Reduzir o esforço operacional inicial para aprender e desenvolver software de voo com o núcleo cFS real.",
+    "audience": [
+      "Estudantes",
+      "Equipes iniciantes de satélites",
+      "Equipes com recursos de infraestrutura limitados"
+    ],
+    "barriers": [
+      "Instalar e configurar múltiplos componentes",
+      "Dominar sistemas de construção e registro de aplicações",
+      "Entender o Software Bus e os identificadores de mensagem",
+      "Construir manualmente comandos e decodificação de telemetria",
+      "Interpretar eventos de depuração"
+    ],
+    "principle": "Automatizar a preparação e reunir as tarefas em uma interface web, mantendo interação com cFS nativo e seus mecanismos reais.",
+    "refs": [
+      {
+        "file": "secoes/introducao.tex",
+        "line_start": 19,
+        "line_end": 39
+      },
+      {
+        "file": "secoes/trabalhos_relacionados.tex",
+        "line_start": 34,
+        "line_end": 46
+      }
+    ]
+  },
+  "architecture": {
+    "status": "proposta",
+    "nodes": [
+      {
+        "id": "cfs",
+        "name": "NASA cFS em Linux",
+        "role": "Executar aplicações de voo e serviços cFE; receber comandos e emitir telemetria."
+      },
+      {
+        "id": "backend",
+        "name": "Serviço de retaguarda em Python",
+        "role": "Decodificar telemetria, construir pacotes de comando, analisar código-fonte e integrar o suporte assistido."
+      },
+      {
+        "id": "web",
+        "name": "Interface web",
+        "role": "Enviar comandos, visualizar telemetria, planejar missão e explorar a arquitetura."
+      }
+    ],
+    "interfaces": [
+      {
+        "from": "cfs",
+        "to": "backend",
+        "bidirectional": true,
+        "protocol": "UDP",
+        "data": "comandos e telemetria"
+      },
+      {
+        "from": "backend",
+        "to": "web",
+        "bidirectional": true,
+        "protocol": "HTTP / REST",
+        "data": "interação web e dados da plataforma"
+      }
+    ],
+    "packet_standard": "CCSDS Space Packet Protocol, conforme o texto; não há layout ou valores concretos no ZIP.",
+    "targets": [
+      {
+        "name": "Linux desktop",
+        "status": "ambiente de desenvolvimento e validação proposto"
+      },
+      {
+        "name": "Raspberry Pi",
+        "status": "requisito de baixo custo e alvo previsto de validação"
+      },
+      {
+        "name": "Sensores COTS",
+        "status": "integração prevista ao hospedeiro, sem componentes específicos definidos"
+      }
+    ],
+    "refs": [
+      {
+        "file": "secoes/metodologia.tex",
+        "line_start": 15,
+        "line_end": 48
+      },
+      {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 56,
+        "line_end": 56
+      }
+    ]
+  },
+  "cfs_layers": [
+    {
+      "id": "apps",
+      "name": "Aplicações de missão",
+      "role": "Implementam funcionalidades independentes e trocam mensagens pelo Software Bus.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 47,
+        "line_end": 47
+      }
+    },
+    {
+      "id": "cfe",
+      "name": "cFE",
+      "role": "Gerência de aplicações, comunicação, eventos, tabelas e tempo.",
+      "services": [
+        "ES",
+        "SB",
+        "EVS",
+        "TBL",
+        "TIME"
+      ],
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 47,
+        "line_end": 71
+      }
+    },
+    {
+      "id": "osal",
+      "name": "OSAL",
+      "role": "API comum para serviços do sistema operacional; ajuda a portar aplicações.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 47,
+        "line_end": 47
+      }
+    },
+    {
+      "id": "psp",
+      "name": "PSP",
+      "role": "Isola detalhes específicos da plataforma e do acesso ao hardware.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 45,
+        "line_end": 47
+      }
+    },
+    {
+      "id": "host",
+      "name": "Sistema operacional e hardware",
+      "role": "Linux no ambiente de desenvolvimento proposto; teste posterior em plataforma de baixo custo.",
+      "ref": {
+        "file": "secoes/metodologia.tex",
+        "line_start": 44,
+        "line_end": 48
+      }
+    }
+  ],
+  "cfs_catalog": [
+    {
+      "id": "cfe",
+      "name": "cFE · ES / SB / EVS / TBL / TIME",
+      "role": "Serviços do núcleo: aplicações, barramento, eventos, tabelas e tempo.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 71,
+        "line_end": 71
+      }
+    },
+    {
+      "id": "ci",
+      "name": "CI_LAB",
+      "role": "Receber comandos do segmento solo via UDP em ambiente de laboratório.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 73,
+        "line_end": 73
+      }
+    },
+    {
+      "id": "to",
+      "name": "TO_LAB",
+      "role": "Enviar telemetria ao segmento solo via UDP em ambiente de laboratório.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 73,
+        "line_end": 73
+      }
+    },
+    {
+      "id": "sch",
+      "name": "SCH_LAB",
+      "role": "Disparar tarefas periodicamente.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 75,
+        "line_end": 75
+      }
+    },
+    {
+      "id": "hk",
+      "name": "HK",
+      "role": "Coletar e montar telemetria de manutenção.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 77,
+        "line_end": 77
+      }
+    },
+    {
+      "id": "hs",
+      "name": "HS",
+      "role": "Monitorar saúde e segurança do sistema.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 79,
+        "line_end": 79
+      }
+    },
+    {
+      "id": "sc",
+      "name": "SC",
+      "role": "Executar sequências de comandos armazenadas.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 81,
+        "line_end": 81
+      }
+    },
+    {
+      "id": "ds",
+      "name": "DS",
+      "role": "Armazenar dados em arquivos.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 83,
+        "line_end": 83
+      }
+    },
+    {
+      "id": "fm",
+      "name": "FM",
+      "role": "Gerenciar o sistema de arquivos.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 83,
+        "line_end": 83
+      }
+    },
+    {
+      "id": "sample",
+      "name": "SAMPLE_APP",
+      "role": "Fornecer um modelo de partida para novas aplicações.",
+      "ref": {
+        "file": "secoes/fundamentacao.tex",
+        "line_start": 85,
+        "line_end": 85
+      }
+    }
+  ],
+  "functional_modules": [
+    {
+      "id": "application-lifecycle",
+      "name": "Automação de aplicações",
+      "purpose": "Transformar dados fornecidos pelo usuário em aplicação integrada ao sistema de construção nativo.",
+      "conventional_tasks": [
+        "Copiar modelos",
+        "Renomear arquivos",
+        "Ajustar arquivos de construção",
+        "Registrar identificadores de mensagem"
+      ],
+      "ref": {
+        "file": "secoes/metodologia.tex",
+        "line_start": 36,
+        "line_end": 44
+      }
+    },
+    {
+      "id": "interfaces",
+      "name": "Interfaces de comando e telemetria",
+      "purpose": "Extrair identificadores, códigos de comando e estruturas do código-fonte para construir pacotes e decodificar mensagens.",
+      "ref": {
+        "file": "secoes/metodologia.tex",
+        "line_start": 36,
+        "line_end": 48
+      }
+    },
+    {
+      "id": "mission-planning",
+      "name": "Planejamento de missão",
+      "purpose": "Relacionar contexto e objetivos da missão a aplicações e comandos; ligar interações de baixo nível ao propósito do sistema.",
+      "ref": {
+        "file": "secoes/metodologia.tex",
+        "line_start": 38,
+        "line_end": 38
+      }
+    },
+    {
+      "id": "debug-support",
+      "name": "Suporte à depuração",
+      "purpose": "Apoiar a interpretação de mensagens de evento sem exigir familiaridade inicial com todos os mecanismos internos.",
+      "ref": {
+        "file": "secoes/metodologia.tex",
+        "line_start": 36,
+        "line_end": 44
+      }
+    }
+  ],
+  "technical_validation": {
+    "status": "plano, sem medições publicadas no ZIP",
+    "metrics": [
+      {
+        "name": "Criação de aplicação",
+        "method": "Cronometrar pedido até aplicação compilada e integrada; média de várias execuções.",
+        "target": "Build completa abaixo de 90 s",
+        "value": 90,
+        "unit": "s",
+        "comparison": "<",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 65,
+          "line_end": 65
+        }
+      },
+      {
+        "name": "Varredura de código",
+        "method": "Tempo para extrair interfaces de comando e telemetria da árvore de código.",
+        "target": "Poucos segundos por árvore de aplicações",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 67,
+          "line_end": 67
+        }
+      },
+      {
+        "name": "Latência de telemetria",
+        "method": "Tempo da recepção UDP até exibição na interface, percentil 95.",
+        "target": "Abaixo de 100 ms no desktop",
+        "value": 100,
+        "unit": "ms",
+        "comparison": "<",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 69,
+          "line_end": 69
+        }
+      },
+      {
+        "name": "Resposta do suporte",
+        "method": "Tempo da análise local de mensagens de evento.",
+        "target": "Poucos segundos por consulta",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 71,
+          "line_end": 71
+        }
+      },
+      {
+        "name": "Execução em Raspberry Pi",
+        "method": "Repetir as medições no hardware de baixo custo.",
+        "target": "Plataforma funcional e responsiva",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 73,
+          "line_end": 73
+        }
+      }
+    ],
+    "criteria": [
+      "Aplicações geradas construídas e executadas sem alteração manual posterior",
+      "Comandos e telemetria correspondem às definições reais extraídas do código",
+      "Atendimento das metas inclusive no alvo de baixo custo"
+    ],
+    "criteria_ref": {
+      "file": "secoes/metodologia.tex",
+      "line_start": 110,
+      "line_end": 110
+    }
+  },
+  "educational_validation": {
+    "status": "plano, sem participantes ou resultados relatados",
+    "design": "Tarefa equivalente de desenvolvimento em duas condições: cFS convencional por linha de comando e fluxo assistido na plataforma.",
+    "population": "Grupo real de iniciantes, por exemplo turma escolar ou equipe estudantil de satélites; número e composição não informados.",
+    "metrics": [
+      {
+        "name": "Tempo até primeira telemetria",
+        "method": "Cronometrar o primeiro pacote recebido com sucesso.",
+        "target": "Reduzir em relação ao fluxo convencional",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 92,
+          "line_end": 92
+        }
+      },
+      {
+        "name": "Erros de build",
+        "method": "Contar erros até execução correta.",
+        "target": "Reduzir em relação ao fluxo convencional",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 94,
+          "line_end": 94
+        }
+      },
+      {
+        "name": "Consultas à documentação",
+        "method": "Observar consultas durante a tarefa.",
+        "target": "Reduzir em relação ao fluxo convencional",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 96,
+          "line_end": 96
+        }
+      },
+      {
+        "name": "Conclusão da tarefa",
+        "method": "Proporção de participantes que concluem a tarefa guiada.",
+        "target": "Maioria conclui",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 98,
+          "line_end": 98
+        }
+      },
+      {
+        "name": "Usabilidade percebida",
+        "method": "System Usability Scale ao final.",
+        "target": "Pontuação acima de 68",
+        "value": 68,
+        "unit": "pontos SUS",
+        "comparison": ">",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 100,
+          "line_end": 100
+        }
+      },
+      {
+        "name": "Confiança",
+        "method": "Questionário antes e depois.",
+        "target": "Aumento autorrelatado após o uso",
+        "ref": {
+          "file": "secoes/metodologia.tex",
+          "line_start": 102,
+          "line_end": 102
+        }
+      }
+    ],
+    "refs": [
+      {
+        "file": "secoes/metodologia.tex",
+        "line_start": 79,
+        "line_end": 112
+      }
+    ]
+  },
+  "planned_schedule": {
+    "year": 2026,
+    "status": "planejado; os X não são evidência de conclusão",
+    "months": [
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+    ],
+    "activities": [
+      {
+        "name": "Revisão bibliográfica",
+        "months": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "Trabalhos relacionados",
+        "months": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "Arquitetura e requisitos",
+        "months": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "Automação de aplicações",
+        "months": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "name": "Interfaces e planejamento de missão",
+        "months": [
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "name": "Interface web e depuração",
+        "months": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "name": "Raspberry Pi",
+        "months": [
+          9,
+          10
+        ]
+      },
+      {
+        "name": "Validação técnica",
+        "months": [
+          10,
+          11
+        ]
+      },
+      {
+        "name": "Avaliação educacional",
+        "months": [
+          11,
+          12
+        ]
+      },
+      {
+        "name": "Redação e revisão final",
+        "months": [
+          6,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "ref": {
+      "file": "secoes/cronograma.tex",
+      "line_start": 3,
+      "line_end": 30
+    }
+  },
+  "diagram_suggestions": [
+    {
+      "id": "architecture",
+      "type": "component flow",
+      "nodes": [
+        "Web",
+        "Python backend",
+        "cFS Linux"
+      ],
+      "arrows": [
+        "HTTP / REST bidirecional",
+        "UDP comandos e telemetria bidirecional"
+      ],
+      "interaction": "Selecionar componente mostra responsabilidades; comandos e telemetria percorrem sentidos opostos.",
+      "evidence": "Arquitetura proposta original, metodologia 17–32."
+    },
+    {
+      "id": "layers",
+      "type": "exploded stack",
+      "nodes": [
+        "Aplicações",
+        "cFE",
+        "OSAL e PSP",
+        "Linux / hardware"
+      ],
+      "interaction": "Abrir cada camada e revelar serviços correspondentes.",
+      "evidence": "Fundamentação 43–94; não apresentar OSAL e PSP como fila linear obrigatória."
+    },
+    {
+      "id": "command-telemetry",
+      "type": "message route",
+      "nodes": [
+        "Operador",
+        "Interface web",
+        "Backend",
+        "CI_LAB",
+        "Software Bus",
+        "Aplicação",
+        "TO_LAB",
+        "Backend",
+        "Interface web"
+      ],
+      "interaction": "Avançar por etapas, colorindo envio de comando e retorno de telemetria.",
+      "evidence": "Síntese didática de fundamentação 56–94 e metodologia 17–48; sem tráfego capturado nem IDs/payloads reais."
+    },
+    {
+      "id": "app-generation",
+      "type": "development pipeline",
+      "nodes": [
+        "Dados do usuário",
+        "Modelo de aplicação",
+        "Arquivos e registro",
+        "Build nativa",
+        "Execução cFS"
+      ],
+      "interaction": "Selecionar cada fase explica a tarefa manual que a automação busca executar.",
+      "evidence": "Síntese didática, metodologia 36–44; não executar nem mostrar log fictício como real."
+    },
+    {
+      "id": "mission",
+      "type": "purpose-to-command map",
+      "nodes": [
+        "Objetivo de missão",
+        "Aplicação responsável",
+        "Comando",
+        "Telemetria que confirma o estado"
+      ],
+      "interaction": "Escolher um objetivo ilustrativo de manutenção/armazenamento mostra ligações.",
+      "evidence": "Metodologia 38 e fundamentação 9–11,91–94; exemplos devem ser explicitamente didáticos."
+    },
+    {
+      "id": "validation",
+      "type": "planned evidence matrix",
+      "nodes": [
+        "Aplicação gerada",
+        "Interfaces fiéis",
+        "Responsividade",
+        "Primeira telemetria",
+        "Usabilidade"
+      ],
+      "interaction": "Alternar validação técnica/educacional com método e meta.",
+      "evidence": "Metodologia 50–112; nunca simular resultados aprovados."
+    },
+    {
+      "id": "subsystems",
+      "type": "satellite overview",
+      "nodes": [
+        "Energia",
+        "Atitude e órbita",
+        "Térmico",
+        "Comunicação",
+        "Computador de bordo"
+      ],
+      "interaction": "Selecionar subsistema mostra necessidade de comando, telemetria, armazenamento e gerenciamento de falhas.",
+      "evidence": "Fundamentação 5–21; desenho esquemático de satélite, não hardware fabricado no projeto."
+    }
+  ],
+  "excluded_visuals": [
+    {
+      "path": "figuras/cfs_layers.png",
+      "reason": "Segunda versão da mesma arquitetura; usar a versão _conv que o texto de fato referencia."
+    },
+    {
+      "path": "figuras/estrutura_com.pdf",
+      "reason": "Gráficos de turbulência do template; sem relação com Flight Studio, confirmado por inspeção visual."
+    },
+    {
+      "path": "figuras/lombada.png",
+      "reason": "Ilustração burocrática do modelo acadêmico."
+    },
+    {
+      "path": "figuras/pretextuais.png",
+      "reason": "Ilustração burocrática do modelo acadêmico."
+    },
+    {
+      "path": "ficha_catalografica.pdf",
+      "reason": "Modelo de ficha, desativado no main.tex."
+    }
+  ],
+  "asset_manifest": "content/flight-studio/assets.json"
+}

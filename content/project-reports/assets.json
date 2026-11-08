@@ -1,0 +1,212 @@
+[
+  {
+    "file": "img/projects/riscv-128bit/assembly-test-loop.png",
+    "original": "Rapport_Projet_SEOC/figures/automatisation/fsm.png",
+    "sha256": "06210968398580cd509468f5dbcf2ae4fa5d99fff0c2887b620222d269290331",
+    "width": 1376,
+    "height": 805
+  },
+  {
+    "file": "img/projects/riscv-128bit/cva6-simulation-waveforms.png",
+    "original": "Rapport_Projet_SEOC/figures/automatisation/result_gtk.png",
+    "sha256": "2e25977c5bb8307710f7723f25f94c8902ff64e9f2f04bc1bea9d672d953688a",
+    "width": 1466,
+    "height": 928
+  },
+  {
+    "file": "img/projects/riscv-128bit/load-unit-offset-fix.png",
+    "original": "Rapport_Projet_SEOC/figures/automatisation/image (3).png",
+    "sha256": "5d6572533f9a8f315116bae940d25b36efc756a4b905c826b54e746d38286bc6",
+    "width": 910,
+    "height": 197
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/camera-track-center.png",
+    "original": "Controle_et_commande/figures/camera/tous_params.png",
+    "sha256": "a58959130588ff46a3fea0b546a23107229f30e6ef3a928ca7b5cca7bf216949",
+    "width": 557,
+    "height": 419
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/false-edge-in-turn.png",
+    "original": "Controle_et_commande/figures/suivi_piste/profil.png",
+    "sha256": "8bb22c99a9068a8c87bfc34f0a2e2d3232e0c304162563fbd83da6ef02f235ac",
+    "width": 595,
+    "height": 443
+  },
+  {
+    "file": "img/projects/fault-injection/multiplier-block-diagram.png",
+    "original": "Rapport_TP_sureté/image/diagram_block.png",
+    "sha256": "835dd4f063df20dd4acae5ad5c8860f1a25e4b733ae27b8bca91cac51c072cd6",
+    "width": 956,
+    "height": 431
+  },
+  {
+    "file": "img/projects/fault-injection/bit-cycle-injection-space.png",
+    "original": "Rapport_TP_sureté/image/injection_space.png",
+    "sha256": "b0efdd181cc34fedd8b643ef7c516bb755082e75931be6a5f2ae373651ee57c9",
+    "width": 1920,
+    "height": 1440
+  },
+  {
+    "file": "img/projects/fault-injection/acc12-saboteur-waveform.png",
+    "original": "Rapport_TP_sureté/image/task 4.1 et 4.2 aveec saboteur dezoomer .png",
+    "sha256": "bb4c64dc20e11b52a1f7fd83792eb26a0c0666124b44a5489ea283db6632d56a",
+    "width": 1376,
+    "height": 684
+  },
+  {
+    "file": "img/projects/riscv-128bit/128-bit-word-halves.png",
+    "original": "Rapport_Projet_SEOC/figures/Pratique/128 bits division.png",
+    "sha256": "e89e076f5d211930688ecf9baa8c6e85e0b4086173e673862bd14b033f9839b8",
+    "width": 705,
+    "height": 427
+  },
+  {
+    "file": "img/projects/riscv-128bit/expected-value-test-flow.png",
+    "original": "Rapport_Projet_SEOC/figures/Pratique/dra2 (1).png",
+    "sha256": "693411fe1df56e60acdec553fbc14c5ecdc586cb84a8b7b65c843506e5bb10c1",
+    "width": 570,
+    "height": 589
+  },
+  {
+    "file": "img/projects/riscv-128bit/cpu-cache-memory-path.png",
+    "original": "Rapport_Projet_SEOC/figures/automatisation/compilacao.png",
+    "sha256": "0d0f190ad7a1affe24e97af58c02133012b2fa56297dc5f00de99c07e55ef5e2",
+    "width": 644,
+    "height": 830
+  },
+  {
+    "file": "img/projects/riscv-128bit/sign-extension-diagram.png",
+    "original": "Rapport_Projet_SEOC/figures/automatisation/extension_point_fort.png",
+    "sha256": "a4e672cd6ab5dc37c7a7fc4ffa068aaf3fb1af17039909b77a07a7e11859b53f",
+    "width": 680,
+    "height": 443
+  },
+  {
+    "file": "img/projects/riscv-128bit/cache-alignment-investigation.png",
+    "original": "Rapport_Projet_SEOC/figures/automatisation/hipotese_1.png",
+    "sha256": "a9d8f13efd7454142b7555f4e402f08df1f69e6e663bffd3a757062b8f98fa47",
+    "width": 1050,
+    "height": 392
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/steering-calibration-prototype.jpeg",
+    "original": "Controle_et_commande/figures/direction/calcule_angle_virage.jpeg",
+    "sha256": "d3e160ca74c3f6d071e64a570ff6c0b7787c5ae0fcb6a2ef682cc24aab517593",
+    "width": 1200,
+    "height": 1600
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/turning-geometry.png",
+    "original": "Controle_et_commande/figures/direction/relation_courbe.png",
+    "sha256": "fa84841fa20e1aeb630bb7485bd8b6ed643dcd4dce9557646d6acc1826e7dcc3",
+    "width": 815,
+    "height": 718
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/camera-steering-error.png",
+    "original": "Controle_et_commande/figures/suivi_piste/geometrie.png",
+    "sha256": "30cf280a27d8a76a8965674520b3474388bc3340eb56b8af6bd4dc8d216886c7",
+    "width": 668,
+    "height": 504
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/pwm-duty-cycle.png",
+    "original": "Controle_et_commande/figures/moteur/Screenshot from 2025-01-29 12-36-01.png",
+    "sha256": "987d49047185098f8f4204b64e68beb941f575f9ea0c9d07e12f2c369fbf15f8",
+    "width": 497,
+    "height": 279
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/raw-camera-profile.png",
+    "original": "Controle_et_commande/figures/camera/sans_filtre.png",
+    "sha256": "bf3821dc7504fab2cb2868dcd7ed3e1e972f52b4cbfcba6d8a5e7213d55593b2",
+    "width": 557,
+    "height": 419
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/filtered-camera-profile.png",
+    "original": "Controle_et_commande/figures/camera/avec_filtre.png",
+    "sha256": "474fa86d76b53208c753bf0aa714127649bc7bf49d1b0af76086ca1d0e99657f",
+    "width": 557,
+    "height": 419
+  },
+  {
+    "file": "img/projects/autonomous-vehicle/edge-derivative-center.png",
+    "original": "Controle_et_commande/figures/camera/centre_piste.png",
+    "sha256": "a3cb3bb80efb337a951a270ada1b1a8842c2164070a52bdc6066846f6beb75d2",
+    "width": 557,
+    "height": 419
+  },
+  {
+    "file": "img/projects/fault-injection/multiplier-datapath-controller.png",
+    "original": "Rapport_TP_sureté/image/bloc d.png",
+    "sha256": "0e52a28d9336a66c71e248f0b2354c8e8d885f13f4eb2a3bc637d802af9a1543",
+    "width": 561,
+    "height": 682
+  },
+  {
+    "file": "img/projects/fault-injection/reference-at-5000ns.png",
+    "original": "Rapport_TP_sureté/image/sans_injec_5000.png",
+    "sha256": "b106d0870ccfa3b8ae948b81cf93c1e2971e8f16e5aecba0154116ca975b2380",
+    "width": 1451,
+    "height": 601
+  },
+  {
+    "file": "img/projects/fault-injection/injected-at-5000ns.png",
+    "original": "Rapport_TP_sureté/image/avec_injec_5000.png",
+    "sha256": "520f24241328d17f778ab36030684d492308d0b5827893fbe9f651a71c90cf71",
+    "width": 1433,
+    "height": 592
+  },
+  {
+    "file": "img/projects/fault-injection/injection-space-detail.png",
+    "original": "Rapport_TP_sureté/image/download (1).png",
+    "sha256": "0d973142b79ecac97fe65d0897e3a1fd067a3f95eccf89c4143e458b77250533",
+    "width": 588,
+    "height": 432
+  },
+  {
+    "file": "img/projects/riscv-128bit/instruction-format-r.png",
+    "original": "Rapport_Projet_SEOC/figures/types_reg/type_r.png",
+    "sha256": "bc2e86b9a08eecd29dbb8a7f87f28a2117d107f5703c3efc7ff067310c2c8082",
+    "width": 1059,
+    "height": 220
+  },
+  {
+    "file": "img/projects/riscv-128bit/instruction-format-i.png",
+    "original": "Rapport_Projet_SEOC/figures/types_reg/type_i.png",
+    "sha256": "e2c4b9afd5440a80571886789d18110f08ab5e205080171b51aeb4742f0d4fe8",
+    "width": 1059,
+    "height": 220
+  },
+  {
+    "file": "img/projects/riscv-128bit/instruction-format-s.png",
+    "original": "Rapport_Projet_SEOC/figures/types_reg/type_s.png",
+    "sha256": "78debca73e94c6f48bf4d5fd7b5e8a79387b41dcfa680feb36fe4f20b3c27769",
+    "width": 1059,
+    "height": 220
+  },
+  {
+    "file": "img/projects/riscv-128bit/instruction-format-b.png",
+    "original": "Rapport_Projet_SEOC/figures/types_reg/type_b.png",
+    "sha256": "1e95f27fe1c93754774719fa2fcc667b4b23805d444cac71886b8cb0569120ab",
+    "width": 1059,
+    "height": 220
+  },
+  {
+    "file": "img/projects/riscv-128bit/instruction-format-u.png",
+    "original": "Rapport_Projet_SEOC/figures/types_reg/type_u.png",
+    "sha256": "4c31c31ee681e2eae68e50100827685c48a95a3ec0187ef9b0cb0a7510d4953c",
+    "width": 1059,
+    "height": 220
+  },
+  {
+    "file": "img/projects/riscv-128bit/instruction-format-j.png",
+    "original": "Rapport_Projet_SEOC/figures/types_reg/type_j.png",
+    "sha256": "5086c15655f2a3d0a40de49deb1fa68ef153320110af2e3685f0b8a94879d2cf",
+    "width": 1059,
+    "height": 220
+  }
+]
